@@ -7,8 +7,7 @@ hide:
 
 ## What is Audio Reactive WLED?
 
-Audio Reactive WLED is a possibility of using WLED controllers in such a way that the LEDs react to music and light up in time. First time this was implemented by a [Sound Reactive Fork](https://github.com/atuline/WLED). As of WLED version 0.14.0-beta1 an usermod is available for original WLED too.
-Currently only ESP32 microcontrollers are supported.
+Audio Reactive WLED is a possibility of using WLED controllers in such a way that the LEDs react to music and light up in time. First time this was implemented by a [Sound Reactive Fork](https://github.com/atuline/WLED). As of WLED version 0.14.0-beta1 an usermod is available for original WLED too. Since version 0.15.0 this usermod is included in the official WLED releases.
 
 ## Hardware required
 
@@ -63,11 +62,12 @@ An example board with integrated Line-In is the [LyraT](https://docs.espressif.c
 For some more details please refer to [Sound Reactive WLED WIKI](https://mm.kno.wled.ge/soundreactive/introduction/)
 
 ### Audio Sync - WLED
-You do not need to include an audio input source in every WLED device to take advantage of the Audio Reactive effects. Simply set the sync mode to "send" on the device with the audio input and all the other devices set to "receive" for their sync mode in the Audio Reactive settings. 
+You do not need to include an audio input source in every WLED device to take advantage of the Audio Reactive effects. Simply set the sync mode to "send" on the device with the audio input and all the other devices set to "receive" for their sync mode in the Audio Reactive settings.
+This only works if your network supports multicast.
 
 ### Audio Sync - WledSRServer
 For Windows, there is [WledSRServer](https://github.com/Victoare/SR-WLED-audio-server-win) which is a small application that can capture audio directly from your PC, process it into WLED Audio Sync data and send it out onto your network - emulating WLED in send mode. Configure all your WLED instances to receive.
 
 ## Software required
 
-Because audio reactive capability is currently implemented as a usermod, you need WLED compiled with this usermod included. The [official WEB-based WLED installer](https://install.wled.me/) does not include original WLED with audio reactive usermod, but offers Sound Reactive WLED as an option. The [unofficial WEB-based WLED installer](https://wled-install.github.io/) offers more options including original WLED with audio reactive usermod.
+Because audio reactive capability is currently implemented as a usermod, you need WLED compiled with this usermod included. The [official WEB-based WLED installer](https://install.wled.me/) includes the usermod by default since version 0.15.0. The [unofficial WEB-based WLED installer](https://wled-install.github.io/) offers more options including original WLED with audio reactive usermod for older versions.
