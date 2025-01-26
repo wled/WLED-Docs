@@ -55,7 +55,7 @@ When purchasing a remote, be sure that it is an infrared (IR) remote and not a r
 24-key grey
 [ir.json](24-key-grey_ir.json)
 
-[![24-key-osram remote](24-key-osram.png)]([https://www.aliexpress.com/item/4000704528801.html](https://raw.githubusercontent.com/anilaras/OSRAM-Led-Star-RGBW-Remote-E27-9W-Remote-control-codes/master/osram.webp))
+![24-key-osram remote](24-key-osram.png)
 24-key OSRAM
 [ir.json osram](24-key-osram_ir.json) [OSRAM](https://www.lumimania.fr/led-stmivatelna-zarovka-rgbw-star-gu10-4-5w-230v-2700k-osram/) 
 
