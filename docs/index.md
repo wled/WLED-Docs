@@ -73,7 +73,7 @@ See [here](/basics/compatible-hardware)!
 
 ## ✌️ Other
 
-Licensed under the MIT license  
+Licensed under the EUPL-1.2 license 
 Credits [here](/about/contributors)!
 
 Join the Discord server to discuss everything about WLED!
