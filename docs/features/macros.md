@@ -17,6 +17,8 @@ You are able to set custom actions ("Macros") in Time & Macro settings for the f
 - Timed light duration over
 - Device (re)boot (up to 0.10.2, use LED settings `Boot preset` in 0.11)
 
+Note: If you have multiple presets that run at the same time, the lowest down the list takes precedence.
+
 Each macro has the format of a standard [HTTP API call](/interfaces/http-api) without the IP. Optionally, the "win&" may be omitted.
 For example, the macro "A=255" sets the brightness to maximum. "R=255&G=160&B=0" sets the color to orange.
 You can specify up to 16 macros. (up to 250 in WLED 0.11 since the Macro functionality has been merged into the Presets feature)
