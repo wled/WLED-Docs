@@ -2075,6 +2075,7 @@
 <li>Timed light duration over</li>
 <li>Device (re)boot (up to 0.10.2, use LED settings <code>Boot preset</code> in 0.11)</li>
 </ul>
+<p>Note: If you have multiple presets that run at the same time, the lowest down the list takes precedence.</p>
 <p>Each macro has the format of a standard <a href="/interfaces/http-api">HTTP API call</a> without the IP. Optionally, the "win&amp;" may be omitted.
 For example, the macro "A=255" sets the brightness to maximum. "R=255&amp;G=160&amp;B=0" sets the color to orange.
 You can specify up to 16 macros. (up to 250 in WLED 0.11 since the Macro functionality has been merged into the Presets feature)</p>
