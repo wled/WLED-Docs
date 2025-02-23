@@ -10,7 +10,7 @@ hide:
 !!! info "Version Info"
     Unless noted otherwise, all information applies to the latest release.
 
-!!!! warning "ESP8266 End of Life"
+!!! warning "ESP8266 End of Life"
 Do not install any new setups usping ESP8266. While WLED currently still supports ESP8266, all new setups should be using the ESP32 as it's much better hardware and ESP8266 is coming to and end of support.
 
 ### Quick start guide
