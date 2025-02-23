@@ -2102,8 +2102,10 @@
 <p class="admonition-title">Version Info</p>
 <p>Unless noted otherwise, all information applies to the latest release.</p>
 </div>
-<p>!!!! warning "ESP8266 End of Life"
-Do not install any new setups usping ESP8266. While WLED currently still supports ESP8266, all new setups should be using the ESP32 as it's much better hardware and ESP8266 is coming to and end of support.</p>
+<div class="admonition warning">
+<p class="admonition-title">ESP8266 End of Life</p>
+</div>
+<p>Do not install any new setups usping ESP8266. While WLED currently still supports ESP8266, all new setups should be using the ESP32 as it's much better hardware and ESP8266 is coming to and end of support.</p>
 <h3 id="quick-start-guide">Quick start guide</h3>
 <p><strong>1.</strong> Connect a  WS2812B-compatible RGB(W) led strip to <code>GPIO2</code>. On most ESP8266 based development boards, this pin is labeled <code>D4</code>; on ESP32 based boards, use <code>IO16</code> or <code>G16</code> or <code>16</code>. <em>If the connecting wire cannot be kept short, use a <a href="/basics/compatible-hardware#levelshifters">level shifter/translator</a>.</em> Optionally, connect a normally open pushbutton to <code>GPIO0</code> (NodeMCU/Wemos pin <code>D3</code>, on ESP32 use <code>IO17</code>) and ground for <a href="/features/macros">configurable actions</a>.
 <strong>Note:</strong> Board pin naming varies depending on the manufacturer. Please use the board pinout from the <em>specific</em> board you purchased and use the GPIO pins to reference this guide. <em>Make sure to connect ESP and LED-strip grounds together!</em></p>
