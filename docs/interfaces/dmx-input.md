@@ -8,7 +8,7 @@ hide:
 ### DMX Input
 
 !!! info "Version Info"
-    As of version v0.14.0-b25 MM-WLED supports DMX input via MAX485. This is great when ArtNet or e1.31/sACN over WIFI is not suitable 
+    As of version v0.16 supports DMX input via MAX485. This is great when ArtNet or e1.31/sACN over WIFI is not suitable 
 
 #### features and limitations
 
