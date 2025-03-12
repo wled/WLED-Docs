@@ -1,11 +1,11 @@
 site_name: WLED Project
-site_author: Christian Schwinne (Aircoookie)
+site_author: WLED Team
 #site_url: https://wled.app
 repo_name: WLED
-repo_url: https://github.com/Aircoookie/WLED
+repo_url: https://github.com/WLED/WLED
 repo_title: WLED Repository
 #copyright: Copyright &copy; 2016-2021 Christian Schwinne, Contributors
-edit_uri: https://github.com/Aircoookie/WLED-Docs/edit/main/docs
+edit_uri: https://github.com/WLED/WLED-Docs/edit/main/docs
 theme:
   name: material
   custom_dir: docs/assets/overrides
@@ -101,7 +101,8 @@ nav:
     - Ethernet (LAN) compatibility: features/ethernet-lan.md
   - Interfaces: 
     - Blynk: interfaces/blynk.md
-    - DMX: interfaces/dmx-output.md
+    - DMX Output: interfaces/dmx-output.md
+    - DMX Input: interfaces/dmx-input.md
     - E1.31 (DMX) / Art-Net: interfaces/e1.31-dmx.md
     - HTTP Request API: interfaces/http-api.md
     - Remote Control: interfaces/infrared.md
