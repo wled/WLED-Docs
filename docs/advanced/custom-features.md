@@ -6,7 +6,7 @@ hide:
 ---
 
 !!! warning
-    _Note: this page is now out of date, see updated functionality in the code ([WLED/usermods/EXAMPLE_v2](https://github.com/Aircoookie/WLED/tree/master/usermods/EXAMPLE_v2))_
+    _Note: this page is now out of date, see updated functionality in the code ([WLED/usermods/EXAMPLE](https://github.com/wled/WLED/tree/main/usermods/EXAMPLE))_
 
 This page is intended for those wishing to modify the WLED code to add their own functionality.
 
