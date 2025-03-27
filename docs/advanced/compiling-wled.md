@@ -131,5 +131,5 @@ pio project config --json-output | jq -cr '.[0][1][0][1]'
 
 The .bin and .bin.gz files are located in the subfolder `/build_output/release` in your WLED folder.
 
-If you have an existing WLED install, you can flash the .bin.gz image using the Config -> Security & Updates -> Manual OTA Update option in the web interface. Otherwise, follow the instructions [here](/basics/install-binary/#flashing-method-2-esptool).
+If you have an existing WLED install, you can flash the image using the Config -> Security & Updates -> Manual OTA Update option in the web interface. Otherwise, follow the instructions [here](/basics/install-binary/#flashing-method-2-esptool).
 
