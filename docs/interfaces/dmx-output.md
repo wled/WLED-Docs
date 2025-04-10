@@ -21,7 +21,7 @@ hide:
 
 #### software setup
 
-For the DMX feature to work, you need to flash a WLED binary with DMX enabled. Among the latest releases, search for the .bin suuting your board with the postfix "_dmx".
+For the DMX feature to work, you need to flash a WLED binary with DMX enabled. Among the latest releases, search for the corresponding .bin for your board with the postfix "_dmx".
 
 Alternatively, you'll need to compile WLED from source. It's not a big deal, you can do it! [Here](/basics/getting-started) is the Quick Start guide. There you'll find the section "i want to modify WLED".
 
