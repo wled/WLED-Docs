@@ -58,6 +58,10 @@ When purchasing a remote, be sure that it is an infrared (IR) remote and not a r
 24-key grey
 [ir.json](24-key-grey_ir.json)
 
+![24-key-osram remote](24-key-osram.png)
+24-key OSRAM
+[ir.json osram](24-key-osram_ir.json) [OSRAM](https://www.lumimania.fr/led-stmivatelna-zarovka-rgbw-star-gu10-4-5w-230v-2700k-osram/) 
+
 ![24 key music remote](24-key-v3.png)
 24-key music
 [ir.json v3](24-key-v3_ir.json)
