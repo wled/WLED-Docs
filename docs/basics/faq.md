@@ -272,7 +272,7 @@ There is a third brightness slider in each Segment panel. This serves the same p
 Segments are non-persistant by default. If you want to load your preset at every startup, just do the following:
 
 - Set your segments up as desired
-- Go into the Favorites tab in the web UI, click the save checkbox and save the config to preset slot number `16`
+- Go into the Presets tab in the web UI, click the save checkbox and save the config to preset slot number `16`
 - In LED settings, set `Boot Preset` to `16`
 
 This will be improved in a future release, so that you will be able to save multiple segment configurations!
