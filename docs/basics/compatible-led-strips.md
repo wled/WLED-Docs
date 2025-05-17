@@ -16,7 +16,7 @@ Sorting: 5v data only, 5v Data + Clock, 12v data only
 | Type | Voltage | Comments |
 |---|---|---|
 SK6812 | 5&nbsp;V / 12&nbsp;V | RGBW
-WS2811 | 5&nbsp;V | usually found in IP68 sealed 12mm pixel strings
+WS2811 | 5&nbsp;V / 12&nbsp;V | usually found in IP68 sealed 12mm pixel strings
 WS2812B | 5&nbsp;V |
 WS2813 | 5&nbsp;V | has a backup data line
 APA102 | 5&nbsp;V | using 2 data pins, Clock and Data
