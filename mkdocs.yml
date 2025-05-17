@@ -73,7 +73,8 @@ extra_javascript:
 nav:
   - Welcome: index.md
   - Basics:
-    - Getting Started: basics/getting-started.md
+    - Getting Started: 
+      - Quick Start: basics/getting-started.md
       - Wiring Guides: basics/wiring-guides.md
     - Top 5 mistakes: basics/top5_mistakes.md
     - Compatibility:
