@@ -74,6 +74,7 @@ nav:
   - Welcome: index.md
   - Basics:
     - Getting Started: basics/getting-started.md
+      - Wiring Guides: basics/wiring-guides.md
     - Top 5 mistakes: basics/top5_mistakes.md
     - Compatibility:
       - LED strips: basics/compatible-led-strips.md
