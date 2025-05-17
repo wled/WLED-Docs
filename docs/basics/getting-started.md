@@ -16,10 +16,16 @@ hide:
 
 ### Quick start guide
 
-**1.** Connect a  WS2812B-compatible RGB(W) led strip to `GPIO2`. On most ESP8266 based development boards, this pin is labeled `D4`; on ESP32 based boards, use `IO16` or `G16` or `16`. _If the connecting wire cannot be kept short, use a [level shifter/translator](/basics/compatible-hardware#levelshifters)._ Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
-**Note:** Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
+**1.** Connect a WS2812B-compatible RGB(W) led strip to you ESP board:
+  - For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
+  - For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`.
 
-![connectionsA](https://github.com/Aircoookie/WLED-Docs/assets/59397047/78cc27f3-f0e4-4c04-bd3f-d35caf143456)
+_If the connecting wire cannot be kept short, use a [level shifter/translator](/basics/compatible-hardware#levelshifters)._ Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
+
+**Caution:** Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
+
+![DigitalWiring](../assets/images/content/WLED_5VdigitalWiring.png)
+Check out the [Wiring Guides](/basics/wiring-guides) for more examples.
 
 While using an ESP8266 and LEDs that have clock and data, you can either use hardware SPI (mostly faster) or software SPI.
 
@@ -32,8 +38,7 @@ For reference, you may use this [LED power, wiring and fuse calculator](https://
 For analog LEDs, the MOSFETs IRLZ44N or STP55NF06L are good candidates. Example circuit:
 
 ![image](../assets/images/content/12Vanalog_wiring.png)
-
-More wiring examples can be found [here](/basics/compatible-led-strips/#non-addressable-led-strips)
+More analog wiring examples can be found [here](/basics/compatible-led-strips/#non-addressable-led-strips)
 
 **2.** Flash the software to your ESP module! There are two options for this step:
 
