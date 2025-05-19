@@ -17,8 +17,9 @@ hide:
 ### Quick start guide
 
 **1.** Connect a WS2812B-compatible RGB(W) led strip to you ESP board:
-  - For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
-  - For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`.
+
+- For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
+- For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`.
 
 _If the connecting wire cannot be kept short, use a [level shifter/translator](/basics/compatible-hardware#levelshifters)._ Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
 
