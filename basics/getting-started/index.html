@@ -14,11 +14,11 @@
         <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../top5_mistakes/">
+        <link rel="next" href="../wiring-guides/">
       
       
       <link rel="icon" href="../../assets/images/ui/aircoookie/blurple.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -270,6 +270,15 @@
   
     
     
+      
+  
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
         <a href="./" class="md-tabs__link">
           
@@ -279,6 +288,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -483,6 +495,49 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -494,7 +549,7 @@
   
   
   <span class="md-ellipsis">
-    Getting Started
+    Quick Start
     
   </span>
   
@@ -507,7 +562,7 @@
   
   
   <span class="md-ellipsis">
-    Getting Started
+    Quick Start
     
   </span>
   
@@ -581,6 +636,37 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring-guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiring Guides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -2202,7 +2288,7 @@
   
 
 
-  <h1>Getting Started</h1>
+  <h1>Quick Start</h1>
 
 <h2 id="welcome-to-the-wled-wiki">Welcome to the WLED wiki!</h2>
 <div class="admonition info">
@@ -2214,9 +2300,13 @@
 <p>Do not install any new setups using ESP8266. While WLED currently still supports ESP8266, all new setups should be using the ESP32 as it's much better hardware and ESP8266 is coming to and end of support.</p>
 </div>
 <h3 id="quick-start-guide">Quick start guide</h3>
-<p><strong>1.</strong> Connect a  WS2812B-compatible RGB(W) led strip to <code>GPIO2</code>. On most ESP8266 based development boards, this pin is labeled <code>D4</code>; on ESP32 based boards, use <code>IO16</code> or <code>G16</code> or <code>16</code>. <em>If the connecting wire cannot be kept short, use a <a href="/basics/compatible-hardware#levelshifters">level shifter/translator</a>.</em> Optionally, connect a normally open pushbutton to <code>GPIO0</code> (NodeMCU/Wemos pin <code>D3</code>, on ESP32 use <code>IO17</code>) and ground for <a href="/features/macros">configurable actions</a>.
-<strong>Note:</strong> Board pin naming varies depending on the manufacturer. Please use the board pinout from the <em>specific</em> board you purchased and use the GPIO pins to reference this guide. <em>Make sure to connect ESP and LED-strip grounds together!</em></p>
-<p><img alt="connectionsA" src="https://github.com/Aircoookie/WLED-Docs/assets/59397047/78cc27f3-f0e4-4c04-bd3f-d35caf143456" /></p>
+<p><strong>1.</strong> Connect a WS2812B-compatible RGB(W) led strip to you ESP board:
+  - For ESP32 use <code>GPIO16</code> (or <code>IO16</code> or <code>G16</code>); GPIOs <code>4</code>, <code>13</code> and <code>16-33</code> can be used, other pins are not recommended.
+  - For ESP8266 use <code>GPIO2</code>, on most development boards this pin is labeled <code>D4</code>.</p>
+<p><em>If the connecting wire cannot be kept short, use a <a href="/basics/compatible-hardware#levelshifters">level shifter/translator</a>.</em> Optionally, connect a normally open pushbutton to <code>GPIO0</code> (NodeMCU/Wemos pin <code>D3</code>, on ESP32 use <code>IO17</code>) and ground for <a href="/features/macros">configurable actions</a>.</p>
+<p><strong>Caution:</strong> Board pin naming varies depending on the manufacturer. Please use the board pinout from the <em>specific</em> board you purchased and use the GPIO pins to reference this guide. <em>Make sure to connect ESP and LED-strip grounds together!</em></p>
+<p><img alt="DigitalWiring" src="../../assets/images/content/WLED_5VdigitalWiring.png" />
+Check out the <a href="/basics/wiring-guides">Wiring Guides</a> for more examples.</p>
 <p>While using an ESP8266 and LEDs that have clock and data, you can either use hardware SPI (mostly faster) or software SPI.</p>
 <ul>
 <li>hardware SPI: use <code>GPIO14</code> (SCLK) for clock and <code>GPIO13</code> (MOSI) for data.</li>
@@ -2225,8 +2315,8 @@
 <p>For safe operation, it is recommended to size your power wires correctly and to integrate fuses.<br />
 For reference, you may use this <a href="https://wled-calculator.github.io/">LED power, wiring and fuse calculator</a>.</p>
 <p>For analog LEDs, the MOSFETs IRLZ44N or STP55NF06L are good candidates. Example circuit:</p>
-<p><img alt="image" src="../../assets/images/content/12Vanalog_wiring.png" /></p>
-<p>More wiring examples can be found <a href="/basics/compatible-led-strips/#non-addressable-led-strips">here</a></p>
+<p><img alt="image" src="../../assets/images/content/12Vanalog_wiring.png" />
+More analog wiring examples can be found <a href="/basics/compatible-led-strips/#non-addressable-led-strips">here</a></p>
 <p><strong>2.</strong> Flash the software to your ESP module! There are two options for this step:</p>
 <p><a href="/basics/install-binary">I just want to use WLED! (install release binary)</a></p>
 <p><a href="/advanced/compiling-wled">I want to modify WLED (compile from source code)</a></p>

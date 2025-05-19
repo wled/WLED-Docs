@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../http-api/">
+        <link rel="prev" href="../getting-started/">
       
       
-        <link rel="next" href="../json-api/">
+        <link rel="next" href="../top5_mistakes/">
       
       
       <link rel="icon" href="../../assets/images/ui/aircoookie/blurple.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Infrared - WLED Project</title>
+        <title>Wiring Guides - WLED Project</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#supported-ir-remotes" class="md-skip">
+        <a href="#addressable-led-strips" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Infrared
+              Wiring Guides
             
           </span>
         </div>
@@ -265,6 +265,8 @@
   
   
   
+    
+  
   
     
     
@@ -272,11 +274,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../basics/getting-started/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting-started/" class="md-tabs__link">
           
   
   
@@ -315,13 +319,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../blynk/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../interfaces/blynk/" class="md-tabs__link">
           
   
   
@@ -443,24 +445,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -473,7 +480,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Basics
@@ -484,6 +491,8 @@
                 
   
   
+    
+  
   
   
     
@@ -494,11 +503,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -514,7 +523,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -528,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -548,10 +557,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../basics/wiring-guides/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Wiring Guides
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -562,6 +591,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addressable-led-strips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressable LED Strips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-addressable-led-strips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Addressable LED Strips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelshifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levelshifter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -582,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/top5_mistakes/" class="md-nav__link">
+      <a href="../top5_mistakes/" class="md-nav__link">
         
   
   
@@ -646,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/compatible-led-strips/" class="md-nav__link">
+      <a href="../compatible-led-strips/" class="md-nav__link">
         
   
   
@@ -669,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/compatible-controllers/" class="md-nav__link">
+      <a href="../compatible-controllers/" class="md-nav__link">
         
   
   
@@ -692,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/compatible-hardware/" class="md-nav__link">
+      <a href="../compatible-hardware/" class="md-nav__link">
         
   
   
@@ -715,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/compatible-software/" class="md-nav__link">
+      <a href="../compatible-software/" class="md-nav__link">
         
   
   
@@ -787,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/install-binary/" class="md-nav__link">
+      <a href="../install-binary/" class="md-nav__link">
         
   
   
@@ -810,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/install-gui/" class="md-nav__link">
+      <a href="../install-gui/" class="md-nav__link">
         
   
   
@@ -864,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/tutorials/" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         
   
   
@@ -887,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/faq/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   
@@ -1238,29 +1312,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -1273,7 +1342,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Interfaces
@@ -1287,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blynk/" class="md-nav__link">
+      <a href="../../interfaces/blynk/" class="md-nav__link">
         
   
   
@@ -1310,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dmx-output/" class="md-nav__link">
+      <a href="../../interfaces/dmx-output/" class="md-nav__link">
         
   
   
@@ -1333,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dmx-input/" class="md-nav__link">
+      <a href="../../interfaces/dmx-input/" class="md-nav__link">
         
   
   
@@ -1356,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../e1.31-dmx/" class="md-nav__link">
+      <a href="../../interfaces/e1.31-dmx/" class="md-nav__link">
         
   
   
@@ -1379,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../http-api/" class="md-nav__link">
+      <a href="../../interfaces/http-api/" class="md-nav__link">
         
   
   
@@ -1399,30 +1468,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Remote Control
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../interfaces/infrared/" class="md-nav__link">
         
   
   
@@ -1433,42 +1482,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#supported-ir-remotes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported IR remotes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#esp-now-based-remote-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      ESP-NOW based remote control
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1481,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../json-api/" class="md-nav__link">
+      <a href="../../interfaces/json-api/" class="md-nav__link">
         
   
   
@@ -1504,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mqtt/" class="md-nav__link">
+      <a href="../../interfaces/mqtt/" class="md-nav__link">
         
   
   
@@ -1527,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../philips-hue/" class="md-nav__link">
+      <a href="../../interfaces/philips-hue/" class="md-nav__link">
         
   
   
@@ -1550,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../serial/" class="md-nav__link">
+      <a href="../../interfaces/serial/" class="md-nav__link">
         
   
   
@@ -1573,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../udp-notifier/" class="md-nav__link">
+      <a href="../../interfaces/udp-notifier/" class="md-nav__link">
         
   
   
@@ -1596,7 +1609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../udp-realtime/" class="md-nav__link">
+      <a href="../../interfaces/udp-realtime/" class="md-nav__link">
         
   
   
@@ -1619,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../websocket/" class="md-nav__link">
+      <a href="../../interfaces/websocket/" class="md-nav__link">
         
   
   
@@ -1642,7 +1655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ddp/" class="md-nav__link">
+      <a href="../../interfaces/ddp/" class="md-nav__link">
         
   
   
@@ -2177,18 +2190,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-ir-remotes" class="md-nav__link">
+  <a href="#addressable-led-strips" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported IR remotes
+      Addressable LED Strips
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#esp-now-based-remote-control" class="md-nav__link">
+  <a href="#non-addressable-led-strips" class="md-nav__link">
     <span class="md-ellipsis">
-      ESP-NOW based remote control
+      Non-Addressable LED Strips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelshifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levelshifter
     </span>
   </a>
   
@@ -2210,7 +2232,7 @@
 
 
   
-    <a href="https://github.com/WLED/WLED-Docs/edit/main/docs/interfaces/infrared.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/WLED/WLED-Docs/edit/main/docs/basics/wiring-guides.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2218,33 +2240,25 @@
   
 
 
-  <h1>Remote Control</h1>
+  <h1>Wiring Guides</h1>
 
-<div class="admonition info">
-<p class="admonition-title">Version Info</p>
-<p>Since v0.8.2, infrared control from various IR remotes is supported for ESP8266 and since v0.9.0 for ESP32, too.</p>
-</div>
-<p>A dedicated infrared receiver module is required and must be connected to the WLED Controller. For example, KY-022 or TSOP38238 are confirmed to work and inexpensive. These receivers each have three pins: 3.3V, GND and IR data. IR data pin must be connected to a free GPIO pin. This GPIO must then be set as IR GPIO under "Config-&gt;LED Preferences" (The default sensor pin is GPIO4).
-<img alt="Infrared shcematics" src="../../assets/images/content/pic13.jpg" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>IR receiving will not work on ESP8266 if you use any LED pin other than GPIO 1, 2, or 3 for <em>digital</em> LED strips.</p>
-</div>
-<h3 id="supported-ir-remotes">Supported IR remotes</h3>
-<p>To use IR remote go to <code>Settings</code>, <code>Sync Interfaces</code> and change the value for <code>Infrared receiver type</code> according to the IR remote type of the following list:</p>
-<ol>
-<li>white 24-key IR remote with R,G,B + 12 color-tones  </li>
-<li>white 24-key IR remote with CT+ / CT- buttons  </li>
-<li>blue 40-key IR remote with keys for 25%, 50%, 75% and 100%  </li>
-<li>white 44-key IR remote with up/down arrows for the colors R,G and B  </li>
-<li>white 21-key IR remote with R,G,B + 9 color-tones  </li>
-<li>black 6-key IR remote with CH up/down + Vol up/down  </li>
-<li><a href="../json-ir/json_infrared/">JSON IR remote</a> - Easily configure and use any IR remote.  </li>
-</ol>
-<h2 id="esp-now-based-remote-control">ESP-NOW based remote control</h2>
-<p>Since version WLED 14.0-beta3: An ESP-NOW compatible remote control is supported. An example of this is the „WIZmote“ remote control. This is based on an ESP microcontroller. You can also <a href="https://github.com/DedeHai/WLED-ESPNow-Remote">build your own ESP-NOW remote</a> using an ESP32 C3. ESP-NOW can be activated in WLED settings. You have to enter the Hardware MAC address of the remote control. This is determined by clicking on any button on the remote control and copying the last received MAC address from the "Last Seen" field to the "Hardware MAC" field in WLED ESP-NOW settings (“Config-&gt;WiFi Setup”) and saving it with "Save". Advantages: no special receiver needs to be attached to the WLED controller and the signals are transmitted via radio network. Therefore there is no line of sight between the remote control and the WLED controller required, as is the case with an IR remote control.
-<img alt="ESP-NOW remote control" src="../../assets/images/content/pic14.jpg" />
-The 4 buttons "1"-"4" of the WIZmote remote control are linked to presets 1 to 4. The meaning of other keys is self-explanatory. Attention: WIZmote needs two good quality AAA batteries to work properly. If the batteries are too weak, the correct signal will not be sent, even if the blue LED on the remote control lights up briefly, actually indicating signal transmission.</p>
+<h2 id="addressable-led-strips">Addressable LED Strips</h2>
+<p><img alt="DigitalWiring" src="../../assets/images/content/WLED_5VdigitalWiring.png" /></p>
+<p><img alt="DigitalWiring12V" src="../../assets/images/content/WLED_12VdigitalWiring.png" /></p>
+<p><img alt="DigitalWiringMultiStrip" src="../../assets/images/content/WLED_MultistripdigitalWiring.png" /></p>
+<p><img alt="DigitalWiringMultiSupply" src="../../assets/images/content/WLED_MultisupplydigitalWiring.png" /></p>
+<h2 id="non-addressable-led-strips">Non-Addressable LED Strips</h2>
+<p><img alt="AnalogWiring1x" src="../../assets/images/content/12Vanalog_wiring.png" /></p>
+<p><img alt="AnalogWiring3x" src="../../assets/images/content/12Vanalog_wiringRGB.png" /></p>
+<p>More info on analog LEDs can be found <a href="/basics/compatible-led-strips/#non-addressable-led-strips">here</a></p>
+<h2 id="levelshifter">Levelshifter</h2>
+<p>The N74(A)HCT127(N) can be wired in different ways. The diagrams show the easiest wiring by connecting unused inputs to GND and leaving unused outputs unconnected. In general: 
+  - Inputs 1A to 4A: connect unused inputs to GND
+  - Connect all output disable pins 1<span style="text-decoration:overline">OE</span> to 4<span style="text-decoration:overline">OE</span>) to GND, enabling all outputs
+  - Outputs 1Y to 4Y: leave unused outputs unconnected </p>
+<p><img alt="Shifter 1CH" src="../../assets/images/content/Shifter74HCT125_Single.png" /></p>
+<p><img alt="Shifter 2CH" src="../../assets/images/content/Shifter74HCT125_Dual.png" /></p>
+<p><img alt="Shifter 4CH" src="../../assets/images/content/Shifter74HCT125_Quad.png" /></p>
 
 
 
