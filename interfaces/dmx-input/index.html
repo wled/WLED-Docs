@@ -2314,11 +2314,11 @@
 <li>one universe (512 channels)</li>
 </ul>
 <h4 id="software-setup">software setup</h4>
-<p>For the DMX feature to work, you'll need to use the V4 build variants. Define all the pins you are using in the DMX input section of the Sync Interfaces menu</p>
+<p>For the DMX feature to work, you'll need to use the V4 build variants. Define <em>all</em> the pins you are using in the DMX input section of the Sync Interfaces menu</p>
 <p>The wired DMX will work exactly like the network DMX options, only a single universe, so see <a href="/interfaces/e1.31-dmx/">e1.31-dmx</a> for details of the different DMX modes</p>
 <h4 id="hardware-setup">hardware setup</h4>
 <p>The DMX interface require the use of an RS485 adapter such as the MAX485 transceiver connected to the pins defined in setup of the ESP in order to handle DMX input and RDM input and output.</p>
-<p>You will need to use three GPIO pins that support output.</p>
+<p>You will need to use <em>three</em> GPIO pins that support output.</p>
 <p><em>Do NOT use the pins on your ESP32 labelled RX and TX as your DMX pins!</em></p>
 <ul>
 <li>pin assined as <em>DMX</em> RX pin on esp32 connects to RO</li>
