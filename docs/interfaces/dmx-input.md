@@ -17,7 +17,7 @@ hide:
 
 #### software setup
 
-For the DMX feature to work, you'll need to use the V4 build variants. Define all the pins you are using in the DMX input section of the Sync Interfaces menu
+For the DMX feature to work, you'll need to use the V4 build variants. Define *all* the pins you are using in the DMX input section of the Sync Interfaces menu
 
 The wired DMX will work exactly like the network DMX options, only a single universe, so see [e1.31-dmx](/interfaces/e1.31-dmx/) for details of the different DMX modes
 
@@ -26,7 +26,7 @@ The wired DMX will work exactly like the network DMX options, only a single univ
 The DMX interface require the use of an RS485 adapter such as the MAX485 transceiver connected to the pins defined in setup of the ESP in order to handle DMX input and RDM input and output.
 
 
-You will need to use three GPIO pins that support output.
+You will need to use *three* GPIO pins that support output.
 
 *Do NOT use the pins on your ESP32 labelled RX and TX as your DMX pins!*
 
