@@ -17,7 +17,7 @@ A dedicated infrared receiver module is required and must be connected to the WL
 
 ### Supported IR remotes
 
-To use IR remote go to `Settings`, `Sync Interfaces` and change the value for `Infrared receiver type` according to the IR remote type of the following list:
+To use IR remote go to `Settings`, `LED Preferences` and change the value for `Infrared receiver type` according to the IR remote type of the following list:
 
 1. white 24-key IR remote with R,G,B + 12 color-tones  
 2. white 24-key IR remote with CT+ / CT- buttons  
