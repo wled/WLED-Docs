@@ -81,3 +81,7 @@ Note that if a `ledmap.json` file exists, the `2d-gaps.json` file will be ignore
 ```
 
 ![wiring diagram of the double ∞ shape mapping](mapping/mapping_infinity_shape.png)
+
+## Related Tools
+
+For controlling and creating content for 2D LED matrices, consider using [Pipplee WLED 2D](https://pipplee.com/), a mobile app designed specifically for WLED 2D matrices. It features animations, real-time drawing, text playing, custom GIF uploads, and multilingual text scrolling. Available for [Android](https://play.google.com/store/apps/details?id=com.breakpoint.pipplee) and [iOS](https://apps.apple.com/in/app/pipplee-wled-2d/id6740536171).

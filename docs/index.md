@@ -44,6 +44,10 @@ A fast and feature-rich implementation of an ESP32/ESP8266 webserver to control 
   - WLED Native app made by community member [Moustachauve](https://github.com/Moustachauve)
     - For [Android](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid) [[Source]((https://github.com/Moustachauve/WLED-Native-Android))]
     - For [iOS](https://apps.apple.com/us/app/wled-native/id6446207239) [[Source]((https://github.com/Moustachauve/WLED-Native-iOS/))]
+  - Pipplee WLED 2D app designed specifically for 2D LED matrices
+    - For [Android](https://play.google.com/store/apps/details?id=com.breakpoint.pipplee)
+    - For [iOS](https://apps.apple.com/in/app/pipplee-wled-2d/id6740536171)
+    - [Website](https://pipplee.com/)
 - [JSON](/interfaces/json-api) and [HTTP request](/interfaces/http-api) APIs  
 - [MQTT](/interfaces/mqtt)  
 - [Blynk IoT](/interfaces/blynk)  
