@@ -73,15 +73,3 @@ On the web page:
     ![Pixel Art Generator output preview](../assets/images/content/043_16_cheerful_pixart_output.png)
 
 4. Click on "Send to device" to push the generated image to the WLED device.
-
-## Alternative Tools
-
-For more advanced 2D matrix control and content creation, consider using [Pipplee WLED 2D](https://pipplee.com/), a mobile app designed specifically for WLED 2D matrices. Pipplee offers features like:
-
-- Real-time drawing on 2D matrices
-- Animation creation and playback
-- Text display with multilingual support (Chinese, Thai, Russian, etc.)
-- Custom GIF upload and playback
-- Interactive content management
-
-Available for [Android](https://play.google.com/store/apps/details?id=com.breakpoint.pipplee) and [iOS](https://apps.apple.com/in/app/pipplee-wled-2d/id6740536171).
