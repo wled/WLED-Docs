@@ -15,8 +15,9 @@ WLED controllers are usually integrated into local network wirelessly (via WiFi)
 -	WLED Software must be compiled with Ethernet support included. Web-based WLED installer have special option for this. Be sure you use right WLED version with Ethernet support.
 -	Ethernet requires many GPIOs (see table below). You cannot use them for other purposes at the same time.
 -	If you switch from WiFi to Ethernet and you use dynamic (not static) IP addresses via DHCP (that is true in most cases), your WiFi/LAN Router will most likely grant new IP address to the WLED Controller. If you don’t delete WiFi credentials, your Controller will be accessible via WiFi and Ethernet at the same time by two different IP addresses.
--	Ethernet standard requires that the ethernet lines including shield are isolated form the electronics and for EMC reason ceramic capacitor (rated for 2 kV) is connected between Ethernet shield and electronics ground. Unfortunately, many simple/cheap ethernet adapters do not fulfill these requirements. Be careful using them.
+-	Ethernet standard requires that the ethernet lines including shield are isolated form the electronics and for EMC reasons a ceramic capacitor (rated for 2 kV) should be connected between Ethernet shield and electronics ground. Unfortunately, many simple/cheap ethernet adapters do not fulfill these requirements. Be careful using them.
 -	Most of Ethernet based controllers/ adapters are based on LAN87xx IC. It requires proper reset line. Unfortunately, some simple/cheap adapters do not implement this line correctly that might lead to instabilities especially during boot up.
+-	ESP32 can be configured to provide the 50MHz clock for the PHY on GPIO0, GPIO16 or GPIO17. For operation with LAN87xx IC, use GPIO17. If you want to use GPIO0 with LAN87xx, you will need to add an inverter between GPIO0 and the LAN87xx CLKIN pin.
 -	If you connect Ethernet adapter via wires, keep them as short as possible. The communication between ESP32 controller and the adapter is on high speed of 50 MHz that requires proper connection to avoid instabilities.
 
 ## Ethernet setup
@@ -41,5 +42,22 @@ ESP32Deux / [RGB2Go Tetra](https://rgb2go.com/products/ethernet-module-for-tetra
 [WESP32](https://wesp32.com/) |  | 0, 16, 17
 [WT32-ETH01](https://www.seeedstudio.com/Ethernet-module-based-on-ESP32-series-WT32-ETH01-p-4736.html) |  | 0, 16, 18, 23
 
+## Defining GPIO for a custom PCBA
+
+The following PHY are supported by WLED according to the header ETH.h:
+[LAN8720](https://www.microchip.com/en-us/product/lan8720a)
+[TLK110](https://www.ti.com/product/TLK110)
+[IP101](https://www.lcsc.com/datasheet/lcsc_datasheet_2206021645_WIZNET-IP101GRI_C910373.pdf)
+
+The source code also mentions ETH_PHY_MAX but this is not enough information to link to a specific part
+
+If you want to add an additional board type including custom GPIO allocations to the UI, you will need to modify the following source files before compiling WLED using default_envs = esp32_eth in platformio.ini:
+| File | Line (approx) | Description |
+|---|---|---|
+const.h | 288 | increment WLED_NUM_ETH_TYPES
+const.h | 301 | add a #define for your board with the next available index after the list of existing boards
+network.cpp | 119 | add an aditional initialisation for your board type
+settings_wifi.htm | 221 | add your board name and enum index
 
 
+note that you will need to recompile the html, see [Changing web UI for instruction](https://github.com/Aircoookie/WLED/wiki/Add-own-functionality/a30b2f3004c9aafc0639138afbff73b4efe4a766)
