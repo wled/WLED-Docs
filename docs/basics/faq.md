@@ -42,6 +42,7 @@ hide:
 - [Why is gpio2/D4 the default LED pin?](#why-is-gpio2d4-the-default-led-pin)
 - [Why can I only use 500 LEDs on the ESP8266 GPIO pin 3?](#why-can-i-only-use-500-leds-on-the-esp8266-gpio-pin-3)
 - [What LED strip hardware is supported by WLED?](#what-led-strip-hardware-is-supported-by-wled)
+- [My LEDs flicker when using the sunrise effect (or others) in a preset](#my-leds-flicker-when-using-the-sunrise-effect-or-others-in-a-preset)
 
 ### General questions
 
@@ -237,6 +238,11 @@ Beside the **digital addressable** LED strips the good old **analog** LED strips
 - 4 pins: RGB
 - 5 pins: RGBW / RGBWW / RGBCW / RGBNW (RGB + one white channel)
 - 6 pins: RGBCT (RGB + 2 white channels) _Note: Support is only for Alexa._
+
+### My LEDs flicker when using the sunrise effect (or others) in a preset
+Due the default transition set on your WLED instance, it could be that going to the `sunrise` effect from an off strip can trigger an small "flash" ([discussion](https://github.com/Aircoookie/WLED/issues/3911#issuecomment-2060678535)). 
+
+You can prevent this by changing the transition of that preset to `0`.
 
 ## General Questions
 
