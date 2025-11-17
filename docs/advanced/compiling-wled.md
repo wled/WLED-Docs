@@ -42,7 +42,7 @@ Alternatively fork the WLED project first and download it from your fork.
     Make sure Git Client is installed on your system. You can get it [here](https://git-scm.com/downloads).
 
 1. In VS Code, open the file `platformio.ini`.
-2. Add a semicolon in front of the line that says `default_envs = travis_esp8266, travis_esp32` to comment it out.
+2. Add a semicolon in front of the line that start `default_envs = ` to comment it out.
 3. Select your build environment by un-commenting one of the lines starting with `; default_envs =`.
 Please remove _BOTH_ the `;` and the whitespace behind it to correctly uncomment the line.
 For most ESP8266 boards, the `d1_mini` environment is best.
