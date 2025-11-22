@@ -66,6 +66,10 @@ When purchasing a remote, be sure that it is an infrared (IR) remote and not a r
 24-key music
 [ir.json v3](24-key-v3_ir.json)
 
+![24-key-v4](24-key-v4.png)
+24-key remote with music buttons
+[ir.json v4](24-key-v4_ir.json)
+
 [![21 key remote](21-key.png)](https://www.aliexpress.com/item/1005001319234216.html)
 21-key
 [ir.json](21-key_ir.json)
