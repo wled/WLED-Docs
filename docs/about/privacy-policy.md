@@ -97,7 +97,7 @@ Network metadata:
 - As with any internet request, your network will necessarily handle an IP address for routing. The WLED Usage Server is configured to minimize exposure to such metadata and not retain it in application logs. No IP or similar identifiers are stored with the submitted payload.
 
 Frequency:
-- A single submission occurs only when you click Accept on the post-install/upgrade prompt. No continuous telemetry is sent by default. If you do not Accept, nothing is sent.
+- A single submission occurs only when you click Accept on the post-install/upgrade prompt. No continuous telemetry is sent. If you do not Accept, nothing is sent.
 
 ## 5. Purposes of Processing
 The technical data above is processed exclusively for:
