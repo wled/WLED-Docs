@@ -3228,7 +3228,7 @@ Example: <code>{"on":true,"bri":255}</code> sets the brightness to maximum. <cod
 <td>On/Off state of the light. You can also use <code>"t"</code> instead of <code>true</code> or <code>false</code> to toggle.</td>
 </tr>
 <tr>
-<td>bri</td>
+<td><a id="bri"></a> bri</td>
 <td>0 to 255</td>
 <td>Brightness of the light. If <em>on</em> is <code>false</code>, contains last brightness when light was on (aka brightness when <em>on</em> is set to true). Setting <em>bri</em> to 0 is supported but it is recommended to use the range 1-255 and use <code>on: false</code> to turn off. The state response will never have the value <code>0</code> for <em>bri</em>.</td>
 </tr>
@@ -3256,6 +3256,21 @@ Example: <code>{"on":true,"bri":255}</code> sets the brightness to maximum. <cod
 <td>psave</td>
 <td>1 to 250 (16 prior to 0.11)</td>
 <td>Save current light config (state) to specified preset slot. Not included in state response.</td>
+</tr>
+<tr>
+<td>sb</td>
+<td>bool</td>
+<td>Used with <code>psave</code>. Save segment bounds (<code>start</code> &amp; <code>stop</code>).</td>
+</tr>
+<tr>
+<td>ib</td>
+<td>bool</td>
+<td>Used with <code>psave</code>. Save <a href="#bri">brightness</a>.</td>
+</tr>
+<tr>
+<td>sc</td>
+<td>bool</td>
+<td>Used with <code>psave</code>. Save <a href="#seg-sel">selected segments</a>.</td>
 </tr>
 <tr>
 <td>pl</td>
@@ -3498,7 +3513,7 @@ The tertiary color is not gamma-corrected in 0.8.4, but is in subsequent release
 <td>ID of the color palette or ~ to increment, ~- to decrement, or r for random.</td>
 </tr>
 <tr>
-<td>sel</td>
+<td><a id="seg-sel"></a>sel</td>
 <td>bool</td>
 <td><code>true</code> if the segment is selected. Selected segments will have their state (color/FX) updated by APIs that don't support segments (e.g. UDP sync, HTTP API). If no segment is selected, the first segment (<em>id</em>:<code>0</code>) will behave as if selected. WLED will report the state of the first (lowest <em>id</em>) segment that is selected to APIs (HTTP, MQTT, Blynk...), or <code>mainseg</code> in case no segment is selected and for the UDP API. Live data is always applied to all LEDs regardless of segment configuration.</td>
 </tr>
