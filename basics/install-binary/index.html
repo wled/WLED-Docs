@@ -2732,25 +2732,25 @@ After using the standard WLED installer, microphone hardware sometimes cannot be
 <ul>
 <li>First of all, please follow the steps to install esptool.py <a href="https://github.com/espressif/esptool">here</a>.</li>
 <li>Download the latest <a href="https://github.com/Aircoookie/WLED/releases">release binary</a> file!</li>
-<li>Make sure only one ESP device/microcontroller is connected to your computer! Otherwise you could accidentally overwrite the wrong one. If you know the serial port, you can also add the <code>-port COM3</code> attribute after <code>write_flash</code></li>
+<li>Make sure only one ESP device/microcontroller is connected to your computer! Otherwise you could accidentally overwrite the wrong one. If you know the serial port, you can also add the <code>--port COM3</code> attribute before <code>write_flash</code></li>
 <li>Execute this command:</li>
 </ul>
 <h4 id="esp8266">ESP8266</h4>
-<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write_flash<span class="w"> </span>0x0<span class="w"> </span>./WLED_XXX.bin
+<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write-flash<span class="w"> </span>0x0<span class="w"> </span>./WLED_XXX.bin
 </code></pre></div>
 <h4 id="esp32">ESP32</h4>
 <p>Firstly, flash the version 4 bootloader file, which you can find <a href="https://github.com/Aircoookie/WLED/releases/download/v0.13.1/esp32_bootloader_v4.bin">here</a>.<br />
 This step only has to be done once, to update afterwards the bootloader does not have to be re-installed.</p>
-<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write_flash<span class="w"> </span>0x0<span class="w"> </span>./esp32_bootloader_v4.bin
+<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write-flash<span class="w"> </span>0x0<span class="w"> </span>./esp32_bootloader_v4.bin
 </code></pre></div>
 <p>Now you can flash the actual firmware binary. Keep in mind the bootloader needs to have a flash offset of 0, but the firmware 0x10000.</p>
-<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write_flash<span class="w"> </span>0x10000<span class="w"> </span>./WLED_XXX.bin<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write-flash<span class="w"> </span>0x10000<span class="w"> </span>./WLED_XXX.bin<span class="w"> </span>
 </code></pre></div>
 <p>When esptool.py says <code>Connecting...</code>, some ESP32 boards require you to hold the boot button (to the right of the USB port) for a few seconds  </p>
 <ul>
 <li>If you experience issues, run this command before trying <code>write_flash</code> again (Note: this will erase all settings stored on the ESP!)</li>
 </ul>
-<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>erase_flash
+<div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>erase-flash
 </code></pre></div>
 <p>If you have a MagicHome controller, here is a <a href="https://www.youtube.com/watch?v=qgBAU39v07k">good video tutorial</a> on how to flash it.</p>
 <h3 id="esp8266-flashing-method-3-esp-home-flasher-tool">ESP8266 Flashing method 3: <a href="https://github.com/esphome/esphome-flasher/releases">ESP Home Flasher</a> tool</h3>
