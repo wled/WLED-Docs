@@ -37,7 +37,7 @@ There are a few tips and recomendations to keep in mind when designing your setu
 
 - There is a maximum of 10 strips supported on "classic" ESP32 (dual core) boards. In audioreactive builds, you can use up to 9, because the audio input driver needs one of the hardware units that is normally available for driving LEDs.
  - * "classic" ESP32: 10 led strips (9 with audioreactive)
- - * ESP32-S3: 4 led strips
+ - * ESP32-S3: 12 led strips (with parallel I2S)
  - * ESP32-S2: 5 led strips (4 with audioreactive)
  - * ESP32-C3: 2 led strips
 - Contrary to the ESP8266, the pin usage does not matter on ESP32, feel free to use any available pin
