@@ -14,9 +14,12 @@ Audio Reactive WLED is a possibility of using WLED controllers in such a way tha
 The audio must be "feed" into the microcontroller. There are basically four options: using microphones, line-in adapters, another WLED instance or directly from a PC.
 
 ### ESP / microcrontrollers supported
-Audio Reactivity (AR)  works with 
-- ESP32 including S2, S3 which are tested with digital mic's. ESP32 C3 are too slow for an onboard mic but can work with a custom build - alternatively AR can be achieved via streaming. In 0.15, only ESP32 supports analog mic's.  
-AR does not work with ESP8266 as they have no mic support, AR then is only possible via streaming.
+Audio Reactive (AR) works on all ESP controllers but with some limitations:
+
+- ESP8266 does not support any microphone input, AR streaming mode only
+- ESP32 C3 is too slow and does not include AR by default, enabling AR requires a custom build
+- ESP32 S2, S3 (and C3) support digital microphones only
+- Classic ESP32 supports digital and analog microphones
 
 ### Microphones supported
 
