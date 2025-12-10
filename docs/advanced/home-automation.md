@@ -35,6 +35,9 @@ integration will be available.
 
 [WLED integration documentation](https://www.home-assistant.io/integrations/wled/)
 
+!!! warning "Presets not loaded"
+    Currently there is a known bug ([#3628](https://github.com/wled/WLED/issues/3628)) - affecting the Home Assistant WLED integration regardless of device type or WLED version - where presets created in the WLED web UI do not reliably appear inside HA (the preset list may remain empty). As a result, users cannot select or trigger those presets through HA. This behavior appears to originate from the HA integration rather than WLED core. The most reliable workaround is to reload the WLED integration in Home Assistant, after which the preset list usually populates correctly.
+
 ### Using MQTT
 
 Alternatively, MQTT can be used (not recommended).
