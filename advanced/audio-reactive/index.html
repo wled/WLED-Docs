@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/ui/aircoookie/blurple.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1996,6 +1996,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#esp-microcrontrollers-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP / microcrontrollers supported
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#microphones-supported" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2691,6 +2702,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#esp-microcrontrollers-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP / microcrontrollers supported
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#microphones-supported" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2848,6 +2870,14 @@
 <p>Audio Reactive WLED is a possibility of using WLED controllers in such a way that the LEDs react to music and light up in time. First time this was implemented by a <a href="https://github.com/atuline/WLED">Sound Reactive Fork</a>. As of WLED version 0.14.0-beta1 an usermod is available for original WLED too. Since version 0.15.0 this usermod is included in the official WLED releases.</p>
 <h2 id="hardware-required">Hardware required</h2>
 <p>The audio must be "feed" into the microcontroller. There are basically four options: using microphones, line-in adapters, another WLED instance or directly from a PC.</p>
+<h3 id="esp-microcrontrollers-supported">ESP / microcrontrollers supported</h3>
+<p>Audio Reactive (AR) works on all ESP controllers but with some limitations:</p>
+<ul>
+<li>ESP8266 does not support any microphone input, AR streaming mode only</li>
+<li>ESP32 C3 is too slow and does not include AR by default, enabling AR requires a custom build</li>
+<li>ESP32 S2, S3 (and C3) support digital microphones only</li>
+<li>Classic ESP32 supports digital and analog microphones</li>
+</ul>
 <h3 id="microphones-supported">Microphones supported</h3>
 <p>Three microphone types are supported:</p>
 <h4 id="1-analog-microphones-not-recommended">1. Analog microphones - Not recommended</h4>
@@ -3015,10 +3045,10 @@ This only works if your network supports multicast.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../assets/js/newtab.js"></script>
       
