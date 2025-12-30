@@ -25,7 +25,8 @@ Multiple maps are supported in the latest versions by using `ledmapx.json` where
 Use -1 in the map for gaps/blank/null LEDs.
 
 The ledmap also allows defining the dimensions of a 2D matrix.
-By specifying the `width` and `height` fields, these dimensions are used when the ledmap is applied.
+In such case you do not need to set up 2D in settings.
+By specifying the `width` and `height` fields, these dimensions are used as default matrix size when the ledmap is applied.
 
 #### Mapping Requirements
 
@@ -33,15 +34,16 @@ Mapping is an advanced feature, and for the correct results the following requir
 
 * A same value must not appear multiple times in the mapping, except for -1.
 
-  Mapping works by changing the target LED of each color update. When an effect is rendered, the effect sets colors of a LEDs.
+  Mapping works by reordering the  physical LEDs.
+  When an effect is rendered, the effect sets colors of a LEDs.
   For example, a rainbow effect might set first LED of the strip as Red, the second LED as Yellow and the third LED as Blue.
   Let's denote these physical LEDS as `LED[0]`, `LED[1]` and `LED[2]`.
   Mapping changes these indices to `LED[map[0]]`, `LED[map[1]]` and `LED[map[2]]`, and by setting a map of `[2, 1, 0]` we can reverse the order.
   But if the mapping contained the same value multiple times, for example `map=[0, 0, 0]`, then the effect would set the
   colors of the LEDs `LED[map[0]] = LED[0]`, `LED[map[1]] = LED[0]` and `LED[map[2]] = LED[0]`, i.e. we would be setting the value of `LED[0]` multiple times.
-  In this case, the resulting color of the `LED[0]` is undefined.
+  In this case, the resulting color of the `LED[0]` will the last value set to it.
 
-* The ledmap must include a mapping for every physical led, that is to say, the length of the `map` array must be as long as the number of total LEDs in the system.
+* The ledmap should include a mapping for every physical led, that is to say, the length of the `map` array must be as long as the number of total LEDs in the system.
 
   As described above, the mapping works by changing the LEDs from `LED[0], LED[1], LED[2]...` to `LED[map[0]], LED[map[1]], LED[map[2]]...`.
   If the `map` array is shorter than the number of LEDs, the mapping is assumed to be `map[N] = N` for the missing elements.
