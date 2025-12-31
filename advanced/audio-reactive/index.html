@@ -2877,6 +2877,7 @@
 <li>ESP32 C3 is too slow and does not include AR by default, enabling AR requires a custom build</li>
 <li>ESP32 S2, S3 (and C3) support digital microphones only</li>
 <li>Classic ESP32 supports digital and analog microphones</li>
+<li>PDM microphones (like SPM1423, see below) are supported on Classic ESP32 and ESP32-S3, but not supported on ESP32-S2 and ESP32-C3.</li>
 </ul>
 <h3 id="microphones-supported">Microphones supported</h3>
 <p>Three microphone types are supported:</p>
@@ -2893,7 +2894,7 @@
 <p>There are also some commercial controllers with integrated digital microphone or plug-in capability available. Be sure to setup correct GPIOs according to the information you typically will find printed on the board or in user manual.</p>
 <p><img alt="Example I2S microphone controller" src="../../assets/images/content/example_i2s_mic_controller.jpg" /></p>
 <h4 id="3-pdm-microphones">3. PDM microphones</h4>
-<p>An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good.</p>
+<p>An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good. PDM microphones are only supported on Classic ESP32 and on ESP32-S3.</p>
 <h3 id="line-in-options">Line-In options</h3>
 <p>Similar to microphones there are options for analog or digital line-in adapters. In both cases you use line-out (AUX) or headphone-out signal of your sound system/TV/Smartphone/etc.</p>
 <h4 id="1-analog-line-in-option">1. Analog line-in option</h4>
