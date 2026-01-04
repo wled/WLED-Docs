@@ -16,6 +16,10 @@ There are a few tips and recomendations to keep in mind when designing your setu
 
 - It is highly recommended to use an ESP32 when using more than 1 output
 - You may freely choose the LEDs type, pin numbers, length and color order of your LED strips at runtime in the LED settings page
+- You cannot use input-only pins for LEDs output
+    - classic esp32: pins 34 through 39 are input only.
+    - esp32-s2: pin 46 is input only.
+    - esp32-s3 and esp32-c3 don't have any input-only pins.
 - Highly recommended to size power supply correctly according to your setup and disable the WLED brightness limiter setting to increase framerate with very large LED counts
 - Most strip types have yet to be tested. Add confirmed working below:
 - Confirmed working: WS281x, SK6812 RGBW, PWM white
@@ -40,7 +44,7 @@ There are a few tips and recomendations to keep in mind when designing your setu
  - * ESP32-S3: 12 led strips (with parallel I2S)
  - * ESP32-S2: 12 led strips (with parallel I2S, 4 with audioreactive)
  - * ESP32-C3: 2 led strips
-- Contrary to the ESP8266, the pin usage does not matter on ESP32, feel free to use any available pin
+- Contrary to the ESP8266, the pin usage does not matter on ESP32, feel free to use any available pin, except for input-only pins.
 - For perfect performance, it is recommeded to use 512 LEDs/pin with 4 outputs for a total of 2048 LEDs.
 - For very good performance, it is recommended to use 800 LEDs/pin with 4 outputs for a total of 3200 LEDs.
 - For good performance, you can use 1000 LEDs/pin with 4 outputs for a total of 4000 LEDs.
