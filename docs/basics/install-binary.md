@@ -22,7 +22,7 @@ This installer is not yet available for ESPs with flash chips smaller than 4MB (
 
 - First of all, please follow the steps to install esptool.py [here](https://github.com/espressif/esptool).
 - Download the latest [release binary](https://github.com/Aircoookie/WLED/releases) file!
-- Make sure only one ESP device/microcontroller is connected to your computer! Otherwise you could accidentally overwrite the wrong one. If you know the serial port, you can also add the `--port COM3` attribute before `write_flash`
+- Make sure only one ESP device/microcontroller is connected to your computer! Otherwise you could accidentally overwrite the wrong one. If you know the serial port, you can also add the `--port COM3` attribute before `write-flash`
 - Execute this command:
 
 #### ESP8266
@@ -48,7 +48,7 @@ esptool.py write-flash 0x10000 ./WLED_XXX.bin
 
 When esptool.py says `Connecting...`, some ESP32 boards require you to hold the boot button (to the right of the USB port) for a few seconds  
 
-- If you experience issues, run this command before trying `write_flash` again (Note: this will erase all settings stored on the ESP!)
+- If you experience issues, run this command before trying `write-flash` again (Note: this will erase all settings stored on the ESP!)
 
 ```bash
 esptool.py erase-flash
