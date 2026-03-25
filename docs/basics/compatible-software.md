@@ -42,6 +42,7 @@ Source programs generate light data and stream them to WLED in real time.
 [Hyperion (Classic)](https://hyperion-project.org/) | Hyperion is an open-source Bias or Ambient Lighting implementation which you might know from TV manufacturers. It supports many LED devices and video grabbers. Support for WLED through UDPraw at port 19446 or E1.31.
 Enigmalight | Ambilight clone for broadcom based linux receivers.  It supports many LED devices. Support for WLED through USB Adalight/Momo. Download to various forums use the WEB search function of your browser.
 [Q Light Controller+](https://www.qlcplus.org/) | QLC+ is a free and cross-platform software to control DMX or analog lighting systems like moving heads, dimmers, scanners etc. QLC+ runs on Linux, Windows (XP+), macOS (10.7+) and the Raspberry Pi. WLED can be used with E1.31 (sACN). use major version 4, as 5 is in development.
+[RustyLights](https://github.com/appliedapp/rusty_lights) | Resource-efficient audio-reactive LED visualizer written in Rust. Captures audio, processes it through a DSP pipeline, and outputs to LED strips via E1.31/sACN, DDP, or Art-Net. Designed to run on a Raspberry Pi with sub-5% CPU usage.
 
 ## Various
 
