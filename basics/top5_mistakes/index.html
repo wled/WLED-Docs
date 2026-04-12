@@ -701,6 +701,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#more-to-consider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More to consider
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More to consider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#take-care-of-psu-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Take care of PSU used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2563,6 +2591,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#more-to-consider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More to consider
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More to consider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#take-care-of-psu-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Take care of PSU used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2607,6 +2663,12 @@ If you then still have troubles and are going to ask for help, provide as much i
     <img alt="Example LED type setup" src="../../assets/images/content/example_led_type_setup.jpg" /></li>
 <li>Wiring is bad. Wiring must be done thoroughly. Loose contacts, cold solder joints etc. must be avoided. You also need to be careful about the correct sizing of the cables: too thin wires can not only cause high voltage drop but also lead to an overheating and fire! For wire sizing you may use this <a href="https://wled-calculator.github.io/">LED power, wiring and fuse calculator</a>. If many power sources are used (for example separate one for ESP and separate one for the LED strip), then all their grounds (GND, V-) must be connected together (but do not connect their V+ together!).</li>
 </ol>
+<h3 id="more-to-consider">More to consider</h3>
+<h4 id="take-care-of-psu-used">Take care of PSU used</h4>
+<p>Pay close attention to the power supply unit (PSU) you use. Flickering in addressable LED strips is somethimes caused by poor-quality PSUs that generate significant electromagnetic interference (EMI).</p>
+<p>When selecting a PSU, don’t rely solely on general customer reviews. Make sure the unit has been successfully used specifically with addressable LED strips (e.g., WS2812, SK6812). Many inexpensive PSUs receive positive reviews but are primarily used with analog LED strips.</p>
+<p>Analog LEDs are relatively tolerant of voltage fluctuations and electrical noise. In contrast, addressable LEDs require a stable voltage and low-noise power supply to function correctly, as they rely on precise digital signaling.</p>
+<p>Audible artifacts such as humming, buzzing, or high-pitched whining can indicate poor PSU design or low component quality. These issues often correlate with unstable output and increased electrical noise, which can directly affect LED performance.</p>
 
 
 
