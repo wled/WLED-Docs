@@ -49,7 +49,12 @@ hide:
 - [What do the WLED version names mean?](#what-do-the-wled-version-names-mean)
 - [What is the difference between the brightness sliders in the web UI?](#what-is-the-difference-between-the-brightness-sliders-in-the-web-ui)
 - [My Segments are gone after a reboot!](#my-segments-are-gone-after-a-reboot)
-- [May I sell a product running WLED?](#may-i-sell-a-product-running-wled)
+
+### Bundling WLED with custom hardware
+
+- [May I sell a product with WLED pre-installed?](#bundling-wled-with-custom-hardware-license)
+- [Does "same license" (copyleft) apply to my hardware design?](#does-same-license-copyleft-apply-to-my-hardware-design--schematics-pcb-layout-enclosure-etc)
+- [What if I add a custom usermod or new feature to the WLED firmware?](#what-if-i-add-a-custom-usermod-or-new-feature-to-the-wled-firmware)
 
 ### My question or solution is not on this page
 
@@ -288,9 +293,57 @@ WLED Native has a few more features available, like a tablet interface for Andro
 
 While WLED Native is not the official app, it is officially endorsed and trusted by the WLED maintainers.
 
-### May I sell a product running WLED?
 
-WLED is licensed under the MIT license, thus you are free to use it in any way you wish as long as you retain the copyright notice and accept that I am not to be held liable for anything regarding your use of the software. For product pages, a link to the WLED GitHub repository would be hugely appreciated !
+## Bundling WLED with custom hardware (License)
+
+> ⚠️ Note: This FAQ provides a plain-language summary to help you understand the practical intent of the license. It is *not* legal advice. If you are building a commercial product, consulting a lawyer familiar with open-source licensing is always a good idea.
+
+WLED is licensed under the European Union Public Licence v1.2 (EUPL-1.2), which is a copyleft ("share-alike") software/firmware license.
+
+|Situation|What you must do|
+|---|---|
+|Use WLED **privately** (change code, flash your own device, never distribute)|Private tinkering - do whatever you like|
+|Selling device with unmodified WLED|Keep copyright notice + license text; provide link to source code|
+|Selling device with vanilla WLED + closed-source additions as *separate* software|Your separate software is not affected, but the WLED parts must remain open|
+|Selling device with modified WLED|All of the above plus publish your modifications as open source (EUPL-1.2 or compatible)|
+|Using WLED's name/logo in marketing|Be careful — the license does not grant trademark rights|
+
+### What is NOT affected
+* **Hardware** — your schematics, PCB layouts, enclosure designs, and BOM are entirely your own. EUPL is a software license; it has no legal reach over hardware. (This is consistent with all mainstream copyleft licenses: GPL, LGPL, MPL, etc.)
+* **Independent software on the same device** — code that runs separately and interacts with WLED only via its documented API/network interface is not considered a derivative work.
+* **Usermods and changes you keep private** — if you write a usermod but never distribute the firmware, you have no disclosure obligation. If it works for you, still consider making a PR and share your changes with the community.
+
+### May I sell a product with WLED pre-installed?
+
+Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, including selling products that include WLED pre-installed. Many companies and individuals do exactly this.
+
+#### What you do NOT have to do
+
+* You do not need permission from the WLED authors to sell your device.
+* You do not need to open-source your configuration files (e.g., presets.json, cfg.json) — only actual source code modifications to the firmware.
+* You do not need to open-source your hardware design, schematic, or PCB layout (the license only covers the software/firmware).
+
+#### What you must do
+
+1. **Keep the copyright notice and license text**: You must include the original WLED copyright notice and a copy of the EUPL-1.2 license with every device or product you sell. In practice, this usually means:
+   * Making it accessible via the device's web interface (WLED already shows this in its Info page), or
+   * Including it in the documentation (printed or digital), or
+   * Referring customers to a URL where the license and attribution are clearly published.
+2. **Provide (or link to) the source code**: You must make the source code of WLED (in the version you're shipping) available to your customers — either by including it or by providing a clearly visible link to a public repository (e.g., the official WLED GitHub page or your own fork). This link must **remain working** for as long as you distribute the product.
+3. **If you modified WLED: share your changes**. You cannot keep your source code modifications private or proprietary.
+4. **Do not remove or hide credits**: Do not strip out the "About WLED" or "Info" pages, the copyright notice, or any attribution to the original authors.
+5. **No extra restrictions on your customers**: You cannot add license terms that take away the rights the EUPL gives your customers. For example, you cannot tell your customers "you may not modify this firmware" — the EUPL already grants them that right.
+
+### Does "same license" (copyleft) apply to my hardware design — schematics, PCB layout, enclosure, etc.?
+
+No. The EUPL-1.2 is a software license. Its copyleft clause only covers the software (the firmware source code and its derivatives). It has no effect on your hardware.
+
+Your schematics, PCB layout files, bill of materials, enclosure designs, and any other hardware-related work are entirely your own. You can keep them proprietary, patent them, or license them however you like. The EUPL does not require you to share or open-source any of that.
+
+### What if I add a custom usermod or new feature to the WLED firmware?
+
+If you flash a modified version of WLED onto your devices *and* distribute them, you must publish your additions/changes as open source under EUPL-1.2 (or a compatible license such as GPL v2/v3, LGPL, MPL 2.0, etc.). You can publish your own fork on GitHub or any other public platform. You cannot keep it private or sell it as proprietary software.
+
 
 ## My question or solution is not on this page
 
