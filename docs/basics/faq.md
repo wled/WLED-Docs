@@ -20,7 +20,7 @@ hide:
 - [I have entered my WiFi credentials and rebooted, but I can not connect to the module now!](#i-have-entered-my-wifi-credentials-and-rebooted-but-i-can-not-connect-to-the-module-now)
 - [The module once was connected, but I can no longer reach it.](#the-module-once-was-connected-but-i-can-no-longer-reach-it)
 - [The wled-xxx.local address (mDNS) does not work.](#the-wled-xxxlocal-address-mdns-does-not-work)
-- [Is it safe to do a port forwarding to the public internet to control the lights from anywhere?](/advanced/security)
+- [Is it safe to expose WLED to the public internet to control the lights from anywhere?](#is-it-safe-to-expose-wled-to-the-public-internet-to-control-the-lights-from-anywhere)
 - [My device is unresponsive or animations lag!](#my-device-is-unresponsive-or-animations-lag)
 - [I'm having a bootloop! (LEDs turn on every ~5seconds)](#im-having-a-bootloop-leds-turn-on-every-5seconds)
 - [I am running realtime (e.g. E1.31) and not all of my LEDs are driven fluently!](#i-am-running-realtime-eg-e131-and-not-all-of-my-leds-are-driven-fluently)
@@ -92,9 +92,9 @@ This only works with Apple devices out of the box. You can install Bonjour to ma
 For Android there is no convenient way to achieve it, though you can use apps like "Bonjour search" to find the IP.
 It is highly recommended that you install the WLED Native app, which makes automatic discovery easy!
 
-### Is it safe to do a port forwarding to the public internet to control the lights from anywhere?
+### Is it safe to expose WLED to the public internet to control the lights from anywhere?
 
-See [this](/advanced/security) page.
+See [Accessing WLED over Internet](/advanced/access-over-internet) page.
 
 ### My device is unresponsive or animations lag!
 
