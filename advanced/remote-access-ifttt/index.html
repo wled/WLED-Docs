@@ -14,7 +14,7 @@
         <link rel="prev" href="../home-automation/">
       
       
-        <link rel="next" href="../security/">
+        <link rel="next" href="../ota-lock/">
       
       
         
@@ -2051,10 +2051,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-port-forwarding" class="md-nav__link">
+  <a href="#3-reverse-proxy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Port Forwarding
+        3. Reverse Proxy
       
     </span>
   </a>
@@ -2088,14 +2088,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
+      <a href="../ota-lock/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Security
+    OTA Lock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-over-internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing WLED over Internet
   
 
     
@@ -2584,10 +2612,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-port-forwarding" class="md-nav__link">
+  <a href="#3-reverse-proxy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Port Forwarding
+        3. Reverse Proxy
       
     </span>
   </a>
@@ -2639,14 +2667,11 @@ Therefore you can only control your lights from within your local (home) network
 <p>If you add your WLED device to your Home Automation system (e.g. Home Assistant or ioBroker), you can control WLED remotely if you have set up remote access for your Home Automation system, for example via Nabu Casa.</p>
 <h3 id="2-amazon-echo-device">2. Amazon Echo device</h3>
 <p>If you have set up your Alexa device to control WLED, you can just use the Alexa App or another Echo device linked to your account to control your lights (on/off and brightness only)</p>
-<h3 id="3-port-forwarding">3. Port Forwarding</h3>
-<p><strong>Warning: An insecure HTTP connection is used, please do NOT edit sensitive info like the WiFi settings when connected via port forwarding!</strong> <br />
-This method offers more flexibility, but is also more involved. <br />
-<strong>Keep in mind this causes anyone with your IP address to have access to your ESP8266!</strong> <br />
-Setting up an <a href="/advanced/security">OTA lock password</a> is a must to prevent attackers from acquiring your WiFi credentials!</p>
-<p>To expose WLED to the internet, create a port forwarding rule for your ESP's IP local ip and port (80) in your router configuration. It is not recommended to use port 80 on your public IP address since 80 is scanned constantly by bots good and bad. Use a 5 digit port for better security.
-If your public IP changes a lot, make sure to also use a dynamic DNS service so your lights are always accessible.
-<em>Unsure what any of this means or how to do it? Google for "[your router model] port forwarding"!</em></p>
+<h3 id="3-reverse-proxy">3. Reverse Proxy</h3>
+<p>If you have a device capable running a reverse proxy in your local network,
+you can expose WLED safely over public internet.
+This allows you to control lighting from anywhere on the globe.
+See <a href="/advanced/access-over-internet">Accessing WLED over Internet</a> for details.</p>
 <p>Additionally, this opens up many new possibilities for automation! You can use a service like <a href="https://ifttt.com/">IFTTT</a> Webhooks to send automated WLED API calls that can do anything from turning on the lights at a set time to changing their color if you get a new email!</p>
 <h3 id="4-hue-sync">4. Hue sync</h3>
 <p>If you have a Philips hue setup and sync WLED to it, you can control your WLED lights in any way it's possible to control your hue lights (hue App, Alexa (including colors), any other service that uses Philips hue API)</p>
