@@ -296,7 +296,9 @@ While WLED Native is not the official app, it is officially endorsed and trusted
 
 ## Bundling WLED with custom hardware (License)
 
-> ⚠️ Note: This FAQ provides a plain-language summary to help you understand the practical intent of the license. It is *not* legal advice. If you are building a commercial product, consulting a lawyer familiar with open-source licensing is always a good idea.
+!!! warning "Consult a Lawyer"
+    This FAQ provides a plain-language summary to help you understand the practical intent of the license. It is *not* legal advice. 
+    If you are building a commercial product, consulting a lawyer familiar with open-source licensing is always a good idea.
 
 WLED is licensed under the European Union Public Licence v1.2 (EUPL-1.2), which is a copyleft ("share-alike") software/firmware license.
 
