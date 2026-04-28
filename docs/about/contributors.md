@@ -70,7 +70,9 @@ WLED implements Art-Net™ Designed by and Copyright Artistic Licence Holdings L
 [PubSubClient](https://github.com/knolleary/pubsubclient) by knolleary (modified, up to 0.8.3)  
 
 [![badge](https://img.shields.io/badge/badges-by%20shields.io-blue.svg?style=flat-square)](https://shields.io)  
-[iro.js](https://iro.js.org/) colorpicker by James Daniel!  
+[iro.js](https://iro.js.org/) colorpicker by James Daniel!
+[Corsfix](https://corsfix.com/)
+
 Classic UI icons by [Linearicons](https://linearicons.com) created by [Perxis](https://perxis.com)!  
 
 If you would like to appear in this list for a contribution you made or be removed from it, feel free to contact me!
