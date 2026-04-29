@@ -321,7 +321,7 @@ Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, includin
 #### What you do NOT have to do
 
 * You do not need permission from the WLED authors to sell your device.
-* You do not need to open-source your configuration files (e.g., presets.json, cfg.json) — only actual source code modifications to the firmware, and custom buildenvs to re-build the firmware for your device (platformio.ini or platformio_override.ini).
+* You do not need to open-source your configuration files (e.g., presets.json, cfg.json) — only modifications to the actual source code of the firmware need to be published, including custom build environments to rebuild the firmware for your device (platformio.ini or platformio_override.ini).
 * You do not need to open-source your hardware design, schematic, or PCB layout (the license only covers the software/firmware).
 
 #### What you must do
