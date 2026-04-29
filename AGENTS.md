@@ -112,7 +112,7 @@ When reviewing a pull request, verify the following:
 - [ ] No grammar or spelling mistakes.
 - [ ] Wording is **concise** — remove filler phrases (e.g. "it is worth noting that", "basically", "simply") and redundant sentences.
 - [ ] Contractions (e.g. "you'll", "don't", "it's") are welcome — they help keep the tone approachable.
-- [ ] No idioms or culture-specific phrases (e.g. "beating around the bush", "get your ducks in a row") — they are hard to understand when translated literally into other languages.
+- [ ] Avoid idioms or culture-specific phrases (e.g. "beating around the bush", "get your ducks in a row") — they are hard to understand when translated literally into other languages.
 
 ### Navigation
 
