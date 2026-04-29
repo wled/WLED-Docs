@@ -312,12 +312,12 @@ WLED is licensed under the European Union Public Licence v1.2 (EUPL-1.2), which 
 
 ### What is NOT affected
 * **Hardware** — your schematics, PCB layouts, enclosure designs, and BOM are entirely your own. EUPL is a software license; it has no legal reach over hardware. (This is consistent with all mainstream copyleft licenses: GPL, LGPL, MPL, etc.)
-* **Independent software on the same device** — code that runs separately and interacts with WLED only via its documented API/network interface is not considered a derivative work.
+* **Independent software on the same device** — code that runs separately and interacts with WLED only via its documented network interfaces/APIs is not considered a derivative work.
 * **Usermods and changes you keep private** — if you write a usermod but never distribute the firmware, you have no disclosure obligation. If it works for you, still consider making a PR and share your changes with the community.
 
 ### May I sell a product with WLED pre-installed?
 
-Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, including selling products that include WLED pre-installed. Many companies and individuals do exactly this.
+Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, including selling products with WLED pre-installed. Many companies and individuals do exactly this.
 
 #### What you do NOT have to do
 
@@ -327,8 +327,8 @@ Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, includin
 
 #### What you must do
 
-1. **Keep the copyright notice and license text**: You must include the original WLED copyright notice and a copy of the EUPL-1.2 license with every device or product you sell. In practice, this usually means:
-   * Making it accessible via the device's web interface (WLED already shows this in its Info page), or
+1. **Provide the copyright notice and license text**: You must include the original WLED copyright notice and a copy of the EUPL-1.2 license with every device or product you sell. In practice, this usually means:
+   * Making it accessible via the device's web interface (WLED already shows this in its *Info* page), or
    * Including it in the documentation (printed or digital), or
    * Referring customers to a URL where the license and attribution are clearly published.
 2. **Provide (or link to) the source code**: You must make the source code of WLED (in the version you're shipping) available to your customers — either by including it or by providing a clearly visible link to a public repository (e.g., the official WLED GitHub page or your own fork). This link must **remain working** for as long as you distribute the product.
