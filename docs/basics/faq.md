@@ -293,11 +293,10 @@ WLED Native has a few more features available, like a tablet interface for Andro
 
 While WLED Native is not the official app, it is officially endorsed and trusted by the WLED maintainers.
 
-
 ## Bundling WLED with custom hardware (License)
 
 !!! warning "Consult a Lawyer"
-    This FAQ provides a plain-language summary to help you understand the practical intent of the license. It is *not* legal advice. 
+    This FAQ provides a plain-language summary to help you understand the practical intent of the license. It is *not* legal advice.
     If you are building a commercial product, consulting a lawyer familiar with open-source licensing is always a good idea.
 
 WLED is licensed under the European Union Public Licence v1.2 (EUPL-1.2), which is a copyleft ("share-alike") software/firmware license.
@@ -322,7 +321,7 @@ Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, includin
 #### What you do NOT have to do
 
 * You do not need permission from the WLED authors to sell your device.
-* You do not need to open-source your configuration files (e.g., presets.json, cfg.json) — only actual source code modifications to the firmware, and custom buildenvs to re-build the firmware for your device (platformio.ini or platformio_override.ini) .
+* You do not need to open-source your configuration files (e.g., presets.json, cfg.json) — only actual source code modifications to the firmware, and custom buildenvs to re-build the firmware for your device (platformio.ini or platformio_override.ini).
 * You do not need to open-source your hardware design, schematic, or PCB layout (the license only covers the software/firmware).
 
 #### What you must do
@@ -345,7 +344,6 @@ Your schematics, PCB layout files, bill of materials, enclosure designs, and any
 ### What if I add a custom usermod or new feature to the WLED firmware?
 
 If you flash a modified version of WLED onto your devices *and* distribute them, you must publish your additions/changes as open source under EUPL-1.2 (or a compatible license such as GPL v2/v3, LGPL, MPL 2.0, etc.). You can publish your own fork on GitHub or any other public platform. You cannot keep it private or sell it as proprietary software.
-
 
 ## My question or solution is not on this page
 
