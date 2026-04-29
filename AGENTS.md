@@ -109,6 +109,7 @@ When reviewing a pull request, verify the following:
 
 - [ ] Tone is **informal, friendly, and inviting** — avoid overly formal or academic language.
 - [ ] Language is **simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can easily follow.
+- [ ] Logic is easy to follow, examples are kept simple.
 - [ ] No grammar or spelling mistakes.
 - [ ] Wording is **concise** — remove filler phrases (e.g. "it is worth noting that", "basically", "simply") and redundant sentences.
 - [ ] Contractions (e.g. "you'll", "don't", "it's") are welcome — they help keep the tone approachable.
