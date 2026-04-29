@@ -105,6 +105,14 @@ When reviewing a pull request, verify the following:
 - [ ] Code blocks use language identifiers.
 - [ ] No unintentional trailing whitespace (two trailing spaces are allowed for forced line breaks).
 
+### Writing Style & Readability
+
+- [ ] Tone is **informal, friendly, and inviting** — avoid overly formal or academic language.
+- [ ] Language is **simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can easily follow.
+- [ ] No grammar or spelling mistakes.
+- [ ] Wording is **concise** — remove filler phrases (e.g. "it is worth noting that", "basically", "simply") and redundant sentences.
+- [ ] Contractions (e.g. "you'll", "don't", "it's") are welcome — they help keep the tone approachable.
+
 ### Navigation
 
 - [ ] If a new page is added, it is registered in the `nav:` section of `mkdocs.yml` at the correct location and indentation level.
