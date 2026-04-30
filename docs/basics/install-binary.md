@@ -20,11 +20,7 @@ This installer is not yet available for ESPs with flash chips smaller than 4MB (
     After using the standard WLED installer, microphone hardware sometimes cannot be initialized properly by WLED.
 
 !!! tip
-    If your serial port is listed on linux ('ttyUSB0 CP2102' or similar) but you are unable to open it, make sure you give yourself permission to use that device.
-    Find the owner with:
-    `ls -la /dev/ttyUSB0` (replace ttyUSB0 with your device). If it says `root`, Chrome will not be able to open it.
-    Make yourself the owner by running `whoami` to get your username, and then to change the owner:
-    `sudo chown {your username} /dev/ttyUSB0`(replace ttyUSB0 with your device).
+    If your serial port is listed on linux ('ttyUSB0 CP2102' or similar) but you are unable to open it, make sure you give yourself permission to use that device, for example by adding your user to the group that has access to the tty port.
 
 ### Flashing method 2: esptool
 
