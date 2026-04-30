@@ -18,6 +18,9 @@ This installer is not yet available for ESPs with flash chips smaller than 4MB (
     Several users reported that this alternative, unofficial installer site may work better: [https://wled-install.github.io/](https://wled-install.github.io/).
     After using the standard WLED installer, microphone hardware sometimes cannot be initialized properly by WLED.
 
+!!! tip
+    If your serial port is listed on linux ('ttyUSB0 CP2102' or similar) but you are unable to open it, make sure you give yourself permission to use that device, for example by adding your user to the group that has access to the tty port.
+
 ### Flashing method 2: esptool
 
 - First of all, please follow the steps to install esptool.py [here](https://github.com/espressif/esptool).
