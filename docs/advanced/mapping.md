@@ -12,7 +12,7 @@ This allows us to treat the WLED strip as if it is wired in any way - we can the
 
 ### How do we do it?
 
-Navigate to the edit page for your WLED device by adding `/edit` to its' address - for example, https://my-led-device.local/edit
+Navigate to the edit page for your WLED device by adding `/edit` to its address - for example, https://my-led-device.local/edit
 Use this edit page to create a file called `ledmap.json`.
 
 `ledmap.json` file needs to be a JSON formatted file with the the key being "map" and the value being an array of numbers representing the new order of pixels. The _position_ of values in the array is the "natural" order of LEDs and the value entered is the new position.
@@ -22,7 +22,7 @@ If your `ledmap.json` file is not working, check for white-spaces where they sho
 
 Multiple maps are supported in the latest versions by using `ledmapx.json` where x is a number. Maps can be selected in a preset using `{"ledmap":x,...`.
 
-Use -1 in the map for gaps/blank/nul LEDs.
+Use -1 in the map for gaps/blank/null LEDs.
 
 ### Examples 
 In the below example (formatted multiple ways), we remap a strip of four LEDs from a physical order of 0 1 2 3 into a new order of 0 2 1 3.

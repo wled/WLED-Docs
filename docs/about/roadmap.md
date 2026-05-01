@@ -5,9 +5,5 @@ hide:
   # - toc
 ---
 
-These are currently on my list of what COULD be implemented, there is no guarantee if and when they will be available!
-
-- Create named playlists of presets
-- Custom color palettes
-- Settings pages overhaul
-- Rework of WiFi connection logic (reconnect after WiFi or power outage)
+Please check our [WLED milestone planning](https://github.com/wled/WLED/milestones) for upcoming features and releases. 
+There is no guarantee if and when a new feature or bugfix will be available!

@@ -17,7 +17,7 @@ A dedicated infrared receiver module is required and must be connected to the WL
 
 ### Supported IR remotes
 
-To use IR remote go to `Settings`, `Sync Interfaces` and change the value for `Infrared receiver type` according to the IR remote type of the following list:
+To use IR remote go to `Settings`, `LED Preferences` and change the value for `Infrared receiver type` according to the IR remote type of the following list:
 
 1. white 24-key IR remote with R,G,B + 12 color-tones  
 2. white 24-key IR remote with CT+ / CT- buttons  
@@ -28,6 +28,6 @@ To use IR remote go to `Settings`, `Sync Interfaces` and change the value for `I
 7. [JSON IR remote](json-ir/json_infrared.md) - Easily configure and use any IR remote.  
 
 ## ESP-NOW based remote control
-Since version WLED 14.0-beta3: An ESP-NOW compatible remote control is supported. An example of this is the „WIZmote“ remote control. This is based on an ESP microcontroller. ESP-NOW can be activated in WLED settings. You have to enter the Hardware MAC address of the remote control. This is determined by clicking on any button on the remote control and copying the last received MAC address from the "Last Seen" field to the "Hardware MAC" field in WLED ESP-NOW settings (“Config->WiFi Setup”) and saving it with "Save". Advantages: no special receiver needs to be attached to the WLED controller and the signals are transmitted via radio network. Therefore there is no line of sight between the remote control and the WLED controller required, as is the case with an IR remote control.
+Since version WLED 14.0-beta3: An ESP-NOW compatible remote control is supported. An example of this is the „WIZmote“ remote control. This is based on an ESP microcontroller. You can also [build your own ESP-NOW remote](https://github.com/DedeHai/WLED-ESPNow-Remote) using an ESP32 C3. ESP-NOW can be activated in WLED settings. You have to enter the Hardware MAC address of the remote control. This is determined by clicking on any button on the remote control and copying the last received MAC address from the "Last Seen" field to the "Hardware MAC" field in WLED ESP-NOW settings (“Config->WiFi Setup”) and saving it with "Save". Advantages: no special receiver needs to be attached to the WLED controller and the signals are transmitted via radio network. Therefore there is no line of sight between the remote control and the WLED controller required, as is the case with an IR remote control.
 ![ESP-NOW remote control](../assets/images/content/pic14.jpg)
 The 4 buttons "1"-"4" of the WIZmote remote control are linked to presets 1 to 4. The meaning of other keys is self-explanatory. Attention: WIZmote needs two good quality AAA batteries to work properly. If the batteries are too weak, the correct signal will not be sent, even if the blue LED on the remote control lights up briefly, actually indicating signal transmission.
