@@ -305,13 +305,13 @@ WLED is licensed under the European Union Public Licence v1.2 (EUPL-1.2), which 
 |---|---|
 |Use WLED **privately** (change code, flash your own device, never distribute)|Private tinkering - do whatever you like|
 |Selling device with unmodified WLED|Keep copyright notice + license text; provide link to source code|
-|Selling device with vanilla WLED + closed-source additions as *separate* software|Your separate software is not affected, but the WLED parts must remain open|
+|Selling device with vanilla WLED + closed-source additions as *separate* software|Your separate software is generally not affected, but the WLED parts must remain open|
 |Selling device with modified WLED|All of the above plus publish your modifications as open source (EUPL-1.2 or compatible)|
 |Using WLED's name/logo in marketing|Be careful — the license does not grant trademark rights|
 
 ### What is NOT affected
 * **Hardware** — your schematics, PCB layouts, enclosure designs, and BOM are entirely your own. EUPL is a software license; it has no legal reach over hardware. (This is consistent with all mainstream copyleft licenses: GPL, LGPL, MPL, etc.)
-* **Independent software on the same device** — code that runs separately and interacts with WLED only via its documented network interfaces/APIs is not considered a derivative work.
+* **Independent software on the same device** — code that runs separately and interacts with WLED only via its documented network interfaces/APIs is generally not considered a derivative work.
 * **Usermods and changes you keep private** — if you write a usermod but never distribute the firmware, you have no disclosure obligation. If it works for you, still consider making a PR and share your changes with the community.
 
 ### May I sell a product with WLED pre-installed?
@@ -320,9 +320,9 @@ Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, includin
 
 #### What you do NOT have to do
 
-* You do not need permission from the WLED authors to sell your device.
-* You do not need to open-source your configuration files (e.g., presets.json, cfg.json) — only actual source code modifications to the firmware, including custom build environments to rebuild the firmware for your device (platformio.ini or platformio_override.ini).
-* You do not need to open-source your hardware design, schematic, or PCB layout (the license only covers the software/firmware).
+* No permission is needed from the WLED authors to sell your device.
+* No need to open-source runtime configuration files (e.g., presets.json, cfg.json) — only actual source code modifications to the firmware, including custom build environments to rebuild the firmware for your device (platformio.ini or platformio_override.ini).
+* No need to publish your hardware design, schematic, or PCB layout (the license only covers the software/firmware).
 
 #### What you must do
 
@@ -330,7 +330,7 @@ Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, includin
    * Making it accessible via the device's web interface (WLED already shows this in its *Info* page), or
    * Including it in the documentation (printed or digital), or
    * Referring customers to a URL where the license and attribution are clearly published.
-2. **Provide (or link to) the source code**: You must make the source code of WLED (in the version you're shipping) available to your customers — either by including it or by providing a clearly visible link to a public repository (e.g., the official WLED GitHub page or your own fork). This link must **remain working** for as long as you distribute the product.
+2. **Provide (or link to) the source code**: You must make the source code of WLED (in the *exact* version you're shipping) available to your customers — either by including it or by providing a clearly visible link to a public repository (e.g., the official WLED GitHub page or your own fork). This link must **remain working** for as long as you distribute the product.
 3. **If you modified WLED: share your changes**. You cannot keep your source code modifications private or proprietary.
 4. **Do not remove or hide credits**: Do not strip out the "About WLED" or "Info" pages, the copyright notice, or any attribution to the original authors.
 5. **No extra restrictions on your customers**: You cannot add license terms that take away the rights the EUPL gives your customers. For example, you cannot tell your customers "you may not modify this firmware" — the EUPL already grants them that right.
