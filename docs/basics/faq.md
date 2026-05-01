@@ -20,7 +20,7 @@ hide:
 - [I have entered my WiFi credentials and rebooted, but I can not connect to the module now!](#i-have-entered-my-wifi-credentials-and-rebooted-but-i-can-not-connect-to-the-module-now)
 - [The module once was connected, but I can no longer reach it.](#the-module-once-was-connected-but-i-can-no-longer-reach-it)
 - [The wled-xxx.local address (mDNS) does not work.](#the-wled-xxxlocal-address-mdns-does-not-work)
-- [Is it safe to do a port forwarding to the public internet to control the lights from anywhere?](/advanced/security)
+- [Is it safe to expose WLED to the public internet to control the lights from anywhere?](#is-it-safe-to-expose-wled-to-the-public-internet-to-control-the-lights-from-anywhere)
 - [My device is unresponsive or animations lag!](#my-device-is-unresponsive-or-animations-lag)
 - [I'm having a bootloop! (LEDs turn on every ~5seconds)](#im-having-a-bootloop-leds-turn-on-every-5seconds)
 - [I am running realtime (e.g. E1.31) and not all of my LEDs are driven fluently!](#i-am-running-realtime-eg-e131-and-not-all-of-my-leds-are-driven-fluently)
@@ -97,9 +97,9 @@ This only works with Apple devices out of the box. You can install Bonjour to ma
 For Android there is no convenient way to achieve it, though you can use apps like "Bonjour search" to find the IP.
 It is highly recommended that you install the WLED Native app, which makes automatic discovery easy!
 
-### Is it safe to do a port forwarding to the public internet to control the lights from anywhere?
+### Is it safe to expose WLED to the public internet to control the lights from anywhere?
 
-See [this](/advanced/security) page.
+See [Accessing WLED over Internet](/advanced/access-over-internet) page.
 
 ### My device is unresponsive or animations lag!
 
@@ -278,8 +278,8 @@ There is a third brightness slider in each Segment panel. This serves the same p
 Segments are non-persistant by default. If you want to load your preset at every startup, just do the following:
 
 - Set your segments up as desired
-- Go into the Favorites tab in the web UI, click the save checkbox and save the config to preset slot number `16`
-- In LED settings, set `Boot Preset` to `16`
+- Go into the Presets tab in the web UI, click the save checkbox and save the config to a new preset. Remember the preset slot number.
+- In LED settings, set `Boot Preset` to the preset slot number from the previous step.
 
 This will be improved in a future release, so that you will be able to save multiple segment configurations!
 
