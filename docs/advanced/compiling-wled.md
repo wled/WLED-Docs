@@ -7,8 +7,9 @@ hide:
 
 You want to add custom features to WLED, use non-default pins, or add in a usermod? You've found the right place!
 
-WLED has come to rely on so many dependencies in the latest versions that building with the Arduino IDE is no longer recommended.
-Instead, installing Visual Studio Code and its PlatformIO (PIO) extension is easier, as it will install the ESP Arduino core, all the required libraries and the correct compilation settings for you automatically.
+WLED has come to rely on so many dependencies in the latest versions that building with Visual Studio Code and its PlatformIO (PIO) extension is the recommended way. It will install the ESP Arduino core, all the required libraries and the correct compilation settings for you automatically. The Arduino IDE is no longer recommended.
+
+If you don't want to change the code but only add some compile options and/or usermods, you can use bot on discord or compile with just few clicks using [this inofficial web based wled compiler](https://wled-compile.github.io/). Using it you can download the resulting .bin file directly or install  via USB using built-in web-based installer.
 
 ### Preparations
 
@@ -41,7 +42,7 @@ Alternatively fork the WLED project first and download it from your fork.
     Make sure Git Client is installed on your system. You can get it [here](https://git-scm.com/downloads).
 
 1. In VS Code, open the file `platformio.ini`.
-2. Add a semicolon in front of the line that says `default_envs = travis_esp8266, travis_esp32` to comment it out.
+2. Add a semicolon in front of the line that start `default_envs = ` to comment it out.
 3. Select your build environment by un-commenting one of the lines starting with `; default_envs =`.
 Please remove _BOTH_ the `;` and the whitespace behind it to correctly uncomment the line.
 For most ESP8266 boards, the `d1_mini` environment is best.

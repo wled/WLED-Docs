@@ -1,11 +1,15 @@
 ---
-title: Security
+title: OTA Lock
 hide:
   # - navigation
   # - toc
 ---
 
-WLED was designed in a way that you should be safe to have a [router port forwarding](/advanced/remote-access-ifttt) to control the system from the public internet. This page will tell you what you can expect by WLEDs security.
+WLED security model is based on assumption that it is run on a trusted network, and in most cases, anyone having a network access to a WLED device has permissions for any operation.
+OTA Lock is an exception to this rule.
+OTA Lock allows limiting users who can perform OTA by requiring a password before allowing an update.
+This can be used for additional security when a device is accessed from the public internet. See [Remote Access / IFTTT](/advanced/remote-access-ifttt) for more information.
+This page will tell you what you can expect by WLEDs security.
 
 ### TLDR - what to do?
 

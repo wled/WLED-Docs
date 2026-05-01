@@ -20,9 +20,12 @@ Please use a decent and neutral description when adding things to this list.
 
 | Name | Description |
 |---|---|
+[ABC! WLED PWM Board](https://shop.myhome-control.de/WLED-PWM-Board/HW10024) | This board integrates MOSFETs with additional protection measures (overcurrent, overtemperature, short circuit and reverse polarity) and can be used in combination with any WLED controller to control analogue LED strips. [German shop & shipping within Germany or to Poland.](https://shop.myhome-control.de/WLED-PWM-Board/HW10024)
+[ABC! WLED Switch Board](https://shop.myhome-control.de/en/ABC-WLED-Switch-Board/HW10021) | This board integrates self-protected electronic switches (MOSFET based) as modern alternative to relays and can be used to switch off power provided to LEDs in "OFF" state. It also provides overcurrent, overtemperature, short circuit and reverse polarity protection. [German shop & shipping within Germany or to Poland.](https://shop.myhome-control.de/en/ABC-WLED-Switch-Board/HW10021)
 [ESP32 Ethernet Network Shield](https://www.tindie.com/products/30385/)| Ethernet Shield (10/100Mbps) for ESP32 boards. Stackable with D1 Mini32 form factor boards.
 [Logic Level Shifter Board](https://www.tindie.com/products/sjmelectronics/logic-level-converter-level-shifter) | A simple level shifter board. Updated version has selectable data-pin resistors.
 [Logic Level Shifter Shield](https://www.tindie.com/products/sjmelectronics/logic-level-converter-shield)| Logic level shifter shield for Seeed Studio ESP32-C3 and D1 Mini format dev boards. Updated version has selectable data-pin resistors.
+[MagWLED-1](https://magwled.com) | ESP32-C3 based WLED controller with USB-C Power Delivery (up to 36W/12V 3A). Compact 48x32mm form factor with Wago 2060 connector. Features include 3A resettable fuse, ESD protection, and MOSFET relay for power control. Comes pre-flashed with WLED.
 [WIZmote remote control](https://www.google.com/search?q=wizmote) | Remote control using radio network. Compatible with WLED (vesions 0.14.0-beta3 and above). No additional receiver required.
 
 ## Compatible PC RGB Fans and ARGB accessories
@@ -41,11 +44,15 @@ SN74AHCT125 | Aircoookie's recommended levelshifter. Often used in DIY and comme
 SN74AHCT32 | Same pinout as above can be used. This is just an OR gate, but any AHCT gate can be used if inputs are connected appropriately. ;)
 SN74HCT125N | Slower, cheaper version. Works just as well for WS2812, but not recommended for APA102.
 SN74LVC2T45 | Modern bus transceiver with voltage translation [Yet Another WLED Controller](https://github.com/lizardsystems/yawl-controller)
-TXS0102, TXS0108 | Bidirectional levelshifters that may work fine with WLED (if possible, 74AHCT gates should be preferred as they support both longer data lines and faster protocols)
+Amplifier/Splitter | These have been tested and do work. [More info here.](https://discord.com/channels/473448917040758787/719873873071308821/1278797679656439849) - [Example product](https://www.amazon.com/BTF-LIGHTING-WS2812B-Amplifier-Support-addressable/dp/B0B5ZSSFR7)
+TXS0102, TXS0108 | Not recommended: these bidirectional levelshifters do work but only for short data lines (less than 50cm).
 [F-Amp](https://pixelcontroller.com/store/accessories/54-famp-xconnect.html) | Level shifter/data booster
+Adafruit Shifter | https://www.adafruit.com/product/6066
 
 !!! warning
-    I2C shifters are generally too slow for addressable LEDs, so don't use them.
+    I2C shifters are generally too slow for addressable LEDs, so don't use them.  
+    ![No_I2C_Shifter](../assets/images/content/NoI2Cshifter.jpg)  
+    If you must: there is a [hack to make them work on short data lines](https://wled.discourse.group/t/levelshifter-analysis/11871/12)
 
 Further reading:
 [Logic Level Shifters for Driving LED Strips](https://electricfiredesign.com/2021/03/12/logic-level-shifters-for-driving-led-strips/)
