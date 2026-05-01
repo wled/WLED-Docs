@@ -6,6 +6,8 @@ This is the official user documentation for [WLED](https://github.com/wled/WLED)
 
 All documentation is written in **English**. Contributors improve docs by editing Markdown files and submitting pull requests.
 
+[WLED](https://github.com/wled/WLED) is an open source firmware - written mainly in C++ using platformIO and node.js tooling - for ESP32/ESP8266 microcontrollers controlling addressable LEDs, with a web UI and various networking APIs for custom integrations. WLED is licensed under EUPL-1.2.
+
 ---
 
 ## Repository Structure
@@ -150,3 +152,12 @@ Then visit <http://localhost:8000>.
 ## Automated Deployment
 
 Merges to `main` trigger the GitHub Actions workflow (`.github/workflows/main.yml`), which builds the MkDocs site and deploys it to GitHub Pages automatically. There is no manual deployment step required.
+
+
+## General Guidelines
+
+- **Provide references** when making analyses or recommendations. Base them on the correct branch or PR.
+- **When unsure, say so.** Gather more information rather than guessing.
+- **Acknowledge good patterns** when you see them. Positive feedback always helps.
+- When updating an existing PR, retain the original description. Only modify it to ensure technical accuracy. Add change logs after the existing description.
+- No force-push on open PRs
