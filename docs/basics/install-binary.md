@@ -18,11 +18,14 @@ This installer is not yet available for ESPs with flash chips smaller than 4MB (
     Several users reported that this alternative, unofficial installer site may work better: [https://wled-install.github.io/](https://wled-install.github.io/).
     After using the standard WLED installer, microphone hardware sometimes cannot be initialized properly by WLED.
 
+!!! tip
+    If your serial port is listed on linux ('ttyUSB0 CP2102' or similar) but you are unable to open it, make sure you give yourself permission to use that device, for example by adding your user to the group that has access to the tty port.
+
 ### Flashing method 2: esptool
 
 - First of all, please follow the steps to install esptool.py [here](https://github.com/espressif/esptool).
 - Download the latest [release binary](https://github.com/Aircoookie/WLED/releases) file!
-- Make sure only one ESP device/microcontroller is connected to your computer! Otherwise you could accidentally overwrite the wrong one. If you know the serial port, you can also add the `--port COM3` attribute before `write_flash`
+- Make sure only one ESP device/microcontroller is connected to your computer! Otherwise you could accidentally overwrite the wrong one. If you know the serial port, you can also add the `--port COM3` attribute before `write-flash`
 - Execute this command:
 
 #### ESP8266

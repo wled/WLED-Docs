@@ -120,7 +120,8 @@ nav:
     - Audio Reactive WLED: advanced/audio-reactive.md
     - Home Automation: advanced/home-automation.md
     - Remote Access / IFTTT: advanced/remote-access-ifttt.md
-    - Security: advanced/security.md
+    - OTA Lock: advanced/ota-lock.md
+    - Accessing WLED over Internet: advanced/access-over-internet.md
     - Wiring Protips: advanced/wiring.md
     - Long Data Lines: advanced/longdata.md
     - Compiling WLED: advanced/compiling-wled.md
