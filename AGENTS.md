@@ -6,6 +6,8 @@ This is the official user documentation for [WLED](https://github.com/wled/WLED)
 
 All documentation is written in **English**. Contributors improve docs by editing Markdown files and submitting pull requests.
 
+[WLED](https://github.com/wled/WLED) is an open source firmware - written mainly in C++, using platformIO and node.js tooling - for ESP32/ESP8266 microcontrollers controlling addressable LEDs, with a web UI and various networking APis for custom integrations. 
+
 ---
 
 ## Repository Structure
