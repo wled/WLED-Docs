@@ -6,7 +6,7 @@ hide:
 ---
 
 !!! info "Version Info"
-    Beginning in 0.14 up to 10 [Custom Palletes](#custom-palettes) can be uploaded.
+    Beginning in 0.14 up to 10 [Custom Palettes](#custom-palettes) can be uploaded.
 
 
 
