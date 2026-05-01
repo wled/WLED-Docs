@@ -27,7 +27,7 @@ A fast and feature-rich implementation of an ESP32/ESP8266 webserver to control 
 - Segments to set different effects and colors to parts of the LEDs  
 - Settings page - configuration over network  
 - Access Point and station mode - automatic failsafe AP  
-- Up to 3 LED outputs per ESP8266 instance and 10 LED outputs per ESP32 instance
+- Up to 3 LED outputs per ESP8266 instance and [up to 10 LED outputs per ESP32 instance](/features/multi-strip/#esp32)
 - Support for RGBW strips  
 - Up to 250 user presets to save and load colors/effects easily, supports cycling through them.  
 - Presets can be used to automatically execute API calls  
@@ -84,7 +84,7 @@ Check out the WLED [Discourse forum](https://wled.discourse.group)!
 You can also send me mails to [dev.aircoookie@gmail.com](mailto:dev.aircoookie@gmail.com), but please only do so if you want to talk to me privately.  
 If WLED really brightens up your every day, you can [![Paypalbadge](https://img.shields.io/badge/send%20me%20a%20small%20gift-paypal-blue.svg?style=flat-square)](https://paypal.me/aircoookie)
 
-!!! danger "Disclaimer"
-    If you are sensitive to photosensitive epilepsy it is not recommended that you use this software.  
-    In case you still want to try, don't use strobe, lighting or noise modes or high effect speed settings.  
-    As per the MIT license, I assume no liability for any damage to you or any other person or equipment.  
+!!! danger "**Disclaimer**"
+    If you are sensitive to photosensitive epilepsy it is not recommended that you use this software. 
+    In case you still want to try, don't use strobe, lighting or noise modes or high effect speed settings. 
+    As per EUPL, we assume no liability for any damage. 

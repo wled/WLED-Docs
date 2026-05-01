@@ -20,6 +20,7 @@ Audio Reactive (AR) works on all ESP controllers but with some limitations:
 - ESP32 C3 is too slow and does not include AR by default, enabling AR requires a custom build
 - ESP32 S2, S3 (and C3) support digital microphones only
 - Classic ESP32 supports digital and analog microphones
+- PDM microphones (like SPM1423, see below) are supported on Classic ESP32 and ESP32-S3, but not supported on ESP32-S2 and ESP32-C3.
 
 ### Microphones supported
 
@@ -45,7 +46,7 @@ There are also some commercial controllers with integrated digital microphone or
 
 #### 3. PDM microphones
 
-An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good.
+An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good. PDM microphones are only supported on Classic ESP32 and on ESP32-S3.
 
 ### Line-In options
 

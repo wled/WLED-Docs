@@ -23,3 +23,15 @@ If you then still have troubles and are going to ask for help, provide as much i
 4. Wrong LED type is set. The correct LED type and the correct color sequence (RGB, BGR, etc.) must be set in WLED LED preferences. Check that these settings are correct. You have to know the LED type, but you can simply try out the color sequence to see which is the right one. Special attention must be paid for example to the WS2814 LED strip, which must be set as SK6812 and not as WS281x in the LED preferences.
     ![Example LED type setup](../assets/images/content/example_led_type_setup.jpg)
 5. Wiring is bad. Wiring must be done thoroughly. Loose contacts, cold solder joints etc. must be avoided. You also need to be careful about the correct sizing of the cables: too thin wires can not only cause high voltage drop but also lead to an overheating and fire! For wire sizing you may use this [LED power, wiring and fuse calculator](https://wled-calculator.github.io/). If many power sources are used (for example separate one for ESP and separate one for the LED strip), then all their grounds (GND, V-) must be connected together (but do not connect their V+ together!).
+
+### More to consider
+
+#### Take care of PSU used
+
+Pay close attention to the power supply unit (PSU) you use. Flickering in addressable LED strips is somethimes caused by poor-quality PSUs that generate significant electromagnetic interference (EMI).
+
+When selecting a PSU, don’t rely solely on general customer reviews. Make sure the unit has been successfully used specifically with addressable LED strips (e.g., WS2812, SK6812). Many inexpensive PSUs receive positive reviews but are primarily used with analog LED strips.
+
+Analog LEDs are relatively tolerant of voltage fluctuations and electrical noise. In contrast, addressable LEDs require a stable voltage and low-noise power supply to function correctly, as they rely on precise digital signaling.
+
+Audible artifacts such as humming, buzzing, or high-pitched whining can indicate poor PSU design or low component quality. These issues often correlate with unstable output and increased electrical noise, which can directly affect LED performance.
