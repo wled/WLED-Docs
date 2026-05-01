@@ -48,5 +48,12 @@ Additionally, on light change, WLED will publish to 3 topics for MQTT clients to
 
 There is support for client ID and authentication, but this is presently transmitted over an unencrypted connection, so please **do not** use the same password for other services.
 
+If you have set up buttons and/or PIR sensors and checked the "Publish on button press", they will create new subtopics:
+- **[mqttDeviceTopic]/button/[ButtonNumber]**
+  -> Contains the status of the button at [ButtonNumber] as on or off
+
+- **[mqttDeviceTopic]/motion/[ButtonNumber]**
+  -> Contains the status of the motion sensor assigned to [ButtonNumber] as on or off
+
 !!! warning "Attention"
     The maximum length of an MQTT message for WLED is only limited by free RAM.
