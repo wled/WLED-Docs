@@ -39,7 +39,7 @@ LED positions are zero-indexed. If you have 20 LEDs, your LED "addresses" will s
 
 ## Additional configurations
 
-Multiple maps are supported in the latest versions by using `ledmapx.json`, where x is a number. Maps can be selected in your cfg.json  using `{"ledmap":x,...`, where `x` corresponds to the number in the filename, or in the main settings UI below segments, where any customised names will also be used in the selection list, see below.
+Multiple maps are supported in the latest versions by using `ledmap`_x_`.json`, where _x_ is a number. Maps can be selected in your cfg.json  using `{"ledmap":x,`... where `x` corresponds to the number in the filename, or in the main settings UI below segments, where any customised names will also be used in the selection list, see below.
 
 
 ## Complicated maps
@@ -78,7 +78,7 @@ In the examples below (formatted multiple ways), we remap a strip of four LEDs f
 ```
 
 
-## 1D redordering example
+## 1D reordering example
 
 This is another example that switches direction every 5 LEDs.
 It could be formatted in any of the three ways demonstrated above.
