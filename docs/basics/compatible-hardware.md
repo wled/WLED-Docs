@@ -20,9 +20,12 @@ Please use a decent and neutral description when adding things to this list.
 
 | Name | Description |
 |---|---|
+[ABC! WLED PWM Board](https://shop.myhome-control.de/WLED-PWM-Board/HW10024) | This board integrates MOSFETs with additional protection measures (overcurrent, overtemperature, short circuit and reverse polarity) and can be used in combination with any WLED controller to control analogue LED strips. [German shop & shipping within Germany or to Poland.](https://shop.myhome-control.de/WLED-PWM-Board/HW10024)
+[ABC! WLED Switch Board](https://shop.myhome-control.de/en/ABC-WLED-Switch-Board/HW10021) | This board integrates self-protected electronic switches (MOSFET based) as modern alternative to relays and can be used to switch off power provided to LEDs in "OFF" state. It also provides overcurrent, overtemperature, short circuit and reverse polarity protection. [German shop & shipping within Germany or to Poland.](https://shop.myhome-control.de/en/ABC-WLED-Switch-Board/HW10021)
 [ESP32 Ethernet Network Shield](https://www.tindie.com/products/30385/)| Ethernet Shield (10/100Mbps) for ESP32 boards. Stackable with D1 Mini32 form factor boards.
 [Logic Level Shifter Board](https://www.tindie.com/products/sjmelectronics/logic-level-converter-level-shifter) | A simple level shifter board. Updated version has selectable data-pin resistors.
 [Logic Level Shifter Shield](https://www.tindie.com/products/sjmelectronics/logic-level-converter-shield)| Logic level shifter shield for Seeed Studio ESP32-C3 and D1 Mini format dev boards. Updated version has selectable data-pin resistors.
+[MagWLED-1](https://magwled.com) | ESP32-C3 based WLED controller with USB-C Power Delivery (up to 36W/12V 3A). Compact 48x32mm form factor with Wago 2060 connector. Features include 3A resettable fuse, ESD protection, and MOSFET relay for power control. Comes pre-flashed with WLED.
 [WIZmote remote control](https://www.google.com/search?q=wizmote) | Remote control using radio network. Compatible with WLED (vesions 0.14.0-beta3 and above). No additional receiver required.
 
 ## Compatible PC RGB Fans and ARGB accessories

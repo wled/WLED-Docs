@@ -62,7 +62,7 @@ Skip first LEDs | 0–length | 0 | Will turn off the first one or more LEDs and 
 Off Refresh | on/off | off (typically) | WLED doesn't send out data if all of its outputs are off, but some pixels (notably TM1814) will go into a demo mode after a period of inactivity, and setting forces WLED to periodically send out additional "off" commands [*only appears if "Type" is set to a type that supports multiple pixels; default is "on" if "Type" is set to "TM1814"*]
 Inverted output | on/off | off | Invert the output's state (i.e. if the output is bright when it's supposed to be dark, set this to "on") [*only appears if "Type" is set to a type that supports output inversion*]
 IP address | IPv4 | (blank) | Set the IP address where the output data should be sent to [*only appears if "Type" is set to a type that supports network output*]
-Auto-calculate white chanel from RGB | multiple options | "None" | Selects whether WLED should attempted to generate white-channel information for colors that are only defined as red, green, and blue values [*only appears if "Type" is set to a type that has more than three color channels*]
+Auto-calculate white channel from RGB | multiple options | "None" | Selects whether WLED should attempted to generate white-channel information for colors that are only defined as red, green, and blue values [*only appears if "Type" is set to a type that has a white channel, including white-only types like "PCM White"*]
 
 The following settings apply to all LED outputs:
 
@@ -70,7 +70,7 @@ The following settings apply to all LED outputs:
 |---|---|---|---|
 Make a segment for each output | on/off | off | Will automatically create a segment for each output, including the correct Start LED and Stop LED settings
 Custom bus start indices | on/off | off| When on, custom "Start" or "Index" values can be set for each output (e.g. output 2 can be set so that it shows up as LED address 200 regardless of output 1's length)
-Use global LED buffer | on/off | on | Improves the performance of WLED-wide brightness controlls (including Automatic Brightness Limiting) at the expense of additional memory usage
+Use global LED buffer | on/off | on | Improves the performance of WLED-wide brightness controls (including Automatic Brightness Limiting) at the expense of additional memory usage
 
 Additionally, one or more Color Order Overrides can be defined by clicking the plus button. This is useful when you have LEDs with two different color orders sharing the same output. The following settings are available for each override:
 
@@ -90,7 +90,7 @@ Turn on after power up | Y/N | Whether the lights should turn on after a reset
 Apply preset | 0..16 | Preset to load at boot (0 = none)
 Use Gamma for brightness | Y/N | Will correct brightness changes to make it appear more linear. Advised to leave off
 Use Gamma for color | Y/N | Will correct colors to match those on a monitor. Strongly advised to keep on
-Brightness factor | 1..255 | Factor to change master brightness if it is to dim/bright for a certain configuration
+Brightness factor | 1..255 | Factor to change master brightness if it is too dim/bright for a certain configuration
 Crossfade | Y/N | Whether to have a smooth fading transitional effect when changing colors/brightness
 Transition time | 0..65535 | How many milliseconds the transition lasts
 Enable transition for secondary color | Y/N |
