@@ -8,7 +8,7 @@ reviews:
   # abort_on_close: false
   high_level_summary: true
   review_status: true
-  collapse_walkthrough: true
+  collapse_walkthrough: false
   poem: true
   sequence_diagrams: false
   auto_review:
