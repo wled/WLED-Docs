@@ -21,6 +21,7 @@ Accurate | This mode subtracts the calculated white value from the RGB channels.
 Brighter | This does the exact opposite and not touch the RGB channels at all, just mix in the dedicated white.
 None | No auto white calculation is performed. The white channel of colors can be manually set using the `White channel` slider in the user interface, RGB-only effects and most realtime sources will leave the white channel off.
 Dual | The `White channel` slider is present in the UI and works the same as in `None` mode, however if the slider value is 0 (far left), the `Brighter` mode is used for auto white calculation. This is the default auto white mode.
+Max | Sets white to the value of the brightest RGB channel. This is good for white-only LEDs without any RGB.
 
 `Accurate` and `Brighter` methods are applied on a per-pixel basis, so they also work in color palettes and realtime effects!
 

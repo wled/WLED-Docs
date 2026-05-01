@@ -7,26 +7,34 @@ hide:
 
 ## What is Audio Reactive WLED?
 
-Audio Reactive WLED is a possibility of using WLED controllers in such a way that the LEDs react to music and light up in time. First time this was implemented by a [Sound Reactive Fork](https://github.com/atuline/WLED). As of WLED version 0.14.0-beta1 an usermod is available for original WLED too.
-Currently only ESP32 microcontrollers are supported.
+Audio Reactive WLED is a possibility of using WLED controllers in such a way that the LEDs react to music and light up in time. First time this was implemented by a [Sound Reactive Fork](https://github.com/atuline/WLED). As of WLED version 0.14.0-beta1 an usermod is available for original WLED too. Since version 0.15.0 this usermod is included in the official WLED releases.
 
 ## Hardware required
 
-The audio must be "feed" into the microcontroller. There are basically two options: using microphones or line-in adapters.
+The audio must be "feed" into the microcontroller. There are basically four options: using microphones, line-in adapters, another WLED instance or directly from a PC.
+
+### ESP / microcrontrollers supported
+Audio Reactive (AR) works on all ESP controllers but with some limitations:
+
+- ESP8266 does not support any microphone input, AR streaming mode only
+- ESP32 C3 is too slow and does not include AR by default, enabling AR requires a custom build
+- ESP32 S2, S3 (and C3) support digital microphones only
+- Classic ESP32 supports digital and analog microphones
+- PDM microphones (like SPM1423, see below) are supported on Classic ESP32 and ESP32-S3, but not supported on ESP32-S2 and ESP32-C3.
 
 ### Microphones supported
 
 Three microphone types are supported:
 
-#### 1. Analog microphones
+#### 1. Analog microphones - Not recommended
 
-Examples are MAX4466 (not really good) and MAX9814 (slightly better). These microphones are easy to use: you just have to connect 3.3V, GND and the analog output from the microphone to an ADC input (Analog-to-Digital Converter) of ESP32. However, the big disadvantage is the quality: both from the microphones themselves and from the ADCs integrated into microcontrollers, which are actually not well suited for audio processing and highly influenced by the power supply noise.
+Examples are MAX4466 (really not good) and MAX9814 (slightly better). These microphones are easy to use: you just have to connect 3.3V, GND and the analog output from the microphone to an ADC input (Analog-to-Digital Converter) of ESP32. However, the big disadvantage is the quality: both from the microphones themselves and from the ADCs integrated into microcontrollers, which are actually not well suited for audio processing and are highly influenced by the power supply noise.
 ![Example analog microphone](../assets/images/content/example_analog_mic.jpg)
 
 !!! info "Analog microphones and analog buttons (potentiometers) rule out each other"
     WLED can use analog microphones or [analog buttons](/features/macros/#analog-button) but not both at the same time!
 
-#### 2. I2S digital microphones
+#### 2. I2S digital microphones - Better option
 
 Examples are INMP441 and ICS-43434/ICS-43432. These have an integrated ADC and already output a digital signal. The advantage is the best possible quality. The disadvantage is higher complexity (you need several PINs for a digital signal). For proper trouble-free operation keep wires between the microphone and ESP32 as short as possible and solder them properly.
 
@@ -38,7 +46,7 @@ There are also some commercial controllers with integrated digital microphone or
 
 #### 3. PDM microphones
 
-An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good.
+An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good. PDM microphones are only supported on Classic ESP32 and on ESP32-S3.
 
 ### Line-In options
 
@@ -52,14 +60,23 @@ At least a simple analog circuit as shown below is required to prepare the analo
 
 In some cases, you can do it without this circuit and connect the GND of the audio source and an audio channel (left or right) directly to ESP32 ADC Pin (GND and analog input, e.g. GPIO36 pin on the ESP32). This solution is rather quite dirty workaround and might work well or not at all.
 
-#### 2. Line-in to I2S adapter
+#### 2. Line-in to I2S adapter - Best Option
 
-Line-in to I2S adapter converts the analog line-out or headphone signal into a digital I2S signal that can be proceed by ESP32. There are some general or for WLED specially developed analog-to-I2S adapters based on for example CirrusLogic CS5343, TI PCM1808 or es7243 chips on the market. In this case, the whole thing works like with a digital I2S microphone. The only difference to I2S microphone is that you at least need an extra PIN for MCLK (Master Clock) signal, which can only be generated by the ESP32 on GPIOs 0, 1 or 3. The other complication is that MCLK is a high frequency signal and must be wired extremely accurate and have short wires. Some adapter types also require more additional signals. For stability it is better to use ready-to-use controller with special Line-In to I2S adapter or DIY PCB design where you can integrate general analog-to-I2S adapter directly without long wires.
+Line-in to I2S adapter converts the analog line-out or headphone signal into a digital I2S signal that can be processed by ESP32. There are some general or for WLED specially developed analog-to-I2S adapters based on for example CirrusLogic CS5343, TI PCM1808 or es7243 chips on the market. In this case, the whole thing works like with a digital I2S microphone. The only difference with I2S microphone is that you at least need an extra PIN for MCLK (Master Clock) signal, which can only be generated by the ESP32 on GPIOs 0, 1 or 3. The other complication is that MCLK is a high-frequency signal and must be wired extremely carefully and have short wires. Some adapter types also require more additional signals. For stability, it is better to use a ready-to-use controller with a special Line-In to I2S adapter or DIY PCB design where you can integrate a general analog-to-I2S adapter directly without long wires.
+
+An example board with integrated Line-In is the [LyraT](https://docs.espressif.com/projects/esp-adf/en/latest/design-guide/dev-boards/board-esp32-lyrat-v4.3.html)
 
 ![Examples analog to I2S](../assets/images/content/examples_analog_to_i2s.jpg)
 
-For some more details please refer to [Sound Reactive WLED WIKI](https://github.com/atuline/WLED/wiki)
+For some more details please refer to [Sound Reactive WLED WIKI](https://mm.kno.wled.ge/soundreactive/introduction/)
+
+### Audio Sync - WLED
+You do not need to include an audio input source in every WLED device to take advantage of the Audio Reactive effects. Simply set the sync mode to "send" on the device with the audio input and all the other devices set to "receive" for their sync mode in the Audio Reactive settings.
+This only works if your network supports multicast.
+
+### Audio Sync - WledSRServer
+For Windows, there is [WledSRServer](https://github.com/Victoare/SR-WLED-audio-server-win) which is a small application that can capture audio directly from your PC, process it into WLED Audio Sync data and send it out onto your network - emulating WLED in send mode. Configure all your WLED instances to receive.
 
 ## Software required
 
-Because audio reactive capability is currently implemented as a usermod, you need WLED compiled with this usermod included or use Sound Reactive WLED fork. The [official WEB-based WLED installer](https://install.wled.me/) does not include original WLED with audio reactive usermod, but offers Sound Reactive WLED as an option. The [unofficial WEB-based WLED installer](https://wled-install.github.io/) offers more options including original WLED with audio reactive usermod.
+Because audio reactive capability is currently implemented as a usermod, you need WLED compiled with this usermod included. The [official WEB-based WLED installer](https://install.wled.me/) includes the usermod by default since version 0.15.0. The [unofficial WEB-based WLED installer](https://wled-install.github.io/) offers more options including original WLED with audio reactive usermod for older versions.

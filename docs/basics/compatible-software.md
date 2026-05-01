@@ -27,6 +27,7 @@ Controllers use the WLED API to change the current light settings.
 [WLED Native for Android](https://github.com/Moustachauve/WLED-Native-Android)<br /> [WLED Native for iOS](https://github.com/Moustachauve/WLED-Native-iOS/) | An alternative version of the WLED app with a similar user interface to the official one that looks close to the native OS style guidelines and has a few more features added on top of it.
 [wledQuickControl](https://github.com/satrik/wledQuickControl) | macOS 11.0+ Menu Bar app for controlling power and brightness.
 [WinLED](https://github.com/clusterzx/WinLED) | Windows App for controlling WLED Instance (Brighness, Power, Presets, Effects...). Also usable from Traybar for quick actions.
+
 ## Sources
 
 Source programs generate light data and stream them to WLED in real time.

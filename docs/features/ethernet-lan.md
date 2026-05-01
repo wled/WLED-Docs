@@ -24,15 +24,18 @@ WLED controllers are usually integrated into local network wirelessly (via WiFi)
 Go to "Config" and then to "WiFi Setup". At the bottom of this page select the Ethernet type you use. Then click on "Save &  Connect". Ready!
 ![](../assets/images/content/wled_ethernet_settings.jpg)
 
-## Ethernet controllers and adapters supported by WLED (as of November 2023)
+## Ethernet controllers and adapters supported by WLED (as of v0.15)
 Note: all controllers use GPIOs 19, 21, 22, 25, 26, 27 as they are required for ethernet and can not be changed. GPIOs additionally used are given in the table.
 
 | Name | Features | additional GPIOs used |
 |---|---|---|
 [ABC! WLED V43 & compatible](https://shop.myhome-control.de/Ethernet-Adapter-fuer-WLED-Controller/HW10016) | Isolated shield in accordance with IEEE 802.3 standard; LAN8720 based with proper reset line; adapter developed as Plug& Play solution for [ABC! WLED Controller V43](https://shop.myhome-control.de/ABC-WLED-Controller-Board-5-24V/HW10015) but also might be used with other ESP32 boards | 5, 17, 23, 33
+![Gold Member](../assets/images/content/akemi_gold.png)<br/> [cod.m WLED LAN Controller (PoE)](https://shop.codm.de/automation/wled/wled-lan-controller-poe-hutschiene) | DIN-Rail WLED LAN(Ethernet) Controller with PoE and pluggable output modules for direct output or Range Extender Output (up to 500m data line). Currently for up to 4 outputs, more input/output modules are planed. Commercially available in Germany throughout Europe with CE, RoHS and WEEE. Made in Germany. See [https://docs.codm.de/wled/lan-controller/](https://docs.codm.de/wled/lan-controller/) (German) for detailed wiring schemes and documentation. | 4, 5, 13, 14, 15, 16, 33, 34, 36(S_VP), 39(S_VN)
 [ESP32-POE](https://github.com/OLIMEX/ESP32-POE/) | General purpose controller with integrated Ethernet | 12, 17, 18, 23
-ESP32Deux |  | 17, 18, 23
+[ESP32-POE-WROVER](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware) | ethernet clock connected to a different IO than the ESP32-WROOM module version | 0, 12, 18, 23
+ESP32Deux / [RGB2Go Tetra](https://rgb2go.com/products/ethernet-module-for-tetra2go) |  | 17, 18, 23
 [KIT-VE](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-ethernet-kit.html) | Board from Espressif (ESP microcontroller manufacture company) | 0, 5, 18, 23
+[LILYGO T-POE Pro](https://www.lilygo.cc/products/t-poe-pro) |  PoE IEEE802.3 af/at, Input Voltage: 44-57V, Outputs 5V up to 4A | 0, 5, 18, 23
 [QuinLED-Dig-Octa](https://quinled.info/quinled-dig-octa/) & [T-ETH-POE](https://www.lilygo.cc/products/t-internet-poe) |  | 17, 18, 23
 [QuinLED-ESP32](https://quinled.info/quinled-esp32-ethernet/) |  | 5, 17, 18, 23
 [Serg74-ETH32](https://github.com/srg74/ESP32_ethernet) |  | 5, 17, 18, 23

@@ -51,13 +51,24 @@ When purchasing a remote, be sure that it is an infrared (IR) remote and not a r
 *    [ir.json v1](24-key_ir.json) gray buttons load presets 1-4  
 *    [ir.json v2](24-key-v2_ir.json) gray buttons cycle effects, palettes and change speed  
 
+![24 key remote with green key bottom left](24-key_bottom_left_green.png)
+24-key remote with bottom left key being green [ir.json](24-key_bottom_left_green_ir.json)
+
 [![24 key grey remote](24-key-grey.png)](https://www.aliexpress.com/item/4000704528801.html)
 24-key grey
 [ir.json](24-key-grey_ir.json)
 
+![24-key-osram remote](24-key-osram.png)
+24-key OSRAM
+[ir.json osram](24-key-osram_ir.json) [OSRAM](https://www.lumimania.fr/led-stmivatelna-zarovka-rgbw-star-gu10-4-5w-230v-2700k-osram/) 
+
 ![24 key music remote](24-key-v3.png)
 24-key music
 [ir.json v3](24-key-v3_ir.json)
+
+![24-key-v4](24-key-v4.png)
+24-key remote with music buttons
+[ir.json v4](24-key-v4_ir.json)
 
 [![21 key remote](21-key.png)](https://www.aliexpress.com/item/1005001319234216.html)
 21-key
@@ -70,6 +81,10 @@ When purchasing a remote, be sure that it is an infrared (IR) remote and not a r
 [![6 key remote](6-key.png)](https://www.aliexpress.com/item/33014078844.html)
 6-key
 [ir.json](6-key_ir.json)
+
+![Apple Remote V2](apple-v2.png)
+Apple Remote V2
+[ir.json](apple-v2_ir.json)
 
 ### Editing ir.json
 First see if a JSON file already exists for your remote. If not, see if there is a JSON file for a remote with 
