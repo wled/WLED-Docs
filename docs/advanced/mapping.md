@@ -110,7 +110,7 @@ Note that if a `ledmap.json` file exists, the `2d-gaps.json` file will be ignore
 
 The following example demonstrates that when using sacrificial leds, you must include a mapping for all LEDs.
 
-Here, we have a serpentine of LEDs in 5 columns and 3 rows, and a sacrifical led between each row (in positions 5 and 11).
+Here, we have a serpentine of LEDs in 5 columns and 3 rows, and a sacrificial LED between each row (in positions 5 and 11).
 Since the total number of LEDs in this system is 15 + 2 = 17, the `map` must also be 17 elements long.
 We fill those elements with -1.
 
