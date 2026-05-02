@@ -73,6 +73,8 @@ custom_usermods =
   file:///home/you/projects/my-wled-usermod
 ```
 
+On Windows, use the `file:///C:/Users/you/...` form with forward slashes: `file:///C:/Users/you/projects/my-wled-usermod`.
+
 PlatformIO will pick up your local changes on each build, and you can edit the usermod and WLED side-by-side without switching projects.
 
 #### 3. Share it via git URL
@@ -159,12 +161,14 @@ The forked example file contains a fully annotated version of this covering pers
 | `readFromJsonState(root)` | When a client POSTs to `/json/state` |
 | `addToConfig(root)` | When settings are saved (persist to `cfg.json`) |
 | `readFromConfig(root)` | At boot and after settings save |
-| `appendConfigData()` | When the Usermod Settings page renders |
+| `appendConfigData(Print& settingsScript)` | When the Usermod Settings page renders |
 | `handleOverlayDraw()` | Just before each LED strip update |
 | `handleButton(b)` | On button events (return `true` to consume) |
-| `onMqttConnect(sessionPresent)` | When MQTT connection is established (subscribe here) |
-| `onMqttMessage(topic, payload)` | On incoming MQTT message |
+| `onMqttConnect(sessionPresent)` | When MQTT connection is established (subscribe here) — wrap in `#ifndef WLED_DISABLE_MQTT` |
+| `onMqttMessage(topic, payload)` | On incoming MQTT message — wrap in `#ifndef WLED_DISABLE_MQTT` |
 | `onStateChange(mode)` | When WLED state changes |
+
+The `onMqttConnect` and `onMqttMessage` overrides must be wrapped in `#ifndef WLED_DISABLE_MQTT` / `#endif` guards, since MQTT support is a compile-time option. The `multi_relay` usermod (`usermods/multi_relay`) is a well-structured in-tree example of the subscribe-in-connect / handle-in-message pattern.
 
 #### Persistent settings
 
