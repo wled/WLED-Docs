@@ -75,6 +75,20 @@ Once you've confirmed VSCode with Platformio is set up correctly, you can add/de
  7. Put your `-D` overrides on this new line, giving each `-D` it's own new line.
  8. Compile your freshly customized WLED image!
 
+### Adding usermods
+
+To include one or more usermods in your build, add a `custom_usermods` line to your environment in `platformio_override.ini`:
+
+```ini
+[env:esp32dev]
+extends = env:esp32dev
+custom_usermods =
+  Temperature
+  audioreactive
+```
+
+Each name corresponds to a folder under `usermods/`. No other file editing is required — usermods self-register when compiled in. For full details, including how to add external usermods from a git repository and how to write your own, see [Custom Features](/advanced/custom-features).
+
 ### Flashing the compiled binary
 
 !!! tip
