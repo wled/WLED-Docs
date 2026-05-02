@@ -92,6 +92,8 @@ custom_usermods =
   MyMod = https://github.com/you/my-wled-usermod.git#main
 ```
 
+Once it's ready, consider adding it to the [Community Usermods](/advanced/community-usermods) index and tagging your repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) GitHub topic so others can find it.
+
 #### What's inside a usermod
 
 A usermod repository contains two things: a **PlatformIO library manifest** (`library.json`) and one or more **C++ source files** implementing your functionality.
