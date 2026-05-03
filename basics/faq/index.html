@@ -4099,7 +4099,7 @@ Do not increase the mA number if you power LEDs directly from the 5V pin of the 
 <h4 id="reason-2_1">Reason 2</h4>
 <p>An LED in your chain may be broken. Try another strip or removing the first LED that doesn't light up. Make sure you are in solid effect mode and the LED count is set high enough first!</p>
 <h3 id="how-to-turn-off-the-bright-blue-onboard-led">How to turn off the bright blue onboard LED?</h3>
-<p>This LED can be very distracting. Unfortunately it can't easily be disabled as it shares the gpio2/D4 pin with the LED output.<br />
+<p>On ESP8266, this LED can be very distracting. Unfortunately it can't easily be disabled as it shares the gpio2/D4 pin with the LED output.<br />
 It is turned off together with your LEDs (unless they require <code>Off Refresh</code> to be active)<br />
 Currently there are 3 workarounds:</p>
 <ul>
@@ -4286,10 +4286,12 @@ If you are building a commercial product, consulting a lawyer familiar with open
 </ul>
 <h4 id="what-you-must-do">What you must do</h4>
 <ol>
-<li><strong>Provide the copyright notice and license text</strong>: You must include the original WLED copyright notice and a copy of the EUPL-1.2 license with every device or product you sell. In practice, this usually means:</li>
+<li><strong>Provide the copyright notice and license text</strong>: You must include the original WLED copyright notice and a copy of the EUPL-1.2 license with every device or product you sell. In practice, this usually means:<ul>
 <li>Making it accessible via the device's web interface (WLED already shows this in its <em>Info</em> page), or</li>
 <li>Including it in the documentation (printed or digital), or</li>
 <li>Referring customers to a URL where the license and attribution are clearly published.</li>
+</ul>
+</li>
 <li><strong>Provide (or link to) the source code</strong>: You must make the source code of WLED (in the <em>exact</em> version you're shipping) available to your customers — either by including it or by providing a clearly visible link to a public repository (e.g., the official WLED GitHub page or your own fork). This link must <strong>remain working</strong> for as long as you distribute the product.</li>
 <li><strong>If you modified WLED: share your changes</strong>. You cannot keep your source code modifications private or proprietary.</li>
 <li><strong>Do not remove or hide credits</strong>: Do not strip out the "About WLED" or "Info" pages, the copyright notice, or any attribution to the original authors.</li>
