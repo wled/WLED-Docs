@@ -199,7 +199,7 @@ An LED in your chain may be broken. Try another strip or removing the first LED 
 
 ### How to turn off the bright blue onboard LED?
 
-This LED can be very distracting. Unfortunately it can't easily be disabled as it shares the gpio2/D4 pin with the LED output.  
+On ESP8266, this LED can be very distracting. Unfortunately it can't easily be disabled as it shares the gpio2/D4 pin with the LED output.  
 It is turned off together with your LEDs (unless they require `Off Refresh` to be active)  
 Currently there are 3 workarounds:
 
@@ -327,9 +327,9 @@ Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, includin
 #### What you must do
 
 1. **Provide the copyright notice and license text**: You must include the original WLED copyright notice and a copy of the EUPL-1.2 license with every device or product you sell. In practice, this usually means:
-   * Making it accessible via the device's web interface (WLED already shows this in its *Info* page), or
-   * Including it in the documentation (printed or digital), or
-   * Referring customers to a URL where the license and attribution are clearly published.
+    - Making it accessible via the device's web interface (WLED already shows this in its *Info* page), or
+    - Including it in the documentation (printed or digital), or
+    - Referring customers to a URL where the license and attribution are clearly published.
 2. **Provide (or link to) the source code**: You must make the source code of WLED (in the *exact* version you're shipping) available to your customers — either by including it or by providing a clearly visible link to a public repository (e.g., the official WLED GitHub page or your own fork). This link must **remain working** for as long as you distribute the product.
 3. **If you modified WLED: share your changes**. You cannot keep your source code modifications private or proprietary.
 4. **Do not remove or hide credits**: Do not strip out the "About WLED" or "Info" pages, the copyright notice, or any attribution to the original authors.
