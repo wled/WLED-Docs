@@ -312,7 +312,7 @@ WLED is licensed under the European Union Public Licence v1.2 (EUPL-1.2), which 
 ### What is NOT affected
 * **Hardware** — your schematics, PCB layouts, enclosure designs, and BOM are entirely your own. EUPL is a software license; it has no legal reach over hardware. (This is consistent with all mainstream copyleft licenses: GPL, LGPL, MPL, etc.)
 * **Independent software on the same device** — code that runs separately and interacts with WLED only via its documented network interfaces/APIs is generally not considered a derivative work.
-* **Usermods and changes you keep private** — if you write a usermod but never distribute the firmware, you have no disclosure obligation. If it works for you, still consider making a PR and share your changes with the community.
+* **Changes you keep private** — if you write a usermod but *never* distribute the firmware, you have no disclosure obligation. If it works for you, still consider making a PR and share your changes with the community.
 
 ### May I sell a product with WLED pre-installed?
 
