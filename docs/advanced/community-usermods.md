@@ -12,7 +12,7 @@ Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) adding a r
 
 Use this format:
 
-```
+```markdown
 | [Name](https://github.com/you/your-usermod) | Short description | @yourname | esp32 |  |
 ```
 

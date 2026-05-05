@@ -22,14 +22,14 @@ Usermods are self-contained modules you can add to a WLED build without touching
 Add a `custom_usermods` entry to the relevant environment section in your `platformio_override.ini`:
 
 ```ini
-[env:esp32dev]
+[env:esp32dev_temperature]
 extends = env:esp32dev  ; base environment from platformio.ini
 custom_usermods =
   Temperature
   audioreactive
 ```
 
-Each line is a usermod name corresponding to a folder under `usermods/` (or a short alias — see the folder for exact names). Restart the PlatformIO build and the usermods are automatically included, no other file edits needed.
+Each line is either a PlatformIO `lib_def` reference or a folder name under `usermods/`. (As a convenience for old foldernames, `usermod_` or `_v2` may be omitted.) Enabled usermods will appear in the WLED build as the library names from their `library.json` files.  Rebuild from PlatformIO and the usermods and their dependencies are automatically included, no other file edits needed.
 
 #### Inheriting usermods from a base environment
 
@@ -55,7 +55,7 @@ Fork [wled/wled-usermod-example](https://github.com/wled/wled-usermod-example) o
 
 Clone your fork somewhere convenient — alongside your WLED checkout works well, since both projects can then be open in the same VS Code session:
 
-```
+```text
 ~/projects/
   WLED/                   ← the WLED source
   my-wled-usermod/        ← your fork
@@ -66,7 +66,7 @@ Clone your fork somewhere convenient — alongside your WLED checkout works well
 In `platformio_override.ini`, point `custom_usermods` at the local clone using a `file://` URL:
 
 ```ini
-[env:esp32dev]
+[env:esp32dev_my_usermod]
 extends = env:esp32dev
 custom_usermods =
   ${env:esp32dev.custom_usermods}
@@ -166,7 +166,10 @@ The forked example file contains a fully annotated version of this covering pers
 | `handleButton(b)` | On button events (return `true` to consume) |
 | `onMqttConnect(sessionPresent)` | When MQTT connection is established (subscribe here) — wrap in `#ifndef WLED_DISABLE_MQTT` |
 | `onMqttMessage(topic, payload)` | On incoming MQTT message — wrap in `#ifndef WLED_DISABLE_MQTT` |
-| `onStateChange(mode)` | When WLED state changes |
+| `onEspNowMessage(sender, payload, len)` | Called when an ESP-NOW message is received — can be used for usermod remote control |
+| `onUdpPacket(payload, len)` | Called when a UDP packet is received on the notification UDP port — can be used for usermod sync |
+| `onUpdateBegin(bool)` | Called prior to firmware update to request releasing memory; and after unsuccessful firmware update to resume |
+| `onStateChange(mode)` | Called when WLED state changes (see `CALL_MODE_*` definitions) |
 
 The `onMqttConnect` and `onMqttMessage` overrides must be wrapped in `#ifndef WLED_DISABLE_MQTT` / `#endif` guards, since MQTT support is a compile-time option. The `multi_relay` usermod (`usermods/multi_relay`) is a well-structured in-tree example of the subscribe-in-connect / handle-in-message pattern.
 
@@ -192,7 +195,7 @@ bool readFromConfig(JsonObject& root) override {
 
 Writing effects as usermods is the recommended way to add new LED effects to a WLED build — no core source files need changing, and the effect can live in its own repository and be shared like any other usermod.
 
-The `user_fx` usermod (`usermods/user_fx`) is the mainline example of this pattern and a convenient starting point. It bundles multiple effects in a single usermod and can be enabled with `custom_usermods = user_fx`. Fork it or use it as a template for your own effects usermod.
+The `user_fx` usermod (`usermods/user_fx`) is the mainline example of this pattern and a convenient starting point. It bundles multiple effects in a single usermod and can be enabled with `custom_usermods = user_fx`. It has a [detailed README](https://github.com/wled/WLED/blob/main/usermods/user_fx/README.md) for creating effects.  Fork it or use it as a template for your own effects usermod.
 
 Each effect is a free `void` function paired with a PROGMEM metadata string, registered via `strip.addEffect()` in the usermod's `setup()`. Multiple effects can be registered from a single `setup()`:
 

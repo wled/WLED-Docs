@@ -80,11 +80,11 @@ Once you've confirmed VSCode with Platformio is set up correctly, you can add/de
 To include one or more usermods in your build, add a `custom_usermods` line to your environment in `platformio_override.ini`:
 
 ```ini
-[env:esp32dev]
+[env:esp32dev_temperature]
 extends = env:esp32dev
 custom_usermods =
-  Temperature
   audioreactive
+  Temperature
 ```
 
 Each name corresponds to a folder under `usermods/`. No other file editing is required — usermods self-register when compiled in. For full details, including how to add external usermods from a git repository and how to write your own, see [Custom Features](/advanced/custom-features).
