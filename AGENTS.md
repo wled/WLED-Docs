@@ -110,10 +110,14 @@ When reviewing a pull request, verify the following:
 ### Writing Style & Readability
 
 - [ ] Tone is **informal, friendly, and inviting** — avoid overly formal or academic language.
+- [ ] Title case: Use title case for section and subsection headings; articles and short prepositions stay lowercase.
 - [ ] Language is **simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can easily follow.
 - [ ] Logic is easy to follow, examples are kept simple.
+- [ ] Claim calibration: Calibrate verbs to evidence; do not write "proves" when the evidence is "suggests".
 - [ ] No grammar or spelling mistakes.
+- [ ] Express coordinate ideas in the same grammatical form.
 - [ ] Wording is **concise** — remove filler phrases (e.g. "it is worth noting that", "basically", "simply") and redundant sentences.
+- [ ] Prefer "use" over "leverage", "method" over "methodology", "feature" over "functionality".
 - [ ] Contractions (e.g. "you'll", "don't", "it's") are welcome — they help keep the tone approachable.
 - [ ] Avoid idioms or culture-specific phrases (e.g. "beating around the bush", "get your ducks in a row") — they are hard to understand when translated literally into other languages.
 - [ ] Smileys 😊, concrete examples, and images/diagrams/illustrations are encouraged where they help readers grasp the main message.
@@ -158,6 +162,7 @@ Merges to `main` trigger the GitHub Actions workflow (`.github/workflows/main.ym
 
 - **Provide references** when making analyses or recommendations. Base them on the correct branch or PR.
 - **When unsure, say so.** Gather more information rather than guessing.
+- Support factual claims with verifiable citations, references or concrete evidence; **never fabricate citations**.
 - **Acknowledge good patterns** when you see them. Positive feedback always helps.
 - When updating an existing PR, retain the original description. Only modify it to ensure technical accuracy. Add change logs after the existing description.
 - No force-push on open PRs
