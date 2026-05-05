@@ -11,6 +11,8 @@ reviews:
   collapse_walkthrough: false
   poem: true
   sequence_diagrams: false
+  slop_detection:
+    label: needs_rework
   auto_review:
     enabled: true
     ignore_title_keywords:
@@ -25,3 +27,5 @@ reviews:
     unit_tests:
       # default: true - disabled in WLED: we don't have a unit test framework, this option just confuses contributors
       enabled: false
+    simplify:
+      enabled: true
