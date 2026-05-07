@@ -1142,6 +1142,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effects-available-since-160" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effects available since 16.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#retired-effects" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1149,6 +1172,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2579,6 +2607,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effects-available-since-160" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effects available since 16.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#retired-effects" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2586,6 +2637,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2621,9 +2677,88 @@
 <p>Effects above 117 are only available 0.14+ or Sound Reactive forks.<br />
 <a href="#retired-effects">Retired Effects</a> - Can't find an old favorite? Look here.</p>
 </div>
-<h4 id="effect-overlay">Effect Overlay</h4>
-<p>Some effects can be overlaid on the background of another effect. To use overlay, set up
-segments with overlapping pixels. The overlay effect must be playing on the segment with the higher id. 
+<h2 id="effect-overlay">Effect Overlay</h2>
+<p>Since 16.0 true segment &amp; effect overlay is supported.</p>
+<p>To use overlay, set up segments with overlapping pixels. Multiple segments can be composited. For each segment, you can select the overlay mode:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top/Default</td>
+<td>Shows only the top layer, ignoring the bottom entirely</td>
+</tr>
+<tr>
+<td>Bottom/None</td>
+<td>Shows only the bottom layer, ignoring the top entirely</td>
+</tr>
+<tr>
+<td>Add</td>
+<td>Adds colors together, clamping at white</td>
+</tr>
+<tr>
+<td>Subtract</td>
+<td>Subtracts the top from the bottom, darkening toward black</td>
+</tr>
+<tr>
+<td>Difference</td>
+<td>Absolute difference between layers — identical colors go black, opposites go bright</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>Evenly blends both layers at 50% each</td>
+</tr>
+<tr>
+<td>Multiply</td>
+<td>Multiplies colors together — white acts as a mask to bottom layer</td>
+</tr>
+<tr>
+<td>Divide</td>
+<td>Divides bottom by top — brightens the bottom where the top is dark</td>
+</tr>
+<tr>
+<td>Lighten</td>
+<td>Picks the brighter of the two layers pixel-by-pixel.</td>
+</tr>
+<tr>
+<td>Darken</td>
+<td>Picks the darker of the two layers pixel-by-pixel.</td>
+</tr>
+<tr>
+<td>Screen</td>
+<td>Inverse of multiply — always brightens, white wins, black is neutral.</td>
+</tr>
+<tr>
+<td>Overlay</td>
+<td>Multiplies dark areas and screens bright areas of the bottom layer — boosts contrast.</td>
+</tr>
+<tr>
+<td>Hard Light</td>
+<td>Like overlay but driven by the top layer — top controls contrast boosting.</td>
+</tr>
+<tr>
+<td>Soft Light</td>
+<td>Softer version of overlay — subtle contrast and saturation boost, no clipping.</td>
+</tr>
+<tr>
+<td>Dodge</td>
+<td>Brightens the bottom layer based on the top — light top = strong brightening.</td>
+</tr>
+<tr>
+<td>Burn</td>
+<td>Darkens the bottom layer based on the top — dark top = strong darkening.</td>
+</tr>
+<tr>
+<td>Stencil</td>
+<td>Shows top where it has any color, bottom where it is black.</td>
+</tr>
+</tbody>
+</table>
+<p>In older WLED versions not all effects do support overlay and the overlay effect must be playing on the segment with the higher id.
 If the Overlay option is checked, the background will not be painted and the effect
 from the lower segment will be displayed.</p>
 <p>To aid in showing where colors vs palettes are used, all effects are rendered with the 
@@ -2633,6 +2768,7 @@ and the colors: <br />
 <img alt="" src="https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/color_2.gif" /> (or black) Secondary  (<em>Bg</em>)<br />
 <img alt="" src="https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/color_3.gif" /> Tertiary (<em>Cs</em>).<br />
 For 2D effects the background (secondary) color is set to black.</p>
+<h2 id="effects">Effects</h2>
 <table>
 <thead>
 <tr>
@@ -2641,7 +2777,7 @@ For 2D effects the background (secondary) color is set to black.</p>
 <th>Description</th>
 <th>Flags</th>
 <th>Colors</th>
-<th>Parms</th>
+<th>Parameters</th>
 </tr>
 </thead>
 <tbody>
@@ -4068,6 +4204,302 @@ For 2D effects the background (secondary) color is set to black.</p>
 <td>⋮</td>
 <td>🎨</td>
 <td>Speed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="effects-available-since-160">Effects available since 16.0</h3>
+<p>All new effects support palettes except pacman. Effects with the prefix "PS" use the particle system.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">ID</th>
+<th style="text-align: left;">Effect</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: center;">Flags</th>
+<th style="text-align: center;">Colors</th>
+<th style="text-align: left;">Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">187</td>
+<td style="text-align: left;"><strong>PS Volcano</strong></td>
+<td style="text-align: left;">Erupting volcano. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_187.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Particle speed <br> <strong>Intensity:</strong> Particles emitted <br> <strong>Move:</strong> Movement velocity <br> <strong>Bounce:</strong> Collision hardness <br> <strong>Spread:</strong> Emitter variation <br> <strong>AgeColor:</strong> Color by particle age <br> <strong>Walls:</strong> Enable side boundaries <br> <strong>Collide:</strong> Enable particle-particle collisions</td>
+</tr>
+<tr>
+<td style="text-align: right;">188</td>
+<td style="text-align: left;"><strong>PS Fire</strong></td>
+<td style="text-align: left;">Versatile and quite realistic fire effect. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_188.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Flame speed <br> <strong>Intensity:</strong> Heat intensity <br> <strong>Flame height:</strong> Vertical reach <br> <strong>Wind:</strong> Wind speed <br> <strong>Spread:</strong> Fire width <br> <strong>Smooth:</strong> Enable Smoothing/Blurring <br> <strong>Cylinder:</strong> Wrap left &amp; right <br> <strong>Turbulence:</strong> Add turbulence</td>
+</tr>
+<tr>
+<td style="text-align: right;">189</td>
+<td style="text-align: left;"><strong>PS Fireworks</strong></td>
+<td style="text-align: left;">Rockets shooting up and exploding in various ways and colors. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_189.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Launches:</strong> Rocket launch frequency <br> <strong>Explosion Size:</strong> size of explosion <br> <strong>Fuse:</strong> Detonation timer <br> <strong>Blur:</strong> Trail softness <br> <strong>Gravity:</strong> Pull force <br> <strong>Cylinder:</strong> Wrap left &amp; right <br> <strong>Ground:</strong> Enable floor <br> <strong>Fast:</strong> Doubles speed</td>
+</tr>
+<tr>
+<td style="text-align: right;">190</td>
+<td style="text-align: left;"><strong>PS Vortex</strong></td>
+<td style="text-align: left;">Swirling particle vortex effect. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_190.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Rotation Speed:</strong> Spin velocity <br> <strong>Particle Speed:</strong> Radial velocity <br> <strong>Arms:</strong> Spiral count <br> <strong>Flip:</strong> Direction swap interval <br> <strong>Nozzle:</strong> Emission spread <br> <strong>Smear:</strong> Full blur <br> <strong>Direction:</strong> left/right rotation <br> <strong>Random Flip:</strong> Randomize flip intervals</td>
+</tr>
+<tr>
+<td style="text-align: right;">191</td>
+<td style="text-align: left;"><strong>PS Fuzzy Noise</strong></td>
+<td style="text-align: left;">Organic flowing noise-based particle field. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_191.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Noise change speed <br> <strong>Particles:</strong> Particle count <br> <strong>Bounce:</strong> Particle hardness <br> <strong>Friction:</strong> Movement drag <br> <strong>Scale:</strong> Noise field size <br> <strong>Cylinder:</strong> Wrap left &amp; right <br> <strong>Smear:</strong> Full blur <br> <strong>Collide:</strong> Enable particle-particle collisions</td>
+</tr>
+<tr>
+<td style="text-align: right;">192</td>
+<td style="text-align: left;"><strong>PS Ballpit</strong></td>
+<td style="text-align: left;">Falling / bouncing balls simulation. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_192.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Fall speed <br> <strong>Intensity:</strong> Ball count <br> <strong>Size:</strong> Ball size, max = random<br> <strong>Hardness:</strong> Ball hardness, sticky if very low <br> <strong>Saturation:</strong> Color saturation <br> <strong>Cylinder:</strong> Wrap left &amp; right <br> <strong>Walls:</strong> Side boundaries <br> <strong>Ground:</strong> Bottom floor</td>
+</tr>
+<tr>
+<td style="text-align: right;">193</td>
+<td style="text-align: left;"><strong>PS Box</strong></td>
+<td style="text-align: left;">Chaotic particles in a box. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_193.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Direction change rate <br> <strong>Particles:</strong> Count <br> <strong>Tilt:</strong> Force strength <br> <strong>Hardness:</strong> Bounce hardness <br> <strong>Size:</strong> Particle size, max = random <br> <strong>Random:</strong> Random force instead of circular <br> <strong>Washing Machine:</strong> Spin back and forth <br> <strong>Sloshing:</strong> Rock my boat</td>
+</tr>
+<tr>
+<td style="text-align: right;">194</td>
+<td style="text-align: left;"><strong>PS Attractor</strong></td>
+<td style="text-align: left;">Particles swirling around a black hole. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_194.gif" /></td>
+<td style="text-align: center;">▦ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Mass:</strong> Pull-in strength <br> <strong>Particles:</strong> Count <br> <strong>Size:</strong> Particle size <br> <strong>Collide:</strong> Enable particle-particle collisions <br> <strong>Friction:</strong> Drag <br> <strong>AgeColor:</strong> Color by particle age <br> <strong>Move:</strong> Move the black hole <br> <strong>Swallow:</strong> Particles disappear when too close</td>
+</tr>
+<tr>
+<td style="text-align: right;">195</td>
+<td style="text-align: left;"><strong>PS Impact</strong></td>
+<td style="text-align: left;">Colorful meteor shower. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_195.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Launches:</strong> Meteor launch frequency <br> <strong>Intensity:</strong> Splash size <br> <strong>Force:</strong> Impact power <br> <strong>Hardness:</strong> Bounce hardness <br> <strong>Blur:</strong> Motion blur <br> <strong>Cylinder:</strong>  Wrap left &amp; right <br> <strong>Walls:</strong> Side collision <br> <strong>Collide:</strong> Enable particle-particle collisions</td>
+</tr>
+<tr>
+<td style="text-align: right;">196</td>
+<td style="text-align: left;"><strong>PS Waterfall</strong></td>
+<td style="text-align: left;">Flowing waterfall simulation. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_196.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Flow velocity <br> <strong>Intensity:</strong> Water density <br> <strong>Variation:</strong> Flow randomness <br> <strong>Collide:</strong> Enable particle-particle collisions <br> <strong>Position:</strong> Waterfall position left/right <br> <strong>Cylinder:</strong>  Wrap left &amp; right <br> <strong>Walls:</strong> Side collision <br> <strong>Ground:</strong> Splash floor</td>
+</tr>
+<tr>
+<td style="text-align: right;">197</td>
+<td style="text-align: left;"><strong>PS Spray</strong></td>
+<td style="text-align: left;">Directional particle spray. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_197.gif" /></td>
+<td style="text-align: center;">▦ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Emit velocity <br> <strong>Intensity:</strong> Emit amount <br> <strong>Left/Right:</strong> Spray position <br> <strong>Up/Down:</strong> Spray position <br> <strong>Angle:</strong> Emit angle <br> <strong>Gravity:</strong> Force <br> <strong>Cylinder/Square:</strong> wrap or bounce left &amp; right <br> <strong>Collide:</strong> Enable particle-particle collisions</td>
+</tr>
+<tr>
+<td style="text-align: right;">198</td>
+<td style="text-align: left;"><strong>PS GEQ 2D</strong></td>
+<td style="text-align: left;">Particle based audio-reactive equalizer. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_198.gif" /></td>
+<td style="text-align: center;">▦ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Shoot up speed <br> <strong>Intensity:</strong> Emit amount <br> <strong>Diverge:</strong> Spray spread <br> <strong>Bounce:</strong> Ground bounce <br> <strong>Gravity:</strong> Pull down force <br> <strong>Cylinder:</strong> Wrap left &amp; right <br> <strong>Walls:</strong> Side collision <br> <strong>Floor:</strong> Enable Floor</td>
+</tr>
+<tr>
+<td style="text-align: right;">199</td>
+<td style="text-align: left;"><strong>PS GEQ Nova</strong></td>
+<td style="text-align: left;">Radial / Rotating audio-reactive equalizer. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_199.gif" /></td>
+<td style="text-align: center;">▦ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Emit speed <br> <strong>Intensity:</strong> Emit amount <br> <strong>Rotation Speed:</strong> Spin <br> <strong>Color Change:</strong> Hue shift speed <br> <strong>Nozzle:</strong> Divergence rate <br> <strong>Direction:</strong> Spin direction</td>
+</tr>
+<tr>
+<td style="text-align: right;">200</td>
+<td style="text-align: left;"><strong>PS Ghost Rider</strong></td>
+<td style="text-align: left;">Spiraling trail effect like the original with more options. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_200.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Travel velocity <br> <strong>Spiral:</strong> Path curl rate <br> <strong>Blur:</strong> Motion blur amount <br> <strong>Color Cycle:</strong> Hue shift rate <br> <strong>Spread:</strong> Trail divergence <br> <strong>AgeColor:</strong> Color by particle age <br> <strong>Walls:</strong> Bounce on boundaries</td>
+</tr>
+<tr>
+<td style="text-align: right;">201</td>
+<td style="text-align: left;"><strong>PS Blobs</strong></td>
+<td style="text-align: left;">Blobs moving around randomly. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_201.gif" /></td>
+<td style="text-align: center;">▦ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Movement velocity <br> <strong>Blobs:</strong> Blob count <br> <strong>Size:</strong> Radius <br> <strong>Life:</strong> Respawn interval <br> <strong>Blur:</strong> Motion blur <br> <strong>Wobble:</strong> Cycle shape <br> <strong>Collide:</strong> Enable collisions <br> <strong>Pulsate:</strong> Cycle size</td>
+</tr>
+<tr>
+<td style="text-align: right;">217</td>
+<td style="text-align: left;"><strong>PS Galaxy</strong></td>
+<td style="text-align: left;">Rotating galaxy-style star field with "hyper speed" option. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_217.gif" /></td>
+<td style="text-align: center;">▦</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Star speed <br> <strong>Intensity:</strong> Emit amount <br> <strong>Size:</strong> Star size <br> <strong>Color:</strong> Color shift speed <br> <strong>Starfield:</strong> Hyper Speed <br> <strong>Trace:</strong> Motion blur</td>
+</tr>
+<tr>
+<td style="text-align: right;">202</td>
+<td style="text-align: left;"><strong>PS DripDrop</strong></td>
+<td style="text-align: left;">Dripping liquid particle effect, combines the classic "Drip" and "Rain" effects with many additional options <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_202.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Fall speed <br> <strong>Intensity:</strong> Drop frequency <br> <strong>Splash:</strong> Splash size <br> <strong>Blur:</strong> Motion blur <br> <strong>Gravity:</strong> Pull down force <br> <strong>Rain:</strong> Rain mode <br> <strong>PushSplash:</strong> Collisions on splash <br> <strong>Smooth:</strong> 2-pixel interpolation</td>
+</tr>
+<tr>
+<td style="text-align: right;">203</td>
+<td style="text-align: left;"><strong>PS Pinball</strong></td>
+<td style="text-align: left;">Pinball-style bouncing particles. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_203.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Shoot speed <br> <strong>Bounce:</strong> Ball hardness <br> <strong>Size:</strong> Ball size <br> <strong>Blur:</strong> Trail length <br> <strong>Gravity:</strong> Pull down force <br> <strong>Collide:</strong> Enable collisions <br> <strong>Rolling:</strong> Rolling Balls style <br> <strong>Position Color:</strong> Color by position</td>
+</tr>
+<tr>
+<td style="text-align: right;">204</td>
+<td style="text-align: left;"><strong>PS Dancing Shadows</strong></td>
+<td style="text-align: left;">Shadows rushing accross the strip. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_204.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Movement speed <br> <strong>Intensity:</strong> Number of ghosts <br> <strong>Blur:</strong> Motion blurring <br> <strong>Color Cycle:</strong> Hue shift <br> <strong>Smear:</strong> Maximum blur <br> <strong>Position Color:</strong> Color by position <br> <strong>Smooth:</strong> 2-pixel interpolation</td>
+</tr>
+<tr>
+<td style="text-align: right;">205</td>
+<td style="text-align: left;"><strong>PS Fireworks 1D</strong></td>
+<td style="text-align: left;">One-dimensional fireworks effect. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_205.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Gravity:</strong> Pull down speed <br> <strong>Explosion:</strong> Blast size <br> <strong>Firing side:</strong> Starting point prefrence <br> <strong>Blur:</strong> Motion blur <br> <strong>Color:</strong> 0-15: desaturated, 16-23: full color, 24-30: color by speed, max: color by age or color by position, depending on "colorful" check <br> <strong>Colorful:</strong> Random color (may override color slider) <br> <strong>Trail:</strong> Exhaust trail <br> <strong>Smooth:</strong> 2-pixel interpolation</td>
+</tr>
+<tr>
+<td style="text-align: right;">206</td>
+<td style="text-align: left;"><strong>PS Sparkler</strong></td>
+<td style="text-align: left;">Versatile sparkler effect. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_206.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Move:</strong> Emitter speed <br> <strong>Intensity:</strong> Fade speed<br> <strong>Saturation:</strong> Color saturation <br> <strong>Blur:</strong> Motion blur <br> <strong>Sparklers:</strong> Sparkle emitter count <br> <strong>Slide:</strong> Moving sparks <br> <strong>Bounce:</strong> Edge bounce <br> <strong>Large:</strong> Large size sparks</td>
+</tr>
+<tr>
+<td style="text-align: right;">207</td>
+<td style="text-align: left;"><strong>PS Hourglass</strong></td>
+<td style="text-align: left;">Particles flipping like an hourglass. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_207.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Interval:</strong> Drop interval in 1/10s (10=1s, 20=2s) <br> <strong>Density:</strong> Particle count <br> <strong>Color:</strong> set one of the 8 color modes: <br> 0-31: fixed color from palette<br> 32-63: single color<br> 64-95: bi-colored<br> 96-127: tri-colored<br> 128-159: gradient<br> 160-191: multi gradient<br> 192-223: moving gradient<br> 224-255: color by position <br> <strong>Blur:</strong> Motion blur <br> <strong>Gravity:</strong> Fall speed <br> <strong>Colorflip:</strong> Flip color when falling <br> <strong>Start:</strong> Auto start (pause if unchecked) <br> <strong>Fast Reset:</strong> Move to initial position fast</td>
+</tr>
+<tr>
+<td style="text-align: right;">208</td>
+<td style="text-align: left;"><strong>PS Spray 1D</strong></td>
+<td style="text-align: left;">Spray emitter: choose your settings. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_208.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed(+/-):</strong> Emit velocity (upd/down) <br> <strong>Intensity:</strong> Emit amount <br> <strong>Position:</strong> Spray position <br> <strong>Blur:</strong> Motion blur <br> <strong>Gravity(+/-):</strong> Pull force direction <br> <strong>AgeColor:</strong> Color by age <br> <strong>Bounce:</strong> Edge bounce <br> <strong>Position Color:</strong> Color by position</td>
+</tr>
+<tr>
+<td style="text-align: right;">209</td>
+<td style="text-align: left;"><strong>PS 1D Balance</strong></td>
+<td style="text-align: left;">Particles flowing back and forth as if the LEDs were reacting to tilt. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_209.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Tilt speed <br> <strong>Intensity:</strong> Number of Particles <br> <strong>Hardness:</strong> Collision hardness <br> <strong>Blur:</strong> Motion blur <br> <strong>Tilt:</strong> Tilt strength <br> <strong>Position Color:</strong> Color by position <br> <strong>Wrap:</strong> Loop edges <br> <strong>Random:</strong> Randomize tilt</td>
+</tr>
+<tr>
+<td style="text-align: right;">210</td>
+<td style="text-align: left;"><strong>PS Chase</strong></td>
+<td style="text-align: left;">Particles chasing along the strip in a regular pattern. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_210.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Velocity <br> <strong>Density:</strong> Spacing <br> <strong>Size:</strong> Particle width <br> <strong>Hue:</strong> Color interval, max = random <br> <strong>Blur:</strong> Motion blur <br> <strong>Playful:</strong> Changes hue, size, speed and density over time <br> <strong>Position Color:</strong> Color by position</td>
+</tr>
+<tr>
+<td style="text-align: right;">211</td>
+<td style="text-align: left;"><strong>PS Starburst</strong></td>
+<td style="text-align: left;">Exploding starburst particles. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_211.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Chance:</strong> Blast frequency <br> <strong>Fragments:</strong> Number of star fragments <br> <strong>Size:</strong> Fragment size <br> <strong>Blur:</strong> Motion blur <br> <strong>Cooling:</strong> Fade time <br> <strong>Gravity:</strong> Pull fragments down <br> <strong>Colorful:</strong> Random colors <br> <strong>Push:</strong> Enable collisions</td>
+</tr>
+<tr>
+<td style="text-align: right;">212</td>
+<td style="text-align: left;"><strong>PS GEQ 1D</strong></td>
+<td style="text-align: left;">One-dimensional audio equalizer. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_212.gif" /></td>
+<td style="text-align: center;">⋮ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Particle speed <br> <strong>Intensity:</strong> Particle count <br> <strong>Size:</strong> Particle size <br> <strong>Blur:</strong> Motion blur</td>
+</tr>
+<tr>
+<td style="text-align: right;">213</td>
+<td style="text-align: left;"><strong>PS Fire 1D</strong></td>
+<td style="text-align: left;">One-dimensional particle fire effect. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_213.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Flame velocity <br> <strong>Intensity:</strong> Heat level <br> <strong>Cooling:</strong> Heat dissipation <br> <strong>Blur:</strong> Motion blur</td>
+</tr>
+<tr>
+<td style="text-align: right;">214</td>
+<td style="text-align: left;"><strong>PS Sonic Stream</strong></td>
+<td style="text-align: left;">Flowing audio-reactive stream. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_214.gif" /></td>
+<td style="text-align: center;">⋮ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Flow speed <br> <strong>Intensity:</strong> Emit amount and sensitivity <br> <strong>Color:</strong> Hue increment, min=white, max=color by position <br> <strong>Blur:</strong> Motion blur <br> <strong>Bin:</strong> Frequency to react to <br> <strong>Mod:</strong> Color modulation (mid frequencies) <br> <strong>Filter:</strong> Audio filtering <br> <strong>Push:</strong> Push instead of flow</td>
+</tr>
+<tr>
+<td style="text-align: right;">215</td>
+<td style="text-align: left;"><strong>PS Sonic Boom</strong></td>
+<td style="text-align: left;">Audio triggered particle bursts. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_215.gif" /></td>
+<td style="text-align: center;">⋮ ♫</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Expansion speed <br> <strong>Intensity:</strong> Boom size <br> <strong>Color:</strong> Hue increment, min=white, max=color by position <br> <strong>Position:</strong> Below mid level: fixed position, above: advance per beat, max=random <br> <strong>Bin:</strong> Frequency to react to <br> <strong>Mod:</strong> Color modulation (mid frequencies) <br> <strong>Filter:</strong> Audio filtering <br> <strong>Blur:</strong> Motion blur</td>
+</tr>
+<tr>
+<td style="text-align: right;">216</td>
+<td style="text-align: left;"><strong>PS Springy</strong></td>
+<td style="text-align: left;">Particles connected by springs. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_216.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Stiffness:</strong> Spring tension <br> <strong>Damping:</strong> Dampen oscillations <br> <strong>Density:</strong> Particle count <br> <strong>Hue:</strong> Color gradient, 0=color by density <br> <strong>Mode:</strong> Excitation:  <br>Pulse: 0-5 apply at start, 6-10 apply at center <br> Wave: 11-20 apply at start, 21-30 apply at center<br> &gt;30 apply random pulse<br> <strong>Smear:</strong> Full blur <br> <strong>XL:</strong> Large particles <br> <strong>AR:</strong> Audio reactive mode</td>
+</tr>
+<tr>
+<td style="text-align: right;">161</td>
+<td style="text-align: left;"><strong>Shimmer</strong></td>
+<td style="text-align: left;">A shimmer moving accross the strip with optional modulators. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_161.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Movement speed <br> <strong>Interval:</strong> Pause time <br> <strong>Size:</strong> Width <br> <strong>Granular:</strong> Granularity size <br> <strong>Flow:</strong> Granularity movement <br> <strong>Zebra:</strong> Regular stripes <br> <strong>Reverse:</strong> Invert direction <br> <strong>Sporadic:</strong> Randomize intervals</td>
+</tr>
+<tr>
+<td style="text-align: right;">218</td>
+<td style="text-align: left;"><strong>Color Clouds</strong></td>
+<td style="text-align: left;">Soft and slow evolving color cloud effect. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_218.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Speed:</strong> Cloud movement <br> <strong>Intensity:</strong> Color change speed <br> <strong>Clouds:</strong> Number of clouds <br> <strong>Colors:</strong> Color variation <br> <strong>Distance:</strong> Cloud spacing <br> <strong>Cozy:</strong> Calmer clouds</td>
+</tr>
+<tr>
+<td style="text-align: right;">219</td>
+<td style="text-align: left;"><strong>Slow Transition</strong></td>
+<td style="text-align: left;">Very slow transitions up to 255 minutes <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_219.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;">🎨</td>
+<td style="text-align: left;"><strong>Time (min):</strong> Transition time in minutes <br> <strong>Sweep:</strong> Sweeping color change <br>  <strong>Exmple:</strong> Create a preset with "Solid" FX and the starting color. Create a second preset with this FX and the end color/palette, set the fade time to 10. Create a playlist of these two presets: "Solid" preset 1s duration, set "Slow Transition" preset as end preset.</td>
+</tr>
+<tr>
+<td style="text-align: right;">151</td>
+<td style="text-align: left;"><strong>PacMan</strong></td>
+<td style="text-align: left;">Pixel based Pac-Man. <br /> <img alt="" src="../../assets/images/content/effect_gifs/FX_151.gif" /></td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Speed:</strong> Effect speed <br> <strong># of PowerDots:</strong> Power-up dot density <br> <strong>Blink distance:</strong> Ghost start blinking distance <br> <strong>Blur:</strong> Blurring <br> <strong># of Ghost:</strong> Number of ghosts <br> <strong>Dots:</strong> Enable dots <br> <strong>Smear:</strong> Persistant tails <br> <strong>Compact</strong> Narrow dots</td>
 </tr>
 </tbody>
 </table>
