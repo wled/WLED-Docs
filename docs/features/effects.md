@@ -9,7 +9,7 @@ hide:
     Effects above 117 are only available 0.14+ or Sound Reactive forks.<br />
     [Retired Effects](#retired-effects) - Can't find an old favorite? Look here.
 
-#### Effect Overlay
+## Effect Overlay
 Since 16.0 true segment & effect overlay is supported.
 
 To use overlay, set up segments with overlapping pixels. Multiple segments can be composited. For each segment, you can select the overlay mode:
@@ -46,8 +46,9 @@ and the colors: <br />
 ![](https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/color_3.gif) Tertiary (_Cs_).<br />
 For 2D effects the background (secondary) color is set to black.
 
+## Effects
 
-|  ID | Effect              | Description                                                                                                                                                                                                                                                            | Flags | Colors                                  | Parmeters                                                                      |
+|  ID | Effect              | Description                                                                                                                                                                                                                                                            | Flags | Colors                                  | Parameters                                                                      |
 |----:|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|-----------------------------------------|-------------------------------------------------------------------------------|
 | 186 | Akemi               | The WLED mascot rocking to your tunes. <br /> ![](https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/FX_186.gif)                                                                                                                                    | ▦ ♫   | Head palette, Arms & Legs, Eyes & Mouth | Color speed, Dance                                                            |
 |  27 | Android             | Section of varying length running <br /> ![](https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/FX_027.gif)                                                                                                                                         | ⋮     | 🎨 Fx, Bg                               | Speed, Width                                                                  |
@@ -264,9 +265,11 @@ All new effects support palettes except pacman. Effects with the prefix "PS" use
 | 214 | **PS Sonic Stream** | Flowing audio-reactive stream. <br /> ![](../assets/images/content/effect_gifs/FX_214.gif) | ⋮ ♫ | 🎨 | **Speed:** Flow speed <br> **Intensity:** Emit amount and sensitivity <br> **Color:** Hue increment, min=white, max=color by position <br> **Blur:** Motion blur <br> **Bin:** Frequency to react to <br> **Mod:** Color modulation (mid frequencies) <br> **Filter:** Audio filtering <br> **Push:** Push instead of flow |
 | 215 | **PS Sonic Boom** | Audio triggered particle bursts. <br /> ![](../assets/images/content/effect_gifs/FX_215.gif) | ⋮ ♫ | 🎨 | **Speed:** Expansion speed <br> **Intensity:** Boom size <br> **Color:** Hue increment, min=white, max=color by position <br> **Position:** Below mid level: fixed position, above: advance per beat, max=random <br> **Bin:** Frequency to react to <br> **Mod:** Color modulation (mid frequencies) <br> **Filter:** Audio filtering <br> **Blur:** Motion blur |
 | 216 | **PS Springy** | Particles connected by springs. <br /> ![](../assets/images/content/effect_gifs/FX_216.gif) | ⋮ | 🎨 | **Stiffness:** Spring tension <br> **Damping:** Dampen oscillations <br> **Density:** Particle count <br> **Hue:** Color gradient, 0=color by density <br> **Mode:** Excitation:  <br>Pulse: 0-5 apply at start, 6-10 apply at center <br> Wave: 11-20 apply at start, 21-30 apply at center<br> >30 apply random pulse<br> **Smear:** Full blur <br> **XL:** Large particles <br> **AR:** Audio reactive mode |
-| 161 | **Shimmer** | A shimmer moving accross the strip with optional modulators. <br /> ![](../assets/images/content/effect_gifs/FX_161.gif) | ⋮ | 🎨 | **Speed:** Movement speed <br> **Interval:** Pause time <br> **Size:** Width <br> **Granular:** Granularity size <br> **Flow:** Granularity movement <br> **Zebra:** Regular stripes <br> **Revers:** Invert direction <br> **Sporadic:** Randomize intervals |
+| 161 | **Shimmer** | A shimmer moving accross the strip with optional modulators. <br /> ![](../assets/images/content/effect_gifs/FX_161.gif) | ⋮ | 🎨 | **Speed:** Movement speed <br> **Interval:** Pause time <br> **Size:** Width <br> **Granular:** Granularity size <br> **Flow:** Granularity movement <br> **Zebra:** Regular stripes <br> **Reverse:** Invert direction <br> **Sporadic:** Randomize intervals |
 | 218 | **Color Clouds** | Soft and slow evolving color cloud effect. <br /> ![](../assets/images/content/effect_gifs/FX_218.gif) | ⋮ | 🎨 | **Speed:** Cloud movement <br> **Intensity:** Color change speed <br> **Clouds:** Number of clouds <br> **Colors:** Color variation <br> **Distance:** Cloud spacing <br> **Cozy:** Calmer clouds |
 | 219 | **Slow Transition** | Very slow transitions up to 255 minutes <br /> ![](../assets/images/content/effect_gifs/FX_219.gif) | ⋮ | 🎨 | **Time (min):** Transition time in minutes <br> **Sweep:** Sweeping color change <br>  **Exmple:** Create a preset with "Solid" FX and the starting color. Create a second preset with this FX and the end color/palette, set the fade time to 10. Create a playlist of these two presets: "Solid" preset 1s duration, set "Slow Transition" preset as end preset. |
+| 151 | **PacMan** | Pixel based Pac-Man. <br /> ![](../assets/images/content/effect_gifs/FX_151.gif) | ⋮ |  | **Speed:** Effect speed <br> **# of PowerDots:** Power-up dot density <br> **Blink distance:** Ghost start blinking distance <br> **Blur:** Blurring <br> **# of Ghost:** Number of ghosts <br> **Dots:** Enable dots <br> **Smear** Persistant tails <br> **Compact** Narrow dots |
+
 ### Retired Effects
 
 Some effects get retired when they can be recreated with newer, more general effects.
