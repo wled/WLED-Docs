@@ -26,11 +26,12 @@ You may also obtain those objects individually using the URLs `/json/state` `/js
     If called, these will fallback to the Solid effect, in the effects list they have the name `RSVD` or `-`.
     To improve user experience, it is recommended to remove effects with the names `RSVD` or `-` form the UI effect selection.
 
-### Example Library
-[WLED JSON API Library in rust](https://github.com/paulwrath1223/wled-json-api-library).
-Even if you are not using rust, or don't know how to read rust,
-the up-to-date JSON structure is included and documented in this project.
+### Client libraries
 
+The community has created libraries for various programming languages to make working with the WLED JSON API easier.
+
+- [WLED JSON API Library in Rust](https://github.com/paulwrath1223/wled-json-api-library) - Even if you are not using Rust, or don't know how to read Rust, the up-to-date JSON structure is included and documented in this project.
+- [python-wled](https://github.com/frenck/python-wled) - Python library for the WLED JSON API and the WLED Weboscket API.
 
 ### Setting new values
 
