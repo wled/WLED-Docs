@@ -31,7 +31,7 @@ You may also obtain those objects individually using the URLs `/json/state` `/js
 The community has created libraries for various programming languages to make working with the WLED JSON API easier.
 
 - [WLED JSON API Library in Rust](https://github.com/paulwrath1223/wled-json-api-library) - Even if you are not using Rust, or don't know how to read Rust, the up-to-date JSON structure is included and documented in this project.
-- [python-wled](https://github.com/frenck/python-wled) - Community-created library for Python.
+- [python-wled](https://github.com/frenck/python-wled) - Python library for the WLED JSON API and the WLED Weboscket API.
 
 ### Setting new values
 
