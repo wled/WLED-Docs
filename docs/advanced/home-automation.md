@@ -43,7 +43,7 @@ The native integration has known limitations documented in the [official HA WLED
 
 Palettes uploaded as `palette0.json` through `palette9.json` do not appear in Home Assistant's palette selector—only built-in palettes are available.
 
-**Workaround:** Use a `rest_command` to set the palette by ID. Custom palettes are numbered starting from ID 71 (after the ~71 built-in palettes). To find the exact ID of your custom palette, query `GET http://<wled-ip>/json/palettes` and check the array index.
+**Workaround:** Use a `rest_command` to set the palette by ID. Custom palettes are numbered backwards from 200: `palette0.json` = ID 200, `palette1.json` = ID 199, etc.
 
 ```yaml
 rest_command:
@@ -59,7 +59,7 @@ Example automation:
 action: rest_command.wled_set_palette
 data:
   ip: "192.168.1.100"
-  palette_id: 71  # first custom palette
+  palette_id: 200  # palette0.json
 ```
 
 
