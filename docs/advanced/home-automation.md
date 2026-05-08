@@ -35,11 +35,11 @@ integration will be available.
 
 [WLED integration documentation](https://www.home-assistant.io/integrations/wled/)
 
-#### Workarounds for known integration limitations
+### Workarounds for known HA integration limitations
 
 The native integration has known limitations documented in the [official HA WLED integration docs](https://www.home-assistant.io/integrations/wled/). Below are practical workarounds using WLED's REST API.
 
-##### Custom palettes not visible in HA
+#### Custom palettes not visible in HA
 
 Palettes uploaded as `palette0.json` through `palette9.json` do not appear in Home Assistant's palette selector—only built-in palettes are available.
 
@@ -63,7 +63,7 @@ data:
 ```
 
 
-##### AudioReactive usermod not controllable
+#### AudioReactive usermod not controllable
 
 Home Assistant does not expose usermods (such as AudioReactive) as entities.
 
@@ -83,7 +83,7 @@ rest_command:
     payload: '{"AudioReactive":{"enabled":false}}'
 ```
 
-##### Sound-reactive and 2D matrix effects may not work
+#### Sound-reactive and 2D matrix effects may not work
 
 Effects marked as sound-reactive or 2D matrix appear in the effect list but may not work if your WLED build doesn't include those features (custom/minimal builds).
 
@@ -99,7 +99,7 @@ data:
 
 Presets bundle the complete effect configuration, so parameters are automatically applied. Alternatively, maintain a curated list of safe effect names in your automations and select only from those.
 
-##### Mixed RGB+CCT strips – only one color model active
+#### Mixed RGB+CCT strips – only one color model active
 
 WLED strips with both RGB and CCT channels (e.g., WS2508) cannot control RGB and CCT independently. Home Assistant activates only one color model at a time.
 
@@ -107,7 +107,7 @@ WLED strips with both RGB and CCT channels (e.g., WS2508) cannot control RGB and
 
 For CCT-only strips with White Balance Correction enabled, disable WBC or enable "Calculate CCT from RGB" to restore HA 2022.2+ compatibility.
 
-##### No master control for color/effect across all segments
+#### No master control for color/effect across all segments
 
 There is no single entity to control color, effect, and brightness across all segments simultaneously. Light groups send separate requests per segment, causing staggered transitions and latency.
 
@@ -151,7 +151,7 @@ script:
           bri: 200
 ```
 
-##### Secondary and tertiary effect colors cannot be set from HA
+#### Secondary and tertiary effect colors cannot be set from HA
 
 Home Assistant's WLED integration exposes only the primary (foreground) color. Secondary (background) and tertiary colors used by many effects are inaccessible.
 
