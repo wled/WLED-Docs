@@ -83,22 +83,6 @@ rest_command:
     payload: '{"AudioReactive":{"enabled":false}}'
 ```
 
-#### Sound-reactive and 2D matrix effects may not work
-
-Effects marked as sound-reactive or 2D matrix appear in the effect list but may not work if your WLED build doesn't include those features (custom/minimal builds).
-
-**Workaround:** Instead of manually filtering effects, use **presets**. Create a preset in WLED with a verified working effect and all desired parameters (color, brightness, speed, intensity). Then activate it from Home Assistant:
-
-```yaml
-action: select.select_option
-target:
-  entity_id: select.wled_preset
-data:
-  option: "My Tested Effect"
-```
-
-Presets bundle the complete effect configuration, so parameters are automatically applied. Alternatively, maintain a curated list of safe effect names in your automations and select only from those.
-
 #### Mixed RGB+CCT strips – only one color model active
 
 WLED strips with both RGB and CCT channels (e.g., WS2508) cannot control RGB and CCT independently. Home Assistant activates only one color model at a time.
@@ -203,6 +187,7 @@ data:
   g3: 0
   b3: 255
 ```
+
 ### Using MQTT
 
 Alternatively, MQTT can be used (not recommended).
