@@ -1703,10 +1703,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-library" class="md-nav__link">
+  <a href="#client-libraries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Library
+        Client libraries
       
     </span>
   </a>
@@ -2834,10 +2834,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-library" class="md-nav__link">
+  <a href="#client-libraries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Library
+        Client libraries
       
     </span>
   </a>
@@ -3145,10 +3145,12 @@ In order for each effect to have an unique ID on all devices, having unsupported
 If called, these will fallback to the Solid effect, in the effects list they have the name <code>RSVD</code> or <code>-</code>.
 To improve user experience, it is recommended to remove effects with the names <code>RSVD</code> or <code>-</code> form the UI effect selection.</p>
 </div>
-<h3 id="example-library">Example Library</h3>
-<p><a href="https://github.com/paulwrath1223/wled-json-api-library">WLED JSON API Library in rust</a>.
-Even if you are not using rust, or don't know how to read rust,
-the up-to-date JSON structure is included and documented in this project.</p>
+<h3 id="client-libraries">Client libraries</h3>
+<p>The community has created libraries for various programming languages to make working with the WLED JSON API easier.</p>
+<ul>
+<li><a href="https://github.com/paulwrath1223/wled-json-api-library">WLED JSON API Library in Rust</a> - Even if you are not using Rust, or don't know how to read Rust, the up-to-date JSON structure is included and documented in this project.</li>
+<li><a href="https://github.com/frenck/python-wled">python-wled</a> - Python library for the WLED JSON API and the WLED Weboscket API.</li>
+</ul>
 <h3 id="setting-new-values">Setting new values</h3>
 <p>Sending a POST request to <code>/json</code> or <code>/json/state</code> with (parts of) the state object will update the respective values.
 Example: <code>{"on":true,"bri":255}</code> sets the brightness to maximum. <code>{"seg":[{"col":[[0,255,200]]}]}</code> sets the color of the first segment to teal.
