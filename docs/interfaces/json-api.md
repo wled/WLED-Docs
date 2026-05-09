@@ -196,7 +196,7 @@ c3 | 0 to 31 | Effect custom slider 3.
 o1 | bool | Effect option 1. Custom options are hidden or displayed and labeled based on [effect metadata](#effect-metadata).
 o2 | bool | Effect option 2.
 o3 | bool | Effect option 3.
-pal | 0 to info.palcount -1 | ID of the color palette or ~ to increment, ~- to decrement, or r for random.
+pal | byte | ID of an available palette (see [Palettes](#palettes) section for available ID ranges depending on firmware version) or ~ to increment, ~- to decrement, or r for random.
 <a id="seg-sel"></a>sel | bool | `true` if the segment is selected. Selected segments will have their state (color/FX) updated by APIs that don't support segments (e.g. UDP sync, HTTP API). If no segment is selected, the first segment (_id_:`0`) will behave as if selected. WLED will report the state of the first (lowest _id_) segment that is selected to APIs (HTTP, MQTT, Blynk...), or `mainseg` in case no segment is selected and for the UDP API. Live data is always applied to all LEDs regardless of segment configuration.
 rev | bool | Flips the segment (in horizontal dimension for 2D set-up), causing animations to change direction.
 rY | bool | Flips the 2D segment in vertical dimension. _(available since 0.14.0)_
@@ -247,6 +247,9 @@ lip | string | Realtime data source IP address
 ws | -1 to 8 | Number of currently connected WebSockets clients. -1 indicates that WS is unsupported in this build.
 fxcount | byte | Number of effects included.
 palcount | uint16 | Number of palettes configured.
+cpalcount | byte | Number of custom user-created palettes. _(available since 0.11.0)_
+umpalcount | byte | Number of usermod-registered palettes. _(available since 16.0.0)_
+umpalnames | array of strings | Names of usermod-registered palettes. _(available since 16.0.0)_
 _wifi_ | object | Info about current signal strength
 wifi.bssid | string | The BSSID of the currently connected network.
 wifi.signal | 0 to 100 | Relative signal quality of the current connection.
@@ -275,6 +278,8 @@ Examples of frequently requested custom API:
 Cycle presets between 1 and 6 | `{"ps":"1~6~"}`
 Select random effect on _all selected_ segments | `{"seg":{"fx":"r"}}`
 Select random palette between 5 and 10 on segment 2 | `{"seg":[{"id":2,"pal":"5~10r"}]}`
+Set palette 0 on segment 0 | `{"seg":[{"id":0,"pal":0}]}`
+Set a custom palette (ID 200) on segment 1 | `{"seg":[{"id":1,"pal":200}]}`
 Change segment 0 name | `{"seg":[{"id":0,"n":"Your custom ASCII text"}]}`
 Freeze or unfreeze an effect | `{"seg":[{"id":0,"frz":true}]}` or `{"seg":[{"id":0,"frz":false}]}`
 Night light | `{"nl":{"on":true,"dur":10,"mode":0}}`
@@ -315,6 +320,52 @@ Matrices are handled as a non-serpentine layout.
 
 !!! info "Brightness interaction"
     For your colors to apply correctly, make sure the desired brightness is set beforehand. Turning on the LEDs from an off state and setting individual LEDs in the same JSON request will _not_ work!
+
+#### Palettes
+
+The JSON API supports three types of palettes:
+
+- **Built-in palettes**: Fixed palettes included in the WLED firmware
+- **Custom palettes**: User-defined palettes created via the web UI or API
+- **Usermod palettes**: Palettes registered by usermods (WLED 16.0.0+ only)
+
+The palette ID scheme (used in the `pal` parameter) changed significantly in WLED 16.0.0.
+
+##### Legacy (WLED < 16.0.0)
+
+- **Built-in palettes**: IDs `0` to `info.palcount - 1`
+- **Custom palettes**: IDs counting down from `255` (ID `255`, `254`, `253`, etc.)
+  - The number of custom palettes is reported via `info.cpalcount`
+
+##### WLED 16.0.0 and later
+
+Starting with WLED 16.0.0, the palette ID space was reorganized into fixed ranges:
+
+- **Built-in palettes**: IDs `0` to `71` (72 fixed palettes)
+- **Custom palettes**: IDs `72` to `200` (allocated from `200` downward)
+  - The number of custom palettes is reported via `info.cpalcount`
+  - First custom palette gets ID `200`, second gets ID `199`, etc.
+  - Up to 129 custom palette slots available (ESP32) or 10 (ESP8266)
+- **Usermod palettes**: IDs `201` to `255` (allocated from `255` downward)
+  - Reserved for palettes registered by usermods
+  - First usermod palette gets ID `255`, second gets ID `254`, etc.
+  - Up to 55 usermod palette slots available
+
+##### Palette naming
+
+Palette names are obtained from different sources depending on the palette type:
+
+**Built-in palettes:**
+- Names are provided in the JSON API response under the `palettes` array (for `/json` or `/json/pal` endpoints)
+- Each index in the array corresponds to palette ID of the same index
+
+**Custom palettes:**
+- Generated automatically as `"Custom 1"`, `"Custom 2"`, etc.
+- Based on the count reported via `info.cpalcount`
+
+**Usermod palettes (WLED 16.0.0+):**
+- Names are provided in the `info.umpalnames` array
+- Must have exactly `info.umpalcount` entries in `umpalnames` for all usermod palettes to be displayed
 
 #### Playlists
 
