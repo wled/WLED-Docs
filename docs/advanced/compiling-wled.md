@@ -11,7 +11,9 @@ WLED has come to rely on so many dependencies in the latest versions that buildi
 
 If you don't want to change the code but only add some compile options and/or usermods, you can use bot on discord or compile with just few clicks using [this inofficial web based wled compiler](https://wled-compile.github.io/). Using it you can download the resulting .bin file directly or install  via USB using built-in web-based installer.
 
-### Preparations
+### Compiling using Visual Studio Code
+
+#### Preparations
 
 1. Make sure Git client is installed on your system. If it isn't, you can get it [here](https://git-scm.com/downloads).
 2. Also make sure that you have [Node.js](https://nodejs.org/en/download) 20 or higher installed.
@@ -25,7 +27,7 @@ Alternatively fork the WLED project first and download it from your fork.
   npm install
   ```
 
-### Installation guide (PlatformIO, recommended)
+#### Installing Visual Studio Code and PlatformIO extension
 
 1. Download and install the free [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.
 2. Open VS Code and go to the Extensions manager (the icon with the stacked blocks in the left bar)
@@ -36,10 +38,7 @@ Alternatively fork the WLED project first and download it from your fork.
 ![](https://i.ibb.co/10ykGxk/Screen-Shot-2020-11-03-at-5-27-17-PM.png)
 ---
 
-### Compilation guide (PlatformIO)
-
-!!! tip
-    Make sure Git Client is installed on your system. You can get it [here](https://git-scm.com/downloads).
+#### Compiling
 
 1. In VS Code, open the file `platformio.ini`.
 2. Add a semicolon in front of the line that start `default_envs = ` to comment it out.
@@ -57,7 +56,7 @@ If you get one of these two errors, hit the checkmark icon once again to compile
 - `error: wled00\wled00.ino.cpp: No such file or directory`
 - `FileNotFoundError: [WinError 2] The system cannot find the file specified: '[...].sconsign37.dblite'`
 
-### Making a custom environment
+#### Making a custom environment
 
 Once you've confirmed VSCode with Platformio is set up correctly, you can add/define overrides to allow you to use non-default pins, add a usermod, or add other custom features.
 
@@ -75,7 +74,7 @@ Once you've confirmed VSCode with Platformio is set up correctly, you can add/de
  7. Put your `-D` overrides on this new line, giving each `-D` it's own new line.
  8. Compile your freshly customized WLED image!
 
-### Flashing the compiled binary
+#### Flashing the compiled binary
 
 !!! tip
     This step is optional and only recommended if you want to install the same binary to multiple boards. For testing, it is easiest to upload directly from PlatformIO
@@ -84,61 +83,53 @@ The .bin file is located in the subfolder `/build_output/firmware` in your WLED 
 
 All that's left to do is [flash this .bin file onto your ESP board](/basics/install-binary/#flashing-method-2-esptool) and then connect it to WiFi.
 
-### Compilation guide (Arduino IDE, not recommended)
+
+### Compiling using the Linux command line
+
+To compile using the Linux command line, it is recommended to use a recent version of Linux, as older versions may have outdated versions of required packages. As of this writing, Ubuntu 24.04 LTS still has an old version of Node.js, but Ubuntu 24.10 has the right version. The following was tested with Ubuntu 24.10.
+
+!!! tip
+     If you don't have Ubuntu 24.10, use `multipass` or similar software to start a 24.10 container
+
+#### Installing required software
+
+Install `git` if it isn't already: `sudo apt install git`
+
+Install the Node.js package manager: `sudo apt install npm`
+
+Run `node --version` and make sure you have at least version 20. If your Linux distribution uses an older version, install Node.js directly from [Node.js](https://nodejs.org/en/download)
+
+Install PlatformIO:
 
 !!! warning
-    This method is outdated. The source is no longer officially checked to be buildable with the Arduino IDE. Using PlatformIO is strongly advised.
+    Do NOT install PlatformIO with `apt`
 
-- Follow a guide to setup your Arduino IDE (I am using version 1.8.9) with the ESP8266 libraries.
-For current compiles I recommend the latest Arduino core version 2.7.4. If you do not wish to install all libraries manually it is recommended to download the PlatformIO extension for VS Code (see above).
+```
+curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
+python3 get-platformio.py # if this fails because of missing packages, install the packages it complains about, then retry
+PATH=$PATH:$HOME/.platformio/penv/bin/
+```
 
-- Run the following command to build the Web UI files:
-  ```
-  npm run build
-  ```
+Clone the WLED Git repository (or a different fork)
+```
+git clone https://github.com/wled/WLED.git
+cd WLED
+```
+Optional: check out the branch or tag you want to build, e.g. `git checkout v0.15.0`
 
-- You will need to install a few libraries:
+Run `npm ci` to do a clean install of all the required dependencies
 
-| Library Name | Platform |
-| --- | --- |
-[NeoPixelBus](https://github.com/Makuna/NeoPixelBus) (2.6.0) | All
-[FastLED](https://github.com/FastLED/FastLED) | All
-[ESPAsyncWebServer Aircoookie fork](https://github.com/Aircoookie/ESPAsyncWebServer) (2.0.0) | All
-[IRRemoteESP8266](https://github.com/crankyoldgit/IRremoteESP8266) | All
-[ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) | ESP8266 only
-[ESPAsyncUDP](https://github.com/me-no-dev/ESPAsyncUDP) | ESP8266 only
-[AsyncTCP for ESP32](https://github.com/me-no-dev/AsyncTCP) | ESP32 only
-[LITTLEFS_esp32](https://github.com/lorol/LITTLEFS)* | ESP32 only
+#### Compiling
 
-\* Please see [the installation guide](https://github.com/lorol/LITTLEFS#installation). You might need to enable a define in the library code.
+To build all environments, simply run `pio run`. More likely though you'll want to only build an image for the specific device you're using, which you can do with something like `pio run -e esp8266_2m_160`.
+To see a list of available environments, run
+```
+pio project config --json-output | jq -cr '.[0][1][0][1]'
+```
 
-All other dependencies are included with WLED for convenience.
+#### Flashing the compiled binary
 
-- Now compile and flash the software! Make sure you erase everything when you flash! (If your board config does not provide this option, you can `Sketch -> Export compiled Binary` and upload with [any ESP flashing tool](/basics/install-binary).)
+The .bin and .bin.gz files are located in the subfolder `/build_output/release` in your WLED folder.
 
-### Compilation settings (Arduino IDE)
+If you have an existing WLED install, you can flash the image using the Config -> Security & Updates -> Manual OTA Update option in the web interface. Otherwise, follow the instructions [here](/basics/install-binary/#flashing-method-2-esptool).
 
-ESP8266:
-
-- Arduino Core v2.7.4
-- Board: NodeMCU 1.0 (ESP-12E module) (or select your ESP board)
-- CPU frequency: 80 MHz
-- Flash size : 4MB (1MB SPIFFS)
-- LwIP variant: v1.4 Higher Bandwidth (try 2 if you experience issues)
-- Upload speed: Any, 921600 recommended
-
-ESP8266-07 (External Antenna):
-
-- Variants have 512kB or 1MB flash
-- Be sure to use DOUT mode when flashing
-- Flash Size 1MB (128k SPIFFS)
-- 512kB variant no longer compatible
-
-ESP-07s (External Antenna):
-
-- Variant has 4MB flash
-- Settings as for NodeMCU or Wemos
-
-ESP32:
-
-- Arduino Core v1.0.6
