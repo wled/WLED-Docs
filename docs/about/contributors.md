@@ -49,8 +49,9 @@ Tonyno - tireless user support and documentation
 ### Used Libraries and Dependencies
 
 [ESP8266](https://github.com/esp8266/Arduino)/[ESP32](https://github.com/espressif/arduino-esp32) Arduino Core  
+[ESP32 Tasmota](https://github.com/tasmota/platform-espressif32)/[ESP32 pioarduino](https://github.com/pioarduino/platform-espressif32) Arduino Core and build tools (since 16.0.0)  
 [NeoPixelBus](https://github.com/Makuna/NeoPixelBus) by Makuna  
-[FastLED](https://github.com/FastLED/FastLED/) library  
+[FastLED](https://github.com/FastLED/FastLED/) library (up to 0.15.5)  
 [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) by me-no-dev  
 [ESPAsyncUDP](https://github.com/me-no-dev/ESPAsyncUDP) by me-no-dev (as of 0.9.0)  
 [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) by me-no-dev  
@@ -59,7 +60,7 @@ Tonyno - tireless user support and documentation
 [WS2812FX](https://github.com/kitesurfer1404/WS2812FX) by kitesurfer1404 (modified)  
 [IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266) by markszabo (optional)  
 [Timezone](https://github.com/JChristensen/Timezone) by JChristensen  
-[Blynk](https://github.com/blynkkk/blynk-library) library (compacted)  
+[Blynk](https://github.com/blynkkk/blynk-library) library (compacted, up to 0.14.1)  
 [E1.31](https://github.com/forkineye/E131) library by forkineye (modified)  
 [Espalexa](https://github.com/Aircoookie/Espalexa) by Aircoookie (modified)  
 Many included FastLED effects are modified versions of [kriegsman](https://gist.github.com/kriegsman/)'s gists!  
