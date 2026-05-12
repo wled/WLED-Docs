@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../http-api/">
+        <link rel="prev" href="../custom-features/">
       
       
-        <link rel="next" href="../json-api/">
+        <link rel="next" href="../esp32-recovery/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Infrared - WLED Project</title>
+        <title>Community Usermods - WLED Project</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#supported-ir-remotes" class="md-skip">
+        <a href="#adding-your-usermod" class="md-skip">
           Skip to content
         </a>
       
@@ -139,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Infrared
+              Community Usermods
             
           </span>
         </div>
@@ -317,13 +317,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../blynk/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../interfaces/blynk/" class="md-tabs__link">
           
   
   
@@ -339,11 +337,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../advanced/audio-reactive/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../audio-reactive/" class="md-tabs__link">
           
   
   
@@ -921,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/compiling-wled/" class="md-nav__link">
+      <a href="../compiling-wled/" class="md-nav__link">
         
   
   
@@ -1410,29 +1410,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -1450,7 +1445,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1468,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blynk/" class="md-nav__link">
+      <a href="../../interfaces/blynk/" class="md-nav__link">
         
   
   
@@ -1496,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dmx-output/" class="md-nav__link">
+      <a href="../../interfaces/dmx-output/" class="md-nav__link">
         
   
   
@@ -1524,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dmx-input/" class="md-nav__link">
+      <a href="../../interfaces/dmx-input/" class="md-nav__link">
         
   
   
@@ -1552,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../e1.31-dmx/" class="md-nav__link">
+      <a href="../../interfaces/e1.31-dmx/" class="md-nav__link">
         
   
   
@@ -1580,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../http-api/" class="md-nav__link">
+      <a href="../../interfaces/http-api/" class="md-nav__link">
         
   
   
@@ -1588,6 +1583,572 @@
     
   
     HTTP Request API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/infrared/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/json-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/mqtt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MQTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/philips-hue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philips Hue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/serial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/udp-notifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WLED UDP Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/udp-realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP Realtime / tpm2.net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Websocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDP Realtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-reactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Reactive WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote-access-ifttt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access / IFTTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ota-lock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTA Lock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-over-internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing WLED over Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiring Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../longdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Long Data Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiling-wled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Features
   
 
     
@@ -1622,7 +2183,7 @@
   <span class="md-ellipsis">
     
   
-    Remote Control
+    Community Usermods
   
 
     
@@ -1640,7 +2201,7 @@
   <span class="md-ellipsis">
     
   
-    Remote Control
+    Community Usermods
   
 
     
@@ -1664,10 +2225,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-ir-remotes" class="md-nav__link">
+  <a href="#adding-your-usermod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported IR remotes
+        Adding your usermod
       
     </span>
   </a>
@@ -1675,10 +2236,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#esp-now-based-remote-control" class="md-nav__link">
+  <a href="#index" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ESP-NOW based remote control
+        Index
       
     </span>
   </a>
@@ -1701,568 +2262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../json-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    JSON API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mqtt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MQTT
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../philips-hue/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Philips Hue
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../serial/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Serial
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../udp-notifier/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    WLED UDP Sync
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../udp-realtime/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UDP Realtime / tpm2.net
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../websocket/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Websocket
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ddp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    DDP Realtime
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Advanced
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/audio-reactive/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Audio Reactive WLED
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/home-automation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home Automation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/remote-access-ifttt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Remote Access / IFTTT
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/ota-lock/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OTA Lock
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/access-over-internet/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Accessing WLED over Internet
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/wiring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wiring Protips
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/longdata/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Long Data Lines
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/compiling-wled/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Compiling WLED
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/custom-features/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Custom Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/community-usermods/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Community Usermods
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced/esp32-recovery/" class="md-nav__link">
+      <a href="../esp32-recovery/" class="md-nav__link">
         
   
   
@@ -2290,7 +2290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mapping/" class="md-nav__link">
+      <a href="../mapping/" class="md-nav__link">
         
   
   
@@ -2318,7 +2318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/2d-1d-Mixed-Setup/" class="md-nav__link">
+      <a href="../2d-1d-Mixed-Setup/" class="md-nav__link">
         
   
   
@@ -2346,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/ddp/" class="md-nav__link">
+      <a href="../ddp/" class="md-nav__link">
         
   
   
@@ -2374,7 +2374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/custom-ap/" class="md-nav__link">
+      <a href="../custom-ap/" class="md-nav__link">
         
   
   
@@ -2402,7 +2402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/pir-sensors/" class="md-nav__link">
+      <a href="../pir-sensors/" class="md-nav__link">
         
   
   
@@ -2596,10 +2596,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-ir-remotes" class="md-nav__link">
+  <a href="#adding-your-usermod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported IR remotes
+        Adding your usermod
       
     </span>
   </a>
@@ -2607,10 +2607,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#esp-now-based-remote-control" class="md-nav__link">
+  <a href="#index" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ESP-NOW based remote control
+        Index
       
     </span>
   </a>
@@ -2634,7 +2634,7 @@
 
 
   
-    <a href="https://github.com/WLED/WLED-Docs/edit/main/docs/interfaces/infrared.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/WLED/WLED-Docs/edit/main/docs/advanced/community-usermods.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2642,33 +2642,44 @@
   
 
 
-  <h1>Remote Control</h1>
+  <h1>Community Usermods</h1>
 
-<div class="admonition info">
-<p class="admonition-title">Version Info</p>
-<p>Since v0.8.2, infrared control from various IR remotes is supported for ESP8266 and since v0.9.0 for ESP32, too.</p>
-</div>
-<p>A dedicated infrared receiver module is required and must be connected to the WLED Controller. For example, KY-022 or TSOP38238 are confirmed to work and inexpensive. These receivers each have three pins: 3.3V, GND and IR data. IR data pin must be connected to a free GPIO pin. This GPIO must then be set as IR GPIO under "Config-&gt;LED Preferences" (The default sensor pin is GPIO4).
-<img alt="Infrared shcematics" src="../../assets/images/content/pic13.jpg" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>IR receiving will not work on ESP8266 if you use any LED pin other than GPIO 1, 2, or 3 for <em>digital</em> LED strips.</p>
-</div>
-<h3 id="supported-ir-remotes">Supported IR remotes</h3>
-<p>To use IR remote go to <code>Settings</code>, <code>LED Preferences</code> and change the value for <code>Infrared receiver type</code> according to the IR remote type of the following list:</p>
-<ol>
-<li>white 24-key IR remote with R,G,B + 12 color-tones  </li>
-<li>white 24-key IR remote with CT+ / CT- buttons  </li>
-<li>blue 40-key IR remote with keys for 25%, 50%, 75% and 100%  </li>
-<li>white 44-key IR remote with up/down arrows for the colors R,G and B  </li>
-<li>white 21-key IR remote with R,G,B + 9 color-tones  </li>
-<li>black 6-key IR remote with CH up/down + Vol up/down  </li>
-<li><a href="../json-ir/json_infrared/">JSON IR remote</a> - Easily configure and use any IR remote.  </li>
-</ol>
-<h2 id="esp-now-based-remote-control">ESP-NOW based remote control</h2>
-<p>Since version WLED 14.0-beta3: An ESP-NOW compatible remote control is supported. An example of this is the „WIZmote“ remote control. This is based on an ESP microcontroller. You can also <a href="https://github.com/DedeHai/WLED-ESPNow-Remote">build your own ESP-NOW remote</a> using an ESP32 C3. ESP-NOW can be activated in WLED settings. You have to enter the Hardware MAC address of the remote control. This is determined by clicking on any button on the remote control and copying the last received MAC address from the "Last Seen" field to the "Hardware MAC" field in WLED ESP-NOW settings (“Config-&gt;WiFi Setup”) and saving it with "Save". Advantages: no special receiver needs to be attached to the WLED controller and the signals are transmitted via radio network. Therefore there is no line of sight between the remote control and the WLED controller required, as is the case with an IR remote control.
-<img alt="ESP-NOW remote control" src="../../assets/images/content/pic14.jpg" />
-The 4 buttons "1"-"4" of the WIZmote remote control are linked to presets 1 to 4. The meaning of other keys is self-explanatory. Attention: WIZmote needs two good quality AAA batteries to work properly. If the batteries are too weak, the correct signal will not be sent, even if the blue LED on the remote control lights up briefly, actually indicating signal transmission.</p>
+<p>This page is an index of usermods written by the WLED community. Entries are maintained by their authors; the WLED project does not test or endorse them.</p>
+<p>To help people find your usermod even before it appears here, tag your GitHub repository with the <a href="https://github.com/topics/wled-usermod"><code>wled-usermod</code></a> topic.</p>
+<h2 id="adding-your-usermod">Adding your usermod</h2>
+<p>Open a pull request to <a href="https://github.com/wled/WLED-Docs">WLED-Docs</a> adding a row to the table below. One row, one PR.</p>
+<p>Use this format:</p>
+<div class="highlight"><pre><span></span><code>| [<span class="nt">Name</span>](<span class="na">https://github.com/you/your-usermod</span>) | Short description | <span class="ni">@yourname</span> | esp32 |  |
+</code></pre></div>
+<p>Platforms: <code>esp32</code>, <code>esp8266</code>, or <code>both</code>.</p>
+<h2 id="index">Index</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Author</th>
+<th>Platforms</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/wled/wled-usermod-example">wled-usermod-example</a></td>
+<td>Annotated template — fork this to start your own usermod</td>
+<td>@wled</td>
+<td>both</td>
+<td>Official starting point</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wled/WLED/tree/main/usermods/user_fx">user_fx</a></td>
+<td>Community effects usermod — add your own effects here or use as a template</td>
+<td>@wled</td>
+<td>both</td>
+<td>Ships with WLED; enable with <code>custom_usermods = user_fx</code></td>
+</tr>
+</tbody>
+</table>
 
 
 

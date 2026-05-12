@@ -2409,6 +2409,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../community-usermods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Usermods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../esp32-recovery/" class="md-nav__link">
         
   
@@ -2899,15 +2927,29 @@ For most ESP8266 boards, the <code>d1_mini</code> environment is best.</li>
 <li>Copy and paste the contents of <code>platformio_override.ini.sample</code> into a new file called <code>platformio_override.ini</code>. Make sure <code>platformio_override.ini</code> is in the same folder as <code>platformio.ini</code>.</li>
 <li>Replace the line <code>default_envs = WLED_tasmota_1M</code> with the line you uncommented in <code>platformio.ini</code> in the previous steps (from Compilation guide (PlatformIO)). Example: <code>default_envs = d1_mini</code></li>
 <li>In <code>platformio.ini</code> scroll down until you see
-<code>#--------------------
+<div class="highlight"><pre><span></span><code> #--------------------
  # WLED BUILDS
- #--------------------</code></li>
-<li>Find the section that matches the build environment you selected in previous steps. Example: <code>[env:d1_mini]</code></li>
-<li>Select the whole section (including the first line in brackets [ ] ), and copy and paste it into <code>platformio_override.ini</code> overwriting the build environment section that was already there.</li>
-<li>Add a new line under the the line that starts with <code>build_flags =</code></li>
-<li>Put your <code>-D</code> overrides on this new line, giving each <code>-D</code> it's own new line.</li>
-<li>Compile your freshly customized WLED image!</li>
+ #--------------------
+ ```
+ 4. Find the section that matches the build environment you selected in previous steps. Example: `[env:d1_mini]`
+ 5. Select the whole section (including the first line in brackets [ ] ), and copy and paste it into `platformio_override.ini` overwriting the build environment section that was already there.
+ 6. Add a new line under the the line that starts with `build_flags =`
+ 7. Put your `-D` overrides on this new line, giving each `-D` it&#39;s own new line.
+ 8. Compile your freshly customized WLED image!
+
+### Adding usermods
+
+To include one or more usermods in your build, add a `custom_usermods` line to your environment in `platformio_override.ini`:
+
+```ini
+[env:esp32dev_temperature]
+extends = env:esp32dev
+custom_usermods =
+  audioreactive
+  Temperature
+</code></pre></div></li>
 </ol>
+<p>Each name corresponds to a folder under <code>usermods/</code>. No other file editing is required — usermods self-register when compiled in. For full details, including how to add external usermods from a git repository and how to write your own, see <a href="/advanced/custom-features">Custom Features</a>.</p>
 <h3 id="flashing-the-compiled-binary">Flashing the compiled binary</h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2927,7 +2969,8 @@ For current compiles I recommend the latest Arduino core version 2.7.4. If you d
 </li>
 <li>
 <p>Run the following command to build the Web UI files:
-  <code>npm run build</code></p>
+  <div class="highlight"><pre><span></span><code>npm run build
+</code></pre></div></p>
 </li>
 <li>
 <p>You will need to install a few libraries:</p>

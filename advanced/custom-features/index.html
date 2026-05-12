@@ -14,7 +14,7 @@
         <link rel="prev" href="../compiling-wled/">
       
       
-        <link rel="next" href="../esp32-recovery/">
+        <link rel="next" href="../community-usermods/">
       
       
         
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basics" class="md-skip">
+        <a href="#usermods" class="md-skip">
           Skip to content
         </a>
       
@@ -2197,28 +2197,168 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basics" class="md-nav__link">
+  <a href="#usermods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Basics
+        Usermods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usermods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-usermods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling usermods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling usermods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inheriting-usermods-from-a-base-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inheriting usermods from a base environment
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#modify-wled-values" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-usermod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modify WLED values
+        Writing a usermod
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing a usermod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fork-the-example-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Fork the example repository
       
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reference-it-locally-during-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reference it locally during development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-share-it-via-git-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Share it via git URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-inside-a-usermod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's inside a usermod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-lifecycle-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful lifecycle methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistent settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-custom-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding custom effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-v1-usermod-usermodcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy v1 usermod (usermod.cpp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#modifying-wled-values-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modifying WLED values directly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modifying WLED values directly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#timing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2228,8 +2368,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#internal-segments-api" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,26 +2379,9 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#create-custom-effects" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create custom effects
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-custom-effect-as-usermod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a custom effect as usermod
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2277,6 +2400,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community-usermods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Usermods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2623,28 +2774,168 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basics" class="md-nav__link">
+  <a href="#usermods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Basics
+        Usermods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usermods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-usermods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling usermods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling usermods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inheriting-usermods-from-a-base-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inheriting usermods from a base environment
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#modify-wled-values" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-usermod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modify WLED values
+        Writing a usermod
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing a usermod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fork-the-example-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Fork the example repository
       
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reference-it-locally-during-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reference it locally during development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-share-it-via-git-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Share it via git URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-inside-a-usermod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's inside a usermod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-lifecycle-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful lifecycle methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistent settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-custom-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding custom effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-v1-usermod-usermodcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy v1 usermod (usermod.cpp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#modifying-wled-values-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modifying WLED values directly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modifying WLED values directly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#timing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2654,8 +2945,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#internal-segments-api" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2665,26 +2956,9 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#create-custom-effects" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create custom effects
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-custom-effect-as-usermod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a custom effect as usermod
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2726,62 +3000,271 @@
 
   <h1>Custom Features</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><em>Note: this page is now out of date, see updated functionality in the code (<a href="https://github.com/wled/WLED/tree/main/usermods/EXAMPLE">WLED/usermods/EXAMPLE</a>)</em></p>
+<p>This page covers how to add custom functionality to WLED, either through usermods or by modifying the source directly.</p>
+<div class="admonition tip">
+<p class="admonition-title">New to building WLED?</p>
+<p>See <a href="/advanced/compiling-wled">Compiling WLED</a> first to get your build environment set up.</p>
 </div>
-<p>This page is intended for those wishing to modify the WLED code to add their own functionality.</p>
-<h3 id="basics">Basics</h3>
-<p>Programming is done in the Arduino IDE. There is a special file, <code>usermod.cpp</code>, to write your own code.
-(however, if you think your code may be relevant to many users, feel free to code it in directly and open a pull request)</p>
-<p>This file has three empty methods:
-- <code>userSetup()</code> is called after loading settings but before connecting to WiFi. 
-Use it to start own interfaces if it does not depend on WiFi (IR, Sensors, GPIOs,...).
-Also you can use it to load custom settings or to specify own server pages with the <code>server.on()</code> method.
-- <code>userConnected()</code> is called once WiFi is connected. Use it to connect to external servers or init interfaces using wiFi.
-- <code>userLoop()</code> is called by the main <code>loop()</code> function.</p>
-<h3 id="modify-wled-values">Modify WLED values</h3>
-<p>If you know what you're doing, you may choose to change the value of any global variable declared in <code>wled.h</code>.
-However, for basic color and brightness changes, these are the most important:</p>
+<h2 id="usermods">Usermods</h2>
+<p>Usermods are self-contained modules you can add to a WLED build without touching core source files. WLED ships with many usermods in the <code>usermods/</code> directory (audio-reactive, temperature sensors, displays, rotary encoders, and more).</p>
+<h3 id="enabling-usermods">Enabling usermods</h3>
+<div class="admonition info">
+<p class="admonition-title">Since WLED 16</p>
+<p>The <code>custom_usermods</code> option replaced the old <code>usermods_list.cpp</code> approach. Each usermod now self-registers using the <code>REGISTER_USERMOD()</code> macro and declares its own dependencies in a <code>library.json</code>.</p>
+</div>
+<p>Add a <code>custom_usermods</code> entry to the relevant environment section in your <code>platformio_override.ini</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[env:esp32dev_temperature]</span>
+<span class="na">extends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">env:esp32dev</span><span class="w">  </span><span class="c1">; base environment from platformio.ini</span>
+<span class="na">custom_usermods</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="na">Temperature</span>
+<span class="w">  </span><span class="na">audioreactive</span>
+</code></pre></div>
+<p>Each line is either a PlatformIO <code>lib_def</code> reference or a folder name under <code>usermods/</code>. (As a convenience for old foldernames, <code>usermod_</code> or <code>_v2</code> may be omitted.) Enabled usermods will appear in the WLED build as the library names from their <code>library.json</code> files.  Rebuild from PlatformIO and the usermods and their dependencies are automatically included, no other file edits needed.</p>
+<h4 id="inheriting-usermods-from-a-base-environment">Inheriting usermods from a base environment</h4>
+<p>Use PlatformIO variable substitution to extend a base environment's usermod list without repeating it:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[env:esp32dev_with_extras]</span>
+<span class="na">extends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">env:esp32dev</span>
+<span class="na">custom_usermods</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="na">${env</span><span class="o">:</span><span class="s">esp32dev.custom_usermods}</span>
+<span class="w">  </span><span class="na">RTC</span>
+</code></pre></div>
+<h3 id="writing-a-usermod">Writing a usermod</h3>
+<p>The recommended approach is to keep your usermod in its own repository, separate from the WLED source tree. This lets you version and share it independently, and reference it from any WLED build without copying files.</p>
+<h4 id="1-fork-the-example-repository">1. Fork the example repository</h4>
+<p>Fork <a href="https://github.com/wled/wled-usermod-example">wled/wled-usermod-example</a> on GitHub. It contains a minimal <code>library.json</code> and a fully annotated example implementation — everything you need to get started. Rename the files and class to something descriptive, then add your code.</p>
+<h4 id="2-reference-it-locally-during-development">2. Reference it locally during development</h4>
+<p>Clone your fork somewhere convenient — alongside your WLED checkout works well, since both projects can then be open in the same VS Code session:</p>
+<div class="highlight"><pre><span></span><code>~/projects/
+  WLED/                   ← the WLED source
+  my-wled-usermod/        ← your fork
+    library.json
+    my_usermod.cpp
+</code></pre></div>
+<p>In <code>platformio_override.ini</code>, point <code>custom_usermods</code> at the local clone using a <code>file://</code> URL:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[env:esp32dev_my_usermod]</span>
+<span class="na">extends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">env:esp32dev</span>
+<span class="na">custom_usermods</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="na">${env</span><span class="o">:</span><span class="s">esp32dev.custom_usermods}</span>
+<span class="w">  </span><span class="na">file</span><span class="o">:</span><span class="s">///home/you/projects/my-wled-usermod</span>
+</code></pre></div>
+<p>On Windows, use the <code>file:///C:/Users/you/...</code> form with forward slashes: <code>file:///C:/Users/you/projects/my-wled-usermod</code>.</p>
+<p>PlatformIO will pick up your local changes on each build, and you can edit the usermod and WLED side-by-side without switching projects.</p>
+<h4 id="3-share-it-via-git-url">3. Share it via git URL</h4>
+<p>Once your usermod is ready to share, others can reference it directly by URL — no local clone needed:</p>
+<div class="highlight"><pre><span></span><code><span class="na">custom_usermods</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="na">${env</span><span class="o">:</span><span class="s">esp32dev.custom_usermods}</span>
+<span class="w">  </span><span class="na">https</span><span class="o">:</span><span class="s">//github.com/you/my-wled-usermod.git</span><span class="c1">#main</span>
+</code></pre></div>
+<p>PlatformIO uses the <code>name</code> field from the repository's <code>library.json</code> to identify the library. If that name does not match the repository name in the URL, supply it explicitly:</p>
+<div class="highlight"><pre><span></span><code><span class="na">custom_usermods</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="na">MyMod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://github.com/you/my-wled-usermod.git</span><span class="c1">#main</span>
+</code></pre></div>
+<p>Once it's ready, consider adding it to the <a href="/advanced/community-usermods">Community Usermods</a> index and tagging your repository with the <a href="https://github.com/topics/wled-usermod"><code>wled-usermod</code></a> GitHub topic so others can find it.</p>
+<h4 id="whats-inside-a-usermod">What's inside a usermod</h4>
+<p>A usermod repository contains two things: a <strong>PlatformIO library manifest</strong> (<code>library.json</code>) and one or more <strong>C++ source files</strong> implementing your functionality.</p>
+<p><code>library.json</code> tells PlatformIO how to build and link your module, and lists any external libraries it depends on. The only mandatory non-obvious setting is <code>"libArchive": false</code>, which tells PlatformIO to link the module directly into the firmware rather than treating it as an archive — without it, <code>REGISTER_USERMOD</code> won't work and the build will fail:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-wled-usermod&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;libArchive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;paulstoffregen/OneWire&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~2.3.8&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Any libraries listed under <code>dependencies</code> are fetched automatically — no need to add them to <code>platformio_override.ini</code> by hand.</p>
+<p>The C++ side extends the <code>Usermod</code> base class, overriding whichever lifecycle hooks you need, and calls <code>REGISTER_USERMOD()</code> at file scope to self-register:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;wled.h&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyMod</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Usermod</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// called once at boot, before WiFi connects</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">connected</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// called each time WiFi (re)connects</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// called every main-loop iteration — never use delay() here!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lastTime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">lastTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">      </span><span class="c1">// do something every 2 seconds</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">lastTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">static</span><span class="w"> </span><span class="n">MyMod</span><span class="w"> </span><span class="n">my_mod</span><span class="p">;</span>
+<span class="n">REGISTER_USERMOD</span><span class="p">(</span><span class="n">my_mod</span><span class="p">);</span><span class="w">   </span><span class="c1">// self-registers — no usermods_list.cpp edits needed</span>
+</code></pre></div>
+<p>The <code>getId()</code> method is optional for most custom usermods — the base class returns <code>USERMOD_ID_UNSPECIFIED</code> by default. Override it only if another part of the firmware needs to identify your specific usermod.</p>
+<p>The forked example file contains a fully annotated version of this covering persistent settings (<code>addToConfig</code> / <code>readFromConfig</code>), JSON state, MQTT, and more.</p>
+<h4 id="useful-lifecycle-methods">Useful lifecycle methods</h4>
 <table>
 <thead>
 <tr>
-<th>Variable Name</th>
+<th>Method</th>
+<th>When called</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>setup()</code></td>
+<td>Once at boot, after config is loaded, before WiFi</td>
+</tr>
+<tr>
+<td><code>connected()</code></td>
+<td>Each time WiFi (re)connects</td>
+</tr>
+<tr>
+<td><code>loop()</code></td>
+<td>Every main loop iteration</td>
+</tr>
+<tr>
+<td><code>addToJsonInfo(root)</code></td>
+<td>When <code>/json/info</code> is requested</td>
+</tr>
+<tr>
+<td><code>addToJsonState(root)</code></td>
+<td>When <code>/json/state</code> is requested</td>
+</tr>
+<tr>
+<td><code>readFromJsonState(root)</code></td>
+<td>When a client POSTs to <code>/json/state</code></td>
+</tr>
+<tr>
+<td><code>addToConfig(root)</code></td>
+<td>When settings are saved (persist to <code>cfg.json</code>)</td>
+</tr>
+<tr>
+<td><code>readFromConfig(root)</code></td>
+<td>At boot and after settings save</td>
+</tr>
+<tr>
+<td><code>appendConfigData(Print&amp; settingsScript)</code></td>
+<td>When the Usermod Settings page renders</td>
+</tr>
+<tr>
+<td><code>handleOverlayDraw()</code></td>
+<td>Just before each LED strip update</td>
+</tr>
+<tr>
+<td><code>handleButton(b)</code></td>
+<td>On button events (return <code>true</code> to consume)</td>
+</tr>
+<tr>
+<td><code>onMqttConnect(sessionPresent)</code></td>
+<td>When MQTT connection is established (subscribe here) — wrap in <code>#ifndef WLED_DISABLE_MQTT</code></td>
+</tr>
+<tr>
+<td><code>onMqttMessage(topic, payload)</code></td>
+<td>On incoming MQTT message — wrap in <code>#ifndef WLED_DISABLE_MQTT</code></td>
+</tr>
+<tr>
+<td><code>onEspNowMessage(sender, payload, len)</code></td>
+<td>Called when an ESP-NOW message is received — can be used for usermod remote control</td>
+</tr>
+<tr>
+<td><code>onUdpPacket(payload, len)</code></td>
+<td>Called when a UDP packet is received on the notification UDP port — can be used for usermod sync</td>
+</tr>
+<tr>
+<td><code>onUpdateBegin(bool)</code></td>
+<td>Called prior to firmware update to request releasing memory; and after unsuccessful firmware update to resume</td>
+</tr>
+<tr>
+<td><code>onStateChange(mode)</code></td>
+<td>Called when WLED state changes (see <code>CALL_MODE_*</code> definitions)</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>onMqttConnect</code> and <code>onMqttMessage</code> overrides must be wrapped in <code>#ifndef WLED_DISABLE_MQTT</code> / <code>#endif</code> guards, since MQTT support is a compile-time option. The <code>multi_relay</code> usermod (<code>usermods/multi_relay</code>) is a well-structured in-tree example of the subscribe-in-connect / handle-in-message pattern.</p>
+<h4 id="persistent-settings">Persistent settings</h4>
+<p>Use <code>addToConfig()</code> and <code>readFromConfig()</code> to store settings in <code>cfg.json</code>. WLED will expose them automatically on the Usermod Settings page:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">addToConfig</span><span class="p">(</span><span class="n">JsonObject</span><span class="o">&amp;</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">JsonObject</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">(</span><span class="n">FPSTR</span><span class="p">(</span><span class="n">_name</span><span class="p">));</span>
+<span class="w">  </span><span class="n">top</span><span class="p">[</span><span class="s">&quot;myValue&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myValue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">readFromConfig</span><span class="p">(</span><span class="n">JsonObject</span><span class="o">&amp;</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">JsonObject</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="n">FPSTR</span><span class="p">(</span><span class="n">_name</span><span class="p">)];</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">top</span><span class="p">.</span><span class="n">isNull</span><span class="p">();</span>
+<span class="w">  </span><span class="n">ok</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="n">getJsonValue</span><span class="p">(</span><span class="n">top</span><span class="p">[</span><span class="s">&quot;myValue&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">myValue</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="cm">/*default*/</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ok</span><span class="p">;</span><span class="w">  </span><span class="c1">// return false to have WLED write defaults to disk</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="adding-custom-effects">Adding custom effects</h4>
+<p>Writing effects as usermods is the recommended way to add new LED effects to a WLED build — no core source files need changing, and the effect can live in its own repository and be shared like any other usermod.</p>
+<p>The <code>user_fx</code> usermod (<code>usermods/user_fx</code>) is the mainline example of this pattern and a convenient starting point. It bundles multiple effects in a single usermod and can be enabled with <code>custom_usermods = user_fx</code>. It has a <a href="https://github.com/wled/WLED/blob/main/usermods/user_fx/README.md">detailed README</a> for creating effects.  Fork it or use it as a template for your own effects usermod.</p>
+<p>Each effect is a free <code>void</code> function paired with a PROGMEM metadata string, registered via <code>strip.addEffect()</code> in the usermod's <code>setup()</code>. Multiple effects can be registered from a single <code>setup()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">mode_myEffect</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// ... set pixel colors using SEGMENT, SEGENV, SEGLEN, SEGCOLOR(n), etc. ...</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">_data_FX_MODE_MY_EFFECT</span><span class="p">[]</span><span class="w"> </span><span class="n">PROGMEM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;My Effect@Speed,Intensity;!,!;!;01&quot;</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">strip</span><span class="p">.</span><span class="n">addEffect</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mode_myEffect</span><span class="p">,</span><span class="w"> </span><span class="n">_data_FX_MODE_MY_EFFECT</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// 255 = &quot;assign next available slot&quot;; use a fixed ID for a permanent effect</span>
+<span class="w">  </span><span class="c1">// call addEffect() again for each additional effect</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>See <a href="/interfaces/json-api/#effect-metadata">effect metadata</a> for the format of the data string.</p>
+<hr />
+<h3 id="legacy-v1-usermod-usermodcpp">Legacy v1 usermod (usermod.cpp)</h3>
+<div class="admonition warning">
+<p class="admonition-title">Legacy</p>
+<p>The v1 approach (<code>usermod.cpp</code>) predates the module system and only allows a single usermod per build. Use the v2 class-based approach above for new projects.</p>
+</div>
+<p><code>wled00/usermod.cpp</code> contains three stub functions you can fill in:</p>
+<ul>
+<li><code>userSetup()</code> — called after loading settings, before WiFi</li>
+<li><code>userConnected()</code> — called once WiFi is connected</li>
+<li><code>userLoop()</code> — called from the main loop</li>
+</ul>
+<hr />
+<h2 id="modifying-wled-values-directly">Modifying WLED values directly</h2>
+<p>If you know what you're doing, you may change global variables declared in <code>wled.h</code>. For basic color and brightness:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
 <th>Type</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>bri</td>
-<td>byte (0-255)</td>
-<td>Master Brightness (0 is off, 255 is maximum)</td>
+<td><code>bri</code></td>
+<td><code>byte</code> (0–255)</td>
+<td>Master brightness (0 = off)</td>
 </tr>
 <tr>
-<td>col[0]</td>
-<td>byte (0-255)</td>
-<td>Red color value</td>
+<td><code>col[0]</code></td>
+<td><code>byte</code> (0–255)</td>
+<td>Red</td>
 </tr>
 <tr>
-<td>col[1]</td>
-<td>byte (0-255)</td>
-<td>Green color value</td>
+<td><code>col[1]</code></td>
+<td><code>byte</code> (0–255)</td>
+<td>Green</td>
 </tr>
 <tr>
-<td>col[2]</td>
-<td>byte (0-255)</td>
-<td>Blue color value</td>
+<td><code>col[2]</code></td>
+<td><code>byte</code> (0–255)</td>
+<td>Blue</td>
 </tr>
 <tr>
-<td>col[3]</td>
-<td>byte (0-255)</td>
-<td>White color value</td>
+<td><code>col[3]</code></td>
+<td><code>byte</code> (0–255)</td>
+<td>White</td>
 </tr>
 </tbody>
 </table>
-<p>After updating the color, you must call the <code>colorUpdated(int)</code> method. If you want to send a notification with the new color to other ESPs, use <code>colorUpdated(NOTIFIER_CALL_MODE_DIRECT_CHANGE)</code>, otherwise <code>colorUpdated(NOTIFIER_CALL_MODE_NO_NOTIFY)</code>.</p>
+<p>After changing a color call <code>colorUpdated(CALL_MODE_DIRECT_CHANGE)</code> to push it to the strip and notify sync targets, or <code>colorUpdated(CALL_MODE_NO_NOTIFY)</code> to skip the notification.</p>
 <h3 id="timing">Timing</h3>
-<p>If you'd just like a simple modification that requires timing (like sending a request every 2 seconds), please <strong>never</strong> use the <code>delay()</code> function in your <code>userLoop()</code>! It will block everything else and WLED will become unresponsive and effects won't work! Instead, try this instead:
+<p>If you'd just like a simple modification that requires timing (like sending a request every 2 seconds), please <strong>never</strong> use the <code>delay()</code> function in your <code>userLoop()</code>! It will block everything else and WLED will become unresponsive and effects won't work! Instead, try this:
 <div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">lastTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">delayMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="p">;</span><span class="w"> </span><span class="c1">//we want to do something every 2 seconds</span>
 
@@ -2797,84 +3280,19 @@ However, for basic color and brightness changes, these are the most important:</
 <h3 id="internal-segments-api">Internal Segments API</h3>
 <p>You can use Segments from your code to set different parts of the strip to different colors or effects. <br />
 This can be very useful for highly customized installations, clocks, ...   </p>
-<p>To set a segment, use <code>strip.setSegment(id, start, stop);</code>, where <em>id</em> is the segment ID, <em>start</em> is the first LED of the segment and <em>stop</em> is the LED after the last one in the segment.</p>
-<p>To edit the configuration of a segment, use:
-<div class="highlight"><pre><span></span><code><span class="n">WS2812FX</span><span class="o">::</span><span class="n">Segment</span><span class="o">&amp;</span><span class="w"> </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strip</span><span class="p">.</span><span class="n">getSegment</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<p>To get a reference to a segment, use <code>strip.getSegment(id)</code>, where <em>id</em> is the segment ID (0-based). To change a segment's boundaries, assign <code>seg.start</code> and <code>seg.stop</code> directly and then call <code>seg.markForReset()</code>.</p>
+<p>To edit the color and effect configuration of a segment, use:
+<div class="highlight"><pre><span></span><code><span class="n">Segment</span><span class="o">&amp;</span><span class="w"> </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strip</span><span class="p">.</span><span class="n">getSegment</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
 <span class="c1">//set color (i=0 is primary, i=1 secondary i=2 tertiary)</span>
-<span class="n">seg</span><span class="p">.</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">myWhite</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">myRed</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">myGreen</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">myBlue</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">)));</span>
+<span class="n">seg</span><span class="p">.</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RGBW32</span><span class="p">(</span><span class="n">myRed</span><span class="p">,</span><span class="w"> </span><span class="n">myGreen</span><span class="p">,</span><span class="w"> </span><span class="n">myBlue</span><span class="p">,</span><span class="w"> </span><span class="n">myWhite</span><span class="p">);</span>
 <span class="c1">//set effect config</span>
-<span class="n">seg</span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myFxI</span><span class="p">;</span>
+<span class="n">seg</span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myFxId</span><span class="p">;</span>
 <span class="n">seg</span><span class="p">.</span><span class="n">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mySpeed</span><span class="p">;</span>
 <span class="n">seg</span><span class="p">.</span><span class="n">intensity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myIntensity</span><span class="p">;</span>
 <span class="n">seg</span><span class="p">.</span><span class="n">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myPaletteId</span><span class="p">;</span>
 </code></pre></div>
-Keep in mind that this will not cause interface updates as of 0.8.6. For that, you still need to use <code>colorUpdated(NOTIFIER_CALL_MODE_DIRECT_CHANGE)</code></p>
-<h3 id="create-custom-effects">Create custom effects</h3>
-<p>It is possible to create your own effects and add them to the FX library.
-The relevant files for that are <code>FX.cpp</code> and <code>FX.h</code>.</p>
-<p>Here is a step-by-step guide on how to make your effect:</p>
-<ol>
-<li>
-<p>Take a look at some of the effects in <code>FX.cpp</code> to see how they are implemented!</p>
-</li>
-<li>
-<p>Add your own routine in FX.cpp starting with: <code>uint16_t WS2812FX::mode_custom</code></p>
-</li>
-<li>
-<p>Add to total number of effects in FX.h line 110: <code>#define MODE_COUNT</code> </p>
-</li>
-<li>
-<p>Add your mode number (ie<code>#define FX_MODE_CUSTOM                   110</code>) in FX.h around line 200.</p>
-</li>
-<li>
-<p>Add your mode around line 400 of FX.h, like so:
-<code>_mode[FX_MODE_CUSTOM]                    = &amp;WS2812FX::mode_custom;</code></p>
-</li>
-<li>
-<p>Add it to the functions in FX.h around line 600:<code>mode_custom(void),</code></p>
-</li>
-<li>
-<p>Give it a name at the bottom (10 modes per line) in <code>JSON_mode_names[]</code>. Wrap your name in quotes just like the others.</p>
-</li>
-<li>
-<p>Compile, upload and enjoy!  Your new effect will automatically be added to the list in the web ui.</p>
-</li>
-</ol>
-<p>If you programmed a nice effect you want to share, submit a pull request!</p>
-<h3 id="create-a-custom-effect-as-usermod">Create a custom effect as usermod</h3>
-<div class="admonition info">
-<p class="admonition-title">Since 0.14</p>
-<p>This feature was introduced with version 0.14.</p>
-</div>
-<p>It is possible to add new effects in form of a usermod.</p>
-<p>Use <code>255</code> for the effect ID as it is a placeholder for "1st available slot". If you want a permanent ID use whatever is not used by built-in effects or other usermod's effects. It is possible to call <a href="https://github.com/Aircoookie/WLED/blob/1dab26bcbcac051f2b7be47a2d5c757a9938bf1f/wled00/FX.cpp#L7655">addEffect(255,...)</a> multiple times to add more effects without a collision of IDs.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">uint16_t</span><span class="w"> </span><span class="nf">mode_blink</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="p">...</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">FRAMETIME</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">_data_FX_MODE_BLINK</span><span class="p">[]</span><span class="w"> </span><span class="n">PROGMEM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Blink@!,Duty cycle;!,!;!;01&quot;</span><span class="p">;</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">BlinkUsermod</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Usermod</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="n">strip</span><span class="p">.</span><span class="n">addEffect</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mode_blink</span><span class="p">,</span><span class="w"> </span><span class="n">_data_FX_MODE_BLINK</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">getId</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">USERMOD_ID_</span><span class="p">...;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div>
-<p>For details about the format of the configuration string see <a href="/interfaces/json-api/#effect-metadata">effect metadata</a>.</p>
-<h3 id="changing-web-ui">Changing Web UI</h3>
+Keep in mind that this will not cause interface updates. For that, you still need to use <code>colorUpdated(CALL_MODE_DIRECT_CHANGE)</code></p>
+<h2 id="changing-web-ui">Changing Web UI</h2>
 <p>In order to conserve space, the Web UI interface is represented as a series of <code>wled00/html_*.h</code> files which contain C/C++ strings with specific parts of the Web UI.</p>
 <p>These files are automatically created from source files available in <code>wled00/data</code> folder. To generate files, install <a href="https://nodejs.org/en/download">Node.js</a> 20 or higher globally. After that, recreate <code>html_*.h</code> files by running in the repo directory:
 <div class="highlight"><pre><span></span><code>&gt; npm install
