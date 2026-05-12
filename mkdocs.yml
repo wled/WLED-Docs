@@ -22,8 +22,8 @@ theme:
     - content.action.edit
     # - toc.integrate
   palette:
-    - scheme: wled
-      primary: cyan #mostly overriden in extra.css
+    - scheme: slate
+      primary: cyan #mostly overridden in extra.css
       accent: orange
       toggle: 
         icon: material/weather-sunny
