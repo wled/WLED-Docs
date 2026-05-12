@@ -23,7 +23,7 @@ theme:
     # - toc.integrate
   palette:
     - scheme: slate
-      primary: cyan #mostly overriden in extra.css
+      primary: cyan #mostly overridden in extra.css
       accent: orange
       toggle: 
         icon: material/weather-sunny
