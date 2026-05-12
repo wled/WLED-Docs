@@ -17,13 +17,19 @@
   --md-footer-bg-color: #1d1f21; /* discord link header and footer */
   --md-code-bg-color: #42464c;
   --md-code-fg-color: #FFF;
-  --md-admonition-bg-color: #35383d;
+  --md-admonition-bg-color: #3d4147;
   --md-admonition-fg-color: var(--md-default-fg-color);
   --md-typeset-table-color: #42464c;
   --md-code-hl-keyword-color: #a5d6ff;
   --md-code-hl-number-color: #79c0ff;
   --md-code-hl-name-color: #79c0ff;
-  --md-code-hl-string-color: #23995e;
+  --md-code-hl-string-color: #56d364;
+  --md-typeset-a-color: #4fc3f7;
+  --md-typeset-blockquote-color: hsla(var(--md-hue), 75%, 90%, 0.6);
+}
+
+[data-md-color-scheme="wled"] .md-typeset table a {
+  color: var(--md-typeset-a-color);
 }
 
 .md-tabs {
