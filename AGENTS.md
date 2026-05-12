@@ -63,11 +63,11 @@ Indentation in `mkdocs.yml` is significant.
 
 ## Markdown Style
 
-- **Headings**: Use `##` for top-level sections within a page (not `#`, which conflicts with the page title). Use `###` and `####` for sub-sections.
+- **Headings**: Use `##` for top-level sections within a page (`#` is optional, as it may conflict with the page title). Use `###` and `####` for sub-sections.
 - **Admonitions**: Use MkDocs Material admonitions (`!!! info`, `!!! tip`, `!!! warning`, `!!! danger`) for callouts. These are rendered as styled boxes on the site.
 - **Tables**: Use standard GFM pipe tables.
 - **Code blocks**: Use fenced code blocks with a language hint (e.g., ` ```yaml `).
-- **Bold/Italic**: Use `**bold**` for UI element names and important terms. Use `_italic_` sparingly.
+- **Bold/Italic**: Use `**bold**` for important terms. Use `_italic_` sparingly.
 - **Line breaks**: A trailing two-space line break (or `<br />`) is used to force a line break within a paragraph where needed.
 - **Internal links**: Use root-relative paths without the `.md` extension, e.g. `[Segments](/features/segments)`.
 - **External links**: Use standard Markdown link syntax. Prefer linking to stable, canonical URLs.
@@ -101,7 +101,7 @@ When reviewing a pull request, verify the following:
 
 - [ ] Front matter block (`---`) is present and includes a `title` field.
 - [ ] Page title in front matter matches the entry in `mkdocs.yml`.
-- [ ] Heading hierarchy is correct (`##` → `###` → `####`, no skipping levels, no `#` heading inside the page body).
+- [ ] Heading hierarchy is correct (`#` (optional) → `##` → `###` → `####`, no skipping levels).
 - [ ] Admonitions use the correct type (`info`, `tip`, `warning`, `danger`) for the context.
 - [ ] Tables are properly formatted with pipe characters.
 - [ ] Code blocks use language identifiers.
