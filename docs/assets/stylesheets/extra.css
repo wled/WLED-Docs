@@ -1,7 +1,7 @@
 
-/* Custom color scheme */
+/* Custom color scheme — extends Material's built-in "slate" dark scheme */
 
-[data-md-color-scheme="wled"] {
+[data-md-color-scheme="slate"] {
   --md-hue: 232; /* [0, 360] */
   --md-primary-fg-color: #FFA000; /*WLED Orange*/
   /*--md-primary-fg-color: #7289DA; /*Blurple*/
@@ -24,19 +24,11 @@
   --md-code-hl-number-color: #79c0ff;
   --md-code-hl-name-color: #79c0ff;
   --md-code-hl-string-color: #56d364;
-  --md-code-hl-comment-color: #b6c2cf;
-  --md-code-hl-operator-color: #d1dae3;
-  --md-code-hl-punctuation-color: #d1dae3;
-  --md-code-hl-function-color: #79c0ff;
-  --md-code-hl-constant-color: #ffa657;
-  --md-code-hl-variable-color: #ffb86b;
-  --md-code-hl-special-color: #d2a8ff;
-  --md-code-hl-generic-color: #f0f6fc;
   --md-typeset-a-color: #4fc3f7;
   --md-typeset-blockquote-color: hsla(var(--md-hue), 75%, 90%, 0.6);
 }
 
-[data-md-color-scheme="wled"] .md-typeset table a {
+[data-md-color-scheme="slate"] .md-typeset table a {
   color: var(--md-typeset-a-color);
 }
 

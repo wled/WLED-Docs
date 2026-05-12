@@ -22,7 +22,7 @@ theme:
     - content.action.edit
     # - toc.integrate
   palette:
-    - scheme: wled
+    - scheme: slate
       primary: cyan #mostly overriden in extra.css
       accent: orange
       toggle: 
