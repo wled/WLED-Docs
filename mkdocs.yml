@@ -126,6 +126,7 @@ nav:
     - Long Data Lines: advanced/longdata.md
     - Compiling WLED: advanced/compiling-wled.md
     - Custom Features: advanced/custom-features.md
+    - Community Usermods: advanced/community-usermods.md
     - ESP32 Recovery: advanced/esp32-recovery.md
     - Mapping: advanced/mapping.md
     - Mixed 2D and 1D Bus: advanced/2d-1d-Mixed-Setup.md

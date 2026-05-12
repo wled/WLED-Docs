@@ -5,39 +5,247 @@ hide:
   # - toc
 ---
 
-!!! warning
-    _Note: this page is now out of date, see updated functionality in the code ([WLED/usermods/EXAMPLE](https://github.com/wled/WLED/tree/main/usermods/EXAMPLE))_
+This page covers how to add custom functionality to WLED, either through usermods or by modifying the source directly.
 
-This page is intended for those wishing to modify the WLED code to add their own functionality.
+!!! tip "New to building WLED?"
+    See [Compiling WLED](/advanced/compiling-wled) first to get your build environment set up.
 
-### Basics
-Programming is done in the Arduino IDE. There is a special file, `usermod.cpp`, to write your own code.
-(however, if you think your code may be relevant to many users, feel free to code it in directly and open a pull request)
+## Usermods
 
-This file has three empty methods:
-- `userSetup()` is called after loading settings but before connecting to WiFi. 
-Use it to start own interfaces if it does not depend on WiFi (IR, Sensors, GPIOs,...).
-Also you can use it to load custom settings or to specify own server pages with the `server.on()` method.
-- `userConnected()` is called once WiFi is connected. Use it to connect to external servers or init interfaces using wiFi.
-- `userLoop()` is called by the main `loop()` function.
+Usermods are self-contained modules you can add to a WLED build without touching core source files. WLED ships with many usermods in the `usermods/` directory (audio-reactive, temperature sensors, displays, rotary encoders, and more).
 
-### Modify WLED values
-If you know what you're doing, you may choose to change the value of any global variable declared in `wled.h`.
-However, for basic color and brightness changes, these are the most important:
+### Enabling usermods
 
-Variable Name | Type | Purpose
---- | --- | ---
-bri | byte (0-255) | Master Brightness (0 is off, 255 is maximum)
-col[0] | byte (0-255) | Red color value
-col[1] | byte (0-255) | Green color value
-col[2] | byte (0-255) | Blue color value
-col[3] | byte (0-255) | White color value
+!!! info "Since WLED 16"
+    The `custom_usermods` option replaced the old `usermods_list.cpp` approach. Each usermod now self-registers using the `REGISTER_USERMOD()` macro and declares its own dependencies in a `library.json`.
 
-After updating the color, you must call the `colorUpdated(int)` method. If you want to send a notification with the new color to other ESPs, use `colorUpdated(NOTIFIER_CALL_MODE_DIRECT_CHANGE)`, otherwise `colorUpdated(NOTIFIER_CALL_MODE_NO_NOTIFY)`.
+Add a `custom_usermods` entry to the relevant environment section in your `platformio_override.ini`:
+
+```ini
+[env:esp32dev_temperature]
+extends = env:esp32dev  ; base environment from platformio.ini
+custom_usermods =
+  Temperature
+  audioreactive
+```
+
+Each line is either a PlatformIO `lib_def` reference or a folder name under `usermods/`. (As a convenience for old foldernames, `usermod_` or `_v2` may be omitted.) Enabled usermods will appear in the WLED build as the library names from their `library.json` files.  Rebuild from PlatformIO and the usermods and their dependencies are automatically included, no other file edits needed.
+
+#### Inheriting usermods from a base environment
+
+Use PlatformIO variable substitution to extend a base environment's usermod list without repeating it:
+
+```ini
+[env:esp32dev_with_extras]
+extends = env:esp32dev
+custom_usermods =
+  ${env:esp32dev.custom_usermods}
+  RTC
+```
+
+### Writing a usermod
+
+The recommended approach is to keep your usermod in its own repository, separate from the WLED source tree. This lets you version and share it independently, and reference it from any WLED build without copying files.
+
+#### 1. Fork the example repository
+
+Fork [wled/wled-usermod-example](https://github.com/wled/wled-usermod-example) on GitHub. It contains a minimal `library.json` and a fully annotated example implementation — everything you need to get started. Rename the files and class to something descriptive, then add your code.
+
+#### 2. Reference it locally during development
+
+Clone your fork somewhere convenient — alongside your WLED checkout works well, since both projects can then be open in the same VS Code session:
+
+```text
+~/projects/
+  WLED/                   ← the WLED source
+  my-wled-usermod/        ← your fork
+    library.json
+    my_usermod.cpp
+```
+
+In `platformio_override.ini`, point `custom_usermods` at the local clone using a `file://` URL:
+
+```ini
+[env:esp32dev_my_usermod]
+extends = env:esp32dev
+custom_usermods =
+  ${env:esp32dev.custom_usermods}
+  file:///home/you/projects/my-wled-usermod
+```
+
+On Windows, use the `file:///C:/Users/you/...` form with forward slashes: `file:///C:/Users/you/projects/my-wled-usermod`.
+
+PlatformIO will pick up your local changes on each build, and you can edit the usermod and WLED side-by-side without switching projects.
+
+#### 3. Share it via git URL
+
+Once your usermod is ready to share, others can reference it directly by URL — no local clone needed:
+
+```ini
+custom_usermods =
+  ${env:esp32dev.custom_usermods}
+  https://github.com/you/my-wled-usermod.git#main
+```
+
+PlatformIO uses the `name` field from the repository's `library.json` to identify the library. If that name does not match the repository name in the URL, supply it explicitly:
+
+```ini
+custom_usermods =
+  MyMod = https://github.com/you/my-wled-usermod.git#main
+```
+
+Once it's ready, consider adding it to the [Community Usermods](/advanced/community-usermods) index and tagging your repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) GitHub topic so others can find it.
+
+#### What's inside a usermod
+
+A usermod repository contains two things: a **PlatformIO library manifest** (`library.json`) and one or more **C++ source files** implementing your functionality.
+
+`library.json` tells PlatformIO how to build and link your module, and lists any external libraries it depends on. The only mandatory non-obvious setting is `"libArchive": false`, which tells PlatformIO to link the module directly into the firmware rather than treating it as an archive — without it, `REGISTER_USERMOD` won't work and the build will fail:
+
+```json
+{
+  "name": "my-wled-usermod",
+  "build": { "libArchive": false },
+  "dependencies": {
+    "paulstoffregen/OneWire": "~2.3.8"
+  }
+}
+```
+
+Any libraries listed under `dependencies` are fetched automatically — no need to add them to `platformio_override.ini` by hand.
+
+The C++ side extends the `Usermod` base class, overriding whichever lifecycle hooks you need, and calls `REGISTER_USERMOD()` at file scope to self-register:
+
+```cpp
+#include "wled.h"
+
+class MyMod : public Usermod {
+  void setup() override {
+    // called once at boot, before WiFi connects
+  }
+
+  void connected() override {
+    // called each time WiFi (re)connects
+  }
+
+  void loop() override {
+    // called every main-loop iteration — never use delay() here!
+    if (millis() - lastTime > 2000) {
+      lastTime = millis();
+      // do something every 2 seconds
+    }
+  }
+
+  private:
+    unsigned long lastTime = 0;
+};
+
+static MyMod my_mod;
+REGISTER_USERMOD(my_mod);   // self-registers — no usermods_list.cpp edits needed
+```
+
+The `getId()` method is optional for most custom usermods — the base class returns `USERMOD_ID_UNSPECIFIED` by default. Override it only if another part of the firmware needs to identify your specific usermod.
+
+The forked example file contains a fully annotated version of this covering persistent settings (`addToConfig` / `readFromConfig`), JSON state, MQTT, and more.
+
+
+#### Useful lifecycle methods
+
+| Method | When called |
+|---|---|
+| `setup()` | Once at boot, after config is loaded, before WiFi |
+| `connected()` | Each time WiFi (re)connects |
+| `loop()` | Every main loop iteration |
+| `addToJsonInfo(root)` | When `/json/info` is requested |
+| `addToJsonState(root)` | When `/json/state` is requested |
+| `readFromJsonState(root)` | When a client POSTs to `/json/state` |
+| `addToConfig(root)` | When settings are saved (persist to `cfg.json`) |
+| `readFromConfig(root)` | At boot and after settings save |
+| `appendConfigData(Print& settingsScript)` | When the Usermod Settings page renders |
+| `handleOverlayDraw()` | Just before each LED strip update |
+| `handleButton(b)` | On button events (return `true` to consume) |
+| `onMqttConnect(sessionPresent)` | When MQTT connection is established (subscribe here) — wrap in `#ifndef WLED_DISABLE_MQTT` |
+| `onMqttMessage(topic, payload)` | On incoming MQTT message — wrap in `#ifndef WLED_DISABLE_MQTT` |
+| `onEspNowMessage(sender, payload, len)` | Called when an ESP-NOW message is received — can be used for usermod remote control |
+| `onUdpPacket(payload, len)` | Called when a UDP packet is received on the notification UDP port — can be used for usermod sync |
+| `onUpdateBegin(bool)` | Called prior to firmware update to request releasing memory; and after unsuccessful firmware update to resume |
+| `onStateChange(mode)` | Called when WLED state changes (see `CALL_MODE_*` definitions) |
+
+The `onMqttConnect` and `onMqttMessage` overrides must be wrapped in `#ifndef WLED_DISABLE_MQTT` / `#endif` guards, since MQTT support is a compile-time option. The `multi_relay` usermod (`usermods/multi_relay`) is a well-structured in-tree example of the subscribe-in-connect / handle-in-message pattern.
+
+#### Persistent settings
+
+Use `addToConfig()` and `readFromConfig()` to store settings in `cfg.json`. WLED will expose them automatically on the Usermod Settings page:
+
+```cpp
+void addToConfig(JsonObject& root) override {
+  JsonObject top = root.createNestedObject(FPSTR(_name));
+  top["myValue"] = myValue;
+}
+
+bool readFromConfig(JsonObject& root) override {
+  JsonObject top = root[FPSTR(_name)];
+  bool ok = !top.isNull();
+  ok &= getJsonValue(top["myValue"], myValue, 42 /*default*/);
+  return ok;  // return false to have WLED write defaults to disk
+}
+```
+
+#### Adding custom effects
+
+Writing effects as usermods is the recommended way to add new LED effects to a WLED build — no core source files need changing, and the effect can live in its own repository and be shared like any other usermod.
+
+The `user_fx` usermod (`usermods/user_fx`) is the mainline example of this pattern and a convenient starting point. It bundles multiple effects in a single usermod and can be enabled with `custom_usermods = user_fx`. It has a [detailed README](https://github.com/wled/WLED/blob/main/usermods/user_fx/README.md) for creating effects.  Fork it or use it as a template for your own effects usermod.
+
+Each effect is a free `void` function paired with a PROGMEM metadata string, registered via `strip.addEffect()` in the usermod's `setup()`. Multiple effects can be registered from a single `setup()`:
+
+```cpp
+void mode_myEffect() {
+  // ... set pixel colors using SEGMENT, SEGENV, SEGLEN, SEGCOLOR(n), etc. ...
+}
+static const char _data_FX_MODE_MY_EFFECT[] PROGMEM = "My Effect@Speed,Intensity;!,!;!;01";
+
+void setup() override {
+  strip.addEffect(255, &mode_myEffect, _data_FX_MODE_MY_EFFECT);
+  // 255 = "assign next available slot"; use a fixed ID for a permanent effect
+  // call addEffect() again for each additional effect
+}
+```
+
+See [effect metadata](/interfaces/json-api/#effect-metadata) for the format of the data string.
+
+---
+
+### Legacy v1 usermod (usermod.cpp)
+
+!!! warning "Legacy"
+    The v1 approach (`usermod.cpp`) predates the module system and only allows a single usermod per build. Use the v2 class-based approach above for new projects.
+
+`wled00/usermod.cpp` contains three stub functions you can fill in:
+
+- `userSetup()` — called after loading settings, before WiFi
+- `userConnected()` — called once WiFi is connected
+- `userLoop()` — called from the main loop
+
+---
+
+## Modifying WLED values directly
+
+If you know what you're doing, you may change global variables declared in `wled.h`. For basic color and brightness:
+
+| Variable | Type | Purpose |
+|---|---|---|
+| `bri` | `byte` (0–255) | Master brightness (0 = off) |
+| `col[0]` | `byte` (0–255) | Red |
+| `col[1]` | `byte` (0–255) | Green |
+| `col[2]` | `byte` (0–255) | Blue |
+| `col[3]` | `byte` (0–255) | White |
+
+After changing a color call `colorUpdated(CALL_MODE_DIRECT_CHANGE)` to push it to the strip and notify sync targets, or `colorUpdated(CALL_MODE_NO_NOTIFY)` to skip the notification.
 
 ### Timing
 
-If you'd just like a simple modification that requires timing (like sending a request every 2 seconds), please **never** use the `delay()` function in your `userLoop()`! It will block everything else and WLED will become unresponsive and effects won't work! Instead, try this instead:
+If you'd just like a simple modification that requires timing (like sending a request every 2 seconds), please **never** use the `delay()` function in your `userLoop()`! It will block everything else and WLED will become unresponsive and effects won't work! Instead, try this:
 ```cpp
 long lastTime = 0;
 int delayMs = 2000; //we want to do something every 2 seconds
@@ -57,85 +265,22 @@ void userLoop()
 You can use Segments from your code to set different parts of the strip to different colors or effects.   
 This can be very useful for highly customized installations, clocks, ...   
 
-To set a segment, use `strip.setSegment(id, start, stop);`, where _id_ is the segment ID, _start_ is the first LED of the segment and _stop_ is the LED after the last one in the segment.
+To get a reference to a segment, use `strip.getSegment(id)`, where _id_ is the segment ID (0-based). To change a segment's boundaries, assign `seg.start` and `seg.stop` directly and then call `seg.markForReset()`.
 
-To edit the configuration of a segment, use:
+To edit the color and effect configuration of a segment, use:
 ```cpp
-WS2812FX::Segment& seg = strip.getSegment(id);
+Segment& seg = strip.getSegment(id);
 //set color (i=0 is primary, i=1 secondary i=2 tertiary)
-seg.colors[i] = ((myWhite << 24) | ((myRed&0xFF) << 16) | ((myGreen&0xFF) << 8) | ((myBlue&0xFF)));
+seg.colors[i] = RGBW32(myRed, myGreen, myBlue, myWhite);
 //set effect config
-seg.mode = myFxI;
+seg.mode = myFxId;
 seg.speed = mySpeed;
 seg.intensity = myIntensity;
 seg.palette = myPaletteId;
 ```
-Keep in mind that this will not cause interface updates as of 0.8.6. For that, you still need to use `colorUpdated(NOTIFIER_CALL_MODE_DIRECT_CHANGE)`
+Keep in mind that this will not cause interface updates. For that, you still need to use `colorUpdated(CALL_MODE_DIRECT_CHANGE)`
 
-### Create custom effects
-
-It is possible to create your own effects and add them to the FX library.
-The relevant files for that are `FX.cpp` and `FX.h`.
-
-Here is a step-by-step guide on how to make your effect:
-
-1. Take a look at some of the effects in `FX.cpp` to see how they are implemented!
-
-2. Add your own routine in FX.cpp starting with: `uint16_t WS2812FX::mode_custom`
-
-3. Add to total number of effects in FX.h line 110: `#define MODE_COUNT` 
-
-4. Add your mode number (ie` #define FX_MODE_CUSTOM                   110`) in FX.h around line 200.
-
-5. Add your mode around line 400 of FX.h, like so:
-`      _mode[FX_MODE_CUSTOM]                    = &WS2812FX::mode_custom;`
-
-6. Add it to the functions in FX.h around line 600:`       mode_custom(void),`
-
-7. Give it a name at the bottom (10 modes per line) in `JSON_mode_names[]`. Wrap your name in quotes just like the others.
-
-8. Compile, upload and enjoy!  Your new effect will automatically be added to the list in the web ui.
-
-If you programmed a nice effect you want to share, submit a pull request!
-### Create a custom effect as usermod
-
-!!! info "Since 0.14"
-    This feature was introduced with version 0.14.
-
-It is possible to add new effects in form of a usermod.
-
-Use `255` for the effect ID as it is a placeholder for "1st available slot". If you want a permanent ID use whatever is not used by built-in effects or other usermod's effects. It is possible to call [addEffect(255,...)](https://github.com/Aircoookie/WLED/blob/1dab26bcbcac051f2b7be47a2d5c757a9938bf1f/wled00/FX.cpp#L7655) multiple times to add more effects without a collision of IDs.
-
-```cpp
-uint16_t mode_blink(void) {
-  ...
-  return FRAMETIME;
-}
-
-static const char _data_FX_MODE_BLINK[] PROGMEM = "Blink@!,Duty cycle;!,!;!;01";
-
-class BlinkUsermod : public Usermod
-{
-  public:
-    void setup()
-    {
-      strip.addEffect(255, &mode_blink, _data_FX_MODE_BLINK);
-    }
-
-    void loop()
-    {
-    }
-
-    uint16_t getId()
-    {
-      return USERMOD_ID_...;
-    }
-};
-```
-
-For details about the format of the configuration string see [effect metadata](/interfaces/json-api/#effect-metadata).
-
-### Changing Web UI
+## Changing Web UI
 
 In order to conserve space, the Web UI interface is represented as a series of `wled00/html_*.h` files which contain C/C++ strings with specific parts of the Web UI.
 
