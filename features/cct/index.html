@@ -2801,7 +2801,8 @@
 </tr>
 </tbody>
 </table>
-<p><code>Accurate</code> and <code>Brighter</code> methods are applied on a per-pixel basis, so they also work in color palettes and realtime effects!</p>
+<p>If you set the mode to anything other than 'None', the LEDs will be treated internally like having RGB channels (you'll see the colour picker in the UI).<br />
+<code>Accurate</code> and <code>Brighter</code> methods are applied on a per-pixel basis, so they also work in color palettes and realtime effects!  </p>
 <h4 id="white-balance-correction">White Balance correction</h4>
 <p>If enabled in LED settings, WB correction allows either making all pixels colder or warmer on a per-segment basis using a slider in the main user interface.<br />
 This is applied to the RGB color only, after the auto white channel calculation.</p>
@@ -2827,7 +2828,7 @@ For example, add <code>-D WLED_MAX_CCT_BLEND=0</code> to your build flags to for
 <p>By default, PWM CCT bus types set the value of the warm and cold white channels.<br />
 If your hardware uses an IC that controls the color temperature based on one PWM signal and the overall brightness on the other, please use the build flag <code>-D WLED_USE_IC_CCT</code> in a custom compilation. (the 15W bulb by Athom uses this method)</p>
 <h4 id="cct-in-the-json-api">CCT in the JSON API</h4>
-<p>Please see <a href="/interfaces/json-api/#cct-control">here</a> for more info on how to handle WLED CCT from integrations.</p>
+<p>See <a href="/interfaces/json-api/#cct-control">CCT control in the JSON API</a> for integration details.</p>
 
 
 
