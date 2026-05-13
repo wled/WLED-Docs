@@ -354,7 +354,9 @@ Sample playlist for an endless cycle of random effects with random colors and ra
 "12":{"bri":255,"mainseg":0,"on":true,"seg":[{"bri":255,"c1":128,"c2":128,"c3":16,"cct":127,"col":["r",[0,0,0],"r"],"frz":false,"fx":"r","grp":1,"id":0,"ix":128,"m12":1,"mi":false,"o1":false,"o2":false,"o3":false,"of":0,"on":true,"pal":"r","rev":false,"sel":true,"set":0,"si":0,"spc":0,"start":0,"stop":50,"sx":128,"fxdef":true}],"transition":7,"n":"random effect"}
 }
 ```
-These numeric keys (`"9"` and `"12"`) are resource IDs — playlist ID 9 and preset ID 12 — stored in WLED's internal `presets.json` file; upload this payload to your device via the `/edit` page to persist both entries, then apply the saved playlist by POSTing `{"ps":9}` to `/json/state`. Alternatively, use the presets page web GUI to enter json code and to activate the playlist.
+These numeric keys (`"9"` and `"12"`) are resource IDs — playlist ID 9 and preset ID 12 — stored in WLED's internal `presets.json` file.
+Use the UI to save a new preset, uncheck "Use current state" => textbox "API command" appears. Now copy/paste JSON into the API command textarea, then press "save". Activate the playlist preset.
+Alternatively, upload this payload to your device via the `/edit` page to persist both entries, then apply the saved playlist by POSTing `{"ps":9}` to `/json/state`.
 
 #### Light capabilities
 
