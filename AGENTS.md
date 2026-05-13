@@ -110,7 +110,7 @@ When reviewing a pull request, verify the following:
 ### Writing Style & Readability
 
 - [ ] Tone is **informal, friendly, and inviting** — avoid overly formal or academic language.
-- [ ] Title case: Use title case for section headings; articles and short prepositions stay lowercase.
+- [ ] Title case: Use title case for page title and section headings; articles and short prepositions stay lowercase.
 - [ ] Language is **simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can easily follow.
 - [ ] Logic is easy to follow, examples are kept simple.
 - [ ] Claim calibration: Calibrate verbs to evidence; do not write "proves" when the evidence is "suggests".
