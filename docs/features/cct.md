@@ -65,4 +65,4 @@ If your hardware uses an IC that controls the color temperature based on one PWM
 
 #### CCT in the JSON API
 
-Please see [here](/interfaces/json-api/#cct-control) for more info on how to handle WLED CCT from integrations.
+See [CCT control in the JSON API](/interfaces/json-api/#cct-control) for integration details.
