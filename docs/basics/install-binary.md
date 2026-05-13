@@ -36,11 +36,17 @@ esptool.py write-flash 0x0 ./WLED_XXX.bin
 
 #### ESP32
 
-Firstly, flash the version 4 bootloader file, which you can find [here](https://github.com/Aircoookie/WLED/releases/download/v0.13.1/esp32_bootloader_v4.bin).  
-This step only has to be done once, to update afterwards the bootloader does not have to be re-installed.
+Unlike the ESP8266, the ESP32 requires a bootloader to be installed before WLED can be flashed. The exact bootloader depends on the specific ESP32 variant being used. Below you will find a list of bootloader links for the supported ESP32 models.
+
+| Model | Bootloader |
+|---|---|
+ESP32 | [Bootloader Version 4](https://github.com/Aircoookie/WLED/releases/download/v0.13.1/esp32_bootloader_v4.bin)
+ESP32-C3 | [Bootloader Version 2](https://github.com/wled/WLED-WebInstaller/raw/refs/heads/master/bin/Release/release_0_15_3/esp32-c3_bootloader_v2.bin)
+ESP32-S2 | [Bootloader S2](https://github.com/wled/WLED-WebInstaller/raw/refs/heads/master/bin/Release/release_0_15_3/bootloader_s2.bin)
+ESP32-S3 | [Booloader S3](https://github.com/wled/WLED-WebInstaller/raw/refs/heads/master/bin/Release/release_0_15_3/bootloader_s3.bin)
 
 ```bash
-esptool.py write-flash 0x0 ./esp32_bootloader_v4.bin
+esptool.py write-flash 0x0 ./esp32_bootloader_xx.bin
 ```
 
 Now you can flash the actual firmware binary. Keep in mind the bootloader needs to have a flash offset of 0, but the firmware 0x10000.
@@ -58,6 +64,7 @@ esptool.py erase-flash
 ```
 
 If you have a MagicHome controller, here is a [good video tutorial](https://www.youtube.com/watch?v=qgBAU39v07k) on how to flash it.
+
 
 ### ESP8266 Flashing method 3: [ESP Home Flasher](https://github.com/esphome/esphome-flasher/releases) tool
 
