@@ -101,7 +101,7 @@ When reviewing a pull request, verify the following:
 
 - [ ] Front matter block (`---`) is present and includes a `title` field.
 - [ ] Page title in front matter matches the entry in `mkdocs.yml`.
-- [ ] Heading hierarchy is correct (`#` (optional) → `##` → `###` → `####`, no skipping levels).
+- [ ] Heading hierarchy is correct (`##` → `###` → `####`, no skipping levels).
 - [ ] Admonitions use the correct type (`info`, `tip`, `warning`, `danger`) for the context.
 - [ ] Tables are properly formatted with pipe characters.
 - [ ] Code blocks use language identifiers.
