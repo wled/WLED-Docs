@@ -21,7 +21,11 @@ Select one of the UDP options in the device configuration wizard.
 Supported in latest master and will be available in WLED 0.10.1.
 Please set the WLED broadcast UDP port to 65506 in Sync settings to enable receiving TPM2.NET data.
 
-### UDP Realtime
+### UDP SoundSync (v2)
+
+This feature acts as a sound input and accepts pre-processed sound data on UDP port 11988. Generating and sending said data can be done in multiple ways: there is a [Window application](https://github.com/Victoare/SR-WLED-audio-server-win) or a lower-level [C library](https://github.com/netmindz/WLED-sync). You can learn more about this feature in the [documentation of the MM-fork](https://mm.kno.wled.ge/soundreactive/sync/), where it was implemented initially.
+
+### UDP Realtime (v1)
 
 Additionally, WLED offers a way to directly drive the connected LEDs via UDP. The protocol is referred to as WLED [Audio-Reactive-Led-Strip](https://github.com/scottlawsonbc/audio-reactive-led-strip) (WARLS), since the support of that project was its primary goal. However, it can also be used for other realtime applications like an ambilight.
 
