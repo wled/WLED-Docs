@@ -23,7 +23,7 @@ Please set the WLED broadcast UDP port to 65506 in Sync settings to enable recei
 
 ### UDP Sound Sync (v2)
 
-This feature acts as a sound input and accepts pre-processed sound data on UDP port 11988. Generating and sending said data can be done in multiple ways: there is a [Window application](https://github.com/Victoare/SR-WLED-audio-server-win) or a lower-level [C library](https://github.com/netmindz/WLED-sync). You can learn more about this feature in the [documentation of the MM-fork](https://mm.kno.wled.ge/soundreactive/sync/), where it was implemented initially.
+This feature acts as a sound input and accepts pre-processed sound data on UDP port 11988. Generating and sending this data can be done in multiple ways: there is a [Windows application](https://github.com/Victoare/SR-WLED-audio-server-win) or a lower-level [C library](https://github.com/netmindz/WLED-sync). You can learn more about this feature in the [documentation of the MM-fork](https://mm.kno.wled.ge/soundreactive/sync/), where it was implemented initially.
 
 ### UDP Realtime (v1)
 
