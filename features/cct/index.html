@@ -2837,7 +2837,10 @@ This is applied to the RGB color only, after the auto white channel calculation.
 <h4 id="cct-handling">CCT handling</h4>
 <p>WLED starting with version 0.13.0 also supports bus types with two white channels, one with a warm color temperature (e.g. 2700 Kelvin, reddish white) and one with a cold white color temperature (e.g. 8000 Kelvin, bluish white).</p>
 <p>Since as of the release of version 0.13.0 no adjustable CCT addressable LEDs are supported*, this only applies to PWM analog LED outputs.</p>
+<div class="admonition info">
+<p class="admonition-title">WWA (warm white + cold white + amber white)</p>
 <p><em>*SK6812 WWA (with 3 channels, warm white, cold white and amber) are supported, but treated as if RGB using the <code>WS281x</code> bus type. White spectrum support for this LED type will be added at a later point.</em></p>
+</div>
 <p>The overall brightness of the white channels is determined from the auto-white calculation outlined above, and as such is identical in behavior to that of single white channel busses.</p>
 <p>The color temperature is set either on a per-segment basis via a dedicated slider in the UI, or if <code>Calculate CCT from RGB</code> is enabled in LED settings, is estimated on a per-pixel basis from the set RGB color (e.g. setting Red results in the warmest, setting Blue results in the coldest possible white).
 The former has the advantage of granular white spectrum control independent of the set RGB color, while the latter enables control of the color temperature from all effects and realtime sources.</p>
@@ -2846,9 +2849,8 @@ The former has the advantage of granular white spectrum control independent of t
 <p>Setting this to 100% results in the highest peak brightness output at the neutral white point (CCT value <code>127</code>), as both white channels are active at 100%.</p>
 <p><img alt="" src="/assets/images/content/wledcct.png" /></p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<div class="highlight"><pre><span></span><code>Make sure your setup can handle driving both white channels at maximum output simultaneously. This results in a higher heat output and might reduce the lifetime of your LEDs. For example, bulbs by Athom are designed for linear blending (0%) and may be damaged by attempting to use additive blending.
-</code></pre></div>
+<p class="admonition-title">Additive Blending May Cause Heatup</p>
+<p>Make sure your setup can handle driving both white channels at maximum output simultaneously. This results in a higher heat output and might reduce the lifetime of your LEDs. For example, bulbs by Athom are designed for linear blending (0%) and may be damaged by attempting to use additive blending.</p>
 </div>
 <p>You can limit the maximum allowed additive blending at build time using the <code>WLED_MAX_CCT_BLEND</code> macro.<br />
 For example, add <code>-D WLED_MAX_CCT_BLEND=0</code> to your build flags to force linear blending only.</p>
