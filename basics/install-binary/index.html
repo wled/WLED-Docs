@@ -2818,7 +2818,7 @@ After using the standard WLED installer, microphone hardware sometimes cannot be
 <h3 id="flashing-method-2-esptool">Flashing method 2: esptool</h3>
 <ul>
 <li>First of all, please follow the steps to install esptool.py <a href="https://github.com/espressif/esptool">here</a>.</li>
-<li>Download the latest <a href="https://github.com/Aircoookie/WLED/releases">release binary</a> file!</li>
+<li>Download the latest <a href="https://github.com/wled/WLED/releases">release binary</a> file!</li>
 <li>Make sure only one ESP device/microcontroller is connected to your computer! Otherwise you could accidentally overwrite the wrong one. If you know the serial port, you can also add the <code>--port COM3</code> attribute before <code>write-flash</code></li>
 <li>Execute this command:</li>
 </ul>
@@ -2826,7 +2826,7 @@ After using the standard WLED installer, microphone hardware sometimes cannot be
 <div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write-flash<span class="w"> </span>0x0<span class="w"> </span>./WLED_XXX.bin
 </code></pre></div>
 <h4 id="esp32">ESP32</h4>
-<p>Firstly, flash the version 4 bootloader file, which you can find <a href="https://github.com/Aircoookie/WLED/releases/download/v0.13.1/esp32_bootloader_v4.bin">here</a>.<br />
+<p>Firstly, flash the version 4 bootloader file, which you can find <a href="https://github.com/wled/WLED/releases/download/v0.13.1/esp32_bootloader_v4.bin">here</a>.<br />
 This step only has to be done once, to update afterwards the bootloader does not have to be re-installed.</p>
 <div class="highlight"><pre><span></span><code>esptool.py<span class="w"> </span>write-flash<span class="w"> </span>0x0<span class="w"> </span>./esp32_bootloader_v4.bin
 </code></pre></div>
@@ -2876,7 +2876,7 @@ If your device is already running a firmware with built-in OTA capability, you c
 </tr>
 <tr>
 <td>WLED_0.x.x_ESP32.bin</td>
-<td>All ESP32 devices (try <a href="https://github.com/Aircoookie/WLED/issues/517#issuecomment-571333712">this</a> if the WLED-AP doesn't appear after flashing)</td>
+<td>All ESP32 devices (try <a href="https://github.com/wled/WLED/issues/517#issuecomment-571333712">this</a> if the WLED-AP doesn't appear after flashing)</td>
 </tr>
 <tr>
 <td>WLED_0.x.x_ESP32_Ethernet.bin</td>
@@ -2892,7 +2892,7 @@ If your device is already running a firmware with built-in OTA capability, you c
 </tr>
 <tr>
 <td>WLED_0.x.x_ESP02.bin</td>
-<td>All ESP8266 with 2MB flash, Athom bulbs.  This binary has the full feature set, but wireless updates will not work (for more detail see <a href="https://github.com/Aircoookie/WLED/issues/3257">this</a>. For wireless updates use WLED_0.x.x_ESP02.bin.gz firmware instead.</td>
+<td>All ESP8266 with 2MB flash, Athom bulbs.  This binary has the full feature set, but wireless updates will not work (for more detail see <a href="https://github.com/wled/WLED/issues/3257">this</a>. For wireless updates use WLED_0.x.x_ESP02.bin.gz firmware instead.</td>
 </tr>
 <tr>
 <td>WLED_0.x.x_ESP02.bin.gz</td>
