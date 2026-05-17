@@ -53,7 +53,7 @@ Sync packets received from pre-0.13.0 instances are treated as if sent in sync g
 ### Protocol description
 
 !!! warning
-    _Note: this info is partly out of date, see updated functionality in the code ([udp.cpp](https://github.com/Aircoookie/WLED/blob/master/wled00/udp.cpp))_
+    _Note: this info is partly out of date, see updated functionality in the code ([udp.cpp](https://github.com/wled/WLED/blob/master/wled00/udp.cpp))_
 
 When enabled, the module where a value was changed will send an UDP broadcast to a port (default 21324).
 Other modules that listen on this port will set themselves to the same color.

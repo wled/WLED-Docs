@@ -133,7 +133,7 @@ Furthermore I suggest using the DDP protocol if available in your sender softwar
 ### When compiling WLED in VS Code using platformio, I get an error
 
 Try building again. If the error says the `wled00.ino.cpp` or `.sconsign27.db.dblite` file could not be found, this often helps.
-You can also try [this](https://github.com/Aircoookie/WLED/issues/361#issuecomment-557818554)!
+You can also try [this](https://github.com/wled/WLED/issues/361#issuecomment-557818554)!
 
 ## LED issues
 
@@ -353,7 +353,7 @@ You can check out and use [the WLED Discourse forum](https://wled.discourse.grou
 
 ### Look through the Issues
 
-Maybe someone already reported your issue, so everybody supplying support would be grateful if you take some time to [search through the existing issues](https://github.com/Aircoookie/WLED/issues).
+Maybe someone already reported your issue, so everybody supplying support would be grateful if you take some time to [search through the existing issues](https://github.com/wled/WLED/issues).
 
 ### If I report a new Issue, what do i need to share?
 

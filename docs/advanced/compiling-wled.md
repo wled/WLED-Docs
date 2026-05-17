@@ -15,8 +15,8 @@ If you don't want to change the code but only add some compile options and/or us
 
 1. Make sure Git client is installed on your system. If it isn't, you can get it [here](https://git-scm.com/downloads).
 2. Also make sure that you have [Node.js](https://nodejs.org/en/download) 20 or higher installed.
-3. Download the WLED source code by executing `git clone https://github.com/Aircoookie/WLED.git` in some folder.
-(You can also use GitHub Desktop or download the latest source code from [https://github.com/Aircoookie/WLED](https://github.com/Aircoookie/WLED) under the `Code` dropdown menu as a .zip file.)
+3. Download the WLED source code by executing `git clone https://github.com/wled/WLED.git` in some folder.
+(You can also use GitHub Desktop or download the latest source code from [https://github.com/wled/WLED](https://github.com/wled/WLED) under the `Code` dropdown menu as a .zip file.)
 Alternatively fork the WLED project first and download it from your fork.
 ![](https://i.ibb.co/2hnGhyb/Screen-Shot-2020-11-03-at-5-25-18-PM.png)
 4. Go into the WLED folder by executing `cd WLED`.

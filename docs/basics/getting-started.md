@@ -92,7 +92,7 @@ Method 1: Reflashing the new update like a new install (see above).
 Method 2: The software has an integrated _OTA software update_ capability.
 First you have to enable it by typing in the correct OTA passphrase (default: "wledota") in the settings menu.
 Remove the tick in the checkbox "OTA locked". Then save settings and reboot the ESP.
-Then you can select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/Aircoookie/WLED/releases).
+Then you can select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
 After you are done, it is recommended to lock the OTA function again.
 To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
 If you try to access the update page now, you should see the message "OTA lock active".
