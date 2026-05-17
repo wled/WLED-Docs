@@ -23,11 +23,11 @@ Each macro has the format of a standard [HTTP API call](/interfaces/http-api) wi
 For example, the macro "A=255" sets the brightness to maximum. "R=255&G=160&B=0" sets the color to orange.
 You can specify up to 16 macros. (up to 250 in WLED 0.11 since the Macro functionality has been merged into the Presets feature)
 
-Examples of how to use API-calls and define macros can be found in [this issue](https://github.com/Aircoookie/WLED/issues/801#issuecomment-635600255) and [in this one](https://github.com/Aircoookie/WLED/issues/199#issuecomment-520143239).
+Examples of how to use API-calls and define macros can be found in [this issue](https://github.com/wled/WLED/issues/801#issuecomment-635600255) and [in this one](https://github.com/wled/WLED/issues/199#issuecomment-520143239).
 
 The simplest macro example is getting a button to do your bidding.  The default pin to which a button can be connected is GPIO 0 (D3 on NodeMCU, D1 Mini and others).  Even though WLED uses the internal pull up resistors on input pins, this pin is ideally externally pulled high to 3.3V with a 10k resistor. The configured macro executes when the pin is pulled low (grounded). The desired macro is entered on the Time/Macros configuration page and then assigned to a short, long or double press. Like this:
 
-![image](https://github.com/Aircoookie/WLED-Docs/assets/59397047/798ba6fe-0ab0-4288-9b5b-307c6f554f38)
+![image](https://github.com/wled/WLED-Docs/assets/59397047/798ba6fe-0ab0-4288-9b5b-307c6f554f38)
 
 
 The "T=2" macro toggles power to the LEDs (in this case long press).

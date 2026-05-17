@@ -13,7 +13,7 @@ When you decide that you want WLED to control a relay, make sure you buy a suita
 
 [This page](https://www.geekering.com/?p=187) gives a clear description using a light bulb instead of a LED strip. And instead of the D1 mentioned there, with WLED, you use the pin you set.
 
-The default WLED behavior is to turn the relay pin on (high) when the LEDs are on and off (low) when the LEDs are off. This can be changed in the LED Preferences page. Many relays are powered when the signal is LOW. See [this thread](https://github.com/Aircoookie/WLED/issues/631#issuecomment-605512524).
+The default WLED behavior is to turn the relay pin on (high) when the LEDs are on and off (low) when the LEDs are off. This can be changed in the LED Preferences page. Many relays are powered when the signal is LOW. See [this thread](https://github.com/wled/WLED/issues/631#issuecomment-605512524).
 
 Sometimes people ask whether they can control more than one relay through WLED, including controlling this all via Alexa. Controlling an extra relay separately from the RGB lights is not something WLED is designed to do, however you can modify the code to add that functionality. For that, make sure you can compile WLED from source unmodified first. Then, change #define ESPALEXA_MAXDEVICES 1 in line 71 of the wled.h file to 2. After that, just follow the API documentation on https://github.com/Aircoookie/Espalexa to add a new EspalexaDevice to the alexa.cpp file
 

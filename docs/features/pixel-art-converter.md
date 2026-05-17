@@ -11,8 +11,8 @@ The Pixel Art Converter tool aims to make it easier to show pixel art on a LED m
 
 There are three ways to install the pixel art converter:
 
-1. Local web browser. Will a web page run on the local machine connecting to the WLED device but will require fetching an extra file. Supported from WLED release [v0.14.0-b1](https://github.com/Aircoookie/WLED/blob/main/CHANGELOG.md#wled-release-0140-b1) or later
-2. Include the pixel art converter in the binary and compile it from the source code. Allows access to the pixel art converter on any device that has a connection to the WLED device. Supported from WLED release [v0.14.0-b2](https://github.com/Aircoookie/WLED/blob/main/CHANGELOG.md#build-2301240) (PR [#3042](https://github.com/Aircoookie/WLED/pull/3042))
+1. Local web browser. Will a web page run on the local machine connecting to the WLED device but will require fetching an extra file. Supported from WLED release [v0.14.0-b1](https://github.com/wled/WLED/blob/main/CHANGELOG.md#wled-release-0140-b1) or later
+2. Include the pixel art converter in the binary and compile it from the source code. Allows access to the pixel art converter on any device that has a connection to the WLED device. Supported from WLED release [v0.14.0-b2](https://github.com/wled/WLED/blob/main/CHANGELOG.md#build-2301240) (PR [#3042](https://github.com/wled/WLED/pull/3042))
 3. WLED editor mode. Upload the web page to your WLED device while it is running
 
 ### Approach 1: Local Browser
