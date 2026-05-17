@@ -1,54 +1,59 @@
 ---
-title: PixelForge (Image & GIF Tool)
+title: PixelForge
 ---
 
-PixelForge is WLED's built-in browser tool for uploading images and animated GIFs to your LED matrix. It replaces the older Pixel Art Converter and is accessible at `/pixelforge.htm` on your device.
+PixelForge is WLED's built-in browser tool for images & scrolling text and accessing additional tools like PixelPaint or the legacy Pixel Art Converter.
 
-!!! warning "2D segments required"
-    PixelForge only works with 2D segments. If your setup has no 2D segment configured, the tool will warn you and skip processing.
+**Note:** the gif image player is **not available on ESP8266** and therefore the image converter is disabled on these controllers. Other tools like PixelPaint are available.
 
-## Opening PixelForge
+## Overview
 
-Navigate to `http://<your-wled-ip>/pixelforge.htm` in a browser, or follow the link from the [Web GUI Sitemap](/features/subpages).
+The tool is available through the icon below the color picker or by navigating to `http://<your-wled-ip>/pixelforge.htm` in a browser.
 
-The tool has two tabs: **Image tool** and **Scrolling Text tool**.
+The tool has three tabs: **Image Tool**, **Scrolling Text**, **Other Tools**
+
+Both the image tool to convert images into gif's and the scrolling text tool are built in tools. In the "Other Tools" tab you can download additional tools. These are not included by default but once downloaded they are stored and available permanently on your controller unless you choose to delete them. In order to be able to download these tools your phone/pc requires internet access - but not your WLED controller. Once downloaded no internet access is needed, the tools will continue to work offline and even in AP mode.
 
 ---
 
 ## Image Tool
 
+### Display an image
+
+- At the very top, select the segment you would like to use - only one segment can display an image at a time
+- Select any of the images available on your controller
+- Tap&hold / right click an image to download a backup or to delete a stored image
+
 ### Uploading an image
 
-Click **Choose file** and select any image your browser supports (JPEG, PNG, WebP, BMP, or animated GIF). The image loads into a preview canvas.
+Click the designated area to upload or drag&drop any image your browser supports (JPEG, PNG, WebP, BMP, or animated GIF). The image loads into the preview.
 
-- A **drag-resizable crop frame** appears over the image. Drag the edges or corners to select the area you want.
-- Pan the image by dragging outside the crop frame, and zoom with the scroll wheel.
-- The preview panel on the right shows a live simulation of how the crop will look on your LED matrix, scaled to the segment's pixel dimensions.
+#### Crop, Zoom, Pan
 
-### Crop and save
+- A **drag-resizable crop frame** appears over the image. Drag the edges to select the area you want to use. Use the buttons to match aspect ratio, size etc.
+- Pan the image by dragging outside the crop frame, use the sliders to zoom or rotate the image.
+- The preview area underneath shows how the final image will look, you can adjust the output image size at the bottom - the default is the selected segment size.
+
+#### Background removal
+
+Use the slider "Dark Pixel Cutoff" to turn dark pixels transparent and color them in the selected background color. Images with transparend pixels like GIF and PNG are supported.
+
+#### Save
 
 Once happy with the crop:
 
 1. Choose a filename (PixelForge warns you if the name already exists on the filesystem).
 2. Click **Save**. The cropped image is saved as a GIF to WLED's internal filesystem.
 
-Non-GIF source images appear with a **red frame** in the file list to indicate they are stored as a converted GIF.
+**Note:** If you dirctly upload an image to your controller through the file editor that is not supported i.e. anything other than GIF the images still is shown but appears with a **red frame** in the list and can not be displayed on the LEDs without converting them first.
 
-### Animated GIFs
+#### Animated GIFs
 
-Animated GIFs are fully supported. Each frame is individually loaded, cropped, and saved as part of the output GIF. Frame timing is preserved.
-
-### Additional options
-
-| Option | Description |
-|--------|-------------|
-| Background color | Picker to fill transparent areas of PNGs before saving. |
-| Dark pixel cutoff | Slider (0–255). Pixels darker than this threshold are treated as black / off. Useful for removing near-black noise around subjects. |
-| Rotation | Rotate the source image in 90° steps before cropping. |
+Animated GIFs are _mostly_ supported natively by WLED i.e. even through a direct upload of the gif using the file editor - if you experience any issues you can convert the gif using the PixelForge tool using the process described above and re-save it.
 
 ### Filesystem usage
 
-The tool shows a live **filesystem memory usage** bar so you can see how much space remains before uploading more files.
+At the bottom the **filesystem memory usage** is shown so you can see how much file system space remains on your controller.
 
 ---
 

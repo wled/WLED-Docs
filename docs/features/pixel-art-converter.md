@@ -7,6 +7,8 @@ hide:
 
 The Pixel Art Converter tool aims to make it easier to show pixel art on a LED matrix panel, by converting any image to 2D pixel art and sending it to the WLED device. The file types PNG, JPG, WEBP and GIF have been tested to work with the tool.
 
+**Note:** with version 16.0 the more versatile [PixelForge Tool](/features/pixelforge) is recommended over the deprecated Pixel Art Convert.
+
 ## Installation Approaches
 
 There are three ways to install the pixel art converter:

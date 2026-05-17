@@ -4,11 +4,15 @@ title: ESPNow Remotes
 
 WLED supports wireless control via **ESPNow**, a low-latency, connectionless Wi-Fi protocol built into ESP32 and ESP8266 chips. Compatible remotes (such as the WizMote or GLEDOPTO RF remote) can send button events directly to WLED without joining your Wi-Fi network.
 
+You can also [build your own remote](https://github.com/DedeHai/WLED-ESPNow-Remote) using an ESP32 C3.
+
 ---
 
 ## Enabling ESPNow
 
 ESPNow is enabled in **Settings → WiFi**. Once enabled, a **Remote List** section appears on the same page.
+
+**Note:** in order for ESPNow remotes to work reliably the WiFi has to be on all the time - **Disable WiFi Sleep** must be set.
 
 ---
 
@@ -26,10 +30,6 @@ Only remotes in the trusted list can control WLED. Signals from unlisted devices
 ### Removing a remote
 
 Click the **`-`** button next to any listed MAC address to remove it.
-
-### Manual entry
-
-You can also type a MAC address directly (12 hex characters, no separators). The field validates the format before saving.
 
 ---
 
@@ -59,23 +59,8 @@ WLED handles the following button event codes from ESPNow remotes:
 | 21 | Random colour |
 | 22 | Fade effect |
 
-Codes 20–22 were added in v0.16.
+Codes 20–22 were added in v16.0
 
----
+Additional codes can be used by adding a `remote.json` file. There are some examples on how to do that available [here](https://github.com/DedeHai/WLED-ESPNow-Remote/tree/main/remote-json).
 
-## Compatible remotes
 
-| Remote | Notes |
-|--------|-------|
-| WizMote | Press and hold the power button for ~5 s to put it into pairing mode. |
-| GLEDOPTO RF Remote | Works out of the box with ESPNow-enabled WLED builds. |
-
-Other ESP32/ESP8266-based devices running ESPNow can also act as remotes if they send the correct button code format.
-
----
-
-## Notes
-
-- ESPNow remotes operate on the same Wi-Fi channel as your WLED device. If the device is connected to a 2.4 GHz access point, the channel is fixed to that AP's channel. Standalone (AP mode) devices default to channel 1.
-- ESPNow does not require an internet connection or a Wi-Fi router — it works peer-to-peer.
-- The paired remote list is saved to WLED's configuration file under the key `linked_remote` (same as earlier firmware versions — existing configs are backward compatible).

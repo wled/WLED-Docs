@@ -39,10 +39,10 @@ A pin can be in one of these states:
 
 For button pins, a small coloured dot appears to the left of the owner label:
 
-- **Green dot** — button is currently pressed / signal is HIGH.
-- **Grey dot** — button is released / signal is LOW.
+- **Green dot** — button is currently pressed / relay is enabled.
+- **Grey dot** — button is released / relay is disabled.
 
-For touch-capable pins, the raw capacitive touch reading is shown in small grey text next to the dot.
+For touch-capable pins, the raw capacitive touch reading is shown in small grey text next to the dot - use it to verify the threshold value set in button settings is reasonable.
 
 ---
 
@@ -55,7 +55,7 @@ This column lists the hardware capabilities of the pin itself (not its current u
 | **Analog** | Can be used as an ADC (analogue-to-digital) input |
 | **Touch** | Has a built-in capacitive touch sensor |
 | **Input Only** | Output driver not available; can only be read, not driven |
-| **Flash Boot** | Connected to the SPI flash — avoid using during normal operation |
+| **Flash Boot** | Boot-pin - boot to flash mode if low during boot |
 | **Bootstrap** | A strapping pin that affects boot mode; use with caution |
 
 A dash (`-`) means no special notes apply.
@@ -64,6 +64,6 @@ A dash (`-`) means no special notes apply.
 
 ## Tips
 
-- Pins shown as **System** or with **Flash Boot** / **Bootstrap** notes are best left unassigned unless you know exactly what you're doing.
+- Avoid the pins with functions shown as **Flash Boot** or **Bootstrap** unless you know what you are doing as using them can cause boot problems.
 - If a pin shows as **Available** but you know something is connected to it, double-check your LED/button/usermod settings — the pin may not be configured yet.
 - The page works in real time: press a button and watch the dot change colour without reloading.
