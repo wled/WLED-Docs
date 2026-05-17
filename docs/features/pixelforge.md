@@ -61,12 +61,15 @@ At the bottom the **filesystem memory usage** is shown so you can see how much f
 
 ## Scrolling Text Tool
 
-The Scrolling Text tab lets you configure and preview the **Scrolling Text** effect directly from the browser without opening the main WLED UI.
+The Scrolling Text tab lets you configure and preview and control the **Scrolling Text** effect.
 
-- Type your message in the text box.
-- Insert dynamic **tokens** (current date, time, temperature, etc.) using the token picker.
+- Select the segment you want the text to be displayed on
+- Type your message in the text box and click the checkmark to apply.
+- Insert dynamic **tokens** (current date, time, temperature, etc.) using the tokens list.
 - Adjust local effect controls (speed, size, colour palette) in the panel below.
-- Changes are applied live to your LED matrix.
+
+!!! info "Preview Limitations"
+    The preview shows only a simulation and does not accurately represent what is shown on the LED matrix. If you text is very short, the preview still shows scrolling but on the actual LEDs it will show as a static, non scrolling text for example. If you need the text to scroll, make it longer by adding spaces.
 
 See [Custom Fonts](/features/custom-fonts) for information on loading custom `.wbf` font files for use with the Scrolling Text effect.
 
