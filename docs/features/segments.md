@@ -19,7 +19,7 @@ There is one _main segment_, Segment 0 by default. This segment has a few import
 
 Tip: If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
 
-Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ Currently you can create a maximum of 10 segments.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.
+Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ Currently you can create a maximum of 10 segments in WLED 0.15 and earlier. Starting in v0.16, the segment limit was significantly increased.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.
 
 To display segment information select the down arrow in the Segment box.  To add a Segment select “+ Add Segment”.  Enter the Start and Stop LED as appropriate.  Grouping and Spacing control the organization of the LEDs within the selected effect.  To reverse the direction of an effect select Reverse Direction.  To delete a Segment select the trash can.  To save your Segment settings select the checkmark to the right of the Start and Stop LED numbers.
 
@@ -85,8 +85,34 @@ A negative offset value is allowed and represents an offset starting from the la
 
 The offset values is prioritized over grouping and/or spacing. For example, if the offset is 2, grouping 4 and spacing 1, the first group of 4 LEDs will start at the physical position number 2.
 
-## Effect Overlay
-Some effects can be overlaid on the background of another effect. To use overlay, set up
-segments with overlapping pixels. The overlay effect must be playing on the segment with the higher id. 
-If the Overlay option is checked, the background will not be painted and the effect
-from the lower segment will be displayed.
+## Segment Layering & Effect Overlay
+
+Since v0.16, WLED supports true segment layering: segments with overlapping pixels are composited in real time using a blend mode you choose per segment. This makes it possible to combine almost any two effects on the same LEDs.
+
+To use layering, create two or more segments that cover the same pixel range. On each segment, select its **blend mode** from the dropdown:
+
+| Mode | Description |
+|------|-------------|
+| Top/Default | Shows only the top layer, ignoring the bottom entirely |
+| Bottom/None | Shows only the bottom layer, ignoring the top entirely |
+| Add | Adds colors together, clamping at white |
+| Subtract | Subtracts the top from the bottom, darkening toward black |
+| Difference | Absolute difference — identical colors go black, opposites go bright |
+| Average | 50/50 blend of both layers |
+| Multiply | Multiplies colors — white passes bottom through, black blocks it |
+| Divide | Divides bottom by top — brightens where the top is dark |
+| Lighten | Picks the brighter pixel from each layer |
+| Darken | Picks the darker pixel from each layer |
+| Screen | Inverse of multiply — always brightens |
+| Overlay | Boosts contrast using the bottom layer's brightness |
+| Hard Light | Like Overlay, but driven by the top layer |
+| Soft Light | Subtle contrast and saturation boost, no clipping |
+| Dodge | Brightens the bottom based on the top |
+| Burn | Darkens the bottom based on the top |
+| Stencil | Shows top where it has any color; shows bottom where top is black |
+
+The compositing order follows segment ID order: the segment with the **lower** ID is treated as the bottom (background) layer.
+
+### Transition Blending
+
+v0.16 also adds transition blending styles that control how effects cross-fade when you switch presets. Options include Shift, Push, and others, in addition to the classic dissolve-style fade.

@@ -6,8 +6,25 @@ hide:
 ---
 
 !!! info "Version Info"
-    Effects above 117 are only available 0.14+ or Sound Reactive forks.<br />
+    Effects above 117 are only available 0.14+ or Sound Reactive forks.  
+    v0.16 adds 36 new effects — see [New in v0.16](#new-in-v016) below.  
     [Retired Effects](#retired-effects) - Can't find an old favorite? Look here.
+
+## New in v0.16
+
+v0.16 adds **36 new effects** across 1D, 2D, and the Particle System:
+
+**1D Particle System effects** (requires [Particle System](/features/particle-system)):
+PS DripDrop, PS Pinball, PS Dancing Shadows, PS Fireworks 1D, PS Sparkler, PS Hourglass, PS Spray 1D, PS 1D Balance, PS Chase, PS Starburst, PS GEQ 1D, PS Fire 1D, PS Sonic Stream, PS Sonic Boom, PS Spring
+
+**2D Particle System effects** (requires a 2D segment):
+PS Fire, PS Waterfall, PS Vortex, PS Fireworks, PS Volcano, PS Ballpit, PS Box, PS Fuzzy Noise, PS Impact, PS Attractor, PS Spray, PS GEQ Nova, PS Ghost Rider, PS Blobs, PS Galaxy, PS GEQ 2D
+
+**Other new effects:**
+PacMan, Shimmer, Color Clouds, Slow Transitions, Copy Segment
+
+**user_fx usermod effects** (requires `user_fx` usermod build):
+Diffusion Fire, Spinning Wheel, Lava Lamp, Magma, Ants, Morse Code, PS Comet
 
 ## Effect Overlay
 Since 16.0 true segment & effect overlay is supported.

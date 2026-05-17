@@ -41,7 +41,9 @@ For further buttons, the default action for short press is cycling effects, long
 
 ## Buttons
 
-Multiple buttons are implemented since 0.13 and allow a few different types of buttons to be connected to the ESP:
+Multiple buttons are implemented since 0.13. Starting in v0.16, up to **32 buttons** can be configured without any custom compilation — use the LED Settings page to add as many as you need.
+
+The following button types are supported:
 
 - momentary push-buttons that are normally open and short GPIO pin to ground (active low)
 - momentary push-buttons that are normally closed and release the connection from GPIO pin to GND (inverted, active high)

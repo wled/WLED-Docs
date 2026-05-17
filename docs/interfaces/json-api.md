@@ -186,7 +186,7 @@ len | 0 to info.leds.count | Length of the segment (_stop_ - _start_). _stop_ ha
 grp | 0 to 255 | Grouping (how many consecutive LEDs of the same segment will be grouped to the same color)
 spc | 0 to 255 | Spacing (how many LEDs are turned off and skipped between each group)
 of | -len+1 to len | Offset (how many LEDs to rotate the virtual start of the segments, available since 0.13.0)
-col | array of colors | Array that has up to 3 color arrays as elements, the primary, secondary (background) and tertiary colors of the segment. Each color is an array of 3 or 4 bytes, which represents a RGB(W) color, i.e. `[[255,170,0],[0,0,0],[64,64,64]]`. It can also be represented as an array of strings of _hex_ values, i.e. `["FFAA00","000000","404040"]` for orange, black and grey. One or more colors can be set randomly with `"r"`, i.e. `["r",[0,0,0],"r"]`. _(random will soon be available in 16.0.0)_
+col | array of colors | Array that has up to 3 color arrays as elements, the primary, secondary (background) and tertiary colors of the segment. Each color is an array of 3 or 4 bytes, which represents a RGB(W) color, i.e. `[[255,170,0],[0,0,0],[64,64,64]]`. It can also be represented as an array of strings of _hex_ values, i.e. `["FFAA00","000000","404040"]` for orange, black and grey. One or more colors can be set randomly with `"r"`, i.e. `["r",[0,0,0],"r"]`. _(random available since 0.16.0)_
 fx | 0 to info.fxcount -1 | ID of the effect or `~` to increment, `~-` to decrement, or `"r"` for random.
 sx | 0 to 255 | Relative effect speed. `~` to increment, `~-` to decrement. `~10` to increment by 10, `~-10` to decrement by 10.
 ix | 0 to 255 | Effect intensity. `~` to increment, `~-` to decrement. `~10` to increment by 10, `~-10` to decrement by 10.
@@ -267,6 +267,10 @@ product | string | The product name. Always `FOSS` for standard installations.
 ~~btype~~ | string | The origin of the build. `src` if a release version is compiled from source, `bin` for an official release image, `dev` for a development build (regardless of src/bin origin) and `exp` for experimental versions. `ogn` if the image is flashed to hardware by the vendor. _Removed as of v0.10_
 mac | string | The hexadecimal hardware MAC address of the light, lowercase and without colons.
 ip | string | The IP address of this instance. Empty string if not connected. (since 0.13.0)
+device_id | string | A unique identifier for the device, derived from the hardware MAC address. _(available since 0.16.0)_
+psram | uint32 | Total PSRAM size in bytes. `0` if no PSRAM is present or detected. _(available since 0.16.0)_
+psram_free | uint32 | Estimate of currently free PSRAM in bytes. _(available since 0.16.0)_
+repo | string | URL of the source code repository for this firmware build. _(available since 0.16.0)_
 
 Examples of frequently requested custom API:
 
