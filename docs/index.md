@@ -17,7 +17,7 @@ hide:
   
 # Welcome to my project WLED! ✨
 
-A fast and feature-rich implementation of an ESP32/ESP8266 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs or also SPI based chipsets like the WS2801 and APA102!
+A fast and feature-rich implementation of an ESP32 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs or also SPI based chipsets like the WS2801 & APA102 as well as [HUB75](/advanced/HUB75) video wall panels!
 
 ## ⚙️ Features
 
