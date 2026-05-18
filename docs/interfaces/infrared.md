@@ -15,7 +15,7 @@ A dedicated infrared receiver module is required and must be connected to the WL
 !!! warning
     IR receiving will not work on ESP8266 if you use any LED pin other than GPIO 1, 2, or 3 for _digital_ LED strips.
 
-### Supported IR Remotes
+## Supported IR Remotes
 
 To use IR remote go to `Settings`, `LED Preferences` and change the value for `Infrared receiver type` according to the IR remote type of the following list:
 
