@@ -17,24 +17,24 @@ ESPNow is enabled in **Settings → WiFi**. Once enabled, a **Remote List** sect
 
 ---
 
-## Managing remotes
+## Managing Remotes
 
 WLED can store up to **10 paired remotes**. Each remote is identified by its MAC address.
 
-### Adding a remote
+### Adding a Remote
 
 1. Press any button on the remote. WLED receives the signal and shows the remote's MAC address in the **Last device seen** field.
 2. Click the **`+`** button next to the MAC address to add it to the trusted list.
 
 Only remotes in the trusted list can control WLED. Signals from unlisted devices are ignored.
 
-### Removing a remote
+### Removing a Remote
 
 Click the **`-`** button next to any listed MAC address to remove it.
 
 ---
 
-## Supported button codes
+## Supported Button Codes
 
 WLED handles the following button event codes from ESPNow remotes:
 

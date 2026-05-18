@@ -94,7 +94,7 @@ As of v0.14, up to 10 custom palettes can be uploaded in JSON files. Starting in
 
 Custom palettes can also be uploaded by placing JSON files named `palette0.json` through `palette9.json` on the device via the file editor. The format closely resembles that of the palettes defined in `palettes.h` with a gradient position (0–255), red, green, blue for each colour stop. An example:
 
-```
+```json
 {"palette":[
     0, 255,  33,   4,
    43, 255,  68,  25,

@@ -65,7 +65,8 @@ For assigning [Presets](/features/presets) to buttons use _Time & Macros_ settin
 
 Note: Button 0 has two, built-in functions. 1. Hold it down for >6 seconds and the Wi-Fi settings will be reset to default. 2. Hold it down for >12 seconds and flash memory is erased.
 
-### Analog button
+### Analog Button
+
 Starting in WLED 0.13, analog "buttons" (e.g. a potentiometer) are supported.
 With the Short and Long columns set to 0, set the Double column in Button Actions to one of these values to configure:
 
@@ -84,7 +85,7 @@ This potentiometer should be supplied 3.3V and GND, with it's output supplied to
     On ESP8266, you can only have a single analog button on pin A0, the pin set in the settings UI is ignored.  
     On ESP32, only ADC1 pins will work for analog input while WiFi is active (pins 32-39). ADC2 pins will not work.
 
-### Global brightness
+#### Global Brightness
 
 Users planning to use a potentiometer for global brightness should be aware that wled is configured to turn off when the potentiometer is adjusted to either extreme - both maximum and minimum adjustments. Users who desire to disable this functionality may do so on the hardware side by adding resistors between the potentiometer and the rails.
 

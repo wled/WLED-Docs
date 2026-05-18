@@ -171,9 +171,10 @@ np | bool | Advance to the next preset in a playlist if set to `true`. Not inclu
 
 #### Contents of the segment object
 
-**Notice:** _start_, _stop_, and _len_ are not changeable in  0.8.4. Any segment with _id_ > 0 is ignored.
-Unless stated otherwise, every value may be changed via an HTTP POST request.
-The tertiary color is not gamma-corrected in 0.8.4, but is in subsequent releases.
+!!! info "Legacy limitation (v0.8.4)"
+    _start_, _stop_, and _len_ are not changeable in v0.8.4. Any segment with _id_ > 0 is ignored.  
+    Unless stated otherwise, every value may be changed via an HTTP POST request.  
+    The tertiary color is not gamma-corrected in 0.8.4, but is in subsequent releases.
 
 | JSON key | Value range | Description
 | --- | --- | --- |
