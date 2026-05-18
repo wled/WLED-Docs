@@ -37,7 +37,8 @@ WLED starting with version 0.13.0 also supports bus types with two white channel
 
 Since as of the release of version 0.13.0 no adjustable CCT addressable LEDs are supported*, this only applies to PWM analog LED outputs.
 
-_*SK6812 WWA (with 3 channels, warm white, cold white and amber) are supported, but treated as if RGB using the `WS281x` bus type. White spectrum support for this LED type will be added at a later point._
+!!! info "WWA (warm white + cold white + amber white)"
+    _*SK6812 WWA (with 3 channels, warm white, cold white and amber) are supported, but treated as if RGB using the `WS281x` bus type. White spectrum support for this LED type will be added at a later point._
 
 The overall brightness of the white channels is determined from the auto-white calculation outlined above, and as such is identical in behavior to that of single white channel busses.
 
@@ -52,8 +53,8 @@ Setting this to 100% results in the highest peak brightness output at the neutra
 
 ![](/assets/images/content/wledcct.png)
 
-!!! warning
-		Make sure your setup can handle driving both white channels at maximum output simultaneously. This results in a higher heat output and might reduce the lifetime of your LEDs. For example, bulbs by Athom are designed for linear blending (0%) and may be damaged by attempting to use additive blending.
+!!! warning "Additive Blending May Cause Heatup"
+	Make sure your setup can handle driving both white channels at maximum output simultaneously. This results in a higher heat output and might reduce the lifetime of your LEDs. For example, bulbs by Athom are designed for linear blending (0%) and may be damaged by attempting to use additive blending.
 
 You can limit the maximum allowed additive blending at build time using the `WLED_MAX_CCT_BLEND` macro.  
 For example, add `-D WLED_MAX_CCT_BLEND=0` to your build flags to force linear blending only.
