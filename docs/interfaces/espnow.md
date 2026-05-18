@@ -12,7 +12,8 @@ You can also [build your own remote](https://github.com/DedeHai/WLED-ESPNow-Remo
 
 ESPNow is enabled in **Settings → WiFi**. Once enabled, a **Remote List** section appears on the same page.
 
-**Note:** in order for ESPNow remotes to work reliably the WiFi has to be on all the time - **Disable WiFi Sleep** must be set.
+!!! warning "Keep Wi-Fi Always On"
+    For ESPNow remotes to work reliably, **Disable WiFi Sleep** must be set to keep Wi-Fi active at all times.
 
 ---
 
