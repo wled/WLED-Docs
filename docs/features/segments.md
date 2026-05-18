@@ -19,7 +19,7 @@ There is one _main segment_, Segment 0 by default. This segment has a few import
 
 Tip: If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
 
-Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ Currently you can create a maximum of 10 segments in WLED 0.15 and earlier. Starting in v0.16, the segment limit was significantly increased.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.
+Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ Currently you can create a maximum of 10 segments in WLED 0.15 and earlier. Starting in v16.0, the segment limit was significantly increased.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.
 
 To display segment information select the down arrow in the Segment box.  To add a Segment select “+ Add Segment”.  Enter the Start and Stop LED as appropriate.  Grouping and Spacing control the organization of the LEDs within the selected effect.  To reverse the direction of an effect select Reverse Direction.  To delete a Segment select the trash can.  To save your Segment settings select the checkmark to the right of the Start and Stop LED numbers.
 
@@ -87,7 +87,7 @@ The offset values is prioritized over grouping and/or spacing. For example, if t
 
 ## Segment Layering & Effect Overlay
 
-Since v0.16, WLED supports true segment layering: segments with overlapping pixels are composited in real time using a blend mode you choose per segment. This makes it possible to combine almost any two effects on the same LEDs.
+Since v16.0, WLED supports true segment layering: segments with overlapping pixels are composited in real time using a blend mode you choose per segment. This makes it possible to combine almost any two effects on the same LEDs.
 
 To use layering, create two or more segments that cover the same pixel range. On each segment, select its **blend mode** from the dropdown:
 
@@ -115,4 +115,4 @@ The compositing order follows segment ID order: the segment with the **lower** I
 
 ### Transition Blending
 
-v0.16 also adds transition blending styles that control how effects cross-fade when you switch presets. Options include Shift, Push, and others, in addition to the classic dissolve-style fade.
+v16.0 also adds transition blending styles that control how effects cross-fade when you switch presets. Options include Shift, Push, and others, in addition to the classic dissolve-style fade.

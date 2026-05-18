@@ -11,7 +11,7 @@ hide:
 WLED versions from 0.8.0 up are able to connect to an MQTT broker for smart home control.
 Connection to both domains and IP servers is supported on port 1883.
 
-Starting in v0.16.0, WLED also supports **mDNS broker discovery**: if you enter an `.local` hostname as the MQTT server address, WLED will resolve it via mDNS. This lets you use a local broker without knowing its static IP address.
+Starting in v16.0.0, WLED also supports **mDNS broker discovery**: if you enter an `.local` hostname as the MQTT server address, WLED will resolve it via mDNS. This lets you use a local broker without knowing its static IP address.
 
 !!! warning
     Secure connections are not currently supported. I recommend only connecting to local MQTT brokers.

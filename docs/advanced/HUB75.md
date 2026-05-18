@@ -2,7 +2,7 @@
 title: HUB75 support
 ---
 
-WLED now features support for LED matrix panels using the HUB75 format. HUB75 support was added as an official mainline feature in **v0.16.0** — dedicated `_HUB75` build variants are included in the standard release downloads.
+WLED now features support for LED matrix panels using the HUB75 format. HUB75 support was added as an official mainline feature in **v16.0.0** — dedicated `_HUB75` build variants are included in the standard release downloads.
 
 You can use either a regular ESP32 with a suitable adapter board such as Huidu HD-WF2, [ESP32 Trinity](https://esp32trinity.com/), [MoonHub75](https://github.com/MoonModules/Hardware/tree/main/MOONHUB75), [rorosaurus/esp32-hub75-driver](https://github.com/rorosaurus/esp32-hub75-driver) or the dedicated [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778)
 

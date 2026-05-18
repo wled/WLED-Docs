@@ -9,7 +9,7 @@ The source code of the tool as well as a collection free-to-use fonts are availa
 
 ## Built-in fonts
 
-WLED ships with five built-in fonts. In v0.16, four of them were redrawn for improved legibility while keeping the same pixel heights for backward compatibility. All built-in fonts now use **per-glyph variable width**, so narrow characters like `i` take less space than wide ones like `W`.
+WLED ships with five built-in fonts. In v16.0, four of them were redrawn for improved legibility while keeping the same pixel heights for backward compatibility. All built-in fonts now use **per-glyph variable width**, so narrow characters like `i` take less space than wide ones like `W`.
 
 | "Font Size" | Height |
 |------|---------------|

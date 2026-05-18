@@ -41,7 +41,7 @@ For further buttons, the default action for short press is cycling effects, long
 
 ## Buttons
 
-Multiple buttons are implemented since 0.13. Starting in v0.16, up to **32 buttons** can be configured without any custom compilation — use the LED Settings page to add as many as you need.
+Multiple buttons are implemented since 0.13. Starting in v16.0, up to **32 buttons** can be configured without any custom compilation — use the LED Settings page to add as many as you need.
 
 The following button types are supported:
 

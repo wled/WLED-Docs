@@ -6,7 +6,7 @@ hide:
 ---
 
 !!! info "Version Info"
-    Beginning in 0.14 up to 10 [Custom Palettes](#custom-palettes) can be uploaded. Starting in v0.16, over 100 custom palettes are supported, a new palette editor is built into the UI, and over 800 additional palettes from the cpt-city collection are available.
+    Beginning in 0.14 up to 10 [Custom Palettes](#custom-palettes) can be uploaded. Starting in v16.0, over 100 custom palettes are supported, a new palette editor is built into the UI, and over 800 additional palettes from the cpt-city collection are available.
 
 
 
@@ -88,7 +88,7 @@ hide:
 
 ### Custom Palettes
 
-As of v0.14, up to 10 custom palettes can be uploaded in JSON files. Starting in **v0.16**, over **100 custom palettes** are supported but the palette numbering scheme has changed: custom palettes start at the number 200 downwards so you need to re-save your presets - palettes 255-201 are reserved for usermod palettes like Audio Reactive.
+As of v0.14, up to 10 custom palettes can be uploaded in JSON files. Starting in **v16.0**, over **100 custom palettes** are supported but the palette numbering scheme has changed: custom palettes start at the number 200 downwards so you need to re-save your presets - palettes 255-201 are reserved for usermod palettes like Audio Reactive.
 
 **v16.0** also introduces an improved **Palette Editor** (accessible from the palette icon below the color picker in the UI) to create and edit custom palettes directly in the UI. The editor lets you add colour stops, adjust positions - and can show what your work looks like on the LEDs in real time.
 
