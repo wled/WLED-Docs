@@ -5,7 +5,7 @@ hide:
   # - toc
 ---
 
-## Welcome to the WLED wiki!
+## Welcome to the WLED Wiki!
 
 !!! info "Version Info"
     Unless noted otherwise, all information applies to the latest release.
@@ -23,7 +23,8 @@ hide:
 
 _If the connecting wire cannot be kept short, use a [level shifter/translator](/basics/compatible-hardware#levelshifters)._ Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
 
-**Caution:** Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
+!!! warning
+    Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
 
 ![DigitalWiring](../assets/images/content/WLED_5VdigitalWiring.png)
 Check out the [Wiring Guides](/basics/wiring-guides) for more examples.
