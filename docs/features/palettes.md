@@ -107,6 +107,6 @@ Custom palettes can also be uploaded by placing JSON files named `palette0.json`
 
 Once a palette file has been created, it can be uploaded to the controller using the `/edit` page (`http://[controller-ip]/edit`). Since version 16.0 the editor is accessible through the file icon below the color picker.
 
-### Additional Palettes (v16.0+)
+## Additional Palettes (v16.0+)
 
 v16.0 includes over **800 palettes** that were hand-picked from the [cpt-city](https://phillips.shef.ac.uk/pub/cpt-city/) collection. They are available directly in the palette editor.
