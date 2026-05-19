@@ -72,6 +72,26 @@ How to connect Levelshifters:
 [CH340](https://www.aliexpress.com/item/32761423124.html) | CH340 module instead of CP2102, PL2303 or FTDI/FTDT. The CH340 can deliver more current which is needed while the flash process depending on the board type. The timing is also much more stable. **For boards with an USB/TTL adapter onboard this is NOT needed**
 [ESP uploader](https://github.com/srg74/ESP-uploader) |  CP2102N module. Same USB to UART converter as many recent Dev boards using. Featuring latest USB-C connector. For use with many ESP32, ESP8266, ESP8255 and Tuya based modules. 3.3V logic and 5V power pass through for custom boards.
 
+## OLED Display Setup with FLD_PIN_RST and HELTEC_VEXT_PIN
+
+Some OLED displays, particularly the SSD1306 found in boards like the Heltec WiFi LoRa 32 V3, require specific control pins for optimal operation:
+
+- **FLD_PIN_RST (Display Reset Pin):** Provides a hardware reset pulse during initialization, ensuring the display initializes correctly. Set via `-D FLD_PIN_RST=<pin_number>` in platformio_override.ini. For Heltec V3: `-D FLD_PIN_RST=21`
+
+- **HELTEC_VEXT_PIN (Power Control Pin):** Controls a switchable power rail (Vext) that powers external peripherals. This allows the display and other components to be powered down to save energy. Set via `-D HELTEC_VEXT_PIN=<pin_number>`. For Heltec V3: `-D HELTEC_VEXT_PIN=36`
+
+**Example for Heltec WiFi LoRa 32 V3:**
+```ini
+build_flags =
+  ${env.build_flags}
+  -D FLD_PIN_RST=21
+  -D HELTEC_VEXT_PIN=36
+  -D I2C_SDA=17
+  -D I2C_SCL=18
+```
+
+Refer to the compatible controllers section for the Heltec WiFi LoRa 32 V3 board details.
+
 ## Miscellaneous
 
 Sorting: Sensors, Displays, Actuators
