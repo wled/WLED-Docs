@@ -9,6 +9,8 @@ hide:
 
 Audio Reactive WLED lets your LEDs react to music and sound in real time. Originally implemented as the [Sound Reactive Fork](https://github.com/atuline/WLED), audio reactivity became an official usermod in WLED 0.14.0 and has been included in every official release since 0.15.0.
 
+An advanced version of AudioReactive is available in the [WLED-MM fork](https://github.com/MoonModules/WLED-MM). It will be integrated in the next major WLED release, v17.0.0.
+
 ## Hardware Required
 
 Audio must be fed into the microcontroller. There are four options: a microphone, a line-in adapter, another WLED instance, or a PC running audio-sync software.
@@ -18,10 +20,14 @@ Audio must be fed into the microcontroller. There are four options: a microphone
 Audio Reactive (AR) works across the ESP family, with a few differences per variant:
 
 - **Classic ESP32** — full support: digital and analog microphones
-- **ESP32-S3** — digital and PDM microphones only
-- **ESP32-S2** — digital microphones only (no PDM)
-- **ESP32-C3** — digital microphones only (since WLED v16.0)
+- **ESP32-S3** — I2S digital and PDM microphones only
+- **ESP32-S2** — I2S digital microphones only (no PDM)
+- **ESP32-C3** — I2S digital microphones only (since WLED v16.0)
 - **ESP8266** — no microphone input; can participate in AR via network sync (receive mode only)
+
+!!! Note "Left Channel"
+    Both digital microphones and line-in adapters must provide sound input via the LEFT audio channel.
+    For the INMP441, this is achieved by wiring the 'L/R' connection to GND (ground).
 
 ### Microphones
 
@@ -56,6 +62,10 @@ These are the simplest to wire (just 3.3 V, GND, and one ADC pin), but the quali
 !!! warning "Analog microphones and analog buttons are mutually exclusive"
     WLED can use an analog microphone **or** [analog buttons](/features/macros/#analog-button), but not both at the same time.
 
+!!! failure "Don't Waste Your Money on Cheapest Hardware"
+    Some inexpensive sound sensors, such as the LM393, KY-038 or KY-037, only have an on/off output (i.e. they detect either "sound" or "silence"). Sometimes, there is an additional "analogue data out" pin, but the quality is extremely low.  
+     These "clap sensors" cannot be used with AudioReactive.
+
 ### Line-In Options
 
 Both analog and digital line-in work with the line-out / headphone-out of a sound system, TV, phone, etc.
@@ -63,6 +73,8 @@ Both analog and digital line-in work with the line-out / headphone-out of a soun
 #### Line-In to I2S Adapter — Best Option
 
 An analog-to-I2S adapter (using chips such as the CirrusLogic CS5343, TI PCM1808, or ES7243) converts the analog line signal to a clean digital I2S stream. This works the same as a digital I2S microphone in WLED, but you'll need an extra GPIO for MCLK (Master Clock). On ESP32, MCLK can only be generated on GPIOs 0, 1, or 3. Because MCLK is a high-frequency signal, keep those wires very short.
+
+The WLED-MM documentation provides further information on how to [connect commonly used I2S line-in adapters](https://mm.kno.wled.ge/soundreactive/Line-Input/).
 
 An example board with integrated line-in is the [LyraT](https://docs.espressif.com/projects/esp-adf/en/latest/design-guide/dev-boards/board-esp32-lyrat-v4.3.html).
 
@@ -83,13 +95,15 @@ For more detail, see the [Sound Reactive WLED Wiki](https://mm.kno.wled.ge/sound
 
 ## Configuration
 
-The Audio Reactive settings page (**Config → Audio Reactive**) lets you tune how WLED responds to sound. The most important controls are Squelch, Gain, and AGC.
+The Audio Reactive settings page (**Config → Usermods, AudioReactive**) lets you tune how WLED responds to sound. The most important controls are Squelch, Gain, and AGC.
 
 ### Squelch
 
 Squelch sets the noise floor — the minimum signal level that WLED treats as "sound". Any input below this threshold is ignored, so your LEDs stay still during silence instead of flickering from background noise.
 
 Start with a higher squelch value and lower it until the LEDs just stop reacting to ambient noise in your room. A good squelch value means no activity in silence, but an instant response when music starts.
+
+For digital microphones, **squelch** is usually somewhere between 1 and 20. You might have to go up 64 with analog microphones to cut out noise.
 
 ### Gain
 
@@ -112,10 +126,10 @@ Four modes are available:
 
 ### First-Time Setup
 
-Here's a reliable method for dialling in squelch and gain on a new device:
+Once your microphone or line-in is set up, here's a reliable method for dialling in squelch and gain on a new device:
 
-1. Select the **\*Gravimeter** effect and leave its sliders at their default positions.
-2. Go to **Config → Audio Reactive**.
+1. Select the **Gravimeter** effect and leave its sliders at their default positions.
+2. Go to **Config → Usermods** and scroll down to the **AudioReactive** section.
 3. Set **Gain** to a high value (e.g. 200+), set **Squelch** to `1`, and turn **AGC** off. Save.
 4. The LEDs should now react to almost anything, even ambient noise.
 5. In a quiet environment, **gradually increase Squelch** (saving each time) until the LEDs stop reacting to background noise.
@@ -128,7 +142,7 @@ You don't need a microphone on every WLED device. One device captures the audio 
 
 ### WLED-to-WLED Sync
 
-In the Audio Reactive settings, set one device to **Send** mode and all others to **Receive**. The sending device multicasts audio data to UDP multicast address `239.0.0.1`, default port `11988`. All receiving devices on the same network pick it up automatically.
+In the AudioReactive settings, set one device to **Send** mode and all others to **Receive**. The sending device multicasts audio data to UDP multicast address `239.0.0.1`, default port `11988`. All receiving devices on the same network pick it up automatically.
 
 You can change the UDP port in the Audio Reactive settings — useful if you want to run multiple independent sync groups on the same network.
 
@@ -147,17 +161,19 @@ Any of the following tools can capture audio from your computer, process it into
 | [Feed\_My\_WLED](https://github.com/chrisgott/feed_my_wled) | macOS / Linux | Python script; good choice for non-Windows users. |
 | [WLEDAudioSync for Chataigne](https://github.com/zak-45/WLEDAudioSync-Chataigne-Module) | Cross-platform | Feature-rich audio toolset for [Chataigne](https://benjamin.kuperberg.fr/chataigne/); suits complex setups. |
 
+Learn more about the **UDP sound Sync** feature in the [documentation of the MM-fork](https://mm.kno.wled.ge/soundreactive/sync/).
+
 ## Audio Reactive Palettes
 
 Most WLED effects that support palette colouring (the majority of them) pick colours by looking up a position in the active palette. Audio Reactive takes advantage of this by providing three special palettes whose colours are driven by live audio data — so any palette-aware effect automatically becomes audio responsive when one of these palettes is selected.
 
 ### Enabling the Palettes
 
-The palettes are off by default. To enable them, go to **Config → Audio Reactive** and turn on **Add Palettes**. This adds three new entries to the palette list, all prefixed with `AudioReactive:`.
+The palettes are off by default. To enable them, go to **Config → Usermods, AudioReactive** and turn on **Add Palettes**. This adds three new entries to the palette list, all prefixed with `AudioReactive:`.
 
 _This feature was contributed by [@netmindz](https://github.com/netmindz)._
 
-### The Three Palettes
+#### The Three Palettes
 
 Each palette is a four-stop dynamic gradient that is recalculated every frame from the current FFT frequency data.
 
@@ -167,7 +183,7 @@ Each palette is a four-stop dynamic gradient that is recalculated every frame fr
 | **AudioReactive: Hue** | Maps palette position across the lower frequency bands. Each band's amplitude sets both the hue and brightness, giving a colour that shifts with the dominant low frequency. |
 | **AudioReactive: Spectrum** | Maps palette position across all 16 GEQ frequency channels. Each channel's amplitude drives the hue for its slice of the palette, so the full frequency spectrum is visible as colour. |
 
-### Tips
+#### Tips
 
 - These palettes work with **any** effect that reads from the active palette — not just effects designed for audio. Try them with effects like Fire, Noise, or Plasma to get audio-driven colour without needing a dedicated AR effect.
 - Because the palette refreshes every frame, the colour changes are as fast and smooth as your audio input.
