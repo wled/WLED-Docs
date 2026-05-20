@@ -4388,14 +4388,18 @@ If you want to manually add devices, use more than 170 LEDs with LedFx, you need
 <h4 id="multiple-rgb">Multiple RGB</h4>
 <p>3 Channels per LED in sequence. LED 0 Red, LED 0 Green, LED 0 Blue, LED 1 Red, ...
 Default mode, equivalent to pre-0.9.1 E1.31. This is the mode you want to use for xLights and LedFx.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pixel Grouping</p>
+<p>You can use the segment's <strong>Grouping</strong> setting to treat multiple consecutive physical pixels as a single DMX channel. For example, setting Grouping to <code>3</code> means every 3 pixels share the same color and together count as one LED in the DMX channel sequence. This is useful when each DMX channel should drive a cluster of LEDs rather than a single pixel.</p>
+</div>
 <h4 id="multiple-rgbw">Multiple RGBW</h4>
-<p>Like <code>Multiple RGB</code> + additional white channels.</p>
+<p>Like <code>Multiple RGB</code> + additional white channels (4 channels per group: R, G, B, W). <a href="#multiple-rgb">Pixel Grouping</a> also applies.</p>
 <h4 id="dimmer-multi-rgb">Dimmer + Multi RGB</h4>
 <p>Like <code>Multiple RGB</code>, but the first channel is a brightness control.
-Master Dimmer, LED 0 Red, LED 0 Green, ...</p>
+Master Dimmer, LED 0 Red, LED 0 Green, ... <a href="#multiple-rgb">Pixel Grouping</a> also applies.</p>
 <h4 id="dimmer-multi-rgbw">Dimmer + Multi RGBW</h4>
 <p>Like <code>Multiple RGBW</code>, but the first channel is a brightness control.
-Master Dimmer, LED 0 Red, LED 0 Green, LED 0 Blue, LED 0 White, LED 1 ...</p>
+Master Dimmer, LED 0 Red, LED 0 Green, LED 0 Blue, LED 0 White, LED 1 ... <a href="#multiple-rgb">Pixel Grouping</a> also applies.</p>
 <h4 id="preset">Preset</h4>
 <p>Trigger presets and control brightness. 2 Channels: Brightness, Preset ID</p>
 
