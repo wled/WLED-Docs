@@ -8,7 +8,7 @@ hide:
 ### Asking for help
 
 Before asking for help on Discord or on other platforms, check the following top 5 most common mistakes while setting up WLED.
-If you then still have troubles and are going to ask for help, provide as much information as possible: describe your setup, make photos, provide screenshots of your settings.
+If you then still have troubles and are going to ask for help, provide as much information as possible: describe your setup, make photos, provide screenshots of your settings. You can also use [WLED Wiring Designer Tool](https://wled-wiring.github.io/) to create your wiring diagram, validate it with the integrated diagram checker and simulate current flow.
 
 ### TOP 5 mistakes:
 
