@@ -5,7 +5,7 @@ hide:
   # - toc
 ---
 
-The wiring diagrams in this section are drawn using [cirkit designer](https://www.cirkitdesigner.com/), a general-purpose tool. Alternatively, you can use the WLED-specific [WLED Wiring Designer Tool](https://wled-wiring.github.io/) to design your own diagrams, check them with the built-in diagram validator, and simulate current flow.
+The wiring diagrams in this section are drawn using [Cirkit Designer](https://www.cirkitdesigner.com/), a general-purpose tool. Alternatively, you can use the WLED-specific [WLED Wiring Designer Tool](https://wled-wiring.github.io/) to design your own diagrams, check them with the built-in diagram validator, and simulate current flow.
 
 ## Addressable LED Strips
 
