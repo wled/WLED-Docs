@@ -63,17 +63,17 @@ Clone your new repository somewhere convenient — alongside your WLED checkout 
     my_usermod.cpp
 ```
 
-In `platformio_override.ini`, point `custom_usermods` at the local clone using a `file://` URL:
+In `platformio_override.ini`, point `custom_usermods` at the local clone using a `symlink://` URL:
 
 ```ini
 [env:esp32dev_my_usermod]
 extends = env:esp32dev
 custom_usermods =
   ${env:esp32dev.custom_usermods}
-  file:///home/you/projects/my-wled-usermod
+  symlink:///home/you/projects/my-wled-usermod
 ```
 
-On Windows, use the `file:///C:/Users/you/...` form with forward slashes: `file:///C:/Users/you/projects/my-wled-usermod`.
+On Windows, use the `symlink:///C:/Users/you/...` form with forward slashes: `symlink:///C:/Users/you/projects/my-wled-usermod`.
 
 PlatformIO will pick up your local changes on each build, and you can edit the usermod and WLED side-by-side without switching projects.
 
