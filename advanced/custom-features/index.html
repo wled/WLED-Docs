@@ -2249,10 +2249,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-fork-the-example-repository" class="md-nav__link">
+  <a href="#1-create-a-repository-from-the-template" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Fork the example repository
+        1. Create a repository from the template
       
     </span>
   </a>
@@ -2854,10 +2854,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-fork-the-example-repository" class="md-nav__link">
+  <a href="#1-create-a-repository-from-the-template" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Fork the example repository
+        1. Create a repository from the template
       
     </span>
   </a>
@@ -3058,24 +3058,24 @@
 </code></pre></div>
 <h3 id="writing-a-usermod">Writing a usermod</h3>
 <p>The recommended approach is to keep your usermod in its own repository, separate from the WLED source tree. This lets you version and share it independently, and reference it from any WLED build without copying files.</p>
-<h4 id="1-fork-the-example-repository">1. Fork the example repository</h4>
-<p>Fork <a href="https://github.com/wled/wled-usermod-example">wled/wled-usermod-example</a> on GitHub. It contains a minimal <code>library.json</code> and a fully annotated example implementation — everything you need to get started. Rename the files and class to something descriptive, then add your code.</p>
+<h4 id="1-create-a-repository-from-the-template">1. Create a repository from the template</h4>
+<p>On GitHub, open <a href="https://github.com/wled/wled-usermod-example">wled/wled-usermod-example</a> and click <strong>Use this template → Create a new repository</strong>. This gives you a clean, independent repository pre-loaded with a minimal <code>library.json</code> and a fully annotated example implementation. Rename the files and class to something descriptive, then add your code.</p>
 <h4 id="2-reference-it-locally-during-development">2. Reference it locally during development</h4>
-<p>Clone your fork somewhere convenient — alongside your WLED checkout works well, since both projects can then be open in the same VS Code session:</p>
+<p>Clone your new repository somewhere convenient — alongside your WLED checkout works well, since both projects can then be open in the same VS Code session:</p>
 <div class="highlight"><pre><span></span><code>~/projects/
   WLED/                   ← the WLED source
-  my-wled-usermod/        ← your fork
+  my-wled-usermod/        ← your repository
     library.json
     my_usermod.cpp
 </code></pre></div>
-<p>In <code>platformio_override.ini</code>, point <code>custom_usermods</code> at the local clone using a <code>file://</code> URL:</p>
+<p>In <code>platformio_override.ini</code>, point <code>custom_usermods</code> at the local clone using a <code>symlink://</code> URL:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[env:esp32dev_my_usermod]</span>
 <span class="na">extends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">env:esp32dev</span>
 <span class="na">custom_usermods</span><span class="w"> </span><span class="o">=</span>
 <span class="w">  </span><span class="na">${env</span><span class="o">:</span><span class="s">esp32dev.custom_usermods}</span>
-<span class="w">  </span><span class="na">file</span><span class="o">:</span><span class="s">///home/you/projects/my-wled-usermod</span>
+<span class="w">  </span><span class="na">symlink</span><span class="o">:</span><span class="s">///home/you/projects/my-wled-usermod</span>
 </code></pre></div>
-<p>On Windows, use the <code>file:///C:/Users/you/...</code> form with forward slashes: <code>file:///C:/Users/you/projects/my-wled-usermod</code>.</p>
+<p>On Windows, use the <code>symlink://C:/Users/you/...</code> form with forward slashes: <code>symlink://C:/Users/you/projects/my-wled-usermod</code>.</p>
 <p>PlatformIO will pick up your local changes on each build, and you can edit the usermod and WLED side-by-side without switching projects.</p>
 <h4 id="3-share-it-via-git-url">3. Share it via git URL</h4>
 <p>Once your usermod is ready to share, others can reference it directly by URL — no local clone needed:</p>

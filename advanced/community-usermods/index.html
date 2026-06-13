@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adding-your-usermod" class="md-skip">
+        <a href="#index" class="md-skip">
           Skip to content
         </a>
       
@@ -2225,10 +2225,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-your-usermod" class="md-nav__link">
+  <a href="#index" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adding your usermod
+        Index
       
     </span>
   </a>
@@ -2236,10 +2236,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
+  <a href="#adding-your-usermod-to-the-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Index
+        Adding your usermod to the list
       
     </span>
   </a>
@@ -2624,10 +2624,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-your-usermod" class="md-nav__link">
+  <a href="#index" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adding your usermod
+        Index
       
     </span>
   </a>
@@ -2635,10 +2635,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
+  <a href="#adding-your-usermod-to-the-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Index
+        Adding your usermod to the list
       
     </span>
   </a>
@@ -2674,12 +2674,23 @@
 
 <p>This page is an index of usermods written by the WLED community. Entries are maintained by their authors; the WLED project does not test or endorse them.</p>
 <p>To help people find your usermod even before it appears here, tag your GitHub repository with the <a href="https://github.com/topics/wled-usermod"><code>wled-usermod</code></a> topic.</p>
-<h2 id="adding-your-usermod">Adding your usermod</h2>
-<p>Open a pull request to <a href="https://github.com/wled/WLED-Docs">WLED-Docs</a> adding a row to the table below. One row, one PR.</p>
-<p>Use this format:</p>
-<div class="highlight"><pre><span></span><code>| [<span class="nt">Name</span>](<span class="na">https://github.com/you/your-usermod</span>) | Short description | <span class="ni">@yourname</span> | esp32 |  |
-</code></pre></div>
-<p>Platforms: <code>esp32</code>, <code>esp8266</code>, or <code>both</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Community content — use at your own risk</p>
+<p>The usermods listed below are created and maintained by community members, <strong>not</strong> the WLED development team.
+<strong>The WLED project does not review, test, endorse, or provide support for any of these modules.</strong></p>
+<p>Usermods are native C++ code compiled directly into your WLED firmware. A usermod runs with
+<strong>full, unrestricted access</strong> to your device's hardware, network, and memory — there is no
+sandbox or permission system to limit what it can do. Before installing a third-party build:</p>
+<ul>
+<li><strong>Read the source code</strong> (or have someone you trust read it) before flashing.</li>
+<li>Be aware that a malicious or poorly written usermod could expose your network, <strong>brick your
+  device</strong>, or behave in ways its description does not mention.</li>
+<li>Only flash firmware from sources you trust. Prefer builds you compile yourself from
+  reviewed source code over pre-compiled binaries distributed by strangers.</li>
+</ul>
+<p>The WLED project cannot verify the safety or quality of community usermods.
+<strong>You are solely responsible for any third-party code you choose to run on your devices.</strong></p>
+</div>
 <h2 id="index">Index</h2>
 <table>
 <thead>
@@ -2688,15 +2699,17 @@
 <th>Description</th>
 <th>Author</th>
 <th>Platforms</th>
+<th>License</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="https://github.com/wled/wled-usermod-example">wled-usermod-example</a></td>
-<td>Annotated template — fork this to start your own usermod</td>
+<td>Annotated template — use as template to start your own usermod</td>
 <td>@wled</td>
 <td>both</td>
+<td>EUPL</td>
 <td>Official starting point</td>
 </tr>
 <tr>
@@ -2704,10 +2717,17 @@
 <td>Community effects usermod — add your own effects here or use as a template</td>
 <td>@wled</td>
 <td>both</td>
+<td>EUPL</td>
 <td>Ships with WLED; enable with <code>custom_usermods = user_fx</code></td>
 </tr>
 </tbody>
 </table>
+<h2 id="adding-your-usermod-to-the-list">Adding your usermod to the list</h2>
+<p>Open a pull request to <a href="https://github.com/wled/WLED-Docs">WLED-Docs</a> adding a row to the table above. </p>
+<p>Use this format:</p>
+<div class="highlight"><pre><span></span><code>| [<span class="nt">Name</span>](<span class="na">https://github.com/you/your-usermod</span>) | Short description | <span class="ni">@yourname</span> | esp32 | MIT |  |
+</code></pre></div>
+<p>Platforms: <code>esp32</code>, <code>esp8266</code>, or <code>both</code>.</p>
 
 
 
