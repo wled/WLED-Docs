@@ -47,33 +47,33 @@ custom_usermods =
 
 The recommended approach is to keep your usermod in its own repository, separate from the WLED source tree. This lets you version and share it independently, and reference it from any WLED build without copying files.
 
-#### 1. Fork the example repository
+#### 1. Create a repository from the template
 
-Fork [wled/wled-usermod-example](https://github.com/wled/wled-usermod-example) on GitHub. It contains a minimal `library.json` and a fully annotated example implementation — everything you need to get started. Rename the files and class to something descriptive, then add your code.
+On GitHub, open [wled/wled-usermod-example](https://github.com/wled/wled-usermod-example) and click **Use this template → Create a new repository**. This gives you a clean, independent repository pre-loaded with a minimal `library.json` and a fully annotated example implementation. Rename the files and class to something descriptive, then add your code.
 
 #### 2. Reference it locally during development
 
-Clone your fork somewhere convenient — alongside your WLED checkout works well, since both projects can then be open in the same VS Code session:
+Clone your new repository somewhere convenient — alongside your WLED checkout works well, since both projects can then be open in the same VS Code session:
 
 ```text
 ~/projects/
   WLED/                   ← the WLED source
-  my-wled-usermod/        ← your fork
+  my-wled-usermod/        ← your repository
     library.json
     my_usermod.cpp
 ```
 
-In `platformio_override.ini`, point `custom_usermods` at the local clone using a `file://` URL:
+In `platformio_override.ini`, point `custom_usermods` at the local clone using a `symlink://` URL:
 
 ```ini
 [env:esp32dev_my_usermod]
 extends = env:esp32dev
 custom_usermods =
   ${env:esp32dev.custom_usermods}
-  file:///home/you/projects/my-wled-usermod
+  symlink:///home/you/projects/my-wled-usermod
 ```
 
-On Windows, use the `file:///C:/Users/you/...` form with forward slashes: `file:///C:/Users/you/projects/my-wled-usermod`.
+On Windows, use the `symlink://C:/Users/you/...` form with forward slashes: `symlink://C:/Users/you/projects/my-wled-usermod`.
 
 PlatformIO will pick up your local changes on each build, and you can edit the usermod and WLED side-by-side without switching projects.
 
