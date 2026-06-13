@@ -73,7 +73,7 @@ custom_usermods =
   symlink:///home/you/projects/my-wled-usermod
 ```
 
-On Windows, use the `symlink:///C:/Users/you/...` form with forward slashes: `symlink:///C:/Users/you/projects/my-wled-usermod`.
+On Windows, use the `symlink://C:/Users/you/...` form with forward slashes: `symlink://C:/Users/you/projects/my-wled-usermod`.
 
 PlatformIO will pick up your local changes on each build, and you can edit the usermod and WLED side-by-side without switching projects.
 
