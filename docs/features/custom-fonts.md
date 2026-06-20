@@ -3,7 +3,7 @@ title: Custom Fonts
 ---
 
 WLED supports loading custom bitmap fonts for use with the **Scrolling Text** effect. Custom fonts are stored on the device filesystem as `.wbf` files and can be created with the Font Factory tool, see below.
-The source code of the tool as well as a collection free-to-use fonts are available [on github](https://github.com/DedeHai/WLED-Tools/tree/main/WLED-FontFactory).
+The source code of the tool as well as a collection free-to-use fonts are available [on GitHub](https://github.com/DedeHai/WLED-Tools/tree/main/WLED-FontFactory).
 
 ---
 
@@ -59,10 +59,9 @@ If no `.wbf` files are found on the filesystem, WLED falls back to the built-in 
 1. Load a source font — supported formats are **TTF**, **OTF**, **WOFF** as well as pixel based **BDF** and native **WBF**
 2. Choose whether to use variable or fixed glyph width
 3. Adjust the three sliders until you get the desired font size - the sliders are not available when loading bitmap fonts
-4. Choose which UTF-8 extenstion to include (e.g. Latin, Cyrillic, Greek etc.) - use preview example text to test
-5. Set the pixel height. The tool renders each glyph at that height.
-6. Edit individual glyphs pixel by pixel in the built-in glyph editor if needed or delete unwanted glyphs to save space
-7. Click **Upload** to save the `.wbf` file to the controller directly or **Download** to store it on your phone/pc
+4. Choose which UTF-8 extension to include (e.g. Latin, Cyrillic, Greek etc.) - use preview example text to test
+5. Edit individual glyphs pixel by pixel in the built-in glyph editor if needed or delete unwanted glyphs to save space
+6. Click **Upload** to save the `.wbf` file to the controller directly or **Download** to store it on your phone/pc
 
 ### Showcase Your Font
 

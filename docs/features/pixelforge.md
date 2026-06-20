@@ -13,7 +13,7 @@ The tool is available through the icon below the color picker or by navigating t
 
 The tool has three tabs: **Image Tool**, **Scrolling Text**, **Other Tools**
 
-Both the image tool to convert images into GIF's and the scrolling text tool are built in tools. In the "Other Tools" tab you can download additional tools. These are not included by default but once downloaded they are stored and available permanently on your controller unless you choose to delete them. In order to be able to download these tools your phone/pc requires internet access - but not your WLED controller. Once downloaded no internet access is needed, the tools will continue to work offline and even in AP mode.
+Both the image tool to convert images into GIFs and the scrolling text tool are built-in tools. In the "Other Tools" tab you can download additional tools. These are not included by default but once downloaded they are stored and available permanently on your controller unless you choose to delete them. In order to be able to download these tools your phone/PC requires internet access - but not your WLED controller. Once downloaded no internet access is needed, the tools will continue to work offline and even in AP mode.
 
 ---
 
@@ -37,7 +37,7 @@ Click the designated area to upload or drag&drop any image your browser supports
 
 #### Background Removal
 
-Use the slider "Dark Pixel Cutoff" to turn dark pixels transparent and color them in the selected background color. Images with transparend pixels like GIF and PNG are supported.
+Use the slider "Dark Pixel Cutoff" to turn dark pixels transparent and color them in the selected background color. Images with transparent pixels like GIF and PNG are supported.
 
 #### Save
 
@@ -69,7 +69,7 @@ The Scrolling Text tab lets you configure and preview and control the **Scrollin
 - Adjust local effect controls (speed, size, colour palette) in the panel below.
 
 !!! info "Preview Limitations"
-    The preview shows only a simulation and does not accurately represent what is shown on the LED matrix. If your text is very short, the preview still shows scrolling but on the actual LEDs it will show as a static, non scrolling text for example. If you need the text to scroll, make it longer by adding spaces.
+    The preview shows only a simulation and does not accurately represent what is shown on the LED matrix. If your text is very short, the preview still shows scrolling but on the actual LEDs it will show as a static, non-scrolling text for example. If you need the text to scroll, make it longer by adding spaces.
 
 See [Custom Fonts](/features/custom-fonts) for information on loading custom `.wbf` font files for use with the Scrolling Text effect.
 

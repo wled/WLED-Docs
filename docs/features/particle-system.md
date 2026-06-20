@@ -6,7 +6,7 @@ The Particle System is a physics-based effects engine built into WLED. It simula
 
 WLED includes both a **1D Particle System** (for strips) and a **2D Particle System** (for matrices). The code is highly optimized for speed so it can be used with well over a thousand particles at high frame rates.
 
-Since the animations are based on particle properties with some sprinkled in randomness for a more natural behaviour, all "PS" effects are random and undeterministic in nature: the visuals generated never repeat. If you want two segments with particle effects to look identical, use the "Copy Segment" effect.
+Since the animations are based on particle properties with some sprinkled in randomness for a more natural behaviour, all "PS" effects are random and non-deterministic in nature: the visuals generated never repeat. If you want two segments with particle effects to look identical, use the "Copy Segment" effect.
 
 ---
 
@@ -23,7 +23,7 @@ Each frame, the engine:
 ### Rendering
 
 Particles of size "0" are rendered to a single pixel. A size of "1" uses two/four pixels for smooth movement.
-Larger particles use quared-distance fall-off rendering: in 2D this means they render as shaded circles/ellipses.
+Larger particles use squared-distance fall-off rendering: in 2D this means they render as shaded circles/ellipses.
 
 The color of each particle is added on top of already rendered ones creating fluid animation - when using a diffuser to blur individual LEDs this creates very fluid and dynamic animations.
 
