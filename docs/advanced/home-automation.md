@@ -22,7 +22,7 @@ Please see [here](https://github.com/frustreermeneer/domoticz-wled-plugin)!
     
     We hope to resolve this issue as soon as possible. As a temporary workaround you can enable the option `Calculate CCT from RGB` in LED settings.
 
-WLED can be configured using the integrations in the Home Assistant frontend.
+WLED can be configured using the [WLED integration](https://www.home-assistant.io/integrations/wled/) in the Home Assistant frontend.
 
 Menu: **Configuration** -> **Integrations**.
 
@@ -34,6 +34,159 @@ Click on the `+` sign to add an integration and click on **WLED**. After complet
 integration will be available.
 
 [WLED integration documentation](https://www.home-assistant.io/integrations/wled/)
+
+### Workarounds for known HA integration limitations
+
+The native integration has known limitations documented in the [official HA WLED integration docs](https://www.home-assistant.io/integrations/wled/). Below are practical workarounds using WLED's REST API.
+
+#### Custom palettes not visible in HA
+
+Palettes uploaded as `palette0.json` through `palette9.json` do not appear in Home Assistant's palette selector—only built-in palettes are available.
+
+**Workaround:** Use a `rest_command` to set the palette by ID. Custom palettes are numbered backwards from 200: `palette0.json` = ID 200, `palette1.json` = ID 199, etc.
+
+```yaml
+rest_command:
+  wled_set_palette:
+    url: "http://{{ ip }}/json/state"
+    method: POST
+    content_type: application/json
+    payload: '{"seg":[{"id":0,"pal":{{ palette_id }}}]}'
+```
+
+Example automation:
+```yaml
+action: rest_command.wled_set_palette
+data:
+  ip: "192.168.1.100"
+  palette_id: 200  # palette0.json
+```
+
+
+#### AudioReactive usermod not controllable
+
+Home Assistant does not expose usermods (such as AudioReactive) as entities.
+
+**Workaround:** Use `rest_command` to enable/disable the AudioReactive usermod:
+
+```yaml
+rest_command:
+  wled_audioreactive_on:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: '{"AudioReactive":{"enabled":true}}'
+  wled_audioreactive_off:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: '{"AudioReactive":{"enabled":false}}'
+```
+
+#### Mixed RGB+CCT strips – only one color model active
+
+WLED strips with both RGB and CCT channels (e.g., WS2508) cannot control RGB and CCT independently. Home Assistant activates only one color model at a time.
+
+**Workaround:** In the WLED web UI, go to **LED Settings** and enable **Calculate CCT from RGB**. This makes WLED compute CCT values from RGB, allowing normal operation with Home Assistant.
+
+For CCT-only strips with White Balance Correction enabled, disable WBC or enable "Calculate CCT from RGB" to restore HA 2022.2+ compatibility.
+
+#### No master control for color/effect across all segments
+
+There is no single entity to control color, effect, and brightness across all segments simultaneously. Light groups send separate requests per segment, causing staggered transitions and latency.
+
+**Workaround:** Use **presets**. Create a preset in WLED with the desired configuration (effect, colors, parameters) applied to all segments. Then activate it from Home Assistant:
+
+```yaml
+action: select.select_option
+target:
+  entity_id: select.wled_preset
+data:
+  option: "All Segments – Rainbow"
+```
+
+A preset encapsulates the complete state (effect, palette, brightness, speed, colors for all segments), ensuring all segments are updated simultaneously in a single transaction.
+
+Alternatively, use a single REST API call to set all segments in one request:
+
+```yaml
+rest_command:
+  wled_all_segments_effect:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: >-
+      {"seg":[
+        {"id":0,"fx":{{ fx }},"pal":{{ pal }},"bri":{{ bri }}},
+        {"id":1,"fx":{{ fx }},"pal":{{ pal }},"bri":{{ bri }}}
+      ]}
+```
+
+Create a script for commonly used effects (adjust segment IDs to match your WLED config):
+
+```yaml
+script:
+  wled_rainbow_all:
+    sequence:
+      - action: rest_command.wled_all_segments_effect
+        data:
+          fx: 9       # Rainbow effect
+          pal: 11     # Rainbow palette
+          bri: 200
+```
+
+#### Secondary and tertiary effect colors cannot be set from HA
+
+Home Assistant's WLED integration exposes only the primary (foreground) color. Secondary (background) and tertiary colors used by many effects are inaccessible.
+
+**Workaround A – Use presets:**
+
+Configure the desired colors (primary, secondary, and tertiary) directly in the WLED web UI, save the configuration as a preset, then activate it from Home Assistant:
+
+```yaml
+action: select.select_option
+target:
+  entity_id: select.wled_preset
+data:
+  option: "Rainbow with Custom Colors"
+```
+
+This is the simplest approach and does not require parameterizing colors.
+
+**Workaround B – Set all colors via REST API:**
+
+If dynamic color control is needed, use the WLED REST API:
+
+```yaml
+rest_command:
+  wled_set_colors:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: >-
+      {"seg":[{"id":0,"col":[
+        [{{ r1 }},{{ g1 }},{{ b1 }}],
+        [{{ r2 }},{{ g2 }},{{ b2 }}],
+        [{{ r3 }},{{ g3 }},{{ b3 }}]
+      ]}]}
+```
+
+Field mapping: `col[0]` = primary (Fx), `col[1]` = secondary (Bg), `col[2]` = tertiary (Cs).
+
+Example call:
+```yaml
+action: rest_command.wled_set_colors
+data:
+  r1: 255
+  g1: 0
+  b1: 0
+  r2: 0
+  g2: 255
+  b2: 0
+  r3: 0
+  g3: 0
+  b3: 255
+```
 
 ### Using MQTT
 
