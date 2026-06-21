@@ -346,6 +346,19 @@ transition | Array of time each preset should transition to the next one, in ten
 repeat | How many times the entire playlist should cycle before finishing. Set to `0` for an indefinite cycle. Default to indefinite if not provided.
 end | Single preset ID to apply after the playlist finished. Has no effect when an indefinite cycle is set. If not provided, the light will stay on the last preset of the playlist.
 
+Sample playlist for an endless cycle of random effects with random colors and random palettes:
+
+```json
+{
+"9":{"playlist":{"ps":[12],"dur":[600],"transition":[30],"repeat":0,"end":0},"on":true,"n":"AllRandomPlaylist"},
+
+"12":{"bri":255,"mainseg":0,"on":true,"seg":[{"bri":255,"c1":128,"c2":128,"c3":16,"cct":127,"col":["r",[0,0,0],"r"],"frz":false,"fx":"r","grp":1,"id":0,"ix":128,"m12":1,"mi":false,"o1":false,"o2":false,"o3":false,"of":0,"on":true,"pal":"r","rev":false,"sel":true,"set":0,"si":0,"spc":0,"start":0,"stop":50,"sx":128,"fxdef":true}],"transition":7,"n":"random effect"}
+}
+```
+These numeric keys (`"9"` and `"12"`) are resource IDs — playlist ID 9 and preset ID 12 — stored in WLED's internal `presets.json` file.
+Use the UI to save a new preset, uncheck "Use current state" => textbox "API command" appears. Now copy/paste JSON into the API command textarea, then press "save". Activate the playlist preset.
+Alternatively, upload this payload to your device via the `/edit` page to persist both entries, then apply the saved playlist by POSTing `{"ps":9}` to `/json/state`.
+
 #### Light capabilities
 
 In order to e.g. only show color controls relevant to a given setup, it is necessary to obtain the color capabilities of the light.  
