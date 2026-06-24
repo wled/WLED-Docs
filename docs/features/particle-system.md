@@ -6,11 +6,11 @@ The Particle System is a physics-based effects engine built into WLED. It simula
 
 WLED includes both a **1D Particle System** (for strips) and a **2D Particle System** (for matrices). The code is highly optimized for speed so it can be used with well over a thousand particles at high frame rates.
 
-Since the animations are based on particle properties with some sprinkled in randomness for a more natural behaviour, all "PS" effects are random and non-deterministic in nature: the visuals generated never repeat. If you want two segments with particle effects to look identical, use the "Copy Segment" effect.
+Since the animations are based on particle properties with some sprinkled in randomness for a more natural behaviour, all "PS" effects are random and non-deterministic in nature: the visuals generated never repeat. If you want two segments with particle effects to look identical, use the [`Copy Segment`](/features/effects#other-new-effects) effect.
 
 ---
 
-## How it works
+## How It Works
 
 Each frame, the engine:
 
@@ -51,13 +51,13 @@ Available 2D particle effects include fire, fireworks, meteor, galaxy, waterfall
 
 ---
 
-## Memory usage
+## Memory Usage
 
 The Particle System allocates memory dynamically per segment based on the number of used particles which depends on the effect and segment size. On larger setups with many particles or multiple segments, PSRAM is recommended. The particle system will try its best to run if not enough RAM is available by reducing the particle count automatically - if even that fails the effect fails and falls back to "Solid".
 
 ---
 
-## Effect controls
+## Effect Controls
 
 Since particle effects are based on physics parameters they can be tuned a lot more than normal effects by using the effect sliders.
 Each effect uses different slider controls such as:
@@ -68,5 +68,5 @@ Each effect uses different slider controls such as:
 - Collision on/off
 - Wrap-around edges on/off
 
-The default slider settings were chosen such that the effect looks nice on many different setups but often can be optimized for a specific situation. A description of what each slider/checkmark does for each effect is described [here](/features/effects).
+The default slider settings were chosen such that the effect looks nice on many different setups but often can be optimized for a specific situation. A description of what each slider/checkmark does for each effect is described in the [WLED effects list](/features/effects).
 
