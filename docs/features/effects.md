@@ -21,7 +21,7 @@ PS DripDrop, PS Pinball, PS Dancing Shadows, PS Fireworks 1D, PS Sparkler, PS Ho
 PS Fire, PS Waterfall, PS Vortex, PS Fireworks, PS Volcano, PS Ballpit, PS Box, PS Fuzzy Noise, PS Impact, PS Attractor, PS Spray, PS GEQ Nova, PS Ghost Rider, PS Blobs, PS Galaxy, PS GEQ 2D
 
 **Other new effects:**
-PacMan, Shimmer, Color Clouds, Image, Slow Transitions, Copy Segment
+PacMan, Shimmer, Color Clouds, Image, Slow Transition, Copy Segment
 
 **user_fx usermod effects** (requires `user_fx` usermod build):
 Diffusion Fire, Spinning Wheel, Lava Lamp, Magma, Ants, Morse Code, PS Comet
