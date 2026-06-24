@@ -7,6 +7,9 @@ hide:
 
 The Pixel Art Converter tool aims to make it easier to show pixel art on a LED matrix panel, by converting any image to 2D pixel art and sending it to the WLED device. The file types PNG, JPG, WEBP and GIF have been tested to work with the tool.
 
+!!! tip "Deprecated since WLED 16.0"
+    The more versatile [PixelForge Tool](/features/pixelforge) is recommended. Pixel Art Converter is deprecated as of v16.0.
+
 ## Installation Approaches
 
 There are three ways to install the pixel art converter:
@@ -21,9 +24,8 @@ There are three ways to install the pixel art converter:
 2. Open `pixartmin.htm` in a browser
 3. Head over to the [Setup 2D Matrix](#setup-2d-matrix) point
 
-
-
 ### Approach 2: Include Pixart Converter In Build Files
+
 !!! warning "Compilation required"
     Compiling WLED from the source code is required. Follow the instructions on [compiling WLED](../../advanced/compiling-wled) to do this.
 
@@ -44,6 +46,7 @@ There are three ways to install the pixel art converter:
 5. Now head to the [Setup 2D Matrix](#setup-2d-matrix) point
 
 ## Setup 2D Matrix
+
 2D LED panels are natively supported by WLED but need some configuration for the software to show the 2D grid correctly.
 
 1. Head into the `2D Configuration` settings menu in WLED
@@ -54,6 +57,7 @@ There are three ways to install the pixel art converter:
     Setting the serpentine LED panel option incorrectly can lead to very confusing results that look almost correct but not quite. Enabling or Disabling the option depends on the characteristics of the 2D matrix
 
 ## Usage
+
 The Pixel Art Generator does not yet have a link in the WLED front-end, therefore head over to the web page: `http://[device_ip_address]/pixart.htm` (default DHCP IP-address [link](http://4.3.2.1/pixart.htm)).
 
 On the web page:

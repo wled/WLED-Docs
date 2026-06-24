@@ -6,8 +6,25 @@ hide:
 ---
 
 !!! info "Version Info"
-    Effects above 117 are only available 0.14+ or Sound Reactive forks.<br />
+    Effects above 117 are only available 0.14+ or Sound Reactive forks.  
+    v16.0 adds 36 new effects — see [Effects available since 16.0](#effects-available-since-160) below.  
     [Retired Effects](#retired-effects) - Can't find an old favorite? Look here.
+
+## New in v16.0
+
+v16.0 adds **36 new effects** across 1D, 2D, and the Particle System:
+
+**1D Particle System effects** (requires [Particle System](/features/particle-system)):
+PS DripDrop, PS Pinball, PS Dancing Shadows, PS Fireworks 1D, PS Sparkler, PS Hourglass, PS Spray 1D, PS 1D Balance, PS Chase, PS Starburst, PS GEQ 1D, PS Fire 1D, PS Sonic Stream, PS Sonic Boom, PS Spring
+
+**2D Particle System effects** (requires a 2D segment):
+PS Fire, PS Waterfall, PS Vortex, PS Fireworks, PS Volcano, PS Ballpit, PS Box, PS Fuzzy Noise, PS Impact, PS Attractor, PS Spray, PS GEQ Nova, PS Ghost Rider, PS Blobs, PS Galaxy, PS GEQ 2D
+
+**Other new effects:**
+PacMan, Shimmer, Color Clouds, Image, Slow Transition, Copy Segment
+
+**user_fx usermod effects** (requires `user_fx` usermod build):
+Diffusion Fire, Spinning Wheel, Lava Lamp, Magma, Ants, Morse Code, PS Comet
 
 ## Effect Overlay
 Since 16.0 true segment & effect overlay is supported.
@@ -49,7 +66,7 @@ For 2D effects the background (secondary) color is set to black.
 ## Effects
 
 |  ID | Effect              | Description                                                                                                                                                                                                                                                            | Flags | Colors                                  | Parameters                                                                      |
-|----:|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|-----------------------------------------|-------------------------------------------------------------------------------|
+|:----|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|-----------------------------------------|-------------------------------------------------------------------------------|
 | 186 | Akemi               | The WLED mascot rocking to your tunes. <br /> ![](https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/FX_186.gif)                                                                                                                                    | ▦ ♫   | Head palette, Arms & Legs, Eyes & Mouth | Color speed, Dance                                                            |
 |  27 | Android             | Section of varying length running <br /> ![](https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/FX_027.gif)                                                                                                                                         | ⋮     | 🎨 Fx, Bg                               | Speed, Width                                                                  |
 |  38 | Aurora              | Simulation of the Aurora Borealis <br /> ![](https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/FX_038.gif)                                                                                                                                         | ⋮     | 🎨 1, 2, 3                              | Speed, Intensity                                                              |
@@ -230,10 +247,18 @@ For 2D effects the background (secondary) color is set to black.
 |   4 | Wipe Random         | Same as Wipe, but uses random colors <br /> ![](https://raw.githubusercontent.com/scottrbailey/WLED-Utils/master/gifs/FX_004.gif)                                                                                                                                      | ⋮     | 🎨                                      | Speed                                                                         |
 
 ### Effects available since 16.0
-All new effects support palettes except pacman. Effects with the prefix "PS" use the particle system.
+All new effects support palettes except pacman and image. Effects with the prefix "PS" use the particle system.
+
+!!! info "Image Effect"
+    * You can only have _one_ segment playing this effect
+    * Segment name must be set to the file name (like "anim1.gif") on the esp32 filesystem.
+    * Animated GIFs are _mostly_ supported natively by WLED i.e. even through a direct upload of the GIF using the file editor. 
+    * If you experience issues, convert the GIF with the [PixelForge Image Tool](/features/pixelforge#image-tool).
+    * Effect is **not available on ESP8266** due to limited RAM
 
 | ID | Effect | Description | Flags | Colors | Parameters |
-|---:|:---|:---|:---:|:---:|:---|
+|:---|:---|:---|:---:|:---:|:---|
+| 53 | **Image** | Animated GIF Image. <br /> ![Comets GIF preview](../assets/images/content/effect_gifs/FX_53_comets64.gif) |  ⋮ ▦ | - | **Segment Name**:Image File Name (filename.gif) <br> **Speed:** Animation speed <br> **Blur:** Image blur <br> example image is from [marcmerlin/AnimatedGIFs](https://github.com/marcmerlin/AnimatedGIFs/blob/master/data64_2MB/gifs64/284_comets.gif)|
 | 187 | **PS Volcano** | Erupting volcano. <br /> ![](../assets/images/content/effect_gifs/FX_187.gif) | ▦ | 🎨 | **Speed:** Particle speed <br> **Intensity:** Particles emitted <br> **Move:** Movement velocity <br> **Bounce:** Collision hardness <br> **Spread:** Emitter variation <br> **AgeColor:** Color by particle age <br> **Walls:** Enable side boundaries <br> **Collide:** Enable particle-particle collisions |
 | 188 | **PS Fire** | Versatile and quite realistic fire effect. <br /> ![](../assets/images/content/effect_gifs/FX_188.gif) | ▦ | 🎨 | **Speed:** Flame speed <br> **Intensity:** Heat intensity <br> **Flame height:** Vertical reach <br> **Wind:** Wind speed <br> **Spread:** Fire width <br> **Smooth:** Enable Smoothing/Blurring <br> **Cylinder:** Wrap left & right <br> **Turbulence:** Add turbulence |
 | 189 | **PS Fireworks** | Rockets shooting up and exploding in various ways and colors. <br /> ![](../assets/images/content/effect_gifs/FX_189.gif) | ▦ | 🎨 | **Launches:** Rocket launch frequency <br> **Explosion Size:** size of explosion <br> **Fuse:** Detonation timer <br> **Blur:** Trail softness <br> **Gravity:** Pull force <br> **Cylinder:** Wrap left & right <br> **Ground:** Enable floor <br> **Fast:** Doubles speed |

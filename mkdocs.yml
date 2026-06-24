@@ -98,8 +98,12 @@ nav:
     - Multi-strip Support: features/multi-strip.md
     - Relay Control: features/relay-control.md
     - Web GUI Sitemap: features/subpages.md
+    - Pin Info: features/pin-info.md
     - White handling: features/cct.md
     - Pixel Art Converter: features/pixel-art-converter.md
+    - PixelForge (Image & GIF Tool): features/pixelforge.md
+    - Custom Fonts: features/custom-fonts.md
+    - Particle System: features/particle-system.md
     - Ethernet (LAN) compatibility: features/ethernet-lan.md
   - Interfaces: 
     - Blynk: interfaces/blynk.md
@@ -116,6 +120,7 @@ nav:
     - UDP Realtime / tpm2.net: interfaces/udp-realtime.md
     - Websocket: interfaces/websocket.md
     - DDP Realtime: interfaces/ddp.md
+    - ESPNow Remotes: interfaces/espnow.md
   - Advanced:
     - Audio Reactive WLED: advanced/audio-reactive.md
     - Home Automation: advanced/home-automation.md
@@ -128,6 +133,7 @@ nav:
     - Custom Features: advanced/custom-features.md
     - Community Usermods: advanced/community-usermods.md
     - ESP32 Recovery: advanced/esp32-recovery.md
+    - Boot-loop Detection & Recovery: advanced/bootloop-recovery.md
     - HUB75: advanced/HUB75.md
     - Mapping: advanced/mapping.md
     - Mixed 2D and 1D Bus: advanced/2d-1d-Mixed-Setup.md

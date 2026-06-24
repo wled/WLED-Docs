@@ -6,7 +6,7 @@ hide:
 ---
 
 !!! info "Version Info"
-    Beginning in 0.14 up to 10 [Custom Palettes](#custom-palettes) can be uploaded.
+    Beginning in 0.14 up to 10 [Custom Palettes](#custom-palettes) can be uploaded. Starting in v16.0, over 100 custom palettes are supported, a new palette editor is built into the UI, and over 800 additional palettes from the cpt-city collection are available.
 
 
 
@@ -88,11 +88,15 @@ hide:
 
 ### Custom Palettes
 
-As of 0.14, up to 10 custom palettes can be uploaded by the user in JSON files named `palette0.json` through `palette9.json`
-The format closely resembles that of the palettes defined in `palettes.h` with a position (0-255), red, green, blue for each color. An example of the content would be:
-```
-{"palette":[ 
-    0, 255,  33,   4, 
+As of v0.14, up to 10 custom palettes can be uploaded in JSON files. Starting in **v16.0**, over **100 custom palettes** are supported but the palette numbering scheme has changed: custom palettes start at the number 200 downwards so you need to re-save your presets - palettes 255-201 are reserved for usermod palettes like Audio Reactive.
+
+**v16.0** also introduces an improved **Palette Editor** (accessible from the palette icon below the color picker in the UI) to create and edit custom palettes directly in the UI. The editor lets you add colour stops, adjust positions - and can show what your work looks like on the LEDs in real time.
+
+Custom palettes can also be uploaded by placing JSON files named `palette0.json` through `palette9.json` on the device via the file editor. The format closely resembles that of the palettes defined in `palettes.h` with a gradient position (0–255), red, green, blue for each colour stop. An example:
+
+```json
+{"palette":[
+    0, 255,  33,   4,
    43, 255,  68,  25,
    86, 255,   7,  25,
   127, 255,  82, 103,
@@ -101,6 +105,8 @@ The format closely resembles that of the palettes defined in `palettes.h` with a
   255,  87, 255, 65]}
 ```
 
-Once a palette[0-9].json file has been created, it can be uploaded to the controller using the `/edit` page (http://[controller-ip]/edit).
-The controller must be rebooted (`/win&RB`) before the newly uploaded palettes will be available. 
-After reboot, the custom palette(s) will be named `~ Custom [0-9] ~` in the Palettes section of the user interface. 
+Once a palette file has been created, it can be uploaded to the controller using the `/edit` page (`http://[controller-ip]/edit`). Since version 16.0 the editor is accessible through the file icon below the color picker.
+
+## Additional Palettes (v16.0+)
+
+v16.0 includes over **800 palettes** that were hand-picked from the [cpt-city](https://phillips.shef.ac.uk/pub/cpt-city/) collection. They are available directly in the palette editor.

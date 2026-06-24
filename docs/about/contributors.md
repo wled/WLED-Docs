@@ -10,7 +10,7 @@ This page is to honor the work of all the people who helped to make WLED what it
 ### Direct Contributors to WLED code
 
 Everyone you see on the Contributors page and:  
-8bitbrett made the WiFi auto connect QR code with the Aircoookie/WLED logo!  
+8bitbrett made the WiFi auto connect QR code with the wled/WLED logo!  
 adamo made the animated Discord server logo!  
 [@blazoncek](https://github.com/blazoncek) makes countless new features and improvements to many parts of WLED!  
 [@debsahu](https://github.com/debsahu) provided the HomeAssistant autodiscovery and a lot of help with PIO!  
