@@ -253,7 +253,7 @@ All new effects support palettes except pacman and image. Effects with the prefi
     * You can only have _one_ segment playing this effect
     * Segment name must be set to the file name (like "anim1.gif") on the esp32 filesystem.
     * Animated GIFs are _mostly_ supported natively by WLED i.e. even through a direct upload of the GIF using the file editor. 
-    * If you experience any issues you can convert the GIF using the [PixelForge Image Tool](pixelforge/image-tool).
+    * If you experience issues, convert the GIF with the [PixelForge Image Tool](/features/pixelforge#image-tool).
     * Effect is **not available on ESP8266** due to limited RAM
 
 | ID | Effect | Description | Flags | Colors | Parameters |
