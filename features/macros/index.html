@@ -1202,21 +1202,27 @@
   <a href="#analog-button" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Analog button
+        Analog Button
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analog Button">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-brightness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Brightness
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#global-brightness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Global brightness
-      
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -1409,6 +1415,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../pin-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cct/" class="md-nav__link">
         
   
@@ -1445,6 +1479,90 @@
     
   
     Pixel Art Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pixelforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixelForge (Image & GIF Tool)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particle-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle System
   
 
     
@@ -1935,6 +2053,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/espnow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESPNow Remotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2307,6 +2453,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../advanced/HUB75/" class="md-nav__link">
         
   
@@ -2656,21 +2830,27 @@
   <a href="#analog-button" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Analog button
+        Analog Button
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analog Button">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-brightness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Brightness
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#global-brightness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Global brightness
-      
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -2734,7 +2914,8 @@ The "FX=~" macro steps through the effects (in this case short press).</p>
 Long-pressing for more than 6 seconds will open the WLED-AP with the default password (<code>wled1234</code>).<br />
 For further buttons, the default action for short press is cycling effects, long press ramp brightness, and double press cycle palettes.</p>
 <h2 id="buttons">Buttons</h2>
-<p>Multiple buttons are implemented since 0.13 and allow a few different types of buttons to be connected to the ESP:</p>
+<p>Multiple buttons are implemented since 0.13. Starting in v16.0, up to <strong>32 buttons</strong> can be configured without any custom compilation — use the LED Settings page to add as many as you need.</p>
+<p>The following button types are supported:</p>
 <ul>
 <li>momentary push-buttons that are normally open and short GPIO pin to ground (active low)</li>
 <li>momentary push-buttons that are normally closed and release the connection from GPIO pin to GND (inverted, active high)</li>
@@ -2750,7 +2931,7 @@ Momentary push-buttons by default trigger shortly after the <em>release</em> of 
 <p>Selecting 0 for preset will use the <em>default</em> action. If you find that the default action is <em>inverted</em> for switch, please create presets for On and Off actions and assign them appropriately.</p>
 <p>For assigning <a href="/features/presets">Presets</a> to buttons use <em>Time &amp; Macros</em> settings page.</p>
 <p>Note: Button 0 has two, built-in functions. 1. Hold it down for &gt;6 seconds and the Wi-Fi settings will be reset to default. 2. Hold it down for &gt;12 seconds and flash memory is erased.</p>
-<h3 id="analog-button">Analog button</h3>
+<h3 id="analog-button">Analog Button</h3>
 <p>Starting in WLED 0.13, analog "buttons" (e.g. a potentiometer) are supported.
 With the Short and Long columns set to 0, set the Double column in Button Actions to one of these values to configure:</p>
 <table>
@@ -2793,7 +2974,7 @@ With the Short and Long columns set to 0, set the Double column in Button Action
 <p>On ESP8266, you can only have a single analog button on pin A0, the pin set in the settings UI is ignored.<br />
 On ESP32, only ADC1 pins will work for analog input while WiFi is active (pins 32-39). ADC2 pins will not work.</p>
 </div>
-<h3 id="global-brightness">Global brightness</h3>
+<h4 id="global-brightness">Global Brightness</h4>
 <p>Users planning to use a potentiometer for global brightness should be aware that wled is configured to turn off when the potentiometer is adjusted to either extreme - both maximum and minimum adjustments. Users who desire to disable this functionality may do so on the hardware side by adding resistors between the potentiometer and the rails.</p>
 <p>Adding a resistor between the potentiometer and 3.3V prevents A0 from fully reaching 3.3V and allows the potentiometer to be adjusted to the maximum adjustment without powering off wled. A value of 7.5%-10% of the potentiometer value should be sufficient for this (~750Ω for a 10KΩ potentiometer). Similarly, added resistance between the potentiometer and GND prevents A0 from reaching 0V, and allows the potentiometer to be adjusted to the minimum adjustment without powering off wled. A value of 3-5% of the potentiometer value should be sufficient (~500Ω for a 10KΩ potentiomenter).</p>
 <p>In both instances, the added resistances will slightly reduce the overall adjustment range, with a larger reduction for larger resistor choices. As such, A user who desires the maximum possible adjustment range should determine their needed resistance values experimentally by installing the potentiometer, adjusting for stable behavior at the desired extrema, measuring the voltage on A0, using the voltage divider equation to determine the optimal resistance, then retesting for confirmation.</p>

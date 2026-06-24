@@ -1322,6 +1322,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../features/pin-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../features/cct/" class="md-nav__link">
         
   
@@ -1358,6 +1386,90 @@
     
   
     Pixel Art Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pixelforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixelForge (Image & GIF Tool)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/custom-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/particle-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle System
   
 
     
@@ -2173,6 +2285,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../espnow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESPNow Remotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2525,6 +2665,34 @@
     
   
     ESP32 Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
   
 
     
@@ -3486,9 +3654,12 @@ Example: <code>{"on":true,"bri":255}</code> sets the brightness to maximum. <cod
 </tbody>
 </table>
 <h4 id="contents-of-the-segment-object">Contents of the segment object</h4>
-<p><strong>Notice:</strong> <em>start</em>, <em>stop</em>, and <em>len</em> are not changeable in  0.8.4. Any segment with <em>id</em> &gt; 0 is ignored.
-Unless stated otherwise, every value may be changed via an HTTP POST request.
+<div class="admonition info">
+<p class="admonition-title">Legacy limitation (v0.8.4)</p>
+<p><em>start</em>, <em>stop</em>, and <em>len</em> are not changeable in v0.8.4. Any segment with <em>id</em> &gt; 0 is ignored.<br />
+Unless stated otherwise, every value may be changed via an HTTP POST request.<br />
 The tertiary color is not gamma-corrected in 0.8.4, but is in subsequent releases.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -3546,7 +3717,7 @@ The tertiary color is not gamma-corrected in 0.8.4, but is in subsequent release
 <tr>
 <td>col</td>
 <td>array of colors</td>
-<td>Array that has up to 3 color arrays as elements, the primary, secondary (background) and tertiary colors of the segment. Each color is an array of 3 or 4 bytes, which represents a RGB(W) color, i.e. <code>[[255,170,0],[0,0,0],[64,64,64]]</code>. It can also be represented as an array of strings of <em>hex</em> values, i.e. <code>["FFAA00","000000","404040"]</code> for orange, black and grey. One or more colors can be set randomly with <code>"r"</code>, i.e. <code>["r",[0,0,0],"r"]</code>. <em>(random will soon be available in 16.0.0)</em></td>
+<td>Array that has up to 3 color arrays as elements, the primary, secondary (background) and tertiary colors of the segment. Each color is an array of 3 or 4 bytes, which represents an RGB(W) color, i.e. <code>[[255,170,0],[0,0,0],[64,64,64]]</code>. It can also be represented as an array of strings of <em>hex</em> values, i.e. <code>["FFAA00","000000","404040"]</code> for orange, black and grey. One or more colors can be set randomly with <code>"r"</code>, i.e. <code>["r",[0,0,0],"r"]</code>. <em>(random available since 16.0.0)</em></td>
 </tr>
 <tr>
 <td>fx</td>
@@ -3925,6 +4096,26 @@ The tertiary color is not gamma-corrected in 0.8.4, but is in subsequent release
 <td>ip</td>
 <td>string</td>
 <td>The IP address of this instance. Empty string if not connected. (since 0.13.0)</td>
+</tr>
+<tr>
+<td>device_id</td>
+<td>string</td>
+<td>A unique identifier for the device, derived from the hardware MAC address. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>psram</td>
+<td>uint32</td>
+<td>Total PSRAM size in bytes. <code>0</code> if no PSRAM is present or detected. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>psram_free</td>
+<td>uint32</td>
+<td>Estimate of currently free PSRAM in bytes. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>repo</td>
+<td>string</td>
+<td>URL of the source code repository for this firmware build. <em>(available since 16.0.0)</em></td>
 </tr>
 </tbody>
 </table>

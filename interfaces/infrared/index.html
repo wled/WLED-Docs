@@ -1322,6 +1322,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../features/pin-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../features/cct/" class="md-nav__link">
         
   
@@ -1358,6 +1386,90 @@
     
   
     Pixel Art Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pixelforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixelForge (Image & GIF Tool)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/custom-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/particle-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle System
   
 
     
@@ -1667,7 +1779,7 @@
   <a href="#supported-ir-remotes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported IR remotes
+        Supported IR Remotes
       
     </span>
   </a>
@@ -1678,7 +1790,7 @@
   <a href="#esp-now-based-remote-control" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ESP-NOW based remote control
+        ESP-NOW Based Remote Control
       
     </span>
   </a>
@@ -1905,6 +2017,34 @@
     
   
     DDP Realtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../espnow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESPNow Remotes
   
 
     
@@ -2290,6 +2430,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../advanced/HUB75/" class="md-nav__link">
         
   
@@ -2627,7 +2795,7 @@
   <a href="#supported-ir-remotes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported IR remotes
+        Supported IR Remotes
       
     </span>
   </a>
@@ -2638,7 +2806,7 @@
   <a href="#esp-now-based-remote-control" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ESP-NOW based remote control
+        ESP-NOW Based Remote Control
       
     </span>
   </a>
@@ -2682,7 +2850,7 @@
 <p class="admonition-title">Warning</p>
 <p>IR receiving will not work on ESP8266 if you use any LED pin other than GPIO 1, 2, or 3 for <em>digital</em> LED strips.</p>
 </div>
-<h3 id="supported-ir-remotes">Supported IR remotes</h3>
+<h2 id="supported-ir-remotes">Supported IR Remotes</h2>
 <p>To use IR remote go to <code>Settings</code>, <code>LED Preferences</code> and change the value for <code>Infrared receiver type</code> according to the IR remote type of the following list:</p>
 <ol>
 <li>white 24-key IR remote with R,G,B + 12 color-tones  </li>
@@ -2693,8 +2861,8 @@
 <li>black 6-key IR remote with CH up/down + Vol up/down  </li>
 <li><a href="../json-ir/json_infrared/">JSON IR remote</a> - Easily configure and use any IR remote.  </li>
 </ol>
-<h2 id="esp-now-based-remote-control">ESP-NOW based remote control</h2>
-<p>Since version WLED 14.0-beta3: An ESP-NOW compatible remote control is supported. An example of this is the „WIZmote“ remote control. This is based on an ESP microcontroller. You can also <a href="https://github.com/DedeHai/WLED-ESPNow-Remote">build your own ESP-NOW remote</a> using an ESP32 C3. ESP-NOW can be activated in WLED settings. You have to enter the Hardware MAC address of the remote control. This is determined by clicking on any button on the remote control and copying the last received MAC address from the "Last Seen" field to the "Hardware MAC" field in WLED ESP-NOW settings (“Config-&gt;WiFi Setup”) and saving it with "Save". Advantages: no special receiver needs to be attached to the WLED controller and the signals are transmitted via radio network. Therefore there is no line of sight between the remote control and the WLED controller required, as is the case with an IR remote control.
+<h2 id="esp-now-based-remote-control">ESP-NOW Based Remote Control</h2>
+<p>Since version WLED 0.14.0-beta3: An ESP-NOW compatible remote control is supported. An example of this is the „WIZmote“ remote control. This is based on an ESP microcontroller. You can also <a href="https://github.com/DedeHai/WLED-ESPNow-Remote">build your own ESP-NOW remote</a> using an ESP32 C3. ESP-NOW can be activated in WLED settings. You have to enter the Hardware MAC address of the remote control. This is determined by clicking on any button on the remote control and copying the last received MAC address from the "Last Seen" field to the "Hardware MAC" field in WLED ESP-NOW settings (“Config-&gt;WiFi Setup”) and saving it with "Save". Advantages: no special receiver needs to be attached to the WLED controller and the signals are transmitted via radio network. Therefore there is no line of sight between the remote control and the WLED controller required, as is the case with an IR remote control.
 <img alt="ESP-NOW remote control" src="../../assets/images/content/pic14.jpg" />
 The 4 buttons "1"-"4" of the WIZmote remote control are linked to presets 1 to 4. The meaning of other keys is self-explanatory. Attention: WIZmote needs two good quality AAA batteries to work properly. If the batteries are too weak, the correct signal will not be sent, even if the blue LED on the remote control lights up briefly, actually indicating signal transmission.</p>
 

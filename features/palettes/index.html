@@ -1169,6 +1169,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-palettes-v160" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Palettes (v16.0+)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1381,6 +1392,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../pin-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cct/" class="md-nav__link">
         
   
@@ -1417,6 +1456,90 @@
     
   
     Pixel Art Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pixelforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixelForge (Image & GIF Tool)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particle-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle System
   
 
     
@@ -1907,6 +2030,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/espnow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESPNow Remotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2279,6 +2430,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../advanced/HUB75/" class="md-nav__link">
         
   
@@ -2623,6 +2802,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-palettes-v160" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Palettes (v16.0+)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2652,7 +2842,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">Version Info</p>
-<p>Beginning in 0.14 up to 10 <a href="#custom-palettes">Custom Palettes</a> can be uploaded.</p>
+<p>Beginning in 0.14 up to 10 <a href="#custom-palettes">Custom Palettes</a> can be uploaded. Starting in v16.0, over 100 custom palettes are supported, a new palette editor is built into the UI, and over 800 additional palettes from the cpt-city collection are available.</p>
 </div>
 <table>
 <thead>
@@ -3021,20 +3211,21 @@
 </tbody>
 </table>
 <h3 id="custom-palettes">Custom Palettes</h3>
-<p>As of 0.14, up to 10 custom palettes can be uploaded by the user in JSON files named <code>palette0.json</code> through <code>palette9.json</code>
-The format closely resembles that of the palettes defined in <code>palettes.h</code> with a position (0-255), red, green, blue for each color. An example of the content would be:
-<div class="highlight"><pre><span></span><code>{&quot;palette&quot;:[ 
-    0, 255,  33,   4, 
-   43, 255,  68,  25,
-   86, 255,   7,  25,
-  127, 255,  82, 103,
-  170, 255, 255, 242,
-  209,  42, 255, 22,
-  255,  87, 255, 65]}
-</code></pre></div></p>
-<p>Once a palette[0-9].json file has been created, it can be uploaded to the controller using the <code>/edit</code> page (http://[controller-ip]/edit).
-The controller must be rebooted (<code>/win&amp;RB</code>) before the newly uploaded palettes will be available. 
-After reboot, the custom palette(s) will be named <code>~ Custom [0-9] ~</code> in the Palettes section of the user interface. </p>
+<p>As of v0.14, up to 10 custom palettes can be uploaded in JSON files. Starting in <strong>v16.0</strong>, over <strong>100 custom palettes</strong> are supported but the palette numbering scheme has changed: custom palettes start at the number 200 downwards so you need to re-save your presets - palettes 255-201 are reserved for usermod palettes like Audio Reactive.</p>
+<p><strong>v16.0</strong> also introduces an improved <strong>Palette Editor</strong> (accessible from the palette icon below the color picker in the UI) to create and edit custom palettes directly in the UI. The editor lets you add colour stops, adjust positions - and can show what your work looks like on the LEDs in real time.</p>
+<p>Custom palettes can also be uploaded by placing JSON files named <code>palette0.json</code> through <code>palette9.json</code> on the device via the file editor. The format closely resembles that of the palettes defined in <code>palettes.h</code> with a gradient position (0–255), red, green, blue for each colour stop. An example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;palette&quot;</span><span class="p">:[</span>
+<span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w">   </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">   </span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w">  </span><span class="mi">68</span><span class="p">,</span><span class="w">  </span><span class="mi">25</span><span class="p">,</span>
+<span class="w">   </span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w">   </span><span class="mi">7</span><span class="p">,</span><span class="w">  </span><span class="mi">25</span><span class="p">,</span>
+<span class="w">  </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w">  </span><span class="mi">82</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span>
+<span class="w">  </span><span class="mi">170</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span>
+<span class="w">  </span><span class="mi">209</span><span class="p">,</span><span class="w">  </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span>
+<span class="w">  </span><span class="mi">255</span><span class="p">,</span><span class="w">  </span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">65</span><span class="p">]}</span>
+</code></pre></div>
+<p>Once a palette file has been created, it can be uploaded to the controller using the <code>/edit</code> page (<code>http://[controller-ip]/edit</code>). Since version 16.0 the editor is accessible through the file icon below the color picker.</p>
+<h2 id="additional-palettes-v160">Additional Palettes (v16.0+)</h2>
+<p>v16.0 includes over <strong>800 palettes</strong> that were hand-picked from the <a href="https://phillips.shef.ac.uk/pub/cpt-city/">cpt-city</a> collection. They are available directly in the palette editor.</p>
 
 
 

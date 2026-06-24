@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../esp32-recovery/">
       
       
-        <link rel="next" href="../wiring-guides/">
+        <link rel="next" href="../HUB75/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Getting Started - WLED Project</title>
+        <title>Boot-loop Detection & Recovery - WLED Project</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-the-wled-wiki" class="md-skip">
+        <a href="#what-counts-as-a-boot-loop" class="md-skip">
           Skip to content
         </a>
       
@@ -139,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Boot-loop Detection & Recovery
             
           </span>
         </div>
@@ -267,8 +267,6 @@
   
   
   
-    
-  
   
     
     
@@ -276,13 +274,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../basics/getting-started/" class="md-tabs__link">
           
   
   
@@ -341,11 +337,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../advanced/audio-reactive/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../audio-reactive/" class="md-tabs__link">
           
   
   
@@ -452,29 +450,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -492,7 +485,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -507,8 +500,6 @@
                 
   
   
-    
-  
   
   
     
@@ -519,11 +510,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -544,7 +535,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -559,35 +550,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Start
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../basics/getting-started/" class="md-nav__link">
         
   
   
@@ -603,85 +569,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#welcome-to-the-wled-wiki" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Welcome to the WLED Wiki!
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Welcome to the WLED Wiki!">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#quick-start-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick start guide
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wifi-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wifi Setup
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-gpio-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default GPIO Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software-update-procedure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Software update procedure
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -694,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wiring-guides/" class="md-nav__link">
+      <a href="../../basics/wiring-guides/" class="md-nav__link">
         
   
   
@@ -730,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../top5_mistakes/" class="md-nav__link">
+      <a href="../../basics/top5_mistakes/" class="md-nav__link">
         
   
   
@@ -808,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compatible-led-strips/" class="md-nav__link">
+      <a href="../../basics/compatible-led-strips/" class="md-nav__link">
         
   
   
@@ -836,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compatible-controllers/" class="md-nav__link">
+      <a href="../../basics/compatible-controllers/" class="md-nav__link">
         
   
   
@@ -864,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compatible-hardware/" class="md-nav__link">
+      <a href="../../basics/compatible-hardware/" class="md-nav__link">
         
   
   
@@ -892,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compatible-software/" class="md-nav__link">
+      <a href="../../basics/compatible-software/" class="md-nav__link">
         
   
   
@@ -978,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install-binary/" class="md-nav__link">
+      <a href="../../basics/install-binary/" class="md-nav__link">
         
   
   
@@ -1006,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install-gui/" class="md-nav__link">
+      <a href="../../basics/install-gui/" class="md-nav__link">
         
   
   
@@ -1034,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/compiling-wled/" class="md-nav__link">
+      <a href="../compiling-wled/" class="md-nav__link">
         
   
   
@@ -1070,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/" class="md-nav__link">
+      <a href="../../basics/tutorials/" class="md-nav__link">
         
   
   
@@ -1098,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../../basics/faq/" class="md-nav__link">
         
   
   
@@ -2112,24 +1999,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -2147,7 +2039,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2165,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/audio-reactive/" class="md-nav__link">
+      <a href="../audio-reactive/" class="md-nav__link">
         
   
   
@@ -2193,7 +2085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/home-automation/" class="md-nav__link">
+      <a href="../home-automation/" class="md-nav__link">
         
   
   
@@ -2221,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/remote-access-ifttt/" class="md-nav__link">
+      <a href="../remote-access-ifttt/" class="md-nav__link">
         
   
   
@@ -2249,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/ota-lock/" class="md-nav__link">
+      <a href="../ota-lock/" class="md-nav__link">
         
   
   
@@ -2277,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/access-over-internet/" class="md-nav__link">
+      <a href="../access-over-internet/" class="md-nav__link">
         
   
   
@@ -2305,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/wiring/" class="md-nav__link">
+      <a href="../wiring/" class="md-nav__link">
         
   
   
@@ -2333,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/longdata/" class="md-nav__link">
+      <a href="../longdata/" class="md-nav__link">
         
   
   
@@ -2361,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/compiling-wled/" class="md-nav__link">
+      <a href="../compiling-wled/" class="md-nav__link">
         
   
   
@@ -2389,7 +2281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/custom-features/" class="md-nav__link">
+      <a href="../custom-features/" class="md-nav__link">
         
   
   
@@ -2417,7 +2309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/community-usermods/" class="md-nav__link">
+      <a href="../community-usermods/" class="md-nav__link">
         
   
   
@@ -2445,7 +2337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/esp32-recovery/" class="md-nav__link">
+      <a href="../esp32-recovery/" class="md-nav__link">
         
   
   
@@ -2470,10 +2362,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2489,6 +2406,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-counts-as-a-boot-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Counts as a Boot-loop?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovery-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Sequence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-state-is-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the State Is Stored
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-this-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where This Runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2501,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/HUB75/" class="md-nav__link">
+      <a href="../HUB75/" class="md-nav__link">
         
   
   
@@ -2529,7 +2519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mapping/" class="md-nav__link">
+      <a href="../mapping/" class="md-nav__link">
         
   
   
@@ -2557,7 +2547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/2d-1d-Mixed-Setup/" class="md-nav__link">
+      <a href="../2d-1d-Mixed-Setup/" class="md-nav__link">
         
   
   
@@ -2585,7 +2575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/ddp/" class="md-nav__link">
+      <a href="../ddp/" class="md-nav__link">
         
   
   
@@ -2613,7 +2603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/custom-ap/" class="md-nav__link">
+      <a href="../custom-ap/" class="md-nav__link">
         
   
   
@@ -2641,7 +2631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/pir-sensors/" class="md-nav__link">
+      <a href="../pir-sensors/" class="md-nav__link">
         
   
   
@@ -2835,63 +2825,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#welcome-to-the-wled-wiki" class="md-nav__link">
+  <a href="#what-counts-as-a-boot-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Welcome to the WLED Wiki!
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Welcome to the WLED Wiki!">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#quick-start-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick start guide
+        What Counts as a Boot-loop?
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#wifi-setup" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#recovery-sequence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wifi Setup
+        Recovery Sequence
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#default-gpio-usage" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#how-the-state-is-stored" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Default GPIO Usage
+        How the State Is Stored
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#software-update-procedure" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#where-this-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Software update procedure
+        Where This Runs
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2912,7 +2896,7 @@
 
 
   
-    <a href="https://github.com/WLED/WLED-Docs/edit/main/docs/basics/getting-started.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/WLED/WLED-Docs/edit/main/docs/advanced/bootloop-recovery.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2920,109 +2904,81 @@
   
 
 
-  <h1>Quick Start</h1>
+  <h1>Boot-loop Detection & Recovery</h1>
 
-<h2 id="welcome-to-the-wled-wiki">Welcome to the WLED Wiki!</h2>
-<div class="admonition info">
-<p class="admonition-title">Version Info</p>
-<p>Unless noted otherwise, all information applies to the latest release.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">ESP8266 End of Life</p>
-<p>Do not install any new setups using ESP8266. While WLED currently still supports ESP8266, all new setups should be using the ESP32 as it's much better hardware and ESP8266 is coming to and end of support.</p>
-</div>
-<h3 id="quick-start-guide">Quick start guide</h3>
-<p><strong>1.</strong> Connect a WS2812B-compatible RGB(W) led strip to you ESP board:</p>
+<p>WLED can detect when your controller is stuck in a crash loop and automatically take steps to recover it — without you needing a USB cable or serial terminal. This feature is especially useful after a bad settings change, a corrupted config file, or a failed OTA update.</p>
+<hr />
+<h2 id="what-counts-as-a-boot-loop">What Counts as a Boot-loop?</h2>
+<p>WLED counts <strong>crash resets</strong> stored in RTC memory (which survives a soft reboot). A crash reset is any of these reset reasons:</p>
 <ul>
-<li>For ESP32 use <code>GPIO16</code> (or <code>IO16</code> or <code>G16</code>); GPIOs <code>4</code>, <code>13</code> and <code>16-33</code> can be used, other pins are not recommended.</li>
-<li>For ESP8266 use <code>GPIO2</code>, on most development boards this pin is labeled <code>D4</code>.</li>
+<li>Exception / software exception</li>
+<li>Hardware watchdog timeout</li>
+<li>Software watchdog timeout</li>
+<li>Panic / abort</li>
+<li>Task watchdog timeout</li>
 </ul>
-<p><em>If the connecting wire cannot be kept short, use a <a href="/basics/compatible-hardware#levelshifters">level shifter/translator</a>.</em> Optionally, connect a normally open pushbutton to <code>GPIO0</code> (NodeMCU/Wemos pin <code>D3</code>, on ESP32 use <code>IO17</code>) and ground for <a href="/features/macros">configurable actions</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Board pin naming varies depending on the manufacturer. Please use the board pinout from the <em>specific</em> board you purchased and use the GPIO pins to reference this guide. <em>Make sure to connect ESP and LED-strip grounds together!</em></p>
-</div>
-<p><img alt="DigitalWiring" src="../../assets/images/content/WLED_5VdigitalWiring.png" />
-Check out the <a href="/basics/wiring-guides">Wiring Guides</a> for more examples.</p>
-<p>While using an ESP8266 and LEDs that have clock and data, you can either use hardware SPI (mostly faster) or software SPI.</p>
-<ul>
-<li>hardware SPI: use <code>GPIO14</code> (SCLK) for clock and <code>GPIO13</code> (MOSI) for data.</li>
-<li>software SPI: since all pins can be changed in the Hardware section of LED settings, you can use any pins. Recommend is to use <code>GPIO1</code> (TxD) for clock and <code>GPIO2</code> (D4) for data. </li>
-</ul>
-<p>For safe operation, it is recommended to size your power wires correctly and to integrate fuses.<br />
-For reference, you may use this <a href="https://wled-calculator.github.io/">LED power, wiring and fuse calculator</a>.</p>
-<p>For analog LEDs, the MOSFETs IRLZ44N or STP55NF06L are good candidates. Example circuit:</p>
-<p><img alt="image" src="../../assets/images/content/12Vanalog_wiring.png" />
-More analog wiring examples can be found <a href="/basics/compatible-led-strips/#non-addressable-led-strips">here</a></p>
-<p><strong>2.</strong> Flash the software to your ESP module! There are two options for this step:</p>
-<p><a href="/basics/install-binary">I just want to use WLED! (install release binary)</a></p>
-<p><a href="/advanced/compiling-wled">I want to modify WLED (compile from source code)</a></p>
-<p>If everything worked the first thirty LEDs will light up in bright orange to stimulate courage, friendliness and success!</p>
-<p><strong>3.</strong> Use a WiFi device to connect to the access point <code>WLED-AP</code> using the default password <code>wled1234</code>.
-You can also just scan this QR code:</p>
-<p><img alt="QR-Code" src="https://i.ibb.co/h2YswXK/WLED-QR-Connect-WB.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">WLED-AP is not showing up!</p>
-<p>If you do not see the <code>WLED-AP</code> SSID, the default SSID may have been changed at <a href="/advanced/custom-ap">compile time</a>.</p>
-</div>
-<p>Go to the IP <code>4.3.2.1</code> in your browser to control your lights! You should also be able to connect to <code>wled.me</code> if in access point mode (embedded DNS server).</p>
-<h3 id="wifi-setup">Wifi Setup</h3>
-<p>To connect your WLED module to your home Wifi:</p>
-<p><strong>1.</strong> Click on the <em>Config</em> (gear) icon to edit your WLED module settings and choose "Wifi Setup".</p>
-<p><strong>2.</strong> For most home networks, simply enter your Wifi network's name and network password. You can also change the mDNS address for your WLED module here.</p>
-<p><strong>3.</strong> Click Save &amp; Connect at the bottom of the page.</p>
-<p><strong>4.</strong> Reconnect your device to your home's Wifi network.</p>
-<p><strong>5.</strong>  Check the device list in your router's user interface for the IP of the WLED device within your local network. For easy automatic discovery, use the WLED Native app! Have fun with the WLED software!</p>
-<h3 id="default-gpio-usage">Default GPIO Usage</h3>
-<div class="admonition info">
-<p class="admonition-title">These are only defaults</p>
-<p>All pins can be changed in the Hardware section of LED settings. Please note that these are GPIO numbers, please consult a pinout for your board to find the labeled pin (e.g <code>D4</code> = <code>GPIO2</code> on most ESP8266 boards). When using an ESP8266 board, it's recommended to use pins <code>GPIO1</code>, <code>GPIO2</code>, or <code>GPIO3</code> for LED Data; using other pins will require <em>bit-banging</em> and may cause slow performance and/or issues elsewhere (such as with IR decoding).</p>
-</div>
+<p>Normal power-on resets and clean software restarts reset the counter to zero. Brownout resets are logged but <strong>do not</strong> increment the counter.</p>
+<p>If <strong>5 or more crashes</strong> happen within a <strong>2-minute rolling window</strong>, WLED considers the device stuck in a boot-loop and triggers the recovery sequence.</p>
+<hr />
+<h2 id="recovery-sequence">Recovery Sequence</h2>
+<p>Recovery actions are taken <strong>one per boot</strong>, in order. After each action WLED restarts immediately. If the device still crashes after that restart, the next action is taken on the following boot.</p>
 <table>
 <thead>
 <tr>
-<th>Function</th>
-<th>GPIO</th>
-<th>Suggested pin</th>
+<th>Step</th>
+<th>Action</th>
+<th>What it does</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>LED Data</td>
-<td>2</td>
-<td>ESP8266: 1, 2 (3 if &lt;= 100 LEDs), ESP32: 1, 2, 3, 4, 16</td>
+<td><strong>1</strong></td>
+<td>Restore backup config</td>
+<td>Copies <code>/bkp.cfg.json</code> back over <code>/cfg.json</code> — rolls back to the last known-good configuration.</td>
 </tr>
 <tr>
-<td>Button</td>
-<td>0</td>
-<td></td>
+<td><strong>2</strong></td>
+<td>Reset config</td>
+<td>Renames <code>/cfg.json</code> to <code>/rst.cfg.json</code> and starts WLED with factory defaults. Your old config is preserved in <code>/rst.cfg.json</code> for manual recovery.</td>
 </tr>
 <tr>
-<td>IR Remote</td>
-<td>None</td>
-<td>4</td>
+<td><strong>3</strong></td>
+<td>Firmware rollback <em>(ESP32 only)</em></td>
+<td>Swaps the OTA boot partition to the previous firmware image. Useful after a bad OTA update. On ESP8266 this step is skipped.</td>
 </tr>
 <tr>
-<td>Relay</td>
-<td>None</td>
-<td>12</td>
+<td><strong>4</strong></td>
+<td>Emergency serial dump</td>
+<td>Dumps all filesystem files to the serial port and then <strong>loops indefinitely</strong>. WLED will not start normally again until you power-cycle or hardware-reset the board. Connect a serial terminal at 115200 baud to retrieve the files.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="software-update-procedure">Software update procedure</h3>
-<p>Method 1: Reflashing the new update like a new install (see above).</p>
-<p>Method 2: The software has an integrated <em>OTA software update</em> capability.
-First you have to enable it by typing in the correct OTA passphrase (default: "wledota") in the settings menu.
-Remove the tick in the checkbox "OTA locked". Then save settings and reboot the ESP.
-Then you can select "Manual OTA update" in Security settings and upload a <a href="https://github.com/wled/WLED/releases">release binary</a>.
-After you are done, it is recommended to lock the OTA function again.
-To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
-If you try to access the update page now, you should see the message "OTA lock active".</p>
-<p>Method 3: ArduinoOTA is also supported.</p>
-<div class="admonition info">
-<p class="admonition-title">If you own multiple devices and want to update them</p>
-<p>Since v0.13 of WLED source code includes shell/command prompt scripts which is allow you to update multiple devices with a single command. Please check <code>tools</code> subfolder for <code>multi-update</code> scripts (.cmd or .sh). You will need to modify them to include IP addresses of your WLED devices and assign firmware binary file for each device. If you are using Windows, make sure you install <code>curl</code> utility somewhere in your <code>PATH</code> (curl is included with Windows 10 since build 17063). This will only work if "OTA Lock" is disabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Step 4 is the last resort. WLED stops booting and only outputs to serial. A hardware reset (power cycle or the RST button) is required to exit this state.</p>
 </div>
+<hr />
+<h2 id="how-the-state-is-stored">How the State Is Stored</h2>
+<p>The crash counter and recovery progress are stored in <strong>RTC memory</strong>, which persists across soft reboots but is cleared by a power cycle or hardware reset.</p>
+<ul>
+<li><strong>ESP32:</strong> uses <code>RTC_NOINIT_ATTR</code> static variables (three values: last boot timestamp, crash count, recovery step).</li>
+<li><strong>ESP8266:</strong> uses <code>RTC_USER_MEM</code> slots 32–34 (same three values).</li>
+</ul>
+<p>This means:</p>
+<ul>
+<li>Pulling the power clears the counter — the device starts fresh on the next boot.</li>
+<li>A clean software restart from the WLED UI also clears the counter.</li>
+</ul>
+<hr />
+<h2 id="where-this-runs">Where This Runs</h2>
+<p>Boot-loop detection runs very early in startup (<code>WLED::setup()</code>), right after the filesystem is mounted and before any configuration is loaded. This ensures recovery can happen even if config loading itself is what causes the crash.</p>
+<hr />
+<h2 id="tips">Tips</h2>
+<ul>
+<li>If your device lands in <strong>Step 2</strong> (reset config), check the serial log or the filesystem editor for <code>/rst.cfg.json</code> — your previous settings are still there.</li>
+<li>If you're on ESP32 and a firmware update went wrong, <strong>Step 3</strong> (rollback) may recover you automatically without needing to re-flash.</li>
+<li>To manually clear the crash counter without power-cycling, do a clean restart from the WLED web UI (reboot button in Settings → Security &amp; Updates).</li>
+</ul>
 
 
 

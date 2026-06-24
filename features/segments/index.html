@@ -1276,13 +1276,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#effect-overlay" class="md-nav__link">
+  <a href="#segment-layering-effect-overlay" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Effect Overlay
+        Segment Layering &amp; Effect Overlay
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Segment Layering &amp; Effect Overlay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transition-blending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition Blending
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1414,6 +1431,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../pin-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cct/" class="md-nav__link">
         
   
@@ -1450,6 +1495,90 @@
     
   
     Pixel Art Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pixelforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixelForge (Image & GIF Tool)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particle-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle System
   
 
     
@@ -1940,6 +2069,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/espnow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESPNow Remotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2292,6 +2449,34 @@
     
   
     ESP32 Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
   
 
     
@@ -2679,13 +2864,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#effect-overlay" class="md-nav__link">
+  <a href="#segment-layering-effect-overlay" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Effect Overlay
+        Segment Layering &amp; Effect Overlay
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Segment Layering &amp; Effect Overlay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transition-blending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition Blending
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2728,7 +2930,7 @@
 <li>The main segment's color is the one that will be reported to HTTP and MQTT APIs</li>
 </ul>
 <p>Tip: If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!</p>
-<p>Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. <em>The Stop LED is <strong>not</strong> included in the Segment.</em> Currently you can create a maximum of 10 segments.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.</p>
+<p>Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. <em>The Stop LED is <strong>not</strong> included in the Segment.</em> Currently you can create a maximum of 10 segments in WLED 0.15 and earlier. Starting in v16.0, the segment limit was significantly increased.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.</p>
 <p>To display segment information select the down arrow in the Segment box.  To add a Segment select “+ Add Segment”.  Enter the Start and Stop LED as appropriate.  Grouping and Spacing control the organization of the LEDs within the selected effect.  To reverse the direction of an effect select Reverse Direction.  To delete a Segment select the trash can.  To save your Segment settings select the checkmark to the right of the Start and Stop LED numbers.</p>
 <h2 id="grouping-and-spacing">Grouping and Spacing</h2>
 <p>When an effect changes the color of one LED, it is really changing the color of one LED group. Since the default group size is one, the effect normally only changes a single LED. When Grouping is set to two, the effect will light two LEDs using the same color. The two LEDs are treated as a single <em>virtual</em> LED. </p>
@@ -2840,11 +3042,90 @@
 <p>A negative offset value is allowed and represents an offset starting from the last position in the segment. In our previous example, an offset of -2 will start the effect in position 10, like this:</p>
 <p><img alt="" src="https://github.com/twlare/WLEDDocs/raw/master/LED2to1.png" /></p>
 <p>The offset values is prioritized over grouping and/or spacing. For example, if the offset is 2, grouping 4 and spacing 1, the first group of 4 LEDs will start at the physical position number 2.</p>
-<h2 id="effect-overlay">Effect Overlay</h2>
-<p>Some effects can be overlaid on the background of another effect. To use overlay, set up
-segments with overlapping pixels. The overlay effect must be playing on the segment with the higher id. 
-If the Overlay option is checked, the background will not be painted and the effect
-from the lower segment will be displayed.</p>
+<h2 id="segment-layering-effect-overlay">Segment Layering &amp; Effect Overlay</h2>
+<p>Since v16.0, WLED supports true segment layering: segments with overlapping pixels are composited in real time using a blend mode you choose per segment. This makes it possible to combine almost any two effects on the same LEDs.</p>
+<p>To use layering, create two or more segments that cover the same pixel range. On each segment, select its <strong>blend mode</strong> from the dropdown:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top/Default</td>
+<td>Shows only the top layer, ignoring the bottom entirely</td>
+</tr>
+<tr>
+<td>Bottom/None</td>
+<td>Shows only the bottom layer, ignoring the top entirely</td>
+</tr>
+<tr>
+<td>Add</td>
+<td>Adds colors together, clamping at white</td>
+</tr>
+<tr>
+<td>Subtract</td>
+<td>Subtracts the top from the bottom, darkening toward black</td>
+</tr>
+<tr>
+<td>Difference</td>
+<td>Absolute difference — identical colors go black, opposites go bright</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>50/50 blend of both layers</td>
+</tr>
+<tr>
+<td>Multiply</td>
+<td>Multiplies colors — white passes bottom through, black blocks it</td>
+</tr>
+<tr>
+<td>Divide</td>
+<td>Divides bottom by top — brightens where the top is dark</td>
+</tr>
+<tr>
+<td>Lighten</td>
+<td>Picks the brighter pixel from each layer</td>
+</tr>
+<tr>
+<td>Darken</td>
+<td>Picks the darker pixel from each layer</td>
+</tr>
+<tr>
+<td>Screen</td>
+<td>Inverse of multiply — always brightens</td>
+</tr>
+<tr>
+<td>Overlay</td>
+<td>Boosts contrast using the bottom layer's brightness</td>
+</tr>
+<tr>
+<td>Hard Light</td>
+<td>Like Overlay, but driven by the top layer</td>
+</tr>
+<tr>
+<td>Soft Light</td>
+<td>Subtle contrast and saturation boost, no clipping</td>
+</tr>
+<tr>
+<td>Dodge</td>
+<td>Brightens the bottom based on the top</td>
+</tr>
+<tr>
+<td>Burn</td>
+<td>Darkens the bottom based on the top</td>
+</tr>
+<tr>
+<td>Stencil</td>
+<td>Shows top where it has any color; shows bottom where top is black</td>
+</tr>
+</tbody>
+</table>
+<p>The compositing order follows segment ID order: the segment with the <strong>lower</strong> ID is treated as the bottom (background) layer.</p>
+<h3 id="transition-blending">Transition Blending</h3>
+<p>v16.0 also adds transition blending styles that control how effects cross-fade when you switch presets. Options include Shift, Push, and others, in addition to the classic dissolve-style fade.</p>
 
 
 
