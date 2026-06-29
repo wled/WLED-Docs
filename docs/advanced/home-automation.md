@@ -8,11 +8,6 @@ hide:
 It is possible to interface WLED with home automation systems and other 3rd-party software.
 You can use any API WLED provides (JSON, HTTP, UDP, MQTT); JSON is preferred. This page is intended for sample code and configs others use to control WLED from various 3rd-party software.
 
-[HomeAssistant and NodeRED flows](https://github.com/Snipercaine/WLED-HomeAssistant)
-
-## Domoticz:
-Please see [here](https://github.com/frustreermeneer/domoticz-wled-plugin)!
-
 ## Home Assistant
 
 ### Using the native integration
@@ -139,8 +134,6 @@ In case you want to configure the device manually:
       ]
     }
     ```
-## Indigo Domotics:
-Please see [here](https://www.indigodomo.com/pluginstore/214/)!
 
 ## openHAB: 
 
@@ -148,5 +141,13 @@ In openHAB 3 based environments you are able to use the native [openHAB WLED Bin
 
 For older openHAB (2.5.x) environmantes the connection can be configured via MQTT broker & Openhab MQTT Binding (2.5x) with configuration files 
 Please find the details [here](https://community.openhab.org/t/wled-control-without-the-binding/101120)
+
+## Other
+
+- [HomeAssistant and NodeRED flows](https://github.com/Snipercaine/WLED-HomeAssistant)
+
+- [Domoticz](https://github.com/frustreermeneer/domoticz-wled-plugin)
+
+- [Indigo Domotics](https://www.indigodomo.com/pluginstore/214/)!
 
 
