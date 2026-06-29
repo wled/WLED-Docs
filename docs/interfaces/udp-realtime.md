@@ -23,10 +23,15 @@ Please set the WLED broadcast UDP port to 65506 in Sync settings to enable recei
 
 ### UDP Sound Sync (v2, v2+)
 
-This feature acts as a sound input and accepts pre-processed sound data on UDP port 11988 (user configurable). 
+This feature acts as a sound input and accepts pre-processed sound data via UDP _Multicast_, port 11988 (user configurable). 
 Generating and sending this data can be done in multiple ways: 
 there is a [Windows application](https://github.com/Victoare/SR-WLED-audio-server-win) or a lower-level [C library](https://github.com/netmindz/WLED-sync). 
 Learn more about this feature in the [documentation of the MM-fork](https://mm.kno.wled.ge/soundreactive/sync/), where it was originally implemented.
+
+* The UDP &nbsp;<em>Multicast</em>&nbsp; IP is `239.0.0.1`, and the default UDP port is `11988`.
+* The software sends/receives one packet every 20 milliseconds (approx). An external sender may be slower, but not faster than 20ms = 50fps.
+* UDP port can be changed in WLED usermod config pages, for example to have several groups of devices by assigning a different UDP ports for each group.
+* UDP Multicast can sometimes have issues with some Wi-Fi routers, if you have issues, please try with a different Wi-Fi.
 
 ### UDP Realtime (v1) and WARLS
 
