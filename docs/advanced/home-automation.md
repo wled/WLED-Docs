@@ -5,8 +5,8 @@ hide:
   # - toc
 ---
 
-It is possible to interface WLED with home automation systems and other 3rd party software.
-You can use any API WLED provides (JSON, HTTP, UDP, MQTT), JSON is preferred. This page is intended for sample code and configs others use to control WLED from various 3rd party software:
+It is possible to interface WLED with home automation systems and other 3rd-party software.
+You can use any API WLED provides (JSON, HTTP, UDP, MQTT); JSON is preferred. This page is intended for sample code and configs others use to control WLED from various 3rd-party software.
 
 [HomeAssistant and NodeRED flows](https://github.com/Snipercaine/WLED-HomeAssistant)
 
