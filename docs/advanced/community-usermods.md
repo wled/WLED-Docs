@@ -30,6 +30,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
 | [wled-usermod-example](https://github.com/wled/wled-usermod-example) | Annotated template — use as template to start your own usermod | @wled | both | EUPL | Official starting point |
 | [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx) | Community effects usermod — add your own effects here or use as a template | @wled | both | EUPL | Ships with WLED; enable with `custom_usermods = user_fx` |
 | [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16) | 16×16 English word-clock as a first-class WLED effect, with Open-Meteo weather words/presets and corner-button LEDs | @AustinSaintAubin | esp32 | MIT |  |
+| [Sensors I2C](https://github.com/AustinSaintAubin/wled-usermod-sensors-i2c) | Combined I²C environmental sensors (HTU21D temp/humidity, BMP180 pressure, BH1750 lux); can drive WLED auto-brightness, optional MQTT/HA | @AustinSaintAubin | esp32 | MIT |  |
 
 
 ## Adding your usermod to the list
