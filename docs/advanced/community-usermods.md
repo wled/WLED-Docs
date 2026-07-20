@@ -30,6 +30,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
 | [wled-usermod-example](https://github.com/wled/wled-usermod-example) | Annotated template — use as template to start your own usermod | @wled | both | EUPL | Official starting point |
 | [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx) | Community effects usermod — add your own effects here or use as a template | @wled | both | EUPL | Ships with WLED; enable with `custom_usermods = user_fx` |
 | [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16) | 16×16 English word-clock as a first-class WLED effect, with Open-Meteo weather words/presets and corner-button LEDs | @AustinSaintAubin | esp32 | MIT |  |
+| [PowerManager](https://github.com/intermittech/wled-usermod-powermanager) | Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay | @intermittech | esp32 | EUPL | Grown from the built-in multi_relay usermod |
 
 
 ## Adding your usermod to the list
