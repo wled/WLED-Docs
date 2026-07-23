@@ -45,3 +45,17 @@ Use this format:
 ```
 
 Platforms: `esp32`, `esp8266`, or `both`.
+
+### Choosing a license for your usermod
+
+A usermod is compiled into the WLED firmware, so it becomes part of a modified WLED build. WLED uses the **EUPL-1.2** licence. If you share a firmware binary that includes your usermod, also share the source code for that build and use EUPL-1.2 or a compatible open-source licence for the combined firmware.
+
+For example:
+
+- Your usermod repository may say **MIT**, but a `WLED-with-my-usermod.bin` file is not an MIT-only WLED build. It still includes WLED and its EUPL-1.2 requirements.
+- MIT matters more when somebody reuses the usermod source code *independently* of WLED.
+- If you want a simple matching choice for a usermod you plan to distribute with WLED, use **EUPL-1.2**.
+- Other compatible choices include **GPLv2**, **GPLv3**, **LGPL v2.1/v3**, and **MPL 2.0**.
+
+This only matters when someone is distributing the firmware that includes your usermod. Building a usermod for your own device and keeping it private does not require publishing it.
+
