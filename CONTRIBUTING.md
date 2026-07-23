@@ -19,7 +19,7 @@ Please keep each PR focused on one topic, and add a short description of what yo
 
 ## Writing Style
 
-We're harmonizing the docs for readability, so please follow the conventions in [AGENTS.md](AGENTS.md). The short version:
+We're harmonizing the docs for readability, so please follow the conventions in [AGENTS.md](AGENTS.md) (our contributor and AI-agent instructions). The short version:
 
 - Write in **English**, in an informal, friendly tone. Contractions are welcome.
 - Use **Title Case** for the page title and section headings.
