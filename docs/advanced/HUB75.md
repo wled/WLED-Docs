@@ -5,7 +5,7 @@ title: HUB75 Support
 WLED supports LED matrix panels using the HUB75 format. HUB75 support was added as an official mainline feature in **v16.0.0**, and dedicated `_HUB75` build variants are included in the standard release downloads.
 
 !!! tip "Use v16.0.1 or Newer"
-    16.0.1 landed a number of HUB75 fixes, including bugfixes for 4-scan and chained (multi-panel) panels, removal of the 64x64 limit on boards with PSRAM, and a fix for updating the pixel buffer after a matrix dimension change.
+    16.0.1 landed a number of HUB75 fixes, including bug fixes for 4-scan and chained (multi-panel) panels, removal of the 64x64 limit on boards with PSRAM, and a fix for updating the pixel buffer after a matrix dimension change.
 
 This support is supplied by the [ESP32-HUB75-MatrixPanel-DMA](https://github.com/mrcodetastic/ESP32-HUB75-MatrixPanel-DMA?tab=readme-ov-file) library; see there for more details about supported hardware panels.
 
@@ -29,7 +29,7 @@ Only one HUB75 port is supported. To drive more than one panel, chain them: conn
 
 Boards on the default `ESP32-HUB75-MatrixPanel-DMA` pinout (such as the ESP32 Trinity) use the standard wiring shown below:
 
-![display_esp32_wiring_bb](https://github.com/user-attachments/assets/9fd3cf9f-b6b3-42ce-ba52-cea015e95024)
+![ESP32 to HUB75 wiring for the default pinout](../assets/images/content/hub75-esp32-wiring.png)
 
 WLED also includes several other pinouts, each selected at build time by a define: the SmartMatrix "forum" pinout (`ESP32_FORUM_PINOUT`), the [Seengreat](https://seengreat.com/wiki/186) S3 pinout (`SEENGREAT_V1_S3_PINOUT`), and the Waveshare S3 pinout (`WAVESHARE_S3_PINOUT`). For a pinout that isn't built in, edit `wled00/bus_manager.cpp` to add a new `elif` block and define; setting HUB75 pins in the LED preferences is not possible at the moment. If you compile your own build, also define `WLED_ENABLE_HUB75MATRIX`.
 
@@ -50,7 +50,7 @@ A HUB75 display is one or more physical panels chained together. A single panel 
 | 32 x 32 | one 32 x 32 panel | single panel | any HUB75-capable ESP32 |
 | 64 x 32 | one 64 x 32 panel | single panel | any HUB75-capable ESP32 |
 | 64 x 64 | one 64 x 64 panel | single panel | any HUB75-capable ESP32 |
-| 128 x 64 | one 128 x 64 panel | single panel | any HUB75-capable ESP32 |
+| 128 x 64 | one 128 x 64 panel | single panel | any HUB75-capable ESP32 (PSRAM recommended) |
 | 128 x 128 | four 64 x 64 panels | 2 x 2 grid | ESP32-S3 with octal "opi" PSRAM |
 | 256 x 64 | four 64 x 64 panels | 1 x 4 row | ESP32-S3 with octal "opi" PSRAM |
 
