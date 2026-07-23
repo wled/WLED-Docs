@@ -53,8 +53,8 @@ A usermod is compiled into the WLED firmware, so it becomes part of a modified W
 For example:
 
 - Your usermod repository may say **MIT**, but a `WLED-with-my-usermod.bin` file is not an MIT-only WLED build. It still includes WLED and its EUPL-1.2 requirements.
-- MIT matters more when somebody reuses the usermod source code *independently* of WLED.
-- If you want a simple matching choice for a usermod you plan to distribute with WLED, use **EUPL-1.2**.
+- MIT matters more when somebody reuses the usermod source code *independently* of WLED, possibly in a closed-source project.
+- If you want a simple matching choice for a usermod can can be distribute with WLED, use **EUPL-1.2**.
 - Other compatible choices include **GPLv2**, **GPLv3**, **LGPL v2.1/v3**, and **MPL 2.0**.
 
 This only matters when someone is distributing the firmware that includes your usermod. Building a usermod for your own device and keeping it private does not require publishing it.
