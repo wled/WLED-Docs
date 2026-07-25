@@ -88,7 +88,6 @@ nav:
     - Installation:
       - Install WLED Binary: basics/install-binary.md
       - Install using ESP GUI: basics/install-gui.md
-      - Compiling WLED: advanced/compiling-wled.md
     - Tutorials: basics/tutorials.md
     - FAQ: basics/faq.md
   - Features:
