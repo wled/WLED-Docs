@@ -25,3 +25,4 @@ If you are implementing the protocol to send packets to WLED, do not bother impl
  - [yeonic/plugins/wled](https://github.com/YeonV/yeonic/blob/main/src/plugins/wled.ts#L51) TypeScript (javascript) implementation - Needs a nodejs like environment on Chromium engine.
  - [TypeScript](https://gist.github.com/piretek/16b2c729135a4a64d60d48a15fb36996) Simple typescript implementation using `dgram` with `wled-client` in clean NodeJS environment.
  - [Distributed Display Protocol (DDP) in Go](https://github.com/coral/ddp) Small Go library to send DDP packets to WLED.
+ - [ddp-lighting-java](https://github.com/llled/ddp-lighting-java) A pure Java implementation of DDP. 
