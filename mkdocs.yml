@@ -20,6 +20,7 @@ theme:
     - navigation.instant
     - navigation.tabs
     - content.action.edit
+    - content.code.annotate
     # - toc.integrate
   palette:
     - scheme: slate
@@ -39,6 +40,7 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.details
