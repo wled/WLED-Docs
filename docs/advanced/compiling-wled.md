@@ -64,11 +64,11 @@ Once you've confirmed VSCode with Platformio is set up correctly, you can add/de
  1. Copy and paste the contents of `platformio_override.ini.sample` into a new file called `platformio_override.ini`. Make sure `platformio_override.ini` is in the same folder as `platformio.ini`.
  2. Replace the line `default_envs = WLED_tasmota_1M` with the line you uncommented in `platformio.ini` in the previous steps (from Compilation guide (PlatformIO)). Example: `default_envs = d1_mini`
  3. In `platformio.ini` scroll down until you see
-```
- #--------------------
- # WLED BUILDS
- #--------------------
- ```
+    ```
+    #--------------------
+    # WLED BUILDS
+    #--------------------
+    ```
  4. Find the section that matches the build environment you selected in previous steps. Example: `[env:d1_mini]`
  5. Select the whole section (including the first line in brackets [ ] ), and copy and paste it into `platformio_override.ini` overwriting the build environment section that was already there.
  6. Add a new line under the the line that starts with `build_flags =`
