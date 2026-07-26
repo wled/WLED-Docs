@@ -39,7 +39,7 @@ Now a new window opens.
 - Select the COM Port of your ESP (usually it's **not** `COM1`)
 - BAUD can be set to `921600`
 - Verify that everything looks like the two picture below
-°[ESPTool settings](https://i.ibb.co/1qk16XL/esptool.png)
+![ESPTool settings](../assets/images/content/install-gui-esptool-settings.png)
 
 - _(optionally)_ click on **ERASE** to erase the entire flash chip
 - click on `START`

@@ -18,7 +18,7 @@ With Blynk, you can also even control your lights when you are not connected to 
 - Download the Blynk (legacy) app from the [Play Store](https://play.google.com/store/apps/details?id=cc.blynk) or the [App Store](https://itunes.apple.com/us/app/blynk-iot-for-arduino-esp32/id808760481?mt=8)
 - Scan this QR code with the app:
 
-![QR-Code](https://image.ibb.co/d4ASAp/clone_936213617.png)
+![QR-Code](../assets/images/content/blynk-clone-qr.png)
 
 - Paste the device auth token Blynk sends to your e-mail into the WLED sync settings (only one ESP!)
 
