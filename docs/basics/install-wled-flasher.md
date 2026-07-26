@@ -1,5 +1,5 @@
 ---
-title: Installation using ESP GUI
+title: Install using WLED ESP Flasher
 hide:
   # - navigation
   # - toc
@@ -12,11 +12,21 @@ You can find precompiled .bin files on the [official release page](https://bin.w
 If you are not sure what binary you should use look at this page:
 [What binary should I use?](/basics/install-binary#what-binary-should-i-use)
 
-## 2. Downloading the ESP WLED Flasher
+## 2. Downloading the WLED ESP Flasher
 
-You can find and download flasher [here](https://github.com/srg74/WLED-wemos-shield/tree/master/resources/Firmware/WLED_%20ESP_Flasher)!
+The flasher is maintained in the [WLED-wemos-shield project](https://github.com/srg74/WLED-wemos-shield). Download it for your operating system:
 
-After downloading a file, unzip it and start
+=== "Windows"
+
+    [Download WLED ESP Flasher for Windows](https://github.com/srg74/WLED-wemos-shield/raw/master/resources/Firmware/WLED_%20ESP_Flasher/Windows.zip)
+
+    Unzip the file and start the flasher.
+
+=== "macOS"
+
+    [Download WLED ESP Flasher for macOS](https://github.com/srg74/WLED-wemos-shield/raw/master/resources/Firmware/WLED_%20ESP_Flasher/macOS.zip)
+
+    Unzip the file and start the flasher.
 
 ## 3. Flashing firmware bin files
 
