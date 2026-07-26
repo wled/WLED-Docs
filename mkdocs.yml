@@ -18,8 +18,12 @@ theme:
     - navigation.top
     # - navigation.expand
     - navigation.instant
+    - navigation.tracking
     - navigation.tabs
     - content.action.edit
+    - content.code.copy
+    - search.suggest
+    - search.highlight
     # - toc.integrate
   palette:
     - scheme: slate
