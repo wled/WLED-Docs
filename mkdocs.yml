@@ -1,11 +1,10 @@
 site_name: WLED Project
 site_author: WLED Team
-#site_url: https://wled.app
+site_url: https://kno.wled.ge
 repo_name: WLED
-repo_url: https://github.com/WLED/WLED
-repo_title: WLED Repository
-#copyright: Copyright &copy; 2016-2021 Christian Schwinne, Contributors
-edit_uri: https://github.com/WLED/WLED-Docs/edit/main/docs
+repo_url: https://github.com/wled/WLED
+copyright: Copyright &copy; 2016-{year} Christian Schwinne, Contributors
+edit_uri: https://github.com/wled/WLED-Docs/edit/main/docs
 theme:
   name: material
   custom_dir: docs/assets/overrides
