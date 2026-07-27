@@ -37,8 +37,13 @@ theme:
       toggle: 
         icon: material/weather-night
         name: Dark Mode
-plugins: 
+plugins:
   - search
+  - redirects:
+      redirect_maps:
+        advanced/compile-analog.md: advanced/compiling-wled.md
+        advanced/compile-wled.md: advanced/compiling-wled.md
+        basics/compiling-wled.md: advanced/compiling-wled.md
 markdown_extensions:
   - admonition
   - attr_list
