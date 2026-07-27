@@ -17,8 +17,12 @@ theme:
     - navigation.top
     # - navigation.expand
     - navigation.instant
+    - navigation.tracking
     - navigation.tabs
     - content.action.edit
+    - content.code.copy
+    - search.suggest
+    - search.highlight
     # - toc.integrate
   palette:
     - scheme: slate
@@ -51,6 +55,11 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tilde
 extra:
   social:
@@ -94,6 +103,7 @@ nav:
     - Installation:
       - Install WLED Binary: basics/install-binary.md
       - Install using ESP GUI: basics/install-gui.md
+      - Install using WLED ESP Flasher: basics/install-wled-flasher.md
       - Compiling WLED: advanced/compiling-wled.md
     - Tutorials: basics/tutorials.md
     - FAQ: basics/faq.md

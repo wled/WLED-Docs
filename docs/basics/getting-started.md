@@ -53,7 +53,7 @@ If everything worked the first thirty LEDs will light up in bright orange to sti
 **3.** Use a WiFi device to connect to the access point `WLED-AP` using the default password `wled1234`.
 You can also just scan this QR code:
 
-![QR-Code](https://i.ibb.co/h2YswXK/WLED-QR-Connect-WB.png)
+![QR-Code](../assets/images/content/getting-started-wled-ap-qr.png)
 
 !!! tip "WLED-AP is not showing up!"
     If you do not see the `WLED-AP` SSID, the default SSID may have been changed at [compile time](/advanced/custom-ap).
