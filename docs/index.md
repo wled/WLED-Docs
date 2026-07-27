@@ -46,7 +46,6 @@ A fast and feature-rich implementation of an ESP32 webserver to control NeoPixel
     - For [iOS](https://apps.apple.com/us/app/wled-native/id6446207239) [[Source]((https://github.com/Moustachauve/WLED-Native-iOS/))]
 - [JSON](/interfaces/json-api) and [HTTP request](/interfaces/http-api) APIs  
 - [MQTT](/interfaces/mqtt)  
-- [Blynk IoT](/interfaces/blynk)  
 - [E1.31](/interfaces/e1.31-dmx), [Art-Net](/interfaces/e1.31-dmx), DDP and [TPM2.net](/interfaces/udp-realtime)
 - [Hyperion](https://github.com/hyperion-project/hyperion.ng)
 - [UDP realtime](/interfaces/udp-realtime)

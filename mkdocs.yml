@@ -17,8 +17,12 @@ theme:
     - navigation.top
     # - navigation.expand
     - navigation.instant
+    - navigation.tracking
     - navigation.tabs
     - content.action.edit
+    - content.code.copy
+    - search.suggest
+    - search.highlight
     # - toc.integrate
   palette:
     - scheme: slate
@@ -33,8 +37,14 @@ theme:
       toggle: 
         icon: material/weather-night
         name: Dark Mode
-plugins: 
+plugins:
   - search
+  - redirects:
+      redirect_maps:
+        advanced/compile-analog.md: advanced/compiling-wled.md
+        advanced/compile-wled.md: advanced/compiling-wled.md
+        basics/compiling-wled.md: advanced/compiling-wled.md
+        interfaces/blynk.md: advanced/home-automation.md
 markdown_extensions:
   - admonition
   - attr_list
@@ -45,6 +55,11 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tilde
 extra:
   social:
@@ -88,6 +103,7 @@ nav:
     - Installation:
       - Install WLED Binary: basics/install-binary.md
       - Install using ESP GUI: basics/install-gui.md
+      - Install using WLED ESP Flasher: basics/install-wled-flasher.md
     - Tutorials: basics/tutorials.md
     - FAQ: basics/faq.md
   - Features:
@@ -107,8 +123,7 @@ nav:
     - Custom Fonts: features/custom-fonts.md
     - Particle System: features/particle-system.md
     - Ethernet (LAN) compatibility: features/ethernet-lan.md
-  - Interfaces: 
-    - Blynk: interfaces/blynk.md
+  - Interfaces:
     - DMX Output: interfaces/dmx-output.md
     - DMX Input: interfaces/dmx-input.md
     - E1.31 (DMX) / Art-Net: interfaces/e1.31-dmx.md

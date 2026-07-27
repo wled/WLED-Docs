@@ -66,7 +66,7 @@ Grouping and Spacing can be combined to create many different custom LED layouts
 ## Interleaving
 This is an easy way to get a repeating pattern of colors using one segment per color.
 
-![](https://i.ibb.co/7Ntw68B/interleave.png)
+![](../assets/images/content/segments-interleave.png)
 
 ## Offset in a segment
 By default effects start in the first LED in the segment and finish in the last one. If the offset parameter in a segment is used, the effect start will be moved by the number of positions entered. It will continue to the last LED and then finish with the initial positions that were skipped.
