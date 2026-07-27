@@ -44,6 +44,7 @@ plugins:
         advanced/compile-analog.md: advanced/compiling-wled.md
         advanced/compile-wled.md: advanced/compiling-wled.md
         basics/compiling-wled.md: advanced/compiling-wled.md
+        interfaces/blynk.md: advanced/home-automation.md
 markdown_extensions:
   - admonition
   - attr_list
@@ -123,8 +124,7 @@ nav:
     - Custom Fonts: features/custom-fonts.md
     - Particle System: features/particle-system.md
     - Ethernet (LAN) compatibility: features/ethernet-lan.md
-  - Interfaces: 
-    - Blynk: interfaces/blynk.md
+  - Interfaces:
     - DMX Output: interfaces/dmx-output.md
     - DMX Input: interfaces/dmx-input.md
     - E1.31 (DMX) / Art-Net: interfaces/e1.31-dmx.md

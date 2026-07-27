@@ -103,7 +103,7 @@ See [Accessing WLED over Internet](/advanced/access-over-internet) page.
 
 ### My device is unresponsive or animations lag!
 
-You are probably using too many sync interfaces. Please only enable one of Hue sync, MQTT, or Blynk at a time.
+You are probably using too many sync interfaces. Please only enable one of Hue sync or MQTT at a time.
 For optimal performance, use two devices and sync them via the UDP notifier.
 Maybe you are also using a very high amount of LEDs. 750 is the recommended maximum. If using E1.31 feature on an ESP32, try "Disabling WiFi Sleep" in the WiFi setup section to reduce lag/stuttering of visual effects.
 
