@@ -145,7 +145,7 @@ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 
 **Python/pip:**
 ```bash
-pip install mkdocs-material
+pip install mkdocs-material mkdocs-redirects
 mkdocs serve
 ```
 

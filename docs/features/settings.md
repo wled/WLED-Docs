@@ -136,7 +136,6 @@ Disable realtime gamma correction | Y/N | Check if your host software does gamma
 Realtime LED offset | -255..255 | Shift the realtime input by how many LEDs
 Emulate Alexa device | Y/N | Allows you to control the light via the Amazon Echo voice assistant. Requires reboot
 Alexa Invocation name | String 1..32 | The name you want the device to have for control via Alexa. Choose something easy she can understand
-Device Auth token | String 40 | You will get this in an e-mail during Blynk setup
 MQTT Broker | IP or String 0..32 | Connect to this host MQTT broker
 Device topic | String 0..32 | MQTT topic unique to this light
 Group topic | String 0..32 | MQTT topic for all lights in a group (room, floor, ...)

@@ -27,7 +27,7 @@ Examples of how to use API-calls and define macros can be found in [this issue](
 
 The simplest macro example is getting a button to do your bidding.  The default pin to which a button can be connected is GPIO 0 (D3 on NodeMCU, D1 Mini and others).  Even though WLED uses the internal pull up resistors on input pins, this pin is ideally externally pulled high to 3.3V with a 10k resistor. The configured macro executes when the pin is pulled low (grounded). The desired macro is entered on the Time/Macros configuration page and then assigned to a short, long or double press. Like this:
 
-![image](https://github.com/wled/WLED-Docs/assets/59397047/798ba6fe-0ab0-4288-9b5b-307c6f554f38)
+![image](../assets/images/content/macros-button-assignment.png)
 
 
 The "T=2" macro toggles power to the LEDs (in this case long press).

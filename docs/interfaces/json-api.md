@@ -198,7 +198,7 @@ o1 | bool | Effect option 1. Custom options are hidden or displayed and labeled 
 o2 | bool | Effect option 2.
 o3 | bool | Effect option 3.
 pal | 0 to info.palcount -1 | ID of the color palette or ~ to increment, ~- to decrement, or r for random.
-<a id="seg-sel"></a>sel | bool | `true` if the segment is selected. Selected segments will have their state (color/FX) updated by APIs that don't support segments (e.g. UDP sync, HTTP API). If no segment is selected, the first segment (_id_:`0`) will behave as if selected. WLED will report the state of the first (lowest _id_) segment that is selected to APIs (HTTP, MQTT, Blynk...), or `mainseg` in case no segment is selected and for the UDP API. Live data is always applied to all LEDs regardless of segment configuration.
+<a id="seg-sel"></a>sel | bool | `true` if the segment is selected. Selected segments will have their state (color/FX) updated by APIs that don't support segments (e.g. UDP sync, HTTP API). If no segment is selected, the first segment (_id_:`0`) will behave as if selected. WLED will report the state of the first (lowest _id_) segment that is selected to APIs (HTTP, MQTT...), or `mainseg` in case no segment is selected and for the UDP API. Live data is always applied to all LEDs regardless of segment configuration.
 rev | bool | Flips the segment (in horizontal dimension for 2D set-up), causing animations to change direction.
 rY | bool | Flips the 2D segment in vertical dimension. _(available since 0.14.0)_
 on | bool | Turns on and off the individual segment. _(available since 0.10.0)_
