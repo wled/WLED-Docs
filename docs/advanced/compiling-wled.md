@@ -18,7 +18,7 @@ If you don't want to change the code but only add some compile options and/or us
 3. Download the WLED source code by executing `git clone https://github.com/wled/WLED.git` in some folder.
 (You can also use GitHub Desktop or download the latest source code from [https://github.com/wled/WLED](https://github.com/wled/WLED) under the `Code` dropdown menu as a .zip file.)
 Alternatively fork the WLED project first and download it from your fork.
-![](https://i.ibb.co/2hnGhyb/Screen-Shot-2020-11-03-at-5-25-18-PM.png)
+![](../assets/images/content/compiling-clone-repo.png)
 4. Go into the WLED folder by executing `cd WLED`.
 5. Install all dependencies by executing:
   ```
@@ -30,10 +30,10 @@ Alternatively fork the WLED project first and download it from your fork.
 1. Download and install the free [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.
 2. Open VS Code and go to the Extensions manager (the icon with the stacked blocks in the left bar)
 3. Search for `platformio ide` and install the PlatformIO extension
-![](https://i.ibb.co/SNv8TtH/Screen-Shot-2020-11-03-at-6-27-58-PM.png)
+![](../assets/images/content/compiling-pio-extension.png)
 4. In VS Code go to `File -> Open Folder` and open that root WLED folder (the one that contains `platformio.ini`, _NOT_ the `wled00` folder)
-![](https://i.ibb.co/pXs1G0j/Screen-Shot-2020-11-03-at-5-27-03-PM.png)
-![](https://i.ibb.co/10ykGxk/Screen-Shot-2020-11-03-at-5-27-17-PM.png)
+![](../assets/images/content/compiling-open-folder-1.png)
+![](../assets/images/content/compiling-open-folder-2.png)
 ---
 
 ### Compilation guide (PlatformIO)
@@ -48,7 +48,7 @@ Please remove _BOTH_ the `;` and the whitespace behind it to correctly uncomment
 For most ESP8266 boards, the `d1_mini` environment is best.
 4. In the blue bottom bar, hit the checkmark to compile WLED or the arrow pointing right to compile and upload!
 
-[Picture Guide](https://i.imgur.com/mZYo4KJ.jpg)
+[Picture Guide](../assets/images/content/compiling-picture-guide.jpg)
 
 **Success!**
 
