@@ -53,7 +53,7 @@ hide:
 ### Bundling WLED with custom hardware
 
 - [May I sell a product with WLED pre-installed?](#bundling-wled-with-custom-hardware-license)
-- [Does "same license" (copyleft) apply to my hardware design?](#does-same-license-copyleft-apply-to-my-hardware-design--schematics-pcb-layout-enclosure-etc)
+- [Does "same license" (copyleft) apply to my hardware design?](#does-same-license-copyleft-apply-to-my-hardware-design-schematics-pcb-layout-enclosure-etc)
 - [What if I add a custom usermod or new feature to the WLED firmware?](#what-if-i-add-a-custom-usermod-or-new-feature-to-the-wled-firmware)
 
 ### My question or solution is not on this page
