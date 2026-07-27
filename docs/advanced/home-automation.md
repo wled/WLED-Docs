@@ -148,6 +148,6 @@ Please find the details [here](https://community.openhab.org/t/wled-control-with
 
 - [Domoticz](https://github.com/frustreermeneer/domoticz-wled-plugin)
 
-- [Indigo Domotics](https://www.indigodomo.com/pluginstore/214/)!
+- [Indigo Domotics](https://www.indigodomo.com/pluginstore/214/)
 
 
