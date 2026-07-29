@@ -15,11 +15,12 @@ You can use a regular ESP32 with a HUB75 adapter board, or a board with HUB75 ou
 
 | Board | Firmware to flash | Notes |
 |---|---|---|
-| [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) | `ESP32-S3_Adafruit_Matrixportal.bin` | Pins pre-configured for HUB75 |
+| [Adafruit Matrix Portal S3](https://www.adafruit.com/product/5778) | `ESP32-S3_Adafruit_Matrixportal.bin` |  Quad PSRAM. Pins pre-configured for HUB75 |
 | [Huidu HD-WF2](https://www.hdwell.com/Product/index46.html) (ESP32-S3) | `ESP32-S3_HD-WF2.bin` | No PSRAM. Upload via USB-A to USB-A while holding the button ([details](https://github.com/mrcodetastic/ESP32-HUB75-MatrixPanel-DMA/issues/433)) |
 | [MoonHub75](https://github.com/MoonModules/Hardware/tree/main/MOONHUB75) + [LilyGO T7-S3](https://lilygo.cc/products/t7-s3) | `ESP32-S3_16MB_opi_HUB75.bin` | Octal PSRAM; most memory and highest pixel count, plus multiple digital mic options |
 | [Apollo M-1](https://apolloautomation.com/products/m-1-led-matrix) | `ESP32-S3_16MB_opi_HUB75.bin` | Octal PSRAM. Works with stock 16.0.1; Apollo's [installer](https://install.apolloautomation.com/#/m-1) currently adds stability fixes being upstreamed |
 | [Waveshare ESP32-S3-RGB-Matrix](https://docs.waveshare.com/ESP32-S3-RGB-Matrix) | `ESP32-S3_Waveshare_HUB75.bin` | Octal PSRAM. Dedicated HUB75 driver board with an onboard audio codec (dual mic, audioreactive) and a microSD slot |
+| [Seengreat RGB Matrix Adapter](https://seengreat.com/wiki/186)| (custom build needed) | Can be fitted with either ESP32-DevKitC-V4, or ESP32-S3-DevKitC-1 (recommended). <br/>Build with **one** of these flags defined: `SEENGREAT_V2_S3_PINOUT`(ESP32-S3, V2 board), `SEENGREAT_V1_S3_PINOUT`(ESP32-S3, V1 board), `SEENGREAT_V2_ESP32_PINOUT`(esp32, V2 board), or `SEENGREAT_V1_ESP32_PINOUT`(esp32, V1 board). |
 | [ESP32 Trinity](https://esp32trinity.com/), or any board on the default DMA pinout | `ESP32_HUB75.bin` | Default `ESP32-HUB75-MatrixPanel-DMA` pinout, selected automatically |
 | [rorosaurus/esp32-hub75-driver](https://github.com/rorosaurus/esp32-hub75-driver), or any SmartMatrix "forum" pinout | `ESP32_HUB75_forum_pinout.bin` | Built with `ESP32_FORUM_PINOUT` defined |
 
@@ -31,7 +32,7 @@ Boards on the default `ESP32-HUB75-MatrixPanel-DMA` pinout (such as the ESP32 Tr
 
 ![ESP32 to HUB75 wiring for the default pinout](../assets/images/content/hub75-esp32-wiring.png)
 
-WLED also includes several other pinouts, each selected at build time by a define: the SmartMatrix "forum" pinout (`ESP32_FORUM_PINOUT`), the [Seengreat](https://seengreat.com/wiki/186) S3 pinout (`SEENGREAT_V1_S3_PINOUT`), and the Waveshare S3 pinout (`WAVESHARE_S3_PINOUT`). For a pinout that isn't built in, edit `wled00/bus_manager.cpp` to add a new `elif` block and define; setting HUB75 pins in the LED preferences is not possible at the moment. If you compile your own build, also define `WLED_ENABLE_HUB75MATRIX`.
+WLED also includes several other pinouts, each selected at build time by a define: the SmartMatrix "forum" pinout (`ESP32_FORUM_PINOUT`), the [Seengreat](https://seengreat.com/wiki/186) S3 pinout (`SEENGREAT_V2_S3_PINOUT`), and the [Waveshare S3 pinout](https://docs.waveshare.com/ESP32-S3-RGB-Matrix) (`WAVESHARE_S3_PINOUT`). For a pinout that isn't built in, edit [`wled00/bus_manager.cpp`](https://github.com/wled/WLED/blob/8db3d7a82f307258c2a874a9c97e643adbcb3b64/wled00/bus_manager.cpp#L927) to add a new `#elif` block and define; setting HUB75 pins in the LED preferences is not possible at the moment. If you compile your own build, also add `-D WLED_ENABLE_HUB75MATRIX -D NO_GFX -D NO_CIE1931` to your `build_flags`.
 
 ## Power
 
