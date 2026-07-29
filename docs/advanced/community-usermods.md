@@ -32,6 +32,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
 | [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16) | 16×16 English word-clock as a first-class WLED effect, with Open-Meteo weather words/presets and corner-button LEDs | @AustinSaintAubin | esp32 | MIT |  |
 | [Segment Power Sync](https://github.com/sharn25/wled-segment-power-sync) | Automatically synchronizes individual segment power states with the overall master power state. Ideal when using a relay to cut mains power to LEDs. | @sharn25 | both | MIT |  |
 | [PowerManager](https://github.com/intermittech/wled-usermod-powermanager) | Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay | @intermittech | esp32 | EUPL | Grown from the built-in multi_relay usermod |
+| [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages| @lost-hope | both | EUPL |
 
 
 ## Adding your usermod to the list
