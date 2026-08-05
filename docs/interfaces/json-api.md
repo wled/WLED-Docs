@@ -135,10 +135,10 @@ Sample JSON API response (v0.8.4):
 | --- | --- | --- |
 on | bool | On/Off state of the light. You can also use `"t"` instead of `true` or `false` to toggle.
 <a id="bri"></a> bri | 0 to 255 | Brightness of the light. If _on_ is `false`, contains last brightness when light was on (aka brightness when _on_ is set to true). Setting _bri_ to 0 is supported but it is recommended to use the range 1-255 and use `on: false` to turn off. The state response will never have the value `0` for _bri_.
-transition | 0 to 65535 | Duration of the crossfade between different colors/brightness levels. One unit is 100ms, so a value of `4` results in atransition of 400ms.
-tt | 0 to 65535 | Similar to transition, but applies to just the current API call. Not included in state response.
+transition | 0 to 65535 | Duration of the crossfade between different colors/brightness levels. One unit is 100ms, so a value of `4` results in a transition of 400ms. Max transition time is 65 seconds = 65535 milliseconds.
+tt | 0 to 65535 | Similar to transition, but applies to just the current API call. Not included in state response. Max transition time is 65 seconds.
 ps | -1 to 250 | ID of currently set preset. `1~17~` can be used to iterate through presets 1-17, or `4~10r` to select random preset between presets 4 and 10 (inclusive).
-~~pss~~ | 0 to 65535 | Bitwise indication of preset slots (0 - vacant, 1 - written). Always 0 in 0.11. Not changable. _Removed as of v0.11.1_
+~~pss~~ | ~~0 to 65535~~ | ~~Bitwise indication of preset slots (0 - vacant, 1 - written). Always 0 in 0.11. Not changable.~~ _Removed as of v0.11.1_
 psave | 1 to 250 (16 prior to 0.11) | Save current light config (state) to specified preset slot. Not included in state response.
 sb | bool | Used with `psave`. Save segment bounds (`start` & `stop`).
 ib | bool | Used with `psave`. Save [brightness](#bri).
@@ -147,7 +147,7 @@ pl | -1 to 250 | ID of currently set playlist. _(read-olny)_
 pdel | 1 to 250 | Preset ID to delete. Not included in state response.
 nl.on | bool | Nightlight currently active
 nl.dur | 1 to 255 | Duration of nightlight in minutes
-~~nl.fade~~ | bool | If `true`, the light will gradually dim over the course of the nightlight duration. If `false`, it will instantly turn to the target brightness once the duration has elapsed. _Removed in 0.13.0_ (use mode instead)
+~~nl.fade~~ | ~~bool~~ | ~~If `true`, the light will gradually dim over the course of the nightlight duration. If `false`, it will instantly turn to the target brightness once the duration has elapsed.~~ _Removed in 0.13.0_ (use mode instead)
 nl.mode | 0 to 3 | Nightlight mode (0: instant, 1: fade, 2: color fade, 3: sunrise) (available since 0.10.2)
 nl.tbri | 0 to 255 | Target brightness of nightlight feature
 nl.rem | -1 to 15300 | Remaining nightlight duration in seconds, -1 if not active. Only in state response, can not be set.
