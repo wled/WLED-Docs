@@ -39,3 +39,42 @@
 .md-header {
   background-color: var(--ac-header-color, var(--md-primary-fg-color));
 }
+
+/* ===== Code annotation marker: Akemi instead of the default (+) ===== */
+/* The theme draws the marker as a single-color CSS mask; drop the mask and
+   draw Akemi directly. Anchored to the bottom of the line so she peeks over
+   the text like the site logo. */
+.md-annotation__index {
+  width: 3.6ch;
+  overflow: visible;
+}
+.md-annotation__index::before {
+  display: none; /* the theme's page-color backdrop circle behind the (+) */
+}
+.md-annotation__index::after {
+  -webkit-mask-image: none;
+  mask-image: none;
+  background: url("../images/ui/akemi/001_cheerful.png") center bottom / contain no-repeat;
+  width: 3.6ch;
+  height: 3.8ch;
+  top: auto;
+  bottom: -0.15ch;
+  transform-origin: bottom center;
+}
+/* Code lines are tighter than prose; cap Akemi a bit shorter there so she
+   does not cover characters on the line above. */
+code .md-annotation__index {
+  width: 3.2ch;
+}
+code .md-annotation__index::after {
+  height: 3.2ch;
+  bottom: -0.2ch;
+}
+/* The theme tints the marker on hover/open and rotates it 45deg while open;
+   keep the image untinted and upright, and grow it a little instead so it
+   still reacts to the pointer. */
+:hover > .md-annotation__index::after,
+.md-tooltip--active + .md-annotation__index::after {
+  background-color: transparent;
+  transform: scale(1.15);
+}
