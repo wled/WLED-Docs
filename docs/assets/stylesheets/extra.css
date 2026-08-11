@@ -54,7 +54,7 @@
 .md-annotation__index::after {
   -webkit-mask-image: none;
   mask-image: none;
-  background: url("/assets/images/ui/akemi/001_cheerful.png") center bottom / contain no-repeat;
+  background: url("../images/ui/akemi/001_cheerful.png") center bottom / contain no-repeat;
   width: 3.6ch;
   height: 3.8ch;
   top: auto;
