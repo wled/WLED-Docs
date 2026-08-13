@@ -40,10 +40,9 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 !!! warning
     Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
 
-For 12V strips, multiple strips, several power supplies, and level shifters, see the [Wiring Guides](/basics/wiring-guides). To size your power wires and fuses, use the [LED power, wiring and fuse calculator](https://wled-calculator.github.io/). (1)
-{ .annotate }
-
-1.  While you have the board in your hands, you can also connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground, for [configurable actions](/features/macros).
+- 12V strips, multiple strips, several supplies, level shifters: [Wiring Guides](/basics/wiring-guides)
+- Wire and fuse sizing: [LED power, wiring and fuse calculator](https://wled-calculator.github.io/)
+- Optional pushbutton on `GPIO0` (`D3` on NodeMCU/Wemos, `IO17` on ESP32): [configurable actions](/features/macros)
 
 **2.** Flash the software to your ESP module. The easiest way is the WLED web installer, which flashes your board straight from the browser.
 
