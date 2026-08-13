@@ -20,13 +20,14 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 
     Also called addressable strips, for example WS2812B-compatible RGB(W) strips. Each LED can be controlled separately.
 
-    - For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
-    - For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`.
+    For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
 
-    _If the connecting wire cannot be kept short, use a [level shifter](/basics/wiring-guides#levelshifter)._ (1)
+    For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`. (1)
     { .annotate }
 
-    1.  For clock-and-data LEDs on an ESP8266, hardware SPI uses `GPIO14` (SCLK) for clock and `GPIO13` (MOSI) for data. Software SPI works on any pins, we recommend `GPIO1` (TxD) for clock and `GPIO2` (D4) for data.
+    1.  `GPIO1` and `GPIO2` are the recommended LED data pins on ESP8266, and `GPIO3` works for up to 100 LEDs. Other pins need _bit-banging_, which can slow performance and cause problems elsewhere such as with IR decoding. For clock-and-data LEDs, hardware SPI uses `GPIO14` (SCLK) for clock and `GPIO13` (MOSI) for data, and software SPI works on any pins. All pins can be changed in the Hardware section of LED settings.
+
+    _If the connecting wire cannot be kept short, use a [level shifter](/basics/wiring-guides#levelshifter)._
 
     ![DigitalWiring](../assets/images/content/WLED_5VdigitalWiring.png)
 
@@ -75,18 +76,6 @@ To connect your WLED module to your home WiFi:
 
 **5.**  Check the device list in your router's user interface for the IP of the WLED device within your local network. For easy automatic discovery, use the WLED Native app! Have fun with the WLED software!
 
-### Default GPIO Usage
-
-!!! info "These are only defaults"
-    All pins can be changed in the Hardware section of LED settings. Please note that these are GPIO numbers, please consult a pinout for your board to find the labeled pin (e.g `D4` = `GPIO2` on most ESP8266 boards). When using an ESP8266 board, it's recommended to use pins `GPIO1`, `GPIO2`, or `GPIO3` for LED Data; using other pins will require _bit-banging_ and may cause slow performance and/or issues elsewhere (such as with IR decoding).
-
-| Function | GPIO | Suggested pin |
-|---|---|---|
-LED Data | 2 | ESP8266: 1, 2 (3 if <= 100 LEDs), ESP32: 1, 2, 3, 4, 16
-Button | 0 |
-IR Remote| None | 4
-Relay | None | 12
-
 ### Software Update Procedure
 
 === "Reflash"
@@ -96,12 +85,13 @@ Relay | None | 12
 === "OTA Update"
 
     The software has an integrated _OTA software update_ capability.
-    First you have to enable it by typing in the correct OTA passphrase (default: "wledota") in the settings menu.
-    Remove the tick in the checkbox "OTA locked". Then save settings and reboot the ESP.
-    Then you can select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
-    After you are done, it is recommended to lock the OTA function again.
-    To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
-    If you try to access the update page now, you should see the message "OTA lock active".
+
+    1. Type the correct OTA passphrase (default: "wledota") in the settings menu and remove the tick in the checkbox "OTA locked".
+    2. Save settings and reboot the ESP.
+    3. Select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
+    4. When you are done, it is recommended to lock the OTA function again. Tick the checkbox and reboot. You can change the passphrase by typing in a new one first.
+
+    If you try to access the update page while OTA is locked, you should see the message "OTA lock active".
 
 !!! info "If you own multiple devices and want to update them"
     Since v0.13, the WLED source code includes shell/command prompt scripts that let you update multiple devices with a single command. Please check the `tools` subfolder for the `multi-update` scripts (.cmd or .sh). You will need to modify them to include the IP addresses of your WLED devices and assign a firmware binary file for each device. If you are using Windows, make sure the `curl` utility is somewhere in your `PATH` (curl ships with Windows 10 build 17063 and later, and with Windows 11). This will only work if "OTA Lock" is disabled.
