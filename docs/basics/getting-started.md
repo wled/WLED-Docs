@@ -14,7 +14,7 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 
 ### Quick Start Guide
 
-**1.** Connect your LED strip to your ESP board.
+**1.** Connect your LED strip to your ESP board. At its simplest, it's three connections: power, data, and ground. The diagrams below show the extras worth adding.
 
 === "Digital LED Strips"
 
@@ -42,7 +42,7 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 
 Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
 
-For 12V strips, multiple strips, several power supplies and level shifters, see the [Wiring Guides](/basics/wiring-guides). To size your power wires and fuses, use the [LED power, wiring and fuse calculator](https://wled-calculator.github.io/).
+For 12V strips, multiple strips, several power supplies, and level shifters, see the [Wiring Guides](/basics/wiring-guides). To size your power wires and fuses, use the [LED power, wiring and fuse calculator](https://wled-calculator.github.io/).
 
 **2.** Flash the software to your ESP module! There are two options for this step:
 
