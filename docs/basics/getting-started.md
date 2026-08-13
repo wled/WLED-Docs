@@ -14,32 +14,34 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 
 ### Quick Start Guide
 
-**1.** Connect a WS2812B-compatible RGB(W) LED strip to your ESP board:
+**1.** Connect your LED strip to your ESP board.
 
-- For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
-- For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`.
+=== "Digital LED Strips"
 
-_If the connecting wire cannot be kept short, use a [level shifter](/basics/wiring-guides#levelshifter)._ Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
+    Also called addressable strips, for example WS2812B-compatible RGB(W) strips. Each LED can be controlled separately.
+
+    - For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
+    - For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`.
+
+    _If the connecting wire cannot be kept short, use a [level shifter](/basics/wiring-guides#levelshifter)._ (1)
+    { .annotate }
+
+    1.  For clock-and-data LEDs on an ESP8266, hardware SPI uses `GPIO14` (SCLK) for clock and `GPIO13` (MOSI) for data. Software SPI works on any pins, we recommend `GPIO1` (TxD) for clock and `GPIO2` (D4) for data.
+
+    ![DigitalWiring](../assets/images/content/WLED_5VdigitalWiring.png)
+
+=== "Analog LED Strips"
+
+    Also called non-addressable strips. Every LED shows the same color, and each color channel needs its own GPIO and MOSFET. The IRLZ44N and STP55NF06L are good choices.
+
+    ![AnalogWiring](../assets/images/content/12Vanalog_wiring.png)
 
 !!! warning
     Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
 
-=== "Digital LED Strips"
+Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
 
-    ![DigitalWiring](../assets/images/content/WLED_5VdigitalWiring.png)
-
-    Also called addressable strips. Each LED can be controlled separately.
-
-=== "Analog LED Strips"
-
-    ![AnalogWiring](../assets/images/content/12Vanalog_wiring.png)
-
-    Also called non-addressable strips. Every LED shows the same color, and each color channel needs its own GPIO and MOSFET. The IRLZ44N and STP55NF06L are good choices.
-
-For 12V strips, multiple strips, several power supplies and level shifters, see the [Wiring Guides](/basics/wiring-guides). To size your power wires and fuses, use the [LED power, wiring and fuse calculator](https://wled-calculator.github.io/). (1)
-{ .annotate }
-
-1.  For clock-and-data LEDs on an ESP8266, hardware SPI uses `GPIO14` (SCLK) for clock and `GPIO13` (MOSI) for data. Software SPI works on any pins, we recommend `GPIO1` (TxD) for clock and `GPIO2` (D4) for data.
+For 12V strips, multiple strips, several power supplies and level shifters, see the [Wiring Guides](/basics/wiring-guides). To size your power wires and fuses, use the [LED power, wiring and fuse calculator](https://wled-calculator.github.io/).
 
 **2.** Flash the software to your ESP module! There are two options for this step:
 
