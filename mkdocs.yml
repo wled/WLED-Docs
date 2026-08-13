@@ -106,6 +106,7 @@ nav:
       - Install WLED Binary: basics/install-binary.md
       - Install using ESP GUI: basics/install-gui.md
       - Install using WLED ESP Flasher: basics/install-wled-flasher.md
+      - Compiling WLED: advanced/compiling-wled.md
     - Tutorials: basics/tutorials.md
     - FAQ: basics/faq.md
   - Features:
@@ -148,7 +149,6 @@ nav:
     - Accessing WLED over Internet: advanced/access-over-internet.md
     - Wiring Protips: advanced/wiring.md
     - Long Data Lines: advanced/longdata.md
-    - Compiling WLED: advanced/compiling-wled.md
     - Custom Features: advanced/custom-features.md
     - Community Usermods: advanced/community-usermods.md
     - ESP32 Recovery: advanced/esp32-recovery.md
