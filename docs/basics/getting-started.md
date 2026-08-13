@@ -40,17 +40,19 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 !!! warning
     Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
 
-Optionally, connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground for [configurable actions](/features/macros).
+For 12V strips, multiple strips, several power supplies, and level shifters, see the [Wiring Guides](/basics/wiring-guides). To size your power wires and fuses, use the [LED power, wiring and fuse calculator](https://wled-calculator.github.io/). (1)
+{ .annotate }
 
-For 12V strips, multiple strips, several power supplies, and level shifters, see the [Wiring Guides](/basics/wiring-guides). To size your power wires and fuses, use the [LED power, wiring and fuse calculator](https://wled-calculator.github.io/).
+1.  While you have the board in your hands, you can also connect a normally open pushbutton to `GPIO0` (NodeMCU/Wemos pin `D3`, on ESP32 use `IO17`) and ground, for [configurable actions](/features/macros).
 
-**2.** Flash the software to your ESP module! There are two options for this step:
+**2.** Flash the software to your ESP module. The easiest way is the WLED web installer, which flashes your board straight from the browser.
 
-[I just want to use WLED! (install release binary)](/basics/install-binary)
+[Install WLED](/basics/install-binary#flashing-method-1-wled-web-installer){ .md-button .md-button--primary }
 
-[I want to modify WLED (compile from source code)](/advanced/compiling-wled)
+Other flashing methods are on the [Install WLED Binary](/basics/install-binary) page. Advanced users who want to change WLED before flashing it can [compile it from source](/advanced/compiling-wled) instead.
 
-If everything worked the first thirty LEDs will light up in bright orange to stimulate courage, friendliness and success!
+!!! success "How to tell it worked"
+    The first 30 LEDs will light up in bright orange to stimulate courage, friendliness and success!
 
 **3.** Use a WiFi device to connect to the access point `WLED-AP` using the default password `wled1234`.
 You can also just scan this QR code:
