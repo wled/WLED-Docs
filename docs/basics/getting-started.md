@@ -12,11 +12,11 @@ hide:
 
 !!! warning "ESP8266 End of Life"
 
-    Do not install any new setups using ESP8266. While WLED currently still supports ESP8266, all new setups should be using the ESP32 as it's much better hardware and ESP8266 is coming to and end of support.
+    Do not install any new setups using ESP8266. While WLED currently still supports ESP8266, all new setups should use the ESP32 as it's much better hardware and ESP8266 support is coming to an end.
 
-### Quick start guide
+### Quick Start Guide
 
-**1.** Connect a WS2812B-compatible RGB(W) led strip to you ESP board:
+**1.** Connect a WS2812B-compatible RGB(W) LED strip to your ESP board:
 
 - For ESP32 use `GPIO16` (or `IO16` or `G16`); GPIOs `4`, `13` and `16-33` can be used, other pins are not recommended.
 - For ESP8266 use `GPIO2`, on most development boards this pin is labeled `D4`.
@@ -32,7 +32,7 @@ Check out the [Wiring Guides](/basics/wiring-guides) for more examples.
 While using an ESP8266 and LEDs that have clock and data, you can either use hardware SPI (mostly faster) or software SPI.
 
   - hardware SPI: use `GPIO14` (SCLK) for clock and `GPIO13` (MOSI) for data.
-  - software SPI: since all pins can be changed in the Hardware section of LED settings, you can use any pins. Recommend is to use `GPIO1` (TxD) for clock and `GPIO2` (D4) for data. 
+  - software SPI: since all pins can be changed in the Hardware section of LED settings, you can use any pins. We recommend `GPIO1` (TxD) for clock and `GPIO2` (D4) for data.
 
 For safe operation, it is recommended to size your power wires correctly and to integrate fuses.  
 For reference, you may use this [LED power, wiring and fuse calculator](https://wled-calculator.github.io/).
@@ -60,17 +60,17 @@ You can also just scan this QR code:
 
 Go to the IP `4.3.2.1` in your browser to control your lights! You should also be able to connect to `wled.me` if in access point mode (embedded DNS server).
 
-### Wifi Setup
+### WiFi Setup
 
-To connect your WLED module to your home Wifi:
+To connect your WLED module to your home WiFi:
 
-**1.** Click on the _Config_ (gear) icon to edit your WLED module settings and choose "Wifi Setup".
+**1.** Click on the _Config_ (gear) icon to edit your WLED module settings and choose "WiFi Setup".
 
-**2.** For most home networks, simply enter your Wifi network's name and network password. You can also change the mDNS address for your WLED module here.
+**2.** For most home networks, simply enter your WiFi network's name and network password. You can also change the mDNS address for your WLED module here.
 
 **3.** Click Save & Connect at the bottom of the page.
 
-**4.** Reconnect your device to your home's Wifi network.
+**4.** Reconnect your device to your home's WiFi network.
 
 **5.**  Check the device list in your router's user interface for the IP of the WLED device within your local network. For easy automatic discovery, use the WLED Native app! Have fun with the WLED software!
 
@@ -82,11 +82,11 @@ To connect your WLED module to your home Wifi:
 | Function | GPIO | Suggested pin |
 |---|---|---|
 LED Data | 2 | ESP8266: 1, 2 (3 if <= 100 LEDs), ESP32: 1, 2, 3, 4, 16
-Button | 0 | 
+Button | 0 |
 IR Remote| None | 4
 Relay | None | 12
 
-### Software update procedure
+### Software Update Procedure
 
 Method 1: Reflashing the new update like a new install (see above).
 
@@ -101,4 +101,4 @@ If you try to access the update page now, you should see the message "OTA lock a
 Method 3: ArduinoOTA is also supported.
 
 !!! info "If you own multiple devices and want to update them"
-    Since v0.13 of WLED source code includes shell/command prompt scripts which is allow you to update multiple devices with a single command. Please check `tools` subfolder for `multi-update` scripts (.cmd or .sh). You will need to modify them to include IP addresses of your WLED devices and assign firmware binary file for each device. If you are using Windows, make sure you install `curl` utility somewhere in your `PATH` (curl is included with Windows 10 since build 17063). This will only work if "OTA Lock" is disabled.
+    Since v0.13, the WLED source code includes shell/command prompt scripts that let you update multiple devices with a single command. Please check the `tools` subfolder for the `multi-update` scripts (.cmd or .sh). You will need to modify them to include the IP addresses of your WLED devices and assign a firmware binary file for each device. If you are using Windows, make sure the `curl` utility is somewhere in your `PATH` (curl ships with Windows 10 build 17063 and later, and with Windows 11). This will only work if "OTA Lock" is disabled.
