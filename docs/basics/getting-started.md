@@ -89,17 +89,19 @@ Relay | None | 12
 
 ### Software Update Procedure
 
-Method 1: Reflashing the new update like a new install (see above).
+=== "Reflash"
 
-Method 2: The software has an integrated _OTA software update_ capability.
-First you have to enable it by typing in the correct OTA passphrase (default: "wledota") in the settings menu.
-Remove the tick in the checkbox "OTA locked". Then save settings and reboot the ESP.
-Then you can select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
-After you are done, it is recommended to lock the OTA function again.
-To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
-If you try to access the update page now, you should see the message "OTA lock active".
+    Download the latest [release binary](https://github.com/wled/WLED/releases) and flash it exactly like the first install. The [Install WLED Binary](/basics/install-binary) page covers every flashing method.
 
-Method 3: ArduinoOTA is also supported.
+=== "OTA Update"
+
+    The software has an integrated _OTA software update_ capability.
+    First you have to enable it by typing in the correct OTA passphrase (default: "wledota") in the settings menu.
+    Remove the tick in the checkbox "OTA locked". Then save settings and reboot the ESP.
+    Then you can select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
+    After you are done, it is recommended to lock the OTA function again.
+    To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
+    If you try to access the update page now, you should see the message "OTA lock active".
 
 !!! info "If you own multiple devices and want to update them"
     Since v0.13, the WLED source code includes shell/command prompt scripts that let you update multiple devices with a single command. Please check the `tools` subfolder for the `multi-update` scripts (.cmd or .sh). You will need to modify them to include the IP addresses of your WLED devices and assign a firmware binary file for each device. If you are using Windows, make sure the `curl` utility is somewhere in your `PATH` (curl ships with Windows 10 build 17063 and later, and with Windows 11). This will only work if "OTA Lock" is disabled.
