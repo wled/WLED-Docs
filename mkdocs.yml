@@ -20,6 +20,7 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - content.action.edit
+    - content.code.annotate
     - content.code.copy
     - search.suggest
     - search.highlight
@@ -48,6 +49,7 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
   - pymdownx.highlight
   - pymdownx.superfences:
       custom_fences:
