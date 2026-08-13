@@ -7,12 +7,10 @@ hide:
 
 ## Welcome to the WLED Wiki!
 
-!!! info "Version Info"
-    Unless noted otherwise, all information applies to the latest release.
+Say hi to Akemi, the WLED mascot. She marks extra information throughout these docs. Click her any time you want to know more. (1)
+{ .annotate }
 
-!!! warning "ESP8266 End of Life"
-
-    Do not install any new setups using ESP8266. While WLED currently still supports ESP8266, all new setups should use the ESP32 as it's much better hardware and ESP8266 support is coming to an end.
+1.  For a new project, an ESP32 is the better pick. It's much more capable hardware, and ESP8266 support is coming to an end.
 
 ### Quick Start Guide
 
