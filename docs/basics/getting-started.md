@@ -73,10 +73,28 @@ To connect your WLED module to your home WiFi:
 
 **5.** Reconnect your phone or computer to your home WiFi network.
 
-**6.** Open your mDNS address in a browser, for example `http://wled-livingroom.local`. If you didn't set one, the WLED Native app finds your device automatically and shows its hostname and IP under Config, or you can look up the IP in your router's device list. Have fun with the WLED software!
+**6.** Open your mDNS address in a browser, for example `http://wled-livingroom.local`. If you didn't set one, use the WLED app to find your device, or look up its IP in your router's device list.
 
 !!! tip "4.3.2.1 stops working"
     Once your device joins your home network, `4.3.2.1` and `wled.me` stop working. Use your mDNS address or the device's IP instead.
+
+### Find Your Device with the WLED App
+
+The WLED app discovers devices on your network for you, so you don't have to dig through your router.
+
+=== "iOS"
+
+    Install [WLED from the App Store](https://apps.apple.com/us/app/wled-official-app/id6446207239).
+
+=== "Android"
+
+    Install [WLED from Google Play](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid).
+
+1. Connect your phone to the same WiFi network as your WLED device.
+2. Your device appears in the app automatically. Select it, then open the **Config** tab in the top right.
+3. Choose **WiFi Setup**. At the bottom of that screen is a text box with your hostname, ending in `.local`, and the IP address directly below it.
+
+Either one works in a browser, as `http://your-hostname.local` or `http://your-ip-address`.
 
 ### Useful Links
 
