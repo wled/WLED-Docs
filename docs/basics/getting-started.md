@@ -14,7 +14,7 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 
 ### Quick Start Guide
 
-**1.** Connect your LED strip to your ESP board. At its simplest, it's three connections: power, data, and ground. The diagrams below show the extras worth adding.
+**1.** Connect your LED strip to your ESP board. A digital strip is three connections at its simplest: power, data, and ground. Analog strips need a channel per color instead. The diagrams below show the extras worth adding.
 
 === "Digital LED Strips"
 
