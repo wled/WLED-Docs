@@ -40,7 +40,7 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 !!! warning
     Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
 
-**2.** Flash the software to your ESP module. The web installer flashes your board straight from the browser.
+**2.** Flash the software to your ESP board. The web installer flashes it straight from the browser.
 
 [Install WLED](https://install.wled.me){ .md-button .md-button--primary }
 
@@ -64,9 +64,9 @@ Open `wled.me` in your browser to control your lights. The IP `4.3.2.1` works to
 
 ### WiFi Setup
 
-To connect your WLED module to your home WiFi:
+To connect your WLED device to your home WiFi:
 
-**1.** Click on the _Config_ (gear) icon to edit your WLED module settings and choose "WiFi Setup".
+**1.** Click on the _Config_ (gear) icon to edit your WLED device settings and choose "WiFi Setup".
 
 **2.** Select **Scan** to find nearby networks, or type your network name. Enter your WiFi password, which is case-sensitive.
 
