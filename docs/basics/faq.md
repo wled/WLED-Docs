@@ -83,7 +83,7 @@ If you accidentally connected the strip the wrong way (if it has arrows printed 
 
 If you did not enter a static IP, the module will automatically obtain a dynamic IP from the router.
 You can check it in the router configuration or in the settings page, if the Access Point is still enabled.
-An easier way is to use the WLED app which features automatic discovery!
+An easier way is to use the WLED app, for [Android](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid) or [iOS](https://apps.apple.com/us/app/wled-official-app/id6446207239), which features automatic discovery!
 
 ### The module once was connected, but I can no longer reach it
 
@@ -95,7 +95,7 @@ Else, power-cycle the module manually.
 
 This only works with Apple devices out of the box. You can install Bonjour to make it work in Windows.
 For Android there is no convenient way to achieve it, though you can use apps like "Bonjour search" to find the IP.
-It is highly recommended that you install the WLED app, which makes automatic discovery easy!
+It is highly recommended that you install the WLED app, for [Android](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid) or [iOS](https://apps.apple.com/us/app/wled-official-app/id6446207239), which makes automatic discovery easy!
 
 ### Is it safe to expose WLED to the public internet to control the lights from anywhere?
 
