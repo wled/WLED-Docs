@@ -40,11 +40,11 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 !!! warning
     Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
 
-**2.** Flash the software to your ESP module. The easiest way is the WLED web installer, which flashes your board straight from the browser.
+**2.** Flash the software to your ESP module. The web installer flashes your board straight from the browser.
 
-[Install WLED](/basics/install-binary#flashing-method-1-wled-web-installer){ .md-button .md-button--primary }
+[Install WLED](https://install.wled.me){ .md-button .md-button--primary }
 
-Other flashing methods are on the [Install WLED Binary](/basics/install-binary) page. Advanced users who want to change WLED before flashing it can [compile it from source](/advanced/compiling-wled) instead.
+Other flashing methods, including for boards with less than 4MB of flash, are on the [Install WLED Binary](/basics/install-binary) page. Advanced users who want to change WLED before flashing it can [compile it from source](/advanced/compiling-wled) instead.
 
 !!! success "How to tell it worked"
     The first 30 LEDs will light up in bright orange to stimulate courage, friendliness and success!
@@ -52,12 +52,15 @@ Other flashing methods are on the [Install WLED Binary](/basics/install-binary) 
 **3.** On your phone or computer, connect to the WiFi network `WLED-AP` using the default password `wled1234`.
 You can also just scan this QR code:
 
-![QR-Code](../assets/images/content/getting-started-wled-ap-qr.png)
+<figure markdown="span">
+  ![QR-Code](../assets/images/content/getting-started-wled-ap-qr.png){ width="220" }
+  <figcaption>Scan to join WLED-AP</figcaption>
+</figure>
 
 !!! tip "WLED-AP is not showing up!"
     If you do not see the `WLED-AP` network, its name may have been changed at [compile time](/advanced/custom-ap).
 
-Go to the IP `4.3.2.1` in your browser to control your lights! You should also be able to connect to `wled.me` if in access point mode (embedded DNS server).
+Open `wled.me` in your browser to control your lights. The IP `4.3.2.1` works too while you're connected to WLED-AP.
 
 ### WiFi Setup
 
