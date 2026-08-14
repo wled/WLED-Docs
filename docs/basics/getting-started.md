@@ -40,10 +40,6 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 !!! warning
     Board pin naming varies depending on the manufacturer. Please use the board pinout from the _specific_ board you purchased and use the GPIO pins to reference this guide. _Make sure to connect ESP and LED-strip grounds together!_
 
-- 12V strips, multiple strips, several supplies, level shifters: [Wiring Guides](/basics/wiring-guides)
-- Wire and fuse sizing: [LED power, wiring and fuse calculator](https://wled-calculator.github.io/)
-- Optional pushbutton on `GPIO0` (`D3` on NodeMCU/Wemos, `IO17` on ESP32): [configurable actions](/features/macros)
-
 **2.** Flash the software to your ESP module. The easiest way is the WLED web installer, which flashes your board straight from the browser.
 
 [Install WLED](/basics/install-binary#flashing-method-1-wled-web-installer){ .md-button .md-button--primary }
@@ -53,13 +49,13 @@ Other flashing methods are on the [Install WLED Binary](/basics/install-binary) 
 !!! success "How to tell it worked"
     The first 30 LEDs will light up in bright orange to stimulate courage, friendliness and success!
 
-**3.** Use a WiFi device to connect to the access point `WLED-AP` using the default password `wled1234`.
+**3.** On your phone or computer, connect to the WiFi network `WLED-AP` using the default password `wled1234`.
 You can also just scan this QR code:
 
 ![QR-Code](../assets/images/content/getting-started-wled-ap-qr.png)
 
 !!! tip "WLED-AP is not showing up!"
-    If you do not see the `WLED-AP` SSID, the default SSID may have been changed at [compile time](/advanced/custom-ap).
+    If you do not see the `WLED-AP` network, its name may have been changed at [compile time](/advanced/custom-ap).
 
 Go to the IP `4.3.2.1` in your browser to control your lights! You should also be able to connect to `wled.me` if in access point mode (embedded DNS server).
 
@@ -69,13 +65,24 @@ To connect your WLED module to your home WiFi:
 
 **1.** Click on the _Config_ (gear) icon to edit your WLED module settings and choose "WiFi Setup".
 
-**2.** For most home networks, simply enter your WiFi network's name and network password. You can also change the mDNS address for your WLED module here.
+**2.** Select **Scan** to find nearby networks, or type your network name. Enter your WiFi password, which is case-sensitive.
 
-**3.** Click Save & Connect at the bottom of the page.
+**3.** Set an **mDNS address**, such as `wled-livingroom`. This becomes the name you use to reach your device from now on.
 
-**4.** Reconnect your device to your home's WiFi network.
+**4.** Click Save & Connect at the bottom of the page.
 
-**5.**  Check the device list in your router's user interface for the IP of the WLED device within your local network. For easy automatic discovery, use the WLED Native app! Have fun with the WLED software!
+**5.** Reconnect your phone or computer to your home WiFi network.
+
+**6.** Open your mDNS address in a browser, for example `http://wled-livingroom.local`. If you didn't set one, the WLED Native app finds your device automatically and shows its hostname and IP under Config, or you can look up the IP in your router's device list. Have fun with the WLED software!
+
+!!! tip "4.3.2.1 stops working"
+    Once your device joins your home network, `4.3.2.1` and `wled.me` stop working. Use your mDNS address or the device's IP instead.
+
+### Useful Links
+
+- 12V strips, multiple strips, several supplies, level shifters: [Wiring Guides](/basics/wiring-guides)
+- Wire and fuse sizing: [LED power, wiring and fuse calculator](https://wled-calculator.github.io/)
+- Optional pushbutton on `GPIO0` (`D3` on NodeMCU/Wemos, `IO17` on ESP32): [configurable actions](/features/macros)
 
 ### Software Update Procedure
 
