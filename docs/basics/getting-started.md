@@ -116,7 +116,7 @@ Either one works in a browser, as `http://your-hostname.local` or `http://your-i
     The software has an integrated _OTA software update_ capability.
 
     1. Type the correct OTA passphrase (default: "wledota") in the settings menu and remove the tick in the checkbox "OTA locked".
-    2. Save settings and reboot the ESP.
+    2. Save settings and reboot your device.
     3. Select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
     4. When you are done, it is recommended to lock the OTA function again. Tick the checkbox and reboot. You can change the passphrase by typing in a new one first.
 
