@@ -47,7 +47,7 @@ Say hi to Akemi, the WLED mascot. She marks extra information throughout these d
 Other flashing methods, including for boards with less than 4MB of flash, are on the [Install WLED Binary](/basics/install-binary) page. Advanced users who want to change WLED before flashing it can [compile it from source](/advanced/compiling-wled) instead.
 
 !!! success "How to tell it worked"
-    The first 30 LEDs will light up in bright orange to stimulate courage, friendliness and success!
+    The first 30 LEDs will light up in bright orange to stimulate courage, friendliness and success! On an analog strip the whole strip turns orange, since every LED shares the same channels.
 
 **3.** On your phone or computer, connect to the WiFi network `WLED-AP` using the default password `wled1234`.
 You can also just scan this QR code:
@@ -76,7 +76,7 @@ To connect your WLED device to your home WiFi:
 
 **5.** Reconnect your phone or computer to your home WiFi network.
 
-**6.** Open your mDNS address in a browser, for example `http://wled-livingroom.local`. If you didn't set one, use the WLED app to find your device, or look up its IP in your router's device list.
+**6.** Open your mDNS address in a browser, for example `http://wled-livingroom.local`. If you didn't set one, or the `.local` name doesn't resolve on your device, use the WLED app to find it, or look up its IP in your router's device list.
 
 !!! tip "4.3.2.1 stops working"
     Once your device joins your home network, `4.3.2.1` and `wled.me` stop working. Use your mDNS address or the device's IP instead.
@@ -103,7 +103,7 @@ Either one works in a browser, as `http://your-hostname.local` or `http://your-i
 
 - 12V strips, multiple strips, several supplies, level shifters: [Wiring Guides](/basics/wiring-guides)
 - Wire and fuse sizing: [LED power, wiring and fuse calculator](https://wled-calculator.github.io/)
-- Optional pushbutton on `GPIO0` (`D3` on NodeMCU/Wemos, `IO17` on ESP32): [configurable actions](/features/macros)
+- Optional pushbutton for [configurable actions](/features/macros). The default is `GPIO0` (`D3` on NodeMCU/Wemos). On ESP32 use any free pin, such as `IO17`, that you are not already using for LED data
 
 ### Software Update Procedure
 
