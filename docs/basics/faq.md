@@ -83,7 +83,7 @@ If you accidentally connected the strip the wrong way (if it has arrows printed 
 
 If you did not enter a static IP, the module will automatically obtain a dynamic IP from the router.
 You can check it in the router configuration or in the settings page, if the Access Point is still enabled.
-An easier way is to use the WLED Native app which features automatic discovery!
+An easier way is to use the WLED app which features automatic discovery!
 
 ### The module once was connected, but I can no longer reach it
 
@@ -95,7 +95,7 @@ Else, power-cycle the module manually.
 
 This only works with Apple devices out of the box. You can install Bonjour to make it work in Windows.
 For Android there is no convenient way to achieve it, though you can use apps like "Bonjour search" to find the IP.
-It is highly recommended that you install the WLED Native app, which makes automatic discovery easy!
+It is highly recommended that you install the WLED app, which makes automatic discovery easy!
 
 ### Is it safe to expose WLED to the public internet to control the lights from anywhere?
 
@@ -283,16 +283,6 @@ Segments are non-persistant by default. If you want to load your preset at every
 - In LED settings, set `Boot Preset` to the preset slot number from the previous step.
 
 This will be improved in a future release, so that you will be able to save multiple segment configurations!
-
-### What is the difference between the WLED app and the WLED Native app?
-
-The WLED app was the official app developped by the same people that brought you WLED. WLED Native is an initiative by community member [Moustachauve](https://github.com/Moustachauve) to bring an interface that is closer to the native operating system look of your device and some new features.
-
-The official WLED app is now considered legacy. It is not currently maintained and might not receive any future bug fixes.
-
-WLED Native has a few more features available, like a tablet interface for Android and can keep track of changes to the device IP address better.
-
-While WLED Native is not the official app, it is officially endorsed and trusted by the WLED maintainers.
 
 ## Bundling WLED with custom hardware (License)
 
