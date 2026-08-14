@@ -70,7 +70,7 @@ To connect your WLED device to your home WiFi:
 
 **2.** Select **Scan** to find nearby networks, or type your network name. Enter your WiFi password, which is case-sensitive.
 
-**3.** Set an **mDNS address**, such as `wled-livingroom`. This becomes the name you use to reach your device from now on.
+**3.** Set an **mDNS address**, such as `wled-livingroom`. This becomes the name you use to reach your device from now on. Change the AP password here too, since `wled1234` is the same on every WLED device.
 
 **4.** Click Save & Connect at the bottom of the page.
 
@@ -123,4 +123,4 @@ Either one works in a browser, as `http://your-hostname.local` or `http://your-i
     If you try to access the update page while OTA is locked, you should see the message "OTA lock active".
 
 !!! info "If you own multiple devices and want to update them"
-    Since v0.13, the WLED source code includes shell/command prompt scripts that let you update multiple devices with a single command. Please check the `tools` subfolder for the `multi-update` scripts (.cmd or .sh). You will need to modify them to include the IP addresses of your WLED devices and assign a firmware binary file for each device. If you are using Windows, make sure the `curl` utility is somewhere in your `PATH` (curl ships with Windows 10 build 17063 and later, and with Windows 11). This will only work if "OTA Lock" is disabled.
+    Since v0.13, the WLED source code includes shell/command prompt scripts that let you update multiple devices with a single command. Please check the `tools` subfolder for the `multi-update` scripts (.cmd or .sh). You will need to modify them to include the IP addresses of your WLED devices and assign a firmware binary file for each device. If you are using Windows, make sure the `curl` utility is somewhere in your `PATH` (curl ships with Windows 10 build 17063 and later, and with Windows 11). This will only work if "OTA Lock" is disabled, so turn it back on and reboot once the batch is finished.
