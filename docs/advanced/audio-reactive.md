@@ -86,7 +86,7 @@ A simple conditioning circuit (shown below) is needed to scale the line-out sign
 
 ![Example analog line-in](../assets/images/content/example_analog_linein.jpg)
 
-In a pinch you can connect audio GND and one audio channel directly to an ESP32 ADC pin (e.g., GPIO 36), but results vary widely and this is not recommended for permanent installs.
+As a temporary option, you can connect audio GND and one audio channel directly to an ESP32 ADC pin (e.g., GPIO 36), but results vary widely and this is not recommended for permanent installs.
 
 For more detail, see the [Sound Reactive WLED Wiki](https://mm.kno.wled.ge/soundreactive/introduction/).
 
