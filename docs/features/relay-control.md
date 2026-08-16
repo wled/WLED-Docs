@@ -24,7 +24,7 @@ If you do not want PIR (motion) sensor attached to WLED controller to trigger ch
 
 ![image](https://user-images.githubusercontent.com/59397047/164982222-a55b2702-b21f-4245-96fb-a90d165de85c.png)
 
-If you do not want button relay control just leave relay button at -1, the same goes for PIR sensor parameters (leave nighttime-only and/or off-only unchecked). Adjust preset numbers and GPIO pins to your liking. Multi relay usermod can also switch relay using MQTT messages or HTTP requests (check source code for available commands). If you configured MQTT on your WLED device, the PIR sensor usermod will publish the /motion topic to your MQTT broker for HA integration.
+If you do not want button relay control just leave relay button at -1, the same goes for PIR sensor parameters (leave nighttime-only and/or off-only unchecked). Adjust preset numbers and GPIO pins to your liking. The Multi Relay usermod can also switch the relay using MQTT messages or HTTP requests (check source code for available commands). If you configured MQTT on your WLED device, the PIR sensor usermod will publish the /motion topic to your MQTT broker for HA integration.
 
 ![image](https://user-images.githubusercontent.com/59397047/164982233-5057bcef-48fe-4e52-a2c3-f8c7856a2f8a.png)
 
