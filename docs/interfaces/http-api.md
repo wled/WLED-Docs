@@ -41,7 +41,7 @@ Add one or multiple of the following parameters after the base URL/IP to change 
 &NL= | 0 to 255 | Nightlight active and duration in minutes
 &ND | none | Toggles nightlight on but uses default duration
 &NT= | 0 to 255 | Nightlight target brightness
-&NF= | 0 to 2 | Fade Nightlight, 1 = fade brightness only, 2 = additionaly fade color from primary to secondary color
+&NF= | 0 to 2 | Fade Nightlight, 1 = fade brightness only, 2 = additionally fade color from primary to secondary color
 
 ## Advanced
 

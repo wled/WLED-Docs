@@ -43,7 +43,7 @@ Custom max. current | 1–255 | 50 | Current draw of a single LED pixel set to f
 
 #### LED outputs
 
-WLED supports multiple outputs. To add an output, click the plus button at the bottom of the "LED outputs": section; to remove the last output, click the minus button. Bellow the plus/minus buttons is an indication of how much of the memory allocated to LEDs is being used by the configuration.
+WLED supports multiple outputs. To add an output, click the plus(+) button at the bottom of the "LED outputs" section; to remove the last output, click the minus(-) button. Below the plus/minus buttons is an indication of how much of the memory allocated to LEDs is being used by the configuration.
 
 All outputs share the same address space within WLED. By default, the first pixel of an output will be given an address that is one higher than the last pixel of the previous output, but this can be altered.
 
@@ -53,8 +53,8 @@ Each output has the following settings:
 |---|---|---|---|
 Type (represented by the output's number) | multiple options | WS281x | Select the type of LEDs this output will be controlling
 Clock | multiple options | "Normal" | Select the PWM or SPI frequency used when driving supported LEDs <br> Used PWM frequencies for the ESP8266 / ESP32, and SPI respectively; <br> Slowest: 293.33 Hz / 6510.33 Hz / 1 MHz <br> Slow: 440 Hz / 9765.50 Hz / 2 MHz <br> Normal: 880 Hz / 19531 Hz / 5 MHz <br> Fast: 1760 Hz / 39062 Hz / 10 MHz <br> Fastest: 2640 Hz / 58593 Hz / 20 MHz <br> [*only appears if "Type" is set to a type that is controlled by PWM or SPI*]
-Color order | muliple options | "GRB" | Select which order your LEDs process color information (e.g. if your LEDs display red and green swapped, try changing it) [*only appears if "Type" is set to a type that supports color order*]
-Start/Index | integer | cummulative length of all previous outputs | Define which address this output (or its first pixel) should use within WLED's address space [*only editable if "Custom bus start indices" is on*]
+Color order | multiple options | "GRB" | Select which order your LEDs process color information (e.g. if your LEDs display red and green swapped, try changing it) [*only appears if "Type" is set to a type that supports color order*]
+Start/Index | integer | cumulative length of all previous outputs | Define which address this output (or its first pixel) should use within WLED's address space [*only editable if "Custom bus start indices" is on*]
 Length | integer | 1 | Define how many pixels are connected to this output [*only appears if "Type" is set to a type that supports multiple pixels*]
 (Data/Clk) GPIO(s) | integer | (blank) | Tell WLED which GPIO pin(s) this output is connected to [*number and description of GPIO settings will depend on the output's selected type*]
 Reversed (rotated 180°) | on/off | off | Mirrors the LEDs (last LED is first) [*only appears if "Type" is set to a type that supports multiple pixels*]
@@ -78,7 +78,7 @@ Additionally, one or more Color Order Overrides can be defined by clicking the p
 |---|---|---|---|
 Start | integer | 0 | Define which address this color override should start it
 Length | integer | 1 | Define how many pixels in a row should have their color setting overridden
-Color order | muliple options | "GRB" | Same as "Color order" above
+Color order | multiple options | "GRB" | Same as "Color order" above
 
 ### Other settings
 
@@ -184,4 +184,3 @@ Disable recovery AP | Y/N | If enabled, the module will not open an Access Point
 Factory reset | Y/N | Deletes all custom settings data (passwords, configuration, macros, presets)
 Manual OTA | - | If OTA is enabled, you can upload new binary firmware
 Enable ArduinoOTA | Y/N | Useful for developers. Be careful, can even be left on when OTA locked!
-

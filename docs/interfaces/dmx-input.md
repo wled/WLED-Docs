@@ -23,15 +23,15 @@ The wired DMX will work exactly like the network DMX options, only a single univ
 
 ### Hardware Setup
 
-The DMX interface require the use of an RS485 adapter such as the MAX485 transceiver connected to the pins defined in setup of the ESP in order to handle DMX input and RDM input and output.
+The DMX interface requires an RS485 adapter such as the MAX485 transceiver, connected to the pins defined in the ESP setup, to handle DMX input and RDM input and output.
 
 You will need to use *three* GPIO pins that support output.
 
 *Do NOT use the pins on your ESP32 labelled RX and TX as your DMX pins!*
 
-* pin assined as *DMX* RX pin on esp32 connects to RO
-* pin assined as *DMX* TX pin on esp32 connects to DI
-* pin assined as *DMX* EN pin on esp32 connects to both DE and RE
+* pin assigned as *DMX* RX pin on esp32 connects to RO
+* pin assigned as *DMX* TX pin on esp32 connects to DI
+* pin assigned as *DMX* EN pin on esp32 connects to both DE and RE
 
 Connect the RS485 power pins as follows
 

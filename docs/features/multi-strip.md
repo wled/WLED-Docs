@@ -10,7 +10,7 @@ hide:
 WLED supports multiple LED outputs from one ESP board.
 Pins and LED numbers can be configured in LED settings without recompiling.
 
-There are a few tips and recomendations to keep in mind when designing your setup:
+There are a few tips and recommendations to keep in mind when designing your setup:
 
 ### General
 
@@ -46,7 +46,7 @@ There are a few tips and recomendations to keep in mind when designing your setu
  - * ESP32-C3: 2 led Strips
  - * (experimental) ESP32-C6, ESP32-C5, ESP32-P4: currently only 1 LED strip due to driver problems
 - Contrary to the ESP8266, the pin usage does not matter on ESP32, feel free to use any available pin, except for input-only pins.
-- For perfect performance, it is recommeded to use 512 LEDs/pin with 4 outputs for a total of 2048 LEDs.
+- For perfect performance, it is recommended to use 512 LEDs/pin with 4 outputs for a total of 2048 LEDs.
 - For very good performance, it is recommended to use 800 LEDs/pin with 4 outputs for a total of 3200 LEDs.
 - For good performance, you can use 1000 LEDs/pin with 4 outputs for a total of 4000 LEDs.
 - For okay performance, you can use 1000 LEDs/pin with 5 outputs for a total of 5000 LEDs.
