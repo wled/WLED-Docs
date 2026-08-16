@@ -48,7 +48,7 @@ Playlists superseded Preset Cycle in 0.13.
 3. In `config.py`, set your LED count, ESP IP address, and WLED UDP notifier port. For FPS, a setting between 15–30 is recommended.
 4. Run `visualization.py`! If you have a small number of LEDs (for example, 10), try lowering the sigma values in lines 129–131.
 5. If you have multiple WLED devices, you can sync them all with music.
-Use the led count of your largest device and set the IP to X.X.X.255 (UDP broadcast).
+Use the LED count of your largest device and set the IP to the subnet's broadcast address. For a `/24` subnet, use `X.X.X.255`.
 You can adjust the position of the amplitude with the WARLS offset setting.
 Web control currently does not work while WARLS is active.
 
