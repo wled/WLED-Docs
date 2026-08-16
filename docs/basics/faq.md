@@ -272,7 +272,7 @@ There are three brightness slider types in the web UI. The white one in the **to
   
 In contrast, the slider **underneath the color wheel only** applies to the **currently selected color** and will not affect the brightness of other colors or Palettes. It is recommended to use this slider only if you like a darker version of a color alongside other, brighter colors. It should not be used to control the overall brightness, so it is preferable to leave it on maximum and instead use the master brightness control.  
 
-There is a third brightness slider in each Segment panel. This serves the same purpose as master brightness, but limited to that segment. Please note that this does not override the master brightness, but instead is an additional downscaling. (If you set both Master and Segment brightness sliders to 50%, the resulting brightness is 25%)
+There is a third brightness slider in each Segment panel. This serves the same purpose as master brightness, but limited to that segment. This does not override the master brightness. Instead, it applies additional downscaling. (If you set both Master and Segment brightness sliders to 50%, the resulting brightness is 25%)
 
 ### My Segments are gone after a reboot!
 

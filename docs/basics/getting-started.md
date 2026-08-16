@@ -66,7 +66,7 @@ To connect your WLED module to your home Wifi:
 
 **1.** Click on the _Config_ (gear) icon to edit your WLED module settings and choose "Wifi Setup".
 
-**2.** For most home networks, simply enter your Wifi network's name and network password. You can also change the mDNS address for your WLED module here.
+**2.** For most home networks, enter your Wifi network's name and network password. You can also change the mDNS address for your WLED module here.
 
 **3.** Click Save & Connect at the bottom of the page.
 
@@ -77,7 +77,7 @@ To connect your WLED module to your home Wifi:
 ### Default GPIO Usage
 
 !!! info "These are only defaults"
-    All pins can be changed in the Hardware section of LED settings. Please note that these are GPIO numbers, please consult a pinout for your board to find the labeled pin (e.g `D4` = `GPIO2` on most ESP8266 boards). When using an ESP8266 board, it's recommended to use pins `GPIO1`, `GPIO2`, or `GPIO3` for LED Data; using other pins will require _bit-banging_ and may cause slow performance and/or issues elsewhere (such as with IR decoding).
+    All pins can be changed in the Hardware section of LED settings. These are GPIO numbers, so please consult a pinout for your board to find the labeled pin (e.g `D4` = `GPIO2` on most ESP8266 boards). When using an ESP8266 board, it's recommended to use pins `GPIO1`, `GPIO2`, or `GPIO3` for LED Data; using other pins will require _bit-banging_ and may cause slow performance and/or issues elsewhere (such as with IR decoding).
 
 | Function | GPIO | Suggested pin |
 |---|---|---|

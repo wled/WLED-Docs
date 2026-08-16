@@ -38,7 +38,7 @@ UCS8904 | 5-24&nbsp;V | RGBW
 
 ## Non-Addressable LED Strips
 
-WLED supports non-addressable LED strips as well. Unlike addressable strips, non-addressable strips require a pin for each "color" channel and all LEDs are controlled the same way. To drive these strips, additional circuits (MOSFETs) are required. Basic circuit diagrams for RGB strips are shown here. You need one MOSFET and one GPIO per color. It should be noted that the MOSFETs are destroyed very quickly in the event of an overload. To reduce the risk of fire and prevent personal injury, additional circuit elements should be implemented to protect MOSFETs from overtemperature and overload. Depending on the type, fuses are too slow for this! You might consider using self-protected MOSFETs too or the entire MOSFET circuit can be packed into a fire-retardant (e.g. metallic) housing.
+WLED supports non-addressable LED strips as well. Unlike addressable strips, non-addressable strips require a pin for each "color" channel and all LEDs are controlled the same way. To drive these strips, additional circuits (MOSFETs) are required. Basic circuit diagrams for RGB strips are shown here. You need one MOSFET and one GPIO per color. MOSFETs can fail very quickly if overloaded. To reduce the risk of fire and prevent personal injury, additional circuit elements should be implemented to protect MOSFETs from overtemperature and overload. Depending on the type, fuses are too slow for this! You might consider using self-protected MOSFETs too or the entire MOSFET circuit can be packed into a fire-retardant (e.g. metallic) housing.
 
 ![Controlling analog LED strips](../assets/images/content/12Vanalog_wiringRGB.png)
 
@@ -54,7 +54,7 @@ _See **NOTE** at the end before trying the below amplifiers._
 The commercially available so-called RGB(W) LED amplifiers can also be used (also called repeaters/boosters). These typically include optocouplers and MOSFET circuitry (1 to 5 channels) and can be used, for example, as follows:
 ![Controlling analog LED strips](../assets/images/content/pic44.jpg)
 
-Note that there is no GND connection between the controller and the amplifier. And this despite the fact that with all other WLED circuits it is always said that all GNDs must be connected to each other. This special feature is due to the fact that the inputs of the amplifier are galvanically decoupled from the outputs by optocouplers and the amplifier in this circuit is used slightly differently than its usual application.
+There is no GND connection between the controller and the amplifier. Unlike most other WLED circuits, the grounds stay separate here because the inputs of the amplifier are galvanically decoupled from the outputs by optocouplers, and the amplifier in this circuit is used slightly differently than in its usual application.
 
 You can connect the GPIOs directly (3.3V signal level) to the input of the amplifier or, if you use a ready-made WLED controller, you can also use the data outputs (of the level shifter, i.e. 5 V signal level). You can also use both at the same time:
 ![Controlling analog LED strips](../assets/images/content/pic46.jpg)

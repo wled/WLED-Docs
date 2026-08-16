@@ -282,7 +282,7 @@ Keep in mind that this will not cause interface updates. For that, you still nee
 
 ## Changing Web UI
 
-In order to conserve space, the Web UI interface is represented as a series of `wled00/html_*.h` files which contain C/C++ strings with specific parts of the Web UI.
+To conserve space, the Web UI interface is represented as a series of `wled00/html_*.h` files which contain C/C++ strings with specific parts of the Web UI.
 
 These files are automatically created from source files available in `wled00/data` folder. To generate files, install [Node.js](https://nodejs.org/en/download) 20 or higher globally. After that, recreate `html_*.h` files by running in the repo directory:
 ```

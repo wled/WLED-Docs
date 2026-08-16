@@ -112,4 +112,4 @@ The software now supports audio-reactive-led-strip!
 5. If you have multiple WLED devices, you can sync them all with music.
 Use the led count of your largest device and set the IP to X.X.X.255 (UDP broadcast).
 You can adjust the position of the amplitude with the WARLS offset setting.
-Note that web control currently does not work while it is active.
+Web control currently does not work while it is active.
