@@ -17,7 +17,7 @@ Presets can contain both HTTP and JSON API commands (replacing the previous Macr
 
 ### How to Use
 
-The new preset system is quite a bit more advanced than the previous one, thus it is likely not as self-explanatory to use.  
+The preset system has quite a few options, so it is likely not entirely self-explanatory.  
 Here you can find what each setting does and how to make best use of it!
 
 *"Create Preset" button*  
@@ -81,7 +81,7 @@ This is the number you'll want to use to apply this preset from a timed macro or
 
 ### A note on performance
 
-This new preset system is quite fast where it matters, reading the presets.  
+The preset system is quite fast where it matters, reading the presets.  
 Applying a preset will typically take less than a tenth of a second.  
 
 However, due to a design choice of the LittleFS filesystem used by WLED, random writes to the preset file are very resource intensive.  

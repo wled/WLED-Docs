@@ -15,9 +15,10 @@ You are able to set custom actions ("Macros") in Time & Macro settings for the f
 - Alexa On/Off
 - Countdown over
 - Timed light duration over
-- Device (re)boot (use LED settings 'Boot preset')
 
-Note: If you have multiple presets that run at the same time, the lowest down the list takes precedence.
+Boot behavior is set via "Boot preset" in LED settings.
+
+If you have multiple presets that run at the same time, the lowest down the list takes precedence.
 
 Each macro has the format of a standard [HTTP API call](/interfaces/http-api) without the IP. Optionally, the "win&" may be omitted.
 For example, the macro "A=255" sets the brightness to maximum. "R=255&G=160&B=0" sets the color to orange.
@@ -79,7 +80,7 @@ Palette | 247
 Primary color hue | 200
 Segment N opacity | 0-32
 
-This potentiometer should be supplied 3.3V and GND, with it's output supplied to A0 (or any other ADC pin you specify), recommended 10KΩ or greater. 
+The potentiometer should be supplied 3.3V and GND, with it's output supplied to A0 (or any other ADC pin you specify), recommended 10KΩ or greater.
 
 !!! info "Do not use ESP32 ADC2 GPIO pins for analog buttons"
     On ESP8266, you can only have a single analog button on pin A0, the pin set in the settings UI is ignored.  
