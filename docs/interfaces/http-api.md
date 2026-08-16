@@ -97,7 +97,7 @@ Loxone offers two commands. One for RGB values and one for brightness and color 
 
 | Parameter | Value Range | Description |
 | --- | --- | --- |
-&M= | 1 to 250 | Apply macro (deprecated)
+&M= | 1 to 16 | Apply macro (deprecated; retained for compatibility with pre-0.11 automations)
 
 ## Segments
 
