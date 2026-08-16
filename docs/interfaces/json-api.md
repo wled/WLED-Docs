@@ -56,7 +56,7 @@ Sample JSON API response:
     "nl": {
       "on": false,
       "dur": 60,
-      "fade": true,
+      "mode": 1,
       "tbri": 0
     },
     "udpn": {
@@ -86,11 +86,9 @@ Sample JSON API response:
     "vid": 1903252,
     "leds": {
       "count": 20,
-      "rgbw": true,
-      "pin": [2],
       "pwr": 0,
       "maxpwr": 65000,
-      "maxseg": 1
+      "maxseg": 32
     },
     "name": "WLED Light",
     "udpport": 21324,
