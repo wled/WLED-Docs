@@ -87,7 +87,7 @@ Loxone offers two commands. One for RGB values and one for brightness and color 
 
 | Parameter | Value Range | Description |
 | --- | --- | --- |
-&PS= | 1 to 250 | Saves current setup to preset. Preset 255 can be used and is temporary/not persistent.
+&PS= | 1 to 250, or 255 (temporary) | Saves current setup to preset. Preset 255 is temporary and not persistent.
 &PL= | 1 to 250 | Applies entire preset
 &P1= | 1 to 249 | First cycle preset
 &P2= | 2 to 250 | Last cycle preset
