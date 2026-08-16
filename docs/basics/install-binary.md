@@ -10,7 +10,7 @@ hide:
 !!! tip
     This is by far the easiest and fastest way to get WLED up and running!
 
-Make sure you are running a recent desktop Chrome or Edge browser and head over to the [WLED installer site](https://install.wled.me)!
+Make sure you are running a desktop version of Chrome, Edge, Opera, or Firefox 151 or newer, and head over to the [WLED installer site](https://install.wled.me)! Safari cannot be used, as it does not support the browser feature the installer needs to talk to your board.
 This installer is not yet available for ESPs with flash chips smaller than 4MB (e.g. ESP01)
 
 !!! tip
