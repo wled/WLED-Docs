@@ -48,7 +48,7 @@ However, tpm2 requires on average 2-4x less bandwidth than JSON, and should ther
 
 #### Changing Baud Rate
 
-There are 2 main methods for changing Baud Rate for the serial connection
+There are 2 main methods for changing Baud Rate for the serial connection:
 - Persistent: Configure in App under [Sync Interfaces](/features/settings/#sync-settings). This setting will persist, and WLED will use the specified Baud Rate from this point forward.
 - Temporary: Utilizing the serial connection at the existing Baud Rate, send the specific command byte to have WLED temporarily change to a new Baud Rate. This Baud Rate is temporary and will be reset to the default or persistent setting on reboot.
 
