@@ -9,7 +9,7 @@ You want to add custom features to WLED, use non-default pins, or add in a userm
 
 WLED has come to rely on so many dependencies in the latest versions that building with Visual Studio Code and its PlatformIO (PIO) extension is the recommended way. It will install the ESP Arduino core, all the required libraries and the correct compilation settings for you automatically. The Arduino IDE is no longer recommended.
 
-If you don't want to change the code but only add some compile options and/or usermods, you can use bot on discord or compile with just few clicks using [this inofficial web based wled compiler](https://wled-compile.github.io/). Using it you can download the resulting .bin file directly or install  via USB using built-in web-based installer.
+If you don't want to change the code but only add some compile options and/or usermods, you can use the bot on Discord or compile with just a few clicks using [this unofficial web-based WLED compiler](https://wled-compile.github.io/). Using it, you can download the resulting .bin file directly or install via USB using the built-in web-based installer.
 
 ### Preparations
 
@@ -71,7 +71,7 @@ Once you've confirmed VSCode with Platformio is set up correctly, you can add/de
     ```
  4. Find the section that matches the build environment you selected in previous steps. Example: `[env:d1_mini]`
  5. Select the whole section (including the first line in brackets [ ] ), and copy and paste it into `platformio_override.ini` overwriting the build environment section that was already there.
- 6. Add a new line under the the line that starts with `build_flags =`
+ 6. Add a new line under the line that starts with `build_flags =`
  7. Put your `-D` overrides on this new line, giving each `-D` it's own new line.
  8. Compile your freshly customized WLED image!
 

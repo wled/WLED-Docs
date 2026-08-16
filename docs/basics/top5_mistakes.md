@@ -28,7 +28,7 @@ If you're still having trouble and want to ask for help, share as much detail as
 
 #### Take care of PSU used
 
-Pay close attention to the power supply unit (PSU) you use. Flickering in addressable LED strips is somethimes caused by poor-quality PSUs that generate significant electromagnetic interference (EMI).
+Pay close attention to the power supply unit (PSU) you use. Flickering in addressable LED strips is sometimes caused by poor-quality PSUs that generate significant electromagnetic interference (EMI).
 
 When selecting a PSU, don’t rely solely on general customer reviews. Make sure the unit has been successfully used specifically with addressable LED strips (e.g., WS2812, SK6812). Many inexpensive PSUs receive positive reviews but are primarily used with analog LED strips.
 

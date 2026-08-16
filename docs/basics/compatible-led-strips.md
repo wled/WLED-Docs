@@ -44,7 +44,7 @@ WLED supports non-addressable LED strips as well. Unlike addressable strips, non
 
 ![Controlling analog LED strips](../assets/images/content/pic29.jpg)
 
-Recommended MOSFETs are IRLZ44N or STP55NF06L. A much smaller SMD alternative is the AO3400 which can be used up to 24V and 3A. The pulldown resistor from **G**ate to **S**ource prevents the LEDs turning on when the GPIO is disabled or powered down. The resistor between the GPIO an the **G**ate is to protect the GPIO from overload and reduces voltage ringing. To increase switching speed, add a SN74(A)HCT125 [level shifter](/basics/compatible-hardware#levelshifters) between GPIOs and gate-resistors.
+Recommended MOSFETs are IRLZ44N or STP55NF06L. A much smaller SMD alternative is the AO3400 which can be used up to 24V and 3A. The pulldown resistor from **G**ate to **S**ource prevents the LEDs turning on when the GPIO is disabled or powered down. The resistor between the GPIO and the **G**ate protects the GPIO from overload and reduces voltage ringing. To increase switching speed, add a SN74(A)HCT125 [level shifter](/basics/compatible-hardware#levelshifters) between GPIOs and gate-resistors.
 
 As of v0.13.1, WLED supports single color, CCT, RGB, RGBW and RGBCCT strips. These strips are commonly found at 12 or 24 volts.
 The default PWM frequency for dimming is 880 Hz on ESP8266 and 19531 Hz for ESP32.

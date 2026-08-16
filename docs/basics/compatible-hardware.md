@@ -26,7 +26,7 @@ Please use a decent and neutral description when adding things to this list.
 [Logic Level Shifter Board](https://www.tindie.com/products/sjmelectronics/logic-level-converter-level-shifter) | A simple level shifter board. Updated version has selectable data-pin resistors.
 [Logic Level Shifter Shield](https://www.tindie.com/products/sjmelectronics/logic-level-converter-shield)| Logic level shifter shield for Seeed Studio ESP32-C3 and D1 Mini format dev boards. Updated version has selectable data-pin resistors.
 [MagWLED-1](https://magwled.com) | ESP32-C3 based WLED controller with USB-C Power Delivery (up to 36W/12V 3A). Compact 48x32mm form factor with Wago 2060 connector. Features include 3A resettable fuse, ESD protection, and MOSFET relay for power control. Comes pre-flashed with WLED.
-[WIZmote remote control](https://www.google.com/search?q=wizmote) | Remote control using radio network. Compatible with WLED (vesions 0.14.0-beta3 and above). No additional receiver required.
+[WIZmote remote control](https://www.google.com/search?q=wizmote) | Remote control using radio network. Compatible with WLED (versions 0.14.0-beta3 and above). No additional receiver required.
 
 ## Compatible PC RGB Fans and ARGB accessories
 
@@ -69,7 +69,7 @@ How to connect Levelshifters:
 
 | Name | Description |
 |---|---|
-[CH340](https://www.aliexpress.com/item/32761423124.html) | CH340 module instead of CP2102, PL2303 or FTDI/FTDT. The CH340 can deliver more current which is needed while the flash process depending on the board type. The timing is also much more stable. **For boards with an USB/TTL adapter onboard this is NOT needed**
+[CH340](https://www.aliexpress.com/item/32761423124.html) | CH340 module instead of CP2102, PL2303 or FTDI/FTDT. The CH340 can deliver more current which is needed while the flash process depending on the board type. The timing is also much more stable. **For boards with a USB/TTL adapter onboard this is NOT needed**
 [ESP uploader](https://github.com/srg74/ESP-uploader) |  CP2102N module. Same USB to UART converter as many recent Dev boards using. Featuring latest USB-C connector. For use with many ESP32, ESP8266, ESP8255 and Tuya based modules. 3.3V logic and 5V power pass through for custom boards.
 
 ## Miscellaneous

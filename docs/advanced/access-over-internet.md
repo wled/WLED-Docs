@@ -73,4 +73,4 @@ mydomain.example {
 
 Now `https://mydomain.example/wled/` exposes WLED to the public internet using secure HTTPS and password authentication.
 
-For additional securty, consider enabling [OTA lock password](/advanced/ota-lock).
+For additional security, consider enabling [OTA lock password](/advanced/ota-lock).

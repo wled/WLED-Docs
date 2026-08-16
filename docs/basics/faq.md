@@ -34,7 +34,7 @@ hide:
 
 - [My LEDs don't turn on at all.](#my-leds-dont-turn-on-at-all)
 - [My LEDs don't get as bright as they should!](#my-leds-dont-get-as-bright-as-they-should)
-- [My LEDs are unable to be set into an consistent solid color.](#my-leds-are-unable-to-be-set-into-an-consistent-solid-color)
+- [My LEDs are unable to be set into a consistent solid color.](#my-leds-are-unable-to-be-set-into-a-consistent-solid-color)
 - [When I select green, the LEDs turn red!](#when-i-select-green-the-leds-turn-red)
 - [My LEDs act funny and flicker randomly.](#my-leds-act-funny-and-flicker-randomly)
 - [Not all my LEDs turn on.](#not-all-my-leds-turn-on)
@@ -147,7 +147,7 @@ If the brightness slider in the UI is already at maximum, try checking the auto 
 Set the milliamp limit to slightly below the rating of your power supply.
 If the LEDs are still too dim or change color towards the end of the strip, there may be a significant voltage drop. Try injecting 5v power at the end or middle of the strip with some appropriate cabling.
 
-### My LEDs are unable to be set into an consistent solid color
+### My LEDs are unable to be set into a consistent solid color
 
 If the LEDs should be individually addressable, like the SK6812, but instead they only behave as either RED,GREEN OR BlUE pixels (in a row).
 You might not have enabled (settings -> led preferences) "LEDs are 4-channel type (RGBW)"  for an RGBW/RGBWW/RGBNW strip.
@@ -191,7 +191,7 @@ If you have more and can power them, go to LED settings and increase the LED cou
 Please also enter the milliamp rating of your 5v power supply for optimal brightness in the field below it.
 Do not increase the mA number if you power LEDs directly from the 5V pin of the ESP!
 
-See [here](https://kno.wled.ge/features/multi-strip/) for maximum recommended LED counts.
+See [Multi-strip Support](/features/multi-strip) for maximum recommended LED counts.
 
 #### Reason 2
 
@@ -276,7 +276,7 @@ There is a third brightness slider in each Segment panel. This serves the same p
 
 ### My Segments are gone after a reboot!
 
-Segments are non-persistant by default. If you want to load your preset at every startup, just do the following:
+Segments are non-persistent by default. If you want to load your preset at every startup, just do the following:
 
 - Set your segments up as desired
 - Go into the Presets tab in the web UI, click the save checkbox and save the config to a new preset. Remember the preset slot number.

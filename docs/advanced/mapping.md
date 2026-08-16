@@ -15,7 +15,7 @@ This allows us to treat the WLED strip as if it is wired in any way - we can the
 Navigate to the edit page for your WLED device by adding `/edit` to its address - for example, https://my-led-device.local/edit
 Use this edit page to create a file called `ledmap.json`.
 
-`ledmap.json` file needs to be a JSON formatted file with the the key being "map" and the value being an array of numbers representing the new order of pixels. The _position_ of values in the array is the "natural" order of LEDs and the value entered is the new position.
+`ledmap.json` file needs to be a JSON formatted file with the key being "map" and the value being an array of numbers representing the new order of pixels. The _position_ of values in the array is the "natural" order of LEDs and the value entered is the new position.
   
 The ArduinoJSON library is *****extremely***** white-space sensitive.
 If your `ledmap.json` file is not working, check for white-spaces where they should not be. The LED positions are zero-indexed.
@@ -47,7 +47,7 @@ It could be formatted any of the three ways demonstrated above.
 19, 18, 17, 16, 15, 20, 21, 22, 23, 24, 29, 28, 27, 26, 25]}
 ```
 
-The following example shows how to create a `ledmap.json` for LEDs arranged in a two-dimensional grid intead of a one-dimensional string.
+The following example shows how to create a `ledmap.json` for LEDs arranged in a two-dimensional grid instead of a one-dimensional string.
 
 Here, we have a serpentine of LEDs in 4 columns and 3 rows:
 ```json
