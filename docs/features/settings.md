@@ -82,7 +82,7 @@ Color order | multiple options | "GRB" | Same as "Color order" above
 
 ### Other settings
 
-(Some of these settings no longer appear in 0.14.1. or later)
+(Some of these settings no longer appear in 0.14.1 or later.)
 
 | Setting name | Value Range | Description |
 |---|---|---|
