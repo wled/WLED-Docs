@@ -7,8 +7,8 @@ hide:
 
 ## Multi strip support
 
-Starting in WLED 0.12.0, you are able to use multiple LED outputs from one ESP board!
-Pins and LED numbers can be easily configured in LED settings, you don't need to re-compile code for your specific setup. Custom binaries for multiple pins are now also a thing of the past!
+WLED supports multiple LED outputs from one ESP board.
+Pins and LED numbers can be configured in LED settings without recompiling.
 
 There are a few tips and recomendations to keep in mind when designing your setup:
 

@@ -5,7 +5,7 @@ hide:
   # - toc
 ---
 
-WLED versions since 0.8.4 implement a powerful JSON API over HTTP.  
+WLED implements a powerful JSON API over HTTP.  
 It is accessible using the `/json` subpage.
 
 ### Obtaining light information
@@ -40,10 +40,10 @@ Example: `{"on":true,"bri":255}` sets the brightness to maximum. `{"seg":[{"col"
 `{"seg":[{"id":X,"on":"t"}]}` and replacing X with the desired segment ID will toggle on or off that segment.
 
 !!! tldr "CURL example"
-    This will toggle on and off and return the new state (v0.13+):
+    This will toggle on and off and return the new state:
     `curl -X POST "http://[WLED-IP]/json/state" -d '{"on":"t","v":true}' -H "Content-Type: application/json"`
 
-Sample JSON API response (v0.8.4):
+Sample JSON API response:
 
 ```json
 {
@@ -82,7 +82,7 @@ Sample JSON API response (v0.8.4):
     }]
   },
   "info": {
-    "ver": "0.8.4",
+    "ver": "0.15.0",
     "vid": 1903252,
     "leds": {
       "count": 20,
@@ -104,7 +104,6 @@ Sample JSON API response (v0.8.4):
     "opt": 127,
     "brand": "WLED",
     "product": "DIY light",
-    "btype": "src",
     "mac": "60019423b441"
   },
   "effects": [
@@ -138,8 +137,7 @@ on | bool | On/Off state of the light. You can also use `"t"` instead of `true` 
 transition | 0 to 65535 | Duration of the crossfade between different colors/brightness levels. One unit is 100ms, so a value of `4` results in a transition of 400ms. Max transition time is 65 seconds = 65535 milliseconds.
 tt | 0 to 65535 | Similar to transition, but applies to just the current API call. Not included in state response. Max transition time is 65 seconds.
 ps | -1 to 250 | ID of currently set preset. `1~17~` can be used to iterate through presets 1-17, or `4~10r` to select random preset between presets 4 and 10 (inclusive).
-~~pss~~ | ~~0 to 65535~~ | ~~Bitwise indication of preset slots (0 - vacant, 1 - written). Always 0 in 0.11. Not changable.~~ _Removed as of v0.11.1_
-psave | 1 to 250 (16 prior to 0.11) | Save current light config (state) to specified preset slot. Not included in state response.
+psave | 1 to 250 | Save current light config (state) to specified preset slot. Not included in state response.
 sb | bool | Used with `psave`. Save segment bounds (`start` & `stop`).
 ib | bool | Used with `psave`. Save [brightness](#bri).
 sc | bool | Used with `psave`. Save [selected segments](#seg-sel).
@@ -147,8 +145,7 @@ pl | -1 to 250 | ID of currently set playlist. _(read-olny)_
 pdel | 1 to 250 | Preset ID to delete. Not included in state response.
 nl.on | bool | Nightlight currently active
 nl.dur | 1 to 255 | Duration of nightlight in minutes
-~~nl.fade~~ | ~~bool~~ | ~~If `true`, the light will gradually dim over the course of the nightlight duration. If `false`, it will instantly turn to the target brightness once the duration has elapsed.~~ _Removed in 0.13.0_ (use mode instead)
-nl.mode | 0 to 3 | Nightlight mode (0: instant, 1: fade, 2: color fade, 3: sunrise) (available since 0.10.2)
+nl.mode | 0 to 3 | Nightlight mode (0: instant, 1: fade, 2: color fade, 3: sunrise)
 nl.tbri | 0 to 255 | Target brightness of nightlight feature
 nl.rem | -1 to 15300 | Remaining nightlight duration in seconds, -1 if not active. Only in state response, can not be set.
 udpn.send | bool | Send WLED broadcast (UDP sync) packet on state change
@@ -159,11 +156,11 @@ udpn.nn | bool | Don't send a broadcast packet (applies to just the current API 
 v | bool | If set to _true_ in a JSON POST command, the response will contain the full JSON state object. Not included in state response
 rb | bool | If set to _true_, device will reboot immediately. Not included in state response.
 live | bool | If set to _true_, enters realtime mode and blanks the LEDs. The realtime timeout option does not have an effect when this command is used, WLED will stay in realtime mode until the state (color/effect/segments, excluding brightness) is changed. It is expected that `{"live":false}` is sent once live data sending is terminated. Not included in state response.
-lor | 0, 1, or 2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot (available since 0.10.0)
+lor | 0, 1, or 2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot
 time | uint32 | Set module time to unix timestamp. Not included in state response.
 mainseg | 0 to info.leds.maxseg-1 | Main Segment | Sets which segment ID is the main segment. The main segment's values are the ones sent by UDP sync, and in case no segment is selected, all changes done via the `"seg":{}` syntax without a segment `id` specified are applied to the main segment. If the main segment is deleted, the first active segment becomes the new main segment.
 seg | Object or Array of objects | _(see below)_ Segments are individual parts of the LED strip. Since 0.9.0 this enables running different effects on differentparts of the strip.
-playlist | object | [Custom preset playlists](#playlists). Not included in state response. _(available since 0.11.0)_
+playlist | object | [Custom preset playlists](#playlists). Not included in state response.
 tb | uint32 | Sets timebase for effects. Not reported.
 ledmap | 0 to 9 | Load specified ledmap (0 for `ledmap.json`, 1-9 for `ledmap1.json` to `ledmap9.json`). [See mapping](/advanced/mapping/). Not included in state response. _(available since 0.14.0)_
 rmcpal | bool | Remove last custom palette if set to `true`. Not included in state response. _(available since 0.14.0)_
@@ -171,10 +168,6 @@ np | bool | Advance to the next preset in a playlist if set to `true`. Not inclu
 
 #### Contents of the segment object
 
-!!! info "Legacy limitation (v0.8.4)"
-    _start_, _stop_, and _len_ are not changeable in v0.8.4. Any segment with _id_ > 0 is ignored.  
-    Unless stated otherwise, every value may be changed via an HTTP POST request.  
-    The tertiary color is not gamma-corrected in 0.8.4, but is in subsequent releases.
 
 | JSON key | Value range | Description
 | --- | --- | --- |
@@ -186,7 +179,7 @@ stopY | 1 to matrix height | Stop row from top-left corner of matrix. _(availab
 len | 0 to info.leds.count | Length of the segment (_stop_ - _start_). _stop_ has preference, so if it is included, _len_ is ignored.
 grp | 0 to 255 | Grouping (how many consecutive LEDs of the same segment will be grouped to the same color)
 spc | 0 to 255 | Spacing (how many LEDs are turned off and skipped between each group)
-of | -len+1 to len | Offset (how many LEDs to rotate the virtual start of the segments, available since 0.13.0)
+of | -len+1 to len | Offset (how many LEDs to rotate the virtual start of the segments
 col | array of colors | Array that has up to 3 color arrays as elements, the primary, secondary (background) and tertiary colors of the segment. Each color is an array of 3 or 4 bytes, which represents an RGB(W) color, i.e. `[[255,170,0],[0,0,0],[64,64,64]]`. It can also be represented as an array of strings of _hex_ values, i.e. `["FFAA00","000000","404040"]` for orange, black and grey. One or more colors can be set randomly with `"r"`, i.e. `["r",[0,0,0],"r"]`. _(random available since 16.0.0)_
 fx | 0 to info.fxcount -1 | ID of the effect or `~` to increment, `~-` to decrement, or `"r"` for random.
 sx | 0 to 255 | Relative effect speed. `~` to increment, `~-` to decrement. `~10` to increment by 10, `~-10` to decrement by 10.
@@ -201,23 +194,23 @@ pal | 0 to info.palcount -1 | ID of the color palette or ~ to increment, ~- to d
 <a id="seg-sel"></a>sel | bool | `true` if the segment is selected. Selected segments will have their state (color/FX) updated by APIs that don't support segments (e.g. UDP sync, HTTP API). If no segment is selected, the first segment (_id_:`0`) will behave as if selected. WLED will report the state of the first (lowest _id_) segment that is selected to APIs (HTTP, MQTT...), or `mainseg` in case no segment is selected and for the UDP API. Live data is always applied to all LEDs regardless of segment configuration.
 rev | bool | Flips the segment (in horizontal dimension for 2D set-up), causing animations to change direction.
 rY | bool | Flips the 2D segment in vertical dimension. _(available since 0.14.0)_
-on | bool | Turns on and off the individual segment. _(available since 0.10.0)_
-bri | 0 to 255 | Sets the individual segment brightness _(available since 0.10.0)_
-mi | bool | Mirrors the segment (in horizontal dimension for 2D set-up) _(available since 0.10.2)_
+on | bool | Turns on and off the individual segment.
+bri | 0 to 255 | Sets the individual segment brightness
+mi | bool | Mirrors the segment (in horizontal dimension for 2D set-up)
 mY | bool | Mirrors the 2D segment in vertical dimension. _(available since 0.14.0)_
 tp | bool | Transposes a segment (swaps X and Y dimensions). _(available since 0.14.0)_
-cct | 0 to 255 _or_ 1900 to 10091 | White spectrum [color temperature](#cct-control) _(available since 0.13.0)_
+cct | 0 to 255 _or_ 1900 to 10091 | White spectrum [color temperature](#cct-control)
 lx | `BBBGGGRRR`: 0 - 100100100 | Loxone RGB value for primary color. Each color (`RRR`,`GGG`,`BBB`) is specified in the range from 0 to 100%. _Only available if Loxone is compiled in._
-lx | `20bbbtttt`: 200002700 - 201006500 | Loxone brightness and color temperature values for primary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin. (available since 0.11.0, not included in state response) _Only available if Loxone is compiled in._
+lx | `20bbbtttt`: 200002700 - 201006500 | Loxone brightness and color temperature values for primary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin. _(not included in state response)_ _Only available if Loxone is compiled in._ (available since 0.11.0
 ly | `BBBGGGRRR`: 0 - 100100100 | Loxone RGB value for secondary color. Each color (`RRR`,`GGG`,`BBB`) is specified in the range from 0 to 100%. _Only available if Loxone is compiled in._
-ly | `20bbbtttt`: 200002700 - 201006500 | Loxone brightness and color temperature values for secondary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin. _(available since 0.11.0, not included in state response)_ _Only available if Loxone is compiled in._
-i | array | [Individual LED control](#per-segment-individual-led-control). Not included in state response _(available since 0.10.2)_
+ly | `20bbbtttt`: 200002700 - 201006500 | Loxone brightness and color temperature values for secondary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin. _(not included in state response)_ _Only available if Loxone is compiled in._ 
+i | array | [Individual LED control](#per-segment-individual-led-control). Not included in state response
 frz | bool | freezes/unfreezes the current effect
 m12 | 0 to 4 [map1D2D.count] | Setting of segment field 'Expand 1D FX'. (0: Pixels, 1: Bar, 2: Arc, 3: Corner)
 si | 0 to 3 | Setting of the sound simulation type for audio enhanced effects. (0: 'BeatSin', 1: 'WeWillRockYou', 2: '10_3', 3: '14_3') (_as of 0.14.0-b1, there are these 4 types defined_)
 fxdef | bool | Forces loading of effect defaults (speed, intensity, etc) from effect [metadata](#effect-metadata). _(available since 0.14.0)_
 set | 0 to 3 | Assigns group or set ID  to segment (not to be confused with *grouping*). Visual aid only (helps in UI). _(available since 0.14.0)_
-rpt | bool | Flag to repeat current segment settings by creating segments until all available LEDs are included in automatically created segments or maximum segments reached. Will also toggle *reverse* on every *even* segment. _(available since 0.13.0)_
+rpt | bool | Flag to repeat current segment settings by creating segments until all available LEDs are included in automatically created segments or maximum segments reached. Will also toggle *reverse* on every *even* segment.
 
 #### Info object
 
@@ -228,12 +221,11 @@ No value may be changed by means of this API.
 ver | string | Version name.
 vid | uint32 | Build ID (YYMMDDB, B = daily build index).
 _leds_ | object | Contains info about the LED setup.
-leds.cct | bool | `true` if the light supports [color temperature control](#cct-control) _(available since 0.13.0, deprecated, use info.leds.lc)_
+leds.cct | bool | `true` if the light supports [color temperature control](#cct-control) _(deprecated, use info.leds.lc)_
 leds.count | 1 to 1200 | Total LED count.
-leds.fps | 0 to 255 | Current frames per second. _(available since 0.12.0)_
+leds.fps | 0 to 255 | Current frames per second.
 leds.rgbw | bool | `true` if LEDs are 4-channel (RGB + White). _(deprecated, use info.leds.lc)_
-leds.wv | bool | `true` if a white channel slider should be displayed. _(available since 0.10.0, deprecated, use info.leds.lc)_
-~~leds.pin~~ | byte array | LED strip pin(s). Always one element. _Removed as of v0.13_
+leds.wv | bool | `true` if a white channel slider should be displayed. _(deprecated, use info.leds.lc)_
 leds.pwr | 0 to 65000 | Current LED power usage in milliamps as determined by the ABL. `0` if ABL is disabled.
 leds.maxpwr | 0 to 65000 | Maximum power budget in milliamps for the ABL. `0` if ABL is disabled.
 leds.maxseg | byte | Maximum number of segments supported by this version.
@@ -252,11 +244,11 @@ _wifi_ | object | Info about current signal strength
 wifi.bssid | string | The BSSID of the currently connected network.
 wifi.signal | 0 to 100 | Relative signal quality of the current connection.
 wifi.channel | 1 to 14 | The current WiFi channel.
-_fs_ | object | Info about the embedded LittleFS filesystem (since 0.11.0)
+_fs_ | object | Info about the embedded LittleFS filesystem
 fs.u | uint32 | Estimate of used filesystem space in kilobytes
 fs.t | uint32 | Total filesystem size in kilobytes
 fs.pmt | uint32 | Unix timestamp for the last modification to the `presets.json` file. Not accurate after boot or after using `/edit`
-ndc | -1 to 255 | Number of other WLED devices discovered on the network. -1 if Node discovery disabled. (since 0.12.0)
+ndc | -1 to 255 | Number of other WLED devices discovered on the network. -1 if Node discovery disabled.
 arch | string | Name of the platform.
 core | string | Version of the underlying (Arduino core) SDK.
 lwip | 0, 1, or 2 | Version of LwIP. 1 or 2 on ESP8266, 0 (does not apply) on ESP32. _Deprecated, removal in 0.14.0_
@@ -265,9 +257,8 @@ uptime | uint32 | Time since the last boot/reset in seconds.
 opt | uint16 | Used for debugging purposes only.
 brand | string | The producer/vendor of the light. Always `WLED` for standard installations.
 product | string | The product name. Always `FOSS` for standard installations.
-~~btype~~ | string | The origin of the build. `src` if a release version is compiled from source, `bin` for an official release image, `dev` for a development build (regardless of src/bin origin) and `exp` for experimental versions. `ogn` if the image is flashed to hardware by the vendor. _Removed as of v0.10_
 mac | string | The hexadecimal hardware MAC address of the light, lowercase and without colons.
-ip | string | The IP address of this instance. Empty string if not connected. (since 0.13.0)
+ip | string | The IP address of this instance. Empty string if not connected.
 device_id | string | A unique identifier for the device, derived from the hardware MAC address. _(available since 16.0.0)_
 psram | uint32 | Total PSRAM size in bytes. `0` if no PSRAM is present or detected. _(available since 16.0.0)_
 psram_free | uint32 | Estimate of currently free PSRAM in bytes. _(available since 16.0.0)_
@@ -323,7 +314,6 @@ Matrices are handled as a non-serpentine layout.
 
 #### Playlists
 
-(Available since 0.11.0)
 
 Sample playlist API call:
 

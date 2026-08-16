@@ -8,17 +8,14 @@ hide:
 Presets can be used to save your favorite light configurations to apply later!
 You can compare them to the "scenes" feature present in some other smart devices.
 
-### New version (0.11+)
+### Overview
 
-#### Overview
+Presets are stored in a `/presets.json` file in an internal filesystem, with support for up to 250 presets.
+Each preset can save all segments that are set up.
+The maximum number of segments is 16 on ESP8266 and 32 on ESP32 (up to 64 with PSRAM).
+Presets can contain both HTTP and JSON API commands (replacing the previous Macro feature), and each can be given a name for easy access.
 
-WLED 0.11.0 contains a major overhaul of presets, storing them in a `/presets.json` file in an internal filesystem.  
-This enables many new features, you can now have up to 250 presets and each of them can save all segments which are set up!  
-Speaking of segments, the maximum number has been increased to 12 on ESP8266 and 16 on ESP32!  
-Presets can now also contain both HTTP and JSON API commands, replacing the previous Macro functionality.  
-Each preset can be named, so you'll be able to access it more easily!  
-
-#### How to use
+### How to use
 
 The new preset system is quite a bit more advanced than the previous one, thus it is likely not as self-explanatory to use.  
 Here you can find what each setting does and how to make best use of it!
@@ -82,7 +79,7 @@ Now these are self-explanatory, but I said I'd cover each point :)
 *ID*  
 This is the number you'll want to use to apply this preset from a timed macro or automation!  
 
-#### A note on performance
+### A note on performance
 
 This new preset system is quite fast where it matters, reading the presets.  
 Applying a preset will typically take less than a tenth of a second.  
@@ -93,26 +90,21 @@ Adding new presets is usually very fast, those performance issues will occur onc
 
 I'm looking into ways to mitigate this situation as soon as possible! Meanwhile, to keep things snappy, I would recommend not having more than 50-ish single segment or a dozen of multi-segment presets.
 
-#### What about my cool presets from earlier versions?
-
-Don't worry, they (as well as your settings) will be automatically imported to the new system!  
-And if you ever need to downgrade to v0.10 for some reason, they will still be there (although any changes made in v0.11 won't be applied)
-
-#### Obtaining preset list
+### Obtaining preset list
 
 Obtaining the preset list is possible with the /presets.json file
 Seeing the name of the current preset with the API only is not possible, you can only obtain its ID. Then you'd need some code to match it with the entries from presets.json (this is also what the UI does).  See section "Backing up/restoring presets".
 
-#### Saving named presets
+### Saving named presets
 
 Save a named preset with `{"psave":<preset number here>;"n":"Preset name","ib":true,"sb":true}`
 
-#### Backing up/restoring presets
+### Backing up/restoring presets
 
 To backup all presets, go to `[WLED-IP]/edit` (OTA lock must be off), right click the `presets.json` file and download!  
 To restore, use the `Choose file` and `Upload` buttons.  
 
-#### Applying presets at a certain time of day
+### Applying presets at a certain time of day
 
 !!! tip
     If you want to create a preset that turns on the light to the last effect displayed, uncheck `Use current state` and enter `T=1` into the API Command field.
@@ -134,7 +126,7 @@ If applicable, daylight saving time is handled automatically.
     This only applies the preset at the _start_ of the specified minute. If you set up two presets, one to turn on the light at 7 and another to turn it off at 8,
     if WLED is booted at 7:30, the light will not turn on. This should not be an issue in most applications.
     
-#### Applying presets at sunrise and sunset
+### Applying presets at sunrise and sunset
     
 Applying a preset at sunrise and/or sunset is also supported, the last two timed preset slots are used for this.  
 To calculate the times, WLED needs your location. This is possible with the "Get Location" button in Time & Macro settings if accessed via a browser. If you are using the WLED app, you will need to open [locate.wled.me](https://locate.wled.me/) in your browser and copy the coordinates over to the settings page manually.  
@@ -142,21 +134,3 @@ With the Minutes input field, you may specify an offset of up to 59 minutes befo
 
 !!! warning "Location"
     Sunrise and sunset calculation do not work if you live in the polar circles (latitude >66.6N or >66.6S).
-
-### Earlier versions (up to 0.10)
-
-There are 16 preset slots in total.
-In 0.9.0, the last preset (16) is capable of saving the entire segment configuration. All other presets only save a single segment (main segment, the first one by default) and restore that preset to all selected segments.
-
-In the Favorites tab, the number buttons from 1-16 are the different save slots. Find a config you like, then toggle _Saving mode_ on and click on a number to save the preset to that slot. If _Saving mode_ is toggled off, you can restore presets with a single click.
-
-### Preset cycle (up to 0.12.1)
-
-With this feature, you can create an animation by automatically swapping between presets within a specified range.
-Keep in mind that any changes you make to effects/colors will be overridden once the system applies the next preset.
-
-If you want to start the preset cycle on boot, go to LED settings and tick "Save current preset cycle configuration as boot default
-
-To modify the duration of the preset cycle, ensure the preset cycle box is unchecked before entering a new time value. Once updated, the preset cycle can be enabled again"
-
-Playlists supersede Preset cycle in 0.13.

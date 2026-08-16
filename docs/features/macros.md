@@ -5,7 +5,7 @@ hide:
   # - toc
 ---
 !!! info
-    Also see [Presets](/features/presets) for 0.11.0+.
+    Also see [Presets](/features/presets).
 
 You are able to set custom actions ("Macros") in Time & Macro settings for the following events:
 
@@ -15,13 +15,13 @@ You are able to set custom actions ("Macros") in Time & Macro settings for the f
 - Alexa On/Off
 - Countdown over
 - Timed light duration over
-- Device (re)boot (up to 0.10.2, use LED settings `Boot preset` in 0.11)
+- Device (re)boot (use LED settings 'Boot preset')
 
 Note: If you have multiple presets that run at the same time, the lowest down the list takes precedence.
 
 Each macro has the format of a standard [HTTP API call](/interfaces/http-api) without the IP. Optionally, the "win&" may be omitted.
 For example, the macro "A=255" sets the brightness to maximum. "R=255&G=160&B=0" sets the color to orange.
-You can specify up to 16 macros. (up to 250 in WLED 0.11 since the Macro functionality has been merged into the Presets feature)
+You can specify up to 250 macros.
 
 Examples of how to use API-calls and define macros can be found in [this issue](https://github.com/wled/WLED/issues/801#issuecomment-635600255) and [in this one](https://github.com/wled/WLED/issues/199#issuecomment-520143239).
 
@@ -41,7 +41,7 @@ For further buttons, the default action for short press is cycling effects, long
 
 ## Buttons
 
-Multiple buttons are implemented since 0.13. Starting in v16.0, up to **32 buttons** can be configured without any custom compilation — use the LED Settings page to add as many as you need.
+Multiple buttons are supported. Starting in v16.0, up to **32 buttons** can be configured without any custom compilation — use the LED Settings page to add as many as you need.
 
 The following button types are supported:
 
@@ -67,7 +67,7 @@ Note: Button 0 has two, built-in functions. 1. Hold it down for >6 seconds and t
 
 ### Analog Button
 
-Starting in WLED 0.13, analog "buttons" (e.g. a potentiometer) are supported.
+Analog "buttons" (e.g. a potentiometer) are supported.
 With the Short and Long columns set to 0, set the Double column in Button Actions to one of these values to configure:
 
 | Property | Value |

@@ -33,7 +33,7 @@ integration will be available.
 ### Using MQTT
 
 Alternatively, MQTT can be used (not recommended).
-Auto discovery is no longer supported since version 0.9 of WLED.
+MQTT autodiscovery is not supported.
 In case you want to configure the device manually:
 
 ??? info "Expand to show MQTT configuration"

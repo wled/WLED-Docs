@@ -9,7 +9,7 @@ hide:
 
 You can now use WLED with the popular Ambilight software Hyperion.
 Just configure Hyperion to use an UDP device with protocol 0 on port 19446!
-The maximum number of LEDs supported in this mode is 490. (WLED 0.8.0 and lower: 341)
+The maximum number of LEDs supported in this mode is 490.
 
 ### Prismatik
 
@@ -18,7 +18,7 @@ Select one of the UDP options in the device configuration wizard.
 
 ### TPM2.NET
 
-Supported in latest master and will be available in WLED 0.10.1.
+TPM2.NET is supported.
 Please set the WLED broadcast UDP port to 65506 in Sync settings to enable receiving TPM2.NET data.
 
 ### UDP Sound Sync (v2, v2+)
@@ -99,6 +99,9 @@ When realtime mode starts, all LEDs will be black. However, you don't have to ch
 Changing a single LED therefore only requires a packet of 2+4 bytes. All LEDs maintain their color until it is changed or the module exits WARLS mode because of a timeout.
 
 ### Setup with ARLS
+
+!!! warning
+    This integration is based on the unmaintained [audio-reactive-led-strip](https://github.com/scottlawsonbc/audio-reactive-led-strip) library and the v1 UDP Realtime protocol. Current WLED audio-reactive capabilities use the dedicated [Audio Reactive usermod (wled-audioreactive)](https://github.com/atuline/WLED) instead.
 
 The software now supports audio-reactive-led-strip!
 
