@@ -138,7 +138,7 @@ on | bool | On/Off state of the light. You can also use `"t"` instead of `true` 
 transition | 0 to 65535 | Duration of the crossfade between different colors/brightness levels. One unit is 100ms, so a value of `4` results in a transition of 400ms. Max transition time is 65 seconds = 65535 milliseconds.
 tt | 0 to 65535 | Similar to transition, but applies to just the current API call. Not included in state response. Max transition time is 65 seconds.
 ps | -1 to 250 | ID of currently set preset. `1~17~` can be used to iterate through presets 1-17, or `4~10r` to select random preset between presets 4 and 10 (inclusive).
-~~pss~~ | ~~0 to 65535~~ | ~~Bitwise indication of preset slots (0 - vacant, 1 - written). Always 0 in 0.11. Not changable.~~ _Removed as of v0.11.1_
+~~pss~~ | ~~0 to 65535~~ | ~~Bitwise indication of preset slots (0 - vacant, 1 - written). Always 0 in 0.11. Not changeable.~~ _Removed as of v0.11.1_
 psave | 1 to 250 (16 prior to 0.11) | Save current light config (state) to specified preset slot. Not included in state response.
 sb | bool | Used with `psave`. Save segment bounds (`start` & `stop`).
 ib | bool | Used with `psave`. Save [brightness](#bri).
@@ -353,7 +353,7 @@ end | Single preset ID to apply after the playlist finished. Has no effect when 
 
 #### Light capabilities
 
-In order to e.g. only show color controls relevant to a given setup, it is necessary to obtain the color capabilities of the light.  
+To show only the color controls relevant to a given setup, obtain the color capabilities of the light.  
 The `info.leds.seglc` array can be used to do so on a per-segment level. It contains `n+1` 8-bit integers, where `n` is the `id` of the last _active_ segment,
 each index corresponds to the segment with that ID.  
 This integer indicates whether a given segment supports (24 bit) RGB colors, an extra (8 bit) white channel and/or adjustable color temperature (CCT):  
@@ -378,7 +378,7 @@ Therefore:
 6 | Supports CCT (including white channel) 
 7 | Supports CCT (including white channel) + RGB
 
-Note that CCT is controllable per-segment, while RGB color and white channel have 3 color slots each per segment.  
+CCT is controllable per segment, while RGB color and the white channel are controlled through three color slots per segment.  
   
 `info.leds.lc` contains this info on a global level, and is a bitwise AND of the per-segment light capability values.  
 
@@ -458,7 +458,7 @@ Examples:
 
 ##### Colors
 
-Up to 3 colors can be used. Please note that only the first two characters of the label are visible in the WLED UI.  
+Up to 3 colors can be used. Only the first two characters of the label are visible in the WLED UI.  
 `!` specifies the default label is used. The default labels for the color slots are `Fx`, `Bg`, and `Cs`.
 
 The fallback value if this section is missing is 3 colors: `Fx` + `Bg` + `Cs`.
@@ -501,7 +501,7 @@ The fallback value if this section is missing is `1`, i.e. a 1D optimized effect
 ##### Defaults
 
 Defaults are values for effect parameters that work particularly well on that effect.
-They are set automatically when the effect is selected in UI unless configured otherwis in UI settings.
+They are set automatically when the effect is selected in UI unless configured otherwise in UI settings.
 To specify defaults, use the standard segment parameter name (e.g. `ix`) followed by an `=` and the default value.
 For example, `sx=24,pal=50` sets the effect speed to 24 (slow) and the palette to ID 50 (Aurora).
 

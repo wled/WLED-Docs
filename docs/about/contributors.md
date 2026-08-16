@@ -28,7 +28,7 @@ adamo made the animated Discord server logo!
 [@wiesendaniel](https://github.com/wiesendaniel) added the configuration for the PlatformIO IDE!  
 [@YeonV](https://github.com/YeonV) provided the initial HomeAssistant MQTT light config!  
 [@werkstrom](https://github.com/werkstrom) added PixelArt converter  
-[@netmindz](https://github.com/netmindz) Freqency based Audio Reactive effects and Audio Reactive Color Palettes. MoonModules maintainer. WLED Release Manager   
+[@netmindz](https://github.com/netmindz) Frequency-based Audio Reactive effects and Audio Reactive Color Palettes. MoonModules maintainer. WLED Release Manager   
 
 _This list is incomplete._  
 

@@ -64,7 +64,7 @@ Panels come in 2-scan or 4-scan variants. The single-panel rows are the only siz
 
 Set the LED output type to the `HUB75` option matching your panel's scan rate (check the panel's specifications; the wrong scan rate produces a scrambled or duplicated image), then fill in the HUB75 fields:
 
-* **Panel (width x height)**: the size of a single panel, e.g. `64` x `64`
+* **Panel (width x height)**: the size of a single panel, e.g., `64` x `64`
 * **No. of Panels**: the total number of panels in the chain
 * **rows x cols**: how those panels are physically arranged. `1` x `4` is a single horizontal row; `2` x `2` is a square. `rows` x `cols` must equal *No. of Panels*.
 

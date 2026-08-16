@@ -13,7 +13,7 @@ The tool is available through the icon below the color picker or by navigating t
 
 The tool has three tabs: **Image Tool**, **Scrolling Text**, **Other Tools**
 
-Both the image tool to convert images into GIFs and the scrolling text tool are built-in tools. In the "Other Tools" tab you can download additional tools. These are not included by default but once downloaded they are stored and available permanently on your controller unless you choose to delete them. In order to be able to download these tools your phone/PC requires internet access - but not your WLED controller. Once downloaded no internet access is needed, the tools will continue to work offline and even in AP mode.
+Both the image tool to convert images into GIFs and the scrolling text tool are built-in tools. In the "Other Tools" tab you can download additional tools. These are not included by default but once downloaded they are stored and available permanently on your controller unless you choose to delete them. To download these tools, your phone/PC requires internet access - but your WLED controller does not. Once downloaded no internet access is needed, the tools will continue to work offline and even in AP mode.
 
 ---
 
