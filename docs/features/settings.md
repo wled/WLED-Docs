@@ -86,8 +86,8 @@ Color order | multiple options | "GRB" | Same as "Color order" above
 
 | Setting name | Value Range | Description |
 |---|---|---|
-Turn on after power up | Y/N | Whether the lights should turn on after a reset
-Apply preset | 0..16 | Preset to load at boot (0 = none)
+Turn on after power up | Y/N | Whether the lights should turn on after power-on / restart
+Apply preset | 0..250 | Preset to load at boot (0 = none)
 Use Gamma for brightness | Y/N | Will correct brightness changes to make it appear more linear. Advised to leave off
 Use Gamma for color | Y/N | Will correct colors to match those on a monitor. Strongly advised to keep on
 Brightness factor | 1..255 | Factor to change master brightness if it is too dim/bright for a certain configuration
@@ -150,6 +150,8 @@ Hue status | - | Shows the current connection status to a hue bridge
 Baud rate | Various | Set the default Serial connection Baud Rate
 
 ## Time settings
+
+Some of these settings no longer appear in 0.14.0 or later, or have different value ranges in newer WLED versions.
 
 This sub-page configures automation tasks.
 

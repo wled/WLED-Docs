@@ -34,10 +34,10 @@ Add one or multiple of the following parameters after the base URL/IP to change 
 &G= | 0 to 255 | Primary Green value
 &B= | 0 to 255 | Primary Blue value
 &W= | 0 to 255 | Primary White value
-&FX= | 0 to 101 | LED Effect Index
+&FX= | 0 to 254 | LED Effect Index
 &SX= | 0 to 255 | Effect Speed
 &IX= | 0 to 255 | Effect Intensity
-&FP= | 0 to 46 | FastLED Palette
+&FP= | 0 to 254 | Palette Index
 &NL= | 0 to 255 | Nightlight active and duration in minutes
 &ND | none | Toggles nightlight on but uses default duration
 &NT= | 0 to 255 | Nightlight target brightness
@@ -87,7 +87,7 @@ Loxone offers two commands. One for RGB values and one for brightness and color 
 
 | Parameter | Value Range | Description |
 | --- | --- | --- |
-&PS= | 1 to 16 | Saves current setup to preset. Preset 255 can be used and is temporary/not persistent.
+&PS= | 1 to 250 | Saves current setup to preset. Preset 255 can be used and is temporary/not persistent.
 &PL= | 1 to 250 | Applies entire preset
 &P1= | 1 to 249 | First cycle preset
 &P2= | 2 to 250 | Last cycle preset
@@ -97,7 +97,7 @@ Loxone offers two commands. One for RGB values and one for brightness and color 
 
 | Parameter | Value Range | Description |
 | --- | --- | --- |
-&M= | 1 to 16 | Apply macro (deprecated)
+&M= | 1 to 250 | Apply macro (deprecated)
 
 ## Segments
 
@@ -105,8 +105,8 @@ It is highly recommended to use the [JSON API](/interfaces/json-api) when dealin
 
 | Parameter | Value Range | Description |
 | --- | --- | --- |
-&SM= | 0 to 9 | Set the main segment (values are reported to XML)
-&SS= | 0 to 9 | Select segment to apply THIS api call to
+&SM= | 0 to 31 | Set the main segment (values are reported to XML)
+&SS= | 0 to 31 | Select segment to apply THIS api call to
 &SV= | 0, 1, or 2 | Set segment selected (2 unselects others)
 &S= | 0 to ledcount-1 | Set segment start
 &S2= | 0 to ledcount | Set segment stop
