@@ -43,7 +43,7 @@ Custom max. current | 1–255 | 50 | Current draw of a single LED pixel set to f
 
 #### LED outputs
 
-WLED supports multiple outputs. To add an output, click the plus button at the bottom of the "LED outputs": section; to remove the last output, click the minus button. Below the plus/minus buttons is an indication of how much of the memory allocated to LEDs is being used by the configuration.
+WLED supports multiple outputs. To add an output, click the plus(+) button at the bottom of the "LED outputs" section; to remove the last output, click the minus(-) button. Below the plus/minus buttons is an indication of how much of the memory allocated to LEDs is being used by the configuration.
 
 All outputs share the same address space within WLED. By default, the first pixel of an output will be given an address that is one higher than the last pixel of the previous output, but this can be altered.
 
