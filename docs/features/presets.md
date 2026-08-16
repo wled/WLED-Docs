@@ -15,7 +15,7 @@ Each preset can save all segments that are set up.
 The maximum number of segments is 16 on ESP8266 and 32 on ESP32 (up to 64 with PSRAM).
 Presets can contain both HTTP and JSON API commands (replacing the previous Macro feature), and each can be given a name for easy access.
 
-### How to use
+### How to Use
 
 The new preset system is quite a bit more advanced than the previous one, thus it is likely not as self-explanatory to use.  
 Here you can find what each setting does and how to make best use of it!
