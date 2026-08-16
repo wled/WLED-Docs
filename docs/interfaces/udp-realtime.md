@@ -104,12 +104,16 @@ The software now supports audio-reactive-led-strip!
 
 1. Download [audio-reactive-led-strip](https://github.com/scottlawsonbc/audio-reactive-led-strip) and follow its installation instruction. You can also use my (untested) [fork](https://github.com/Aircoookie/audio-reactive-led-strip). In that case, you can skip step 2.
 2. Insert the following code in led.py after line 66:
+
+   ```python
     m.append(1);
     m.append(2);
+   ```
+
    These are the first two bytes of the protocol.
 3. In config.py set your led amount, ESP IP and WLED UDP notifier port. For FPS, a setting between 15-30 is recommended.
 4. Run visualization.py! If you have a low amount of LEDS (e.g. 10) try lowering the sigma values in line 129-131.
 5. If you have multiple WLED devices, you can sync them all with music.
 Use the led count of your largest device and set the IP to X.X.X.255 (UDP broadcast).
 You can adjust the position of the amplitude with the WARLS offset setting.
-Web control currently does not work while it is active.
+Web control currently does not work while WARLS is active.

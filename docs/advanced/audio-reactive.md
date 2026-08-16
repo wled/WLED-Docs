@@ -86,7 +86,7 @@ A simple conditioning circuit (shown below) is needed to scale the line-out sign
 
 ![Example analog line-in](../assets/images/content/example_analog_linein.jpg)
 
-In a pinch you can connect audio GND and one audio channel directly to an ESP32 ADC pin (e.g. GPIO 36), but results vary widely and this is not recommended for permanent installs.
+In a pinch you can connect audio GND and one audio channel directly to an ESP32 ADC pin (e.g., GPIO 36), but results vary widely and this is not recommended for permanent installs.
 
 For more detail, see the [Sound Reactive WLED Wiki](https://mm.kno.wled.ge/soundreactive/introduction/).
 
@@ -130,7 +130,7 @@ Once your microphone or line-in is set up, here's a reliable method for dialling
 
 1. Select the **Gravimeter** effect and leave its sliders at their default positions.
 2. Go to **Config → Usermods** and scroll down to the **AudioReactive** section.
-3. Set **Gain** to a high value (e.g. 200+), set **Squelch** to `1`, and turn **AGC** off. Save.
+3. Set **Gain** to a high value (e.g., 200+), set **Squelch** to `1`, and turn **AGC** off. Save.
 4. The LEDs should now react to almost anything, even ambient noise.
 5. In a quiet environment, **gradually increase Squelch** (saving each time) until the LEDs stop reacting to background noise.
 6. Once silence is stable, **lower Gain to around 40** and play music at normal volume. Adjust Gain until the LEDs respond as expected.

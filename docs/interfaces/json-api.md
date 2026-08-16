@@ -378,7 +378,7 @@ Therefore:
 6 | Supports CCT (including white channel) 
 7 | Supports CCT (including white channel) + RGB
 
-CCT is controllable per-segment, while RGB color and white channel have 3 color slots each per segment.  
+CCT is controllable per segment, while RGB color and the white channel are controlled through three color slots per segment.  
   
 `info.leds.lc` contains this info on a global level, and is a bitwise AND of the per-segment light capability values.  
 
