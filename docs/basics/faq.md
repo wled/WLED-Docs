@@ -286,7 +286,7 @@ This will be improved in a future release, so that you will be able to save mult
 
 ### What is the difference between the WLED app and the WLED Native app?
 
-The WLED app was the official app developped by the same people that brought you WLED. WLED Native is an initiative by community member [Moustachauve](https://github.com/Moustachauve) to bring an interface that is closer to the native operating system look of your device and some new features.
+The WLED app was the official app developed by the same people that brought you WLED. WLED Native is an initiative by community member [Moustachauve](https://github.com/Moustachauve) to bring an interface that is closer to the native operating system look of your device and some new features.
 
 The official WLED app is now considered legacy. It is not currently maintained and might not receive any future bug fixes.
 
