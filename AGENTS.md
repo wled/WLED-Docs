@@ -120,6 +120,7 @@ When reviewing a pull request, verify the following:
 - [ ] Prefer "use" over "leverage", "method" over "methodology", "feature" over "functionality".
 - [ ] Contractions (e.g. "you'll", "don't", "it's") are welcome — they help keep the tone approachable.
 - [ ] Avoid idioms or culture-specific phrases (e.g. "beating around the bush", "get your ducks in a row") — they are hard to understand when translated literally into other languages.
+- [ ] Avoid low-value filler phrases and weak transitions such as “note that”, “please note”, “it should be noted that”, “in order to”, “of course”, “likewise”, and “on the contrary” when they add no meaning. Rewrite the sentence directly. Encouraging wording like “You can now do it!” is fine when it adds clarity or warmth.
 - [ ] Smileys 😊, concrete examples, and images/diagrams/illustrations are encouraged where they help readers grasp the main message.
 
 ### Navigation
