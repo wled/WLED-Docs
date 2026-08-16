@@ -97,7 +97,7 @@ Seeing the name of the current preset with the API only is not possible, you can
 
 ### Saving named presets
 
-Save a named preset with `{"psave":<preset number here>;"n":"Preset name","ib":true,"sb":true}`
+Save a named preset with `{"psave":<preset number here>,"n":"Preset name","ib":true,"sb":true}`
 
 ### Backing up/restoring presets
 
