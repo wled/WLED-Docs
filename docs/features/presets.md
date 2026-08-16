@@ -101,7 +101,7 @@ Save a named preset with `{"psave":<preset number here>,"n":"Preset name","ib":t
 
 ### Backing up/restoring presets
 
-To backup all presets, go to `[WLED-IP]/edit` (OTA lock must be off), right click the `presets.json` file and download!  
+To backup all presets, go to `[WLED-IP]/edit` (OTA lock must be off), right-click the `presets.json` file and download!  
 To restore, use the `Choose file` and `Upload` buttons.  
 
 ### Applying presets at a certain time of day
@@ -119,15 +119,15 @@ Here is a simple guide to get it set up quickly!
 If applicable, daylight saving time is handled automatically.  
 - Scroll down to `Time-controlled presets`. There are 8 different timer slots available.  
 - Enter the hour, minute, and weekdays you want the preset to activate. In the `Preset` column, enter the preset ID you noted earlier.
-  -Hours are measured with the 24-hour clock, where midnight is 0:00. Entering "24" will instead activate the preset hourly.
+  - Hours are measured with the 24-hour clock, where midnight is 0:00. Entering "24" will instead activate the preset hourly.
 - Save the settings page! You have successfully set up a schedule :)  
 
 !!! info "Note"
     This only applies the preset at the _start_ of the specified minute. If you set up two presets, one to turn on the light at 7 and another to turn it off at 8,
     if WLED is booted at 7:30, the light will not turn on. This should not be an issue in most applications.
-    
+
 ### Applying presets at sunrise and sunset
-    
+
 Applying a preset at sunrise and/or sunset is also supported, the last two timed preset slots are used for this.  
 To calculate the times, WLED needs your location. This is possible with the "Get Location" button in Time & Macro settings if accessed via a browser. If you are using the WLED app, you will need to open [locate.wled.me](https://locate.wled.me/) in your browser and copy the coordinates over to the settings page manually.  
 With the Minutes input field, you may specify an offset of up to 59 minutes before or 59 minutes after the actual sunrise/set time.
