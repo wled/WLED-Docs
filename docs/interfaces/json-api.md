@@ -147,7 +147,7 @@ nl.mode | 0 to 3 | Nightlight mode (0: instant, 1: fade, 2: color fade, 3: sunri
 nl.tbri | 0 to 255 | Target brightness of nightlight feature
 nl.rem | -1 to 15300 | Remaining nightlight duration in seconds, -1 if not active. Only in state response, can not be set.
 udpn.send | bool | Send WLED broadcast (UDP sync) packet on state change
-udpn.recv | bool | read-only: Broadcast packets receiver enable status. To set receive groups, clients must send `udpn.rgrp`.
+udpn.recv | bool | Indicates whether broadcast packet reception is enabled. To set receive groups, clients must send `udpn.rgrp`.
 udpn.sgrp | 0 to 255 | Bitfield for broadcast send groups 1-8
 udpn.rgrp | 0 to 255 | Bitfield for broadcast receive groups 1-8
 udpn.nn | bool | Don't send a broadcast packet (applies to just the current API call). Not included in state response.
@@ -223,7 +223,7 @@ leds.fps | 0 to 255 | Current frames per second.
 leds.pwr | 0 to 65000 | Current LED power usage in milliamps as determined by the ABL. `0` if ABL is disabled.
 leds.maxpwr | 0 to 65000 | Maximum power budget in milliamps for the ABL. `0` if ABL is disabled.
 leds.maxseg | byte | Maximum number of segments supported by this version.
-leds.lc | byte | Logical AND of all active segment's virtual light capabilities (including CCT and white channel capabilities)
+leds.lc | byte | Logical AND of the virtual light capabilities of all active segments (including CCT and white channel)
 leds.seglc | byte array | Per-segment virtual light capabilities
 str | bool | If `true`, an UI with only a single button for toggling sync should toggle receive+send, otherwise send only
 name | string | Friendly name of the light. Intended for display in lists and titles.
