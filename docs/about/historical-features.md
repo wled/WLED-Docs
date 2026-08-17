@@ -31,6 +31,33 @@ Playlists superseded Preset Cycle in 0.13.
 
 ---
 
+## Legacy API Parameters and JSON Keys
+
+The following HTTP API parameters and JSON API keys are not available in current WLED builds. This list is for integrations that support older WLED versions.
+
+### HTTP API parameters
+
+| Parameter | Previous purpose | Current alternative |
+| --- | --- | --- |
+| `HP` | Set the Hue polling light ID. | No HTTP or JSON API replacement is available. |
+| `MD` | Set the RGB/HSB slider mode. | No API replacement is available. This was a user-interface preference. |
+| `AX` | Set the debug or general-I/O value. | No API replacement is available. |
+| `L`, `L2`, `UL` | Lock or unlock individual pixels. | No direct replacement is available. Use JSON segment controls or individual LED control when applicable. |
+| `NX` | Set the Cronixie clockface. | No API replacement is available. |
+| `NB` | Set the Cronixie backlight. | No API replacement is available. |
+| `IT` | Include the UI color theme in the HTTP API response. | No API replacement is available. |
+
+### JSON API keys
+
+| Key | Previous purpose | Current alternative |
+| --- | --- | --- |
+| `pss` | Report preset-slot usage as a bitfield. | No replacement is available. |
+| `nl.fade` | Select instant or brightness-fade nightlight behavior. | Use `nl.mode`. Use `0` for instant, `1` for brightness fade, `2` for color fade, or `3` for sunrise. |
+| `info.leds.pin` | Report LED output pin number. | No runtime JSON API replacement is available. |
+| `info.btype` | Report the build origin. | Use `info.repo` |
+
+---
+
 ## ARLS (audio-reactive-led-strip v1) Setup
 
 !!! warning
@@ -51,4 +78,3 @@ Playlists superseded Preset Cycle in 0.13.
 Use the LED count of your largest device and set the IP to the subnet's broadcast address. For a `/24` subnet, use `X.X.X.255`.
 You can adjust the position of the amplitude with the WARLS offset setting.
 Web control currently does not work while WARLS is active.
-
