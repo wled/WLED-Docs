@@ -81,7 +81,6 @@ Loxone offers two commands. One for RGB values and one for brightness and color 
 &RN= | 0 or 1 | Receive UDP Notifications
 &SN= | 0 or 1 | Send UDP Notifications
 &NN | none | No notification for this request
-&HP= | 0 to 99 | Sets Hue polling light ID (0 is off)
 
 ## Presets
 
@@ -122,17 +121,8 @@ It is highly recommended to use the [JSON API](/interfaces/json-api) when dealin
 &RB | none | Reboot WLED
 &ST= | 32bit | Current UTC time in Unix epoch
 &CT= | 32bit | UTC time for countdown end
-&MD= | 0 or 1 | Set slider mode to RGB/HSB
-&AX= | 0 to 255 | Debug feature, can be configured for general IO
 &IN | none | Server will not respond to this request (internal)
 &OL= | 0 to 255 | Experimental overlays
-&L= | 0 to 255 | Lock pixel
-&L2= | 0 to 255 | Lock pixel range L to L2
-&UL | none | Unlock instead (used in conjunction with L and L2)
-&NX= | String 1..6 | Cronixie clockface
-&NM= | 0 or 1 | Cronixie Time or Countdown mode
-&NB= | 0 or 1 | Cronixie Backlight
-&IT | none | Include UI color theme in API response
 &RD= | 0 or 1 | Toggle realtime UDP
 &LO= | 0-2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot
 &NP | none | Advance to the next preset in a playlist (since 0.15)

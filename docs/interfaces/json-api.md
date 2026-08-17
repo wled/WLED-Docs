@@ -147,7 +147,7 @@ nl.mode | 0 to 3 | Nightlight mode (0: instant, 1: fade, 2: color fade, 3: sunri
 nl.tbri | 0 to 255 | Target brightness of nightlight feature
 nl.rem | -1 to 15300 | Remaining nightlight duration in seconds, -1 if not active. Only in state response, can not be set.
 udpn.send | bool | Send WLED broadcast (UDP sync) packet on state change
-udpn.recv | bool | Receive broadcast packets
+udpn.recv | bool | read-only: Broadcast packets receiver enable status. To set receive groups, clients must send `udpn.rgrp`.
 udpn.sgrp | 0 to 255 | Bitfield for broadcast send groups 1-8
 udpn.rgrp | 0 to 255 | Bitfield for broadcast receive groups 1-8
 udpn.nn | bool | Don't send a broadcast packet (applies to just the current API call). Not included in state response.
@@ -160,8 +160,8 @@ mainseg | 0 to info.leds.maxseg-1 | Main Segment: Sets which segment ID is the m
 seg | Object or Array of objects | _(see section below)_ Segments are individual parts of the LED strip; this enables running different effects on different parts of the strip.
 playlist | object | [Custom preset playlists](#playlists). Not included in state response.
 tb | uint32 | Sets timebase for effects. Not reported.
-ledmap | 0 to 9 | Load specified ledmap (0 for `ledmap.json`, 1-9 for `ledmap1.json` to `ledmap9.json`). [See mapping](/advanced/mapping/). Not included in state response. _(available since 0.14.0)_
-rmcpal | bool | Remove last custom palette if set to `true`. Not included in state response. _(available since 0.14.0)_
+ledmap | 0 to 9 | Load specified ledmap (0 for `ledmap.json`, 1-9 for `ledmap1.json` to `ledmap9.json`). [See mapping](/advanced/mapping/). Not included in state response.
+rmcpal | bool | Remove last custom palette if set to `true`. Not included in state response.
 np | bool | Advance to the next preset in a playlist if set to `true`. Not included in state response. _(available since 0.15)_
 
 #### Contents of the segment object
@@ -171,8 +171,8 @@ np | bool | Advance to the next preset in a playlist if set to `true`. Not inclu
 id | 0 to info.maxseg -1 | Zero-indexed ID of the segment. May be omitted, in that case the ID will be inferred from the order of the segment objects in the _seg_ array.
 start | 0 to info.leds.count -1 | LED the segment starts at. For 2D set-up it determines column where segment starts, from top-left corner of the matrix.
 stop | 0 to info.leds.count | LED the segment stops at, not included in range. If _stop_ is set to a lower or equal value than _start_ (setting to `0` is recommended), the segment is invalidated and deleted. For 2D set-up it determines column where segment stops, from top-left corner of the matrix.
-startY | 0 to matrix width | Start row from top-left corner of a matrix. _(available since 0.14.0)_
-stopY | 1 to matrix height | Stop row from top-left corner of matrix. _(available since 0.14.0)_
+startY | 0 to matrix width | Start row from top-left corner of a matrix.
+stopY | 1 to matrix height | Stop row from top-left corner of matrix.
 len | 0 to info.leds.count | Length of the segment (_stop_ - _start_). _stop_ has preference, so if it is included, _len_ is ignored.
 grp | 0 to 255 | Grouping (how many consecutive LEDs of the same segment will be grouped to the same color)
 spc | 0 to 255 | Spacing (how many LEDs are turned off and skipped between each group)
@@ -218,15 +218,12 @@ No value may be changed by means of this API.
 ver | string | Version name.
 vid | uint32 | Build ID (YYMMDDB, B = daily build index).
 _leds_ | object | Contains info about the LED setup.
-leds.cct | bool | `true` if the light supports [color temperature control](#cct-control) _(deprecated, use info.leds.lc)_
 leds.count | 1 to 1200 | Total LED count.
 leds.fps | 0 to 255 | Current frames per second.
-leds.rgbw | bool | `true` if LEDs are 4-channel (RGB + White). _(deprecated, use info.leds.lc)_
-leds.wv | bool | `true` if a white channel slider should be displayed. _(deprecated, use info.leds.lc)_
 leds.pwr | 0 to 65000 | Current LED power usage in milliamps as determined by the ABL. `0` if ABL is disabled.
 leds.maxpwr | 0 to 65000 | Maximum power budget in milliamps for the ABL. `0` if ABL is disabled.
 leds.maxseg | byte | Maximum number of segments supported by this version.
-leds.lc | byte | Logical AND of all active segment's virtual light capabilities
+leds.lc | byte | Logical AND of all active segment's virtual light capabilities (including CCT and white channel capabilities)
 leds.seglc | byte array | Per-segment virtual light capabilities
 str | bool | If `true`, an UI with only a single button for toggling sync should toggle receive+send, otherwise send only
 name | string | Friendly name of the light. Intended for display in lists and titles.
@@ -248,7 +245,7 @@ fs.pmt | uint32 | Unix timestamp for the last modification to the `presets.json`
 ndc | -1 to 255 | Number of other WLED devices discovered on the network. -1 if Node discovery disabled.
 arch | string | Name of the platform.
 core | string | Version of the underlying (Arduino core) SDK.
-lwip | 0, 1, or 2 | Version of LwIP. 1 or 2 on ESP8266, 0 (does not apply) on ESP32. _Deprecated, removal in 0.14.0_
+lwip | 0, 1, or 2 | Version of LwIP. 1 or 2 on ESP8266, 0 (does not apply) on ESP32. _Deprecated_
 freeheap | uint32 | Bytes of heap memory (RAM) currently available. Problematic if <`10k`.
 uptime | uint32 | Time since the last boot/reset in seconds.
 opt | uint16 | Used for debugging purposes only.
@@ -256,9 +253,9 @@ brand | string | The producer/vendor of the light. Always `WLED` for standard in
 product | string | The product name. Always `FOSS` for standard installations.
 mac | string | The hexadecimal hardware MAC address of the light, lowercase and without colons.
 ip | string | The IP address of this instance. Empty string if not connected.
-device_id | string | A unique identifier for the device, derived from the hardware MAC address. _(available since 16.0.0)_
-psram | uint32 | Total PSRAM size in bytes. `0` if no PSRAM is present or detected. _(available since 16.0.0)_
-psram_free | uint32 | Estimate of currently free PSRAM in bytes. _(available since 16.0.0)_
+deviceId | string | A unique identifier for the device, derived from the hardware MAC address. _(available since 16.0.0)_
+psrSz | uint32 | Total PSRAM size in bytes. `0` if no PSRAM is present or detected. _(available since 16.0.0)_
+psram | uint32 | Estimate of currently free PSRAM in bytes. _(available since 15.0.0)_
 repo | string | URL of the source code repository for this firmware build. _(available since 16.0.0)_
 
 Examples of frequently requested custom API:
@@ -277,7 +274,7 @@ Increase brightness by 40 wrapping when maximum reached | `{"bri":"w~40"}`
 
 Using the `i` property of the segment object, you can set the LED colors in the segment using the JSON API.  
 Keep in mind that this is non-persistent, if the light is turned off the segment will return to effect mode.  
-The segment is frozen when using individual control, the set effect will not run.   
+The segment is frozen when using individual control, the set effect will not run.  
 To unfreeze the segment, click the "eye" icon, change any property of the segment or turn off the light.
 
 To set individual LEDs starting from the beginning, use an array of Color arrays `[255,0,0]` or hex values `"FF0000"`.
