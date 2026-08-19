@@ -101,6 +101,6 @@ Changing a single LED therefore only requires a packet of 2+4 bytes. All LEDs ma
 ### Setup with ARLS
 
 !!! warning "ARLS is deprecated"
-    ARLS (audio-reactive-led-strip v1) is based an unmaintained library and the v1 UDP Realtime protocol.
+    ARLS (audio-reactive-led-strip v1) is based on an unmaintained library and the v1 UDP Realtime protocol.
 
 See [historical features: ARLS](/about/historical-features#arls-audio-reactive-led-strip-v1-setup)
