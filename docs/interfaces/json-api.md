@@ -86,6 +86,7 @@ Sample JSON API response:
     "vid": 1903252,
     "leds": {
       "count": 20,
+      "rgbw": true,
       "pwr": 0,
       "maxpwr": 65000,
       "maxseg": 32
