@@ -112,7 +112,7 @@ Button 0 has two built-in functions:
 
 The simplest macro preset example is getting a button to do your bidding.  
 
-The default pin to which a button can be connected is GPIO 0 (D3 on NodeMCU, D1 Mini and others).  Even though WLED uses the internal pull up resistors on input pins, this pin is ideally externally pulled high to 3.3V with a 10k resistor. The configured macro executes when the pin is pulled low (grounded).
+The default pin to which a button can be connected is GPIO 0 (D3 on NodeMCU, D1 Mini and others).  Even though WLED uses the internal pull-up resistors on input pins, this pin is ideally externally pulled high to 3.3V with a 10k resistor. The configured macro executes when the pin is pulled low (grounded).
 
 The desired macro preset is created, and then assigned to a short, long or double press on the Time & Macros configuration page.
 
