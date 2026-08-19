@@ -126,7 +126,6 @@ It is highly recommended to use the [JSON API](/interfaces/json-api) when dealin
 &IN | none | Server will not respond to this request (internal)
 &OL= | 0 to 255 | Experimental overlays
 &NM= | 0 or 1 | Clock mode: 0 is normal, 1 is countdown
-&NM= | 0 or 1 | Clock mode: 0 is normal, 1 is countdown
 &RD= | 0 or 1 | Toggle realtime UDP
 &LO= | 0-2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot
 &NP | none | Advance to the next preset in a playlist (since 0.15)
