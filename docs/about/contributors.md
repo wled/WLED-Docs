@@ -16,7 +16,7 @@ adamo made the animated Discord server logo!
 [@debsahu](https://github.com/debsahu) provided the HomeAssistant autodiscovery and a lot of help with PIO!  
 [@ewowi](https://github.com/ewoudwijma) numerous optimizations; 2D, audio and various user mod improvements.  MoonModules maintainer.  
 [@frenck](https://github.com/frenck) made an amazing, stable and feature-packed native integration with HomeAssistant!  
-[@Moustachauve](https://github.com/Moustachauve) added palette visualisation and developped the WLED Native app for Android and iOS!  
+[@Moustachauve](https://github.com/Moustachauve) added palette visualisation and developed the WLED app for Android and iOS!  
 [@pbolduc](https://github.com/pbolduc) DDP UDP synchronization, UI improvements and user mods.  
 [@photocromax](https://github.com/photocromax) helped bring the Live visualization feature to life.  
 [@raymiec](https://github.com/raymiec)  is currently working on creating the best clients for Android and iOS!  
@@ -28,7 +28,7 @@ adamo made the animated Discord server logo!
 [@wiesendaniel](https://github.com/wiesendaniel) added the configuration for the PlatformIO IDE!  
 [@YeonV](https://github.com/YeonV) provided the initial HomeAssistant MQTT light config!  
 [@werkstrom](https://github.com/werkstrom) added PixelArt converter  
-[@netmindz](https://github.com/netmindz) Freqency based Audio Reactive effects and Audio Reactive Color Palettes. MoonModules maintainer. WLED Release Manager   
+[@netmindz](https://github.com/netmindz) Frequency-based Audio Reactive effects and Audio Reactive Color Palettes. MoonModules maintainer. WLED Release Manager   
 
 _This list is incomplete._  
 

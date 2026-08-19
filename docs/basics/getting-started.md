@@ -66,7 +66,7 @@ To connect your WLED module to your home Wifi:
 
 **1.** Click on the _Config_ (gear) icon to edit your WLED module settings and choose "Wifi Setup".
 
-**2.** For most home networks, simply enter your Wifi network's name and network password. You can also change the mDNS address for your WLED module here.
+**2.** For most home networks, enter your Wifi network's name and network password. You can also change the mDNS address for your WLED module here.
 
 **3.** Click Save & Connect at the bottom of the page.
 
@@ -77,7 +77,7 @@ To connect your WLED module to your home Wifi:
 ### Default GPIO Usage
 
 !!! info "These are only defaults"
-    All pins can be changed in the Hardware section of LED settings. Please note that these are GPIO numbers, please consult a pinout for your board to find the labeled pin (e.g `D4` = `GPIO2` on most ESP8266 boards). When using an ESP8266 board, it's recommended to use pins `GPIO1`, `GPIO2`, or `GPIO3` for LED Data; using other pins will require _bit-banging_ and may cause slow performance and/or issues elsewhere (such as with IR decoding).
+    All pins can be changed in the Hardware section of LED settings. These are GPIO numbers, so please consult a pinout for your board to find the labeled pin (e.g., `D4` = `GPIO2` on most ESP8266 boards). When using an ESP8266 board, it's recommended to use pins `GPIO1`, `GPIO2`, or `GPIO3` for LED Data; using other pins will require _bit-banging_ and may cause slow performance and/or issues elsewhere (such as with IR decoding).
 
 | Function | GPIO | Suggested pin |
 |---|---|---|
@@ -88,9 +88,9 @@ Relay | None | 12
 
 ### Software update procedure
 
-Method 1: Reflashing the new update like a new install (see above).
+**Method 1**: Reflashing the new update like a new install (see above).
 
-Method 2: The software has an integrated _OTA software update_ capability.
+**Method 2**: The software has an integrated _OTA software update_ capability.
 First you have to enable it by typing in the correct OTA passphrase (default: "wledota") in the settings menu.
 Remove the tick in the checkbox "OTA locked". Then save settings and reboot the ESP.
 Then you can select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
@@ -98,7 +98,7 @@ After you are done, it is recommended to lock the OTA function again.
 To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
 If you try to access the update page now, you should see the message "OTA lock active".
 
-Method 3: ArduinoOTA is also supported.
+**Method 3**: ArduinoOTA is also possible, but requires a custom build with `-D WLED_ENABLE_AOTA` added to `build_flags`.
 
 !!! info "If you own multiple devices and want to update them"
-    Since v0.13 of WLED source code includes shell/command prompt scripts which is allow you to update multiple devices with a single command. Please check `tools` subfolder for `multi-update` scripts (.cmd or .sh). You will need to modify them to include IP addresses of your WLED devices and assign firmware binary file for each device. If you are using Windows, make sure you install `curl` utility somewhere in your `PATH` (curl is included with Windows 10 since build 17063). This will only work if "OTA Lock" is disabled.
+    WLED source code includes shell/command prompt scripts to update multiple devices with a single command. Please check `tools` subfolder for `multi-update` scripts (.cmd or .sh). You will need to modify them to include IP addresses of your WLED devices and assign firmware binary file for each device. If you are using Windows, make sure you install `curl` utility somewhere in your `PATH` (curl is included with Windows 10 since build 17063). This will only work if "OTA Lock" is disabled.

@@ -34,7 +34,7 @@ hide:
 
 - [My LEDs don't turn on at all.](#my-leds-dont-turn-on-at-all)
 - [My LEDs don't get as bright as they should!](#my-leds-dont-get-as-bright-as-they-should)
-- [My LEDs are unable to be set into an consistent solid color.](#my-leds-are-unable-to-be-set-into-an-consistent-solid-color)
+- [My LEDs are unable to be set into a consistent solid color.](#my-leds-are-unable-to-be-set-into-a-consistent-solid-color)
 - [When I select green, the LEDs turn red!](#when-i-select-green-the-leds-turn-red)
 - [My LEDs act funny and flicker randomly.](#my-leds-act-funny-and-flicker-randomly)
 - [Not all my LEDs turn on.](#not-all-my-leds-turn-on)
@@ -83,7 +83,7 @@ If you accidentally connected the strip the wrong way (if it has arrows printed 
 
 If you did not enter a static IP, the module will automatically obtain a dynamic IP from the router.
 You can check it in the router configuration or in the settings page, if the Access Point is still enabled.
-An easier way is to use the WLED Native app which features automatic discovery!
+An easier way is to use the WLED app, for [Android](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid) or [iOS](https://apps.apple.com/us/app/wled-official-app/id6446207239), which features automatic discovery!
 
 ### The module once was connected, but I can no longer reach it
 
@@ -95,7 +95,7 @@ Else, power-cycle the module manually.
 
 This only works with Apple devices out of the box. You can install Bonjour to make it work in Windows.
 For Android there is no convenient way to achieve it, though you can use apps like "Bonjour search" to find the IP.
-It is highly recommended that you install the WLED Native app, which makes automatic discovery easy!
+It is highly recommended that you install the WLED app, for [Android](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid) or [iOS](https://apps.apple.com/us/app/wled-official-app/id6446207239), which makes automatic discovery easy!
 
 ### Is it safe to expose WLED to the public internet to control the lights from anywhere?
 
@@ -147,7 +147,7 @@ If the brightness slider in the UI is already at maximum, try checking the auto 
 Set the milliamp limit to slightly below the rating of your power supply.
 If the LEDs are still too dim or change color towards the end of the strip, there may be a significant voltage drop. Try injecting 5v power at the end or middle of the strip with some appropriate cabling.
 
-### My LEDs are unable to be set into an consistent solid color
+### My LEDs are unable to be set into a consistent solid color
 
 If the LEDs should be individually addressable, like the SK6812, but instead they only behave as either RED,GREEN OR BlUE pixels (in a row).
 You might not have enabled (settings -> led preferences) "LEDs are 4-channel type (RGBW)"  for an RGBW/RGBWW/RGBNW strip.
@@ -191,7 +191,7 @@ If you have more and can power them, go to LED settings and increase the LED cou
 Please also enter the milliamp rating of your 5v power supply for optimal brightness in the field below it.
 Do not increase the mA number if you power LEDs directly from the 5V pin of the ESP!
 
-See [here](https://kno.wled.ge/features/multi-strip/) for maximum recommended LED counts.
+See [Multi-strip Support](/features/multi-strip) for maximum recommended LED counts.
 
 #### Reason 2
 
@@ -272,27 +272,17 @@ There are three brightness slider types in the web UI. The white one in the **to
   
 In contrast, the slider **underneath the color wheel only** applies to the **currently selected color** and will not affect the brightness of other colors or Palettes. It is recommended to use this slider only if you like a darker version of a color alongside other, brighter colors. It should not be used to control the overall brightness, so it is preferable to leave it on maximum and instead use the master brightness control.  
 
-There is a third brightness slider in each Segment panel. This serves the same purpose as master brightness, but limited to that segment. Please note that this does not override the master brightness, but instead is an additional downscaling. (If you set both Master and Segment brightness sliders to 50%, the resulting brightness is 25%)
+There is a third brightness slider in each Segment panel. This serves the same purpose as master brightness, but limited to that segment. This does not override the master brightness. Instead, it applies additional downscaling. (If you set both Master and Segment brightness sliders to 50%, the resulting brightness is 25%)
 
 ### My Segments are gone after a reboot!
 
-Segments are non-persistant by default. If you want to load your preset at every startup, just do the following:
+Segments are non-persistent by default. If you want to load your preset at every startup, just do the following:
 
 - Set your segments up as desired
 - Go into the Presets tab in the web UI, click the save checkbox and save the config to a new preset. Remember the preset slot number.
 - In LED settings, set `Boot Preset` to the preset slot number from the previous step.
 
 This will be improved in a future release, so that you will be able to save multiple segment configurations!
-
-### What is the difference between the WLED app and the WLED Native app?
-
-The WLED app was the official app developped by the same people that brought you WLED. WLED Native is an initiative by community member [Moustachauve](https://github.com/Moustachauve) to bring an interface that is closer to the native operating system look of your device and some new features.
-
-The official WLED app is now considered legacy. It is not currently maintained and might not receive any future bug fixes.
-
-WLED Native has a few more features available, like a tablet interface for Android and can keep track of changes to the device IP address better.
-
-While WLED Native is not the official app, it is officially endorsed and trusted by the WLED maintainers.
 
 ## Bundling WLED with custom hardware (License)
 
