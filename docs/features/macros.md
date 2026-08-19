@@ -146,7 +146,7 @@ Connect the potentiometer to 3.3 V and GND. Connect its output to A0, or to the 
     On ESP8266, you can only have a single analog button on pin A0, the pin set in the settings UI is ignored.  
     On ESP32, only ADC1 pins will work for analog input while WiFi is active (pins 32-39). ADC2 pins will not work.
 
-#### Global Brightness
+### Global Brightness
 
 WLED turns the LEDs off when the global-brightness potentiometer reaches either extreme.
 
