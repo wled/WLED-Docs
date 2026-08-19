@@ -15,7 +15,7 @@ There is one _main segment_, Segment 0 by default. This segment has a few import
 - The main segment's color is the one that will be reported to HTTP and MQTT APIs
 
 !!! tip
-	If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
+    If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
 
 Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ The number of supported segments depends on the hardware: 16 on ESP8266, and 32 on ESP32 (up to 64 with PSRAM).
 
