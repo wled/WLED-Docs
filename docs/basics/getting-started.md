@@ -88,9 +88,9 @@ Relay | None | 12
 
 ### Software update procedure
 
-Method 1: Reflashing the new update like a new install (see above).
+**Method 1**: Reflashing the new update like a new install (see above).
 
-Method 2: The software has an integrated _OTA software update_ capability.
+**Method 2**: The software has an integrated _OTA software update_ capability.
 First you have to enable it by typing in the correct OTA passphrase (default: "wledota") in the settings menu.
 Remove the tick in the checkbox "OTA locked". Then save settings and reboot the ESP.
 Then you can select "Manual OTA update" in Security settings and upload a [release binary](https://github.com/wled/WLED/releases).
@@ -98,7 +98,7 @@ After you are done, it is recommended to lock the OTA function again.
 To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
 If you try to access the update page now, you should see the message "OTA lock active".
 
-Method 3: ArduinoOTA is also supported.
+**Method 3**: ArduinoOTA is also possible, but requires a custom build with `-D WLED_DISABLE_OTA` added to `build_flags`.
 
 !!! info "If you own multiple devices and want to update them"
     WLED source code includes shell/command prompt scripts to update multiple devices with a single command. Please check `tools` subfolder for `multi-update` scripts (.cmd or .sh). You will need to modify them to include IP addresses of your WLED devices and assign firmware binary file for each device. If you are using Windows, make sure you install `curl` utility somewhere in your `PATH` (curl is included with Windows 10 since build 17063). This will only work if "OTA Lock" is disabled.

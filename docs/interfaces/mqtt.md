@@ -5,8 +5,6 @@ hide:
   # - toc
 ---
 
-!!! important
-    **Notice:** The MQTT implementation is currently being **restructured** to provide a better experience for users of Home Assistant and other automation software. **This will be a breaking change**. For details regarding the rework, please see [#207](https://github.com/wled/WLED/issues/207)!
 
 WLED can connect to an MQTT broker for smart home control.
 Connection to both domains and IP servers is supported on port 1883.
