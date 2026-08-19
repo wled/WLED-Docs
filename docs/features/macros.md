@@ -31,7 +31,10 @@ For API command syntax and examples, see [Presets](/features/presets), [HTTP API
 
 Open **Config** > **Time & Macros**. The **Macro Presets** section assigns a preset to an event.
 
-Use preset ID `0` to use the default action instead of a preset.
+Use preset ID `0` to use the default action instead of a preset:
+
+* Button 0 default actions: short press toggles power; long press selects a random color.
+* Button 1 default acrions: short press changes the effect; long press adjusts brightness; double press changes the palette.
 
 ### Button Actions
 
@@ -86,12 +89,12 @@ Configure the GPIO pin and button type in **Config** > **LED Preferences**. Then
 
 The following button types are supported:
 
-- Momentary pushbuttons that connect a GPIO pin to GND when pressed (normally open, active-low).
-- Inverted pushbuttons that disconnect a GPIO pin from GND when pressed (inverted, active-high).
-- Switches (be careful with selection of GPIO for switch since some GPIOs will prevent successful boot of ESP if held LOW or HIGH at boot).
-- PIR motion sensors (they set GPIO HIGH when motion is detected, this type of buttons will also trigger MQTT message with /motion topic if "Publish on button press" is set on MQTT config).
-- Touch buttons on supported ESP32 GPIO pins.
-- Analog buttons, including potentiometers and analog-input buttons.
+* Momentary pushbuttons that connect a GPIO pin to GND when pressed (normally open, active-low).
+* Inverted pushbuttons that disconnect a GPIO pin from GND when pressed (inverted, active-high).
+* Switches (be careful with selection of GPIO for switch since some GPIOs will prevent successful boot of ESP if held LOW or HIGH at boot).
+* PIR motion sensors (they set GPIO HIGH when motion is detected, this type of buttons will also trigger MQTT message with /motion topic if "Publish on button press" is set on MQTT config).
+* Touch buttons on supported ESP32 GPIO pins.
+* Analog buttons, including potentiometers and analog-input buttons.
 
 !!! warning
     Some GPIO pins can prevent the ESP from booting when they are held LOW or HIGH. Check the hardware requirements for your board before you use a GPIO pin as a switch input.
@@ -102,8 +105,8 @@ Set the same preset for short, long, and double press to run that preset when th
 
 Button 0 has these built-in actions:
 
-- Hold for more than 6 seconds to reset Wi-Fi settings.
-- Hold for more than 12 seconds to erase flash memory.
+* Hold for more than 5 seconds to open the WLED-AP access point.
+* Hold for more than 10 seconds to erase flash memory and perform a factory reset.
 
 ### Analog Button
 
