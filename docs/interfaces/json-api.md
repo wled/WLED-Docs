@@ -254,7 +254,7 @@ product | string | The product name. Always `FOSS` for standard installations.
 mac | string | The hexadecimal hardware MAC address of the light, lowercase and without colons.
 ip | string | The IP address of this instance. Empty string if not connected.
 deviceId | string | A unique identifier for the device, derived from the hardware MAC address. _(available since 16.0.0)_
-psrSz | uint32 | Total PSRAM size in bytes. `0` if no PSRAM is present or detected. _(available since 16.0.0)_
+psrSz | uint32 | Total PSRAM size in megabytes, rounded up. `0` if no PSRAM is present or detected. _(available since 16.0.0)_
 psram | uint32 | Estimate of currently free PSRAM in bytes. _(available since 15.0.0)_
 repo | string | URL of the source code repository for this firmware build. _(available since 16.0.0)_
 
