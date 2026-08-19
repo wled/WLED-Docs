@@ -87,10 +87,9 @@ Sample JSON API response:
     "leds": {
       "count": 20,
       "rgbw": true,
-      "rgbw": true,
       "pwr": 0,
       "maxpwr": 65000,
-      "maxseg": 32
+      "maxseg": 16
     },
     "name": "WLED Light",
     "udpport": 21324,
@@ -224,8 +223,6 @@ leds.count | 1 to 1200 | Total LED count.
 leds.fps | 0 to 255 | Current frames per second.
 leds.rgbw | bool | `true` if LEDs are 4-channel (RGB + White). _(deprecated, use info.leds.lc)_
 leds.wv | bool | `true` if a white channel slider should be displayed. _(deprecated, use info.leds.lc)_
-leds.rgbw | bool | `true` if LEDs are 4-channel (RGB + White). _(deprecated, use info.leds.lc)_
-leds.wv | bool | `true` if a white channel slider should be displayed. _(deprecated, use info.leds.lc)_
 leds.pwr | 0 to 65000 | Current LED power usage in milliamps as determined by the ABL. `0` if ABL is disabled.
 leds.maxpwr | 0 to 65000 | Maximum power budget in milliamps for the ABL. `0` if ABL is disabled.
 leds.maxseg | byte | Maximum number of segments supported by this version.
@@ -314,7 +311,6 @@ Matrices are handled as a non-serpentine layout.
 
 #### Playlists
 
-
 Sample playlist API call:
 
 ```json
@@ -375,6 +371,7 @@ CCT is controllable per segment, while RGB color and the white channel are contr
 #### CCT control
 
 Please also see the [general info about CCT](/features/cct).
+
 ##### Supported value ranges
 
 Given that the white spectrum handling is agnostic to the true color temperature of the LEDs used, a relative range is preferred for the time being, where a value of `0` indicates the warmest possible color temperature, while a value of `255` indicates the coldest temperature.
@@ -569,6 +566,7 @@ U | Voltage | V
 If a client is only interested in certain sensor types (e.g. Temperature), it may disregard all other sensor objects.
 
 ### API
+
 there is all routes for JSON API:
 
 - /json/state

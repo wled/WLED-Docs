@@ -75,7 +75,6 @@ Loxone offers two commands. One for RGB values and one for brightness and color 
 &LY= | BBBGGGRRR | 0 - 100100100 | Loxone RGB value for secondary color. Each color (`RRR`,`GGG`,`BBB`) is specified in the range from 0 to 100%.
 &LY= | 20bbbtttt | 200002700 - 201006500 | Loxone brightness and color temperature values for secondary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin.
 
-
 ## Notifications
 
 | Parameter | Value Range | Description |
