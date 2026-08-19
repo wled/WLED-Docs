@@ -92,7 +92,7 @@ The following button types are supported:
 * Momentary pushbuttons that connect a GPIO pin to GND when pressed (normally open, active-low).
 * Inverted pushbuttons that disconnect a GPIO pin from GND when pressed (inverted, active-high).
 * Switches (be careful with selection of GPIO for switch since some GPIOs will prevent successful boot of ESP if held LOW or HIGH at boot).
-* PIR motion sensors (they set GPIO HIGH when motion is detected, this type of buttons will also trigger MQTT message with /motion topic if "Publish on button press" is set on MQTT config).
+* PIR motion sensors. They set GPIO HIGH when motion is detected. This button type also triggers an MQTT message on the `/motion` topic when "Publish on button press" is enabled in the MQTT settings.
 * Touch buttons on supported ESP32 GPIO pins.
 * Analog buttons, including potentiometers and analog-input buttons.
 
