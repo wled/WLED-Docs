@@ -67,8 +67,8 @@ The following HTTP API parameters and JSON API keys are not available in current
 2. Insert the following code in `led.py` after line 66:
 
    ```python
-        m.append(1);
-        m.append(2);
+   m.append(1);
+   m.append(2);
    ```
 
    These are the first two bytes of the protocol.
