@@ -87,6 +87,7 @@ Sample JSON API response:
     "leds": {
       "count": 20,
       "rgbw": true,
+      "rgbw": true,
       "pwr": 0,
       "maxpwr": 65000,
       "maxseg": 32
