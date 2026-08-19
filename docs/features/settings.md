@@ -185,4 +185,4 @@ Deny access to WiFi settings | Y/N | Disables changes to WiFi settings while loc
 Disable recovery AP | Y/N | If enabled, the module will not open an Access Point if connection to home WiFi failed.
 Factory reset | Y/N | Deletes all custom settings data (passwords, configuration, macros, presets)
 Manual OTA | - | If OTA is enabled, you can upload new binary firmware
-Enable ArduinoOTA | Y/N | Useful for developers. Be careful, can even be left on when OTA locked!
+Enable ArduinoOTA | Y/N | Useful for developers. Be careful, can even be left on when OTA locked! Only shown on builds compiled with `WLED_ENABLE_AOTA`, so it does not appear on the release binaries.

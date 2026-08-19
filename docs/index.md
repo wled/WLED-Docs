@@ -32,7 +32,7 @@ A fast and feature-rich implementation of an ESP32 webserver to control NeoPixel
 - Up to 250 user presets to save and load colors/effects easily, supports cycling through them.  
 - Presets can be used to automatically execute API calls  
 - Nightlight function (gradually dims down)  
-- Full OTA software updatability (HTTP + ArduinoOTA), password protectable  
+- Full OTA software updatability (HTTP), password protectable  
 - Configurable analog clock + support for the Cronixie kit by Diamex  
 - Configurable Auto Brightness limit for safer operation  
 - Filesystem-based config for easier backup of presets and settings
