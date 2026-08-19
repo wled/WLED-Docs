@@ -5,7 +5,7 @@ hide:
   # - toc
 ---
 
-WLED 0.13.0 supports multiple protocols over Serial.
+WLED supports multiple protocols over Serial.
 Serial is available via USB, and on most boards, GPIO1 for TX and GPIO3 for RX.
 
 !!! info "Pin usage limitation"
@@ -16,7 +16,7 @@ Serial is available via USB, and on most boards, GPIO1 for TX and GPIO3 for RX.
 
 Both these protocols are supported and can be used to stream realtime LED data to WLED for direct display, e.g. from an bias lighting program. For tpm2, only data packets are supported and data in 24-bit RGB format is expected.  
 If you want to drive a large amount of LEDs, you may need to increase the Baud rate in WLED Sync settings, as the default baud rate of `115200` is only sufficient for about 50-100 LEDs depending on the refresh rate.  
-Adalight is supported since WLED 0.6.3, tpm2 since version 0.10.2.
+Both Adalight and tpm2 are supported.
 
 ### JSON over Serial
 

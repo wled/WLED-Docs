@@ -7,7 +7,7 @@ hide:
 
 ### White channel(s) handling
 
-Besides addressable RGB and RGBW bus types, WLED 0.13.0 also supports PWM CCT (correlated color temperature) lights.
+Besides addressable RGB and RGBW bus types, WLED also supports PWM CCT (correlated color temperature) lights.
 
 #### Auto white handling
 
@@ -33,12 +33,10 @@ This is applied to the RGB color only, after the auto white channel calculation.
 
 #### CCT handling
 
-WLED starting with version 0.13.0 also supports bus types with two white channels, one with a warm color temperature (e.g. 2700 Kelvin, reddish white) and one with a cold white color temperature (e.g. 8000 Kelvin, bluish white).
-
-Since as of the release of version 0.13.0 no adjustable CCT addressable LEDs are supported*, this only applies to PWM analog LED outputs.
+WLED also supports bus types with two white channels, one with a warm color temperature (e.g. 2700 Kelvin, reddish white) and one with a cold white color temperature (e.g. 8000 Kelvin, bluish white).
 
 !!! info "WWA (warm white + cold white + amber white)"
-    _*SK6812 WWA (with 3 channels, warm white, cold white and amber) are supported, but treated as if RGB using the `WS281x` bus type. White spectrum support for this LED type will be added at a later point._
+    _SK6812 WWA (with 3 channels, warm white, cold white and amber) are supported, but treated as if RGB using the `WS281x` bus type. White spectrum support for this LED type will be added at a later point._
 
 The overall brightness of the white channels is determined from the auto-white calculation outlined above, and as such is identical in behavior to that of single white channel buses.
 

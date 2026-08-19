@@ -5,17 +5,14 @@ hide:
   # - toc
 ---
 
-!!! important
-    **Notice:** The MQTT implementation is currently being **restructured** to provide a better experience for users of Home Assistant and other automation software. **This will be a breaking change**. For details regarding the rework, please see [#207](https://github.com/wled/WLED/issues/207)!
 
-WLED versions from 0.8.0 up are able to connect to an MQTT broker for smart home control.
+WLED can connect to an MQTT broker for smart home control.
 Connection to both domains and IP servers is supported on port 1883.
 
-Starting in v16.0.0, WLED also supports **mDNS broker discovery**: if you enter an `.local` hostname as the MQTT server address, WLED will resolve it via mDNS. This lets you use a local broker without knowing its static IP address.
+Starting in v16.0.0, WLED supports **mDNS broker discovery**: if you enter an `.local` hostname as the MQTT server address, WLED will resolve it via mDNS. This lets you use a local broker without knowing its static IP address.
 
 !!! warning "MQTT Connections Are Not Secure"
     Secure connections are not currently supported. I recommend only connecting to local MQTT brokers.
-    In v0.8.4-0.8.6 only, WLED supports MQTT autodiscovery by the HomeAssistant software. This has been removed because of bootloop issues and in favor of the native HomeAssistant integration.
 
 WLED will subscribe to up to six topics to change the state of the lights.
 
@@ -24,7 +21,7 @@ WLED will subscribe to up to six topics to change the state of the lights.
 - **[mqttDeviceTopic]/col**  
   -> Send color as HEX (#WWRRGGBB or #RRGGBB) or 32bit DEC. Hex has '#','h' or 'H' as prefix.
 - **[mqttDeviceTopic]/api**  
-  -> Send an API call (using the [HTTP API](/interfaces/http-api) or, since 0.11, [JSON API](https://kno.wled.ge/interfaces/json-api) syntax). You may omit the "win" and just send e.g. "FX=73"
+  -> Send an API call (using the [HTTP API](/interfaces/http-api) or [JSON API](/interfaces/json-api) syntax). You may omit the "win" and just send e.g. "FX=73"
 
 - **[mqttGroupTopic]**
 - **[mqttGroupTopic]/col**

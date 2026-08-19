@@ -9,7 +9,7 @@ Web-configurable settings are split in multiple sub-pages. This page is meant to
 
 ## WiFi Settings
 
-This sub-page offers options to connect the ESP to different WiFi/WLAN devices. (This section applies to WLED 0.8.5.)
+This sub-page offers options to connect the ESP to different WiFi/WLAN devices.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -30,7 +30,7 @@ WiFi sleep | Y/N | Disabling WiFi sleep can increase reliability, but increases 
 
 ## LED Preferences
 
-This sub-page configures your LED & Hardware setup. (This section applies to WLED 0.14.1.)
+This sub-page configures your LED & Hardware setup.
 
 | Setting name | Value Range | Default | Description |
 |---|---|---|---|
@@ -82,12 +82,12 @@ Color order | multiple options | "GRB" | Same as "Color order" above
 
 ### Other settings
 
-(This section applies to WLED 0.8.5; some of these settings no longer appear in 0.14.1.)
+(Some of these settings no longer appear in 0.14.1 or later.)
 
 | Setting name | Value Range | Description |
 |---|---|---|
-Turn on after power up | Y/N | Whether the lights should turn on after a reset
-Apply preset | 0..16 | Preset to load at boot (0 = none)
+Turn on after power up | Y/N | Whether the lights should turn on after power-on / restart
+Apply preset | 0..250 | Preset to load at boot (0 = none)
 Use Gamma for brightness | Y/N | Will correct brightness changes to make it appear more linear. Advised to leave off
 Use Gamma for color | Y/N | Will correct colors to match those on a monitor. Strongly advised to keep on
 Brightness factor | 1..255 | Factor to change master brightness if it is too dim/bright for a certain configuration
@@ -102,7 +102,7 @@ Palette blending | select | Choose how the palette wraps at the end (seam)
 
 ## User Interface settings
 
-This sub-page changes the look of the web interface. (This section applies to WLED 0.8.5.)
+This sub-page changes the look of the web interface.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -111,7 +111,7 @@ Sync button toggles... | Y/N | If enabled, both send and receive are toggled by 
 
 ## Sync settings
 
-This sub-page configures external software synchronization interfaces. (This section applies to WLED 0.8.5.)
+This sub-page configures external software synchronization interfaces.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -151,7 +151,9 @@ Baud rate | Various | Set the default Serial connection Baud Rate
 
 ## Time settings
 
-This sub-page configures automation tasks. (This section applies to WLED 0.8.5.)
+Some of these settings no longer appear in 0.14.0 or later, or have different value ranges in newer WLED versions.
+
+This sub-page configures automation tasks.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -173,7 +175,7 @@ Timed-Light-Over Macro | 0..16 | Macro to trigger when timed light is done
 
 ## Security settings
 
-This sub-page manages permissions and updates. (This section applies to WLED 0.8.5.)
+This sub-page manages permissions and updates.
 
 | Setting name | Value Range | Description |
 |---|---|---|
