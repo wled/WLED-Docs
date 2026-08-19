@@ -109,10 +109,10 @@ To restore, use the `Choose file` and `Upload` buttons.
 !!! tip
     If you want to create a preset that turns on the light to the last effect displayed, uncheck `Use current state` and enter `T=1` into the API Command field.
 
-WLED supports schedules - that is, applying presets at a certain time automatically.  
-Here is a simple guide to get it set up quickly!  
+WLED supports schedules that apply presets automatically at a specified time.
+Use these steps to create a schedule:
 
-- Creates the preset(s) you want to load at specific time(s)  
+- Create the presets that you want to load at specific times.
 - Note the preset ID - the small gray number to the left of the preset name (or, in the bottom of the preset menu)  
 - Go to the `Time & Macros` section in the WLED settings.  
 - Make sure the time displayed is correct and accurate. It is highly recommended to enable NTP for a reliable schedule. Do not forget to set the correct timezone.
