@@ -103,7 +103,7 @@ For a momentary button, WLED detects the action after you release the button. Th
 
 Set the same preset for short, long, and double press to run that preset when the button is pressed.
 
-Button 0 has these built-in actions:
+Button 0 has two built-in functions:
 
 * Hold for more than 5 seconds to open the WLED-AP access point.
 * Hold for more than 10 seconds to erase flash memory and perform a factory reset.
