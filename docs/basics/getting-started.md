@@ -98,7 +98,7 @@ After you are done, it is recommended to lock the OTA function again.
 To do so, tick the checkbox again (you can change the passphrase by typing in a new one now). Reboot.
 If you try to access the update page now, you should see the message "OTA lock active".
 
-**Method 3**: ArduinoOTA is also possible, but requires a custom build with `-D WLED_DISABLE_OTA` added to `build_flags`.
+**Method 3**: ArduinoOTA is also possible, but requires a custom build with `-D WLED_ENABLE_AOTA` added to `build_flags`.
 
 !!! info "If you own multiple devices and want to update them"
     WLED source code includes shell/command prompt scripts to update multiple devices with a single command. Please check `tools` subfolder for `multi-update` scripts (.cmd or .sh). You will need to modify them to include IP addresses of your WLED devices and assign firmware binary file for each device. If you are using Windows, make sure you install `curl` utility somewhere in your `PATH` (curl is included with Windows 10 since build 17063). This will only work if "OTA Lock" is disabled.
