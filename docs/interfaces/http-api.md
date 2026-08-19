@@ -34,10 +34,10 @@ Add one or multiple of the following parameters after the base URL/IP to change 
 &G= | 0 to 255 | Primary Green value
 &B= | 0 to 255 | Primary Blue value
 &W= | 0 to 255 | Primary White value
-&FX= | 0 to 254 | LED Effect Index
+&FX= | 0 to info.fxcount-1 | LED Effect Index
 &SX= | 0 to 255 | Effect Speed
 &IX= | 0 to 255 | Effect Intensity
-&FP= | 0 to 254 | Palette Index
+&FP= | 0 to info.palcount-1 | Palette Index
 &NL= | 0 to 255 | Nightlight active and duration in minutes
 &ND | none | Toggles nightlight on but uses default duration
 &NT= | 0 to 255 | Nightlight target brightness
