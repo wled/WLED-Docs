@@ -220,6 +220,8 @@ vid | uint32 | Build ID (YYMMDDB, B = daily build index).
 _leds_ | object | Contains info about the LED setup.
 leds.count | 1 to 1200 | Total LED count.
 leds.fps | 0 to 255 | Current frames per second.
+leds.rgbw | bool | `true` if LEDs are 4-channel (RGB + White). _(deprecated, use info.leds.lc)_
+leds.wv | bool | `true` if a white channel slider should be displayed. _(deprecated, use info.leds.lc)_
 leds.pwr | 0 to 65000 | Current LED power usage in milliamps as determined by the ABL. `0` if ABL is disabled.
 leds.maxpwr | 0 to 65000 | Maximum power budget in milliamps for the ABL. `0` if ABL is disabled.
 leds.maxseg | byte | Maximum number of segments supported by this version.
