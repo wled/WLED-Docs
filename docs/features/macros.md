@@ -34,7 +34,7 @@ Open **Config** > **Time & Macros**. The **Macro Presets** section assigns a pre
 Use preset ID `0` to use the default action instead of a preset:
 
 * Button 0 default actions: short press toggles power; long press selects a random color.
-* Button 1 default acrions: short press changes the effect; long press adjusts brightness; double press changes the palette.
+* Default actions for all other buttons: short press changes the effect; long press adjusts brightness; double press changes the palette.
 
 ### Button Actions
 
@@ -99,13 +99,13 @@ The following button types are supported:
 !!! warning
     Some GPIO pins can prevent the ESP from booting when they are held LOW or HIGH. Check the hardware requirements for your board before you use a GPIO pin as a switch input.
 
-For a momentary button, WLED detects the action after you release the button. This delay lets WLED distinguish short, long, and double presses.
+For a momentary button, WLED detects the action _after you release_ the button. This delay lets WLED distinguish short, long, and double presses.
 
-Set the same preset for short, long, and double press to run that preset when the button is pressed.
+Set the same preset for short, long, and double press to run that preset _directly_ when the button is pressed.
 
 Button 0 has two built-in functions:
 
-* Hold for more than 5 seconds to open the WLED-AP access point.
+* Hold for more than 5 seconds to open the WLED-AP access point (default password `wled1234`).
 * Hold for more than 10 seconds to erase flash memory and perform a factory reset.
 
 ### Analog Button
