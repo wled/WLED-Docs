@@ -86,10 +86,10 @@ Configure the GPIO pin and button type in **Config** > **LED Preferences**. Then
 
 The following button types are supported:
 
-- Momentary pushbuttons that connect a GPIO pin to GND when pressed.
-- Inverted pushbuttons that disconnect a GPIO pin from GND when pressed.
-- Switches.
-- PIR motion sensors.
+- Momentary pushbuttons that connect a GPIO pin to GND when pressed (normally open, active-low).
+- Inverted pushbuttons that disconnect a GPIO pin from GND when pressed (inverted, active-high).
+- Switches (be careful with selection of GPIO for switch since some GPIOs will prevent successful boot of ESP if held LOW or HIGH at boot).
+- PIR motion sensors (they set GPIO HIGH when motion is detected, this type of buttons will also trigger MQTT message with /motion topic if "Publish on button press" is set on MQTT config).
 - Touch buttons on supported ESP32 GPIO pins.
 - Analog buttons, including potentiometers and analog-input buttons.
 
@@ -123,9 +123,8 @@ Set the **Short** and **Long** actions to `0`. Then set the **Double** action to
 Connect the potentiometer to 3.3 V and GND. Connect its output to A0, or to the ADC pin that you configure. Use a potentiometer of 10 kΩ or greater.
 
 !!! info "Do Not Use ESP32 ADC2 GPIO Pins for Analog Buttons"
-    On ESP8266, you can use only one analog button on A0. The pin selected in the settings UI is ignored.
-
-    On ESP32, use ADC1 pins for analog input while Wi-Fi is active. ADC2 pins do not work while Wi-Fi is active.
+    On ESP8266, you can only have a single analog button on pin A0, the pin set in the settings UI is ignored.  
+    On ESP32, only ADC1 pins will work for analog input while WiFi is active (pins 32-39). ADC2 pins will not work.
 
 #### Global Brightness
 
