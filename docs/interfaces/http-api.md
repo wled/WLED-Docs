@@ -105,8 +105,8 @@ It is highly recommended to use the [JSON API](/interfaces/json-api) when dealin
 
 | Parameter | Value Range | Description |
 | --- | --- | --- |
-&SM= | 0 to 31 | Set the main segment (values are reported to XML)
-&SS= | 0 to 31 | Select segment to apply THIS api call to
+&SM= | 0 to info.leds.maxseg-1 | Set the main segment (values are reported to XML)
+&SS= | 0 to info.leds.maxseg-1 | Select segment to apply THIS api call to
 &SV= | 0, 1, or 2 | Set segment selected (2 unselects others)
 &S= | 0 to ledcount-1 | Set segment start
 &S2= | 0 to ledcount | Set segment stop
