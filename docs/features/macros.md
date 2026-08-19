@@ -108,7 +108,24 @@ Button 0 has two built-in functions:
 * Hold for more than 5 seconds to open the WLED-AP access point (default password `wled1234`).
 * Hold for more than 10 seconds to erase flash memory and perform a factory reset.
 
-### Analog Button
+### Example
+
+The simplest macro preset example is getting a button to do your bidding.  
+
+The default pin to which a button can be connected is GPIO 0 (D3 on NodeMCU, D1 Mini and others).  Even though WLED uses the internal pull up resistors on input pins, this pin is ideally externally pulled high to 3.3V with a 10k resistor. The configured macro executes when the pin is pulled low (grounded).
+
+The desired macro preset is created, and then assigned to a short, long or double press on the Time & Macros configuration page.
+
+Like this:
+
+![image](../assets/images/content/macros-button-assignment.png)
+
+The "T=2" macro toggles power to the LEDs (in this case long press).
+The "FX=~" macro steps through the effects (in this case short press).
+
+You can set a preset to `P1=1&P2=3&PL=~`, enter the preset number for your button, and this will step through presets 1 and 3. Change the "3" to whatever your highest preset is that you want to include.
+
+## Analog Button
 
 An analog button does not run a preset. It controls one analog function.
 
