@@ -8,7 +8,7 @@ hide:
 WLED implements a powerful JSON API over HTTP.  
 It is accessible using the `/json` subpage.
 
-### Obtaining light information
+## Obtaining light information
 
 Sending a GET request will return an object similar to the sample below
 The response consists of four objects:
@@ -26,14 +26,14 @@ You may also obtain those objects individually using the URLs `/json/state` `/js
     If called, these will fallback to the Solid effect, in the effects list they have the name `RSVD` or `-`.
     To improve user experience, it is recommended to remove effects with the names `RSVD` or `-` form the UI effect selection.
 
-### Client libraries
+## Client libraries
 
 The community has created libraries for various programming languages to make working with the WLED JSON API easier.
 
 - [WLED JSON API Library in Rust](https://github.com/paulwrath1223/wled-json-api-library) - Even if you are not using Rust, or don't know how to read Rust, the up-to-date JSON structure is included and documented in this project.
 - [python-wled](https://github.com/frenck/python-wled) - Python library for the WLED JSON API and the WLED Weboscket API.
 
-### Setting new values
+## Setting new values
 
 Sending a POST request to `/json` or `/json/state` with (parts of) the state object will update the respective values.
 Example: `{"on":true,"bri":255}` sets the brightness to maximum. `{"seg":[{"col":[[0,255,200]]}]}` sets the color of the first segment to teal.
@@ -125,9 +125,9 @@ Sample JSON API response:
 }
 ```
 
-### Overview of values
+## Overview of values
 
-#### State object
+### State object
 
 | JSON key | Value range | Description
 | --- | --- | --- |
@@ -165,7 +165,7 @@ ledmap | 0 to 9 | Load specified ledmap (0 for `ledmap.json`, 1-9 for `ledmap1.j
 rmcpal | bool | Remove last custom palette if set to `true`. Not included in state response.
 np | bool | Advance to the next preset in a playlist if set to `true`. Not included in state response. _(available since 0.15)_
 
-#### Contents of the segment object
+### Contents of the segment object
 
 | JSON key | Value range | Description
 | --- | --- | --- |
@@ -210,7 +210,7 @@ fxdef | bool | Forces loading of effect defaults (speed, intensity, etc) from ef
 set | 0 to 3 | Assigns group or set ID  to segment (not to be confused with *grouping*). Visual aid only (helps in UI).
 rpt | bool | Flag to repeat current segment settings by creating segments until all available LEDs are included in automatically created segments or maximum segments reached. Will also toggle *reverse* on every *even* segment.
 
-#### Info object
+### Info object
 
 No value may be changed by means of this API.
 
@@ -278,7 +278,7 @@ Freeze or unfreeze an effect | `{"seg":[{"id":0,"frz":true}]}` or `{"seg":[{"id"
 Night light | `{"nl":{"on":true,"dur":10,"mode":0}}`
 Increase brightness by 40 wrapping when maximum reached | `{"bri":"w~40"}`
 
-#### Per-segment individual LED control
+### Per-segment individual LED control
 
 Using the `i` property of the segment object, you can set the LED colors in the segment using the JSON API.  
 Keep in mind that this is non-persistent, if the light is turned off the segment will return to effect mode.  
@@ -314,7 +314,7 @@ Matrices are handled as a non-serpentine layout.
 !!! info "Brightness interaction"
     For your colors to apply correctly, make sure the desired brightness is set beforehand. Turning on the LEDs from an off state and setting individual LEDs in the same JSON request will _not_ work!
 
-#### Palettes
+### Palettes
 
 WLED has three types of palettes:
 
@@ -338,13 +338,13 @@ Palette IDs, as used in the segment `pal` parameter, are assigned differently de
 
     Built-in palette IDs start at 0. Custom palettes count downward from ID 255: the first custom palette is ID 255, the second is 254, up to 10 palettes. `info.palcount` includes both types, so the built-in IDs end at `palcount - cpalcount - 1`.
 
-##### Palette Names
+#### Palette Names
 
 - Built-in palette names are in the `palettes` array returned by `/json` and `/json/pal`. The array index is the palette ID.
 - Custom palettes have no stored names. The UI shows them as `~ Custom 0 ~`, `~ Custom 1 ~`, and so on.
 - Usermod palette names are in `info.umpalnames`, in the same order the IDs are allocated.
 
-#### Playlists
+### Playlists
 
 Sample playlist API call:
 
@@ -372,7 +372,7 @@ transition | Array of time each preset should transition to the next one, in ten
 repeat | How many times the entire playlist should cycle before finishing. Set to `0` for an indefinite cycle. Default to indefinite if not provided.
 end | Single preset ID to apply after the playlist finished. Has no effect when an indefinite cycle is set. If not provided, the light will stay on the last preset of the playlist.
 
-#### Light capabilities
+### Light capabilities
 
 To show only the color controls relevant to a given setup, obtain the color capabilities of the light.  
 The `info.leds.seglc` array can be used to do so on a per-segment level. It contains `n+1` 8-bit integers, where `n` is the `id` of the last _active_ segment,
@@ -403,11 +403,11 @@ CCT is controllable per segment, while RGB color and the white channel are contr
   
 `info.leds.lc` contains this info on a global level, and is a bitwise AND of the per-segment light capability values.  
 
-#### CCT control
+### CCT control
 
 Please also see the [general info about CCT](/features/cct).
 
-##### Supported value ranges
+#### Supported value ranges
 
 Given that the white spectrum handling is agnostic to the true color temperature of the LEDs used, a relative range is preferred for the time being, where a value of `0` indicates the warmest possible color temperature, while a value of `255` indicates the coldest temperature.
 
@@ -422,7 +422,7 @@ It is preferred that you set a new CCT value in the same range as received from 
 
 If your code relies on absolute Kelvin values, a reasonable estimate for the warm white point (relative `0`) could be 2700K, while cold white (relative `255`) could commonly be 6500K.
 
-##### Effect of the seg.cct value
+#### Effect of the seg.cct value
 
 `seg.cct` can always be set, but only has an effect on the physical state of the light if one or both of the following conditions is met:
 
@@ -431,7 +431,7 @@ If your code relies on absolute Kelvin values, a reasonable estimate for the war
 
 CCT support is indicated by `info.leds.cct` being `true`, in which case you can regard the instance as a CCT light and e.g. display a color temperature control.
 
-#### Effect metadata
+### Effect metadata
 
 !!! tip "Why effect metadata?"
     Prior to 0.14, user interfaces showed Speed and Intensity slider, palette controls, and all three color slots regardless of the effect selected.
@@ -446,7 +446,7 @@ Metadata is stored in a memory-optimized string format, for example the Aurora e
 The metadata string consists of up to five sections, separated by semicolons:
 `<Effect parameters>;<Colors>;<Palette>;<Flags>;<Defaults>`
 
-##### Effect parameters
+#### Effect parameters
 
 The first section specifies the number and labels of effect parameters (e.g. speed, intensity).
 Up to 5 sliders and 3 checkboxes are supported (`sx`,`ix`,`c1`,`c2`,`c3`,`o1`,`o2`,`o3` parameters in the `seg` object). For more details about the ranges of the sliders see [contents-of-the-segment-object](#contents-of-the-segment-object).
@@ -478,7 +478,7 @@ Examples:
 `,Saturation,,,,Invert` | 1 slider (sets `ix` parameter) and 1 checkbox: Saturation + Invert
 `,,,,,Random colors` | 1 checkbox: Random colors
 
-##### Colors
+#### Colors
 
 Up to 3 colors can be used. Only the first two characters of the label are visible in the WLED UI.  
 `!` specifies the default label is used. The default labels for the color slots are `Fx`, `Bg`, and `Cs`.
@@ -495,13 +495,13 @@ Examples:
 !,! | 2 colors: Fx + Bg
 1,2,3 | 3 colors: 1 + 2 + 3
 
-##### Palette
+#### Palette
 
 If empty, the effect does not use palettes. If `!`, palette selection is enabled.
 
 The fallback value if this section is missing is palette selection enabled.
 
-##### Flags
+#### Flags
 
 Flags allow filtering for effects with certain characteristics.
 They are a single character each and not comma-separated.
@@ -520,7 +520,7 @@ For example, a Flag string of `2v` denotes a volume reactive effect that is to b
 
 The fallback value if this section is missing is `1`, i.e. a 1D optimized effect.
 
-##### Defaults
+#### Defaults
 
 Defaults are values for effect parameters that work particularly well on that effect.
 They are set automatically when the effect is selected in UI unless configured otherwise in UI settings.
@@ -529,7 +529,7 @@ For example, `sx=24,pal=50` sets the effect speed to 24 (slow) and the palette t
 
 If no default is specified for a given parameter, it retains the current value.
 
-### Sensors
+## Sensors
 
 !!! warning
     This section about the Sensor API is a DRAFT specification. It is not yet implemented and subject to change.
@@ -539,7 +539,7 @@ To allow read access to sensor data via the JSON API in a standardized way, the 
 
 If the `info.sensor` array is missing or empty, no sensor values are exposed.
 
-#### Sensor object
+### Sensor object
 
 Each sensor/measurement is represented by an object within the `info.sensor` array.
 
@@ -568,7 +568,7 @@ max | number | Upper bound of possible value range
 u | number | Absolute uncertainty of the measurement
 model | string | Identification of the sensor hardware used
 
-#### Sensor types
+### Sensor types
 
 These are the standardized sensor types that may be implemented by usermods:
 
@@ -600,7 +600,7 @@ U | Voltage | V
 
 If a client is only interested in certain sensor types (e.g. Temperature), it may disregard all other sensor objects.
 
-### API Routes
+## API Routes
 
 | Route | Contents
 | --- | --- |
