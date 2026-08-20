@@ -81,6 +81,8 @@ To connect your WLED device to your home WiFi:
 !!! tip "4.3.2.1 stops working"
     Once your device joins your home network, `4.3.2.1` and `wled.me` stop working. Use your mDNS address or the device's IP instead.
 
+Once you're in, take a look at [The Web UI](/basics/web-ui) to find your way around the interface.
+
 ### Find Your Device with the WLED App
 
 The WLED app discovers devices on your network for you, so you don't have to dig through your router.
