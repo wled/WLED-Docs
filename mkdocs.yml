@@ -95,6 +95,7 @@ nav:
   - Basics:
     - Getting Started: 
       - Quick Start: basics/getting-started.md
+      - The Web UI: basics/web-ui.md
       - Wiring Guides: basics/wiring-guides.md
     - Top 5 mistakes: basics/top5_mistakes.md
     - Compatibility:
