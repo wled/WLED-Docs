@@ -472,11 +472,11 @@ Examples:
 | Parameter string | Displayed controls
 | --- | --- |
 `<empty>` | No effect parameters
-! | 1 slider: Effect speed
-!,! | 2 sliders: Effect speed + Effect intensity
-!,Phase | 2 sliders: Effect speed + Phase
-,Saturation,,,,Invert | 1 slider (sets `ix` parameter) and 1 checkbox: Saturation + Invert
-,,,,,Random colors | 1 checkbox: Random colors
+`!` | 1 slider: Effect speed
+`!,!` | 2 sliders: Effect speed + Effect intensity
+`!,Phase` | 2 sliders: Effect speed + Phase
+`,Saturation,,,,Invert` | 1 slider (sets `ix` parameter) and 1 checkbox: Saturation + Invert
+`,,,,,Random colors` | 1 checkbox: Random colors
 
 ##### Colors
 
