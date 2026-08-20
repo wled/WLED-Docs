@@ -26,39 +26,39 @@ Add one or multiple of the following parameters after the base URL/IP to change 
 
 ## LED control
 
-| Parameter | Value Range | Description | Since Version |
-| --- | --- | --- | --- |
-&A= | 0 to 255 | Master brightness | 0.2
-&T= | 0, 1, or 2 | Master Off/On/Toggle | 0.3
-&R= | 0 to 255 | Primary Red value | 0.2
-&G= | 0 to 255 | Primary Green value | 0.2
-&B= | 0 to 255 | Primary Blue value | 0.2
-&W= | 0 to 255 | Primary White value | 0.4
-&FX= | 0 to 101 | LED Effect Index | 0.3
-&SX= | 0 to 255 | Effect Speed | 0.3
-&IX= | 0 to 255 | Effect Intensity | 0.5.0
-&FP= | 0 to 46 | FastLED Palette | 0.8.0
-&NL= | 0 to 255 | Nightlight active and duration in minutes | 0.3
-&ND | none | Toggles nightlight on but uses default duration | 0.6.3
-&NT= | 0 to 255 | Nightlight target brightness | 0.5.0
-&NF= | 0 to 2 | Fade Nightlight, 1 = fade brightness only, 2 = additionaly fade color from primary to secondary color | 0.5.0
+| Parameter | Value Range | Description |
+| --- | --- | --- |
+&A= | 0 to 255 | Master brightness
+&T= | 0, 1, or 2 | Master Off/On/Toggle
+&R= | 0 to 255 | Primary Red value
+&G= | 0 to 255 | Primary Green value
+&B= | 0 to 255 | Primary Blue value
+&W= | 0 to 255 | Primary White value
+&FX= | 0 to info.fxcount-1 | LED Effect Index
+&SX= | 0 to 255 | Effect Speed
+&IX= | 0 to 255 | Effect Intensity
+&FP= | 0 to info.palcount-1 | Palette Index
+&NL= | 0 to 255 | Nightlight active and duration in minutes
+&ND | none | Toggles nightlight on but uses default duration
+&NT= | 0 to 255 | Nightlight target brightness
+&NF= | 0 to 2 | Fade Nightlight, 1 = fade brightness only, 2 = additionally fade color from primary to secondary color
 
 ## Advanced
 
-| Parameter | Value Range | Description | Since Version |
-| --- | --- | --- | --- |
-&CL= | HEX/DEC | Primary color | 0.8.0
-&C2= | HEX/DEC | Secondary color | 0.8.0
-&C3= | HEX/DEC | Third color | 0.8.0
-&R2= | 0 to 255 | Secondary Red value | 0.4
-&G2= | 0 to 255 | Secondary Green value | 0.4
-&B2= | 0 to 255 | Secondary Blue value | 0.4
-&W2= | 0 to 255 | Secondary White value | 0.4
-&HU= | 0 to 65535 | Hue | 0.5.1
-&SA= | 0 to 255 | Saturation (only in conjunction with Hue) | 0.5.1
-&H2 | none | Hue + Saturation will set secondary color | 0.5.1
-&SR= | 0 or 1 | Set Primary/Secondary color to random hue | 0.4
-&SC | none | Swap primary and secondary color | 0.4
+| Parameter | Value Range | Description |
+| --- | --- | --- |
+&CL= | HEX/DEC | Primary color
+&C2= | HEX/DEC | Secondary color
+&C3= | HEX/DEC | Third color
+&R2= | 0 to 255 | Secondary Red value
+&G2= | 0 to 255 | Secondary Green value
+&B2= | 0 to 255 | Secondary Blue value
+&W2= | 0 to 255 | Secondary White value
+&HU= | 0 to 65535 | Hue
+&SA= | 0 to 255 | Saturation (only in conjunction with Hue)
+&H2 | none | Hue + Saturation will set secondary color
+&SR= | 0 or 1 | Set Primary/Secondary color to random hue
+&SC | none | Swap primary and secondary color
 
 ### Use of hex values
 
@@ -68,75 +68,66 @@ Hex values need to be prefaced with the character h or H. The normal format is `
 
 Loxone offers two commands. One for RGB values and one for brightness and color temperature.
 
-| Parameter | Syntax | Range | Description | Since Version |
-|---|---|---|---|---|
-&LX= | BBBGGGRRR | 0 - 100100100 | Loxone RGB value for primary color. Each color (`RRR`,`GGG`,`BBB`) is specified in the range from 0 to 100%. | 0.11
-&LX= | 20bbbtttt | 200002700 - 201006500 | Loxone brightness and color temperature values for primary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin. | 0.11
-&LY= | BBBGGGRRR | 0 - 100100100 | Loxone RGB value for secondary color. Each color (`RRR`,`GGG`,`BBB`) is specified in the range from 0 to 100%. | 0.11
-&LY= | 20bbbtttt | 200002700 - 201006500 | Loxone brightness and color temperature values for secondary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin. | 0.11
+| Parameter | Syntax | Range | Description |
+|---|---|---|---|
+&LX= | BBBGGGRRR | 0 - 100100100 | Loxone RGB value for primary color. Each color (`RRR`,`GGG`,`BBB`) is specified in the range from 0 to 100%.
+&LX= | 20bbbtttt | 200002700 - 201006500 | Loxone brightness and color temperature values for primary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin.
+&LY= | BBBGGGRRR | 0 - 100100100 | Loxone RGB value for secondary color. Each color (`RRR`,`GGG`,`BBB`) is specified in the range from 0 to 100%.
+&LY= | 20bbbtttt | 200002700 - 201006500 | Loxone brightness and color temperature values for secondary color. Brightness `bbb` is specified in the range 0 to 100%. `tttt` defines the color temperature in the range from 2700 to 6500 Kelvin.
 
 ## Notifications
 
-| Parameter | Value Range | Description | Since Version |
-| --- | --- | --- | --- |
-&RN= | 0 or 1 | Receive UDP Notifications | 0.3
-&SN= | 0 or 1 | Send UDP Notifications | 0.3
-&NN | none | No notification for this request | 0.3
-&HP= | 0 to 99 | Sets Hue polling light ID (0 is off) | 0.5.1
+| Parameter | Value Range | Description |
+| --- | --- | --- |
+&RN= | 0 or 1 | Receive UDP Notifications
+&SN= | 0 or 1 | Send UDP Notifications
+&NN | none | No notification for this request
 
 ## Presets
 
-| Parameter | Value Range | Description | Since Version |
-| --- | --- | --- | --- |
-&PS= | 1 to 16 | Saves current setup to preset. Preset 255 can be used and is temporary/not persistent. | 0.4
-&PL= | 1 to 250 | Applies entire preset | 0.4
-&P1= | 1 to 249 | First cycle preset | 0.6.3
-&P2= | 2 to 250 | Last cycle preset | 0.6.3
-&TT= | 0 to 65000 | Set transition time (ms) | 0.6.3
+| Parameter | Value Range | Description |
+| --- | --- | --- |
+&PS= | 1 to 250, or 255 (temporary) | Saves current setup to preset. Preset 255 is temporary and not persistent.
+&PL= | 1 to 250 | Applies entire preset
+&P1= | 1 to 249 | First cycle preset
+&P2= | 2 to 250 | Last cycle preset
+&TT= | 0 to 65000 | Set transition time (ms)
 
 ## Macros
 
-| Parameter | Value Range | Description | Since Version |
-| --- | --- | --- | --- |
-&M= | 1 to 16 | Apply macro (deprecated, added for compatibility with pre-0.11 automations) | 0.5.0
+| Parameter | Value Range | Description |
+| --- | --- | --- |
+&M= | 1 to 16 | Apply macro (deprecated; retained for compatibility with pre-0.11 automations)
 
 ## Segments
 
 It is highly recommended to use the [JSON API](/interfaces/json-api) when dealing with Segments.
 
-| Parameter | Value Range | Description | Since Version |
-| --- | --- | --- | --- |
-&SM= | 0 to 9 | Set the main segment (values are reported to XML) | 0.9.0
-&SS= | 0 to 9 | Select segment to apply THIS api call to | 0.9.0
-&SV= | 0, 1, or 2 | Set segment selected (2 unselects others) | 0.9.0
-&S= | 0 to ledcount-1 | Set segment start | 0.9.0
-&S2= | 0 to ledcount | Set segment stop | 0.9.0
-&GP= | 1 to 255 | Set segment grouping | 0.9.1
-&SP= | 0 to 255 | Set segment spacing | 0.9.1
-&RV= | 0 or 1 | Reverse/Flip Segment direction | 0.9.1
-&SB= | 0 to 255 | Segment brightness | 0.10.0
+| Parameter | Value Range | Description |
+| --- | --- | --- |
+&SM= | 0 to info.leds.maxseg-1 | Set the main segment (values are reported to XML)
+&SS= | 0 to info.leds.maxseg-1 | Select segment to apply THIS api call to
+&SV= | 0, 1, or 2 | Set segment selected (2 unselects others)
+&S= | 0 to ledcount-1 | Set segment start
+&S2= | 0 to ledcount | Set segment stop
+&GP= | 1 to 255 | Set segment grouping
+&SP= | 0 to 255 | Set segment spacing
+&RV= | 0 or 1 | Reverse/Flip Segment direction
+&SB= | 0 to 255 | Segment brightness
 
 ## General and Experimental
 
-| Parameter | Value Range | Description | Since Version |
-| --- | --- | --- | --- |
-&RB | none | Reboot WLED | 0.10.0 (?)
-&ST= | 32bit | Current UTC time in Unix epoch | 0.4
-&CT= | 32bit | UTC time for countdown end | 0.4
-&MD= | 0 or 1 | Set slider mode to RGB/HSB | 0.3
-&AX= | 0 to 255 | Debug feature, can be configured for general IO | 0.3
-&IN | none | Server will not respond to this request (internal) | 0.3
-&OL= | 0 to 255 | Experimental overlays | 0.3
-&L= | 0 to 255 | Lock pixel | 0.4
-&L2= | 0 to 255 | Lock pixel range L to L2 | 0.4
-&UL | none | Unlock instead (used in conjunction with L and L2) | 0.4
-&NX= | String 1..6 | Cronixie clockface | 0.4
-&NM= | 0 or 1 | Cronixie Time or Countdown mode | 0.4
-&NB= | 0 or 1 | Cronixie Backlight | 0.4
-&IT | none | Include UI color theme in API response | 0.8.2
-&RD= | 0 or 1 | Toggle realtime UDP | 0.8.4
-&LO= | 0-2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot | 0.10.2
-&NP | none | Advance to the next preset in a playlist | 0.15
+| Parameter | Value Range | Description |
+| --- | --- | --- |
+&RB | none | Reboot WLED
+&ST= | 32bit | Current UTC time in Unix epoch
+&CT= | 32bit | UTC time for countdown end
+&IN | none | Server will not respond to this request (internal)
+&OL= | 0 to 255 | Experimental overlays
+&NM= | 0 or 1 | Clock mode: 0 is normal, 1 is countdown
+&RD= | 0 or 1 | Toggle realtime UDP
+&LO= | 0-2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot
+&NP | none | Advance to the next preset in a playlist (since 0.15)
 
 ## XML response
 

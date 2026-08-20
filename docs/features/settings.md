@@ -9,7 +9,7 @@ Web-configurable settings are split in multiple sub-pages. This page is meant to
 
 ## WiFi Settings
 
-This sub-page offers options to connect the ESP to different WiFi/WLAN devices. (This section applies to WLED 0.8.5.)
+This sub-page offers options to connect the ESP to different WiFi/WLAN devices.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -30,7 +30,7 @@ WiFi sleep | Y/N | Disabling WiFi sleep can increase reliability, but increases 
 
 ## LED Preferences
 
-This sub-page configures your LED & Hardware setup. (This section applies to WLED 0.14.1.)
+This sub-page configures your LED & Hardware setup.
 
 | Setting name | Value Range | Default | Description |
 |---|---|---|---|
@@ -43,7 +43,7 @@ Custom max. current | 1–255 | 50 | Current draw of a single LED pixel set to f
 
 #### LED outputs
 
-WLED supports multiple outputs. To add an output, click the plus button at the bottom of the "LED outputs": section; to remove the last output, click the minus button. Bellow the plus/minus buttons is an indication of how much of the memory allocated to LEDs is being used by the configuration.
+WLED supports multiple outputs. To add an output, click the plus(+) button at the bottom of the "LED outputs" section; to remove the last output, click the minus(-) button. Below the plus/minus buttons is an indication of how much of the memory allocated to LEDs is being used by the configuration.
 
 All outputs share the same address space within WLED. By default, the first pixel of an output will be given an address that is one higher than the last pixel of the previous output, but this can be altered.
 
@@ -53,8 +53,8 @@ Each output has the following settings:
 |---|---|---|---|
 Type (represented by the output's number) | multiple options | WS281x | Select the type of LEDs this output will be controlling
 Clock | multiple options | "Normal" | Select the PWM or SPI frequency used when driving supported LEDs <br> Used PWM frequencies for the ESP8266 / ESP32, and SPI respectively; <br> Slowest: 293.33 Hz / 6510.33 Hz / 1 MHz <br> Slow: 440 Hz / 9765.50 Hz / 2 MHz <br> Normal: 880 Hz / 19531 Hz / 5 MHz <br> Fast: 1760 Hz / 39062 Hz / 10 MHz <br> Fastest: 2640 Hz / 58593 Hz / 20 MHz <br> [*only appears if "Type" is set to a type that is controlled by PWM or SPI*]
-Color order | muliple options | "GRB" | Select which order your LEDs process color information (e.g. if your LEDs display red and green swapped, try changing it) [*only appears if "Type" is set to a type that supports color order*]
-Start/Index | integer | cummulative length of all previous outputs | Define which address this output (or its first pixel) should use within WLED's address space [*only editable if "Custom bus start indices" is on*]
+Color order | multiple options | "GRB" | Select which order your LEDs process color information (e.g. if your LEDs display red and green swapped, try changing it) [*only appears if "Type" is set to a type that supports color order*]
+Start/Index | integer | cumulative length of all previous outputs | Define which address this output (or its first pixel) should use within WLED's address space [*only editable if "Custom bus start indices" is on*]
 Length | integer | 1 | Define how many pixels are connected to this output [*only appears if "Type" is set to a type that supports multiple pixels*]
 (Data/Clk) GPIO(s) | integer | (blank) | Tell WLED which GPIO pin(s) this output is connected to [*number and description of GPIO settings will depend on the output's selected type*]
 Reversed (rotated 180°) | on/off | off | Mirrors the LEDs (last LED is first) [*only appears if "Type" is set to a type that supports multiple pixels*]
@@ -78,16 +78,16 @@ Additionally, one or more Color Order Overrides can be defined by clicking the p
 |---|---|---|---|
 Start | integer | 0 | Define which address this color override should start it
 Length | integer | 1 | Define how many pixels in a row should have their color setting overridden
-Color order | muliple options | "GRB" | Same as "Color order" above
+Color order | multiple options | "GRB" | Same as "Color order" above
 
 ### Other settings
 
-(This section applies to WLED 0.8.5; some of these settings no longer appear in 0.14.1.)
+(Some of these settings no longer appear in 0.14.1 or later.)
 
 | Setting name | Value Range | Description |
 |---|---|---|
-Turn on after power up | Y/N | Whether the lights should turn on after a reset
-Apply preset | 0..16 | Preset to load at boot (0 = none)
+Turn on after power up | Y/N | Whether the lights should turn on after power-on / restart
+Apply preset | 0..250 | Preset to load at boot (0 = none)
 Use Gamma for brightness | Y/N | Will correct brightness changes to make it appear more linear. Advised to leave off
 Use Gamma for color | Y/N | Will correct colors to match those on a monitor. Strongly advised to keep on
 Brightness factor | 1..255 | Factor to change master brightness if it is too dim/bright for a certain configuration
@@ -102,7 +102,7 @@ Palette blending | select | Choose how the palette wraps at the end (seam)
 
 ## User Interface settings
 
-This sub-page changes the look of the web interface. (This section applies to WLED 0.8.5.)
+This sub-page changes the look of the web interface.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -111,7 +111,7 @@ Sync button toggles... | Y/N | If enabled, both send and receive are toggled by 
 
 ## Sync settings
 
-This sub-page configures external software synchronization interfaces. (This section applies to WLED 0.8.5.)
+This sub-page configures external software synchronization interfaces.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -151,7 +151,9 @@ Baud rate | Various | Set the default Serial connection Baud Rate
 
 ## Time settings
 
-This sub-page configures automation tasks. (This section applies to WLED 0.8.5.)
+Some of these settings no longer appear in 0.14.0 or later, or have different value ranges in newer WLED versions.
+
+This sub-page configures automation tasks.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -173,7 +175,7 @@ Timed-Light-Over Macro | 0..16 | Macro to trigger when timed light is done
 
 ## Security settings
 
-This sub-page manages permissions and updates. (This section applies to WLED 0.8.5.)
+This sub-page manages permissions and updates.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -183,5 +185,4 @@ Deny access to WiFi settings | Y/N | Disables changes to WiFi settings while loc
 Disable recovery AP | Y/N | If enabled, the module will not open an Access Point if connection to home WiFi failed.
 Factory reset | Y/N | Deletes all custom settings data (passwords, configuration, macros, presets)
 Manual OTA | - | If OTA is enabled, you can upload new binary firmware
-Enable ArduinoOTA | Y/N | Useful for developers. Be careful, can even be left on when OTA locked!
-
+Enable ArduinoOTA | Y/N | Useful for developers. Be careful, can even be left on when OTA locked! Only shown on builds compiled with `WLED_ENABLE_AOTA`, so it does not appear on the release binaries.

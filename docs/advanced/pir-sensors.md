@@ -7,7 +7,7 @@ hide:
 
 ## Introduction
 
-WLED controllers can be used with PIR (Passive InfraRed) sensors for human presense detection. There are two types of sensors:
+WLED controllers can be used with PIR (Passive InfraRed) sensors for human presence detection. There are two types of sensors:
 
 1. With integrated rotary potentiometers to adjust the sensitivity and the hold time. E.g. HC-SR501 type. These sensors can be connected to WLED and configured as a button.
 

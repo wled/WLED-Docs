@@ -44,7 +44,7 @@ You can easily group WLED devices (for example all in one room) by changing the 
 
 #### Sync groups
 
-From v0.13.0, 8 Sync groups are available. This allows syncing select instances only without changing the UDP port.  
+8 Sync groups are available. This allows syncing select instances only without changing the UDP port.  
 For example, you might use one sync group per room you use WLED devices in.  
 Make sure the sender and receiver you want to sync both have the same sync group ticked (a sender can send to multiple groups and a receiver can listen to multiple groups).  
 

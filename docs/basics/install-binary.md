@@ -10,7 +10,7 @@ hide:
 !!! tip
     This is by far the easiest and fastest way to get WLED up and running!
 
-Make sure you are running a recent desktop Chrome or Edge browser and head over to the [WLED installer site](https://install.wled.me)!
+Make sure you are running a desktop version of Chrome, Edge, Opera, or Firefox 151 or newer, and head over to the [WLED installer site](https://install.wled.me)! Safari cannot be used, as it does not support the browser feature the installer needs to talk to your board.
 This installer is not yet available for ESPs with flash chips smaller than 4MB (e.g. ESP01)
 
 !!! tip
@@ -84,7 +84,7 @@ If your device is already running a firmware with built-in OTA capability, you c
 
 ### What binary should I use?
 
-I always recommend to use the latest release. Starting from WLED 0.12.0, pins can be configured in LED settings and specific binaries for different LED pins or types are no longer needed. Please use the following binary for these boards respectively:
+Use the latest release. Pins can be configured in LED settings — no custom binaries for different LED pins are needed. Use the following binary for your board:
 
 | Binary Name | For devices |
 | --- | --- |
@@ -96,15 +96,3 @@ I always recommend to use the latest release. Starting from WLED 0.12.0, pins ca
 | WLED_0.x.x_ESP02.bin | All ESP8266 with 2MB flash, Athom bulbs.  This binary has the full feature set, but wireless updates will not work (for more detail see [this](https://github.com/wled/WLED/issues/3257). For wireless updates use WLED_0.x.x_ESP02.bin.gz firmware instead. |
 | WLED_0.x.x_ESP02.bin.gz | All ESP8266 with 2MB flash, Athom bulbs, wireless update are possible with this firmware. |
 | esp32_bootloader.bin | Not a WLED release. To be flashed to a brand new ESP32 before flashing the WLED binary itself. |
-
-Legacy binary format (up to 0.11.1)
-
-| Binary Name | For devices |
-| --- | --- |
-| WLED_0.x.x_ESP8266_1M_ota.bin | ESP-01 (black PCB), most Sonoff devices, ESP8265, all ESP8266 with 1MB flash. This binary has some interfaces disabled (Alexa, Blynk, Hue sync, Infrared) in order for wireless updates to continue working. |
-| WLED_0.x.x_ESP8266_1M_full.bin | ESP-01 (black PCB), most Sonoff devices, ESP8265, all ESP8266 with 1MB flash. This binary has the full feature set, but wireless updates will not work. |
-| WLED_0.x.x_ESP8266_512k.bin | ESP-01 (blue PCB), older Sonoff devices, all ESP8266 with 512kB flash. Interfaces (Alexa, Blynk, Hue sync, Infrared) disabled, no OTA. Support will not be possible in future versions. |
-| WLED_0.x.x_ESP8266_ledpinY.bin | Custom build for 4MB flash ESP8266 and WS2812B. LED pin is changed (default is GPIO2). (This is GPIOY and not DY for the D to GPIO mapping, check your boards spec!) |
-| WLED_0.x.x_ESP8266_apa102.bin | Custom build for 4MB flash ESP8266 and APA102 LEDs (clock pin GPIO0, data GPIO2).
-| WLED_0.x.x_ESP8266_ws2801.bin | Custom build for 4MB flash ESP8266 and WS2801 LEDs (clock pin GPIO0, data GPIO2).
-| WLED_0.x.x_ESP32_ledpinY.bin | Custom build for ESP32 and WS2812b. LED pin is changed (default is GPIO2). LED pin 16 is useful for the QuinLed-Dig-Uno board with ESP32. |

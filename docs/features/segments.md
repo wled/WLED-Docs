@@ -5,9 +5,6 @@ hide:
   # - toc
 ---
 
-!!! info
-    Starting in WLED 0.9.0, Segments are supported.
-
 This feature allows you to set different zones on the LED strip, each running a different effect or color.
 
 A segment is selected if the checkmark next to the segment number is checked. Changes you make to color or effects will apply to all selected segments. The color/effect that is shown in the web UI is that of the first selected segment.
@@ -17,9 +14,10 @@ There is one _main segment_, Segment 0 by default. This segment has a few import
 - Color transitions only work on the main segment
 - The main segment's color is the one that will be reported to HTTP and MQTT APIs
 
-Tip: If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
+!!! tip
+    If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
 
-Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ Currently you can create a maximum of 10 segments in WLED 0.15 and earlier. Starting in v16.0, the segment limit was significantly increased.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.
+Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ The number of supported segments depends on the hardware: 16 on ESP8266, and 32 on ESP32 (up to 64 with PSRAM).
 
 To display segment information select the down arrow in the Segment box.  To add a Segment select “+ Add Segment”.  Enter the Start and Stop LED as appropriate.  Grouping and Spacing control the organization of the LEDs within the selected effect.  To reverse the direction of an effect select Reverse Direction.  To delete a Segment select the trash can.  To save your Segment settings select the checkmark to the right of the Start and Stop LED numbers.
 
