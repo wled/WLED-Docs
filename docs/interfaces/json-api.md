@@ -600,18 +600,20 @@ U | Voltage | V
 
 If a client is only interested in certain sensor types (e.g. Temperature), it may disregard all other sensor objects.
 
-### API
+### API Routes
 
-there is all routes for JSON API:
-
-- /json/state
-- /json/info
-- /json/si
-- /json/nodes
-- /json/eff
-- /json/palx
-- /json/fxdata
-- /json/net
-- /json/live // only if flag WLED_ENABLE_JSONLIVE is on
-- /json/pal
-- /json/cfg
+| Route | Contents
+| --- | --- |
+`/json` | State, info, effect names and built-in palette names combined in one object.
+`/json/state` | The [state object](#state-object).
+`/json/info` | The [info object](#info-object).
+`/json/si` | State and info combined.
+`/json/nodes` | Other WLED devices discovered on the network.
+`/json/eff` | Array of effect names.
+`/json/fxdata` | [Effect metadata](#effect-metadata).
+`/json/pal` | Array of built-in palette names.
+`/json/palx` | Palette color previews, including custom and usermod palettes. Paginated, use `?page=` and the `m` key in the response (highest page number).
+`/json/net` | WiFi networks found in the last scan.
+`/json/cfg` | The configuration object.
+`/json/pins` | Pin allocations. _(available since 16.0.0)_
+`/json/live` | Current colors of the LEDs, for a live preview. Only in builds with the `WLED_ENABLE_JSONLIVE` flag.
