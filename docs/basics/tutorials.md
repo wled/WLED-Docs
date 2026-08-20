@@ -12,6 +12,10 @@ No worries, we have collected a few helpful links for you to learn more about th
 
 | Resource | Maker | Type | Date | Info
 | --- | --- | --- | --- | --- |
+[EASY Logic Level Shifter ESP32 Setup Guide](https://www.youtube.com/watch?v=4oA4KKxxBXE) | Chris Maher | Video (8:00) | 7 Jun 2024 | WLED Tutorial. 3.3v to 5v 
+[Setup, Cut, Splice, Split, Extend, Waterproof, Power Inject, WLED](https://www.youtube.com/watch?v=W0XwzK9Shps) | Chris Maher | Video (01:05:09) | 13 Dec 2023 | Govee Permanent Outdoor Lights 
+[5v, 12v 24v LED Setup Guide for Beginners](https://www.youtube.com/watch?v=V2EztnKFizU) | Chris Maher | Video (15:22) | 15 Mar 2025 | EASY Plug n Play WLED + Sound React WLED 
+[How to Set Up And Control Addressable LEDs](https://www.youtube.com/watch?v=exAWzMfmwQ8) | Chris Maher | Video (13:32) | 29 Dec 2023 | The ULTIMATE WLED Beginners Guide!
 [Beginner's guide to freak'n cool Holiday LEDs](https://www.youtube.com/watch?v=tXvtxwK3jRk) | DrZzs | Video (23:22) | 12 Oct 2019 | Excellent guide for getting started with WLED!
 [How to Set Colors and Effects, Save Presets, Make Sync Groups, add a Button, & Macros for Scheduling](https://www.youtube.com/watch?v=6eCE2BpLaUQ) | DrZzs | Video (23:39) | 29 Oct 2019 | Learn about some cool additional WLED features!
 [Make your LEDs dance to music!](https://www.youtube.com/watch?v=ipSfQdfX4fE) | DrZzs | Video (11:30) | 17 Nov 2019 | How to install LedFx and connect it to WLED for quick sound reactive effects!
