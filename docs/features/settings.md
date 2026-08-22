@@ -11,6 +11,8 @@ Web-configurable settings are split in multiple sub-pages. This page is meant to
 
 This sub-page offers options to connect the ESP to different WiFi/WLAN devices.
 
+![WiFi settings page](/assets/images/content/settings_wifi.png){ width="500" }
+
 | Setting name | Value Range | Description |
 |---|---|---|
 Network Name | String 0..32 | The name (SSID) of your home WiFi. Spaces and some other characters are not supported.
@@ -31,6 +33,8 @@ WiFi sleep | Y/N | Disabling WiFi sleep can increase reliability, but increases 
 ## LED Preferences
 
 This sub-page configures your LED & Hardware setup.
+
+![LED settings page](/assets/images/content/settings_led.png){ width="500" }
 
 | Setting name | Value Range | Default | Description |
 |---|---|---|---|
@@ -104,6 +108,8 @@ Palette blending | select | Choose how the palette wraps at the end (seam)
 
 This sub-page changes the look of the web interface.
 
+![User Interface settings page](/assets/images/content/settings_ui.png){ width="500" }
+
 | Setting name | Value Range | Description |
 |---|---|---|
 Server description | String 1..32 | The name of the device as shown on the top of the UI. Differs from Alexa device name
@@ -112,6 +118,8 @@ Sync button toggles... | Y/N | If enabled, both send and receive are toggled by 
 ## Sync settings
 
 This sub-page configures external software synchronization interfaces.
+
+![Sync settings page](/assets/images/content/settings_sync.png){ width="500" }
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -155,6 +163,8 @@ Some of these settings no longer appear in 0.14.0 or later, or have different va
 
 This sub-page configures automation tasks.
 
+![Time settings page](/assets/images/content/settings_time.png){ width="500" }
+
 | Setting name | Value Range | Description |
 |---|---|---|
 Get time from NTP | Y/N | Whether to get the current time from the internet
@@ -176,6 +186,8 @@ Timed-Light-Over Macro | 0..16 | Macro to trigger when timed light is done
 ## Security settings
 
 This sub-page manages permissions and updates.
+
+![Security settings page](/assets/images/content/settings_sec.png){ width="500" }
 
 | Setting name | Value Range | Description |
 |---|---|---|
