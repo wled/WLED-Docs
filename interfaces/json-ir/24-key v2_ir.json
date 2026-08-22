@@ -1,0 +1,117 @@
+{
+  "remote": "24-key v2",
+  "0xF700FF": {
+    "label": "Speed +",
+    "cmd": "SX=~16"
+  },
+  "0xF7807F": {
+    "label": "Speed -",
+    "cmd": "SX=~-16"
+  },
+  "0xF740BF": {
+    "label": "On/Off",
+    "cmd": "T=2"
+  },
+  "0xF7C03F": {
+    "label": "W",
+    "cmnt": "Cycle color palette",
+    "cmd": "FP=~"
+  },
+  "0xF720DF": {
+    "label": "Red",
+    "cmnt": "Lava",
+    "cmd": "FP=8&CL=hFF0000&C2=hFF7F00&C3=hCC3D60"
+  },
+  "0xF7A05F": {
+    "label": "Green",
+    "cmnt": "Forest",
+    "cmd": "FP=10&CL=h8000&C2=h8040&C3=h30661E"
+  },
+  "0xF7609F": {
+    "label": "Blue",
+    "cmnt": "Breeze",
+    "cmd": "FP=15&CL=hFF&C2=h7F00FF&C3=h3D60CC"
+  },
+  "0xF7E01F": {
+    "label": "Bright -",
+    "cmd": "!decBrightness"
+  },
+  "0xF710EF": {
+    "label": "Timer1H",
+    "cmnt": "Timer 60 min",
+    "cmd": "NL=60&NT=0"
+  },
+  "0xF7906F": {
+    "label": "Timer4H",
+    "cmnt": "Timer 30 min",
+    "cmd": "NL=30&NT=0"
+  },
+  "0xF750AF": {
+    "label": "Timer8H",
+    "cmnt": "Timer 15 min",
+    "cmd": "NL=15&NT=0"
+  },
+  "0xF7D02F": {
+    "label": "Bright128",
+    "cmnt": "Bright 128",
+    "cmd": "A=128"
+  },
+  "0xF730CF": {
+    "label": "Music1",
+    "cmnt": "Cycle FX +",
+    "cmd": "FX=~"
+  },
+  "0xF7B04F": {
+    "label": "Music2",
+    "cmnt": "Cycle FX -",
+    "cmd": "FX=~-"
+  },
+  "0xF7708F": {
+    "label": "Music3",
+    "cmnt": "Reset FX and FP",
+    "cmd": "FX=1&PF=6"
+  },
+  "0xF7F00F": {
+    "label": "Bright+",
+    "cmnt": "Bright +",
+    "cmd": "!incBrightness"
+  },
+  "0xF708F7": {
+    "label": "Mode1",
+    "cmnt": "Preset 1",
+    "cmd": "PL=1"
+  },
+  "0xF78877": {
+    "label": "Mode2",
+    "cmnt": "Preset 2",
+    "cmd": "PL=2"
+  },
+  "0xF748B7": {
+    "label": "Mode3",
+    "cmnt": "Preset 3",
+    "cmd": "PL=3"
+  },
+  "0xF7C837": {
+    "label": "Intensity +",
+    "cmd": "IX=~16"
+  },
+  "0xF728D7": {
+    "label": "Mode4",
+    "cmnt": "Preset 4",
+    "cmd": "PL=4"
+  },
+  "0xF7A857": {
+    "label": "Mode5",
+    "cmnt": "Preset 5",
+    "cmd": "PL=5"
+  },
+  "0xF76897": {
+    "label": "Cycle",
+    "cmnt": "Toggle preset cycle",
+    "cmd": "CY=1&PT=60000"
+  },
+  "0xF7E817": {
+    "label": "Intensity -",
+    "cmd": "IX=~-16"
+  }
+}

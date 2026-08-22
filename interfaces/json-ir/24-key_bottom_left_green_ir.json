@@ -1,0 +1,143 @@
+{
+  "remote": "24-key",
+  "0xFF01FE": {
+    "label": "Bright+",
+    "pos": "1x1",
+    "cmd": "!incBrightness"
+  },
+  "0xFF817E": {
+    "label": "Bright-",
+    "pos": "1x2",
+    "cmd": "!decBrightness"
+  },
+  "0xFF41BE": {
+    "label": "Off",
+    "pos": "1x3",
+    "cmd": "T=0"
+  },
+  "0xFFC13E": {
+    "label": "On",
+    "pos": "1x4",
+    "cmd": "T=1"
+  },
+  "0xFF21DE": {
+    "label": "Red",
+    "pos": "2x1",
+    "cmnt": "Palette: Color 1, Primary color red, background black, tertiary dim red",
+    "cmd": "FP=2&CL=hFF0000&C2=h000000&C3=h550000"
+  },
+  "0xFFA15E": {
+    "label": "Green",
+    "pos": "2x2",
+    "cmnt": "Palette: Color 1, Primary color green, background black, tertiary dim green",
+    "cmd": "FP=2&CL=h00FF00&C2=h000000&C3=h005500"
+  },
+  "0xFF619E": {
+    "label": "Blue",
+    "pos": "2x3",
+    "cmnt": "Palette: Color 1, Primary color blue, background black, tertiary dim blue",
+    "cmd": "FP=2&CL=h0000FF&C2=h000000&C3=h000055"
+  },
+  "0xFFE11E": {
+    "label": "White",
+    "pos": "2x4",
+    "cmnt": "Palette: Color 1, Primary color white, background black, tertiary grey",
+    "cmd": "FP=2&CL=hFFFFFF&C2=h000000&C3=h555555"
+  },
+  "0xFF11EE": {
+    "label": "Tomato",
+    "pos": "3x1",
+    "cmnt": "Lava",
+    "cmd": "FP=8"
+  },
+  "0xFF916E": {
+    "label": "Teal",
+    "pos": "3x2",
+    "cmnt": "Atlantica",
+    "cmd": "FP=51"
+  },
+  "0xFF51AE": {
+    "label": "Lavender",
+    "pos": "3x3",
+    "cmnt": "Light Pink",
+    "cmd": "FP=38"
+  },
+  "0xFFD12E": {
+    "label": "Flash",
+    "pos": "3x4",
+    "cmnt": "Preset 1",
+    "cmd": "PL=1"
+  },
+  "0xFF31CE": {
+    "label": "OrangeRed",
+    "pos": "4x1",
+    "cmnt": "Orangery",
+    "cmd": "FP=47"
+  },
+  "0xFFB14E": {
+    "label": "Cyan",
+    "pos": "4x2",
+    "cmnt": "Breeze",
+    "cmd": "FP=15"
+  },
+  "0xFF718E": {
+    "label": "RebeccaPurple",
+    "pos": "4x3",
+    "cmnt": "magenta",
+    "cmd": "FP=40"
+  },
+  "0xFFF10E": {
+    "label": "Strobe",
+    "pos": "4x4",
+    "cmnt": "Preset 2",
+    "cmd": "PL=2"
+  },
+  "0xFF09F6": {
+    "label": "Lime",
+    "pos": "5x1",
+    "cmnt": "Forest",
+    "cmd": "FP=10"
+  },
+  "0xFF8976": {
+    "label": "Turquoise",
+    "pos": "5x2",
+    "cmnt": "Landscape",
+    "cmd": "FP=25"
+  },
+  "0xFF49B6": {
+    "label": "Magenta",
+    "pos": "5x3",
+    "cmnt": "Blink Red",
+    "cmd": "FP=67"
+  },
+  "0xFFC936": {
+    "label": "Fade",
+    "pos": "5x4",
+    "cmnt": "Preset 3",
+    "cmd": "PL=3"
+  },
+  "0xFF29D6": {
+    "label": "Grass",
+    "pos": "6x1",
+    "cmnt": "Rivendell",
+    "cmd": "FP=14"
+  },
+  "0xFFA956": {
+    "label": "DarkCyan",
+    "pos": "6x2",
+    "cmnt": "Semi Blue",
+    "cmd": "FP=60"
+  },
+  "0xFF6996": {
+    "label": "Plum",
+    "pos": "6x3",
+    "cmnt": "Sakura",
+    "cmd": "FP=49"
+  },
+  "0xFFE916": {
+    "label": "Smooth",
+    "pos": "6x4",
+    "cmnt": "Preset 4",
+    "cmd": "PL=4"
+  }
+}

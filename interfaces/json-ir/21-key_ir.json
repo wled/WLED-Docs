@@ -1,0 +1,116 @@
+{
+  "remote": "21-key",
+  "0xFFA25D": {
+    "label": "On",
+    "pos": "1x1",
+    "cmd": "T=1"
+  },
+  "0xFF629D": {
+    "label": "Auto",
+    "pos": "1x2",
+    "cmd": "CY=2&PT=60000"
+  },
+  "0xFFE21D": {
+    "label": "Off",
+    "pos": "1x3",
+    "cmd": "T=0"
+  },
+  "0xFF22DD": {
+    "label": "Speed+",
+    "pos": "2x1",
+    "cmd": "SX=~16"
+  },
+  "0xFF02FD": {
+    "label": "Effect+",
+    "pos": "2x2",
+    "cmd": "FX=~"
+  },
+  "0xFFC23D": {
+    "label": "Bright+",
+    "pos": "2x3",
+    "cmd": "!incBrightness"
+  },
+  "0xFFE01F": {
+    "label": "Speed-",
+    "pos": "3x1",
+    "cmd": "SX=~-16"
+  },
+  "0xFFA857": {
+    "label": "Effect-",
+    "pos": "3x2",
+    "cmd": "FX=~-"
+  },
+  "0xFF906F": {
+    "label": "Bright-",
+    "pos": "3x3",
+    "cmd": "!decBrightness"
+  },
+  "0xFF6897": {
+    "label": "Red",
+    "pos": "4x1",
+    "cmnt": "Lava",
+    "cmd": "FP=8&CL=hFF0000&C2=hFF7F00&C3=hCC3D60"
+  },
+  "0xFF9867": {
+    "label": "Green",
+    "pos": "4x2",
+    "cmnt": "Forest",
+    "cmd": "FP=10&CL=h8000&C2=h8040&C3=h30661E"
+  },
+  "0xFFB04F": {
+    "label": "Blue",
+    "pos": "4x3",
+    "cmnt": "Cloud",
+    "cmd": "FP=7&CL=hFF&C2=h7F00FF&C3=h3D60CC"
+  },
+  "0xFF30CF": {
+    "label": "LightYellow",
+    "pos": "5x1",
+    "cmd": "FP=5&CL=hFFFFE0&C2=hEFFFE0&C3=hCCC7BA"
+  },
+  "0xFF18E7": {
+    "label": "Moccasin",
+    "pos": "5x2",
+    "cmd": "FP=5&CL=hFFE4B5&C2=hF5FFB4&C3=hCCB2A2"
+  },
+  "0xFF7A85": {
+    "label": "Yellow",
+    "pos": "5x3",
+    "cmnt": "Yellowout",
+    "cmd": "FP=17&CL=hFFFF00&C2=h7FFF00&C3=hCCA83D"
+  },
+  "0xFF10EF": {
+    "label": "Orange",
+    "pos": "6x1",
+    "cmnt": "Orangery",
+    "cmd": "FP=47&CL=hFFA500&C2=hD9FF00&C3=hCC753D"
+  },
+  "0xFF38C7": {
+    "label": "GhostWhite",
+    "pos": "6x2",
+    "cmd": "FP=5&CL=hF8F8FF&C2=hFBF8FF&C3=hC8C9CC"
+  },
+  "0xFF5AA5": {
+    "label": "SkyBlue",
+    "pos": "6x3",
+    "cmnt": "Breeze",
+    "cmd": "FP=15&CL=h87CEEB&C2=h879CEB&C3=h84B9BC"
+  },
+  "0xFF42BD": {
+    "label": "Pink",
+    "pos": "7x1",
+    "cmnt": "LightPink",
+    "cmd": "FP=38&CL=hFFC0CB&C2=hFFD4C0&C3=hCCA8B7"
+  },
+  "0xFF4AB5": {
+    "label": "LightGreen",
+    "pos": "7x2",
+    "cmnt": "Rivendale",
+    "cmd": "FP=14&CL=h90EE90&C2=h90EEBF&C3=h96BE89"
+  },
+  "0xFF52AD": {
+    "label": "FloralWhite",
+    "pos": "7x3",
+    "cmd": "FP=5&CL=hFFFAF0&C2=hFCFFF0&C3=hCCC7C3"
+  }
+}
