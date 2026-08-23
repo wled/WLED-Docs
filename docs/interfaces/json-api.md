@@ -237,7 +237,7 @@ lip | string | Realtime data source IP address
 ws | -1 to 8 | Number of currently connected WebSockets clients. -1 indicates that WS is unsupported in this build.
 fxcount | byte | Number of effects included.
 palcount | uint16 | Total number of palettes available, including custom and usermod palettes.
-cpalcount | byte | Number of custom palettes. _(available since 0.14.0)_
+cpalcount | byte | Number of custom palette ID slots in use, counting down from the highest custom ID. Gaps in palette file numbering are filled with gray placeholder palettes, which count too. _(available since 0.14.0)_
 umpalcount | byte | Number of usermod-registered palettes. _(available since 16.0.0)_
 cpalmax | byte | Maximum number of custom palettes supported by this device. _(available since 16.0.0)_
 umpalnames | array of strings | Names of the usermod-registered palettes, in allocation order (the first entry is ID 255). Only present when a usermod has registered palettes. _(available since 16.0.0)_
@@ -319,7 +319,7 @@ Matrices are handled as a non-serpentine layout.
 WLED has three types of palettes:
 
 - **Built-in palettes** are compiled into the firmware.
-- **Custom palettes** are created by the user, either in the web UI or by uploading `palette0.json`, `palette1.json` and so on to the filesystem. Up to 10 files on 0.14 and 0.15; since 16.0 the limit is 129 on ESP32 and stays at 10 on ESP8266, reported in `info.cpalmax`. _(available since 0.14.0)_
+- **Custom palettes** are created by the user in the web UI (since 16.0) or by uploading `palette0.json`, `palette1.json` and so on to the filesystem. Up to 10 files on 0.14 and 0.15; since 16.0 the limit is 129 on ESP32 and stays at 10 on ESP8266, reported in `info.cpalmax`. Numbering gaps are allowed, but loading stops after 20 missing files in a row. See [Palettes](/features/palettes) for the file format. _(available since 0.14.0)_
 - **Usermod palettes** are registered by usermods. _(available since 16.0.0)_
 
 Palette IDs, as used in the segment `pal` parameter, are assigned differently depending on the firmware version.
