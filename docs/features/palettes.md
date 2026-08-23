@@ -92,7 +92,7 @@ As of v0.14, up to 10 custom palettes can be uploaded in JSON files. Starting in
 
 **v16.0** also introduces an improved **Palette Editor** (accessible from the palette icon below the color picker in the UI) to create and edit custom palettes directly in the UI. The editor lets you add colour stops, adjust positions - and can show what your work looks like on the LEDs in real time.
 
-Custom palettes can also be uploaded by placing JSON files named `palette0.json` through `palette9.json` on the device via the file editor. The format closely resembles that of the palettes defined in `palettes.h` with a gradient position (0–255), red, green, blue for each colour stop. An example:
+Custom palettes can also be uploaded by placing JSON files named `palette0.json`, `palette1.json` and so on on the device via the file editor (up to 129 on ESP32, 10 on ESP8266). The format closely resembles that of the palettes defined in `palettes.h` with a gradient position (0–255), red, green, blue for each colour stop. An example:
 
 ```json
 {"palette":[
