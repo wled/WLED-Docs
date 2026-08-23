@@ -34,8 +34,6 @@ WiFi sleep | Y/N | Disabling WiFi sleep can increase reliability, but increases 
 
 This sub-page configures your LED & Hardware setup.
 
-![LED settings page](/assets/images/content/settings_led.png){ width="500" }
-
 | Setting name | Value Range | Default | Description |
 |---|---|---|---|
 Enable automatic brightness limiter | on/off | on | Have WLED automatically reduce overall brightness so that maximum current draw from the power supply stays below a specified level
@@ -46,6 +44,8 @@ Custom max. current | 1–255 | 50 | Current draw of a single LED pixel set to f
 ### Hardware Setup
 
 #### LED outputs
+
+![Two WS281x outputs configured on the LED settings page](/assets/images/content/settings_led.png){ width="400" }
 
 WLED supports multiple outputs. To add an output, click the plus(+) button at the bottom of the "LED outputs" section; to remove the last output, click the minus(-) button. Below the plus/minus buttons is an indication of how much of the memory allocated to LEDs is being used by the configuration.
 
@@ -84,25 +84,42 @@ Start | integer | 0 | Define which address this color override should start it
 Length | integer | 1 | Define how many pixels in a row should have their color setting overridden
 Color order | multiple options | "GRB" | Same as "Color order" above
 
-### Other settings
+### Color & White
 
-(Some of these settings no longer appear in 0.14.1 or later.)
+| Setting name | Value Range | Default | Description |
+|---|---|---|---|
+Use Gamma correction for color | on/off | on | Corrects colors so they look closer to what you see on a monitor. Strongly recommended
+Use Gamma correction for brightness | on/off | off | Corrects brightness changes so they look more linear. Not recommended
+Use Gamma value | 0.1–3 | 2.8 | The gamma curve used by the two corrections above
+White Balance correction | on/off | off | Enables CCT (color temperature) control [*only useful with CCT-capable LEDs*]
+Global override for Auto-calculate white | multiple options | "Disabled" | Overrides the per-output "Auto-calculate white channel from RGB" setting for every output
+Calculate CCT from RGB | on/off | off | Derives the color temperature from the RGB color instead of the CCT slider
+CCT IC used (Athom 15W) | on/off | off | Enable if your controller uses a CCT IC
+CCT blending | -100–100 % | 0 | Positive values blend the warm and cold white channels additively, negative values keep them exclusive. Set to 0 for 2-wire (reverse polarity) CCT strips
 
-| Setting name | Value Range | Description |
-|---|---|---|
-Turn on after power up | Y/N | Whether the lights should turn on after power-on / restart
-Apply preset | 0..250 | Preset to load at boot (0 = none)
-Use Gamma for brightness | Y/N | Will correct brightness changes to make it appear more linear. Advised to leave off
-Use Gamma for color | Y/N | Will correct colors to match those on a monitor. Strongly advised to keep on
-Brightness factor | 1..255 | Factor to change master brightness if it is too dim/bright for a certain configuration
-Crossfade | Y/N | Whether to have a smooth fading transitional effect when changing colors/brightness
-Transition time | 0..65535 | How many milliseconds the transition lasts
-Enable transition for secondary color | Y/N |
-Enable Palette transitions | Y/N | Enable transitions for palettes (not affected by transition time)
-Timed light duration | 1..255 | How long the nightlight should stay on
-Target brightness | 0..255 | What brightness the light should have after time is over. 0=off.
-Fade down | Y/N | Gradually fades down the light over the duration instead of turning it off at the end
-Palette blending | select | Choose how the palette wraps at the end (seam)
+### Hardware Setup (buttons, IR, relay)
+
+The lower part of the page configures the other hardware attached to your controller. Each is covered on its own page:
+
+- **Buttons**: add button GPIOs and pick their type (pushbutton, switch, PIR sensor, touch, analog). What a button does is set up under [Macros](/features/macros).
+- **IR Remote**: the IR receiver GPIO and remote type, see [Infrared](/interfaces/infrared).
+- **Relay**: the relay GPIO and its invert / open drain options, see [Control a Relay](/features/relay-control).
+
+### General settings
+
+| Setting name | Value Range | Default | Description |
+|---|---|---|---|
+Turn LEDs on after power up/reset | on/off | on | Whether the lights turn on after power-on or restart
+Bootup brightness | 1–255 | 128 | The master brightness applied at boot
+Apply preset at boot | 0–250 | 0 | Preset to load at boot (0 = none)
+Default transition time | 0–65500 ms | 700 | How long the crossfade lasts when colors, effects or brightness change
+Use harmonic colors in Random palettes | on/off | on | Picks colors that go together when a random palette is generated
+Random Palette Cycle Time | 1–255 s | 5 | How often the random palette changes
+Timed light: Default duration | 1–255 min | 60 | How long the nightlight timer runs
+Timed light: Default target brightness | 0–255 | 0 | The brightness the lights end at when the timer finishes (0 = off)
+Timed light: Mode | multiple options | "Fade" | "Wait and set" jumps to the target brightness at the end, "Fade" and "Fade Color" dim gradually, "Sunrise" brightens instead
+Palette wrapping | multiple options | "Linear (wrap if moving)" | How a palette behaves at its end (the seam)
+Target refresh rate | 0–250 FPS | 42 | Frame rate WLED aims for. 0 means unlimited, which is experimental, as is anything well above the default
 
 ## User Interface settings
 
