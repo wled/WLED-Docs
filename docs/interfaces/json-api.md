@@ -319,7 +319,7 @@ Matrices are handled as a non-serpentine layout.
 WLED has three types of palettes:
 
 - **Built-in palettes** are compiled into the firmware.
-- **Custom palettes** are created by the user, either in the web UI or by uploading `palette0.json` to `palette9.json` files. _(available since 0.14.0)_
+- **Custom palettes** are created by the user, either in the web UI or by uploading `palette0.json`, `palette1.json` and so on to the filesystem. Up to 10 files on 0.14 and 0.15; since 16.0 the limit is 129 on ESP32 and stays at 10 on ESP8266, reported in `info.cpalmax`. _(available since 0.14.0)_
 - **Usermod palettes** are registered by usermods. _(available since 16.0.0)_
 
 Palette IDs, as used in the segment `pal` parameter, are assigned differently depending on the firmware version.
