@@ -2,7 +2,7 @@
 title: Community Usermods
 ---
 
-This page is an index of usermods written by the WLED community. Entries are maintained by their authors; the WLED project does not test or endorse them.
+This page is an index of usermods that live outside the WLED repository, written and maintained by community members. WLED itself also ships with over 70 built-in usermods (audio-reactive, sensors, displays, and more) in its [`usermods/` directory](https://github.com/wled/WLED/tree/main/usermods), each with its own README; those are not listed here. Entries below are maintained by their authors; the WLED project does not test or endorse them.
 
 To help people find your usermod even before it appears here, tag your GitHub repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) topic.
 
@@ -23,31 +23,58 @@ To help people find your usermod even before it appears here, tag your GitHub re
     The WLED project cannot verify the safety or quality of community usermods.
     **You are solely responsible for any third-party code you choose to run on your devices.**
 
-## Index
+Questions and bug reports for a listed usermod go to its author, the usual way is an issue on the usermod's own repository (the name links there). The WLED issue tracker and Discord can't help with third-party code.
 
-| Name | Description | Author | Platforms | License | Notes |
-|---|---|---|---|---|---|
-| [wled-usermod-example](https://github.com/wled/wled-usermod-example) | Annotated template — use as template to start your own usermod | @wled | both | EUPL | Official starting point |
-| [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx) | Community effects usermod — add your own effects here or use as a template | @wled | both | EUPL | Ships with WLED; enable with `custom_usermods = user_fx` |
-| [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16) | 16×16 English word-clock as a first-class WLED effect, with Open-Meteo weather words/presets and corner-button LEDs | @AustinSaintAubin | esp32 | MIT |  |
-| [Segment Power Sync](https://github.com/sharn25/wled-segment-power-sync) | Automatically synchronizes individual segment power states with the overall master power state. Ideal when using a relay to cut mains power to LEDs. | @sharn25 | both | MIT |  |
-| [PowerManager](https://github.com/intermittech/wled-usermod-powermanager) | Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay | @intermittech | esp32 | EUPL | Grown from the built-in multi_relay usermod |
-| [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages | `@lost-hope` | both | EUPL |  |
+To compile any of these into your own firmware, follow [Enabling usermods](/advanced/custom-features#enabling-usermods) on the Custom Features page.
 
+## Official Starting Points
 
-## Adding your usermod to the list
+Two usermods come from the WLED project itself and are the best places to start writing your own:
 
-Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) adding a row to the table above. 
+- [wled-usermod-example](https://github.com/wled/wled-usermod-example): annotated template, use it as the starting point for your own usermod.
+- [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx): community effects usermod that ships with WLED, add your own effects to it or use it as a template. Enable it with `custom_usermods = user_fx`.
 
-Use this format:
+## Community Index
+
+### [PowerManager](https://github.com/intermittech/wled-usermod-powermanager)
+
+Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay. Grown from the built-in multi_relay usermod.
+
+_By [@intermittech](https://github.com/intermittech). Platforms: esp32. License: EUPL._
+
+### [Segment Power Sync](https://github.com/sharn25/wled-segment-power-sync)
+
+Automatically synchronizes individual segment power states with the overall master power state. Ideal when using a relay to cut mains power to LEDs.
+
+_By [@sharn25](https://github.com/sharn25). Platforms: both. License: MIT._
+
+### [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2)
+
+Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages.
+
+_By [@lost-hope](https://github.com/lost-hope). Platforms: both. License: EUPL._
+
+### [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16)
+
+16×16 English word-clock as a first-class WLED effect, with Open-Meteo weather words/presets and corner-button LEDs.
+
+_By [@AustinSaintAubin](https://github.com/AustinSaintAubin). Platforms: esp32. License: MIT._
+
+## Add Your Usermod
+
+Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) adding a section to the index above, in this format:
 
 ```markdown
-| [Name](https://github.com/you/your-usermod) | Short description | @yourname | esp32 | GPLv3 |  |
+### [Name](https://github.com/you/your-usermod)
+
+One or two sentences on what it does.
+
+_By [@yourname](https://github.com/yourname). Platforms: esp32. License: GPLv3._
 ```
 
-Platforms: `esp32`, `esp8266`, or `both`.
+Platforms: `esp32`, `esp8266`, or `both`. Keep the index alphabetical.
 
-### Choosing a license for your usermod
+## Choosing a License
 
 A usermod is compiled into the WLED firmware, so it becomes part of a modified WLED build. WLED uses the **EUPL-1.2** licence. If you share a firmware binary that includes your usermod, also share the source code for that build and use EUPL-1.2 or a compatible open-source licence for the combined firmware.
 
