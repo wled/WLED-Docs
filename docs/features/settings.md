@@ -90,8 +90,8 @@ Color order | multiple options | "GRB" | Same as "Color order" above
 |---|---|---|---|
 Use Gamma correction for color | on/off | on | Corrects colors so they look closer to what you see on a monitor. Strongly recommended
 Use Gamma correction for brightness | on/off | off | Corrects brightness changes so they look more linear. Not recommended
-Use Gamma value | 0.1–3 | 2.8 | The gamma curve used by the two corrections above
-White Balance correction | on/off | off | Enables CCT (color temperature) control [*only useful with CCT-capable LEDs*]
+Use Gamma value | 0.1–3 | 2.2 | The gamma curve used by the two corrections above
+White Balance correction | on/off | off | Adds a color temperature (CCT) slider and tints RGB colors warmer or colder to match it. Works on plain RGB strips, not only CCT strips
 Global override for Auto-calculate white | multiple options | "Disabled" | Overrides the per-output "Auto-calculate white channel from RGB" setting for every output
 Calculate CCT from RGB | on/off | off | Derives the color temperature from the RGB color instead of the CCT slider
 CCT IC used (Athom 15W) | on/off | off | Enable if your controller uses a CCT IC
@@ -112,7 +112,7 @@ The lower part of the page configures the other hardware attached to your contro
 Turn LEDs on after power up/reset | on/off | on | Whether the lights turn on after power-on or restart
 Bootup brightness | 1–255 | 128 | The master brightness applied at boot
 Apply preset at boot | 0–250 | 0 | Preset to load at boot (0 = none)
-Default transition time | 0–65500 ms | 700 | How long the crossfade lasts when colors, effects or brightness change
+Default transition time | 0–65500 ms | 750 | How long the crossfade lasts when colors, effects or brightness change
 Use harmonic colors in Random palettes | on/off | on | Picks colors that go together when a random palette is generated
 Random Palette Cycle Time | 1–255 s | 5 | How often the random palette changes
 Timed light: Default duration | 1–255 min | 60 | How long the nightlight timer runs
