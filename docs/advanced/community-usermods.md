@@ -23,7 +23,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
     The WLED project cannot verify the safety or quality of community usermods.
     **You are solely responsible for any third-party code you choose to run on your devices.**
 
-Questions and bug reports for a listed usermod go to its author, the usual way is an issue on the usermod's own repository (the name links there). The WLED issue tracker and Discord can't help with third-party code.
+Questions and bug reports for a listed usermod go to its author. The usual way is an issue on the usermod's repository, linked from its name. The WLED issue tracker and Discord can't help with third-party code.
 
 To compile any of these into your own firmware, follow [Enabling usermods](/advanced/custom-features#enabling-usermods) on the Custom Features page.
 
@@ -32,7 +32,7 @@ To compile any of these into your own firmware, follow [Enabling usermods](/adva
 Two usermods come from the WLED project itself and are the best places to start writing your own:
 
 - [wled-usermod-example](https://github.com/wled/wled-usermod-example): annotated template, use it as the starting point for your own usermod.
-- [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx): community effects usermod that ships with WLED, add your own effects to it or use it as a template. Enable it with `custom_usermods = user_fx`.
+- [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx): official effects usermod that ships with WLED, add your own effects to it or use it as a template. Enable it with `custom_usermods = user_fx`.
 
 ## Community Index
 
@@ -40,7 +40,7 @@ Two usermods come from the WLED project itself and are the best places to start 
 
 Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay. Grown from the built-in multi_relay usermod.
 
-_By [@intermittech](https://github.com/intermittech). Platforms: esp32. License: EUPL._
+_By [@intermittech](https://github.com/intermittech). Platforms: esp32. License: EUPL-1.2._
 
 ### [Segment Power Sync](https://github.com/sharn25/wled-segment-power-sync)
 
@@ -52,7 +52,7 @@ _By [@sharn25](https://github.com/sharn25). Platforms: both. License: MIT._
 
 Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages.
 
-_By [@lost-hope](https://github.com/lost-hope). Platforms: both. License: EUPL._
+_By [@lost-hope](https://github.com/lost-hope). Platforms: both. License: EUPL-1.2._
 
 ### [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16)
 
