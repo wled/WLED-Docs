@@ -142,7 +142,7 @@ This sub-page changes the look of the web interface.
 Device Name | String 1..32 | The name of the device as shown in the UI, the info panel and the Nodes list. Differs from the Alexa device name
 Enable simplified UI | Y/N | Hides the advanced controls for a cleaner, beginner-friendly interface
 
-The rest of this page is stored in your browser, not on the device. You need to set it again when using a different browser, device or WLED IP address, and refresh the main UI to apply changes.
+Most of the rest of this page is stored in your browser, not on the device: you need to set it again when using a different browser, device or WLED IP address, and refresh the main UI to apply changes. The exceptions are the custom CSS and the Holidays list, which are uploaded to the device as files.
 
 | Setting name | Value Range | Description |
 |---|---|---|
@@ -161,12 +161,12 @@ Use effect default parameters | Y/N | Load an effect's recommended speed, intens
 Power button preset override for On/Off | 0..250 | Load this preset instead of simply turning on or off. 0 disables the override
 I hate dark mode | Y/N | Switch the UI to a light theme
 Button opacity | 0..1 | Transparency of the UI buttons
-Enable custom CSS | Y/N | Apply the CSS pasted or uploaded below
+Enable custom CSS | Y/N | Apply a custom CSS file uploaded to the device
 Background opacity | 0..1 | Transparency of the background layer
 BG HEX color | hex | Solid background color
 BG image / Random BG image / BG image URL | - | Upload a background image, use a random one, or point at a URL
-Enable custom Holidays list | Y/N | Use your own list of holidays for the holiday-themed UI decorations
-Clear local storage | - | Resets all of the browser-side settings above
+Enable custom Holidays list | Y/N | Use your own list of holidays for the holiday-themed UI decorations, uploaded to the device as a JSON file
+Clear local storage | - | Clears the preset and palette data this browser has cached. The UI settings above are kept
 
 ## Sync settings
 
@@ -261,9 +261,9 @@ Retain brightness & color messages | Y/N | Ask the broker to keep the last state
 | Setting name | Value Range | Description |
 |---|---|---|
 Poll Hue light | 1..99 | The ID of the Hue lamp you want to sync WLED to
-every x ms | 100..65000 | How often to poll. Smaller numbers decrease lag but might hurt bridge responsiveness
+every x ms | 100..65000 | How often to poll. Smaller numbers decrease lag but might hurt bridge responsiveness. The checkbox after the interval turns polling on or off
 Then, receive On/Off, Brightness, Color | 3x Y/N | Which properties to copy from the Hue light
-Hue Bridge IP | 4x 0..255 | Your Hue bridge IPv4 address. Should be static to avoid reassigning. Press the pushlink button on the bridge before saving the first time
+Hue Bridge IP | 4x 0..255 | Your Hue bridge IPv4 address. This address should be static to avoid reassigning. Press the pushlink button on the bridge before saving the first time
 Hue status | - | Shows the current connection status to the Hue bridge
 
 MQTT and Hue sync connect to external hosts, which may impact the responsiveness of WLED. For best results, use only one of them at a time.
@@ -308,7 +308,7 @@ Presets can be used as macros for both the JSON and HTTP API. Pick the preset to
 Countdown-Over Preset | 0..250 | Preset to apply when the countdown is over
 Timed-Light-Over Presets | 0..250 | Preset to apply when the timed light (nightlight) is done
 Alexa On/Off Preset | 2x 0..250 | Presets to apply when turning on or off via Alexa
-Button Action Presets | 3x 0..250 per button | Short press, long press and double press preset for each configured button. Defaults are on/off toggle, random color, and nothing
+Button Action Presets | varies by button type | Pushbuttons get a short press, long press and double press preset (defaults: on/off toggle, random color, nothing). Switches get an On to Off and an Off to On preset instead, and analog buttons get an analog function selector
 Analog Button setup | - | Opens the [macro](/features/macros) page for analog buttons
 
 ### Time-Controlled Presets
