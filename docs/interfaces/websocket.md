@@ -40,6 +40,7 @@ const ws = new WebSocket("ws://[WLED-IP]/ws");
 // fires on connect and every time the light changes, from any source
 ws.onmessage = (event) => {
   const { state } = JSON.parse(event.data);
+  if (!state) return; // command acknowledgements are {"success":true}
   console.log(`power: ${state.on}, brightness: ${state.bri}`);
 };
 
@@ -63,7 +64,7 @@ Frames arrive as binary messages, at most one every 40 ms:
 Long setups are downsampled to fit the frame. (1)
 { .annotate }
 
-1.  Strips longer than 1024 LEDs (256 on ESP8266) only send every n-th LED. Matrices are sent at half or quarter resolution when they exceed the limit, the width and height bytes reflect that.
+1.  Strips longer than 1024 LEDs (256 on ESP8266) only send every n-th LED. Matrices are sent at half or quarter resolution when they exceed the limit, the width and height bytes reflect that. A downsampled matrix frame can be longer than width x height x 3 bytes, read exactly width x height pixels and ignore any trailing bytes.
 
 ## Realtime Data Input
 
