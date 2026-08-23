@@ -280,6 +280,8 @@ This sub-page configures the clock, sunrise and sunset, and preset automation.
 
 ![Time settings page](/assets/images/content/settings_time.png){ width="500" }
 
+![Time settings page](/assets/images/content/settings_time.png){ width="500" }
+
 | Setting name | Value Range | Description |
 |---|---|---|
 Get time from NTP server | Y/N | Whether to get the current time from the internet. The server can be changed from the default `0.wled.pool.ntp.org`
