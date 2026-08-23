@@ -48,7 +48,7 @@ The community has created libraries for various programming languages to make wo
 
 ## Setting new values
 
-Sending a POST request to `/json/state` or `/json` with (parts of) the state object will update the respective values. Every other `/json` subpage accepts the same state updates too, only `/json/cfg` is different, it takes (parts of) the configuration object instead. Stick to `/json/state`, the subpage you post to decides what a verbose response returns (see `v` below).
+Sending a POST request to `/json/state` or `/json` with (parts of) the state object will update the respective values. Every other `/json` subpage accepts the same state updates too, only paths containing `cfg` (normally `/json/cfg`) are different, they take (parts of) the configuration object instead. Stick to `/json/state`, the subpage you post to decides what a verbose response returns (see `v` below).
 Example: `{"on":true,"bri":255}` sets the brightness to maximum. `{"seg":[{"col":[[0,255,200]]}]}` sets the color of the first segment to teal.
 `{"seg":[{"id":X,"on":"t"}]}` and replacing X with the desired segment ID will toggle on or off that segment.
 
