@@ -92,7 +92,7 @@ When reviewing a pull request, verify the following:
 ### Content
 
 - [ ] All text is in **English**.
-- [ ] Content is accurate and consistent with the current WLED feature set.
+- [ ] Content is accurate and consistent with the current WLED feature set. Validate WebUI descriptions against the Web Interface source code in https://github.com/wled/WLED/tree/main/wled00/data . Validate API descriptions (JSON, HTTP, MQTT) and feature descriptions against the related source code in https://github.com/wled/WLED/tree/main/wled00 .
 - [ ] No duplicate content — check whether similar information already exists on another page and cross-link instead.
 - [ ] Links are valid — no broken internal or external links.
 - [ ] Images are stored in `docs/assets/images/content/` (not external hosting) unless they are GIF previews from the known WLED-Utils repository.
