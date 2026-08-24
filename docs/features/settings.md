@@ -43,7 +43,7 @@ This sub-page configures your LED & Hardware setup.
 
 | Setting name | Value Range | Default | Description |
 |---|---|---|---|
-Global brightness factor | 1–255 % | 100 | Scales the master brightness. Useful when a strip is too bright or too dim at the same slider position as your other devices
+Global brightness factor | 1–100 % | 100 | Scales the master brightness. Use it to cap how bright the strip can get, as an alternative to the automatic brightness limiter. The UI currently accepts values above 100, which is a bug; the firmware handles the setting correctly
 Enable automatic brightness limiter | on/off | on | Have WLED automatically reduce overall brightness so that maximum current draw from the power supply stays below a specified level. Analog (PWM) and virtual LEDs cannot use it
 Maximum PSU Current | 250–65000 mA | 3000 mA | Maximum allowable current draw that WLED will target. Keep below 1 A if powering LEDs from the ESP's 5V pin [*only appears if "Enable automatic brightness limiter" is on*]
 Use per-output limiter | on/off | off | Set a separate current limit per output instead of one for the whole device. Recommended when using multiple outputs [*only appears if "Enable automatic brightness limiter" is on*]
@@ -82,7 +82,7 @@ The following settings apply to all LED outputs:
 
 | Setting name | Value Range | Default | Description |
 |---|---|---|---|
-Show Advanced Settings | on/off | off | Reveals the less common per-output options such as "Skip first LEDs" and "Off Refresh"
+Show Advanced Settings | on/off | off | Reveals the hardware driver options for digital outputs, letting you pick between the I2S and RMT drivers. Worth trying if your LEDs flicker with the default driver. "Skip first LEDs" and "Off Refresh" are always shown
 Make a segment for each output | on/off | off | Will automatically create a segment for each output, including the correct Start LED and Stop LED settings
 Custom bus start indices | on/off | off| When on, custom "Start" or "Index" values can be set for each output (e.g. output 2 can be set so that it shows up as LED address 200 regardless of output 1's length)
 
