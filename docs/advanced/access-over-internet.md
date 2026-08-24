@@ -19,18 +19,18 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
     WLED itself can't run Tailscale, so you need one always-on device at home (a Raspberry Pi, NAS, or home server) to act as a [subnet router](https://tailscale.com/kb/1019/subnets) that forwards traffic to your LAN. A Home Assistant box works too: its Tailscale add-on can advertise your LAN, and Tailscale has a [video walkthrough](https://www.youtube.com/watch?v=fMR8uvNIilI) of that setup.
 
     1. Create a Tailscale account and install the app on your phone or laptop.
-    2. Install Tailscale on the always-on device at home.
-    3. On that device, advertise your LAN subnet (adjust to match your network):
+    2. Install Tailscale on the always-on device at home and sign it in with `sudo tailscale up`.
+    3. On that device, advertise the route to your WLED devices. A single address is enough for one controller, and safer than opening the whole LAN:
 
         ```sh
-        sudo tailscale set --advertise-routes=192.168.1.0/24
+        sudo tailscale set --advertise-routes=192.168.1.50/32
         ```
 
-        On Linux you also need to enable IP forwarding, see the [subnet router guide](https://tailscale.com/kb/1019/subnets).
+        Use your own WLED IP, or a subnet like `192.168.1.0/24` if you have several devices to reach. On Linux you also need to enable IP forwarding, see the [subnet router guide](https://tailscale.com/kb/1019/subnets).
 
     4. In the [Tailscale admin console](https://login.tailscale.com/admin/machines), approve the advertised route on that machine.
 
-    With Tailscale connected on your phone, open WLED's LAN IP in the browser or add it in the WLED app. Use the IP address, not `wled.local`, because mDNS names don't resolve across the tunnel. WLED also never gets a `.ts.net` name of its own, since it isn't running Tailscale.
+    With Tailscale connected on your phone, open WLED's LAN IP in the browser or add it in the WLED app. Use the IP address, not `wled.local`, because mDNS names don't resolve across the tunnel. WLED also never gets a `.ts.net` name of its own, since it isn't running Tailscale. On a Linux client, run `sudo tailscale set --accept-routes` first; phones, Macs and Windows pick up the route on their own.
 
     If you'd rather not rely on a third party, a plain [WireGuard](https://www.wireguard.com/) tunnel to your router or a self-hosted [Headscale](https://headscale.net/) control server gets you the same result with more setup.
 
@@ -42,8 +42,8 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
         A tunnel without access control is just port forwarding with extra steps. You **must** put [Cloudflare Access](https://developers.cloudflare.com/cloudflare-one/policies/access/) in front of the tunnel so only you can log in.
 
     1. In the Cloudflare dashboard, go to **Networking > Tunnels** and create a tunnel. Install `cloudflared` on an always-on machine in your LAN using the command the dashboard gives you.
-    2. Add a public hostname for the tunnel, for example `wled.mydomain.example`, pointing to `http://<WLED-IP>`.
-    3. Under **Zero Trust**, create an Access application for that hostname with a policy that only allows your own login, for example email one-time PIN.
+    2. Under **Zero Trust**, create an Access application for the hostname you plan to use, for example `wled.mydomain.example`, with a policy that only allows your own login, such as email one-time PIN. Do this before the next step, or WLED is briefly reachable by anyone.
+    3. Back in the tunnel, add that hostname as a public hostname pointing to `http://<WLED-IP>`.
 
     Now `https://wled.mydomain.example` asks for your login first and only then shows WLED.
 
@@ -137,4 +137,4 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
     ```
 
 !!! tip "Enable the OTA lock"
-    Whichever route you choose, also enable the [OTA lock password](/advanced/ota-lock) so the firmware can't be replaced even by someone who gets past the first layer.
+    Whichever route you choose, also enable [OTA Lock](/advanced/ota-lock) and change its default passphrase `wledota`, so nobody who gets past the first layer can push new firmware over Wi-Fi.
