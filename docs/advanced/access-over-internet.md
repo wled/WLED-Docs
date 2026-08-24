@@ -20,13 +20,13 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
 
     1. Create a Tailscale account and install the app on your phone or laptop.
     2. Install Tailscale on the always-on device at home and sign it in with `sudo tailscale up`.
-    3. On that device, advertise the route to your WLED devices. A single address is enough for one controller, and safer than opening the whole LAN:
+    3. On that device, advertise your LAN subnet (adjust to match your network):
 
         ```sh
-        sudo tailscale set --advertise-routes=192.168.1.50/32
+        sudo tailscale set --advertise-routes=192.168.1.0/24
         ```
 
-        Use your own WLED IP, or a subnet like `192.168.1.0/24` if you have several devices to reach. On Linux you also need to enable IP forwarding, see the [subnet router guide](https://tailscale.com/kb/1019/subnets).
+        On Linux you also need to enable IP forwarding, see the [subnet router guide](https://tailscale.com/kb/1019/subnets).
 
     4. In the [Tailscale admin console](https://login.tailscale.com/admin/machines), approve the advertised route on that machine.
 
