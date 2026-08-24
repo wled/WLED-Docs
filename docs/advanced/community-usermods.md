@@ -2,7 +2,7 @@
 title: Community Usermods
 ---
 
-This page is an index of usermods that live outside the WLED repository, written and maintained by community members. WLED itself also ships with over 70 built-in usermods (audio-reactive, sensors, displays, and more) in its [`usermods/` directory](https://github.com/wled/WLED/tree/main/usermods), each with its own README; those are not listed here. Entries below are maintained by their authors; the WLED project does not test or endorse them.
+This page is an index of usermods that live outside the WLED repository, written and maintained by community members. The WLED repository also carries many usermods of its own (audio-reactive, sensors, displays, and more) in its [`usermods/` directory](https://github.com/wled/WLED/tree/main/usermods), each with its own README. Those are not listed here, and like the ones below they need a custom build to use. Entries below are maintained by their authors; the WLED project does not test or endorse them.
 
 To help people find your usermod even before it appears here, tag your GitHub repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) topic.
 
