@@ -165,7 +165,7 @@ udpn.recv | bool | Indicates whether broadcast packet reception is enabled. To s
 udpn.sgrp | 0 to 255 | Bitfield for broadcast send groups 1-8
 udpn.rgrp | 0 to 255 | Bitfield for broadcast receive groups 1-8
 udpn.nn | bool | Don't send a broadcast packet (applies to just the current API call). Not included in state response.
-v | bool | If set to _true_ in a JSON POST command, the response will contain the full JSON object of the requested path instead of `{"success":true}`: the state object when posting to `/json/state`, state and info for `/json/si`, and so on. Not included in state response
+v | bool | If set to _true_ in a JSON POST command, the response will contain the full JSON response for the requested path instead of `{"success":true}`: the state object when posting to `/json/state`, state and info for `/json/si`, and so on. Not included in state response
 rb | bool | If set to _true_, device will reboot immediately. Not included in state response.
 live | bool | If set to _true_, enters realtime mode and blanks the LEDs. The realtime timeout option does not have an effect when this command is used, WLED will stay in realtime mode until the state (color/effect/segments, excluding brightness) is changed. It is expected that `{"live":false}` is sent once live data sending is terminated. Not included in state response.
 lor | 0, 1, or 2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot
