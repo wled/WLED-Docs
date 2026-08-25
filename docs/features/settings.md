@@ -82,7 +82,7 @@ The following settings apply to all LED outputs:
 
 | Setting name | Value Range | Default | Description |
 |---|---|---|---|
-Show Advanced Settings | on/off | off | Reveals the hardware driver options for digital outputs, letting you pick between the I2S and RMT drivers. Worth trying if your LEDs flicker with the default driver. "Skip first LEDs" and "Off Refresh" are always shown
+Show Advanced Settings | on/off | off | Reveals the hardware driver option for digital outputs, letting you pick between the I2S and RMT drivers. Worth trying if your LEDs flicker with the default driver. The dropdown only appears on chips that have both drivers, so not on the ESP8266 or the ESP32-C3. "Skip first LEDs" and "Off Refresh" are always shown
 Make a segment for each output | on/off | off | Will automatically create a segment for each output, including the correct Start LED and Stop LED settings
 Custom bus start indices | on/off | off| When on, custom "Start" or "Index" values can be set for each output (e.g. output 2 can be set so that it shows up as LED address 200 regardless of output 1's length)
 
