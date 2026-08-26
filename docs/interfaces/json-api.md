@@ -313,9 +313,9 @@ To set a large number of colors, send multiple api calls of 256 colors at a time
 `{"seg": {"i":[256,"CC0000","00CC00","0000CC","CC0000"...]}}`
 `{"seg": {"i":[512,"CC0000","00CC00","0000CC","CC0000"...]}}`
 
-Do not make several calls in parallel, that is not optimal for the device. Instead make your call in sequence, where each call waits for the previous to complete before making a new one. How this is done depends on your choice of tool, but with CURL you que your commands by separating then with ` && ` i.e. `CURL [command 1] && CURL [command 2] && CURL [command 3]`.
+Do not make several calls in parallel, that is not optimal for the device. Instead make your call in sequence, where each call waits for the previous to complete before making a new one. How this is done depends on your choice of tool, but with CURL you queue your commands by separating then with ` && `, i.e. `CURL [command 1] && CURL [command 2] && CURL [command 3]`.
 
-!!! tip "Command buffer size"
+!!! tip "Command Buffer Size"
     If you are trying to set many LEDs and it fails to work, you can check your request [here](https://arduinojson.org/v6/assistant) for length.
     Select ESP32 and Deserialize. If the required buffer size is above 10K for ESP8266 and 24K for ESP32, please split it into multiple sequential requests and consider using the Hex string syntax.
 
@@ -324,7 +324,7 @@ Segment features, including Grouping, Spacing, Mirroring and Reverse are functio
 
 Matrices are handled as a non-serpentine layout.
 
-!!! info "Brightness interaction"
+!!! info "Brightness Interaction"
     For your colors to apply correctly, make sure the desired brightness is set beforehand. Turning on the LEDs from an off state and setting individual LEDs in the same JSON request will _not_ work!
 
 ### Palettes
@@ -435,7 +435,7 @@ It is preferred that you set a new CCT value in the same range as received from 
 
 If your code relies on absolute Kelvin values, a reasonable estimate for the warm white point (relative `0`) could be 2700K, while cold white (relative `255`) could commonly be 6500K.
 
-#### Effect of the seg.cct value
+#### Effect of the `seg.cct` value
 
 `seg.cct` can always be set, but only has an effect on the physical state of the light if one or both of the following conditions is met:
 
