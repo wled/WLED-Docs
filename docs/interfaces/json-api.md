@@ -8,6 +8,19 @@ hide:
 WLED implements a powerful JSON API over HTTP.  
 It is accessible using the `/json` subpage.
 
+This page is a long reference. Jump straight to what you need:
+
+| I want to... | Go to |
+|---|---|
+| Turn the light on/off, set brightness, colors or effects | [Setting new values](#setting-new-values) |
+| Look up a state field (`on`, `bri`, `seg`, `nl`, ...) | [State object](#state-object), [segment object](#contents-of-the-segment-object) |
+| Read device details (version, WiFi, LED count) | [Info object](#info-object) |
+| Set individual LEDs | [Per-segment individual LED control](#per-segment-individual-led-control) |
+| Work with palettes, playlists or presets | [Palettes](#palettes), [Playlists](#playlists) |
+| Parse the effect list and its sliders | [Effect metadata](#effect-metadata) |
+| Read sensor values from usermods | [Sensors](#sensors) |
+| See every `/json` URL at a glance | [API Routes](#api-routes) |
+
 ## Obtaining light information
 
 Sending a GET request will return an object similar to the sample below
@@ -35,7 +48,7 @@ The community has created libraries for various programming languages to make wo
 
 ## Setting new values
 
-Sending a POST request to `/json` or `/json/state` with (parts of) the state object will update the respective values.
+Sending a POST request to `/json/state` or `/json` with (parts of) the state object will update the respective values. Every other `/json` subpage accepts the same state updates too, only paths containing `cfg` (normally `/json/cfg`) are different, they take (parts of) the configuration object instead. Stick to `/json/state`, the subpage you post to decides what a verbose response returns (see `v` below).
 Example: `{"on":true,"bri":255}` sets the brightness to maximum. `{"seg":[{"col":[[0,255,200]]}]}` sets the color of the first segment to teal.
 `{"seg":[{"id":X,"on":"t"}]}` and replacing X with the desired segment ID will toggle on or off that segment.
 
@@ -152,7 +165,7 @@ udpn.recv | bool | Indicates whether broadcast packet reception is enabled. To s
 udpn.sgrp | 0 to 255 | Bitfield for broadcast send groups 1-8
 udpn.rgrp | 0 to 255 | Bitfield for broadcast receive groups 1-8
 udpn.nn | bool | Don't send a broadcast packet (applies to just the current API call). Not included in state response.
-v | bool | If set to _true_ in a JSON POST command, the response will contain the full JSON state object. Not included in state response
+v | bool | If set to _true_ in a JSON POST command, the response will contain the full JSON response for the requested path instead of `{"success":true}`: the state object when posting to `/json/state`, state and info for `/json/si`, and so on. Not included in state response
 rb | bool | If set to _true_, device will reboot immediately. Not included in state response.
 live | bool | If set to _true_, enters realtime mode and blanks the LEDs. The realtime timeout option does not have an effect when this command is used, WLED will stay in realtime mode until the state (color/effect/segments, excluding brightness) is changed. It is expected that `{"live":false}` is sent once live data sending is terminated. Not included in state response.
 lor | 0, 1, or 2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot
