@@ -1,0 +1,147 @@
+{
+  "desc": "24-key Grey",
+  "0xFFA05F": {
+    "label": "+",
+    "pos": "1x1",
+    "cmnt": "Bright +",
+    "cmd": "A=~8"
+  },
+  "0xFF20DF": {
+    "label": "-",
+    "pos": "1x2",
+    "cmnt": "Bright -",
+    "cmd": "A=~-8"
+  },
+  "0xFF609F": {
+    "label": "Off",
+    "pos": "1x3",
+    "cmnt": "Switch Off",
+    "cmd": "T=0&FX=0&FP=0&IX=128&SX=128"
+  },
+  "0xFFE01F": {
+    "label": "On",
+    "pos": "1x4",
+    "cmnt": "Switch On",
+    "cmd": "T=1"
+  },
+  "0xFF906F": {
+    "label": "R0",
+    "pos": "2x1",
+    "cmnt": "Red",
+    "cmd": "R=255&G=0&B=0"
+  },
+  "0xFF10EF": {
+    "label": "G0",
+    "pos": "2x2",
+    "cmnt": "Green",
+    "cmd": "R=0&G=255&B=0"
+  },
+  "0xFF50AF": {
+    "label": "B0",
+    "pos": "2x3",
+    "cmnt": "Blue",
+    "cmd": "R=0&G=0&B=255"
+  },
+  "0xFFD02F": {
+    "label": "W0",
+    "pos": "2x4",
+    "cmnt": "White",
+    "cmd": "R=255&G=255&B=255"
+  },
+  "0xFFB04F": {
+    "label": "R",
+    "pos": "3x1",
+    "cmnt": "Red",
+    "cmd": "R=255&G=0&B=0"
+  },
+  "0xFF30CF": {
+    "label": "G",
+    "pos": "3x2",
+    "cmnt": "Green",
+    "cmd": "R=0&G=255&B=0"
+  },
+  "0xFF708F": {
+    "label": "B",
+    "pos": "3x3",
+    "cmnt": "Blue",
+    "cmd": "R=0&G=0&B=255"
+  },
+  "0xFFF00F": {
+    "label": "FX",
+    "pos": "3x4",
+    "cmnt": "Cycle FX +",
+    "cmd": "FX=~"
+  },
+  "0xFFA857": {
+    "label": "O",
+    "pos": "4x1",
+    "cmnt": "Orange",
+    "cmd": "R=255&G=160&B=0"
+  },
+  "0xFF28D7": {
+    "label": "C",
+    "pos": "4x2",
+    "cmnt": "Cyan",
+    "cmd": "R=0&G=255&B=200"
+  },
+  "0xFF6897": {
+    "label": "V",
+    "pos": "4x3",
+    "cmnt": "Violet",
+    "cmd": "R=160&G=0&B=255"
+  },
+  "0xFFE817": {
+    "label": "Speed",
+    "pos": "4x4",
+    "cmnt": "Cycle FX Speed +",
+    "cmd": "SX=~"
+  },
+  "0xFF9867": {
+    "label": "YO",
+    "pos": "5x1",
+    "cmnt": "Yellow Orange",
+    "cmd": "R=255&G=160&B=0"
+  },
+  "0xFF18E7": {
+    "label": "CB",
+    "pos": "5x2",
+    "cmnt": "Cyan Blue",
+    "cmd": "R=0&G=160&B=255"
+  },
+  "0xFF58A7": {
+    "label": "M",
+    "pos": "5x3",
+    "cmnt": "Magenta",
+    "cmd": "R=200&G=0&B=255"
+  },
+  "0xFFD827": {
+    "label": "Intensity",
+    "pos": "5x4",
+    "cmnt": "Cycle FX Intensity",
+    "cmd": "IX=~"
+  },
+  "0xFF8877": {
+    "label": "Y",
+    "pos": "6x1",
+    "cmnt": "Yellow",
+    "cmd": "R=255&G=200&B=0"
+  },
+  "0xFF08F7": {
+    "label": "DC",
+    "pos": "6x2",
+    "cmnt": "Dark Cyan",
+    "cmd": "R=0&G=96&B=255"
+  },
+  "0xFF48B7": {
+    "label": "P",
+    "pos": "6x3",
+    "cmnt": "Pink",
+    "cmd": "R=255&G=0&B=255"
+  },
+  "0xFFC837": {
+    "label": "Palette",
+    "pos": "6x4",
+    "cmnt": "Cycle Palette",
+    "cmd": "FP=~"
+  }
+}
