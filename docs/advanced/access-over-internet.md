@@ -20,13 +20,11 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
 
     1. Create a Tailscale account and install the app on your phone or laptop.
     2. Install Tailscale on the always-on device at home and sign it in with `sudo tailscale up`.
-    3. On that device, advertise your LAN subnet (adjust to match your network):
+    3. On that device, enable IP forwarding if it runs Linux (see the [subnet router guide](https://tailscale.com/kb/1019/subnets)), then advertise your LAN subnet (adjust to match your network):
 
         ```sh
         sudo tailscale set --advertise-routes=192.168.1.0/24
         ```
-
-        On Linux you also need to enable IP forwarding, see the [subnet router guide](https://tailscale.com/kb/1019/subnets).
 
     4. In the [Tailscale admin console](https://login.tailscale.com/admin/machines), approve the advertised route on that machine.
 
@@ -42,7 +40,7 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
         A tunnel without access control is just port forwarding with extra steps. You **must** put [Cloudflare Access](https://developers.cloudflare.com/cloudflare-one/policies/access/) in front of the tunnel so only you can log in.
 
     1. In the Cloudflare dashboard, go to **Networking > Tunnels** and create a tunnel. Install `cloudflared` on an always-on machine in your LAN using the command the dashboard gives you.
-    2. Under **Zero Trust**, create an Access application for the hostname you plan to use, for example `wled.mydomain.example`, with a policy that only allows your own login, such as email one-time PIN. Do this before the next step, or WLED is briefly reachable by anyone.
+    2. Under **Zero Trust**, create an Access application for the hostname you plan to use, for example `wled.mydomain.example`. Set the policy to allow your own email address, with one-time PIN as the login method. A policy that names only the login method lets in anyone with any email. Do this before the next step, or WLED is briefly reachable by anyone.
     3. Back in the tunnel, add that hostname as a public hostname pointing to `http://<WLED-IP>`.
 
     Now `https://wled.mydomain.example` asks for your login first and only then shows WLED.
