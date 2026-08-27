@@ -87,6 +87,8 @@ Indentation in `mkdocs.yml` is significant.
 
 ## PR Review Checklist
 
+Contributors see a condensed version of this list in the PR template (`.github/PULL_REQUEST_TEMPLATE.md`). When updating either list, keep the two in agreement.
+
 When reviewing a pull request, verify the following:
 
 ### Content
