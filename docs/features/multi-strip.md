@@ -8,19 +8,18 @@ hide:
 WLED supports multiple LED outputs from one ESP board.
 Pins and LED numbers can be configured in LED settings without recompiling.
 
+
 There are a few tips and recommendations to keep in mind when designing your setup:
 
 ## General
 
 - It is highly recommended to use an ESP32 when using more than 1 output
-- You may freely choose the LEDs type, pin numbers, length and color order of your LED strips at runtime in the LED settings page
 - You cannot use input-only pins for LEDs output
-    - classic esp32: pins 34 through 39 are input only.
+   - classic esp32: pins 34 through 39 are input only.
     - esp32-s2: pin 46 is input only.
     - esp32-s3 and esp32-c3 don't have any input-only pins.
+    - esp8266: the "A0" pin is input-only
 - Highly recommended to size power supply correctly according to your setup and disable the WLED brightness limiter setting to increase framerate with very large LED counts
-- Most strip types have yet to be tested. Add confirmed working below:
-- Confirmed working: WS281x, SK6812 RGBW, PWM white
 
 ## ESP8266
 
@@ -37,6 +36,7 @@ There are a few tips and recommendations to keep in mind when designing your set
 
 ## ESP32
 
+- You may freely choose the LEDs type, pin numbers, length and color order of your LED strips at runtime in the LED settings page
 - There is a maximum of 17 strips supported on "classic" ESP32 (dual core) boards. In audioreactive builds, you can use up to 16, because the audio input driver needs one of the hardware units that is normally available for driving LEDs.
  - * "classic" ESP32: 17 led strips (8 RMT + 8 parallel I2S + 1 single I2S, 16 with audioreactive)
  - * ESP32-S3: 12 led strips (with parallel I2S)
