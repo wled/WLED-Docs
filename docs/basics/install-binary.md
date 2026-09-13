@@ -88,11 +88,10 @@ Use the latest release. Pins can be configured in LED settings — no custom bin
 
 | Binary Name | For devices |
 | --- | --- |
-| WLED_0.x.x_ESP8266.bin | NodeMCU, Wemos D1 mini, ESP-12, all ESP8266 with 4MB flash. Recommended.
-| WLED_0.x.x_ESP32.bin | All ESP32 devices (try [this](https://github.com/wled/WLED/issues/517#issuecomment-571333712) if the WLED-AP doesn't appear after flashing) |
-| WLED_0.x.x_ESP32_Ethernet.bin | ESP32 devices with an Ethernet interface. Also works with WiFi only. |
-| WLED_0.x.x_ESP01.bin | ESP-01 (black PCB), most Sonoff devices, ESP8265, all ESP8266 with 1MB flash. This binary has the full feature set, but wireless updates will not work. |
-| WLED_0.x.x_ESP01_compat.bin | ESP8266 binaries that use 0.14.0 style networking stack for situations where network connectivity was an issue. |
-| WLED_0.x.x_ESP02.bin | All ESP8266 with 2MB flash, Athom bulbs.  This binary has the full feature set, but wireless updates will not work (for more detail see [this](https://github.com/wled/WLED/issues/3257). For wireless updates use WLED_0.x.x_ESP02.bin.gz firmware instead. |
-| WLED_0.x.x_ESP02.bin.gz | All ESP8266 with 2MB flash, Athom bulbs, wireless update are possible with this firmware. |
-| esp32_bootloader.bin | Not a WLED release. To be flashed to a brand new ESP32 before flashing the WLED binary itself. |
+| WLED_x.x.x_ESP8266.bin | NodeMCU, Wemos D1 mini, ESP-12, all ESP8266 with 4MB flash. Recommended.|
+| WLED_x.x.x_ESP32.bin | classic ESP32 devices - not for ESP32-S3/ESP32-S2/ESP32-C3 (try [this](https://github.com/wled/WLED/issues/517#issuecomment-571333712) if the WLED-AP doesn't appear after flashing) |
+| WLED_x.x.x_ESP32_Ethernet.bin | classic ESP32 devices with an Ethernet interface. Also works with WiFi only, but has some restrictions for 2-wire LEDs|
+| WLED_x.x.x_ESP01.bin | ESP-01 (black PCB), most Sonoff devices, ESP8265, all ESP8266 with 1MB flash. This binary has the full feature set, but wireless updates will not work. |
+| WLED_x.x.x_ESP01_compat.bin | ESP8266 binaries that use 0.14.0 style networking stack for situations where network connectivity is an issue. |
+| WLED_x.x.x_ESP02.bin | All ESP8266 with 2MB flash, Athom bulbs.  This binary has the full feature set, but wireless updates will not work (for more detail see [this](https://github.com/wled/WLED/issues/3257). For wireless updates use WLED_0.x.x_ESP02.bin.gz firmware instead. |
+| WLED_x.x.x_ESP02.bin.gz | All ESP8266 with 2MB flash, Athom bulbs, wireless update are possible with this firmware. |
