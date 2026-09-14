@@ -35,6 +35,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
 | [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages | `@lost-hope` | both | EUPL |  |
 | [wizlights](https://github.com/eibanez/wled-usermod-wizlights) | Controlling Wiz lights with WLED | @eibanez | both | EUPL | |
 
+
 ## Adding your usermod to the list
 
 Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) adding a row to the table above. 
