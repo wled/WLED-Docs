@@ -34,6 +34,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
 | [PowerManager](https://github.com/intermittech/wled-usermod-powermanager) | Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay | @intermittech | esp32 | EUPL | Grown from the built-in multi_relay usermod |
 | [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages | `@lost-hope` | both | EUPL |  |
 | [wizlights](https://github.com/eibanez/wled-usermod-wizlights) | Controlling Wiz lights with WLED | @eibanez | both | EUPL | |
+|[Sensor Hub](https://lost-hope.github.io/sensor-hub-site/)|A sensor hub that lets you connect multiple sensors, that are then shown in the info tab, published via mqtt and API and beeing made available for consumers| `@lost-hope` | both | EUPL |Coauthored with AI|
 
 
 ## Adding your usermod to the list
