@@ -1,0 +1,223 @@
+{
+  "remote": "40-key-blue",
+  "0xFF3AC5": {
+    "label": "Bright +",
+    "pos": "1x1",
+    "cmd": "!incBrightness"
+  },
+  "0xFFBA45": {
+    "label": "Bright -",
+    "pos": "1x2",
+    "cmd": "!decBrightness"
+  },
+  "0xFF827D": {
+    "label": "Off",
+    "pos": "1x3",
+    "cmd": "T=0"
+  },
+  "0xFF02FD": {
+    "label": "On",
+    "pos": "1x4",
+    "cmd": "T=1"
+  },
+  "0xFF1AE5": {
+    "label": "Red",
+    "pos": "2x1",
+    "cmnt": "Lava",
+    "cmd": "FP=8&CL=hFF0000&C2=hFF7F00&C3=hCC3D60"
+  },
+  "0xFF9A65": {
+    "label": "Green",
+    "pos": "2x2",
+    "cmnt": "Forest",
+    "cmd": "FP=10&CL=h8000&C2=h8040&C3=h30661E"
+  },
+  "0xFFA25D": {
+    "label": "Blue",
+    "pos": "2x3",
+    "cmnt": "Breeze",
+    "cmd": "FP=15&CL=hFF&C2=h7F00FF&C3=h3D60CC"
+  },
+  "0xFF22DD": {
+    "label": "White",
+    "pos": "2x4",
+    "cmd": "FP=5&CL=hFFFFFF&C2=hFFFFFF&C3=hCCCCCC"
+  },
+  "0xFF2AD5": {
+    "label": "Tomato",
+    "pos": "3x1",
+    "cmnt": "Yelmag",
+    "cmd": "FP=5&CL=hFF6347&C2=hFFBF47&C3=hCC646F"
+  },
+  "0xFFAA55": {
+    "label": "LightGreen",
+    "pos": "3x2",
+    "cmnt": "Rivendale",
+    "cmd": "FP=14&CL=h90EE90&C2=h90EEBF&C3=h96BE89"
+  },
+  "0xFF926D": {
+    "label": "SkyBlue",
+    "pos": "3x3",
+    "cmnt": "Ocean",
+    "cmd": "FP=9&CL=h87CEEB&C2=h879CEB&C3=h84B9BC"
+  },
+  "0xFF12ED": {
+    "label": "FloralWhite",
+    "pos": "3x4",
+    "cmd": "FP=5&CL=hFFFAF0&C2=hFCFFF0&C3=hCCC7C3"
+  },
+  "0xFF0AF5": {
+    "label": "OrangeRed",
+    "pos": "4x1",
+    "cmnt": "Sakura",
+    "cmd": "FP=49&CL=hFF4500&C2=hFFC400&C3=hCC403D"
+  },
+  "0xFF8A75": {
+    "label": "Cyan",
+    "pos": "4x2",
+    "cmnt": "Beech",
+    "cmd": "FP=22&CL=hFFFF&C2=h7FFF&C3=h3DCCA8"
+  },
+  "0xFFB24D": {
+    "label": "RebeccaPurple",
+    "pos": "4x3",
+    "cmd": "FP=5&CL=h663399&C2=h993399&C3=h4F417A"
+  },
+  "0xFF32CD": {
+    "label": "GhostWhite",
+    "pos": "4x4",
+    "cmd": "FP=5&CL=hF8F8FF&C2=hFBF8FF&C3=hC8C9CC"
+  },
+  "0xFF38C7": {
+    "label": "Orange",
+    "pos": "5x1",
+    "cmnt": "Orangery",
+    "cmd": "FP=47&CL=hFFA500&C2=hD9FF00&C3=hCC753D"
+  },
+  "0xFFB847": {
+    "label": "Turquoise",
+    "pos": "5x2",
+    "cmd": "FP=5&CL=h40E0D0&C2=h40A0E0&C3=h59B393"
+  },
+  "0xFF7887": {
+    "label": "Purple",
+    "pos": "5x3",
+    "cmd": "FP=5&CL=h800080&C2=h800040&C3=h541E66"
+  },
+  "0xFFF807": {
+    "label": "MedGray",
+    "pos": "5x4",
+    "cmnt": "Cycle palette +",
+    "cmd": "FP=~"
+  },
+  "0xFF18E7": {
+    "label": "Yellow",
+    "pos": "6x1",
+    "cmd": "FP=5&CL=hFFFF00&C2=h7FFF00&C3=hCCA83D"
+  },
+  "0xFF9867": {
+    "label": "DarkCyan",
+    "pos": "6x2",
+    "cmd": "FP=5&CL=h8B8B&C2=h458B&C3=h216F5B"
+  },
+  "0xFF58A7": {
+    "label": "Plum",
+    "pos": "6x3",
+    "cmnt": "Magenta",
+    "cmd": "FP=40&CL=hDDA0DD&C2=hDDA0BE&C3=hA88EB0"
+  },
+  "0xFFD827": {
+    "label": "DarkGray",
+    "pos": "6x4",
+    "cmnt": "Cycle palette -",
+    "cmd": "FP=~-&CL=hA9A9A9&C2=hA9A9A9&C3=h878787"
+  },
+  "0xFF28D7": {
+    "label": "W +",
+    "pos": "7x1",
+    "cmd": "W=~16"
+  },
+  "0xFFA857": {
+    "label": "W -",
+    "pos": "7x2",
+    "cmd": "W=-16"
+  },
+  "0xFF6897": {
+    "label": "W On",
+    "pos": "7x3",
+    "cmd": "R=0&G=0&B=0&W=255"
+  },
+  "0xFFE817": {
+    "label": "W Off",
+    "pos": "7x4",
+    "cmd": "W=0"
+  },
+  "0xFF08F7": {
+    "label": "W25",
+    "pos": "8x1",
+    "cmd": "W=64"
+  },
+  "0xFF8877": {
+    "label": "W50",
+    "pos": "8x2",
+    "cmd": "W=127"
+  },
+  "0xFF48B7": {
+    "label": "W75",
+    "pos": "8x3",
+    "cmd": "W=191"
+  },
+  "0xFFC837": {
+    "label": "W100",
+    "pos": "8x4",
+    "cmd": "W=255"
+  },
+  "0xFF30CF": {
+    "label": "Jump3",
+    "pos": "9x1",
+    "cmnt": "Colortwinkles",
+    "cmd": "FX=74"
+  },
+  "0xFFB04F": {
+    "label": "Fade3",
+    "pos": "9x2",
+    "cmnt": "Rain",
+    "cmd": "FX=43"
+  },
+  "0xFF708F": {
+    "label": "Jump7",
+    "pos": "9x3",
+    "cmnt": "Sinelon Dual",
+    "cmd": "FX=93"
+  },
+  "0xFFF00F": {
+    "label": "Quick",
+    "pos": "9x4",
+    "cmnt": "Fx speed +16",
+    "cmd": "SX=~16"
+  },
+  "0xFF10EF": {
+    "label": "Fade",
+    "pos": "10x1",
+    "cmnt": "Lighthouse",
+    "cmd": "FX=41"
+  },
+  "0xFF906F": {
+    "label": "Flash",
+    "pos": "10x2",
+    "cmnt": "Cycle Effects",
+    "cmd": "FX=~"
+  },
+  "0xFF50AF": {
+    "label": "Auto",
+    "pos": "10x3",
+    "cmnt": "Toggle preset cycle",
+    "cmd": "CY=2&PT=60000"
+  },
+  "0xFFD02F": {
+    "label": "Slow",
+    "pos": "10x4",
+    "cmnt": "Sinelon Dual",
+    "cmd": "FX=93"
+  }
+}

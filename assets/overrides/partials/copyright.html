@@ -1,0 +1,18 @@
+{#-
+  Same as the stock Material partial, except {year} in the configured
+  copyright string is replaced with the year of the last site build,
+  so the notice stays current without manual bumps.
+-#}
+<div class="md-copyright">
+  {% if config.copyright %}
+    <div class="md-copyright__highlight">
+      {{ config.copyright | replace("{year}", build_date_utc.strftime("%Y")) }}
+    </div>
+  {% endif %}
+  {% if not config.extra.generator == false %}
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  {% endif %}
+</div>

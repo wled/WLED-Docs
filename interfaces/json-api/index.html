@@ -1,0 +1,5132 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="WLED Team">
+      
+      
+        <link rel="canonical" href="https://kno.wled.ge/interfaces/json-api/">
+      
+      
+        <link rel="prev" href="../infrared/">
+      
+      
+        <link rel="next" href="../mqtt/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/ui/aircoookie/blurple.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>JSON API - WLED Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/global.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-QSVCRSVM18"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-QSVCRSVM18",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-QSVCRSVM18",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#obtaining-light-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<p class="cx-announce">
+  <span class="md-announce">
+    <a href="https://discord.gg/QAh7wJHrRM">
+      Join us on <span class="twemoji discord"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg></span> <span><strong> Discord </strong></span> for support and updates!
+    </a>
+  </span>
+</p>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WLED Project" class="md-header__button md-logo" aria-label="WLED Project" data-md-component="logo">
+      
+  <img src="../../assets/images/ui/akemi/001_cheerful.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WLED Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JSON API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="orange"  aria-label="Light Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="orange"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wled/WLED" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WLED
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../basics/getting-started/" class="md-tabs__link">
+          
+  
+  
+  Basics
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../features/effects/" class="md-tabs__link">
+          
+  
+  
+  Features
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../dmx-output/" class="md-tabs__link">
+          
+  
+  
+  Interfaces
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../advanced/audio-reactive/" class="md-tabs__link">
+          
+  
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/contributors/" class="md-tabs__link">
+          
+  
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WLED Project" class="md-nav__button md-logo" aria-label="WLED Project" data-md-component="logo">
+      
+  <img src="../../assets/images/ui/akemi/001_cheerful.png" alt="logo">
+
+    </a>
+    WLED Project
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wled/WLED" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WLED
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/wiring-guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiring Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/top5_mistakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Top 5 mistakes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compatibility
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/compatible-led-strips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LED strips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/compatible-controllers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controllers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/compatible-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/compatible-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/install-binary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install WLED Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/install-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install using ESP GUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/install-wled-flasher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install using WLED ESP Flasher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/compiling-wled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/palettes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palettes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/segments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/multi-strip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-strip Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/relay-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relay Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/subpages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web GUI Sitemap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pin-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/cct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    White handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pixel-art-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pixel Art Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pixelforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixelForge (Image & GIF Tool)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/custom-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/particle-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/ethernet-lan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet (LAN) compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interfaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dmx-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMX Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dmx-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMX Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../e1.31-dmx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1.31 (DMX) / Art-Net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Request API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infrared/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-light-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtaining light information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client libraries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-new-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting new values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contents-of-the-segment-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents of the segment object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Info object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-segment-individual-led-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-segment individual LED control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palettes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Palettes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palette-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palette Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playlists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cct-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCT control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CCT control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-value-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported value ranges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-the-segcct-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of the seg.cct value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effect metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effect-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palette
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensor object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensor types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Routes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mqtt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MQTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../philips-hue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philips Hue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../serial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udp-notifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WLED UDP Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udp-realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP Realtime / tpm2.net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Websocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDP Realtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../espnow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESPNow Remotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/audio-reactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Reactive WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/home-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/remote-access-ifttt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access / IFTTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/ota-lock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTA Lock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/access-over-internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing WLED over Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/wiring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiring Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/longdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Long Data Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/compiling-wled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/custom-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/community-usermods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Usermods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/esp32-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/HUB75/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HUB75
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/2d-1d-Mixed-Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixed 2D and 1D Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/ddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual LEDs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/custom-ap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Access Point Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/pir-sensors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using PIR Sensors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/contributors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributors & Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/privacy-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upcoming Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/historical-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-light-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtaining light information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client libraries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-new-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting new values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contents-of-the-segment-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents of the segment object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Info object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-segment-individual-led-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-segment individual LED control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palettes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Palettes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palette-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palette Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playlists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cct-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCT control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CCT control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-value-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported value ranges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-the-segcct-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of the seg.cct value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effect metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effect-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palette
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensor object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensor types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Routes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/wled/WLED-Docs/edit/main/docs/interfaces/json-api.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>JSON API</h1>
+
+<p>WLED implements a powerful JSON API over HTTP.<br />
+It is accessible using the <code>/json</code> subpage.</p>
+<p>This page is a long reference. Jump straight to what you need:</p>
+<table>
+<thead>
+<tr>
+<th>I want to...</th>
+<th>Go to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turn the light on/off, set brightness, colors or effects</td>
+<td><a href="#setting-new-values">Setting new values</a></td>
+</tr>
+<tr>
+<td>Look up a state field (<code>on</code>, <code>bri</code>, <code>seg</code>, <code>nl</code>, ...)</td>
+<td><a href="#state-object">State object</a>, <a href="#contents-of-the-segment-object">segment object</a></td>
+</tr>
+<tr>
+<td>Read device details (version, WiFi, LED count)</td>
+<td><a href="#info-object">Info object</a></td>
+</tr>
+<tr>
+<td>Set individual LEDs</td>
+<td><a href="#per-segment-individual-led-control">Per-segment individual LED control</a></td>
+</tr>
+<tr>
+<td>Work with palettes, playlists or presets</td>
+<td><a href="#palettes">Palettes</a>, <a href="#playlists">Playlists</a></td>
+</tr>
+<tr>
+<td>Parse the effect list and its sliders</td>
+<td><a href="#effect-metadata">Effect metadata</a></td>
+</tr>
+<tr>
+<td>Read sensor values from usermods</td>
+<td><a href="#sensors">Sensors</a></td>
+</tr>
+<tr>
+<td>See every <code>/json</code> URL at a glance</td>
+<td><a href="#api-routes">API Routes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="obtaining-light-information">Obtaining light information</h2>
+<p>Sending a GET request will return an object similar to the sample below
+The response consists of four objects:</p>
+<ul>
+<li><code>state</code> contains the current state of the light. All values may be modified by the client (see below)</li>
+<li><code>info</code> contains general information about the device. No value can be modified using this API</li>
+<li><code>effects</code> contains an array of the effect mode names</li>
+<li><code>palettes</code> contains an array of the palette names</li>
+</ul>
+<p>You may also obtain those objects individually using the URLs <code>/json/state</code> <code>/json/info</code> <code>/json/eff</code>, and <code>/json/pal</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Reserved effect IDs</p>
+<p>In WLED versions 0.14+, some effects are unsupported in certain builds (e.g. some audio reactive effects may only work on ESP32).
+In order for each effect to have an unique ID on all devices, having unsupported ones in between supported ones is possible.
+If called, these will fallback to the Solid effect, in the effects list they have the name <code>RSVD</code> or <code>-</code>.
+To improve user experience, it is recommended to remove effects with the names <code>RSVD</code> or <code>-</code> form the UI effect selection.</p>
+</div>
+<h2 id="client-libraries">Client libraries</h2>
+<p>The community has created libraries for various programming languages to make working with the WLED JSON API easier.</p>
+<ul>
+<li><a href="https://github.com/paulwrath1223/wled-json-api-library">WLED JSON API Library in Rust</a> - Even if you are not using Rust, or don't know how to read Rust, the up-to-date JSON structure is included and documented in this project.</li>
+<li><a href="https://github.com/frenck/python-wled">python-wled</a> - Python library for the WLED JSON API and the WLED Weboscket API.</li>
+</ul>
+<h2 id="setting-new-values">Setting new values</h2>
+<p>Sending a POST request to <code>/json/state</code> or <code>/json</code> with (parts of) the state object will update the respective values. Every other <code>/json</code> subpage accepts the same state updates too, only paths containing <code>cfg</code> (normally <code>/json/cfg</code>) are different, they take (parts of) the configuration object instead. Stick to <code>/json/state</code>, the subpage you post to decides what a verbose response returns (see <code>v</code> below).
+Example: <code>{"on":true,"bri":255}</code> sets the brightness to maximum. <code>{"seg":[{"col":[[0,255,200]]}]}</code> sets the color of the first segment to teal.
+<code>{"seg":[{"id":X,"on":"t"}]}</code> and replacing X with the desired segment ID will toggle on or off that segment.</p>
+<div class="admonition tldr">
+<p class="admonition-title">CURL example</p>
+<p>This will toggle on and off and return the new state:
+<code>curl -X POST "http://[WLED-IP]/json/state" -d '{"on":"t","v":true}' -H "Content-Type: application/json"</code></p>
+</div>
+<p>Sample JSON API response:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"on"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"bri"</span><span class="p">:</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"transition"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ps"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pl"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"nl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"on"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"dur"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tbri"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"udpn"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"send"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"recv"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"seg"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"stop"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"len"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"col"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"fx"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"sx"</span><span class="p">:</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ix"</span><span class="p">:</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"pal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"sel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"rev"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"cln"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.15.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"vid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1903252</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"leds"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"rgbw"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"pwr"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"maxpwr"</span><span class="p">:</span><span class="w"> </span><span class="mi">65000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"maxseg"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WLED Light"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"udpport"</span><span class="p">:</span><span class="w"> </span><span class="mi">21324</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"live"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fxcount"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"palcount"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"arch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esp8266"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"core"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2_4_2"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"freeheap"</span><span class="p">:</span><span class="w"> </span><span class="mi">13264</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="mi">17985</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"opt"</span><span class="p">:</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WLED"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIY light"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"mac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60019423b441"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"effects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"Solid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Blink"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Breathe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Wipe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Wipe Random"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Random Colors"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Sweep"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Dynamic"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Colorloop"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Rainbow"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Scan"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Dual Scan"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fade"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Chase"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Chase Rainbow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Running"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Saw"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Twinkle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Dissolve"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Dissolve Rnd"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Sparkle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Dark Sparkle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Sparkle+"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Strobe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Strobe Rainbow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Mega Strobe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Blink Rainbow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Android"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Chase"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Chase Random"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Chase Rainbow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Chase Flash"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Chase Flash Rnd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Rainbow Runner"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Colorful"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Traffic Light"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Sweep Random"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Running 2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Red &amp; Blue"</span><span class="p">,</span><span class="s2">"Stream"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Scanner"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Lighthouse"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fireworks"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Rain"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Merry Christmas"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fire Flicker"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Gradient"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Loading"</span><span class="p">,</span><span class="w"> </span><span class="s2">"In Out"</span><span class="p">,</span><span class="w"> </span><span class="s2">"In In"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Out Out"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Out In"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Circus"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Halloween"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Tri Chase"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Tri Wipe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Tri Fade"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Lightning"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ICU"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Multi Comet"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Dual Scanner"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Stream 2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Oscillate"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Pride 2015"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Juggle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Palette"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fire 2012"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Colorwaves"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BPM"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fill Noise"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Noise 1"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Noise 2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Noise 3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Noise 4"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Colortwinkle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Lake"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Meteor"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Smooth Meteor"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Railway"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Ripple"</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"palettes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"Default"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Random Cycle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Primary Color"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Based on Primary"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Set Colors"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Based on Set"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Party"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Cloud"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Lava"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Ocean"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Forest"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Rainbow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Rainbow Bands"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Sunset"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Rivendell"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Breeze"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Red &amp; Blue"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Yellowout"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Analogous"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Splash"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Pastel"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Sunset 2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Beech"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Vintage"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Departure"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Landscape"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Beach"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Sherbet"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hult"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hult 64"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Drywet"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jul"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Grintage"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Rewhi"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Tertiary"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fire"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Icefire"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Cyane"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Light Pink"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Autumn"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Magenta"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Magred"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Yelmag"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Yelblu"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Orange &amp; Teal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Tiamat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"April Night"</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="overview-of-values">Overview of values</h2>
+<h3 id="state-object">State object</h3>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>Value range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>on</td>
+<td>bool</td>
+<td>On/Off state of the light. You can also use <code>"t"</code> instead of <code>true</code> or <code>false</code> to toggle.</td>
+</tr>
+<tr>
+<td><a id="bri"></a> bri</td>
+<td>0 to 255</td>
+<td>Brightness of the light. If <em>on</em> is <code>false</code>, contains last brightness when light was on (aka brightness when <em>on</em> is set to true). Setting <em>bri</em> to 0 is supported but it is recommended to use the range 1-255 and use <code>on: false</code> to turn off. The state response will never have the value <code>0</code> for <em>bri</em>.</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>0 to 65535</td>
+<td>Duration of the crossfade between different colors/brightness levels. One unit is 100ms, so a value of <code>4</code> results in a transition of 400ms. Max transition time is 65 seconds = 65535 milliseconds.</td>
+</tr>
+<tr>
+<td>tt</td>
+<td>0 to 65535</td>
+<td>Similar to transition, but applies to just the current API call. Not included in state response. Max transition time is 65 seconds.</td>
+</tr>
+<tr>
+<td>ps</td>
+<td>-1 to 250</td>
+<td>ID of currently set preset. <code>1~17~</code> can be used to iterate through presets 1-17, or <code>4~10r</code> to select random preset between presets 4 and 10 (inclusive).</td>
+</tr>
+<tr>
+<td>psave</td>
+<td>1 to 250</td>
+<td>Save current light config (state) to specified preset slot. Not included in state response.</td>
+</tr>
+<tr>
+<td>sb</td>
+<td>bool</td>
+<td>Used with <code>psave</code>. Save segment bounds (<code>start</code> &amp; <code>stop</code>).</td>
+</tr>
+<tr>
+<td>ib</td>
+<td>bool</td>
+<td>Used with <code>psave</code>. Save <a href="#bri">brightness</a>.</td>
+</tr>
+<tr>
+<td>sc</td>
+<td>bool</td>
+<td>Used with <code>psave</code>. Save <a href="#seg-sel">selected segments</a>.</td>
+</tr>
+<tr>
+<td>pl</td>
+<td>-1 to 250</td>
+<td>ID of currently set playlist. <em>(read-only)</em></td>
+</tr>
+<tr>
+<td>pdel</td>
+<td>1 to 250</td>
+<td>Preset ID to delete. Not included in state response.</td>
+</tr>
+<tr>
+<td>nl.on</td>
+<td>bool</td>
+<td>Nightlight currently active</td>
+</tr>
+<tr>
+<td>nl.dur</td>
+<td>1 to 255</td>
+<td>Duration of nightlight in minutes</td>
+</tr>
+<tr>
+<td>nl.mode</td>
+<td>0 to 3</td>
+<td>Nightlight mode (0: instant, 1: fade, 2: color fade, 3: sunrise)</td>
+</tr>
+<tr>
+<td>nl.tbri</td>
+<td>0 to 255</td>
+<td>Target brightness of nightlight feature</td>
+</tr>
+<tr>
+<td>nl.rem</td>
+<td>-1 to 15300</td>
+<td>Remaining nightlight duration in seconds, -1 if not active. Only in state response, can not be set.</td>
+</tr>
+<tr>
+<td>udpn.send</td>
+<td>bool</td>
+<td>Send WLED broadcast (UDP sync) packet on state change</td>
+</tr>
+<tr>
+<td>udpn.recv</td>
+<td>bool</td>
+<td>Indicates whether broadcast packet reception is enabled. To set receive groups, clients must send <code>udpn.rgrp</code>.</td>
+</tr>
+<tr>
+<td>udpn.sgrp</td>
+<td>0 to 255</td>
+<td>Bitfield for broadcast send groups 1-8</td>
+</tr>
+<tr>
+<td>udpn.rgrp</td>
+<td>0 to 255</td>
+<td>Bitfield for broadcast receive groups 1-8</td>
+</tr>
+<tr>
+<td>udpn.nn</td>
+<td>bool</td>
+<td>Don't send a broadcast packet (applies to just the current API call). Not included in state response.</td>
+</tr>
+<tr>
+<td>v</td>
+<td>bool</td>
+<td>If set to <em>true</em> in a JSON POST command, the response will contain the full JSON response for the requested path instead of <code>{"success":true}</code>: the state object when posting to <code>/json/state</code>, state and info for <code>/json/si</code>, and so on. Not included in state response</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>bool</td>
+<td>If set to <em>true</em>, device will reboot immediately. Not included in state response.</td>
+</tr>
+<tr>
+<td>live</td>
+<td>bool</td>
+<td>If set to <em>true</em>, enters realtime mode and blanks the LEDs. The realtime timeout option does not have an effect when this command is used, WLED will stay in realtime mode until the state (color/effect/segments, excluding brightness) is changed. It is expected that <code>{"live":false}</code> is sent once live data sending is terminated. Not included in state response.</td>
+</tr>
+<tr>
+<td>lor</td>
+<td>0, 1, or 2</td>
+<td>Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot</td>
+</tr>
+<tr>
+<td>time</td>
+<td>uint32</td>
+<td>Set module time to unix timestamp. Not included in state response.</td>
+</tr>
+<tr>
+<td>mainseg</td>
+<td>0 to info.leds.maxseg-1</td>
+<td>Main Segment: Sets which segment ID is the main segment. The main segment's values are the ones sent by UDP sync, and in case no segment is selected, all changes done via the <code>"seg":{}</code> syntax without a segment <code>id</code> specified are applied to the main segment. If the main segment is deleted, the first active segment becomes the new main segment.</td>
+</tr>
+<tr>
+<td>seg</td>
+<td>Object or Array of objects</td>
+<td><em>(see section below)</em> Segments are individual parts of the LED strip; this enables running different effects on different parts of the strip.</td>
+</tr>
+<tr>
+<td>playlist</td>
+<td>object</td>
+<td><a href="#playlists">Custom preset playlists</a>. Not included in state response.</td>
+</tr>
+<tr>
+<td>tb</td>
+<td>uint32</td>
+<td>Sets timebase for effects. Not reported.</td>
+</tr>
+<tr>
+<td>ledmap</td>
+<td>0 to 9</td>
+<td>Load specified ledmap (0 for <code>ledmap.json</code>, 1-9 for <code>ledmap1.json</code> to <code>ledmap9.json</code>). <a href="/advanced/mapping/">See mapping</a>. Not included in state response.</td>
+</tr>
+<tr>
+<td>rmcpal</td>
+<td>bool</td>
+<td>Remove last custom palette if set to <code>true</code>. Not included in state response.</td>
+</tr>
+<tr>
+<td>np</td>
+<td>bool</td>
+<td>Advance to the next preset in a playlist if set to <code>true</code>. Not included in state response. <em>(available since 0.15)</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contents-of-the-segment-object">Contents of the segment object</h3>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>Value range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>0 to info.maxseg -1</td>
+<td>Zero-indexed ID of the segment. May be omitted, in that case the ID will be inferred from the order of the segment objects in the <em>seg</em> array.</td>
+</tr>
+<tr>
+<td>start</td>
+<td>0 to info.leds.count -1</td>
+<td>LED the segment starts at. For 2D set-up it determines column where segment starts, from top-left corner of the matrix.</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>0 to info.leds.count</td>
+<td>LED the segment stops at, not included in range. If <em>stop</em> is set to a lower or equal value than <em>start</em> (setting to <code>0</code> is recommended), the segment is invalidated and deleted. For 2D set-up it determines column where segment stops, from top-left corner of the matrix.</td>
+</tr>
+<tr>
+<td>startY</td>
+<td>0 to matrix width</td>
+<td>Start row from top-left corner of a matrix.</td>
+</tr>
+<tr>
+<td>stopY</td>
+<td>1 to matrix height </td>
+<td>Stop row from top-left corner of matrix.</td>
+</tr>
+<tr>
+<td>len</td>
+<td>0 to info.leds.count</td>
+<td>Length of the segment (<em>stop</em> - <em>start</em>). <em>stop</em> has preference, so if it is included, <em>len</em> is ignored.</td>
+</tr>
+<tr>
+<td>grp</td>
+<td>0 to 255</td>
+<td>Grouping (how many consecutive LEDs of the same segment will be grouped to the same color)</td>
+</tr>
+<tr>
+<td>spc</td>
+<td>0 to 255</td>
+<td>Spacing (how many LEDs are turned off and skipped between each group)</td>
+</tr>
+<tr>
+<td>of</td>
+<td>-len+1 to len</td>
+<td>Offset (how many LEDs to rotate the virtual start of the segments)</td>
+</tr>
+<tr>
+<td>col</td>
+<td>array of colors</td>
+<td>Array that has up to 3 color arrays as elements, the primary, secondary (background) and tertiary colors of the segment. Each color is an array of 3 or 4 bytes, which represents an RGB(W) color, i.e. <code>[[255,170,0],[0,0,0],[64,64,64]]</code>. It can also be represented as an array of strings of <em>hex</em> values, i.e. <code>["FFAA00","000000","404040"]</code> for orange, black and grey. One or more colors can be set randomly with <code>"r"</code>, i.e. <code>["r",[0,0,0],"r"]</code>. <em>(random available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>fx</td>
+<td>0 to info.fxcount -1</td>
+<td>ID of the effect or <code>~</code> to increment, <code>~-</code> to decrement, or <code>"r"</code> for random.</td>
+</tr>
+<tr>
+<td>sx</td>
+<td>0 to 255</td>
+<td>Relative effect speed. <code>~</code> to increment, <code>~-</code> to decrement. <code>~10</code> to increment by 10, <code>~-10</code> to decrement by 10.</td>
+</tr>
+<tr>
+<td>ix</td>
+<td>0 to 255</td>
+<td>Effect intensity. <code>~</code> to increment, <code>~-</code> to decrement. <code>~10</code> to increment by 10, <code>~-10</code> to decrement by 10.</td>
+</tr>
+<tr>
+<td>c1</td>
+<td>0 to 255</td>
+<td>Effect custom slider 1. Custom sliders are hidden or displayed and labeled based on <a href="#effect-metadata">effect metadata</a>.</td>
+</tr>
+<tr>
+<td>c2</td>
+<td>0 to 255</td>
+<td>Effect custom slider 2.</td>
+</tr>
+<tr>
+<td>c3</td>
+<td>0 to 31</td>
+<td>Effect custom slider 3.</td>
+</tr>
+<tr>
+<td>o1</td>
+<td>bool</td>
+<td>Effect option 1. Custom options are hidden or displayed and labeled based on <a href="#effect-metadata">effect metadata</a>.</td>
+</tr>
+<tr>
+<td>o2</td>
+<td>bool</td>
+<td>Effect option 2.</td>
+</tr>
+<tr>
+<td>o3</td>
+<td>bool</td>
+<td>Effect option 3.</td>
+</tr>
+<tr>
+<td>pal</td>
+<td>0 to 255</td>
+<td>ID of the color palette (see <a href="#palettes">Palettes</a> for the ID ranges) or <code>~</code> to increment, <code>~-</code> to decrement, or <code>"r"</code> for random.</td>
+</tr>
+<tr>
+<td><a id="seg-sel"></a>sel</td>
+<td>bool</td>
+<td><code>true</code> if the segment is selected. Selected segments will have their state (color/FX) updated by APIs that don't support segments (e.g. UDP sync, HTTP API). If no segment is selected, the first segment (<em>id</em>:<code>0</code>) will behave as if selected. WLED will report the state of the first (lowest <em>id</em>) segment that is selected to APIs (HTTP, MQTT...), or <code>mainseg</code> in case no segment is selected and for the UDP API. Live data is always applied to all LEDs regardless of segment configuration.</td>
+</tr>
+<tr>
+<td>rev</td>
+<td>bool</td>
+<td>Flips the segment (in horizontal dimension for 2D set-up), causing animations to change direction.</td>
+</tr>
+<tr>
+<td>rY</td>
+<td>bool</td>
+<td>Flips the 2D segment in vertical dimension (2D Segments only).</td>
+</tr>
+<tr>
+<td>on</td>
+<td>bool</td>
+<td>Turns on and off the individual segment.</td>
+</tr>
+<tr>
+<td>bri</td>
+<td>0 to 255</td>
+<td>Sets the individual segment brightness</td>
+</tr>
+<tr>
+<td>mi</td>
+<td>bool</td>
+<td>Mirrors the segment (in horizontal dimension for 2D set-up)</td>
+</tr>
+<tr>
+<td>mY</td>
+<td>bool</td>
+<td>Mirrors the 2D segment in vertical dimension (2D Segments only).</td>
+</tr>
+<tr>
+<td>tp</td>
+<td>bool</td>
+<td>Transposes a segment (swaps X and Y dimensions) (2D Segments only).</td>
+</tr>
+<tr>
+<td>cct</td>
+<td>0 to 255 <em>or</em> 1900 to 10091</td>
+<td>White spectrum <a href="#cct-control">color temperature</a></td>
+</tr>
+<tr>
+<td>lx</td>
+<td><code>BBBGGGRRR</code>: 0 - 100100100</td>
+<td>Loxone RGB value for primary color. Each color (<code>RRR</code>,<code>GGG</code>,<code>BBB</code>) is specified in the range from 0 to 100%. <em>Only available if Loxone is compiled in.</em></td>
+</tr>
+<tr>
+<td>lx</td>
+<td><code>20bbbtttt</code>: 200002700 - 201006500</td>
+<td>Loxone brightness and color temperature values for primary color. Brightness <code>bbb</code> is specified in the range 0 to 100%. <code>tttt</code> defines the color temperature in the range from 2700 to 6500 Kelvin. <em>(not included in state response)</em> <em>Only available if Loxone is compiled in.</em></td>
+</tr>
+<tr>
+<td>ly</td>
+<td><code>BBBGGGRRR</code>: 0 - 100100100</td>
+<td>Loxone RGB value for secondary color. Each color (<code>RRR</code>,<code>GGG</code>,<code>BBB</code>) is specified in the range from 0 to 100%. <em>Only available if Loxone is compiled in.</em></td>
+</tr>
+<tr>
+<td>ly</td>
+<td><code>20bbbtttt</code>: 200002700 - 201006500</td>
+<td>Loxone brightness and color temperature values for secondary color. Brightness <code>bbb</code> is specified in the range 0 to 100%. <code>tttt</code> defines the color temperature in the range from 2700 to 6500 Kelvin. <em>(not included in state response)</em> <em>Only available if Loxone is compiled in.</em></td>
+</tr>
+<tr>
+<td>i</td>
+<td>array</td>
+<td><a href="#per-segment-individual-led-control">Individual LED control</a>. Not included in state response</td>
+</tr>
+<tr>
+<td>frz</td>
+<td>bool</td>
+<td>freezes/unfreezes the current effect</td>
+</tr>
+<tr>
+<td>m12</td>
+<td>0 to 4 [map1D2D.count]</td>
+<td>Setting of segment field 'Expand 1D FX'. (0: Pixels, 1: Bar, 2: Arc, 3: Corner)</td>
+</tr>
+<tr>
+<td>si</td>
+<td>0 to 3</td>
+<td>Setting of the sound simulation type for audio enhanced effects. (0: 'BeatSin', 1: 'WeWillRockYou', 2: '10_3', 3: '14_3') (<em>as of 0.14.0-b1, there are these 4 types defined</em>)</td>
+</tr>
+<tr>
+<td>fxdef</td>
+<td>bool</td>
+<td>Forces loading of effect defaults (speed, intensity, etc) from effect <a href="#effect-metadata">metadata</a>.</td>
+</tr>
+<tr>
+<td>set</td>
+<td>0 to 3</td>
+<td>Assigns group or set ID  to segment (not to be confused with <em>grouping</em>). Visual aid only (helps in UI).</td>
+</tr>
+<tr>
+<td>rpt</td>
+<td>bool</td>
+<td>Flag to repeat current segment settings by creating segments until all available LEDs are included in automatically created segments or maximum segments reached. Will also toggle <em>reverse</em> on every <em>even</em> segment.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="info-object">Info object</h3>
+<p>No value may be changed by means of this API.</p>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>Value range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ver</td>
+<td>string</td>
+<td>Version name.</td>
+</tr>
+<tr>
+<td>vid</td>
+<td>uint32</td>
+<td>Build ID (YYMMDDB, B = daily build index).</td>
+</tr>
+<tr>
+<td><em>leds</em></td>
+<td>object</td>
+<td>Contains info about the LED setup.</td>
+</tr>
+<tr>
+<td>leds.count</td>
+<td>1 to 1200</td>
+<td>Total LED count.</td>
+</tr>
+<tr>
+<td>leds.fps</td>
+<td>0 to 255</td>
+<td>Current frames per second.</td>
+</tr>
+<tr>
+<td>leds.rgbw</td>
+<td>bool</td>
+<td><code>true</code> if LEDs are 4-channel (RGB + White). <em>(deprecated, use info.leds.lc)</em></td>
+</tr>
+<tr>
+<td>leds.wv</td>
+<td>bool</td>
+<td><code>true</code> if a white channel slider should be displayed. <em>(deprecated, use info.leds.lc)</em></td>
+</tr>
+<tr>
+<td>leds.pwr</td>
+<td>0 to 65000</td>
+<td>Current LED power usage in milliamps as determined by the ABL. <code>0</code> if ABL is disabled.</td>
+</tr>
+<tr>
+<td>leds.maxpwr</td>
+<td>0 to 65000</td>
+<td>Maximum power budget in milliamps for the ABL. <code>0</code> if ABL is disabled.</td>
+</tr>
+<tr>
+<td>leds.maxseg</td>
+<td>byte</td>
+<td>Maximum number of segments supported by this version.</td>
+</tr>
+<tr>
+<td>leds.lc</td>
+<td>byte</td>
+<td>Logical AND of the virtual light capabilities of all active segments (including CCT and white channel)</td>
+</tr>
+<tr>
+<td>leds.seglc</td>
+<td>byte array</td>
+<td>Per-segment virtual light capabilities</td>
+</tr>
+<tr>
+<td>str</td>
+<td>bool</td>
+<td>If <code>true</code>, an UI with only a single button for toggling sync should toggle receive+send, otherwise send only</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Friendly name of the light. Intended for display in lists and titles.</td>
+</tr>
+<tr>
+<td>udpport</td>
+<td>uint16</td>
+<td>The UDP port for realtime packets and WLED broadcast.</td>
+</tr>
+<tr>
+<td>live</td>
+<td>bool</td>
+<td>If <code>true</code>, the software is currently receiving realtime data via UDP or E1.31.</td>
+</tr>
+<tr>
+<td>lm</td>
+<td>string</td>
+<td>Info about the realtime data source</td>
+</tr>
+<tr>
+<td>lip</td>
+<td>string</td>
+<td>Realtime data source IP address</td>
+</tr>
+<tr>
+<td>ws</td>
+<td>-1 to 8</td>
+<td>Number of currently connected WebSockets clients. -1 indicates that WS is unsupported in this build.</td>
+</tr>
+<tr>
+<td>fxcount</td>
+<td>byte</td>
+<td>Number of effects included.</td>
+</tr>
+<tr>
+<td>palcount</td>
+<td>uint16</td>
+<td>Total number of palettes available, including custom and usermod palettes.</td>
+</tr>
+<tr>
+<td>cpalcount</td>
+<td>byte</td>
+<td>Number of custom palette ID slots in use, counting down from the highest custom ID. Gaps in palette file numbering are filled with gray placeholder palettes, which count too. <em>(available since 0.14.0)</em></td>
+</tr>
+<tr>
+<td>umpalcount</td>
+<td>byte</td>
+<td>Number of usermod-registered palettes. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>cpalmax</td>
+<td>byte</td>
+<td>Maximum number of custom palettes supported by this device. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>umpalnames</td>
+<td>array of strings</td>
+<td>Names of the usermod-registered palettes, in allocation order (the first entry is ID 255). Only present when a usermod has registered palettes. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td><em>wifi</em></td>
+<td>object</td>
+<td>Info about current signal strength</td>
+</tr>
+<tr>
+<td>wifi.bssid</td>
+<td>string</td>
+<td>The BSSID of the currently connected network.</td>
+</tr>
+<tr>
+<td>wifi.signal</td>
+<td>0 to 100</td>
+<td>Relative signal quality of the current connection.</td>
+</tr>
+<tr>
+<td>wifi.channel</td>
+<td>1 to 14</td>
+<td>The current WiFi channel.</td>
+</tr>
+<tr>
+<td><em>fs</em></td>
+<td>object</td>
+<td>Info about the embedded LittleFS filesystem</td>
+</tr>
+<tr>
+<td>fs.u</td>
+<td>uint32</td>
+<td>Estimate of used filesystem space in kilobytes</td>
+</tr>
+<tr>
+<td>fs.t</td>
+<td>uint32</td>
+<td>Total filesystem size in kilobytes</td>
+</tr>
+<tr>
+<td>fs.pmt</td>
+<td>uint32</td>
+<td>Unix timestamp for the last modification to the <code>presets.json</code> file. Not accurate after boot or after using <code>/edit</code></td>
+</tr>
+<tr>
+<td>ndc</td>
+<td>-1 to 255</td>
+<td>Number of other WLED devices discovered on the network. -1 if Node discovery disabled.</td>
+</tr>
+<tr>
+<td>arch</td>
+<td>string</td>
+<td>Name of the platform.</td>
+</tr>
+<tr>
+<td>core</td>
+<td>string</td>
+<td>Version of the underlying (Arduino core) SDK.</td>
+</tr>
+<tr>
+<td>lwip</td>
+<td>0, 1, or 2</td>
+<td>Version of LwIP. 1 or 2 on ESP8266, 0 (does not apply) on ESP32. <em>Deprecated</em></td>
+</tr>
+<tr>
+<td>freeheap</td>
+<td>uint32</td>
+<td>Bytes of heap memory (RAM) currently available. Problematic if &lt;<code>10k</code>.</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>uint32</td>
+<td>Time since the last boot/reset in seconds.</td>
+</tr>
+<tr>
+<td>opt</td>
+<td>uint16</td>
+<td>Used for debugging purposes only.</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>string</td>
+<td>The producer/vendor of the light. Always <code>WLED</code> for standard installations.</td>
+</tr>
+<tr>
+<td>product</td>
+<td>string</td>
+<td>The product name. Always <code>FOSS</code> for standard installations.</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>The hexadecimal hardware MAC address of the light, lowercase and without colons.</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>string</td>
+<td>The IP address of this instance. Empty string if not connected.</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>string</td>
+<td>A unique identifier for the device, derived from the hardware MAC address. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>psrSz</td>
+<td>uint32</td>
+<td>Total PSRAM size in megabytes, rounded up. <code>0</code> if no PSRAM is present or detected. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td>psram</td>
+<td>uint32</td>
+<td>Estimate of currently free PSRAM in bytes. Only present on devices with PSRAM.</td>
+</tr>
+<tr>
+<td>repo</td>
+<td>string</td>
+<td>URL of the source code repository for this firmware build. <em>(available since 16.0.0)</em></td>
+</tr>
+</tbody>
+</table>
+<p>Examples of frequently requested custom API:</p>
+<table>
+<thead>
+<tr>
+<th>Function/Effect</th>
+<th>API (Add to preset or call from other sources)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cycle presets between 1 and 6</td>
+<td><code>{"ps":"1~6~"}</code></td>
+</tr>
+<tr>
+<td>Select random effect on <em>all selected</em> segments</td>
+<td><code>{"seg":{"fx":"r"}}</code></td>
+</tr>
+<tr>
+<td>Select random palette between 5 and 10 on segment 2</td>
+<td><code>{"seg":[{"id":2,"pal":"5~10r"}]}</code></td>
+</tr>
+<tr>
+<td>Select the first custom palette on segment 2</td>
+<td><code>{"seg":[{"id":2,"pal":200}]}</code> on 16.0.0 and later, <code>{"seg":[{"id":2,"pal":255}]}</code> on earlier versions (see <a href="#palettes">Palettes</a>)</td>
+</tr>
+<tr>
+<td>Change segment 0 name</td>
+<td><code>{"seg":[{"id":0,"n":"Your custom ASCII text"}]}</code></td>
+</tr>
+<tr>
+<td>Freeze or unfreeze an effect</td>
+<td><code>{"seg":[{"id":0,"frz":true}]}</code> or <code>{"seg":[{"id":0,"frz":false}]}</code></td>
+</tr>
+<tr>
+<td>Night light</td>
+<td><code>{"nl":{"on":true,"dur":10,"mode":0}}</code></td>
+</tr>
+<tr>
+<td>Increase brightness by 40 wrapping when maximum reached</td>
+<td><code>{"bri":"w~40"}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="per-segment-individual-led-control">Per-segment individual LED control</h3>
+<p>Using the <code>i</code> property of the segment object, you can set the LED colors in the segment using the JSON API.<br />
+Keep in mind that this is non-persistent, if the light is turned off the segment will return to effect mode.<br />
+The segment is frozen when using individual control, the set effect will not run.<br />
+To unfreeze the segment, click the "eye" icon, change any property of the segment or turn off the light.</p>
+<p>To set individual LEDs starting from the beginning, use an array of Color arrays <code>[255,0,0]</code> or hex values <code>"FF0000"</code>.
+Hex values are more efficient than Color arrays and should be preferred when setting a large number of colors.<br />
+<code>{"seg":{"i":["FF0000","00FF00","0000FF"]}}</code> or <code>{"seg":{"i":[[255,0,0],[0,255,0],[0,0,255]]}}</code> will set the first LED red, the second green and the third blue.</p>
+<p>To set individual LEDs, use the LED index followed by its color value.<br />
+<code>{"seg":{"i":[0,"FF0000",2,"00FF00",4,"0000FF"]}}</code> is the same as above, but leaves blank spaces between the lit LEDs.</p>
+<p>To set ranges of LEDs, use the LED start and stop index followed by its color value.<br />
+<code>{"seg":{"i":[0,8,"FF0000",10,18,"0000FF"]}}</code> sets the first eight LEDs to red, leaves out two, and sets another 8 to blue.</p>
+<p>To set a large number of colors, send multiple api calls of 256 colors at a time.<br />
+<code>{"seg": {"i":[0,"CC0000","00CC00","0000CC","CC0000"...]}}</code> 
+<code>{"seg": {"i":[256,"CC0000","00CC00","0000CC","CC0000"...]}}</code>
+<code>{"seg": {"i":[512,"CC0000","00CC00","0000CC","CC0000"...]}}</code></p>
+<p>Do not make several calls in parallel, that is not optimal for the device. Instead make your call in sequence, where each call waits for the previous to complete before making a new one. How this is done depends on your choice of tool, but with CURL you queue your commands by separating then with <code>&amp;&amp;</code>, i.e. <code>CURL [command 1] &amp;&amp; CURL [command 2] &amp;&amp; CURL [command 3]</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Command Buffer Size</p>
+<p>If you are trying to set many LEDs and it fails to work, you can check your request <a href="https://arduinojson.org/v6/assistant">here</a> for length.
+Select ESP32 and Deserialize. If the required buffer size is above 10K for ESP8266 and 24K for ESP32, please split it into multiple sequential requests and consider using the Hex string syntax.</p>
+</div>
+<p>Keep in mind that the LED indices are segment-based, so LED 0 is the first LED of the segment, not of the entire strip.
+Segment features, including Grouping, Spacing, Mirroring and Reverse are functional.</p>
+<p>Matrices are handled as a non-serpentine layout.</p>
+<div class="admonition info">
+<p class="admonition-title">Brightness Interaction</p>
+<p>For your colors to apply correctly, make sure the desired brightness is set beforehand. Turning on the LEDs from an off state and setting individual LEDs in the same JSON request will <em>not</em> work!</p>
+</div>
+<h3 id="palettes">Palettes</h3>
+<p>WLED has three types of palettes:</p>
+<ul>
+<li><strong>Built-in palettes</strong> are compiled into the firmware.</li>
+<li><strong>Custom palettes</strong> are created by the user in the web UI (since 16.0) or by uploading <code>palette0.json</code>, <code>palette1.json</code> and so on to the filesystem. Up to 10 files on 0.14 and 0.15; since 16.0 the limit is 129 on ESP32 and stays at 10 on ESP8266, reported in <code>info.cpalmax</code>. Numbering gaps are allowed, but loading stops after 20 missing files in a row. See <a href="/features/palettes">Palettes</a> for the file format. <em>(available since 0.14.0)</em></li>
+<li><strong>Usermod palettes</strong> are registered by usermods. <em>(available since 16.0.0)</em></li>
+</ul>
+<p>Palette IDs, as used in the segment <code>pal</code> parameter, are assigned differently depending on the firmware version.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="wled-1600-and-later" name="__tabbed_1" type="radio" /><input id="before-wled-1600" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="wled-1600-and-later">WLED 16.0.0 and Later</label><label for="before-wled-1600">Before WLED 16.0.0</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>IDs are allocated in fixed ranges, so an ID always refers to the same palette type:</p>
+<table>
+<thead>
+<tr>
+<th>Palette type</th>
+<th>ID range</th>
+<th>Allocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Built-in</td>
+<td>0 to 71</td>
+<td>Fixed IDs.</td>
+</tr>
+<tr>
+<td>Custom</td>
+<td>72 to 200</td>
+<td>Counts downward: the first custom palette is ID 200, the second is 199. The device's limit is reported in <code>info.cpalmax</code> (129 on ESP32, 10 on ESP8266).</td>
+</tr>
+<tr>
+<td>Usermod</td>
+<td>201 to 255</td>
+<td>Counts downward: the first usermod palette is ID 255, the second is 254. Up to 55 slots.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p>Built-in palette IDs start at 0. Custom palettes count downward from ID 255: the first custom palette is ID 255, the second is 254, up to 10 palettes. <code>info.palcount</code> includes both types, so the built-in IDs end at <code>palcount - cpalcount - 1</code>.</p>
+</div>
+</div>
+</div>
+<h4 id="palette-names">Palette Names</h4>
+<ul>
+<li>Built-in palette names are in the <code>palettes</code> array returned by <code>/json</code> and <code>/json/pal</code>. The array index is the palette ID.</li>
+<li>Custom palettes have no stored names. The UI shows them as <code>~ Custom 0 ~</code>, <code>~ Custom 1 ~</code>, and so on.</li>
+<li>Usermod palette names are in <code>info.umpalnames</code>, in the same order the IDs are allocated.</li>
+</ul>
+<h3 id="playlists">Playlists</h3>
+<p>Sample playlist API call:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"playlist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"dur"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"transition"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This example applies preset ID 26 for 3 seconds, then preset 20 for 2 seconds, then preset 18 for 1 second, lastly preset 20 again for 5 seconds.This repeats 10 times, then preset 21 is applied.</p>
+<p>Playlist object:</p>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ps</td>
+<td>Array of preset ID integers to be applied in this order.</td>
+</tr>
+<tr>
+<td>dur</td>
+<td>Array of time each preset should be kept, in tenths of seconds. If only one integer is supplied, all presets will be kept for that time.Defaults to 10 seconds if not provided.</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>Array of time each preset should transition to the next one, in tenths of seconds. If only one integer is supplied, all presets will transition for that time. Defaults to the current transition time if not provided.</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>How many times the entire playlist should cycle before finishing. Set to <code>0</code> for an indefinite cycle. Default to indefinite if not provided.</td>
+</tr>
+<tr>
+<td>end</td>
+<td>Single preset ID to apply after the playlist finished. Has no effect when an indefinite cycle is set. If not provided, the light will stay on the last preset of the playlist.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="light-capabilities">Light capabilities</h3>
+<p>To show only the color controls relevant to a given setup, obtain the color capabilities of the light.<br />
+The <code>info.leds.seglc</code> array can be used to do so on a per-segment level. It contains <code>n+1</code> 8-bit integers, where <code>n</code> is the <code>id</code> of the last <em>active</em> segment,
+each index corresponds to the segment with that ID.<br />
+This integer indicates whether a given segment supports (24 bit) RGB colors, an extra (8 bit) white channel and/or adjustable color temperature (CCT):  </p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Segment supports RGB color</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Segment supports white channel</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Segment supports color temperature</td>
+</tr>
+<tr>
+<td>3-7</td>
+<td>Reserved (expect any value)</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore:  </p>
+<table>
+<thead>
+<tr>
+<th><code>lc</code> value</th>
+<th>Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>None. Indicates a segment that does not have a bus within its range, e.g. because it is not active.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Supports RGB</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Supports white channel only</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Supports RGBW</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Supports CCT only, no white channel (unused)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Supports CCT + RGB, no white channel (unused)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Supports CCT (including white channel)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Supports CCT (including white channel) + RGB</td>
+</tr>
+</tbody>
+</table>
+<p>CCT is controllable per segment, while RGB color and the white channel are controlled through three color slots per segment.  </p>
+<p><code>info.leds.lc</code> contains this info on a global level, and is a bitwise AND of the per-segment light capability values.  </p>
+<h3 id="cct-control">CCT control</h3>
+<p>Please also see the <a href="/features/cct">general info about CCT</a>.</p>
+<h4 id="supported-value-ranges">Supported value ranges</h4>
+<p>Given that the white spectrum handling is agnostic to the true color temperature of the LEDs used, a relative range is preferred for the time being, where a value of <code>0</code> indicates the warmest possible color temperature, while a value of <code>255</code> indicates the coldest temperature.</p>
+<p>It is also possible to pass a value in the range of <code>1900</code> to <code>10091</code>, in which case it is treated as a Kelvin color temperature, where <code>1900</code> is mapped to a relative value of <code>0</code> and <code>10091</code> to a relative value of <code>255</code>.</p>
+<p>As such, it is unlikely to match the <em>actual</em> color temperature output by the light, therefore the relative values 0-255 are preferred for the time being.</p>
+<p>In the future, an option to specify the Kelvin temperatures of the utilized hardware may be added, once this is done, a color temperature can be set to more accurately match other lights.</p>
+<p>Therefore, for forward compatibility, your integration should expect both either a 0-255 value for <code>seg.cct</code>, in which case it is a relative value, or an absolute Kelvin value in the range 1000-16000 K. In case a Kelvin value is provided, you can consider the color temperature as accurate, which is not possible with relative 0-255 values as the Kelvin points of the white channels are unknown.<br />
+It is preferred that you set a new CCT value in the same range as received from WLED, that is, use 0-255 if the original value was within this range, and 1000-20000 K otherwise.</p>
+<p>If your code relies on absolute Kelvin values, a reasonable estimate for the warm white point (relative <code>0</code>) could be 2700K, while cold white (relative <code>255</code>) could commonly be 6500K.</p>
+<h4 id="effect-of-the-segcct-value">Effect of the <code>seg.cct</code> value</h4>
+<p><code>seg.cct</code> can always be set, but only has an effect on the physical state of the light if one or both of the following conditions is met:</p>
+<ul>
+<li>White Balance correction is enabled</li>
+<li>A bus supporting CCT is configured and <code>Calculate CCT from RGB</code> is <em>not</em> enabled</li>
+</ul>
+<p>CCT support is indicated by <code>info.leds.cct</code> being <code>true</code>, in which case you can regard the instance as a CCT light and e.g. display a color temperature control.</p>
+<h3 id="effect-metadata">Effect metadata</h3>
+<div class="admonition tip">
+<p class="admonition-title">Why effect metadata?</p>
+<p>Prior to 0.14, user interfaces showed Speed and Intensity slider, palette controls, and all three color slots regardless of the effect selected.
+This may cause confusion to the user because controls are displayed that have no immediate effect in the current configuration.
+Effect metadata allows you to dynamically hide certain controls, so that the user only sees controls actually utilized by the selected effect mode.</p>
+</div>
+<p>Starting with WLED 0.14, effect metadata is available under the <code>/json/fxdata</code> URL.<br />
+This returns an array of strings with <code>info.fxcount</code> entries.
+The string at a given index corresponds to the metadata of the effect with the same ID as that index.
+Metadata is stored in a memory-optimized string format, for example the Aurora effect has the metadata <code>!,!;;!;1;sx=24,pal=50</code>.</p>
+<p>The metadata string consists of up to five sections, separated by semicolons:
+<code>&lt;Effect parameters&gt;;&lt;Colors&gt;;&lt;Palette&gt;;&lt;Flags&gt;;&lt;Defaults&gt;</code></p>
+<h4 id="effect-parameters">Effect parameters</h4>
+<p>The first section specifies the number and labels of effect parameters (e.g. speed, intensity).
+Up to 5 sliders and 3 checkboxes are supported (<code>sx</code>,<code>ix</code>,<code>c1</code>,<code>c2</code>,<code>c3</code>,<code>o1</code>,<code>o2</code>,<code>o3</code> parameters in the <code>seg</code> object). For more details about the ranges of the sliders see <a href="#contents-of-the-segment-object">contents-of-the-segment-object</a>.
+Slider/checkbox labels are comma separated.
+An empty or missing label disables this control.
+<code>!</code> specifies the default label is used:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default tooltip label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sx</td>
+<td>Effect speed</td>
+</tr>
+<tr>
+<td>ix</td>
+<td>Effect intensity</td>
+</tr>
+<tr>
+<td>c1</td>
+<td>Custom 1</td>
+</tr>
+<tr>
+<td>c2</td>
+<td>Custom 2</td>
+</tr>
+<tr>
+<td>c3</td>
+<td>Custom 3</td>
+</tr>
+<tr>
+<td>o1</td>
+<td>Option 1</td>
+</tr>
+<tr>
+<td>o2</td>
+<td>Option 2</td>
+</tr>
+<tr>
+<td>o3</td>
+<td>Option 3</td>
+</tr>
+</tbody>
+</table>
+<p>The fallback value if this section is missing is two sliders, Effect speed and Effect intensity.</p>
+<p>Examples:  </p>
+<table>
+<thead>
+<tr>
+<th>Parameter string</th>
+<th>Displayed controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;empty&gt;</code></td>
+<td>No effect parameters</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>1 slider: Effect speed</td>
+</tr>
+<tr>
+<td><code>!,!</code></td>
+<td>2 sliders: Effect speed + Effect intensity</td>
+</tr>
+<tr>
+<td><code>!,Phase</code></td>
+<td>2 sliders: Effect speed + Phase</td>
+</tr>
+<tr>
+<td><code>,Saturation,,,,Invert</code></td>
+<td>1 slider (sets <code>ix</code> parameter) and 1 checkbox: Saturation + Invert</td>
+</tr>
+<tr>
+<td><code>,,,,,Random colors</code></td>
+<td>1 checkbox: Random colors</td>
+</tr>
+</tbody>
+</table>
+<h4 id="colors">Colors</h4>
+<p>Up to 3 colors can be used. Only the first two characters of the label are visible in the WLED UI.<br />
+<code>!</code> specifies the default label is used. The default labels for the color slots are <code>Fx</code>, <code>Bg</code>, and <code>Cs</code>.</p>
+<p>The fallback value if this section is missing is 3 colors: <code>Fx</code> + <code>Bg</code> + <code>Cs</code>.</p>
+<p>Examples:  </p>
+<table>
+<thead>
+<tr>
+<th>Colors string</th>
+<th>Displayed controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;empty&gt;</code></td>
+<td>No color controls</td>
+</tr>
+<tr>
+<td>!</td>
+<td>1 color: Fx</td>
+</tr>
+<tr>
+<td>,!</td>
+<td>1 color: Bg</td>
+</tr>
+<tr>
+<td>!,!</td>
+<td>2 colors: Fx + Bg</td>
+</tr>
+<tr>
+<td>1,2,3</td>
+<td>3 colors: 1 + 2 + 3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="palette">Palette</h4>
+<p>If empty, the effect does not use palettes. If <code>!</code>, palette selection is enabled.</p>
+<p>The fallback value if this section is missing is palette selection enabled.</p>
+<h4 id="flags">Flags</h4>
+<p>Flags allow filtering for effects with certain characteristics.
+They are a single character each and not comma-separated.
+Currently, the following flags are specified:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Effect characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Effect works well on a single LED. If flag 0 is present, flags 1/2/3 are omitted. (unused)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Effect is optimized for use on 1D LED strips.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Effect requires a 2D matrix setup (unless flag 1 is also present)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Effect requires a 3D cube (unless flags 1 and/or 2 are also present) (unused)</td>
+</tr>
+<tr>
+<td>v</td>
+<td>Effect is audio reactive, reacts to amplitude/volume.</td>
+</tr>
+<tr>
+<td>f</td>
+<td>Effect is audio reactive, reacts to audio frequency distribution.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, a Flag string of <code>2v</code> denotes a volume reactive effect that is to be used on 2D matrices.</p>
+<p>The fallback value if this section is missing is <code>1</code>, i.e. a 1D optimized effect.</p>
+<h4 id="defaults">Defaults</h4>
+<p>Defaults are values for effect parameters that work particularly well on that effect.
+They are set automatically when the effect is selected in UI unless configured otherwise in UI settings.
+To specify defaults, use the standard segment parameter name (e.g. <code>ix</code>) followed by an <code>=</code> and the default value.
+For example, <code>sx=24,pal=50</code> sets the effect speed to 24 (slow) and the palette to ID 50 (Aurora).</p>
+<p>If no default is specified for a given parameter, it retains the current value.</p>
+<h2 id="sensors">Sensors</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section about the Sensor API is a DRAFT specification. It is not yet implemented and subject to change.</p>
+</div>
+<p>Various types of sensors (e.g. for Temperature, light intensity, PIR) may be added to WLED via usermods.
+To allow read access to sensor data via the JSON API in a standardized way, the <code>info.sensor</code> array is used.</p>
+<p>If the <code>info.sensor</code> array is missing or empty, no sensor values are exposed.</p>
+<h3 id="sensor-object">Sensor object</h3>
+<p>Each sensor/measurement is represented by an object within the <code>info.sensor</code> array.</p>
+<p>For example,</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"T"</span><span class="p">,</span><span class="nt">"n"</span><span class="p">:</span><span class="s2">"Outside"</span><span class="p">,</span><span class="nt">"val"</span><span class="p">:</span><span class="mi">12</span><span class="p">}</span>
+</code></pre></div>
+<p>refers to a 12 °C temperature measurement in Celsius with the sensor name "Outside".</p>
+<p>The object may contain the following properties, of which all are optional, except <code>type</code>.</p>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>Value range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>The type of the sensor.</td>
+</tr>
+<tr>
+<td>n</td>
+<td>string</td>
+<td>The name of the sensor. If omitted, the client may generate a suitable name (e.g. "Temperature sensor 1")</td>
+</tr>
+<tr>
+<td>val</td>
+<td>any</td>
+<td>The most current sensor reading. May be of any JSON type depending on the type of the sensor, this is a number for all sensor types pre-defined below except for the <code>"b"</code> and <code>"CL"</code> types and custom type sensors. <code>null</code> if the reading is invalid, either due to an error or because the first reading has not yet completed.</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>string</td>
+<td>An explicit human-readable unit string for the measurement. If omitted, the default for the sensor type is used.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>int or string</td>
+<td>If present and not <code>null</code>,<code>false</code>,<code>0</code> or an empty string, a sensor error is indicated. May either be an integer error code or an error string.</td>
+</tr>
+<tr>
+<td>tc</td>
+<td>number</td>
+<td>Seconds of WLED <code>uptime</code> when the value last changed substantially. The threshold for a "substantial" change is up to the implementation. This can for example be used to find when a PIR sensor was last activated.</td>
+</tr>
+<tr>
+<td>tm</td>
+<td>number</td>
+<td>Seconds of WLED <code>uptime</code> when the last reading given by <code>val</code> was obtained.</td>
+</tr>
+<tr>
+<td>ts</td>
+<td>number</td>
+<td>Seconds of WLED <code>uptime</code> at the first measurement / start of measurement period. (required for Energy sensor type)</td>
+</tr>
+<tr>
+<td>min</td>
+<td>number</td>
+<td>Lower bound of possible value range</td>
+</tr>
+<tr>
+<td>max</td>
+<td>number</td>
+<td>Upper bound of possible value range</td>
+</tr>
+<tr>
+<td>u</td>
+<td>number</td>
+<td>Absolute uncertainty of the measurement</td>
+</tr>
+<tr>
+<td>model</td>
+<td>string</td>
+<td>Identification of the sensor hardware used</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sensor-types">Sensor types</h3>
+<p>These are the standardized sensor types that may be implemented by usermods:</p>
+<table>
+<thead>
+<tr>
+<th>Type ID string</th>
+<th>Measurement type</th>
+<th>Default unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"" (empty string)</td>
+<td>Invalid sensor (reserved)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>b</td>
+<td>Button/Boolean</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Custom user-defined sensor</td>
+<td>-</td>
+</tr>
+<tr>
+<td>q</td>
+<td>Electric charge</td>
+<td>As</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Time</td>
+<td>s</td>
+</tr>
+<tr>
+<td>BL</td>
+<td>Battery Level</td>
+<td>%</td>
+</tr>
+<tr>
+<td>CL</td>
+<td>24-bit RGB color</td>
+<td>hex string</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Energy (<code>ts</code> property required)</td>
+<td>J</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Electric current</td>
+<td>A</td>
+</tr>
+<tr>
+<td>J</td>
+<td>Illuminance</td>
+<td>lx</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Distance</td>
+<td>m</td>
+</tr>
+<tr>
+<td>Lp</td>
+<td>Sound pressure level</td>
+<td>dB</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Mass</td>
+<td>kg</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Number/count</td>
+<td>-</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Power</td>
+<td>W</td>
+</tr>
+<tr>
+<td>Pe</td>
+<td>General purpose percentage</td>
+<td>%</td>
+</tr>
+<tr>
+<td>PL</td>
+<td>Power Level (signal strength)</td>
+<td>dBm</td>
+</tr>
+<tr>
+<td>Pr</td>
+<td>Pressure</td>
+<td>Pa</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Electric Resistance</td>
+<td>Ohms</td>
+</tr>
+<tr>
+<td>RH</td>
+<td>Relative Humidity</td>
+<td>%</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Temperature</td>
+<td>°C</td>
+</tr>
+<tr>
+<td>U</td>
+<td>Voltage</td>
+<td>V</td>
+</tr>
+<tr>
+<td>(other strings)</td>
+<td>Reserved, let us know if you need a new type added</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>If a client is only interested in certain sensor types (e.g. Temperature), it may disregard all other sensor objects.</p>
+<h2 id="api-routes">API Routes</h2>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/json</code></td>
+<td>State, info, effect names and built-in palette names combined in one object.</td>
+</tr>
+<tr>
+<td><code>/json/state</code></td>
+<td>The <a href="#state-object">state object</a>.</td>
+</tr>
+<tr>
+<td><code>/json/info</code></td>
+<td>The <a href="#info-object">info object</a>.</td>
+</tr>
+<tr>
+<td><code>/json/si</code></td>
+<td>State and info combined.</td>
+</tr>
+<tr>
+<td><code>/json/nodes</code></td>
+<td>Other WLED devices discovered on the network.</td>
+</tr>
+<tr>
+<td><code>/json/eff</code></td>
+<td>Array of effect names.</td>
+</tr>
+<tr>
+<td><code>/json/fxdata</code></td>
+<td><a href="#effect-metadata">Effect metadata</a>.</td>
+</tr>
+<tr>
+<td><code>/json/pal</code></td>
+<td>Array of built-in palette names.</td>
+</tr>
+<tr>
+<td><code>/json/palx</code></td>
+<td>Palette color previews, including custom and usermod palettes. Paginated, use <code>?page=</code> and the <code>m</code> key in the response (highest page number).</td>
+</tr>
+<tr>
+<td><code>/json/net</code></td>
+<td>WiFi networks found in the last scan.</td>
+</tr>
+<tr>
+<td><code>/json/cfg</code></td>
+<td>The configuration object.</td>
+</tr>
+<tr>
+<td><code>/json/pins</code></td>
+<td>Pin allocations. <em>(available since 16.0.0)</em></td>
+</tr>
+<tr>
+<td><code>/json/live</code></td>
+<td>Current colors of the LEDs, for a live preview. Only in builds with the <code>WLED_ENABLE_JSONLIVE</code> flag.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016-2026 Christian Schwinne, Contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/QAh7wJHrRM" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://wled.discourse.group/" target="_blank" rel="noopener" title="Forum" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9S348.6 32 225.9 32M224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://gitpod.io/#https://github.com/Aircoookie/WLED" target="_blank" rel="noopener" title="Gitpod" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/wled_project/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/results?search_query=WLED" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://wled.teemill.com/" target="_blank" rel="noopener" title="wled.teemill.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M320.2 112c44.2 0 80-35.8 80-80h53.5c17 0 33.3 6.7 45.3 18.7l118.6 118.7c12.5 12.5 12.5 32.8 0 45.3l-50.7 50.7c-12.5 12.5-32.8 12.5-45.3 0L480.2 224v224c0 35.3-28.7 64-64 64h-192c-35.3 0-64-28.7-64-64V224l-41.4 41.4c-12.5 12.5-32.8 12.5-45.3 0l-50.6-50.8c-12.5-12.5-12.5-32.8 0-45.3L141.5 50.7c12-12 28.3-18.7 45.3-18.7h53.5c0 44.2 35.8 80 80 80z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://paypal.me/aircoookie/" target="_blank" rel="noopener" title="paypal.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="m241 87.1 15 20.7 15-20.7C296 52.5 336.2 32 378.9 32 452.4 32 512 91.6 512 165.1v2.6c0 112.2-139.9 242.5-212.9 298.2-12.4 9.4-27.6 14.1-43.1 14.1s-30.8-4.6-43.1-14.1C139.9 410.2 0 279.9 0 167.7v-2.6C0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.code.annotate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/js/newtab.js"></script>
+      
+    
+  </body>
+</html>

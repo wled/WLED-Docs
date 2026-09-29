@@ -1,0 +1,143 @@
+{
+  "desc": "24-key OSRAM",
+  "0xFF00FF": {
+    "label": "Bright+",
+    "pos": "1x1",
+    "cmd": "!incBrightness"
+  },
+  "0xFF40BF": {
+    "label": "Bright-",
+    "pos": "1x2",
+    "cmd": "!decBrightness"
+  },
+  "0xFF609F": {
+    "label": "On",
+    "pos": "1x3",
+    "cmd": "T=0"
+  },
+  "0xFFE01F": {
+    "label": "Off",
+    "pos": "1x4",
+    "cmd": "T=1"
+  },
+  "0xFF10EF": {
+    "label": "R0",
+    "pos": "2x1",
+    "cmnt": "Red",
+    "cmd": "R=255&G=0&B=0"
+  },
+  "0xFF906F": {
+    "label": "G0",
+    "pos": "2x2",
+    "cmnt": "Green",
+    "cmd": "R=0&G=255&B=0"
+  },
+  "0xFF50AF": {
+    "label": "B0",
+    "pos": "2x3",
+    "cmnt": "Blue",
+    "cmd": "R=0&G=0&B=255"
+  },
+  "0xFFC03F": {
+    "label": "W0",
+    "pos": "2x4",
+    "cmnt": "White",
+    "cmd": "R=255&G=255&B=255"
+  },
+  "0xFF30CF": {
+    "label": "c81914",
+    "pos": "3x1",
+    "cmnt": "#c81914",
+    "cmd": "R=200&G=25&B=20"
+  },
+  "0xFFB04F": {
+    "label": "188a32",
+    "pos": "3x2",
+    "cmnt": "#188a32",
+    "cmd": "R=24&G=138&B=50"
+  },
+  "0xFF708F": {
+    "label": "007ec3",
+    "pos": "3x3",
+    "cmnt": "#007ec3",
+    "cmd": "R=0&G=126&B=195"
+  },
+  "0xFFF00F": {
+    "label": "Effet liste 1 (Flash)",
+    "pos": "3x4",
+    "cmnt": "Preset 1",
+    "cmd": "PL=1"
+  },
+  "0xFF08F7": {
+    "label": "da4211",
+    "pos": "4x1",
+    "cmnt": "#da4211",
+    "cmd": "R=218&G=66&B=17"
+  },
+  "0xFF8877": {
+    "label": "008dd2",
+    "pos": "4x2",
+    "cmnt": "#008dd2",
+    "cmd": "R=0&G=141&B=210"
+  },
+  "0xFF48B7": {
+    "label": "5b1a42",
+    "pos": "4x3",
+    "cmnt": "#5b1a42",
+    "cmd": "R=91&G=26&B=66"
+  },
+  "0xFFC837": {
+    "label": "Effet liste 2 (strobo)",
+    "pos": "4x4",
+    "cmnt": "Preset 2",
+    "cmd": "PL=2"
+  }
+  "0xFF28D7": {
+    "label": "f0a200",
+    "pos": "5x1",
+    "cmnt": "#f0a200",
+    "cmd": "R=240&G=62&B=0"
+  },
+  "0xFFA857": {
+    "label": "006999",
+    "pos": "5x2",
+    "cmnt": "#006999",
+    "cmd": "R=0&G=105&B=153"
+  },
+  "0xFF6897": {
+    "label": "5b1a42",
+    "pos": "5x3",
+    "cmnt": "#5b1a42",
+    "cmd": "R=208&G=5&B=110"
+  },
+  "0xFFE817": {
+    "label": "Smoth",
+    "pos": "5x4",
+    "cmnt": "Preset 3",
+    "cmd": "PL=3"
+  },
+  "0xFF18E7": {
+    "label": "f2c200",
+    "pos": "6x1",
+    "cmnt": "#f2c200",
+    "cmd": "R=242&G=194&B=0"
+  },
+  "0xFF9867": {
+    "label": "005278",
+    "pos": "6x2",
+    "cmnt": "#005278",
+    "cmd": "R=0&G=182&B=120"
+  },
+  "0xFF58A7": {
+    "label": "d72583",
+    "pos": "6x3",
+    "cmnt": "#d72583",
+    "cmd": "R=215&G=37&B=131"
+  },
+  "0xFFD827": {
+    "label": "Mode",
+    "pos": "6x4",
+    "cmnt": "Preset 4",
+    "cmd": "PL=4"
+  },
+}

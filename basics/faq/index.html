@@ -1,0 +1,4733 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="WLED Team">
+      
+      
+        <link rel="canonical" href="https://kno.wled.ge/basics/faq/">
+      
+      
+        <link rel="prev" href="../tutorials/">
+      
+      
+        <link rel="next" href="../../features/effects/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/ui/aircoookie/blurple.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>FAQ - WLED Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/global.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-QSVCRSVM18"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-QSVCRSVM18",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-QSVCRSVM18",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<p class="cx-announce">
+  <span class="md-announce">
+    <a href="https://discord.gg/QAh7wJHrRM">
+      Join us on <span class="twemoji discord"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg></span> <span><strong> Discord </strong></span> for support and updates!
+    </a>
+  </span>
+</p>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WLED Project" class="md-header__button md-logo" aria-label="WLED Project" data-md-component="logo">
+      
+  <img src="../../assets/images/ui/akemi/001_cheerful.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WLED Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="orange"  aria-label="Light Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="orange"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wled/WLED" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WLED
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+  Basics
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../features/effects/" class="md-tabs__link">
+          
+  
+  
+  Features
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../interfaces/dmx-output/" class="md-tabs__link">
+          
+  
+  
+  Interfaces
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../advanced/audio-reactive/" class="md-tabs__link">
+          
+  
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/contributors/" class="md-tabs__link">
+          
+  
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WLED Project" class="md-nav__button md-logo" aria-label="WLED Project" data-md-component="logo">
+      
+  <img src="../../assets/images/ui/akemi/001_cheerful.png" alt="logo">
+
+    </a>
+    WLED Project
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wled/WLED" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WLED
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring-guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiring Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../top5_mistakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Top 5 mistakes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compatibility
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatible-led-strips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LED strips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatible-controllers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controllers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatible-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatible-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-binary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install WLED Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install using ESP GUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-wled-flasher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install using WLED ESP Flasher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/compiling-wled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bundling-wled-with-custom-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundling WLED with custom hardware
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-question-or-solution-is-not-on-this-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My question or solution is not on this page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-binary-should-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What binary should I use?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ive-flashed-a-bin-but-i-get-no-response-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I've flashed a bin, but i get no response at all
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-issues_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#once-i-attach-leds-i-cant-connect-to-the-esp-anymore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Once I attach LEDs, I can't connect to the ESP anymore!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-have-entered-my-wifi-credentials-and-rebooted-but-i-can-not-connect-to-the-module-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I have entered my WiFi credentials and rebooted, but I can not connect to the module now!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-module-once-was-connected-but-i-can-no-longer-reach-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The module once was connected, but I can no longer reach it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wled-xxxlocal-address-mdns-does-not-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The wled-xxx.local address (mDNS) does not work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-it-safe-to-expose-wled-to-the-public-internet-to-control-the-lights-from-anywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Is it safe to expose WLED to the public internet to control the lights from anywhere?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-device-is-unresponsive-or-animations-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My device is unresponsive or animations lag!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#im-having-a-bootloop-leds-turn-on-every-5seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I'm having a bootloop! (LEDs turn on every ~5seconds)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#still-having-connection-issuesconnection-dropping-what-more-can-i-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Still having connection issues/connection dropping: what more can i check?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-am-running-realtime-eg-e131-and-not-all-of-my-leds-are-driven-fluently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I am running realtime (e.g. E1.31) and not all of my LEDs are driven fluently!
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilation-issues_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilation issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-compiling-wled-in-vs-code-using-platformio-i-get-an-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When compiling WLED in VS Code using platformio, I get an error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-issues_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LED issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-dont-turn-on-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs don't turn on at all.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-dont-get-as-bright-as-they-should" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs don't get as bright as they should!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-are-unable-to-be-set-into-a-consistent-solid-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs are unable to be set into a consistent solid color
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-i-select-green-the-leds-turn-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When I select green, the LEDs turn red!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-act-funny-and-flicker-randomly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs act funny and flicker randomly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="My LEDs act funny and flicker randomly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-all-my-leds-turn-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not all my LEDs turn on
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Not all my LEDs turn on">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-turn-off-the-bright-blue-onboard-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to turn off the bright blue onboard LED?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-gpio2d4-the-default-led-pin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is gpio2/D4 the default LED pin?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-can-i-only-use-500-leds-on-the-esp8266-gpio-pin-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why can I only use 500 LEDs on the ESP8266 GPIO pin 3?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-led-strip-hardware-is-supported-by-wled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What LED strip hardware is supported by WLED?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-questions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-does-the-name-wled-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does the name WLED mean?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-do-the-wled-version-names-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What do the WLED version names mean?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-the-brightness-sliders-in-the-web-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between the brightness sliders in the web UI?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-segments-are-gone-after-a-reboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Segments are gone after a reboot!
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bundling-wled-with-custom-hardware-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundling WLED with custom hardware (License)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bundling WLED with custom hardware (License)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-not-affected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is NOT affected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#may-i-sell-a-product-with-wled-pre-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        May I sell a product with WLED pre-installed?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="May I sell a product with WLED pre-installed?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-do-not-have-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you do NOT have to do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-must-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you must do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-same-license-copyleft-apply-to-my-hardware-design-schematics-pcb-layout-enclosure-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Does "same license" (copyleft) apply to my hardware design — schematics, PCB layout, enclosure, etc.?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-if-i-add-a-custom-usermod-or-new-feature-to-the-wled-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What if I add a custom usermod or new feature to the WLED firmware?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-question-or-solution-is-not-on-this-page_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My question or solution is not on this page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="My question or solution is not on this page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-out-the-wled-forum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check out the WLED forum!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-through-the-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Look through the Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-i-report-a-new-issue-what-do-i-need-to-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If I report a new Issue, what do i need to share?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/palettes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palettes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/segments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/multi-strip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-strip Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/relay-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relay Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/subpages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web GUI Sitemap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pin-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/cct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    White handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pixel-art-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pixel Art Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pixelforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixelForge (Image & GIF Tool)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/custom-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/particle-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/ethernet-lan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet (LAN) compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interfaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/dmx-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMX Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/dmx-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMX Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/e1.31-dmx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1.31 (DMX) / Art-Net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/http-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Request API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/infrared/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/json-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/mqtt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MQTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/philips-hue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philips Hue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/serial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/udp-notifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WLED UDP Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/udp-realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP Realtime / tpm2.net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Websocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDP Realtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/espnow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESPNow Remotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/audio-reactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Reactive WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/home-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/remote-access-ifttt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access / IFTTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/ota-lock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTA Lock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/access-over-internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing WLED over Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/wiring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiring Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/longdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Long Data Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/compiling-wled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling WLED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/custom-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/community-usermods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community Usermods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/esp32-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/bootloop-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot-loop Detection & Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/HUB75/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HUB75
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/2d-1d-Mixed-Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixed 2D and 1D Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/ddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual LEDs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/custom-ap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Access Point Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/pir-sensors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using PIR Sensors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/contributors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributors & Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/privacy-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upcoming Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/historical-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bundling-wled-with-custom-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundling WLED with custom hardware
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-question-or-solution-is-not-on-this-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My question or solution is not on this page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-binary-should-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What binary should I use?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ive-flashed-a-bin-but-i-get-no-response-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I've flashed a bin, but i get no response at all
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-issues_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#once-i-attach-leds-i-cant-connect-to-the-esp-anymore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Once I attach LEDs, I can't connect to the ESP anymore!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-have-entered-my-wifi-credentials-and-rebooted-but-i-can-not-connect-to-the-module-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I have entered my WiFi credentials and rebooted, but I can not connect to the module now!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-module-once-was-connected-but-i-can-no-longer-reach-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The module once was connected, but I can no longer reach it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wled-xxxlocal-address-mdns-does-not-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The wled-xxx.local address (mDNS) does not work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-it-safe-to-expose-wled-to-the-public-internet-to-control-the-lights-from-anywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Is it safe to expose WLED to the public internet to control the lights from anywhere?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-device-is-unresponsive-or-animations-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My device is unresponsive or animations lag!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#im-having-a-bootloop-leds-turn-on-every-5seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I'm having a bootloop! (LEDs turn on every ~5seconds)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#still-having-connection-issuesconnection-dropping-what-more-can-i-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Still having connection issues/connection dropping: what more can i check?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-am-running-realtime-eg-e131-and-not-all-of-my-leds-are-driven-fluently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I am running realtime (e.g. E1.31) and not all of my LEDs are driven fluently!
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilation-issues_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilation issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-compiling-wled-in-vs-code-using-platformio-i-get-an-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When compiling WLED in VS Code using platformio, I get an error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-issues_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LED issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LED issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-dont-turn-on-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs don't turn on at all.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-dont-get-as-bright-as-they-should" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs don't get as bright as they should!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-are-unable-to-be-set-into-a-consistent-solid-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs are unable to be set into a consistent solid color
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-i-select-green-the-leds-turn-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When I select green, the LEDs turn red!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-leds-act-funny-and-flicker-randomly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My LEDs act funny and flicker randomly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="My LEDs act funny and flicker randomly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-all-my-leds-turn-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not all my LEDs turn on
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Not all my LEDs turn on">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reason 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-turn-off-the-bright-blue-onboard-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to turn off the bright blue onboard LED?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-gpio2d4-the-default-led-pin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is gpio2/D4 the default LED pin?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-can-i-only-use-500-leds-on-the-esp8266-gpio-pin-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why can I only use 500 LEDs on the ESP8266 GPIO pin 3?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-led-strip-hardware-is-supported-by-wled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What LED strip hardware is supported by WLED?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-questions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-does-the-name-wled-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does the name WLED mean?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-do-the-wled-version-names-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What do the WLED version names mean?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-the-brightness-sliders-in-the-web-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between the brightness sliders in the web UI?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-segments-are-gone-after-a-reboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Segments are gone after a reboot!
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bundling-wled-with-custom-hardware-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundling WLED with custom hardware (License)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bundling WLED with custom hardware (License)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-not-affected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is NOT affected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#may-i-sell-a-product-with-wled-pre-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        May I sell a product with WLED pre-installed?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="May I sell a product with WLED pre-installed?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-do-not-have-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you do NOT have to do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-must-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you must do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-same-license-copyleft-apply-to-my-hardware-design-schematics-pcb-layout-enclosure-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Does "same license" (copyleft) apply to my hardware design — schematics, PCB layout, enclosure, etc.?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-if-i-add-a-custom-usermod-or-new-feature-to-the-wled-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What if I add a custom usermod or new feature to the WLED firmware?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-question-or-solution-is-not-on-this-page_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My question or solution is not on this page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="My question or solution is not on this page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-out-the-wled-forum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check out the WLED forum!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-through-the-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Look through the Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-i-report-a-new-issue-what-do-i-need-to-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If I report a new Issue, what do i need to share?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/wled/WLED-Docs/edit/main/docs/basics/faq.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>FAQ</h1>
+
+<div class="admonition tip">
+<p>This page will continually get updated with questions often asked.</p>
+</div>
+<h2 id="contents">Contents</h2>
+<h3 id="installation">Installation</h3>
+<ul>
+<li><a href="#what-binary-should-i-use">What binary should I use?</a></li>
+<li><a href="#ive-flashed-a-bin-but-i-get-no-response-at-all">I've flashed a bin, but i get no response at all</a></li>
+</ul>
+<h3 id="connection-issues">Connection issues</h3>
+<ul>
+<li><a href="#once-i-attach-leds-i-cant-connect-to-the-esp-anymore">Once I attach LEDs, I can't connect to the ESP anymore!</a></li>
+<li><a href="#i-have-entered-my-wifi-credentials-and-rebooted-but-i-can-not-connect-to-the-module-now">I have entered my WiFi credentials and rebooted, but I can not connect to the module now!</a></li>
+<li><a href="#the-module-once-was-connected-but-i-can-no-longer-reach-it">The module once was connected, but I can no longer reach it.</a></li>
+<li><a href="#the-wled-xxxlocal-address-mdns-does-not-work">The wled-xxx.local address (mDNS) does not work.</a></li>
+<li><a href="#is-it-safe-to-expose-wled-to-the-public-internet-to-control-the-lights-from-anywhere">Is it safe to expose WLED to the public internet to control the lights from anywhere?</a></li>
+<li><a href="#my-device-is-unresponsive-or-animations-lag">My device is unresponsive or animations lag!</a></li>
+<li><a href="#im-having-a-bootloop-leds-turn-on-every-5seconds">I'm having a bootloop! (LEDs turn on every ~5seconds)</a></li>
+<li><a href="#i-am-running-realtime-eg-e131-and-not-all-of-my-leds-are-driven-fluently">I am running realtime (e.g. E1.31) and not all of my LEDs are driven fluently!</a></li>
+<li><a href="#still-having-connection-issuesconnection-dropping-what-more-can-i-check">Still having connection issues/connection dropping: what more can i check?</a></li>
+</ul>
+<h3 id="compilation-issues">Compilation issues</h3>
+<ul>
+<li><a href="#when-compiling-wled-in-vs-code-using-platformio-i-get-an-error">When compiling WLED in VS Code using platformio, I get an error.</a></li>
+</ul>
+<h3 id="led-issues">LED issues</h3>
+<ul>
+<li><a href="#my-leds-dont-turn-on-at-all">My LEDs don't turn on at all.</a></li>
+<li><a href="#my-leds-dont-get-as-bright-as-they-should">My LEDs don't get as bright as they should!</a></li>
+<li><a href="#my-leds-are-unable-to-be-set-into-a-consistent-solid-color">My LEDs are unable to be set into a consistent solid color.</a></li>
+<li><a href="#when-i-select-green-the-leds-turn-red">When I select green, the LEDs turn red!</a></li>
+<li><a href="#my-leds-act-funny-and-flicker-randomly">My LEDs act funny and flicker randomly.</a></li>
+<li><a href="#not-all-my-leds-turn-on">Not all my LEDs turn on.</a></li>
+<li><a href="#how-to-turn-off-the-bright-blue-onboard-led">How to turn off the bright blue onboard LED?</a></li>
+<li><a href="#why-is-gpio2d4-the-default-led-pin">Why is gpio2/D4 the default LED pin?</a></li>
+<li><a href="#why-can-i-only-use-500-leds-on-the-esp8266-gpio-pin-3">Why can I only use 500 LEDs on the ESP8266 GPIO pin 3?</a></li>
+<li><a href="#what-led-strip-hardware-is-supported-by-wled">What LED strip hardware is supported by WLED?</a></li>
+</ul>
+<h3 id="general-questions">General questions</h3>
+<ul>
+<li><a href="#what-does-the-name-wled-mean">What does the name WLED mean?</a></li>
+<li><a href="#what-do-the-wled-version-names-mean">What do the WLED version names mean?</a></li>
+<li><a href="#what-is-the-difference-between-the-brightness-sliders-in-the-web-ui">What is the difference between the brightness sliders in the web UI?</a></li>
+<li><a href="#my-segments-are-gone-after-a-reboot">My Segments are gone after a reboot!</a></li>
+</ul>
+<h3 id="bundling-wled-with-custom-hardware">Bundling WLED with custom hardware</h3>
+<ul>
+<li><a href="#bundling-wled-with-custom-hardware-license">May I sell a product with WLED pre-installed?</a></li>
+<li><a href="#does-same-license-copyleft-apply-to-my-hardware-design-schematics-pcb-layout-enclosure-etc">Does "same license" (copyleft) apply to my hardware design?</a></li>
+<li><a href="#what-if-i-add-a-custom-usermod-or-new-feature-to-the-wled-firmware">What if I add a custom usermod or new feature to the WLED firmware?</a></li>
+</ul>
+<h3 id="my-question-or-solution-is-not-on-this-page">My question or solution is not on this page</h3>
+<ul>
+<li><a href="https://wled.discourse.group/">Check out the WLED forum!</a></li>
+<li><a href="#look-through-the-issues">Look through the Issues</a></li>
+<li><a href="#if-i-report-a-new-issue-what-do-i-need-to-share">If I report a new Issue, what do i need to share?</a></li>
+</ul>
+<h2 id="installation_1">Installation</h2>
+<h3 id="what-binary-should-i-use">What binary should I use?</h3>
+<p>Please see <a href="/basics/install-binary#what-binary-should-i-use">this page</a>.</p>
+<h3 id="ive-flashed-a-bin-but-i-get-no-response-at-all">I've flashed a bin, but i get no response at all</h3>
+<p>Some users report first erasing the flash (yes, even on a new device) sometimes helps .</p>
+<h2 id="connection-issues_1">Connection issues</h2>
+<h3 id="once-i-attach-leds-i-cant-connect-to-the-esp-anymore">Once I attach LEDs, I can't connect to the ESP anymore!</h3>
+<p>The gpio2/D4 pin needs to be high (pullup) at powerup time for the controller to boot successfully.
+If you accidentally connected the strip the wrong way (if it has arrows printed on, make sure they face away from the pin, otherwise pay attention to the DIN printing). Most strips have the 3-pin male JST connector with 3 holes on the input side. Some users have reported troubles booting even with the direction being correct. In that case, please try adding a 3.3 or 4.7kOhms resistor between the data pin and 3v3 pin!</p>
+<h3 id="i-have-entered-my-wifi-credentials-and-rebooted-but-i-can-not-connect-to-the-module-now">I have entered my WiFi credentials and rebooted, but I can not connect to the module now!</h3>
+<p>If you did not enter a static IP, the module will automatically obtain a dynamic IP from the router.
+You can check it in the router configuration or in the settings page, if the Access Point is still enabled.
+An easier way is to use the WLED app, for <a href="https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid">Android</a> or <a href="https://apps.apple.com/us/app/wled-official-app/id6446207239">iOS</a>, which features automatic discovery!</p>
+<h3 id="the-module-once-was-connected-but-i-can-no-longer-reach-it">The module once was connected, but I can no longer reach it</h3>
+<p>First, make sure you can reach the connected WiFi yourself (with another device).
+See if you can connect to the Access Point, then go to <strong>4.3.2.1/reset</strong>.
+Else, power-cycle the module manually.</p>
+<h3 id="the-wled-xxxlocal-address-mdns-does-not-work">The wled-xxx.local address (mDNS) does not work</h3>
+<p>This only works with Apple devices out of the box. You can install Bonjour to make it work in Windows.
+For Android there is no convenient way to achieve it, though you can use apps like "Bonjour search" to find the IP.
+It is highly recommended that you install the WLED app, for <a href="https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid">Android</a> or <a href="https://apps.apple.com/us/app/wled-official-app/id6446207239">iOS</a>, which makes automatic discovery easy!</p>
+<h3 id="is-it-safe-to-expose-wled-to-the-public-internet-to-control-the-lights-from-anywhere">Is it safe to expose WLED to the public internet to control the lights from anywhere?</h3>
+<p>See <a href="/advanced/access-over-internet">Accessing WLED over Internet</a> page.</p>
+<h3 id="my-device-is-unresponsive-or-animations-lag">My device is unresponsive or animations lag!</h3>
+<p>You are probably using too many sync interfaces. Please only enable one of Hue sync or MQTT at a time.
+For optimal performance, use two devices and sync them via the UDP notifier.
+Maybe you are also using a very high amount of LEDs. 750 is the recommended maximum. If using E1.31 feature on an ESP32, try "Disabling WiFi Sleep" in the WiFi setup section to reduce lag/stuttering of visual effects.</p>
+<h3 id="im-having-a-bootloop-leds-turn-on-every-5seconds">I'm having a bootloop! (LEDs turn on every ~5seconds)</h3>
+<p>Please open an issue or message me on Discord to resolve your issue. Most of the time, wiping the flash (Arduino IDE compile setting: Erase flash -&gt; All flash contents) resolves the issue. Unfortunately it will also reset all your settings and presets. You can also try if using a different ESP resolves the issue. If you compiled with lwip version 2, try version 1.4 Higher Bandwidth instead!</p>
+<h3 id="still-having-connection-issuesconnection-dropping-what-more-can-i-check">Still having connection issues/connection dropping: what more can i check?</h3>
+<p>Try disabling "Emulate Alexa device" in Sync settings before entering your home Wifi credentials.
+Check whether mDNS is on or off and toggle it: does it make a difference? Same for 'NTP'. Same for 'Sync Send'. Check your router: is your 2.4Ghz on band 1: if not, try it please. If you have the possibility to try another 8266, please try it.</p>
+<h3 id="i-am-running-realtime-eg-e131-and-not-all-of-my-leds-are-driven-fluently">I am running realtime (e.g. E1.31) and not all of my LEDs are driven fluently!</h3>
+<p>Realtime effect streaming uses a rather large bandwidth as data is transmitted uncompressed. For example, to drive 1000 LEDs at 30 fps, you will need a data rate of 720 kBit/s, which is difficult to achieve with most cheap ESP boards over WiFi.
+Even if you split the total amount of LEDs across multiple controllers, your WiFi network could become the limiting factor quickly.
+The best way to ensure a low-latency, reliable, fluid stream when using large quantities of LEDs is to invest in a wired Ethernet ESP32 board like QuinLED-Dig boards with ethernet or the Olimex ESP32-POE.</p>
+<p>There is a 9 DMX universe limit by default in WLED. You can raise it in line 240 of const.h (E131_MAX_UNIVERSE_COUNT 9) and compile your own binary, but the performance of 2000 LEDs over WiFi will likely not be good unless you use an Ethernet enabled board.</p>
+<p>If Ethernet is not an option, decrease your LED count as far as possible, lower the frame rate in the sending software and make sure the WiFi signal reception of the board is good. Even without Ethernet, a board with an external antenna is significantly better than a PCB antenna board.</p>
+<p>Furthermore I suggest using the DDP protocol if available in your sender software (available in xLights). DDP has a smaller packet header and because of the reduced overhead the fluidity of your animations will be a bit better.</p>
+<h2 id="compilation-issues_1">Compilation issues</h2>
+<h3 id="when-compiling-wled-in-vs-code-using-platformio-i-get-an-error">When compiling WLED in VS Code using platformio, I get an error</h3>
+<p>Try building again. If the error says the <code>wled00.ino.cpp</code> or <code>.sconsign27.db.dblite</code> file could not be found, this often helps.
+You can also try <a href="https://github.com/wled/WLED/issues/361#issuecomment-557818554">this</a>!</p>
+<h2 id="led-issues_1">LED issues</h2>
+<h3 id="my-leds-dont-turn-on-at-all">My LEDs don't turn on at all.</h3>
+<p>Please make sure you have connected the strip to GPIO2 and it is sufficiently powered.</p>
+<h3 id="my-leds-dont-get-as-bright-as-they-should">My LEDs don't get as bright as they should!</h3>
+<p>If the brightness slider in the UI is already at maximum, try checking the auto brightness limiter in the LED settings.
+Set the milliamp limit to slightly below the rating of your power supply.
+If the LEDs are still too dim or change color towards the end of the strip, there may be a significant voltage drop. Try injecting 5v power at the end or middle of the strip with some appropriate cabling.</p>
+<h3 id="my-leds-are-unable-to-be-set-into-a-consistent-solid-color">My LEDs are unable to be set into a consistent solid color</h3>
+<p>If the LEDs should be individually addressable, like the SK6812, but instead they only behave as either RED,GREEN OR BlUE pixels (in a row).
+You might not have enabled (settings -&gt; led preferences) "LEDs are 4-channel type (RGBW)"  for an RGBW/RGBWW/RGBNW strip.
+This behaviour is accompanied by WLED being unable to address all LEDs, if you specify the exact amount of LEDs in the strip.</p>
+<h3 id="when-i-select-green-the-leds-turn-red">When I select green, the LEDs turn red!</h3>
+<p>Depending on the type of LEDs used, Red and Green or other colors might be reversed. You can change the order in LED settings.
+WS2812B and most related chips use GRB, WS2811 uses RGB in most cases.</p>
+<h3 id="my-leds-act-funny-and-flicker-randomly">My LEDs act funny and flicker randomly</h3>
+<h4 id="reason-1">Reason 1</h4>
+<p>If you use an external 5V power supply for your LEDs, please connect the GND of power supply, LEDs, and ESP.
+Otherwise, the LEDs can't read the data signal from the ESP.</p>
+<h4 id="reason-2">Reason 2</h4>
+<p>The ESP8266 is a 3.3V microcontroller while the WS2812B LED uses 5V.
+I have personally got away with this in most cases, but you should technically add a level shifter.
+A string of WS2811 did not work in one case (pure static white).
+A possible workaround is chaining a single WS2812B pixel in front and checking "Skip first LED" in the settings.
+My recommended levelshifter is the SN74AHCT125N, also used in the QuinLED Dig-Uno board.
+If you don't have a level shifter, you can use this creative <a href="https://hackaday.com/2017/01/20/cheating-at-5v-ws2812-control-to-use-a-3-3v-data-line/">workaround</a>.</p>
+<h4 id="reason-3">Reason 3</h4>
+<p>Your data line can only be <a href="https://youtu.be/ZFO_QOBG9Bs?t=657">so long</a>. Try out with less or thicker wire between your data pin on your controller and the LED strip, or add (see video) some voltage booster (which can make even 40m data wire length work ;-)).</p>
+<h4 id="reason-4">Reason 4</h4>
+<p>If they don't flicker, but display funny colors, try switching between RGB/RGBW modes in LED settings.</p>
+<h3 id="not-all-my-leds-turn-on">Not all my LEDs turn on</h3>
+<h4 id="reason-1_1">Reason 1</h4>
+<p>By default the LED count is set to 30.
+If you have more and can power them, go to LED settings and increase the LED count!
+Please also enter the milliamp rating of your 5v power supply for optimal brightness in the field below it.
+Do not increase the mA number if you power LEDs directly from the 5V pin of the ESP!</p>
+<p>See <a href="/features/multi-strip">Multi-strip Support</a> for maximum recommended LED counts.</p>
+<h4 id="reason-2_1">Reason 2</h4>
+<p>An LED in your chain may be broken. Try another strip or removing the first LED that doesn't light up. Make sure you are in solid effect mode and the LED count is set high enough first!</p>
+<h3 id="how-to-turn-off-the-bright-blue-onboard-led">How to turn off the bright blue onboard LED?</h3>
+<p>On ESP8266, this LED can be very distracting. Unfortunately it can't easily be disabled as it shares the gpio2/D4 pin with the LED output.<br />
+It is turned off together with your LEDs (unless they require <code>Off Refresh</code> to be active)<br />
+Currently there are 3 workarounds:</p>
+<ul>
+<li>Cover the LED</li>
+<li>Remove the LED permanently (desolder or apply pressure with e.g. a flathead screwdriver)</li>
+<li>Use a different <code>LEDPIN</code>, although the default is recommended for stable operation</li>
+</ul>
+<h3 id="why-is-gpio2d4-the-default-led-pin">Why is gpio2/D4 the default LED pin?</h3>
+<p>Although pins D1 and D2 are usually regarded the best GPIO pins to use in an ESP8266 project, D4 is the default in WLED, despite having two major and one minor drawback. The major drawbacks are the permanently lit blue onboard LEDs and the fact that the pin level needs to be high (pullup) at powerup or the controller will not boot. A minor drawback is that the <code>Serial1</code> bus can not be used, but this is irrelevant in most cases, as the USB/serial converter is connected to the other <code>Serial</code> interface. The reason for using this pin is that it uses UART hardware driving, which increases stability and decreases CPU overhead especially with larger amounts of pixels.</p>
+<h3 id="why-can-i-only-use-500-leds-on-the-esp8266-gpio-pin-3">Why can I only use 500 LEDs on the ESP8266 GPIO pin 3?</h3>
+<p>The problem is the DMA hardware driving method used on (just) that pin. It works well, but uses <strong>4x (!)</strong> as much RAM memory as the UART hardware driving on pin 2 and the bitbang driver on all other pins.</p>
+<h3 id="what-led-strip-hardware-is-supported-by-wled">What LED strip hardware is supported by WLED?</h3>
+<p>The compatible chipsets for the color-coding are</p>
+<ul>
+<li>
+<p>1 pin:</p>
+</li>
+<li>
+<p>WS2812B (5V)</p>
+</li>
+<li>WS2811 (12V power, with 5V signal)</li>
+<li>WS2813 (WS2812 with redundant data on 2 wires DI and BI, to resist LEDs failure)</li>
+<li>WS2815 (like WS2813 but 12V), send 5V signal on BI.</li>
+<li>BTF2815 (cheaper 12V)</li>
+<li>SK6813 (redundant like WS2813)</li>
+<li>SK6812 (can support up to 4 colors, commonly GRBW)</li>
+<li>
+<p>SK6805 (3 colors)</p>
+</li>
+<li>
+<p>2 pins (clock CI and data DI) chips:</p>
+</li>
+<li>
+<p>APA102</p>
+</li>
+<li>SK9822</li>
+<li>WS2801 (uses gpio0 and 2)</li>
+<li>LPD8806</li>
+</ul>
+<p>Beside the <strong>digital addressable</strong> LED strips the good old <strong>analog</strong> LED strips are supported, too:</p>
+<ul>
+<li>4 pins: RGB</li>
+<li>5 pins: RGBW / RGBWW / RGBCW / RGBNW (RGB + one white channel)</li>
+<li>6 pins: RGBCT (RGB + 2 white channels) <em>Note: Support is only for Alexa.</em></li>
+</ul>
+<h2 id="general-questions_1">General Questions</h2>
+<h3 id="what-does-the-name-wled-mean">What does the name WLED mean?</h3>
+<p>WiFi Lighting Effects Driver. Also it has LED in the name and is similar to the official term for WiFi, WLAN!</p>
+<h3 id="what-do-the-wled-version-names-mean">What do the WLED version names mean?</h3>
+<p>WLED version names are Japanese! Here is a nice list of their meanings:</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Name</th>
+<th>Kanji</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.10</td>
+<td>Namigai</td>
+<td>浪貝</td>
+<td>Geoduck (don't google it!)</td>
+</tr>
+<tr>
+<td>0.11.0</td>
+<td>Mirai</td>
+<td>未来</td>
+<td>Future</td>
+</tr>
+<tr>
+<td>0.11.1</td>
+<td>Fumikiri</td>
+<td>踏切</td>
+<td>Railroad crossing</td>
+</tr>
+<tr>
+<td>0.12</td>
+<td>Hikari</td>
+<td>光</td>
+<td>Light</td>
+</tr>
+<tr>
+<td>0.13</td>
+<td>Toki</td>
+<td>時</td>
+<td>Time</td>
+</tr>
+<tr>
+<td>0.14</td>
+<td>Hoshi</td>
+<td>星</td>
+<td>Star</td>
+</tr>
+<tr>
+<td>0.15</td>
+<td>Kōsen</td>
+<td>光線</td>
+<td>Ray of light</td>
+</tr>
+<tr>
+<td>16.0</td>
+<td>Niji</td>
+<td>虹</td>
+<td>Rainbow</td>
+</tr>
+<tr>
+<td>17.0</td>
+<td>Kagayaki</td>
+<td>輝き</td>
+<td>Brilliance</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Kuuhaku</td>
+<td>空白</td>
+<td>Blank</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-is-the-difference-between-the-brightness-sliders-in-the-web-ui">What is the difference between the brightness sliders in the web UI?</h3>
+<p>There are three brightness slider types in the web UI. The white one in the <strong>top bar</strong> is the <strong>master brightness</strong> - it scales down every single color and all effects, palettes and segments by the same factor.  </p>
+<p>In contrast, the slider <strong>underneath the color wheel only</strong> applies to the <strong>currently selected color</strong> and will not affect the brightness of other colors or Palettes. It is recommended to use this slider only if you like a darker version of a color alongside other, brighter colors. It should not be used to control the overall brightness, so it is preferable to leave it on maximum and instead use the master brightness control.  </p>
+<p>There is a third brightness slider in each Segment panel. This serves the same purpose as master brightness, but limited to that segment. This does not override the master brightness. Instead, it applies additional downscaling. (If you set both Master and Segment brightness sliders to 50%, the resulting brightness is 25%)</p>
+<h3 id="my-segments-are-gone-after-a-reboot">My Segments are gone after a reboot!</h3>
+<p>Segments are non-persistent by default. If you want to load your preset at every startup, just do the following:</p>
+<ul>
+<li>Set your segments up as desired</li>
+<li>Go into the Presets tab in the web UI, click the save checkbox and save the config to a new preset. Remember the preset slot number.</li>
+<li>In LED settings, set <code>Boot Preset</code> to the preset slot number from the previous step.</li>
+</ul>
+<p>This will be improved in a future release, so that you will be able to save multiple segment configurations!</p>
+<h2 id="bundling-wled-with-custom-hardware-license">Bundling WLED with custom hardware (License)</h2>
+<div class="admonition warning">
+<p class="admonition-title">Consult a Lawyer</p>
+<p>This FAQ provides a plain-language summary to help you understand the practical intent of the license. It is <em>not</em> legal advice.
+If you are building a commercial product, consulting a lawyer familiar with open-source licensing is always a good idea.</p>
+</div>
+<p>WLED is licensed under the European Union Public Licence v1.2 (EUPL-1.2), which is a copyleft ("share-alike") software/firmware license.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you must do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use WLED <strong>privately</strong> (change code, flash your own device, never distribute)</td>
+<td>Private tinkering - do whatever you like</td>
+</tr>
+<tr>
+<td>Selling device with unmodified WLED</td>
+<td>Keep copyright notice + license text; provide link to source code</td>
+</tr>
+<tr>
+<td>Selling device with vanilla WLED + closed-source additions as <em>separate</em> software</td>
+<td>Your separate software is generally not affected, but the WLED parts must remain open</td>
+</tr>
+<tr>
+<td>Selling device with modified WLED</td>
+<td>All of the above plus publish your modifications as open source (EUPL-1.2 or compatible)</td>
+</tr>
+<tr>
+<td>Using WLED's name/logo in marketing</td>
+<td>Be careful — the license does not grant trademark rights</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-is-not-affected">What is NOT affected</h3>
+<ul>
+<li><strong>Hardware</strong> — your schematics, PCB layouts, enclosure designs, and BOM are entirely your own. EUPL is a software license; it has no legal reach over hardware. (This is consistent with all mainstream copyleft licenses: GPL, LGPL, MPL, etc.)</li>
+<li><strong>Independent software on the same device</strong> — code that runs separately and interacts with WLED only via its documented network interfaces/APIs is generally not considered a derivative work.</li>
+<li><strong>Changes you keep private</strong> — if you write a usermod but <em>never</em> distribute the firmware, you have no disclosure obligation. If it works for you, still consider making a PR and share your changes with the community.</li>
+</ul>
+<h3 id="may-i-sell-a-product-with-wled-pre-installed">May I sell a product with WLED pre-installed?</h3>
+<p>Yes, absolutely! The EUPL-1.2 license explicitly allows commercial use, including selling products with WLED pre-installed. Many companies and individuals do exactly this.</p>
+<h4 id="what-you-do-not-have-to-do">What you do NOT have to do</h4>
+<ul>
+<li>No permission is needed from the WLED authors to sell your device.</li>
+<li>No need to open-source runtime configuration files (e.g., presets.json, cfg.json) — only actual source code modifications to the firmware, including custom build environments to rebuild the firmware for your device (platformio.ini or platformio_override.ini).</li>
+<li>No need to publish your hardware design, schematic, or PCB layout (the license only covers the software/firmware).</li>
+</ul>
+<h4 id="what-you-must-do">What you must do</h4>
+<ol>
+<li><strong>Provide the copyright notice and license text</strong>: You must include the original WLED copyright notice and a copy of the EUPL-1.2 license with every device or product you sell. In practice, this usually means:<ul>
+<li>Making it accessible via the device's web interface (WLED already shows this in its <em>Info</em> page), or</li>
+<li>Including it in the documentation (printed or digital), or</li>
+<li>Referring customers to a URL where the license and attribution are clearly published.</li>
+</ul>
+</li>
+<li><strong>Provide (or link to) the source code</strong>: You must make the source code of WLED (in the <em>exact</em> version you're shipping) available to your customers — either by including it or by providing a clearly visible link to a public repository (e.g., the official WLED GitHub page or your own fork). This link must <strong>remain working</strong> for as long as you distribute the product.</li>
+<li><strong>If you modified WLED: share your changes</strong>. You cannot keep your source code modifications private or proprietary.</li>
+<li><strong>Do not remove or hide credits</strong>: Do not strip out the "About WLED" or "Info" pages, the copyright notice, or any attribution to the original authors.</li>
+<li><strong>No extra restrictions on your customers</strong>: You cannot add license terms that take away the rights the EUPL gives your customers. For example, you cannot tell your customers "you may not modify this firmware" — the EUPL already grants them that right.</li>
+</ol>
+<h3 id="does-same-license-copyleft-apply-to-my-hardware-design-schematics-pcb-layout-enclosure-etc">Does "same license" (copyleft) apply to my hardware design — schematics, PCB layout, enclosure, etc.?</h3>
+<p>No. The EUPL-1.2 is a software license. Its copyleft clause only covers the software (the firmware source code and its derivatives). It has no effect on your hardware.</p>
+<p>Your schematics, PCB layout files, bill of materials, enclosure designs, and any other hardware-related work are entirely your own. You can keep them proprietary, patent them, or license them however you like. The EUPL does not require you to share or open-source any of that.</p>
+<h3 id="what-if-i-add-a-custom-usermod-or-new-feature-to-the-wled-firmware">What if I add a custom usermod or new feature to the WLED firmware?</h3>
+<p>If you flash a modified version of WLED onto your devices <em>and</em> distribute them, you must publish your additions/changes as open source under EUPL-1.2 (or a compatible license such as GPL v2/v3, LGPL, MPL 2.0, etc.). You can publish your own fork on GitHub or any other public platform. You cannot keep it private or sell it as proprietary software.</p>
+<h2 id="my-question-or-solution-is-not-on-this-page_1">My question or solution is not on this page</h2>
+<h3 id="check-out-the-wled-forum">Check out the WLED forum!</h3>
+<p>You can check out and use <a href="https://wled.discourse.group">the WLED Discourse forum</a>.</p>
+<h3 id="look-through-the-issues">Look through the Issues</h3>
+<p>Maybe someone already reported your issue, so everybody supplying support would be grateful if you take some time to <a href="https://github.com/wled/WLED/issues">search through the existing issues</a>.</p>
+<h3 id="if-i-report-a-new-issue-what-do-i-need-to-share">If I report a new Issue, what do i need to share?</h3>
+<p>When you create a ticket, please share:</p>
+<ul>
+<li>exact controller, maybe a link to the shop you bought it from</li>
+<li>LED-strip type and amount of LEDs</li>
+<li>Specifications of your power supply (max. current/voltage)</li>
+<li>how you wired up all components (a diagram and/or picture often helps)</li>
+<li>the BIN-file you tried to flash (version and file name) or your IDE version if compiling from source</li>
+<li>Have you followed the quick start and compile settings at <a href="https://docs.wled.me">https://docs.wled.me</a>?</li>
+<li>Has it worked before?</li>
+<li>Does it works without any LEDs connected? (for instance the controller just connected to your PC over USB)</li>
+<li>Are you using/trying to use DHCP or static IP?</li>
+<li>Did you try to use a mobile hotspot instead of your WLAN AP/home wifi?</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016-2026 Christian Schwinne, Contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/QAh7wJHrRM" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://wled.discourse.group/" target="_blank" rel="noopener" title="Forum" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9S348.6 32 225.9 32M224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://gitpod.io/#https://github.com/Aircoookie/WLED" target="_blank" rel="noopener" title="Gitpod" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/wled_project/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/results?search_query=WLED" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://wled.teemill.com/" target="_blank" rel="noopener" title="wled.teemill.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M320.2 112c44.2 0 80-35.8 80-80h53.5c17 0 33.3 6.7 45.3 18.7l118.6 118.7c12.5 12.5 12.5 32.8 0 45.3l-50.7 50.7c-12.5 12.5-32.8 12.5-45.3 0L480.2 224v224c0 35.3-28.7 64-64 64h-192c-35.3 0-64-28.7-64-64V224l-41.4 41.4c-12.5 12.5-32.8 12.5-45.3 0l-50.6-50.8c-12.5-12.5-12.5-32.8 0-45.3L141.5 50.7c12-12 28.3-18.7 45.3-18.7h53.5c0 44.2 35.8 80 80 80z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://paypal.me/aircoookie/" target="_blank" rel="noopener" title="paypal.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="m241 87.1 15 20.7 15-20.7C296 52.5 336.2 32 378.9 32 452.4 32 512 91.6 512 165.1v2.6c0 112.2-139.9 242.5-212.9 298.2-12.4 9.4-27.6 14.1-43.1 14.1s-30.8-4.6-43.1-14.1C139.9 410.2 0 279.9 0 167.7v-2.6C0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.code.annotate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/js/newtab.js"></script>
+      
+    
+  </body>
+</html>
