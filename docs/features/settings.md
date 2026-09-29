@@ -111,7 +111,7 @@ CCT blending | -100–100 % | 0 | Positive values blend the warm and cold white 
 
 The lower part of the page configures the other hardware attached to your controller. Each is covered on its own page:
 
-- **Buttons**: add button GPIOs and pick their type (pushbutton, switch, PIR sensor, touch, analog). What a button does is set up under [Macros](/features/macros).
+- **Buttons**: add button GPIOs and pick their type (pushbutton, switch, PIR sensor, touch, analog). What a button does is set up under [Macros](/features/macros). To change debounce, long press and double press times, tick **Show Advanced Button Settings**, see [Button Timing](/features/macros#button-timing).
 - **IR Remote**: the IR receiver GPIO and remote type, see [Infrared](/interfaces/infrared).
 - **Relay**: the relay GPIO and its invert / open drain options, see [Control a Relay](/features/relay-control).
 
