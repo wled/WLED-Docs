@@ -119,15 +119,19 @@ Open **Config** > **LED Preferences**, go to **Buttons** and tick **Show Advance
 | Setting name | Value Range | Default | Description |
 | --- | --- | --- | --- |
 | Debounce time | 0–100 ms | 50 | Ignores button input shorter than this. This filters out contact noise |
-| Long press time | 200–4000 ms | 600 | How long you hold a button before the long press action runs |
-| Double press time | 100–1000 ms | 350 | The longest gap between two presses that still counts as a double press |
+| Long-press time | 200–4000 ms | 600 | How long you hold a button before the long-press action runs |
+| Double-press time | 100–1000 ms | 350 | The longest gap between two presses that still counts as a double press |
+| Long-press repeat delay | 100–4000 ms | 600 | The pause after the first long-press action before it starts to repeat |
+| Long-press repeat interval | 100–4000 ms | 200 | The time between repeats while you keep holding the button |
 
-On buttons with a double press action, WLED waits for the double press time before it runs a short press. A longer double press time makes short presses feel slower.
+On buttons with a double-press action, WLED waits for the double-press time before it runs a short press. A longer double-press time makes short presses feel slower.
 
-If you keep holding a button (except button 0), the long press action repeats. It runs once after the long press time, then again after a 0.6 second pause, and then every 0.2 seconds. This is how holding a button dims the lights.
+If you keep holding a button (except button 0), the long-press action repeats. It runs once after the long-press time, again after the repeat delay, and then once every repeat interval. With the defaults, that's a 0.6 second pause, then a repeat every 0.2 seconds. This is how holding a button dims the lights, and how a long-press preset can step through a playlist.
+
+The repeat delay can't be shorter than the repeat interval. If you try, the settings page marks the delay in red and won't save until you fix it.
 
 !!! info
-    The long press time doesn't change button 0's hold times. Opening the access point still takes 5 seconds, and a factory reset still takes 10 seconds.
+    The long-press time doesn't change button 0's hold times. Opening the access point still takes 5 seconds, and a factory reset still takes 10 seconds.
 
 ### Example
 
