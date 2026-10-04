@@ -1,12 +1,12 @@
-# Thanks for Improving the WLED Docs!
+# Thanks for improving the WLED Docs!
 
 This is the official [WLED](https://github.com/wled/WLED) user documentation, published at [kno.wled.ge](https://kno.wled.ge) with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Every fix and addition helps other users, so thank you! 😊
 
-## The Easiest Way to Start
+## The easiest way to start
 
 Click the pencil icon at the top right of any page on [kno.wled.ge](https://kno.wled.ge), or open a Markdown file here on GitHub and click the pencil. Make your edit, choose "Commit changes", and GitHub creates a pull request from your fork automatically.
 
-## Making a Bigger Change
+## Making a bigger change
 
 For larger edits, work from a branch in your own fork rather than your `main` branch. That way you can keep updating the PR while `main` stays clean.
 
@@ -17,12 +17,14 @@ For larger edits, work from a branch in your own fork rather than your `main` br
 
 Please keep each PR focused on one topic, and add a short description of what you changed and why. No need to write an essay.
 
+When you open the PR, GitHub pre-fills the description with our template, a what/why prompt and a short checklist. Fill it in rather than deleting it.
+
 ## Writing Style
 
 We're harmonizing the docs for readability, so please follow the conventions in [AGENTS.md](AGENTS.md) (our contributor and AI-agent instructions). The short version:
 
 - Write in **English**, in an informal, friendly tone. Contractions are welcome.
-- Use **Title Case** for the page title and section headings.
+- Use **Title Case** for short page title and section headings, **Sentence case** for longer titles.
 - Keep sentences short and simple, so non-native English speakers can follow easily.
 - Be concise: drop filler like "it is worth noting that" or "simply".
 - Prefer plain words: "use" over "leverage", "feature" over "functionality".
@@ -33,7 +35,7 @@ We're harmonizing the docs for readability, so please follow the conventions in 
 
 The full [PR review checklist](AGENTS.md#pr-review-checklist) in AGENTS.md is what maintainers check against.
 
-## Adding a New Page
+## Adding a new page
 
 A new page won't appear in the site until it's registered in the `nav:` section of `mkdocs.yml`. See the [README](README.md) for a step-by-step example. Indentation in `mkdocs.yml` matters.
 
