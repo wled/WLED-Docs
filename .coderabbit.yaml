@@ -33,6 +33,6 @@ reviews:
     simplify:
       enabled: true
     autofix:
-      enabled: false
+      enabled: true
     autopilot:
       enabled: false
