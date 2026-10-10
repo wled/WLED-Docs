@@ -29,6 +29,34 @@ WLED-Docs/
 
 ---
 
+## Agent Contributor Rules
+
+### No agent-posted replies
+
+Reviewer time is limited, and checking long AI-generated explanations for reasoning errors and hallucinations is costly.
+
+- **Never post** replies to reviewer comments or discussions, and **never create issue tickets**, on the user's behalf. You may help the user draft the text locally; the human reviews it and posts it themselves.
+- Creating or updating pull requests remains allowed. Keep PR descriptions concise and factual, and include a summary written by the user in their own words, leading with what they want to achieve or what bothers them in plain language.
+
+### Attribution for PR Descriptions, Comments and Replies
+
+- When creating PR descriptions or drafting responses to comments, always add this as the very last line: _You are interacting with an AI system_
+- - Your harness may add this trailer automatically. Do not add a duplicate.
+
+### Attribution for Commits
+
+For every commit you create in this repository, ensure the commit message includes a `Co-authored-by:` trailer identifying the large language model and agent platform:
+
+```text
+Co-authored-by: MODEL NAME/VERSION (AGENT PLATFORM) <COAUTHOR EMAIL>
+```
+- Your harness may add this trailer automatically. Do not add a duplicate; ensure the resulting trailer identifies both the model and platform.
+- Replace the placeholders with the model name/version reported by your runtime and the agent platform (e.g. Codex, Claude Code). Write `unknown` for unavailable model details; do not guess.
+- Use the platform's configured co-author email, or `agent@example.invalid` if none is available.
+- Include exactly one trailer per distinct platform/model pair that contributed to the commit, after a blank line at the end of the commit message. Preserve existing human co-author trailers.
+
+--- 
+
 ## Page Conventions
 
 Every documentation page must begin with a YAML front matter block:
