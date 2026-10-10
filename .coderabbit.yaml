@@ -1,6 +1,9 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 
 language: en-US
+inheritance: true
+early_access: false
+enable_free_tier: true
 
 reviews:
   # generic review setting, see https://docs.coderabbit.ai/reference/configuration#reference
@@ -29,3 +32,7 @@ reviews:
       enabled: false
     simplify:
       enabled: true
+    autofix:
+      enabled: false
+    autopilot:
+      enabled: false
