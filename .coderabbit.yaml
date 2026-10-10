@@ -5,6 +5,9 @@ inheritance: true
 early_access: false
 enable_free_tier: true
 
+chat:
+  auto_reply: true
+
 reviews:
   # generic review setting, see https://docs.coderabbit.ai/reference/configuration#reference
   # auto_apply_labels: true
