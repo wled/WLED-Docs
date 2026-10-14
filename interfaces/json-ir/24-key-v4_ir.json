@@ -1,0 +1,117 @@
+{
+    "remote": "24-key custom",
+
+    "0xF7C03F": {
+        "label": "Off",
+        "cmd": "T=0"
+    },
+    "0xF740BF": {
+        "label": "On",
+        "cmd": "T=1"
+    },
+
+    "0xF700FF": {
+        "label": "Mode+",
+        "cmd": "FX=~",
+        "rpt": true
+    },
+    "0xF7807F": {
+        "label": "Mode-",
+        "cmd": "FX=~-",
+        "rpt": true
+    },
+
+    "0xF7D02F": {
+        "label": "Brightness+",
+        "cmd": "!incBrightness",
+        "rpt": true
+    },
+    "0xF7609F": {
+        "label": "Brightness-",
+        "cmd": "!decBrightness",
+        "rpt": true
+    },
+
+    "0xF720DF": {
+        "label": "Speed+",
+        "cmd": "SX=~16",
+        "rpt": true
+    },
+    "0xF7A05F": {
+        "label": "Speed-",
+        "cmd": "SX=~-16",
+        "rpt": true
+    },
+
+    "0xF7E01F": {
+        "label": "Auto (cycle 1–30)",
+        "cmd": "P1=1&P2=30&PL=~",
+        "rpt": true
+    },
+    "0xF7C837": {
+        "label": "Lock (stop auto)",
+        "cmd": "CY=0"
+    },
+
+    "0xF710EF": {
+        "label": "R (animated)",
+        "cmd": "PL=21"
+    },
+    "0xF7906F": {
+        "label": "G (animated)",
+        "cmd": "PL=22"
+    },
+    "0xF750AF": {
+        "label": "B (animated)",
+        "cmd": "PL=23"
+    },
+
+    "0xF728D7": {
+        "label": "Red",
+        "cmd": "FX=0&CL=hFF0000"
+    },
+
+    "0xF730CF": {
+        "label": "Orange",
+        "cmd": "FX=0&CL=hFF7F00"
+    },
+    "0xF7B04F": {
+        "label": "Cyan",
+        "cmd": "FX=0&CL=h00FFFF"
+    },
+    "0xF7708F": {
+        "label": "Purple",
+        "cmd": "FX=0&CL=h800080"
+    },
+    "0xF708F7": {
+        "label": "Pink",
+        "cmd": "FX=0&CL=hFF69B4"
+    },
+    "0xF78877": {
+        "label": "DarkBlue",
+        "cmd": "FX=0&CL=h00008B"
+    },
+    "0xF748B7": {
+        "label": "Green",
+        "cmd": "FX=0&CL=h00FF7F"
+    },
+    "0xF7A857": {
+        "label": "White",
+        "cmd": "FX=0&CL=hFFFFFF"
+    },
+
+    "0xF76897": {
+        "label": "Color (cycle palettes)",
+        "cmd": "FP=~",
+        "rpt": true
+    },
+
+    "0xF7F00F": {
+        "label": "Music1",
+        "cmd": "PL=201"
+    },
+    "0xF7E817": {
+        "label": "Music2",
+        "cmd": "PL=202"
+    }
+}
