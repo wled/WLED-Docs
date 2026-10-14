@@ -49,7 +49,18 @@ Use this format:
 
 Platforms: `esp32`, `esp8266`, or `both`.
 
-### Choosing a license for your usermod
+### Requesting an automated code review
+
+To request an AI code review (CodeRabbit) on your usermod, post this as a separate comment in your new PR:
+
+```text
+@coderabbitai please perform an external usermod code inspection for this PR.
+Include the inspected revision, files inspected, findings, and coverage limits in your reply.
+```
+
+Then wait a few minutes 👀, and CodeRabbit should post a review summary for your external usermod.
+
+## Choosing a license for your usermod
 
 A usermod is compiled into the WLED firmware, so it becomes part of a modified WLED build. WLED uses the **EUPL-1.2** licence. If you share a firmware binary that includes your usermod, also share the source code for that build and use EUPL-1.2 or a compatible open-source licence for the combined firmware.
 
