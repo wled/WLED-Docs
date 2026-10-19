@@ -16,7 +16,6 @@ Controllers use the WLED API to change the current light settings.
 
 | Name | Description |
 |---|---|
-| [Glyph](https://github.com/spandan-kumar/glyph) | Free, open-source (MIT) Android app for 2D matrices: a setup wizard that works out the matrix layout and wiring, a large animation library, a live pixel editor, clocks and games. Streams frames over DDP, or sends a GIF to the device for the Image effect (WLED 16+ on ESP32). |
 [Home Assistant](https://www.home-assistant.io/integrations/wled/) | Versatile and feature rich home automation system. Out-of-the-box WLED integration with automatic discovery.
 [Homey pro with the D.A.L.O.R App](https://homey.app/en-us/app/com.sdn.neopixel-on-rest/D.A.L.O.R/) | Home automation system, WLED integration via the D.A.L.O.R. app  with automatic discovery.
 [ioBroker adapter](https://github.com/iobroker-community-adapters/ioBroker.wled) | Versatile and feature rich home automation system. Out-of-the-box WLED integration with automatic discovery.
@@ -36,6 +35,7 @@ Source programs generate light data and stream them to WLED in real time.
 
 | Name | Description |
 |---|---|
+[Glyph](https://github.com/spandan-kumar/glyph) | Android app for WLED 2D matrices (free, MIT): a setup wizard for the matrix layout, an animation library, a live pixel editor, clocks and games. Streams frames over DDP; sending GIFs for the Image effect needs WLED 16+ on ESP32. Tested on a 16×16 panel so far.
 [LedFx](https://github.com/LedFx/LedFx) | A music visualization tool written in Python. Connects to WLED via E1.31 or UDP. [Dr.Zzs tutorial video](https://www.youtube.com/watch?v=ipSfQdfX4fE)
 [Prismatik WLED-WiFi](https://github.com/psieg/Lightpack) (native) | Ambilight via WiFi or serial - natively supports UDP (WARLS, DRGB, DNRGB protocols).
 [Prismatik WLED-WiFi](https://github.com/Lord-FEAR/Prismatik-WLED-WiFi) (plugin) | Ambilight via WiFi - a Plugin alternative for Prismatik WLED support.
