@@ -44,6 +44,7 @@ Source programs generate light data and stream them to WLED in real time.
 Enigmalight | Ambilight clone for broadcom based linux receivers.  It supports many LED devices. Support for WLED through USB Adalight/Momo. Download to various forums use the WEB search function of your browser.
 [Q Light Controller+](https://www.qlcplus.org/) | QLC+ is a free and cross-platform software to control DMX or analog lighting systems like moving heads, dimmers, scanners etc. QLC+ runs on Linux, Windows (XP+), macOS (10.7+) and the Raspberry Pi. WLED can be used with E1.31 (sACN). use major version 4, as 5 is in development.
 [RustyLights](https://github.com/appliedapp/rusty_lights) | Resource-efficient audio-reactive LED visualizer written in Rust. Captures audio, processes it through a DSP pipeline, and outputs to LED strips via E1.31/sACN, DDP, or Art-Net. Designed to run on a Raspberry Pi with sub-5% CPU usage.
+[TizenAmbilight](https://github.com/RitwickVerma/TizenAmbilight) | Real-frame ambilight for Samsung Tizen TVs - a headless Tizen .NET service that reads the TV's own decoded video plane out of memory (no capture card or HDMI splitter) and streams DRGB over UDP.
 
 ## Various
 
