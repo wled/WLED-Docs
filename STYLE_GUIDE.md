@@ -16,4 +16,4 @@ Formatting essentials:
 - Store images in `docs/assets/images/content/`, never on external hosts.
 - Use root-relative internal links without the `.md` extension, e.g. `[Segments](/features/segments)`.
 
-For the full ruleset and the PR review checklist, see **[AGENTS.md](AGENTS.md)**.
+For the full ruleset and the PR review checklist, see **[AGENTS.md](AGENTS.md#markdown-style)**.

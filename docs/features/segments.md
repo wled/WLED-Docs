@@ -113,4 +113,7 @@ The compositing order follows segment ID order: the segment with the **lower** I
 
 ### Transition Blending
 
-v16.0 also adds transition blending styles that control how effects cross-fade when you switch presets. Options include Shift, Push, and others, in addition to the classic dissolve-style fade.
+v16.0 also adds transition blending styles that control how effects cross-fade when you switch presets. 
+Options include Shift, Push, and others, in addition to the classic dissolve-style fade.
+
+The longest transition time for any kind of color blending, brightness transition or effect crossfading is 65 seconds.

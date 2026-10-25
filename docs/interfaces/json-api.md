@@ -8,6 +8,19 @@ hide:
 WLED implements a powerful JSON API over HTTP.  
 It is accessible using the `/json` subpage.
 
+This page is a long reference. Jump straight to what you need:
+
+| I want to... | Go to |
+|---|---|
+| Turn the light on/off, set brightness, colors or effects | [Setting new values](#setting-new-values) |
+| Look up a state field (`on`, `bri`, `seg`, `nl`, ...) | [State object](#state-object), [segment object](#contents-of-the-segment-object) |
+| Read device details (version, WiFi, LED count) | [Info object](#info-object) |
+| Set individual LEDs | [Per-segment individual LED control](#per-segment-individual-led-control) |
+| Work with palettes, playlists or presets | [Palettes](#palettes), [Playlists](#playlists) |
+| Parse the effect list and its sliders | [Effect metadata](#effect-metadata) |
+| Read sensor values from usermods | [Sensors](#sensors) |
+| See every `/json` URL at a glance | [API Routes](#api-routes) |
+
 ## Obtaining light information
 
 Sending a GET request will return an object similar to the sample below
@@ -35,7 +48,7 @@ The community has created libraries for various programming languages to make wo
 
 ## Setting new values
 
-Sending a POST request to `/json` or `/json/state` with (parts of) the state object will update the respective values.
+Sending a POST request to `/json/state` or `/json` with (parts of) the state object will update the respective values. Every other `/json` subpage accepts the same state updates too, only paths containing `cfg` (normally `/json/cfg`) are different, they take (parts of) the configuration object instead. Stick to `/json/state`, the subpage you post to decides what a verbose response returns (see `v` below).
 Example: `{"on":true,"bri":255}` sets the brightness to maximum. `{"seg":[{"col":[[0,255,200]]}]}` sets the color of the first segment to teal.
 `{"seg":[{"id":X,"on":"t"}]}` and replacing X with the desired segment ID will toggle on or off that segment.
 
@@ -152,7 +165,7 @@ udpn.recv | bool | Indicates whether broadcast packet reception is enabled. To s
 udpn.sgrp | 0 to 255 | Bitfield for broadcast send groups 1-8
 udpn.rgrp | 0 to 255 | Bitfield for broadcast receive groups 1-8
 udpn.nn | bool | Don't send a broadcast packet (applies to just the current API call). Not included in state response.
-v | bool | If set to _true_ in a JSON POST command, the response will contain the full JSON state object. Not included in state response
+v | bool | If set to _true_ in a JSON POST command, the response will contain the full JSON response for the requested path instead of `{"success":true}`: the state object when posting to `/json/state`, state and info for `/json/si`, and so on. Not included in state response
 rb | bool | If set to _true_, device will reboot immediately. Not included in state response.
 live | bool | If set to _true_, enters realtime mode and blanks the LEDs. The realtime timeout option does not have an effect when this command is used, WLED will stay in realtime mode until the state (color/effect/segments, excluding brightness) is changed. It is expected that `{"live":false}` is sent once live data sending is terminated. Not included in state response.
 lor | 0, 1, or 2 | Live data override. 0 is off, 1 is override until live data ends, 2 is override until ESP reboot
@@ -300,9 +313,9 @@ To set a large number of colors, send multiple api calls of 256 colors at a time
 `{"seg": {"i":[256,"CC0000","00CC00","0000CC","CC0000"...]}}`
 `{"seg": {"i":[512,"CC0000","00CC00","0000CC","CC0000"...]}}`
 
-Do not make several calls in parallel, that is not optimal for the device. Instead make your call in sequence, where each call waits for the previous to complete before making a new one. How this is done depends on your choice of tool, but with CURL you que your commands by separating then with ` && ` i.e. `CURL [command 1] && CURL [command 2] && CURL [command 3]`.
+Do not make several calls in parallel, that is not optimal for the device. Instead make your call in sequence, where each call waits for the previous to complete before making a new one. How this is done depends on your choice of tool, but with CURL you queue your commands by separating then with ` && `, i.e. `CURL [command 1] && CURL [command 2] && CURL [command 3]`.
 
-!!! tip "Command buffer size"
+!!! tip "Command Buffer Size"
     If you are trying to set many LEDs and it fails to work, you can check your request [here](https://arduinojson.org/v6/assistant) for length.
     Select ESP32 and Deserialize. If the required buffer size is above 10K for ESP8266 and 24K for ESP32, please split it into multiple sequential requests and consider using the Hex string syntax.
 
@@ -311,7 +324,7 @@ Segment features, including Grouping, Spacing, Mirroring and Reverse are functio
 
 Matrices are handled as a non-serpentine layout.
 
-!!! info "Brightness interaction"
+!!! info "Brightness Interaction"
     For your colors to apply correctly, make sure the desired brightness is set beforehand. Turning on the LEDs from an off state and setting individual LEDs in the same JSON request will _not_ work!
 
 ### Palettes
@@ -422,7 +435,7 @@ It is preferred that you set a new CCT value in the same range as received from 
 
 If your code relies on absolute Kelvin values, a reasonable estimate for the warm white point (relative `0`) could be 2700K, while cold white (relative `255`) could commonly be 6500K.
 
-#### Effect of the seg.cct value
+#### Effect of the `seg.cct` value
 
 `seg.cct` can always be set, but only has an effect on the physical state of the light if one or both of the following conditions is met:
 

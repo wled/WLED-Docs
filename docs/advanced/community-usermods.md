@@ -2,7 +2,7 @@
 title: Community Usermods
 ---
 
-This page is an index of usermods that live outside the WLED repository, written and maintained by community members. The WLED repository also carries many usermods of its own (audio-reactive, sensors, displays, and more) in its [`usermods/` directory](https://github.com/wled/WLED/tree/main/usermods), each with its own README. Those are not listed here, and like the ones below they need a custom build to use. Entries below are maintained by their authors; the WLED project does not test or endorse them.
+This page is an index of usermods that live outside the WLED repository, written and maintained by community members. The WLED repository also carries many usermods of its own (audio-reactive, sensors, displays, and more) in its [`usermods/` directory](https://github.com/wled/WLED/tree/main/usermods), each with its own README. Those aren't part of the community index below, and like the community ones they need a custom build to use. Entries below are maintained by their authors; the WLED project does not test or endorse them.
 
 To help people find your usermod even before it appears here, tag your GitHub repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) topic.
 
@@ -36,6 +36,12 @@ Two usermods come from the WLED project itself and are the best places to start 
 
 ## Community Index
 
+### [M5StickC Plus AXP192 Power](https://github.com/martindell/wled-m5stickc-plus-power)
+
+Enables the M5StickC Plus 1.1 external 5V output during WLED startup. Tested on WLED 16.0.1. Requires I2C SDA=21/SCL=22, and the safe LED load is unverified.
+
+_By [@martindell](https://github.com/martindell). Platforms: esp32. License: EUPL-1.2._
+
 ### [PowerManager](https://github.com/intermittech/wled-usermod-powermanager)
 
 Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay. Grown from the built-in multi_relay usermod.
@@ -48,11 +54,23 @@ Automatically synchronizes individual segment power states with the overall mast
 
 _By [@sharn25](https://github.com/sharn25). Platforms: both. License: MIT._
 
+### [Sensor Hub](https://lost-hope.github.io/sensor-hub-site/)
+
+A sensor hub that lets you connect multiple sensors. Their readings show in the Info tab, are published over MQTT and the API, and are available to other usermods. Co-authored with AI.
+
+_By [@lost-hope](https://github.com/lost-hope). Platforms: both. License: EUPL-1.2._
+
 ### [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2)
 
 Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages.
 
 _By [@lost-hope](https://github.com/lost-hope). Platforms: both. License: EUPL-1.2._
+
+### [wizlights](https://github.com/eibanez/wled-usermod-wizlights)
+
+Control Wiz lights with WLED.
+
+_By [@eibanez](https://github.com/eibanez). Platforms: both. License: EUPL-1.2._
 
 ### [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16)
 
@@ -73,6 +91,17 @@ _By [@yourname](https://github.com/yourname). Platforms: esp32. License: GPLv3._
 ```
 
 Platforms: `esp32`, `esp8266`, or `both`. Keep the index alphabetical.
+
+### Requesting an Automated Code Review
+
+To request an AI code review (CodeRabbit) on your usermod, post this as a separate comment in your new PR:
+
+```text
+@coderabbitai please perform an external usermod code inspection for this PR.
+Include the inspected revision, files inspected, findings, and coverage limits in your reply.
+```
+
+Then wait a few minutes 👀, and CodeRabbit should post a review summary for your external usermod.
 
 ## Choosing a License
 

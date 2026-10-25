@@ -1,6 +1,12 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 
 language: en-US
+inheritance: true
+early_access: false
+enable_free_tier: true
+
+chat:
+  auto_reply: true
 
 reviews:
   # generic review setting, see https://docs.coderabbit.ai/reference/configuration#reference
@@ -8,6 +14,7 @@ reviews:
   # abort_on_close: false
   high_level_summary: true
   review_status: true
+  review_details: true
   collapse_walkthrough: false
   poem: true
   sequence_diagrams: false
@@ -17,6 +24,59 @@ reviews:
     enabled: true
     ignore_title_keywords:
       - WIP
+
+  # experimental: perform partial code review when a usermod is added to the community list
+  # Best-effort external-source inspection, not a full code audit.
+  # Web search does not guarantee source access or a separate PR comment.
+  path_instructions:
+    - path: "docs/advanced/community-usermods.md"
+      instructions: |
+        For each newly added usermod or changed repository link:
+        1. Validate the index entry against public repository information.
+        2. If external source is accessible, inspect the implementation,
+           library.json, README, and license. Out-of-tree usermods reside
+           in separate repositories; inspect relevant root-level .cpp/.h/.hpp
+           files without requiring usermods/<name>/ or usermod.cpp.
+        3. Apply these references:
+           - https://github.com/wled/WLED/blob/main/AGENTS.md#usermods
+           - docs/advanced/custom-features.md: "What's inside a usermod"
+           - https://github.com/wled/WLED/tree/main/usermods/user_fx#basic-syntax-for-wled-effect-creation
+
+        Check Usermod inheritance, REGISTER_USERMOD(), library.json
+        build.libArchive: false, non-blocking loop() behavior, platform
+        claims, and dependency declarations.
+
+        Check GPIO allocation and failure handling through PinManager.
+        For the global I2C bus, do not require separate usermod pin
+        allocation or Wire.begin(). Check conflicts from independent
+        bus initialization or hard-coded pins.
+
+        For security checks, trace config/JSON, MQTT, ESP-NOW, and UDP
+        inputs to downstream uses. Flag only unguarded uses of values
+        that lack validation or range-clamping, including unsafe
+        indexing, size/count arithmetic, and incorrect switch handling.
+        Do not flag getJsonValue() calls themselves, already-clamped
+        values, or unrelated memory-safety patterns under this checklist.
+
+        Check for major security risks, including backdoors, potential malware and leaked secrets. 
+        Also check for out-of-scope modifications to the device configuration, and for additional (out-of-scope) functionality not mentioned by the author.
+
+        Report concrete findings on the changed index row. Include
+        source permalinks and line references pinned to the inspected
+        commit when available.
+
+        Always include an external-source inspection summary, even
+        when no actionable findings are identified or source access fails:
+        - Repository URL and inspected revision, if known.
+        - Files inspected.
+        - Findings, or no actionable findings within the inspected scope.
+        - Source-access failures and coverage gaps.
+
+        Prefer a top-level PR comment for the summary. If a separate
+        comment is unavailable, include it in the review walkthrough.
+        Never describe unavailable source as inspected. Do not imply
+        proof of safety, WLED testing, endorsement, or a complete
+        security audit.
 
   finishing_touches:
     # Docstrings | Options for generating Docstrings for your PRs/MRs.
@@ -29,3 +89,7 @@ reviews:
       enabled: false
     simplify:
       enabled: true
+    autofix:
+      enabled: true
+    autopilot:
+      enabled: false
