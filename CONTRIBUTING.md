@@ -17,7 +17,7 @@ For larger edits, work from a branch in your own fork rather than your `main` br
 
 Please keep each PR focused on one topic, and add a short description of what you changed and why. No need to write an essay.
 
-When you open the PR, GitHub pre-fills the description with our template, a what/why prompt and a short checklist. Fill it in rather than deleting it.
+When you open the PR, GitHub pre-fills the description with a short what/why prompt. Fill it in rather than deleting it.
 
 ## Writing Style
 
