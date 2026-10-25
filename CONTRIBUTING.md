@@ -30,7 +30,7 @@ We're harmonizing the docs for readability, so please follow the conventions in 
 - Prefer plain words: "use" over "leverage", "feature" over "functionality".
 - Only claim what the evidence supports (don't write "proves" when it "suggests").
 - Use Material admonitions (`!!! info`, `!!! tip`, `!!! warning`, `!!! danger`) for callouts.
-- Store images in `docs/assets/images/content/`, not on external hosts.
+- Store images in `docs/assets/images/content/`, not on external hosts. The WLED-Utils effect GIFs are the one exception.
 - Use root-relative internal links without the `.md` extension, e.g. `[Segments](/features/segments)`.
 
 The full [PR review checklist](AGENTS.md#pr-review-checklist) in AGENTS.md is what maintainers check against.
