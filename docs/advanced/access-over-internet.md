@@ -5,7 +5,7 @@ hide:
   # - toc
 ---
 
-Control your LEDs from anywhere. Pick a route below: Tailscale/WireGuard is the easiest, Cloudflare Tunnel gives you a login-protected public URL, HomeKit puts WLED in the Apple Home app, and Caddy, nginx, or Traefik work if you already run a reverse proxy at home.
+Control your LEDs from anywhere. Pick a route below: Tailscale is the easiest, or run your own WireGuard VPN if you'd rather not depend on a third party. Cloudflare Tunnel gives you a login-protected public URL, HomeKit puts WLED in the Apple Home app, and Caddy, nginx, or Traefik work if you already run a reverse proxy at home.
 
 Already controlling WLED through [Home Assistant](https://www.home-assistant.io/integrations/wled/)? If you can reach Home Assistant remotely, you have secure remote control and don't need anything on this page.
 
