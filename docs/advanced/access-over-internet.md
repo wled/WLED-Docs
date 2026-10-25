@@ -5,9 +5,9 @@ hide:
   # - toc
 ---
 
-WLED is built for your home network. It has no login on its control interface and no HTTPS, so opening it up to the internet takes care. If you already have a secure way into your home network, use that and skip this page.
+WLED is built for your home network. It has no login on its control interface and no HTTPS, so opening it up to the internet needs careful setup. If you already have a secure way into your home network, use that and skip this page.
 
-Already controlling WLED through [Home Assistant](https://www.home-assistant.io/integrations/wled/)? If you reach Home Assistant through a secure setup, like Home Assistant Cloud or a VPN, you can control WLED that way and don't need anything on this page.
+Already controlling WLED through [Home Assistant](https://www.home-assistant.io/integrations/wled/)? If you reach Home Assistant through a secure setup, like Home Assistant Cloud or a VPN, you can control WLED that way and don't need anything on this page. The same goes for Apple Home with a home hub; see [Home Automation](/advanced/home-automation).
 
 !!! warning "Never port forward WLED"
     Port forwarding WLED to the internet gives anyone full control of the device. Every route below puts something in front of WLED, but it's only as safe as you set it up.
@@ -15,11 +15,11 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
 Whichever route you pick:
 
 - Anything reachable from the internet must require a login and use HTTPS.
-- That protection runs on a separate always-on device at home, because WLED can't do it on its own.
+- Every route needs a separate always-on device at home (a Raspberry Pi, NAS, or home server), because WLED can't do this on its own.
 - Enable [OTA Lock](/advanced/ota-lock) and change its default passphrase `wledota`. This puts a passphrase on firmware updates, but it doesn't protect the rest of WLED.
 - Set a settings PIN under **Config > Security & Updates**, so the settings pages ask for it too.
 
-Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather not depend on a third party. Cloudflare Tunnel gives you a login-protected public URL, HomeKit puts WLED in the Apple Home app, and Caddy, nginx, or Traefik work if you already run a reverse proxy at home.
+Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather not depend on a third party. Cloudflare Tunnel gives you a login-protected public URL, and Caddy, nginx, or Traefik work if you already run a reverse proxy at home.
 
 === "Tailscale / WireGuard"
 
@@ -50,21 +50,10 @@ Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather no
         A tunnel without access control is just port forwarding with extra steps. You **must** put [Cloudflare Access](https://developers.cloudflare.com/cloudflare-one/policies/access/) in front of the tunnel so only you can log in.
 
     1. In the Cloudflare dashboard, go to **Networking > Tunnels** and create a tunnel. Install `cloudflared` on an always-on machine in your LAN using the command the dashboard gives you.
-    2. Under **Zero Trust**, create an Access application for the hostname you plan to use, for example `wled.mydomain.example`. Set the policy to allow your own email address, with one-time PIN as the login method. A policy that names only the login method lets in anyone with any email. Do this before the next step, or WLED is briefly reachable by anyone.
+    2. Under **Zero Trust**, create an Access application for the hostname you plan to use, for example `wled.mydomain.example`. Set the policy to allow your own email address, with one-time PIN as the login method. New Zero Trust accounts don't include one-time PIN by default, so add it first under **Integrations > Identity providers**. A policy that names only the login method lets in anyone with any email. Do this before the next step, or WLED is briefly reachable by anyone.
     3. Back in the tunnel, add that hostname as a public hostname pointing to `http://<WLED-IP>`.
 
     Now `https://wled.mydomain.example` asks for your login first and only then shows WLED.
-
-=== "HomeKit"
-
-    If you're in the Apple ecosystem, you can put WLED in the Home app and let Apple handle the remote connection. You need a home hub (an Apple TV or HomePod) at home; the hub relays remote control through Apple's servers, so there's nothing to expose or configure, and Siri works too.
-
-    The Home app's light controls cover power, brightness, and color. For the full WLED interface, use one of the other tabs.
-
-    WLED doesn't speak HomeKit natively, so a bridge on your network translates:
-
-    - If you run Home Assistant, enable the [HomeKit Bridge](https://www.home-assistant.io/integrations/homekit/) integration, expose the WLED light entity, and scan the pairing QR code with the Home app.
-    - Without Home Assistant, run [Homebridge](https://homebridge.io/) on a Raspberry Pi or home server with a WLED plugin such as [homebridge-simple-wled](https://www.npmjs.com/package/homebridge-simple-wled), which can also expose chosen effects and presets as HomeKit switches.
 
 === "Caddy"
 
@@ -85,7 +74,7 @@ Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather no
 
 === "nginx"
 
-    This assumes an existing [nginx](https://nginx.org/) server in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), and TCP 443 forwarded to it. The proxy must require a login and serve HTTPS only. nginx doesn't manage certificates itself, so run [Certbot](https://certbot.eff.org/) before adding this server block; nginx won't start while the certificate paths point at nothing. Certbot's default challenge also needs TCP 80 forwarded. Most Certbot installs renew the certificate automatically; run `sudo certbot renew --dry-run` once to check that renewal works.
+    This assumes an existing [nginx](https://nginx.org/) server in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), and TCP 443 forwarded to it. The proxy must require a login and serve HTTPS only. nginx doesn't manage certificates itself, so run [Certbot](https://certbot.eff.org/) before adding this server block; nginx won't start while the certificate paths point at nothing. Certbot's default challenge also needs TCP 80 forwarded. Most Certbot installs renew the certificate automatically, but nginx only picks up the new one after a reload, so add `--deploy-hook "systemctl reload nginx"` when you request it. Run `sudo certbot renew --dry-run --run-deploy-hooks` once to check that renewal and the reload both work.
 
     Create the password file with `htpasswd -c /etc/nginx/.htpasswd yourusername`, then:
 
