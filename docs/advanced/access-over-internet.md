@@ -74,7 +74,13 @@ Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather no
 
 === "nginx"
 
-    This assumes an existing [nginx](https://nginx.org/) server in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), and TCP 443 forwarded to it. The proxy must require a login and serve HTTPS only. nginx doesn't manage certificates itself, so run [Certbot](https://certbot.eff.org/) before adding this server block; nginx won't start while the certificate paths point at nothing. Certbot's default challenge also needs TCP 80 forwarded. Most Certbot installs renew the certificate automatically, but nginx only picks up the new one after a reload, so add `--deploy-hook "systemctl reload nginx"` when you request it. Run `sudo certbot renew --dry-run --run-deploy-hooks` once to check that renewal and the reload both work.
+    This assumes an existing [nginx](https://nginx.org/) server in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), and TCP 80 and 443 forwarded to it. The proxy must require a login and serve HTTPS only. nginx won't load this server block until the certificate exists, so get it first with [Certbot](https://certbot.eff.org/) and its nginx plugin:
+
+    ```bash
+    sudo certbot certonly --nginx -d wled.mydomain.example --deploy-hook "systemctl reload nginx"
+    ```
+
+    Certbot renews the certificate automatically and reloads nginx each time. Run `sudo certbot renew --dry-run --run-deploy-hooks` once to check that both work.
 
     Create the password file with `htpasswd -c /etc/nginx/.htpasswd yourusername`, then:
 
