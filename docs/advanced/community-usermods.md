@@ -16,10 +16,10 @@ Usermods written and maintained by the community, outside the WLED repository. W
 
 | Name | Description | Author | Platforms | License |
 |---|---|---|---|---|
-| [M5StickC Plus AXP192 Power](https://github.com/martindell/wled-m5stickc-plus-power) | Turns on the M5StickC Plus 5V output at startup. Safe LED load unverified. | @martindell | esp32 | EUPL-1.2 |
+| [M5StickC Plus AXP192 Power](https://github.com/martindell/wled-m5stickc-plus-power) | Turns on the M5StickC Plus 5V output at startup<br/>_Safe LED load unverified_ | @martindell | esp32 | EUPL-1.2 |
 | [PowerManager](https://github.com/intermittech/wled-usermod-powermanager) | Relays and MOSFETs that follow segment on/off | @intermittech | esp32 | EUPL-1.2 |
 | [Segment Power Sync](https://github.com/sharn25/wled-segment-power-sync) | Keeps segment power in sync with master power | @sharn25 | both | MIT |
-| [Sensor Hub](https://github.com/lost-hope/sensor-hub) | Shows multiple sensors in the Info tab, MQTT and the API. Co-authored with AI. | @lost-hope | both | EUPL-1.2 |
+| [Sensor Hub](https://github.com/lost-hope/sensor-hub) | Shows multiple sensors in the Info tab, MQTT and the API | @lost-hope | both | EUPL-1.2 |
 | [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | SHTC3 temperature and humidity sensor, with MQTT | @lost-hope | both | EUPL-1.2 |
 | [wizlights](https://github.com/eibanez/wled-usermod-wizlights) | Control Wiz lights from WLED | @eibanez | both | EUPL-1.2 |
 | [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16) | 16×16 word clock effect with weather words | @AustinSaintAubin | esp32 | MIT |
@@ -33,10 +33,10 @@ Usermods written and maintained by the community, outside the WLED repository. W
 Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) that adds one row to the table, in alphabetical order:
 
 ```markdown
-| [Name](https://github.com/you/your-usermod) | What it does, in a few words | @yourname | esp32 | GPLv3 |
+| [Name](https://github.com/you/your-usermod) | What it does, in a few words<br/>_Optional short note_ | @yourname | esp32 | GPLv3 |
 ```
 
-Platforms is `esp32`, `esp8266`, or `both`. Keep the description under ten words and put the details in your README, so the table stays readable on phones.
+Platforms is `esp32`, `esp8266`, or `both`. Keep the description under ten words. If something is important to know before installing, add it as a short note after `<br/>`, in italics. Everything else goes in your README.
 
 Until it's listed here, people can still find your usermod if you tag the GitHub repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) topic.
 
