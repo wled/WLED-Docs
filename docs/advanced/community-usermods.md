@@ -78,7 +78,7 @@ _By [@eibanez](https://github.com/eibanez). Platforms: both. License: EUPL-1.2._
 
 _By [@AustinSaintAubin](https://github.com/AustinSaintAubin). Platforms: esp32. License: MIT._
 
-## Add Your Usermod
+## Add your usermod
 
 Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) adding a section to the index above, in this format:
 
@@ -92,7 +92,7 @@ _By [@yourname](https://github.com/yourname). Platforms: esp32. License: GPLv3._
 
 Platforms: `esp32`, `esp8266`, or `both`. Keep the index alphabetical.
 
-### Requesting an Automated Code Review
+### Requesting an automated code review
 
 To request an AI code review (CodeRabbit) on your usermod, post this as a separate comment in your new PR:
 
@@ -103,7 +103,7 @@ Include the inspected revision, files inspected, findings, and coverage limits i
 
 Then wait a few minutes 👀, and CodeRabbit should post a review summary for your external usermod.
 
-## Choosing a License
+## Choosing a license
 
 A usermod is compiled into the WLED firmware, so it becomes part of a modified WLED build. WLED uses the **EUPL-1.2** licence. If you share a firmware binary that includes your usermod, also share the source code for that build and use EUPL-1.2 or a compatible open-source licence for the combined firmware.
 
