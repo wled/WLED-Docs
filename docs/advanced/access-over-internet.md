@@ -5,12 +5,21 @@ hide:
   # - toc
 ---
 
-Control your LEDs from anywhere. Pick a route below: Tailscale is the easiest, or run your own WireGuard VPN if you'd rather not depend on a third party. Cloudflare Tunnel gives you a login-protected public URL, HomeKit puts WLED in the Apple Home app, and Caddy, nginx, or Traefik work if you already run a reverse proxy at home.
+WLED is built for your home network. It has no login on its control interface and no HTTPS, so opening it up to the internet takes care. If you already have a secure way into your home network, use that and skip this page.
 
-Already controlling WLED through [Home Assistant](https://www.home-assistant.io/integrations/wled/)? If you can reach Home Assistant remotely, you have secure remote control and don't need anything on this page.
+Already controlling WLED through [Home Assistant](https://www.home-assistant.io/integrations/wled/)? If you reach Home Assistant through a secure setup, like Home Assistant Cloud or a VPN, you can control WLED that way and don't need anything on this page.
 
 !!! warning "Never port forward WLED"
-    WLED has no login on its control interface and no HTTPS. Port forwarding it to the internet gives anyone full control of the device, including flashing new firmware. Every option below adds that missing security layer in front.
+    Port forwarding WLED to the internet gives anyone full control of the device. Every route below puts something in front of WLED, but it's only as safe as you set it up.
+
+Whichever route you pick:
+
+- Anything reachable from the internet must require a login and use HTTPS.
+- That protection runs on a separate always-on device at home, because WLED can't do it on its own.
+- Enable [OTA Lock](/advanced/ota-lock) and change its default passphrase `wledota`. This puts a passphrase on firmware updates, but it doesn't protect the rest of WLED.
+- Set a settings PIN under **Config > Security & Updates**, so the settings pages ask for it too.
+
+Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather not depend on a third party. Cloudflare Tunnel gives you a login-protected public URL, HomeKit puts WLED in the Apple Home app, and Caddy, nginx, or Traefik work if you already run a reverse proxy at home.
 
 === "Tailscale / WireGuard"
 
@@ -76,7 +85,7 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
 
 === "nginx"
 
-    This assumes an existing [nginx](https://nginx.org/) server in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), and TCP 443 forwarded to it. The proxy must require a login and serve HTTPS only. nginx doesn't manage certificates itself, so run [Certbot](https://certbot.eff.org/) before adding this server block; nginx won't start while the certificate paths point at nothing. Certbot's default challenge also needs TCP 80 forwarded.
+    This assumes an existing [nginx](https://nginx.org/) server in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), and TCP 443 forwarded to it. The proxy must require a login and serve HTTPS only. nginx doesn't manage certificates itself, so run [Certbot](https://certbot.eff.org/) before adding this server block; nginx won't start while the certificate paths point at nothing. Certbot's default challenge also needs TCP 80 forwarded. Most Certbot installs renew the certificate automatically; run `sudo certbot renew --dry-run` once to check that renewal works.
 
     Create the password file with `htpasswd -c /etc/nginx/.htpasswd yourusername`, then:
 
@@ -134,6 +143,3 @@ Already controlling WLED through [Home Assistant](https://www.home-assistant.io/
             servers:
               - url: "http://192.168.1.50"
     ```
-
-!!! tip "Enable the OTA lock"
-    Whichever route you choose, also enable [OTA Lock](/advanced/ota-lock) and change its default passphrase `wledota`, so nobody who gets past the first layer can push new firmware over Wi-Fi.
