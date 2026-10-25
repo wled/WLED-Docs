@@ -54,9 +54,9 @@ Automatically synchronizes individual segment power states with the overall mast
 
 _By [@sharn25](https://github.com/sharn25). Platforms: both. License: MIT._
 
-### [Sensor Hub](https://lost-hope.github.io/sensor-hub-site/)
+### [Sensor Hub](https://github.com/lost-hope/sensor-hub)
 
-A sensor hub that lets you connect multiple sensors. Their readings show in the Info tab, are published over MQTT and the API, and are available to other usermods. Co-authored with AI.
+A sensor hub that lets you connect multiple sensors. Their readings show in the Info tab, are published over MQTT and the API, and are available to other usermods. See the [project site](https://lost-hope.github.io/sensor-hub-site/) for setup. Co-authored with AI.
 
 _By [@lost-hope](https://github.com/lost-hope). Platforms: both. License: EUPL-1.2._
 
