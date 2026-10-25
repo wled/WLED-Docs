@@ -5,7 +5,7 @@ hide:
   # - toc
 ---
 
-WLED 0.13.0 supports multiple protocols over Serial.
+WLED supports multiple protocols over Serial.
 Serial is available via USB, and on most boards, GPIO1 for TX and GPIO3 for RX.
 
 !!! info "Pin usage limitation"
@@ -16,7 +16,7 @@ Serial is available via USB, and on most boards, GPIO1 for TX and GPIO3 for RX.
 
 Both these protocols are supported and can be used to stream realtime LED data to WLED for direct display, e.g. from an bias lighting program. For tpm2, only data packets are supported and data in 24-bit RGB format is expected.  
 If you want to drive a large amount of LEDs, you may need to increase the Baud rate in WLED Sync settings, as the default baud rate of `115200` is only sufficient for about 50-100 LEDs depending on the refresh rate.  
-Adalight is supported since WLED 0.6.3, tpm2 since version 0.10.2.
+Both Adalight and tpm2 are supported.
 
 ### JSON over Serial
 
@@ -27,7 +27,7 @@ To request a JSON response containing the `state` and `info` objects, send `{"v"
 
 Improv Serial is supported and can be used to check the installed software version as well as connect your device to WiFi without needing to connect to the WLED access point.  
 Improv is used by the [WLED web installer](https://install.wled.me) for an easy installation and setup process.  
-Note that the baud rate must remain at the default `115200` setting for the device to be detected as Improv-capable.
+The baud rate must remain at the default `115200` setting for the device to be detected as Improv-capable.
 
 ### Other
 
@@ -48,9 +48,9 @@ However, tpm2 requires on average 2-4x less bandwidth than JSON, and should ther
 
 #### Changing Baud Rate
 
-There are 2 main method for changing Baud Rate for the serial connection
-- Persistant: Configure in App under [Sync Interfaces](/features/settings/#sync-settings). This setting will persist, and WLED will use specified Baud Rate from this point forward.
-- Temporary: Utilizing the serial connection at the existing Baud Rate, send the specific command byte to have WLED temporarily change to new Baud Rate. This Baud Rate is temporary and will be reset to default or peristant setting on reboot.
+There are 2 main methods for changing Baud Rate for the serial connection:
+- Persistent: Configure in App under [Sync Interfaces](/features/settings/#sync-settings). This setting will persist, and WLED will use the specified Baud Rate from this point forward.
+- Temporary: Utilizing the serial connection at the existing Baud Rate, send the specific command byte to have WLED temporarily change to a new Baud Rate. This Baud Rate is temporary and will be reset to the default or persistent setting on reboot.
 
 Byte | Baud Rate
 --- | ---

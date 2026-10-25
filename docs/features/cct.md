@@ -7,7 +7,7 @@ hide:
 
 ### White channel(s) handling
 
-Besides addressable RGB and RGBW bus types, WLED 0.13.0 also supports PWM CCT (correlated color temperature) lights.
+Besides addressable RGB and RGBW bus types, WLED also supports PWM CCT (correlated color temperature) lights.
 
 #### Auto white handling
 
@@ -22,8 +22,9 @@ Brighter | This does the exact opposite and not touch the RGB channels at all, j
 None | No auto white calculation is performed. The white channel of colors can be manually set using the `White channel` slider in the user interface, RGB-only effects and most realtime sources will leave the white channel off.
 Dual | The `White channel` slider is present in the UI and works the same as in `None` mode, however if the slider value is 0 (far left), the `Brighter` mode is used for auto white calculation. This is the default auto white mode.
 Max | Sets white to the value of the brightest RGB channel. This is good for white-only LEDs without any RGB.
-
-`Accurate` and `Brighter` methods are applied on a per-pixel basis, so they also work in color palettes and realtime effects!
+  
+If you set the mode to anything other than 'None', the LEDs will be treated internally like having RGB channels (you'll see the colour picker in the UI).  
+`Accurate` and `Brighter` methods are applied on a per-pixel basis, so they also work in color palettes and realtime effects!  
 
 #### White Balance correction
 
@@ -32,13 +33,12 @@ This is applied to the RGB color only, after the auto white channel calculation.
 
 #### CCT handling
 
-WLED starting with version 0.13.0 also supports bus types with two white channels, one with a warm color temperature (e.g. 2700 Kelvin, reddish white) and one with a cold white color temperature (e.g. 8000 Kelvin, bluish white).
+WLED also supports bus types with two white channels, one with a warm color temperature (e.g. 2700 Kelvin, reddish white) and one with a cold white color temperature (e.g. 8000 Kelvin, bluish white).
 
-Since as of the release of version 0.13.0 no adjustable CCT addressable LEDs are supported*, this only applies to PWM analog LED outputs.
+!!! info "WWA (warm white + cold white + amber white)"
+    _SK6812 WWA (with 3 channels, warm white, cold white and amber) are supported, but treated as if RGB using the `WS281x` bus type. White spectrum support for this LED type will be added at a later point._
 
-_*SK6812 WWA (with 3 channels, warm white, cold white and amber) are supported, but treated as if RGB using the `WS281x` bus type. White spectrum support for this LED type will be added at a later point._
-
-The overall brightness of the white channels is determined from the auto-white calculation outlined above, and as such is identical in behavior to that of single white channel busses.
+The overall brightness of the white channels is determined from the auto-white calculation outlined above, and as such is identical in behavior to that of single white channel buses.
 
 The color temperature is set either on a per-segment basis via a dedicated slider in the UI, or if `Calculate CCT from RGB` is enabled in LED settings, is estimated on a per-pixel basis from the set RGB color (e.g. setting Red results in the warmest, setting Blue results in the coldest possible white).
 The former has the advantage of granular white spectrum control independent of the set RGB color, while the latter enables control of the color temperature from all effects and realtime sources.
@@ -51,8 +51,8 @@ Setting this to 100% results in the highest peak brightness output at the neutra
 
 ![](/assets/images/content/wledcct.png)
 
-!!! warning
-		Make sure your setup can handle driving both white channels at maximum output simultaneously. This results in a higher heat output and might reduce the lifetime of your LEDs. For example, bulbs by Athom are designed for linear blending (0%) and may be damaged by attempting to use additive blending.
+!!! warning "Additive Blending May Cause Heatup"
+	Make sure your setup can handle driving both white channels at maximum output simultaneously. This results in a higher heat output and might reduce the lifetime of your LEDs. For example, bulbs by Athom are designed for linear blending (0%) and may be damaged by attempting to use additive blending.
 
 You can limit the maximum allowed additive blending at build time using the `WLED_MAX_CCT_BLEND` macro.  
 For example, add `-D WLED_MAX_CCT_BLEND=0` to your build flags to force linear blending only.
@@ -64,4 +64,4 @@ If your hardware uses an IC that controls the color temperature based on one PWM
 
 #### CCT in the JSON API
 
-Please see [here](/interfaces/json-api/#cct-control) for more info on how to handle WLED CCT from integrations.
+See [CCT control in the JSON API](/interfaces/json-api/#cct-control) for integration details.

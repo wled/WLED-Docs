@@ -10,13 +10,13 @@ This page is to honor the work of all the people who helped to make WLED what it
 ### Direct Contributors to WLED code
 
 Everyone you see on the Contributors page and:  
-8bitbrett made the WiFi auto connect QR code with the Aircoookie/WLED logo!  
+8bitbrett made the WiFi auto connect QR code with the wled/WLED logo!  
 adamo made the animated Discord server logo!  
 [@blazoncek](https://github.com/blazoncek) makes countless new features and improvements to many parts of WLED!  
 [@debsahu](https://github.com/debsahu) provided the HomeAssistant autodiscovery and a lot of help with PIO!  
 [@ewowi](https://github.com/ewoudwijma) numerous optimizations; 2D, audio and various user mod improvements.  MoonModules maintainer.  
 [@frenck](https://github.com/frenck) made an amazing, stable and feature-packed native integration with HomeAssistant!  
-[@Moustachauve](https://github.com/Moustachauve) added palette visualisation and developped the WLED Native app for Android and iOS!  
+[@Moustachauve](https://github.com/Moustachauve) added palette visualisation and developed the WLED app for Android and iOS!  
 [@pbolduc](https://github.com/pbolduc) DDP UDP synchronization, UI improvements and user mods.  
 [@photocromax](https://github.com/photocromax) helped bring the Live visualization feature to life.  
 [@raymiec](https://github.com/raymiec)  is currently working on creating the best clients for Android and iOS!  
@@ -28,7 +28,7 @@ adamo made the animated Discord server logo!
 [@wiesendaniel](https://github.com/wiesendaniel) added the configuration for the PlatformIO IDE!  
 [@YeonV](https://github.com/YeonV) provided the initial HomeAssistant MQTT light config!  
 [@werkstrom](https://github.com/werkstrom) added PixelArt converter  
-[@netmindz](https://github.com/netmindz) Freqency based Audio Reactive effects and Audio Reactive Color Palettes. MoonModules maintainer. WLED Release Manager   
+[@netmindz](https://github.com/netmindz) Frequency-based Audio Reactive effects and Audio Reactive Color Palettes. MoonModules maintainer. WLED Release Manager   
 
 _This list is incomplete._  
 
@@ -49,8 +49,9 @@ Tonyno - tireless user support and documentation
 ### Used Libraries and Dependencies
 
 [ESP8266](https://github.com/esp8266/Arduino)/[ESP32](https://github.com/espressif/arduino-esp32) Arduino Core  
+[ESP32 Tasmota](https://github.com/tasmota/platform-espressif32)/[ESP32 pioarduino](https://github.com/pioarduino/platform-espressif32) Arduino Core and build tools (since 16.0.0)  
 [NeoPixelBus](https://github.com/Makuna/NeoPixelBus) by Makuna  
-[FastLED](https://github.com/FastLED/FastLED/) library  
+[FastLED](https://github.com/FastLED/FastLED/) library (up to 0.15.5)  
 [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) by me-no-dev  
 [ESPAsyncUDP](https://github.com/me-no-dev/ESPAsyncUDP) by me-no-dev (as of 0.9.0)  
 [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) by me-no-dev  
@@ -59,7 +60,7 @@ Tonyno - tireless user support and documentation
 [WS2812FX](https://github.com/kitesurfer1404/WS2812FX) by kitesurfer1404 (modified)  
 [IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266) by markszabo (optional)  
 [Timezone](https://github.com/JChristensen/Timezone) by JChristensen  
-[Blynk](https://github.com/blynkkk/blynk-library) library (compacted)  
+[Blynk](https://github.com/blynkkk/blynk-library) library (compacted, up to 0.14.1)  
 [E1.31](https://github.com/forkineye/E131) library by forkineye (modified)  
 [Espalexa](https://github.com/Aircoookie/Espalexa) by Aircoookie (modified)  
 Many included FastLED effects are modified versions of [kriegsman](https://gist.github.com/kriegsman/)'s gists!  
@@ -70,7 +71,7 @@ WLED implements Art-Net™ Designed by and Copyright Artistic Licence Holdings L
 [PubSubClient](https://github.com/knolleary/pubsubclient) by knolleary (modified, up to 0.8.3)  
 
 [![badge](https://img.shields.io/badge/badges-by%20shields.io-blue.svg?style=flat-square)](https://shields.io)  
-[iro.js](https://iro.js.org/) colorpicker by James Daniel!
+[iro.js](https://iro.js.org/) colorpicker by James Daniel!  
 [Corsfix](https://corsfix.com/)
 
 Classic UI icons by [Linearicons](https://linearicons.com) created by [Perxis](https://perxis.com)!  

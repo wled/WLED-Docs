@@ -31,19 +31,19 @@ After downloading the file, unzip it and start `flash_download_tools_v3.6.8.exe`
 Now a new window opens.
 
 - Under the SPIDownload section select the `WLED_[...]_ESP[...].bin` file by clicking on the first `...` button
-- In the Textfield next to the "@" char put in this adress: `0x0`
-- Than make sure that the file is checked (click on the checkbox)
+- In the Textfield next to the "@" char put in this address: `0x0`
+- Then make sure that the file is checked (click on the checkbox)
 - **Click on the `Default` button**
 - Set SPI Speed to `80Mhz`
 - Set Flash Size to `32Mbit`
 - Select the COM Port of your ESP (usually it's **not** `COM1`)
 - BAUD can be set to `921600`
 - Verify that everything looks like the two picture below
-°[ESPTool settings](https://i.ibb.co/1qk16XL/esptool.png)
+![ESPTool settings](../assets/images/content/install-gui-esptool-settings.png)
 
 - _(optionally)_ click on **ERASE** to erase the entire flash chip
 - click on `START`
 
-Now the firmware will be flashed to the ESP. When the firmware flashing was successful you see this: ![Succesful finish](https://github.com/WoodyLetsCode/ESP-RGB-Controller/raw/master/images/ESP8266%20DownloadTool_finish.png). Finally restart your board.
+Now the firmware will be flashed to the ESP. When the firmware flashing was successful you see this: ![Successful finish](https://github.com/WoodyLetsCode/ESP-RGB-Controller/raw/master/images/ESP8266%20DownloadTool_finish.png). Finally restart your board.
 
 **Next steps:** [Quick start guide](/basics/getting-started)

@@ -7,17 +7,17 @@ hide:
 
 <p align="center">
   <img src="assets/images/ui/headers/wled_logo_akemi.png">
-  <a href="https://github.com/Aircoookie/WLED/releases"><img src="https://img.shields.io/github/release/Aircoookie/WLED.svg?style=flat-square"></a>
-  <a href="https://raw.githubusercontent.com/Aircoookie/WLED/master/LICENSE"><img src="https://img.shields.io/github/license/Aircoookie/wled?color=blue&style=flat-square"></a>
+  <a href="https://github.com/wled/WLED/releases"><img src="https://img.shields.io/github/release/wled/WLED.svg?style=flat-square"></a>
+  <a href="https://raw.githubusercontent.com/wled/WLED/master/LICENSE"><img src="https://img.shields.io/github/license/Aircoookie/wled?color=blue&style=flat-square"></a>
   <a href="https://wled.discourse.group"><img src="https://img.shields.io/discourse/topics?colorB=blue&label=forum&server=https%3A%2F%2Fwled.discourse.group%2F&style=flat-square"></a>
   <a href="https://discord.gg/QAh7wJHrRM"><img src="https://img.shields.io/discord/473448917040758787.svg?colorB=blue&label=discord&style=flat-square"></a>
-  <a href="https://github.com/Aircoookie/WLED"><img src="https://img.shields.io/badge/source-github-blue.svg?style=flat-square"></a>
-  <a href="https://gitpod.io/#https://github.com/Aircoookie/WLED"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?style=flat-square&logo=gitpod"></a>
+  <a href="https://github.com/wled/WLED"><img src="https://img.shields.io/badge/source-github-blue.svg?style=flat-square"></a>
+  <a href="https://gitpod.io/#https://github.com/wled/WLED"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?style=flat-square&logo=gitpod"></a>
 </p>
   
 # Welcome to my project WLED! ✨
 
-A fast and feature-rich implementation of an ESP32/ESP8266 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs or also SPI based chipsets like the WS2801 and APA102!
+A fast and feature-rich implementation of an ESP32 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs or also SPI based chipsets like the WS2801 & APA102 as well as [HUB75](/advanced/HUB75) video wall panels!
 
 ## ⚙️ Features
 
@@ -32,7 +32,7 @@ A fast and feature-rich implementation of an ESP32/ESP8266 webserver to control 
 - Up to 250 user presets to save and load colors/effects easily, supports cycling through them.  
 - Presets can be used to automatically execute API calls  
 - Nightlight function (gradually dims down)  
-- Full OTA software updatability (HTTP + ArduinoOTA), password protectable  
+- Full OTA software updatability (HTTP), password protectable  
 - Configurable analog clock + support for the Cronixie kit by Diamex  
 - Configurable Auto Brightness limit for safer operation  
 - Filesystem-based config for easier backup of presets and settings
@@ -40,13 +40,12 @@ A fast and feature-rich implementation of an ESP32/ESP8266 webserver to control 
 
 ## 💡 Supported light control interfaces
 
-- Community driven mobile applications
-  - WLED Native app made by community member [Moustachauve](https://github.com/Moustachauve)
-    - For [Android](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid) [[Source]((https://github.com/Moustachauve/WLED-Native-Android))]
-    - For [iOS](https://apps.apple.com/us/app/wled-native/id6446207239) [[Source]((https://github.com/Moustachauve/WLED-Native-iOS/))]
+- Mobile applications
+  - The WLED app, made by community member [Moustachauve](https://github.com/Moustachauve)
+    - For [Android](https://play.google.com/store/apps/details?id=ca.cgagnier.wlednativeandroid) [[Source](https://github.com/Moustachauve/WLED-Native-Android)]
+    - For [iOS](https://apps.apple.com/us/app/wled-official-app/id6446207239) [[Source](https://github.com/Moustachauve/WLED-Native-iOS/)]
 - [JSON](/interfaces/json-api) and [HTTP request](/interfaces/http-api) APIs  
 - [MQTT](/interfaces/mqtt)  
-- [Blynk IoT](/interfaces/blynk)  
 - [E1.31](/interfaces/e1.31-dmx), [Art-Net](/interfaces/e1.31-dmx), DDP and [TPM2.net](/interfaces/udp-realtime)
 - [Hyperion](https://github.com/hyperion-project/hyperion.ng)
 - [UDP realtime](/interfaces/udp-realtime)

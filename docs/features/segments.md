@@ -5,9 +5,6 @@ hide:
   # - toc
 ---
 
-!!! info
-    Starting in WLED 0.9.0, Segments are supported.
-
 This feature allows you to set different zones on the LED strip, each running a different effect or color.
 
 A segment is selected if the checkmark next to the segment number is checked. Changes you make to color or effects will apply to all selected segments. The color/effect that is shown in the web UI is that of the first selected segment.
@@ -17,9 +14,10 @@ There is one _main segment_, Segment 0 by default. This segment has a few import
 - Color transitions only work on the main segment
 - The main segment's color is the one that will be reported to HTTP and MQTT APIs
 
-Tip: If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
+!!! tip
+    If you divide your strip into two segments, reverse the second one and select both, you can achieve very nice symmetrical effects!
 
-Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ Currently you can create a maximum of 10 segments.  Presets 1-15 use only Segment 0 by default.  Preset 16 is the only Preset that saves settings for Segments 1-10.
+Segment 0 has a Start LED of 0 and a Stop LED equal to the LED Count you defined in Configuration, LED Preferences. _The Stop LED is **not** included in the Segment._ The number of supported segments depends on the hardware: 16 on ESP8266, and 32 on ESP32 (up to 64 with PSRAM).
 
 To display segment information select the down arrow in the Segment box.  To add a Segment select “+ Add Segment”.  Enter the Start and Stop LED as appropriate.  Grouping and Spacing control the organization of the LEDs within the selected effect.  To reverse the direction of an effect select Reverse Direction.  To delete a Segment select the trash can.  To save your Segment settings select the checkmark to the right of the Start and Stop LED numbers.
 
@@ -66,7 +64,7 @@ Grouping and Spacing can be combined to create many different custom LED layouts
 ## Interleaving
 This is an easy way to get a repeating pattern of colors using one segment per color.
 
-![](https://i.ibb.co/7Ntw68B/interleave.png)
+![](../assets/images/content/segments-interleave.png)
 
 ## Offset in a segment
 By default effects start in the first LED in the segment and finish in the last one. If the offset parameter in a segment is used, the effect start will be moved by the number of positions entered. It will continue to the last LED and then finish with the initial positions that were skipped.
@@ -85,8 +83,37 @@ A negative offset value is allowed and represents an offset starting from the la
 
 The offset values is prioritized over grouping and/or spacing. For example, if the offset is 2, grouping 4 and spacing 1, the first group of 4 LEDs will start at the physical position number 2.
 
-## Effect Overlay
-Some effects can be overlaid on the background of another effect. To use overlay, set up
-segments with overlapping pixels. The overlay effect must be playing on the segment with the higher id. 
-If the Overlay option is checked, the background will not be painted and the effect
-from the lower segment will be displayed.
+## Segment Layering & Effect Overlay
+
+Since v16.0, WLED supports true segment layering: segments with overlapping pixels are composited in real time using a blend mode you choose per segment. This makes it possible to combine almost any two effects on the same LEDs.
+
+To use layering, create two or more segments that cover the same pixel range. On each segment, select its **blend mode** from the dropdown:
+
+| Mode | Description |
+|------|-------------|
+| Top/Default | Shows only the top layer, ignoring the bottom entirely |
+| Bottom/None | Shows only the bottom layer, ignoring the top entirely |
+| Add | Adds colors together, clamping at white |
+| Subtract | Subtracts the top from the bottom, darkening toward black |
+| Difference | Absolute difference — identical colors go black, opposites go bright |
+| Average | 50/50 blend of both layers |
+| Multiply | Multiplies colors — white passes bottom through, black blocks it |
+| Divide | Divides bottom by top — brightens where the top is dark |
+| Lighten | Picks the brighter pixel from each layer |
+| Darken | Picks the darker pixel from each layer |
+| Screen | Inverse of multiply — always brightens |
+| Overlay | Boosts contrast using the bottom layer's brightness |
+| Hard Light | Like Overlay, but driven by the top layer |
+| Soft Light | Subtle contrast and saturation boost, no clipping |
+| Dodge | Brightens the bottom based on the top |
+| Burn | Darkens the bottom based on the top |
+| Stencil | Shows top where it has any color; shows bottom where top is black |
+
+The compositing order follows segment ID order: the segment with the **lower** ID is treated as the bottom (background) layer.
+
+### Transition Blending
+
+v16.0 also adds transition blending styles that control how effects cross-fade when you switch presets. 
+Options include Shift, Push, and others, in addition to the classic dissolve-style fade.
+
+The longest transition time for any kind of color blending, brightness transition or effect crossfading is 65 seconds.

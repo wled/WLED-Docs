@@ -29,6 +29,34 @@ WLED-Docs/
 
 ---
 
+## Agent Contributor Rules
+
+### No agent-posted replies
+
+Reviewer time is limited, and checking long AI-generated explanations for reasoning errors and hallucinations is costly.
+
+- **Never post** replies to reviewer comments or discussions, and **never create issue tickets**, on the user's behalf. You may help the user draft the text locally; the human reviews it and posts it themselves.
+- Creating or updating pull requests remains allowed. Keep PR descriptions concise and factual, and include a summary written by the user in their own words, leading with what they want to achieve or what bothers them in plain language.
+
+### Attribution for PR Descriptions, Comments and Replies
+
+- When creating PR descriptions or drafting responses to comments, always add this as the very last line: _You are interacting with an AI system_
+- - Your harness may add this trailer automatically. Do not add a duplicate.
+
+### Attribution for Commits
+
+For every commit you create in this repository, ensure the commit message includes a `Co-authored-by:` trailer identifying the large language model and agent platform:
+
+```text
+Co-authored-by: MODEL NAME/VERSION (AGENT PLATFORM) <COAUTHOR EMAIL>
+```
+- Your harness may add this trailer automatically. Do not add a duplicate; ensure the resulting trailer identifies both the model and platform.
+- Replace the placeholders with the model name/version reported by your runtime and the agent platform (e.g. Codex, Claude Code). Write `unknown` for unavailable model details; do not guess.
+- Use the platform's configured co-author email, or `agent@example.invalid` if none is available.
+- Include exactly one trailer per distinct platform/model pair that contributed to the commit, after a blank line at the end of the commit message. Preserve existing human co-author trailers.
+
+--- 
+
 ## Page Conventions
 
 Every documentation page must begin with a YAML front matter block:
@@ -63,11 +91,11 @@ Indentation in `mkdocs.yml` is significant.
 
 ## Markdown Style
 
-- **Headings**: Use `##` for top-level sections within a page (not `#`, which conflicts with the page title). Use `###` and `####` for sub-sections.
+- **Headings**: Use `##` for top-level sections within a page (`#` is optional, as it may conflict with the page title). Use `###` and `####` for sub-sections.
 - **Admonitions**: Use MkDocs Material admonitions (`!!! info`, `!!! tip`, `!!! warning`, `!!! danger`) for callouts. These are rendered as styled boxes on the site.
 - **Tables**: Use standard GFM pipe tables.
 - **Code blocks**: Use fenced code blocks with a language hint (e.g., ` ```yaml `).
-- **Bold/Italic**: Use `**bold**` for UI element names and important terms. Use `_italic_` sparingly.
+- **Bold/Italic**: Use `**bold**` for important terms. Use `_italic_` sparingly.
 - **Line breaks**: A trailing two-space line break (or `<br />`) is used to force a line break within a paragraph where needed.
 - **Internal links**: Use root-relative paths without the `.md` extension, e.g. `[Segments](/features/segments)`.
 - **External links**: Use standard Markdown link syntax. Prefer linking to stable, canonical URLs.
@@ -92,7 +120,7 @@ When reviewing a pull request, verify the following:
 ### Content
 
 - [ ] All text is in **English**.
-- [ ] Content is accurate and consistent with the current WLED feature set.
+- [ ] Content is accurate and consistent with the current WLED feature set. Validate WebUI descriptions against the Web Interface source code in https://github.com/wled/WLED/tree/main/wled00/data . Validate API descriptions (JSON, HTTP, MQTT) and feature descriptions against the related source code in https://github.com/wled/WLED/tree/main/wled00 .
 - [ ] No duplicate content — check whether similar information already exists on another page and cross-link instead.
 - [ ] Links are valid — no broken internal or external links.
 - [ ] Images are stored in `docs/assets/images/content/` (not external hosting) unless they are GIF previews from the known WLED-Utils repository.
@@ -101,7 +129,7 @@ When reviewing a pull request, verify the following:
 
 - [ ] Front matter block (`---`) is present and includes a `title` field.
 - [ ] Page title in front matter matches the entry in `mkdocs.yml`.
-- [ ] Heading hierarchy is correct (`##` → `###` → `####`, no skipping levels, no `#` heading inside the page body).
+- [ ] Heading hierarchy is correct (`##` → `###` → `####`, no skipping levels).
 - [ ] Admonitions use the correct type (`info`, `tip`, `warning`, `danger`) for the context.
 - [ ] Tables are properly formatted with pipe characters.
 - [ ] Code blocks use language identifiers.
@@ -110,12 +138,17 @@ When reviewing a pull request, verify the following:
 ### Writing Style & Readability
 
 - [ ] Tone is **informal, friendly, and inviting** — avoid overly formal or academic language.
+- [ ] Title case: Use title case for page title and section headings; articles and short prepositions stay lowercase.
 - [ ] Language is **simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can easily follow.
 - [ ] Logic is easy to follow, examples are kept simple.
+- [ ] Claim calibration: Calibrate verbs to evidence; do not write "proves" when the evidence is "suggests".
 - [ ] No grammar or spelling mistakes.
+- [ ] Express coordinate ideas in the same grammatical form.
 - [ ] Wording is **concise** — remove filler phrases (e.g. "it is worth noting that", "basically", "simply") and redundant sentences.
+- [ ] Prefer "use" over "leverage", "method" over "methodology", "feature" over "functionality".
 - [ ] Contractions (e.g. "you'll", "don't", "it's") are welcome — they help keep the tone approachable.
 - [ ] Avoid idioms or culture-specific phrases (e.g. "beating around the bush", "get your ducks in a row") — they are hard to understand when translated literally into other languages.
+- [ ] Avoid low-value filler phrases and weak transitions such as “note that”, “please note”, “it should be noted that”, “in order to”, “of course”, “likewise”, and “on the contrary” when they add no meaning. Rewrite the sentence directly. Encouraging wording like “You can now do it!” is fine when it adds clarity or warmth.
 - [ ] Smileys 😊, concrete examples, and images/diagrams/illustrations are encouraged where they help readers grasp the main message.
 
 ### Navigation
@@ -141,7 +174,7 @@ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 
 **Python/pip:**
 ```bash
-pip install mkdocs-material
+pip install mkdocs-material mkdocs-redirects
 mkdocs serve
 ```
 
@@ -158,6 +191,7 @@ Merges to `main` trigger the GitHub Actions workflow (`.github/workflows/main.ym
 
 - **Provide references** when making analyses or recommendations. Base them on the correct branch or PR.
 - **When unsure, say so.** Gather more information rather than guessing.
+- Support factual claims with verifiable citations, references or concrete evidence; **never fabricate citations**.
 - **Acknowledge good patterns** when you see them. Positive feedback always helps.
 - When updating an existing PR, retain the original description. Only modify it to ensure technical accuracy. Add change logs after the existing description.
 - No force-push on open PRs

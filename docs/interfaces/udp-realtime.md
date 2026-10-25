@@ -9,7 +9,7 @@ hide:
 
 You can now use WLED with the popular Ambilight software Hyperion.
 Just configure Hyperion to use an UDP device with protocol 0 on port 19446!
-The maximum number of LEDs supported in this mode is 490. (WLED 0.8.0 and lower: 341)
+The maximum number of LEDs supported in this mode is 490.
 
 ### Prismatik
 
@@ -18,10 +18,22 @@ Select one of the UDP options in the device configuration wizard.
 
 ### TPM2.NET
 
-Supported in latest master and will be available in WLED 0.10.1.
+TPM2.NET is supported.
 Please set the WLED broadcast UDP port to 65506 in Sync settings to enable receiving TPM2.NET data.
 
-### UDP Realtime
+### UDP Sound Sync (v2, v2+)
+
+This feature acts as a sound input and accepts pre-processed sound data via UDP _Multicast_, port 11988 (user configurable). 
+Generating and sending this data can be done in multiple ways: 
+there is a [Windows application](https://github.com/Victoare/SR-WLED-audio-server-win) or a lower-level [C library](https://github.com/netmindz/WLED-sync). 
+Learn more about this feature in the [documentation of the MM-fork](https://mm.kno.wled.ge/soundreactive/sync/), where it was originally implemented.
+
+* The UDP &nbsp;<em>Multicast</em>&nbsp; IP is `239.0.0.1`, and the default UDP port is `11988`.
+* The software sends/receives one packet every 20 milliseconds (approx). An external sender may be slower, but not faster than 20ms = 50fps.
+* UDP port can be changed in WLED usermod config pages, for example to have several groups of devices by assigning a different UDP ports for each group.
+* UDP Multicast can sometimes have issues with some Wi-Fi routers, if you have issues, please try with a different Wi-Fi.
+
+### UDP Realtime (v1) and WARLS
 
 Additionally, WLED offers a way to directly drive the connected LEDs via UDP. The protocol is referred to as WLED [Audio-Reactive-Led-Strip](https://github.com/scottlawsonbc/audio-reactive-led-strip) (WARLS), since the support of that project was its primary goal. However, it can also be used for other realtime applications like an ambilight.
 
@@ -88,16 +100,7 @@ Changing a single LED therefore only requires a packet of 2+4 bytes. All LEDs ma
 
 ### Setup with ARLS
 
-The software now supports audio-reactive-led-strip!
+!!! warning "ARLS is deprecated"
+    ARLS (audio-reactive-led-strip v1) is based on an unmaintained library and the v1 UDP Realtime protocol.
 
-1. Download [audio-reactive-led-strip](https://github.com/scottlawsonbc/audio-reactive-led-strip) and follow its installation instruction. You can also use my (untested) [fork](https://github.com/Aircoookie/audio-reactive-led-strip). In that case, you can skip step 2.
-2. Insert the following code in led.py after line 66:
-    m.append(1);
-    m.append(2);
-   These are the first two bytes of the protocol.
-3. In config.py set your led amount, ESP IP and WLED UDP notifier port. For FPS, a setting between 15-30 is recommended.
-4. Run visualization.py! If you have a low amount of LEDS (e.g. 10) try lowering the sigma values in line 129-131.
-5. If you have multiple WLED devices, you can sync them all with music.
-Use the led count of your largest device and set the IP to X.X.X.255 (UDP broadcast).
-You can adjust the position of the amplitude with the WARLS offset setting.
-Note that web control currently does not work while it is active.
+See [historical features: ARLS](/about/historical-features#arls-audio-reactive-led-strip-v1-setup)

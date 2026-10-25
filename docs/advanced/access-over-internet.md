@@ -55,7 +55,7 @@ In this example, we are using Caddy which only requires port 443 to complete the
 With other software, you may need to also open insecure HTTP port 80.
 
 Finally, in Caddyfile, configure the reverse proxy and authentication
-Note that Caddy uses HTTPS by default.
+Caddy uses HTTPS by default.
 With other software, we may need to disable access over the unsafe HTTP.
 
 ```
@@ -73,4 +73,4 @@ mydomain.example {
 
 Now `https://mydomain.example/wled/` exposes WLED to the public internet using secure HTTPS and password authentication.
 
-For additional securty, consider enabling [OTA lock password](/advanced/ota-lock).
+For additional security, consider enabling [OTA lock password](/advanced/ota-lock).
