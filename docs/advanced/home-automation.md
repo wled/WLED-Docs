@@ -31,6 +31,127 @@ Or use this button to jump straight to step 3:
 
 Home Assistant can also control WLED over [MQTT](#mqtt), but the WLED integration does more with less setup. It finds your devices, keeps their state in sync, and covers effects, presets, and segments.
 
+### Advanced
+
+The native integration has known limitations documented in the [official HA WLED integration docs](https://www.home-assistant.io/integrations/wled/). Below are practical workarounds using WLED's REST API.
+
+#### AudioReactive usermod not controllable
+
+Home Assistant does not expose usermods (such as AudioReactive) as entities.
+
+**Workaround:** Use `rest_command` to enable/disable the AudioReactive usermod:
+
+```yaml
+rest_command:
+  wled_audioreactive_on:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: '{"AudioReactive":{"enabled":true}}'
+  wled_audioreactive_off:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: '{"AudioReactive":{"enabled":false}}'
+```
+
+#### No master control for color/effect across all segments
+
+There is no single entity to control color, effect, and brightness across all segments simultaneously. Light groups send separate requests per segment, causing staggered transitions and latency.
+
+**Workaround:** Use **presets**. Create a preset in WLED with the desired configuration (effect, colors, parameters) applied to all segments. Then activate it from Home Assistant:
+
+```yaml
+action: select.select_option
+target:
+  entity_id: select.wled_preset
+data:
+  option: "All Segments – Rainbow"
+```
+
+A preset encapsulates the complete state (effect, palette, brightness, speed, colors for all segments), ensuring all segments are updated simultaneously in a single transaction.
+
+Alternatively, use a single REST API call to set all segments in one request:
+
+```yaml
+rest_command:
+  wled_all_segments_effect:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: >-
+      {"seg":[
+        {"id":0,"fx":{{ fx }},"pal":{{ pal }},"bri":{{ bri }}},
+        {"id":1,"fx":{{ fx }},"pal":{{ pal }},"bri":{{ bri }}}
+      ]}
+```
+
+Create a script for commonly used effects (adjust segment IDs to match your WLED config):
+
+```yaml
+script:
+  wled_rainbow_all:
+    sequence:
+      - action: rest_command.wled_all_segments_effect
+        data:
+          fx: 9       # Rainbow effect
+          pal: 11     # Rainbow palette
+          bri: 200
+```
+
+#### Secondary and tertiary effect colors cannot be set from HA
+
+Home Assistant's WLED integration exposes only the primary (foreground) color. Secondary (background) and tertiary colors used by many effects are inaccessible.
+
+**Workaround A – Use presets:**
+
+Configure the desired colors (primary, secondary, and tertiary) directly in the WLED web UI, save the configuration as a preset, then activate it from Home Assistant:
+
+```yaml
+action: select.select_option
+target:
+  entity_id: select.wled_preset
+data:
+  option: "Rainbow with Custom Colors"
+```
+
+This is the simplest approach and does not require parameterizing colors.
+
+**Workaround B – Set all colors via REST API:**
+
+If dynamic color control is needed, use the WLED REST API:
+
+```yaml
+rest_command:
+  wled_set_colors:
+    url: "http://192.168.1.100/json/state"
+    method: POST
+    content_type: application/json
+    payload: >-
+      {"seg":[{"id":0,"col":[
+        [{{ r1 }},{{ g1 }},{{ b1 }}],
+        [{{ r2 }},{{ g2 }},{{ b2 }}],
+        [{{ r3 }},{{ g3 }},{{ b3 }}]
+      ]}]}
+```
+
+Field mapping: `col[0]` = primary (Fx), `col[1]` = secondary (Bg), `col[2]` = tertiary (Cs).
+
+Example call:
+```yaml
+action: rest_command.wled_set_colors
+data:
+  r1: 255
+  g1: 0
+  b1: 0
+  r2: 0
+  g2: 255
+  b2: 0
+  r3: 0
+  g3: 0
+  b3: 255
+```
+
 ## Apple HomeKit
 
 WLED doesn't support HomeKit on its own, but a bridge on your network can put your WLED lights in the Apple Home app. The light gets power, brightness, and color. If you have an Apple TV or HomePod at home, the Home app can control WLED when you're away too.
