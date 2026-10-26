@@ -380,8 +380,8 @@ Playlist object:
 | JSON key | Description
 | --- | --- |
 ps | Array of preset ID integers to be applied in this order.
-dur | Array of time each preset should be kept, in tenths of seconds. If only one integer is supplied, all presets will be kept for that time.Defaults to 10 seconds if not provided.
-transition | Array of time each preset should transition to the next one, in tenths of seconds. If only one integer is supplied, all presets will transition for that time. Defaults to the current transition time if not provided.
+dur | Array of time each preset should be kept, in tenths of seconds. If only one integer is supplied, all presets will be kept for that time. If the array is shorter than `ps`, its last value is used for the remaining presets. Defaults to 10 seconds if not provided.
+transition | Array of fade times into each preset, in tenths of seconds. Each value is the fade *into* the preset at the same position in `ps`, and the fade runs at the start of that preset's `dur`. If only one integer is supplied, every preset fades in for that time. If the array is shorter than `ps`, its last value is used for the remaining presets. Defaults to the current transition time if not provided. While a playlist runs, the `transition` saved inside each preset is ignored.
 repeat | How many times the entire playlist should cycle before finishing. Set to `0` for an indefinite cycle. Default to indefinite if not provided.
 end | Single preset ID to apply after the playlist finished. Has no effect when an indefinite cycle is set. If not provided, the light will stay on the last preset of the playlist.
 
