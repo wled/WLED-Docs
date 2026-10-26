@@ -40,7 +40,7 @@ Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather no
     With Tailscale connected on your phone, open WLED's LAN IP in the browser or add it in the WLED app. Use the IP address, not `wled.local`, because mDNS names don't resolve across the tunnel. WLED also never gets a `.ts.net` name of its own, since it isn't running Tailscale. On a Linux client, run `sudo tailscale set --accept-routes` first; phones, Macs and Windows pick up the route on their own.
 
     !!! tip "Consider a plain WireGuard tunnel"
-        If you'd rather not rely on a third party, a plain [WireGuard](https://www.wireguard.com/) VPN tunnel to your router or other server in your home network, or a self-hosted [Headscale](https://headscale.net/) control server gets you the same result (access to all your local devices as if you were in your home network) with a bit more setup.
+        If you'd rather not rely on a third party, a plain [WireGuard](https://www.wireguard.com/) VPN tunnel to your router or other server in your home network, or a self-hosted [Headscale](https://headscale.net/) control server gets you the same result (access to all your local devices as if you were in your home network) with a bit more setup. To put a single ESP32 on a WireGuard VPN by itself, see [WireGuard VPN](/advanced/wireguard).
 
 === "Cloudflare Tunnel"
 
