@@ -36,7 +36,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
 | [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages | `@lost-hope` | both | EUPL |  |
 | [wizlights](https://github.com/eibanez/wled-usermod-wizlights) | Controlling Wiz lights with WLED | @eibanez | both | EUPL | |
 |[Sensor Hub](https://lost-hope.github.io/sensor-hub-site/)|A sensor hub that lets you connect multiple sensors, that are then shown in the info tab, published via mqtt and API and being made available for consumers| `@lost-hope` | both | EUPL |Coauthored with AI|
-
+| [WLED Buzzer Usermod](https://github.com/piggei/wled-usermod-buzzer) | Non-blocking active/passive buzzer service with melodies, Web/JSON APIs, Night Mode and optional I2S/ES8311 audio backend | @piggei | esp32 | EUPL-1.2 | ESP32/C3/S3; Waveshare ESP32-S3 RGB Matrix audio profile; AudioReactive shared-I2S support; AI-assisted development |
 
 ## Adding your usermod to the list
 
