@@ -8,7 +8,7 @@ At a glance, the docs should be:
 - **Title Case** for the page title and every section heading (articles and short prepositions stay lowercase).
 - **Simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can follow easily.
 - **Concise** — cut filler like "it is worth noting that" or "simply". Prefer "use" over "leverage", "feature" over "functionality".
-- **Calibrated** — match the verb to the evidence (don't write "proves" when it only "suggests").
+- **Calibrated** — match the verb to the evidence (don't write "proves" when it only "suggests"). Avoid overly strong claims, such as "qualified", "certified", or "production-ready".
 
 Formatting essentials:
 
