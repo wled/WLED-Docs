@@ -41,6 +41,7 @@ reviews:
            - https://github.com/wled/WLED/blob/main/AGENTS.md#usermods
            - docs/advanced/custom-features.md: "What's inside a usermod"
            - https://github.com/wled/WLED/tree/main/usermods/user_fx#basic-syntax-for-wled-effect-creation
+           - AGENTS.md#writing-style--readability for user-facing documentation
 
         Check Usermod inheritance, REGISTER_USERMOD(), library.json
         build.libArchive: false, non-blocking loop() behavior, platform
