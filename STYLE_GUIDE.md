@@ -5,8 +5,8 @@ The complete, authoritative writing and formatting rules live in **[AGENTS.md](A
 At a glance, the docs should be:
 
 - **English**, in an **informal, friendly** tone. Contractions are welcome. 😊
-- **Title Case** for the page title and every section heading (articles and short prepositions stay lowercase).
-- **Simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can follow easily.
+- **Title Case** for the page title and for short section headings (articles and short prepositions stay lowercase).
+- **Simple and clear** — clear sentences, common words preferred, no unexplained jargon — so non-native English speakers can follow easily.
 - **Concise** — cut filler like "it is worth noting that" or "simply". Prefer "use" over "leverage", "feature" over "functionality".
 - **Calibrated** — match the verb to the evidence (don't write "proves" when it only "suggests"). Avoid overly strong claims, such as "qualified", "certified", or "production-ready".
 
