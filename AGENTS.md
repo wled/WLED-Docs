@@ -139,7 +139,7 @@ When reviewing a pull request, verify the following:
 
 - [ ] Tone is **informal, friendly, and inviting** — avoid overly formal or academic language.
 - [ ] Title case: Use title case for short page titles and section headings; articles and short prepositions stay lowercase, sentence-style titles use sentence case.
-- [ ] Language is **simple and clear** — short sentences, common words, no unexplained jargon — so non-native English speakers can easily follow.
+- [ ] Language is **simple and clear** —  clear sentences, common words preferred, no unexplained jargon — so non-native English speakers can easily follow.
 - [ ] Logic is easy to follow, examples are kept simple.
 - [ ] Claim calibration: Calibrate verbs to evidence; do not write "proves" when the evidence is "suggests". Avoid making strong claims such as 'qualified', 'fully validated', 'production-ready' or 'full lifecycle coverage'. Prefer neutral wording to describe what was actually tested.
 - [ ] No grammar or spelling mistakes.
