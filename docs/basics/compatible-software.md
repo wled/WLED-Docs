@@ -35,6 +35,7 @@ Source programs generate light data and stream them to WLED in real time.
 
 | Name | Description |
 |---|---|
+[Glyph](https://github.com/spandan-kumar/glyph) | Android app for WLED 2D matrices (free, MIT): a setup wizard for the matrix layout, an animation library, a live pixel editor, clocks and games. Streams frames over DDP; sending GIFs for the Image effect needs WLED 16+ on ESP32. Tested on a 16×16 panel so far.
 [LedFx](https://github.com/LedFx/LedFx) | A music visualization tool written in Python. Connects to WLED via E1.31 or UDP. [Dr.Zzs tutorial video](https://www.youtube.com/watch?v=ipSfQdfX4fE)
 [Prismatik WLED-WiFi](https://github.com/psieg/Lightpack) (native) | Ambilight via WiFi or serial - natively supports UDP (WARLS, DRGB, DNRGB protocols).
 [Prismatik WLED-WiFi](https://github.com/Lord-FEAR/Prismatik-WLED-WiFi) (plugin) | Ambilight via WiFi - a Plugin alternative for Prismatik WLED support.
