@@ -12,7 +12,7 @@ This page covers how to add custom functionality to WLED, either through usermod
 
 ## Usermods
 
-Usermods are self-contained modules you can add to a WLED build without touching core source files. WLED ships with many usermods in the `usermods/` directory (audio-reactive, temperature sensors, displays, rotary encoders, and more).
+Usermods are self-contained modules you can add to a WLED build without touching core source files. WLED ships with many usermods in the [`usermods/` directory](https://github.com/wled/WLED/tree/main/usermods) (audio-reactive, temperature sensors, displays, rotary encoders, and more), each documented by its own README. Usermods maintained outside the WLED repository are indexed on the [Community Usermods](/advanced/community-usermods) page.
 
 ### Enabling usermods
 
