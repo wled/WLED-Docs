@@ -5,6 +5,17 @@ hide:
   # - toc
 ---
 
+## Latest UDP Notifier Protocol
+
+WLED 16.0.1 sends notifier protocol version 12. 
+A version-12 notification message has a 41-byte header followed by a variable number of 36-byte segment records. 
+Byte 39 contains the active segment count. Byte 40 contains the segment record size. 
+
+The UDP message has the sender's segment capacity, not its active segment count. 
+The receiver decodes only the active segment records advertised in byte 39, and deactivates additional segments.
+
+The version-12 UDP SYNC notification packet size is `41 + 36 × getMaxSegments()` bytes. 
+
 ### Usage
 
 The UDP notifier function of WLED makes it easy to sync multiple lights to the same color/effect, enabled by default.
@@ -59,14 +70,14 @@ When enabled, the module where a value was changed will send an UDP broadcast to
 Other modules that listen on this port will set themselves to the same color.
 
 For interoperability, the protocol was designed so that even modules with different WLED versions can sync.
-Therefore, if a WLED 0.4 system receives a WLED 0.3 UDP notification it will apply the primary color but keep its current secondary color.
+Therefore, if a WLED 0.14.0 system receives a WLED 0.4 UDP notification it will apply the primary color but keep its current secondary color.
 
-The UDP packet is currently 24 bytes long. It is laid out in the following:
+Byte offsets are zero-based.
 
 | Byte Index | Var Name | Description | Notifier Version |
 | --- | --- | --- | --- |
-0 | \- | Packet Purpose Byte* | 0
-1 | callMode | Packet Reason** | 0
+0 | \- | Packet Purpose Byte`*` | 0
+1 | callMode | Packet Reason`***` | 0
 2 | bri | Master Brightness | 0
 3 | col[0] | Primary Red Value | 0
 4 | col[1] | Primary Green Value | 0
@@ -76,36 +87,56 @@ The UDP packet is currently 24 bytes long. It is laid out in the following:
 8 | effectCurrent | Effect Index | 0
 9 | effectSpeed | Effect Speed | 0
 10 | white | Primary White Value | 1
-11 | \- | Version Byte*** | 1
+11 | \- | Version Byte`****` <br/> <i> Notifier protocol version; `12` in WLED 0.14.1 </i> | 1
 12 | colSec[0] | Secondary Red Value | 2
 13 | colSec[1] | Secondary Green Value | 2
 14 | colSec[2] | Secondary Blue Value | 2
 15 | whiteSec | Secondary White Value | 2
 16 | effectIntensity | Effect Intensity | 3
-17 | transitionDelay | Transition Duration Upper | 4
-18 | transitionDelay | Transition Duration Lower | 4
-19 | effectPalette | FastLED palette | 5
-20-23 | - | Zeros | -
+17-18 | transitionDelay | Transition duration  <br/> in milliseconds **little-endian**: low byte first | 4
+19 | effectPalette | palette | 5
+20–23 | | Tertiary RGBW color | 
+24 | | Follow-up/retransmission flag |
+25–28 | | Effect timebase in milliseconds, big-endian |
+29 | | Time-source identifier |
+30–33 | | Unix time in seconds, big-endian |
+34–35 | | Millisecond component, big-endian |
+36 | | Send-group bitmask; bit 0 represents group 1 |
+37–38 | | CCT encoding `**` |
+39 | | Active segment count | 11
+40 | | Segment record size; `36` for version 12 | 11
+41+ | | Variable number of Segment records | 11
 
-*The notifier protocol is only used if this byte is 0. Otherwise, one of the [UDP Realtime](/interfaces/udp-realtime) protocols will be used.
+`*` The notifier protocol is only used if this byte is 0. Otherwise, one of the [UDP Realtime](/interfaces/udp-realtime) protocols will be used.
 
-**The callMode variable specifies the reason for the notification.
+`**` CCT byte 37:  
+- `0`: byte 38 contains CCT in the range 0–255.
+- `1–254`: bytes 37–38 contain a big-endian Kelvin value.
+- `255`: no valid header CCT value.
+
+`***` The callMode variable specifies the reason for the notification.
 Every color update has the potential to trigger a notification.
 
-| callMode | Description | Behavior |
-| --- | --- | --- |
-0 | Initial Boot | Do not notify
-1 | Direct Change via UI or API | notifyDirect?
-2 | Button was pressed | notifyButton?
-3 | Update by other notification | Do not notify
-4 | Nightlight activated | notifyDirect?
-5 | Other (Req. with &NN) | Do not notify
-6 | Effect changed | notifyDirect?
-7 | Hue light changed | notifyHue?
-8 | Preset Cycle active | notifyDirect?
-9 | Updated via Blynk | notifyDirect?
 
-***This is the version of the UDP protocol.
+| callMode | Description | Behavior | Comments
+| --- | --- | --- | --- |
+0 | Initial Boot | Do not notify |
+1 | Direct Change via UI or API | notifyDirect? |
+2 | Button was pressed | notifyButton? |
+3 | Update by other notification | Do not notify | 
+4 | Nightlight activated | notifyDirect? |
+5 | Other (Req. with &NN) | Do not notify |
+6 | Effect changed | notifyDirect? | unused legacy
+7 | Hue light changed | notifyHue? |
+8 | Preset Cycle active | notifyDirect? | unused legacy
+9 | Updated via Blynk | notifyDirect? | unused legacy
+9 | Updated via Blynk | notifyDirect? | unused legacy
+10 | Alexa | notifyDirect? |
+11 | | WebSocket-only | not a notifier reason
+12 | Button/IR preset | notifyDirect? |
+
+
+`****` This is the version of the UDP protocol.
 
 | UDP Version | Description | WLED Version |
 | --- | --- | --- |
@@ -115,3 +146,11 @@ Every color update has the potential to trigger a notification.
 3 | Effect Intensity supported | 0.5.0
 4 | Transition Time supported | 0.6.0
 5 | Palettes supported | 0.8.0
+6 | Follow-up flag and effect timebase |
+7 | Tertiary color |
+8 | System-time synchronization |
+9 | Sync-group bitmask |
+10 | CCT |
+11 | Segment records; released WLED 0.13.x uses 28-byte records |
+12 | 36-byte records with extended options, custom controls, and 2D bounds |
+
