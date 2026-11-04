@@ -17,7 +17,7 @@ This sub-page offers options to connect the ESP to different WiFi/WLAN devices.
 |---|---|---|
 Network name (SSID) | String 0..32 | The name of your home WiFi. Leave empty to not connect. Use **Scan** to pick from nearby networks
 Network password | String 0..64 | The password of your home WiFi
-BSSID | MAC address | Optional. Locks the connection to one specific access point, useful with mesh WiFi
+BSSID | MAC address, 12 hex digits without separators (e.g. `3C3712BEC807`) | Optional. Locks the connection to one specific access point, useful with mesh WiFi. Must be written without colons: a colon-separated value such as `3C:37:12:BE:C8:07` is silently read as `00:00:00:00:00:3C` and the device will fail to connect
 Static IP | 4x 0..255 | An optional static IPv4 address. Leave at 0.0.0.0 for DHCP. Also used by Ethernet
 Static gateway | 4x 0..255 | In a static config, your gateway's IPv4 address
 Static subnet mask | 4x 0..255 | In a static config, this normally is 255.255.255.0
