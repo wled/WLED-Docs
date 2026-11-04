@@ -1,0 +1,226 @@
+{
+  "remote": "38-key",
+  "0xFF3AC5": {
+    "label": "On",
+    "pos": "1x1",
+    "cmd": "T=1"
+  },
+  "0xFF02FD": {
+    "label": "Off",
+    "pos": "1x4",
+    "cmd": "T=0"
+  },
+  "0xFF1AE5": {
+    "label": "Red",
+    "pos": "2x1",
+    "cmnt": "Lava",
+    "cmd": "FP=8&CL=hFF0000&C2=hFF7F00&C3=hCC3D60"
+  },
+  "0xFF9A65": {
+    "label": "Green",
+    "pos": "2x2",
+    "cmnt": "Forest",
+    "cmd": "FP=10&CL=h8000&C2=h8040&C3=h30661E"
+  },
+  "0xFFA25D": {
+    "label": "Blue",
+    "pos": "2x3",
+    "cmnt": "Breeze",
+    "cmd": "FP=15&CL=hFF&C2=h7F00FF&C3=h3D60CC"
+  },
+  "0xFF22DD": {
+    "label": "White",
+    "pos": "2x4",
+    "cmd": "FP=5&CL=hFFFFFF&C2=hFFFFFF&C3=hCCCCCC"
+  },
+  "0xFF2AD5": {
+    "label": "Tomato",
+    "pos": "3x1",
+    "cmnt": "Yelmag",
+    "cmd": "FP=5&CL=hFF6347&C2=hFFBF47&C3=hCC646F"
+  },
+  "0xFFAA55": {
+    "label": "LightGreen",
+    "pos": "3x2",
+    "cmnt": "Rivendale",
+    "cmd": "FP=14&CL=h90EE90&C2=h90EEBF&C3=h96BE89"
+  },
+  "0xFF926D": {
+    "label": "SkyBlue",
+    "pos": "3x3",
+    "cmnt": "Ocean",
+    "cmd": "FP=9&CL=h87CEEB&C2=h879CEB&C3=h84B9BC"
+  },
+  "0xFF12ED": {
+    "label": "Rainbow",
+    "pos": "3x4",
+    "cmnt": "Pride 2015",
+    "cmd": "FX=63"
+  },
+  "0xFF0AF5": {
+    "label": "OrangeRed",
+    "pos": "4x1",
+    "cmnt": "Sakura",
+    "cmd": "FP=49&CL=hFF4500&C2=hFFC400&C3=hCC403D"
+  },
+  "0xFF8A75": {
+    "label": "Cyan",
+    "pos": "4x2",
+    "cmnt": "Beech",
+    "cmd": "FP=22&CL=hFFFF&C2=h7FFF&C3=h3DCCA8"
+  },
+  "0xFFB24D": {
+    "label": "RebeccaPurple",
+    "pos": "4x3",
+    "cmd": "FP=5&CL=h663399&C2=h993399&C3=h4F417A"
+  },
+  "0xFF32CD": {
+    "label": "Meteor",
+    "pos": "4x4",
+    "cmnt": "Meteor Smooth",
+    "cmd": "FX=77&FP=33"
+  },
+  "0xFF38C7": {
+    "label": "Orange",
+    "pos": "5x1",
+    "cmnt": "Orangery",
+    "cmd": "FP=47&CL=hFFA500&C2=hD9FF00&C3=hCC753D"
+  },
+  "0xFFB847": {
+    "label": "Turquoise",
+    "pos": "5x2",
+    "cmd": "FP=5&CL=h40E0D0&C2=h40A0E0&C3=h59B393"
+  },
+  "0xFF7887": {
+    "label": "Purple",
+    "pos": "5x3",
+    "cmd": "FP=5&CL=h800080&C2=h800040&C3=h541E66"
+  },
+  "0xFFF807": {
+    "label": "Stars",
+    "pos": "5x4",
+    "cmnt": "TwinkleUp-Magenta",
+    "cmd": "FX=106&FP=40&C2=h14142e"
+  },
+  "0xFF18E7": {
+    "label": "Yellow",
+    "pos": "6x1",
+    "cmd": "FP=5&CL=hFFFF00&C2=h7FFF00&C3=hCCA83D"
+  },
+  "0xFF9867": {
+    "label": "DarkCyan",
+    "pos": "6x2",
+    "cmd": "FP=5&CL=h8B8B&C2=h458B&C3=h216F5B"
+  },
+  "0xFF58A7": {
+    "label": "Plum",
+    "pos": "6x3",
+    "cmnt": "Magenta",
+    "cmd": "FP=40&CL=hDDA0DD&C2=hDDA0BE&C3=hA88EB0"
+  },
+  "0xFFD827": {
+    "label": "Fire",
+    "pos": "6x4",
+    "cmnt": "Fire 2012",
+    "cmd": "FX=66&FP=35"
+  },
+  "0xFF28D7": {
+    "label": "Effect-",
+    "pos": "7x1",
+    "cmd": "FX=~-"
+  },
+  "0xFFA857": {
+    "label": "Effect+",
+    "pos": "7x2",
+    "cmd": "FX=~"
+  },
+  "0xFF6897": {
+    "label": "Speed-",
+    "pos": "7x3",
+    "cmd": "SX=~-16"
+  },
+  "0xFFE817": {
+    "label": "Speed+",
+    "pos": "7x4",
+    "cmd": "SX=~16"
+  },
+  "0xFF08F7": {
+    "label": "Play",
+    "pos": "8x1",
+    "cmnt": "Edit Me!",
+    "cmd": {"playlist":{"ps":[1,2,3,4,5],"dur":1800,"transition":7,"repeat":0}}
+  },
+  "0xFF8877": {
+    "label": "Palette+",
+    "pos": "8x2",
+    "cmd": "FP=~"
+  },
+  "0xFF48B7": {
+    "label": "Bright-",
+    "pos": "8x3",
+    "cmd": "!decBrightness"
+  },
+  "0xFFC837": {
+    "label": "Bright+",
+    "pos": "8x4",
+    "cmd": "!incBrightness"
+  },
+  "0xFF30CF": {
+    "label": "Music-",
+    "pos": "9x1",
+    "cmd": "!presetFallback",
+    "PL": 5
+  },
+  "0xFFB04F": {
+    "label": "Music+",
+    "pos": "9x2",
+    "cmd": "!presetFallback",
+    "PL": 6
+  },
+  "0xFF708F": {
+    "label": "Intensity-",
+    "pos": "9x3",
+    "cmd": "IX=~-16"
+  },
+  "0xFFF00F": {
+    "label": "Intensity+",
+    "pos": "9x4",
+    "cmd": "IX=~16"
+  },
+  "0xFF10EF": {
+    "label": "DIY1",
+    "pos": "10x1",
+    "cmnt": "Preset 1 or Flow-Party",
+    "cmd": "!presetFallback",
+    "PL": 1,
+    "FX": 110,
+    "FP": 6
+  },
+  "0xFF906F": {
+    "label": "DIY2",
+    "pos": "10x2",
+    "cmnt": "Preset 2 or Aurora-Aurora2",
+    "cmd": "!presetFallback",
+    "PL": 2,
+    "FX": 38,
+    "FP": 55
+  },
+  "0xFF50AF": {
+    "label": "DIY3",
+    "pos": "10x3",
+    "cmnt": "Preset 3 or Colorwaves-Hult",
+    "cmd": "!presetFallback",
+    "PL": 3,
+    "FX": 67,
+    "FP": 28
+  },
+  "0xFFD02F": {
+    "label": "DIY4",
+    "pos": "10x4",
+    "cmnt": "Preset 4 or Noise3-Orange/Teal",
+    "cmd": "!presetFallback",
+    "PL": 4,
+    "FX": 72,
+    "FP": 44
+  }
+}

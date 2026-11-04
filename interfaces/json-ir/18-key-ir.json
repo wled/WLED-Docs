@@ -1,0 +1,21 @@
+{
+  "desc": "18-key Silver Presets",
+  "0x1FE48B7": { "label": "on", "pos": "1x1", "cmnt": "On/Mode", "cmd": "T=1" }
+  "0x1FE58A7": { "label": "off", "pos": "1x2", "cmnt": "Off", "cmd": "T=0" }
+  "0x1FE807F": { "label": "4H", "pos": "2x1", "cmnt": "Change effect", "cmd": "FX=~" }
+  "0x1FE40BF": { "label": "8H", "pos": "2x2", "cmnt": "Change palette", "cmd": "FP=~" }
+  "0x1FE7887": { "label": "+", "pos": "1x3", "cmnt": "Brightness +", "cmd": "A=~8" }
+  "0x1FEC03F": { "label": "-", "pos": "2x3", "cmnt": "Brightness -", "cmd": "A=~-8" }
+  "0x1FE20DF": { "label": "Red", "pos": "3x1", "cmnt": "Preset 1", "cmd": "PL=1" }
+  "0x1FEA05F": { "label": "Green", "pos": "3x2", "cmnt": "Preset 2", "cmd": "PL=2" }
+  "0x1FE609F": { "label": "Blue", "pos": "3x3", "cmnt": "Preset 3", "cmd": "PL=3" }
+  "0x1FEE01F": { "label": "Orange", "pos": "4x1", "cmnt": "Preset 4", "cmd": "PL=4" }
+  "0x1FE10EF": { "label": "Lime", "pos": "4x2", "cmnt": "Preset 5", "cmd": "PL=5" }
+  "0x1FE906F": { "label": "Violet", "pos": "4x3", "cmnt": "Preset 6", "cmd": "PL=6" }
+  "0x1FE50AF": { "label": "Yellow", "pos": "5x1", "cmnt": "Preset 7", "cmd": "PL=7" }
+  "0x1FED827": { "label": "Cyan", "pos": "5x2", "cmnt": "Preset 8", "cmd": "PL=8" }
+  "0x1FEF807": { "label": "Magenta", "pos": "5x3", "cmnt": "Preset 9", "cmd": "PL=9" }
+  "0x1FE30CF": { "label": "Warm White", "pos": "6x1", "cmnt": "Preset 10", "cmd": "PL=10" }
+  "0x1FEB04F": { "label": "Aqua", "pos": "6x2", "cmnt": "Preset 11", "cmd": "PL=11" }
+  "0x1FE708F": { "label": "Purple", "pos": "6x3", "cmnt": "Preset 12", "cmd": "PL=12" }
+}

@@ -1,0 +1,40 @@
+{
+  "remote": "6-key",
+  "0xFF0FF0": {
+    "label": "Power",
+    "pos": "1x1",
+    "cmd": "T=2"
+  },
+  "0xFF8F70": {
+    "label": "Channel +",
+    "pos": "2x1",
+    "cmnt": "Bright +",
+    "rpt": true,
+    "cmd": "!incBrightness"
+  },
+  "0xFF4FB0": {
+    "label": "Channel -",
+    "pos": "3x1",
+    "cmnt": "Bright -",
+    "rpt": true,
+    "cmd": "!decBrightness"
+  },
+  "0xFFCF30": {
+    "label": "Volume +",
+    "pos": "4x1",
+    "cmnt": "Cycle effects",
+    "cmd": "FX=~"
+  },
+  "0xFF2FD0": {
+    "label": "Volume -",
+    "pos": "5x1",
+    "cmnt": "Cycle palette",
+    "cmd": "FP=~"
+  },
+  "0xFFAF50": {
+    "label": "Mute",
+    "pos": "6x1",
+    "cmnt": "White",
+    "cmd": "FP=2&CL=hFFFFFF"
+  }
+}

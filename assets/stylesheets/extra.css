@@ -1,0 +1,80 @@
+
+/* Custom color scheme — extends Material's built-in "slate" dark scheme */
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 232; /* [0, 360] */
+  --md-primary-fg-color: #FFA000; /*WLED Orange*/
+  /*--md-primary-fg-color: #7289DA; /*Blurple*/
+  --md-primary-fg-color--light: #555;
+  --md-primary-fg-color--dark:  #999;
+  --md-default-fg-color:           hsla(var(--md-hue),75%,95%,1); /*text*/
+  --md-typeset-color: var(--md-default-fg-color); /*text*/
+  --md-default-fg-color--light:    hsla(var(--md-hue),5%,70%,1); /*heading*/
+  --md-default-fg-color--lighter:  hsla(var(--md-hue),75%,90%,0.32); /*edit pen*/
+  --md-default-fg-color--lightest: hsla(var(--md-hue),75%,90%,0.12); /*?*/
+  --md-default-bg-color: #2c2f33; /* discord */
+  --ac-header-color: #1d1f21; /* title header */
+  --md-footer-bg-color: #1d1f21; /* discord link header and footer */
+  --md-code-bg-color: #42464c;
+  --md-code-fg-color: #FFF;
+  --md-admonition-bg-color: #35383d;
+  --md-admonition-fg-color: var(--md-default-fg-color);
+  --md-typeset-table-color: #42464c;
+  --md-code-hl-keyword-color: #a5d6ff;
+  --md-code-hl-number-color: #79c0ff;
+  --md-code-hl-name-color: #79c0ff;
+  --md-code-hl-string-color: #56d364;
+  --md-typeset-a-color: #4fc3f7;
+  --md-typeset-blockquote-color: hsla(var(--md-hue), 75%, 90%, 0.6);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table a {
+  color: var(--md-typeset-a-color);
+}
+
+.md-tabs {
+  background-color: var(--ac-header-color, var(--md-primary-fg-color));
+}
+
+.md-header {
+  background-color: var(--ac-header-color, var(--md-primary-fg-color));
+}
+
+/* ===== Code annotation marker: Akemi instead of the default (+) ===== */
+/* The theme draws the marker as a single-color CSS mask; drop the mask and
+   draw Akemi directly. Anchored to the bottom of the line so she peeks over
+   the text like the site logo. */
+.md-annotation__index {
+  width: 3.6ch;
+  overflow: visible;
+}
+.md-annotation__index::before {
+  display: none; /* the theme's page-color backdrop circle behind the (+) */
+}
+.md-annotation__index::after {
+  -webkit-mask-image: none;
+  mask-image: none;
+  background: url("../images/ui/akemi/001_cheerful.png") center bottom / contain no-repeat;
+  width: 3.6ch;
+  height: 3.8ch;
+  top: auto;
+  bottom: -0.15ch;
+  transform-origin: bottom center;
+}
+/* Code lines are tighter than prose; cap Akemi a bit shorter there so she
+   does not cover characters on the line above. */
+code .md-annotation__index {
+  width: 3.2ch;
+}
+code .md-annotation__index::after {
+  height: 3.2ch;
+  bottom: -0.2ch;
+}
+/* The theme tints the marker on hover/open and rotates it 45deg while open;
+   keep the image untinted and upright, and grow it a little instead so it
+   still reacts to the pointer. */
+:hover > .md-annotation__index::after,
+.md-tooltip--active + .md-annotation__index::after {
+  background-color: transparent;
+  transform: scale(1.15);
+}

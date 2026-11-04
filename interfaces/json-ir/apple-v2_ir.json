@@ -1,0 +1,10 @@
+{
+  "desc": "Apple V2 Remote Presets",
+  "0x77E17A12": { "label": "play","cmnt": "Play/Pause", "cmd": {"ps":"1~9~r"} },
+  "0x77E14012": { "label": "menu", "cmnt": "On/Off", "cmd": {"on":"t"} },
+  "0x77E1B012": { "label": "down", "cmnt": "Brightness -", "cmd": {"bri":"~-8"} },
+  "0x77E1D012": { "label": "up", "cmnt": "Brightness +", "cmd": {"bri":"~+8"} },
+  "0x77E11012": { "label": "left", "cmnt": "Effect -", "cmd": {"seg":{"fx":"~-"}} },
+  "0x77E1E012": { "label": "right", "cmnt": "Effect +", "cmd": {"seg":{"fx":"~+"}} },
+  "0x77E1BA12": { "label": "ok", "cmnt": "Change palette", "cmd": {"seg":{"pal":"~"}} }
+}
