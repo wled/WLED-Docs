@@ -5,72 +5,136 @@ hide:
   # - toc
 ---
 
-WLED exposed to Internet safely with the help of a reverse proxy setup.
-This document describes the steps needed.
+WLED is built for your home network. It has no login on its control interface and no HTTPS, so opening it up to the internet needs careful setup. If you already have a secure way into your home network, use that and skip this page.
 
-!!! warning "Port Forwarding"
-    Under no circumstances port forward WLED instance to the public internet.
-    WLED does not support HTTPS or authentication, leading to a fundamentally insecure setup.
+Already controlling WLED through [Home Assistant](https://www.home-assistant.io/integrations/wled/)? If you reach Home Assistant through a secure setup, like Home Assistant Cloud or a VPN, you can control WLED that way and don't need anything on this page. The same goes for Apple Home with a home hub; see [Home Automation](/advanced/home-automation).
 
-!!! tip "Consider VPN Tunneling"
-    If you only need access from a single device, such as your phone,
-    consider a point-to-point VPN tunnel instead. Configuring a tunnel
-    may require less configuration and maintenance than a HTTPS reverse proxy.
+!!! warning "Never port forward WLED"
+    Port forwarding WLED to the internet gives anyone full control of the device. Every route below puts something in front of WLED, but it's only as safe as you set it up.
 
-# Reverse proxy requirements
+Whichever route you pick:
 
-WLED does not implement access control, allowing anyone able to connect to it change configuration or even update firmware.
-For a safe access, **the reverse proxy MUST implement access control** to only allow trusted users to access WLED.
+- Anything reachable from the internet must require a login and use HTTPS.
+- Every route needs a separate always-on device at home (a Raspberry Pi, NAS, or home server), because WLED can't do this on its own.
+- Enable [OTA Lock](/advanced/ota-lock) and change its default passphrase `wledota`. This puts a passphrase on firmware updates, but it doesn't protect the rest of WLED.
+- Set a settings PIN under **Config > Security & Updates**, so the settings pages ask for it too.
 
-Secure access control cannot be implemented over insecure connection. **The reverse proxy MUST implement TLS termination**, only allowing access over HTTPS.
+Tailscale is the easiest route, or run your own WireGuard VPN if you'd rather not depend on a third party. Cloudflare Tunnel gives you a login-protected public URL, and Caddy, nginx, or Traefik work if you already run a reverse proxy at home.
 
-Reverse proxy cannot run on the WLED device.
-You need a server in your local network to perform the encryption and proxying.
+=== "Tailscale / WireGuard"
 
-# Example
+    [Tailscale](https://tailscale.com/) builds a private WireGuard network between your devices, so nothing is exposed to the public internet and you don't need to open ports or manage a domain and certificates. The free plan is enough for this.
 
-Assuming the following network setup, using Caddy as a reverse proxy:
+    WLED itself can't run Tailscale, so you need one always-on device at home (a Raspberry Pi, NAS, or home server) to act as a [subnet router](https://tailscale.com/kb/1019/subnets) that forwards traffic to your LAN. A Home Assistant box works too: its Tailscale add-on can advertise your LAN, and Tailscale has a [video walkthrough](https://www.youtube.com/watch?v=fMR8uvNIilI) of that setup.
 
-```
-[Public Internet]
-   |
-[Router]
-   |
-[Reverse Proxy]
-   |
-[WLED]
-```
+    1. Create a Tailscale account and install the app on your phone or laptop.
+    2. Install Tailscale on the always-on device at home and sign it in with `sudo tailscale up`.
+    3. On that device, enable IP forwarding if it runs Linux (see the [subnet router guide](https://tailscale.com/kb/1019/subnets)), then advertise your LAN subnet (adjust to match your network):
 
-First, register a domain name. In this example, we assume the name "mydomain.example".
-A domain name is commonly a requirement for a HTTP certificate.
-You can use a dynamic dns provider for a free domain.
+        ```sh
+        sudo tailscale set --advertise-routes=192.168.1.0/24
+        ```
 
-Next, generate a HTTPs certificate for your domain.
-For the free Let's Encrypt certificates, configure necessary the automation for refreshing the certificate automatically.
-In this example, we are using Caddy which handles this automatically.
+    4. In the [Tailscale admin console](https://login.tailscale.com/admin/machines), approve the advertised route on that machine.
 
-We then expose the HTTPS port of the reverse proxy to public internet.
-In your network router, port forward port TCP 443 into the Reverse Proxy.
-In this example, we are using Caddy which only requires port 443 to complete the Let's Encrypt challenge for automatic certificate issuing.
-With other software, you may need to also open insecure HTTP port 80.
+    With Tailscale connected on your phone, open WLED's LAN IP in the browser or add it in the WLED app. Use the IP address, not `wled.local`, because mDNS names don't resolve across the tunnel. WLED also never gets a `.ts.net` name of its own, since it isn't running Tailscale. On a Linux client, run `sudo tailscale set --accept-routes` first; phones, Macs and Windows pick up the route on their own.
 
-Finally, in Caddyfile, configure the reverse proxy and authentication
-Caddy uses HTTPS by default.
-With other software, we may need to disable access over the unsafe HTTP.
+    !!! tip "Consider a plain WireGuard tunnel"
+        If you'd rather not rely on a third party, a plain [WireGuard](https://www.wireguard.com/) VPN tunnel to your router or other server in your home network, or a self-hosted [Headscale](https://headscale.net/) control server gets you the same result (access to all your local devices as if you were in your home network) with a bit more setup. To put a single ESP32 on a WireGuard VPN by itself, see [WireGuard VPN](/advanced/wireguard).
 
-```
-mydomain.example {
-  handle /wled/* {
-    # Create username and password. Password can be with `caddy hash-password --plaintext mypass`
-    basicauth {
-        yourusername PASSWORDHASH
+=== "Cloudflare Tunnel"
+
+    [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) is a good option if you want to reach WLED from a device where you can't run a VPN client, or share access with someone else. A small daemon (`cloudflared`) on a machine in your LAN makes an outbound connection to Cloudflare, so no ports are opened on your router. You need a domain on Cloudflare (the free plan works).
+
+    !!! warning "The tunnel alone is not enough"
+        A tunnel without access control is just port forwarding with extra steps. You **must** put [Cloudflare Access](https://developers.cloudflare.com/cloudflare-one/policies/access/) in front of the tunnel so only you can log in.
+
+    1. In the Cloudflare dashboard, go to **Networking > Tunnels** and create a tunnel. Install `cloudflared` on an always-on machine in your LAN using the command the dashboard gives you.
+    2. Under **Zero Trust**, create an Access application for the hostname you plan to use, for example `wled.mydomain.example`. Set the policy to allow your own email address, with one-time PIN as the login method. New Zero Trust accounts don't include one-time PIN by default, so add it first under **Integrations > Identity providers**. A policy that names only the login method lets in anyone with any email. Do this before the next step, or WLED is briefly reachable by anyone.
+    3. Back in the tunnel, add that hostname as a public hostname pointing to `http://<WLED-IP>`.
+
+    Now `https://wled.mydomain.example` asks for your login first and only then shows WLED.
+
+=== "Caddy"
+
+    This assumes an existing [Caddy](https://caddyserver.com/) server in your LAN and a domain pointed at your home IP (a free dynamic DNS name works). The proxy must require a login and serve HTTPS only; Caddy does the HTTPS part by default and obtains and renews the Let's Encrypt certificate automatically.
+
+    Generate a password hash with `caddy hash-password`, put it in place of `PASSWORDHASH` in your `Caddyfile` (on Caddy older than 2.8, the directive is spelled `basicauth`):
+
+    ```caddyfile
+    wled.mydomain.example {
+        basic_auth {
+            yourusername PASSWORDHASH
+        }
+        reverse_proxy 192.168.1.50
     }
-    uri strip_prefix /wled
-    reverse_proxy wled-wled-a.lan # IP address or the network local name of the WLED device
-  }
-}
-```
+    ```
 
-Now `https://mydomain.example/wled/` exposes WLED to the public internet using secure HTTPS and password authentication.
+    Replace `192.168.1.50` with the IP or local hostname of your WLED device. Port forward TCP 80 and 443 from your router to the Caddy host so certificate issuing works.
 
-For additional security, consider enabling [OTA lock password](/advanced/ota-lock).
+=== "nginx"
+
+    This assumes an existing [nginx](https://nginx.org/) server in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), and TCP 80 and 443 forwarded to it. The proxy must require a login and serve HTTPS only. nginx won't load this server block until the certificate exists, so get it first with [Certbot](https://certbot.eff.org/) and its nginx plugin:
+
+    ```bash
+    sudo certbot certonly --nginx -d wled.mydomain.example --deploy-hook "systemctl reload nginx"
+    ```
+
+    Certbot renews the certificate automatically and reloads nginx each time. Run `sudo certbot renew --dry-run --run-deploy-hooks` once to check that both work.
+
+    Create the password file with `htpasswd -c /etc/nginx/.htpasswd yourusername`, then:
+
+    ```nginx
+    server {
+        listen 443 ssl;
+        server_name wled.mydomain.example;
+
+        ssl_certificate     /etc/letsencrypt/live/wled.mydomain.example/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/wled.mydomain.example/privkey.pem;
+
+        auth_basic           "WLED";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+
+        location / {
+            proxy_pass http://192.168.1.50;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Host $host;
+        }
+    }
+    ```
+
+    The `Upgrade` and `Connection` headers are required for WLED's live view WebSocket. Don't add a `listen 80` server block that serves WLED; if you want one, only use it to redirect to HTTPS.
+
+=== "Traefik"
+
+    This assumes an existing [Traefik](https://doc.traefik.io/traefik/) instance in your LAN, a domain pointed at your home IP (a free dynamic DNS name works), TCP 443 forwarded to it, and a `letsencrypt` [certificate resolver](https://doc.traefik.io/traefik/https/acme/) configured. The proxy must require a login and serve HTTPS only.
+
+    Generate the password hash with `htpasswd -nb yourusername mypassword`, then add this dynamic configuration in a file your [file provider](https://doc.traefik.io/traefik/providers/file/) watches:
+
+    ```yaml
+    http:
+      routers:
+        wled:
+          rule: "Host(`wled.mydomain.example`)"
+          entryPoints:
+            - websecure
+          middlewares:
+            - wled-auth
+          service: wled
+          tls:
+            certResolver: letsencrypt
+
+      middlewares:
+        wled-auth:
+          basicAuth:
+            users:
+              - "yourusername:PASSWORDHASH"
+
+      services:
+        wled:
+          loadBalancer:
+            servers:
+              - url: "http://192.168.1.50"
+    ```
