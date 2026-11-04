@@ -14,7 +14,9 @@ Byte 39 contains the active segment count. Byte 40 contains the segment record s
 The UDP message has the sender's segment capacity, not its active segment count. 
 The receiver decodes only the active segment records advertised in byte 39, and deactivates additional segments.
 
-The version-12 UDP SYNC notification packet size is `41 + 36 × getMaxSegments()` bytes. 
+The version-12 UDP SYNC notification packet size is `41 + 36 × getMaxSegments()` bytes.
+
+WLED can only sync up to 39 active segments, due to a message size limitation in the underlying espressif framework.
 
 ### Usage
 
