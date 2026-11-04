@@ -2,53 +2,43 @@
 title: Community Usermods
 ---
 
-This page is an index of usermods written by the WLED community. Entries are maintained by their authors; the WLED project does not test or endorse them.
+Usermods written and maintained by the community, outside the WLED repository. WLED's own usermods live in its [`usermods/` folder](https://github.com/wled/WLED/tree/main/usermods) instead. Either kind needs a [custom build](/advanced/custom-features#enabling-usermods) to use.
 
-To help people find your usermod even before it appears here, tag your GitHub repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) topic.
+!!! warning "Community content, use at your own risk"
+    These usermods come from community members, not the WLED team. The WLED project doesn't review, test, endorse or support them, so for help or bug reports, open an issue on the usermod's own repository. You're responsible for what you run on your devices.
 
-!!! warning "Community content — use at your own risk"
-    The usermods listed below are created and maintained by community members, **not** the WLED development team.
-    **The WLED project does not review, test, endorse, or provide support for any of these modules.**
+    Read a usermod's source before you flash it, and prefer building it yourself over a binary from a stranger. It's C++ compiled into your firmware, with full access to the device, so a bad one can brick it or expose your network. (1)
+    { .annotate }
 
-    Usermods are native C++ code compiled directly into your WLED firmware. A usermod runs with
-    **full, unrestricted access** to your device's hardware, network, and memory — there is no
-    sandbox or permission system to limit what it can do. Before installing a third-party build:
+    1.  There's no sandbox, and a usermod can do things its description doesn't mention.
 
-    - **Read the source code** (or have someone you trust read it) before flashing.
-    - Be aware that a malicious or poorly written usermod could expose your network, **brick your
-      device**, or behave in ways its description does not mention.
-    - Only flash firmware from sources you trust. Prefer builds you compile yourself from
-      reviewed source code over pre-compiled binaries distributed by strangers.
+## Third-party usermods
 
-    The WLED project cannot verify the safety or quality of community usermods.
-    **You are solely responsible for any third-party code you choose to run on your devices.**
+| Name | Description | Author | Platforms | License |
+|---|---|---|---|---|
+| [M5StickC Plus AXP192 Power](https://github.com/martindell/wled-m5stickc-plus-power) | Turns on the M5StickC Plus 5V output at startup<br/>_Safe LED load unverified_ | @martindell | esp32 | EUPL-1.2 |
+| [PowerManager](https://github.com/intermittech/wled-usermod-powermanager) | Relays and MOSFETs that follow segment on/off | @intermittech | esp32 | EUPL-1.2 |
+| [Segment Power Sync](https://github.com/sharn25/wled-segment-power-sync) | Keeps segment power in sync with master power | @sharn25 | both | MIT |
+| [Sensor Hub](https://github.com/lost-hope/sensor-hub) | Shows multiple sensors in the Info tab, MQTT and the API | @lost-hope | both | EUPL-1.2 |
+| [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | SHTC3 temperature and humidity sensor, with MQTT | @lost-hope | both | EUPL-1.2 |
+| [wizlights](https://github.com/eibanez/wled-usermod-wizlights) | Control Wiz lights from WLED | @eibanez | both | EUPL-1.2 |
+| [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16) | 16×16 word clock effect with weather words | @AustinSaintAubin | esp32 | MIT |
 
-## Index
+## Write your own
 
-| Name | Description | Author | Platforms | License | Notes |
-|---|---|---|---|---|---|
-| [wled-usermod-example](https://github.com/wled/wled-usermod-example) | Annotated template — use as template to start your own usermod | @wled | both | EUPL | Official starting point |
-| [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx) | Community effects usermod — add your own effects here or use as a template | @wled | both | EUPL | Ships with WLED; enable with `custom_usermods = user_fx` |
-| [Word Clock FX](https://github.com/AustinSaintAubin/wled-usermod-word-clock-fx-16x16) | 16×16 English word-clock as a first-class WLED effect, with Open-Meteo weather words/presets and corner-button LEDs | @AustinSaintAubin | esp32 | MIT |  |
-| [Segment Power Sync](https://github.com/sharn25/wled-segment-power-sync) | Automatically synchronizes individual segment power states with the overall master power state. Ideal when using a relay to cut mains power to LEDs. | @sharn25 | both | MIT |  |
-| [PowerManager](https://github.com/intermittech/wled-usermod-powermanager) | Per-segment power switching: relay/MOSFET outputs follow segment on/off, with anti-flash power sequencing, PSU stabilization and a Master AC relay | @intermittech | esp32 | EUPL | Grown from the built-in multi_relay usermod |
-| [M5StickC Plus AXP192 Power](https://github.com/martindell/wled-m5stickc-plus-power) | Enables the M5StickC Plus 1.1 external 5V output during WLED startup | @martindell | esp32 | EUPL-1.2 | Tested on WLED 16.0.1; requires I2C SDA=21/SCL=22; safe LED load unverified |
-| [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages | `@lost-hope` | both | EUPL |  |
-| [wizlights](https://github.com/eibanez/wled-usermod-wizlights) | Controlling Wiz lights with WLED | @eibanez | both | EUPL | |
-|[Sensor Hub](https://lost-hope.github.io/sensor-hub-site/)|A sensor hub that lets you connect multiple sensors, that are then shown in the info tab, published via mqtt and API and being made available for consumers| `@lost-hope` | both | EUPL |Coauthored with AI|
+[Writing a usermod](/advanced/custom-features#writing-a-usermod) walks you through it, starting from the [wled-usermod-example](https://github.com/wled/wled-usermod-example) template. Just adding an effect? The built-in [user_fx](https://github.com/wled/WLED/tree/main/usermods/user_fx) usermod is the quickest start: add your effect to it and enable it with `custom_usermods = user_fx`.
 
+## Add your usermod
 
-## Adding your usermod to the list
-
-Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) adding a row to the table above. 
-
-Use this format:
+Open a pull request to [WLED-Docs](https://github.com/wled/WLED-Docs) that adds one row to the table, in alphabetical order:
 
 ```markdown
-| [Name](https://github.com/you/your-usermod) | Short description | @yourname | esp32 | GPLv3 |  |
+| [Name](https://github.com/you/your-usermod) | What it does, in a few words<br/>_Optional short note_ | @yourname | esp32 | GPLv3 |
 ```
 
-Platforms: `esp32`, `esp8266`, or `both`.
+Platforms is `esp32`, `esp8266`, or `both`. Keep the description under ten words. If something is important to know before installing, add it as a short note after `<br/>`, in italics. Everything else goes in your README.
+
+Until it's listed here, people can still find your usermod if you tag the GitHub repository with the [`wled-usermod`](https://github.com/topics/wled-usermod) topic.
 
 ### Requesting an automated code review
 
@@ -61,7 +51,7 @@ Include the inspected revision, files inspected, findings, and coverage limits i
 
 Then wait a few minutes 👀, and CodeRabbit should post a review summary for your external usermod.
 
-## Choosing a license for your usermod
+## Choosing a license
 
 A usermod is compiled into the WLED firmware, so it becomes part of a modified WLED build. WLED uses the **EUPL-1.2** licence. If you share a firmware binary that includes your usermod, also share the source code for that build and use EUPL-1.2 or a compatible open-source licence for the combined firmware.
 
