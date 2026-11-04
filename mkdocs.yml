@@ -148,6 +148,7 @@ nav:
     - Remote Access / IFTTT: advanced/remote-access-ifttt.md
     - OTA Lock: advanced/ota-lock.md
     - Accessing WLED over Internet: advanced/access-over-internet.md
+    - WireGuard VPN: advanced/wireguard.md
     - Wiring Protips: advanced/wiring.md
     - Long Data Lines: advanced/longdata.md
     - Compiling WLED: advanced/compiling-wled.md
