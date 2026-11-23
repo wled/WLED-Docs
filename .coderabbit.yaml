@@ -33,11 +33,12 @@ reviews:
       instructions: |
         For each newly added usermod or changed repository link:
         1. Validate the index entry against public repository information.
-        2. If external source is accessible, inspect the implementation,
+        2. Check that the repository supports issue tracking (`https://<repo-URL>/issues`), so users are able to directly report problems to the author.
+        3. If external source is accessible, inspect the implementation,
            library.json, README, and license. Out-of-tree usermods reside
            in separate repositories; inspect relevant root-level .cpp/.h/.hpp
            files without requiring usermods/<name>/ or usermod.cpp.
-        3. Apply these references:
+        4. Apply these references:
            - https://github.com/wled/WLED/blob/main/AGENTS.md#usermods
            - docs/advanced/custom-features.md: "What's inside a usermod"
            - https://github.com/wled/WLED/tree/main/usermods/user_fx#basic-syntax-for-wled-effect-creation
