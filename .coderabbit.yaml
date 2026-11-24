@@ -31,7 +31,8 @@ reviews:
   path_instructions:
   - path: "**/*.md"
     instructions: >
-        Review against the writing style guidelines and checklists provided in `AGENTS.md`.
+        Review against the writing style guidelines, markdown/page style conventions, and checklists provided in `AGENTS.md`.
+        Flag offensive, culturally misunderstood, or potentially inappropriate language (see CODE_OF_CONDUCT.md) and suggest alternative wording.
         Make sure that statements are technically correct and clear.
         Embedded code snippets should be syntactically valid.
         Check for spelling and grammar errors, and for proper markdown and mkdocs syntax.
