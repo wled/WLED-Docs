@@ -29,15 +29,25 @@ reviews:
   # Best-effort external-source inspection, not a full code audit.
   # Web search does not guarantee source access or a separate PR comment.
   path_instructions:
-    - path: "docs/advanced/community-usermods.md"
+  - path: "**/*.md"
+      instructions: >
+        Review against the writing style guidelines and checklists provided in `AGENTS.md`.
+        Check for spelling and grammar errors, and for proper markdown and mkdocs syntax.
+        Verify outgoing links. Flag broken/unreachable links.
+        Request clarification for outgoing links to commercial software/services, promotional sites,
+        and for links to software without public source and license evidence.
+        Check for potentially malicious links (security/privacy risks, backdoors, adware/malware, typo-squatting, suspicious redirects, exploit kits, phishing, etc).
+
+  - path: "docs/advanced/community-usermods.md"
       instructions: |
         For each newly added usermod or changed repository link:
         1. Validate the index entry against public repository information.
-        2. If external source is accessible, inspect the implementation,
+        2. Check that the repository supports issue tracking (`https://<repo-URL>/issues`), so users are able to directly report problems to the author.
+        3. If external source is accessible, inspect the implementation,
            library.json, README, and license. Out-of-tree usermods reside
            in separate repositories; inspect relevant root-level .cpp/.h/.hpp
            files without requiring usermods/<name>/ or usermod.cpp.
-        3. Apply these references:
+        4. Apply these references:
            - https://github.com/wled/WLED/blob/main/AGENTS.md#usermods
            - docs/advanced/custom-features.md: "What's inside a usermod"
            - https://github.com/wled/WLED/tree/main/usermods/user_fx#basic-syntax-for-wled-effect-creation
@@ -92,5 +102,4 @@ reviews:
       enabled: true
     autofix:
       enabled: true
-    autopilot:
-      enabled: false
+
