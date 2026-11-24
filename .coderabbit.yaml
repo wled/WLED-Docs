@@ -32,6 +32,8 @@ reviews:
   - path: "**/*.md"
     instructions: >
         Review against the writing style guidelines and checklists provided in `AGENTS.md`.
+        Make sure that statements are technically correct and clear.
+        Embedded code snippets should be syntactically valid.
         Check for spelling and grammar errors, and for proper markdown and mkdocs syntax.
         Verify outgoing links. Flag broken/unreachable links.
         Request clarification for outgoing links to commercial software/services, promotional sites,
