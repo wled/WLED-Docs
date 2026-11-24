@@ -36,7 +36,7 @@ reviews:
         Verify outgoing links. Flag broken/unreachable links.
         Request clarification for outgoing links to commercial software/services, 
         and for links to software without public source and license evidence.
-        Check for potentially malicious links (security/privacy risks, backdoors, adware/malware, typo-squatting, exploit kits, phishing, etc).
+        Check for potentially malicious links (security/privacy risks, backdoors, adware/malware, typo-squatting, suspicious redirects, exploit kits, phishing, etc).
 
   - path: "docs/advanced/community-usermods.md"
       instructions: |
