@@ -34,7 +34,7 @@ reviews:
         Review against the writing style guidelines and checklists provided in `AGENTS.md`.
         Check for spelling and grammar errors, and for proper markdown and mkdocs syntax.
         Verify outgoing links. Flag broken/unreachable links.
-        Request clarification for outgoing links to commercial software/services, 
+        Request clarification for outgoing links to commercial software/services, promotional sites,
         and for links to software without public source and license evidence.
         Check for potentially malicious links (security/privacy risks, backdoors, adware/malware, typo-squatting, suspicious redirects, exploit kits, phishing, etc).
 
