@@ -1,0 +1,186 @@
+{
+  "remote": "32-key",
+  "0xFF08F7": {
+    "label": "On",
+    "pos": "1x1",
+    "cmd": "T=1"
+  },
+  "0xFFC03F": {
+    "label": "Off",
+    "pos": "1x2",
+    "cmd": "T=0"
+  },
+  "0xFF807F": {
+    "label": "Auto",
+    "pos": "1x3",
+    "cmnt": "Toggle preset cycle",
+    "cmd": "CY=2&PT=60000"
+  },
+  "0xFF609F": {
+    "label": "Mode",
+    "pos": "1x4",
+    "cmnt": "Cycle effects",
+    "cmd": "FX=~"
+  },
+  "0xFF906F": {
+    "label": "4H",
+    "pos": "2x1",
+    "cmnt": "Timer 60min",
+    "cmd": "NL=60&NT=0"
+  },
+  "0xFFB847": {
+    "label": "6H",
+    "pos": "2x2",
+    "cmnt": "Timer 90min",
+    "cmd": "NL=90&NT=0"
+  },
+  "0xFFF807": {
+    "label": "8H",
+    "pos": "2x3",
+    "cmnt": "Timer 120min",
+    "cmd": "NL=120&NT=0"
+  },
+  "0xFFB04F": {
+    "label": "Timer Off",
+    "pos": "2x4",
+    "cmd": "NL=0"
+  },
+  "0xFF9867": {
+    "label": "Red",
+    "pos": "3x1",
+    "cmnt": "Lava",
+    "cmd": "FP=8&CL=hFF0000&C2=hFF7F00&C3=hCC3D60"
+  },
+  "0xFFD827": {
+    "label": "Green",
+    "pos": "3x2",
+    "cmnt": "Forest",
+    "cmd": "FP=10&CL=h8000&C2=h8040&C3=h30661E"
+  },
+  "0xFF8877": {
+    "label": "Blue",
+    "pos": "3x3",
+    "cmnt": "Breeze",
+    "cmd": "FP=15&CL=hFF&C2=h7F00FF&C3=h3D60CC"
+  },
+  "0xFFA857": {
+    "label": "White",
+    "pos": "3x4",
+    "cmd": "FP=5&CL=hFFFFFF&C2=hFFE4CD&C3=hE4E4FF"
+  },
+  "0xFFE817": {
+    "label": "OrangeRed",
+    "pos": "4x1",
+    "cmnt": "Sakura",
+    "cmd": "FP=49&CL=hFF4500&C2=hFFC400&C3=hCC403D"
+  },
+  "0xFF48B7": {
+    "label": "SeaGreen",
+    "pos": "4x2",
+    "cmnt": "Rivendale",
+    "cmd": "FP=14&CL=h2E8B57&C2=h2E8B85&C3=h3B6F45"
+  },
+  "0xFF6897": {
+    "label": "RoyalBlue",
+    "pos": "4x3",
+    "cmnt": "Ocean",
+    "cmd": "FP=9&CL=h4169E1&C2=h6941E1&C3=h5A87B4"
+  },
+  "0xFFB24D": {
+    "label": "DarkBlue",
+    "pos": "4x4",
+    "cmnt": "Breeze",
+    "cmd": "FP=15&CL=h8B&C2=h45008B&C3=h21346F"
+  },
+  "0xFF02FD": {
+    "label": "Orange",
+    "pos": "5x1",
+    "cmnt": "Orangery",
+    "cmd": "FP=47&CL=hFFA500&C2=hD9FF00&C3=hCC753D"
+  },
+  "0xFF32CD": {
+    "label": "YellowGreen",
+    "pos": "5x2",
+    "cmnt": "Aurora",
+    "cmd": "FP=37&CL=h9ACD32&C2=h4CCD32&C3=h9DA44D"
+  },
+  "0xFF20DF": {
+    "label": "SkyBlue",
+    "pos": "5x3",
+    "cmnt": "Beech",
+    "cmd": "FP=22&CL=h87CEEB&C2=h879CEB&C3=h84B9BC"
+  },
+  "0xFF00FF": {
+    "label": "Orchid",
+    "pos": "5x4",
+    "cmd": "FP=5&CL=hDA70D6&C2=hDA70A0&C3=hA173AE"
+  },
+  "0xFF50AF": {
+    "label": "Yellow",
+    "pos": "6x1",
+    "cmnt": "Yellowout",
+    "cmd": "FP=17&CL=hFFFF00&C2=h7FFF00&C3=hCCA83D"
+  },
+  "0xFF7887": {
+    "label": "DarkGreen",
+    "pos": "6x2",
+    "cmnt": "Orange and Teal",
+    "cmd": "FP=44&CL=h6400&C2=h6432&C3=h265018"
+  },
+  "0xFF708F": {
+    "label": "RebeccaPurple",
+    "pos": "6x3",
+    "cmd": "FP=5&CL=h663399&C2=h993399&C3=h4F417A"
+  },
+  "0xFF58A7": {
+    "label": "Plum",
+    "pos": "6x4",
+    "cmd": "FP=5&CL=hDDA0DD&C2=hDDA0BE&C3=hA88EB0"
+  },
+  "0xFF38C7": {
+    "label": "Strobe",
+    "pos": "7x1",
+    "cmnt": "Dancing Shadows",
+    "cmd": "FX=112"
+  },
+  "0xFF28D7": {
+    "label": "In Waves",
+    "pos": "7x2",
+    "cmnt": "Noise 1",
+    "cmd": "FX=70"
+  },
+  "0xFFF00F": {
+    "label": "Speed +",
+    "pos": "7x3",
+    "cmd": "SX=~16"
+  },
+  "0xFF30CF": {
+    "label": "Speed -",
+    "pos": "7x4",
+    "cmd": "SX=~-16"
+  },
+  "0xFF40BF": {
+    "label": "Jump",
+    "pos": "8x1",
+    "cmnt": "Colortwinkles",
+    "cmd": "FX=74"
+  },
+  "0xFF12ED": {
+    "label": "Fade",
+    "pos": "8x2",
+    "cmnt": "Sunrise",
+    "cmd": "FX=104"
+  },
+  "0xFF2AD5": {
+    "label": "Flash",
+    "pos": "8x3",
+    "cmnt": "Railway",
+    "cmd": "FX=78"
+  },
+  "0xFFA05F": {
+    "label": "Chase Flash",
+    "pos": "8x4",
+    "cmnt": "Washing Machine",
+    "cmd": "FX=113"
+  }
+}
