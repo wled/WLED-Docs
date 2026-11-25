@@ -36,6 +36,7 @@ To help people find your usermod even before it appears here, tag your GitHub re
 | [SHTC3_v2](https://github.com/lost-hope/SHTC3_v2) | Adds readout for the SHTC3 temperature and humidity sensor. Also publishes the values over MQTT and sends out HA sensor messages | `@lost-hope` | both | EUPL |  |
 | [wizlights](https://github.com/eibanez/wled-usermod-wizlights) | Controlling Wiz lights with WLED | @eibanez | both | EUPL | |
 |[Sensor Hub](https://lost-hope.github.io/sensor-hub-site/)|A sensor hub that lets you connect multiple sensors, that are then shown in the info tab, published via mqtt and API and being made available for consumers| `@lost-hope` | both | EUPL |Coauthored with AI|
+| [OLED 72x40](https://github.com/doccaz/wled-usermod-oled-72x40) | Status dashboard (effect, brightness graph, speed/intensity) for the ESP32-C3 Super Mini's built-in 0.42" 72x40 SSD1306 OLED, with heartbeat LED, flip support and a sleep timer | @doccaz | esp32 | EUPL-1.2 | Tested on WLED 16.0.x; moved out of tree from wled/WLED#5475 |
 
 
 ## Adding your usermod to the list
